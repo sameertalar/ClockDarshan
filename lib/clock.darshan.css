@@ -1,0 +1,107 @@
+h3 {
+  color: whitesmoke; /* #ff5f0e;*/
+  margin-top: 10px;
+}
+
+body {
+  background-color: #50676f;
+  /*  overflow-y: hidden;*/
+}
+
+select {
+  width: 90%;
+}
+
+#clockContainer {
+  margin-top: 20px;
+}
+
+#clock-container {
+  display: inline-block;
+  position: relative;
+  width: 90%;
+  height: 90%;
+  vertical-align: middle;
+  overflow: hidden;
+  background: url("../../media/img/clockDarshan.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#face {
+  stroke-width: 1px;
+  stroke: transparent;
+  fill: transparent;
+}
+
+#min {
+  stroke-width: 1px;
+  fill: #980000;
+  stroke: #f4b400;
+}
+
+#currentTime {
+  position: relative;
+  top: -200px;
+  color: whitesmoke;
+}
+
+#timeStatus {
+  left: 0;
+  height: 7px;
+  background-color: #f4b400;
+}
+
+.circle {
+  position: relative;
+  top: -30px;
+  border-right-color: #50676f !important;
+  border-right-style: solid !important;
+  border-right-width: 1px !important;
+  border-left-color: rgb(222, 226, 230) !important;
+  border-left-style: solid !important;
+  border-left-width: 1px !important;
+}
+
+#chunkProgress {
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: 13px;
+  border: 1px solid #0d2931;
+  background-color: #fef9e7;
+  background-image: linear-gradient(
+    right,
+    #a6d8f5,
+    #a6d8f5 50%,
+    transparent 50%,
+    transparent 50%
+  );
+  background-image: -webkit-linear-gradient(
+    right,
+    #a6d8f5,
+    #a6d8f5 50%,
+    transparent 50%,
+    transparent 50%
+  );
+}
+
+#chunkStatus {
+  position: relative;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  border: 30px 0;
+  width: 0;
+  height: 100%;
+  background: #0fd30f;
+  background: -moz-linear-gradient(top, #0fd30f 0%, #0cf459 48%, #17a504 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #0fd30f 0%,
+    #0cf459 48%,
+    #17a504 100%
+  );
+  background: linear-gradient(to bottom, #0fd30f 0%, #0cf459 48%, #17a504 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbff87', endColorstr='#17a504',GradientType=0 );
+}

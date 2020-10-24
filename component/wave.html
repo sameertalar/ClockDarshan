@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <!-- https://codesandbox.io/s/one-mqxjl?file=/index.html-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+
+    <title>🕘 Wave</title>
+
+    <style>
+      @media only screen and (max-width: 600px) {
+        #html5colorpicker {
+          display: none;
+        }
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
+
+      span {
+        color: darkslategrey;
+      }
+
+      #canvasOne {
+        top: 0px;
+        border: 1px solid rgba(58, 176, 195, 0.5);
+        border-radius: 10px;
+      }
+
+      #html5colorpicker {
+        width: 20px;
+        background: #2d5d6b;
+        color: #2d5d6b;
+      }
+
+      .screenSize {
+        position: absolute;
+        bottom: 0;
+        left: 200px;
+        z-index: 999;
+        display: none;
+      }
+      .cntL {
+        font-size: 1em;
+      }
+
+      .cntN {
+        color: #c0c0c0;
+        font-size: 1.2em;
+        padding-left: 0.2em;
+        padding-right: 0.5em;
+      }
+    </style>
+  </head>
+  <body onresize="setWaveParams()">
+    <canvas id="canvasOne" width="300" height="800"></canvas>
+    <!-- Floating Elements 2-->
+    <div>
+      <input type="color" id="html5colorpicker" value="#2d5d6b" />
+      <span class="cntL">Breaths:</span
+      ><span class="cntN" id="noOfBreaths">0</span>
+      <span class="cntL">Time:</span
+      ><span class="cntN" id="timeElasped">:</span>
+    </div>
+
+    <p class="screenSize" id="screenSize">Sameer Talar</p>
+    <noscript>
+      You'll need to permit JavaScript interpretation for this page to
+      function...
+    </noscript>
+    <script src="../lib/wave.js"></script>
+    <!--    end todo  -->
+  </body>
+</html>
