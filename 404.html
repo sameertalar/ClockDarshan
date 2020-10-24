@@ -1,112 +1,99 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>404 Page Not Found</title>
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="lib/ClockDarshan.js"></script>
 
     <style>
-        body {
-            background-color: #f1f1f1;
-        }
+      body {
+        background-color: #f1f1f1;
+      }
 
-        #canvasClock {
-            background: url("img/ClockDarshan.png");
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            background-position: 5px 0;
-        }
+      #canvasClock {
+        background: url("img/ClockDarshan.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: 5px 0;
+      }
 
-        .quotelist {
-            max-height: 200px;
-            overflow-y: auto;
-            color: chocolate;
-            font-size: 1em;
-        }
+      .quotelist {
+        max-height: 200px;
+        overflow-y: auto;
+        color: chocolate;
+        font-size: 1em;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-4 "></div>
-            <div class="col-sm-4  bg-primary text-center">
-
-                <h3 >
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                    <strong id="xPerson"> </strong>
-                </h3>
-
-            </div>
-            <div class="col-sm-4 "></div>
-            <div class="col-sm-4 text-right">
-                <a href="index.html">Go to Tool</a>
-
-
-            </div>
-
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 bg-primary text-center">
+          <h3>
+            <span class="glyphicon glyphicon-star-empty"></span>
+            <strong id="xPerson"> </strong>
+          </h3>
         </div>
-        <div class="row">&nbsp; </div>
-        <div class="row">
-            <div class="col-sm-4 "></div>
-            <div class="col-sm-4 text-center">
-                <div>
-                    <canvas id="canvasClock" width="290" height="290"></canvas>
-                </div>
-            </div>
-            <div class="col-sm-4 "></div>
-
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 text-right">
+          <a href="index.html">Go to Tool</a>
         </div>
-        <div class="row">&nbsp; </div>
-        <div class="row">
-            <div class="col-sm-4 "></div>
-            <div class="col-sm-4 text-center  bg-info">
-                <h3><span id="xSubject">404 Not found</span></h3>
-            </div>
-            <div class="col-sm-4 "></div>
-
+      </div>
+      <div class="row">&nbsp;</div>
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 text-center">
+          <div>
+            <canvas id="canvasClock" width="290" height="290"></canvas>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-sm-4 "></div>
-            <div class="col-sm-4">
-                <p class="lead text-center" id="xBhav">Error while loading xml.</p>
-                <p id="xGunas" class="text-center"></p>
-                <div>
-                    <ul class="quotelist" id="xQuotes">
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="text-center">
-                    <h5>
-                        <span class="glyphicon glyphicon-map-marker"></span>
-                        <span id="xEvent"></span>
-                    </h5>
-                </div>
-            </div>
-            <div class="col-sm-4 "></div>
-
+        <div class="col-sm-4"></div>
+      </div>
+      <div class="row">&nbsp;</div>
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 text-center bg-info">
+          <h3><span id="xSubject">404 Not found</span></h3>
         </div>
-
-
+        <div class="col-sm-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <p class="lead text-center" id="xBhav">Error while loading xml.</p>
+          <p id="xGunas" class="text-center"></p>
+          <div>
+            <ul class="quotelist" id="xQuotes">
+              <li></li>
+            </ul>
+          </div>
+          <div class="text-center">
+            <h5>
+              <span class="glyphicon glyphicon-map-marker"></span>
+              <span id="xEvent"></span>
+            </h5>
+          </div>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
     </div>
     <script>
+      close_window();
 
+      // Get latest from last updated
 
-        close_window();
-
-
-
-        function close_window() {
-            if (confirm("Close Window?")) {
-                close();
-            }
+      function close_window() {
+        if (confirm("Close Window?")) {
+          close();
         }
-
-
+      }
     </script>
-
-</body>
+  </body>
 </html>
