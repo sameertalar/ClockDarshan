@@ -17,7 +17,7 @@
     <div class="container">
       <div class="row text-center">
         <div class="col-md-4">
-          <div class="text-center" id="contentBattery" style="display: none">
+          <div class="text-center" id="containerBattery" style="display: none">
             <iframe
               id="frameBattery"
               src=""
@@ -39,16 +39,7 @@
                 <div id="chunkStatus"></div>
               </div>
             </div>
-            <input
-              class="form-control"
-              style="display: none"
-              id="controltimeStatus"
-              type="range"
-              min="0"
-              max="100"
-              step="0.1"
-              value="0"
-            />
+
             <h3 id="displayNaam">Welcome</h3>
           </div>
           <div class="text-center" style="display: none">
@@ -65,9 +56,9 @@
               <input
                 type="checkbox"
                 class="custom-control-input"
-                id="controlAppEnabled"
+                id="checkboxAppOnOff"
               />
-              <label class="custom-control-label" for="controlAppEnabled"
+              <label class="custom-control-label" for="checkboxAppOnOff"
                 ><span class="text-white">Enable App</span></label
               >
             </div>
@@ -78,7 +69,7 @@
       <div class="row">
         <div class="col-md-4 text-center">
           <button
-            id="speakChunkBtn"
+            id="btnTryChunk"
             type="button"
             class="btn btn-info btn-lg active"
           >
@@ -124,7 +115,7 @@
             </svg>
           </a>
           <button
-            id="speakMidhBtn"
+            id="btnTryMid"
             type="button"
             class="btn btn-info btn-lg active"
           >
@@ -149,7 +140,11 @@
           <!-- Buttons second row-->
           <!-- Buttons second row end <!-- Buttons 2nd row-->
           <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-secondary" id="batteryLoadBtn">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="btnBatteryLoader"
+            >
               <svg
                 width="2em"
                 height="2em"
@@ -188,7 +183,7 @@
               </svg>
             </a>
 
-            <button type="button" class="btn btn-secondary" id="waveLoadBtn">
+            <button type="button" class="btn btn-secondary" id="btnWaveLoader">
               <svg
                 width="1.5em"
                 height="1.5em"
@@ -212,18 +207,7 @@
             class="btn-group text-center"
             role="group"
             aria-label="Basic example2"
-          >
-            <a
-              id="speakChunkBxtn2"
-              role="button"
-              aria-expanded="false"
-              class="text-left"
-            >
-            </a>
-            &nbsp;&nbsp;
-            <a id="speakIntervxalhBtn2" role="button" aria-expanded="false">
-            </a>
-          </div>
+          ></div>
           <!-- Buttons 2nd row end-->
         </div>
       </div>
@@ -303,27 +287,29 @@
                 <div class="custom-control custom-radio custom-control-inline">
                   <input
                     type="radio"
-                    id="controlMusicRadio20"
-                    name="controlMusicRadio"
+                    id="radioMeditationMusic20"
+                    name="radioMeditationMusic"
                     value="../media/saregama20Sec.mp3"
                     class="custom-control-input"
                   />
-                  <label class="custom-control-label" for="controlMusicRadio20"
+                  <label
+                    class="custom-control-label"
+                    for="radioMeditationMusic20"
                     >🎵 20 Sec</label
                   >
                 </div>
                 <div class="custom-control custom-radio custom-control-inline">
                   <input
                     type="radio"
-                    id="controlMusicRadio18Low"
-                    name="controlMusicRadio"
+                    id="radioMeditationMusic18Low"
+                    name="radioMeditationMusic"
                     value="../media/saregama18Sec.mp3"
                     checked
                     class="custom-control-input"
                   />
                   <label
                     class="custom-control-label"
-                    for="controlMusicRadio18Low"
+                    for="radioMeditationMusic18Low"
                   >
                     🎵 18 Sec
                   </label>
@@ -331,12 +317,14 @@
                 <div class="custom-control custom-radio custom-control-inline">
                   <input
                     type="radio"
-                    id="controlMusicRadio18"
-                    name="controlMusicRadio"
+                    id="radioMeditationMusic18"
+                    name="radioMeditationMusic"
                     value="../media/saregama18SecLow.wav"
                     class="custom-control-input"
                   />
-                  <label class="custom-control-label" for="controlMusicRadio18"
+                  <label
+                    class="custom-control-label"
+                    for="radioMeditationMusic18"
                     >🎵 18 Sec Low</label
                   >
                 </div>
@@ -345,15 +333,17 @@
                 <span class="badge badge-dark">Volumes</span>
               </div>
               <div class="form-group">
-                <label for="controlMusicVolumn">
+                <label for="rangeMeditationMusicVolume">
                   🔊 Music Volume:
-                  <span id="controlMusicVolumnLabel" class="badge badge-light"
+                  <span
+                    id="rangeMeditationMusicVolumeLabel"
+                    class="badge badge-light"
                     >80%</span
                   >
                 </label>
                 <input
                   class="form-control"
-                  id="controlMusicVolumn"
+                  id="rangeMeditationMusicVolume"
                   width="80%"
                   type="range"
                   min="0"
@@ -364,16 +354,16 @@
               </div>
 
               <div class="form-group">
-                <label for="controlAlertAudioVolume">
+                <label for="rangeAlertAudioVolume">
                   🔊 Sound Alert Volume:<span
-                    id="controlAlertAudioVolumeLabel"
+                    id="rangeAlertAudioVolumeLabel"
                     class="badge badge-light"
                     >80%</span
                   >
                 </label>
                 <input
                   class="form-control-range"
-                  id="controlAlertAudioVolume"
+                  id="rangeAlertAudioVolume"
                   type="range"
                   min="0"
                   max="1"
@@ -382,16 +372,16 @@
                 />
               </div>
               <div class="form-group">
-                <label for="controlSpeechVolume">
+                <label for="rangeSpeechVolume">
                   🔊 Speech Volume:<span
-                    id="controlSpeechVolumeLabel"
+                    id="rangeSpeechVolumeLabel"
                     class="badge badge-light"
                     >80%</span
                   >
                 </label>
                 <input
                   class="form-control-range"
-                  id="controlSpeechVolume"
+                  id="rangeSpeechVolume"
                   type="range"
                   min="0"
                   max="1"
@@ -400,15 +390,15 @@
                 />
               </div>
               <div class="form-groupr">
-                <label for="controlTickerVolume">
+                <label for="rangeTickerVolume">
                   🔊 Ticker Volume:
-                  <span id="controlTickerVolumeLabel" class="badge badge-light"
+                  <span id="rangeTickerVolumeLabel" class="badge badge-light"
                     >80%</span
                   >
                 </label>
                 <input
                   class="form-control"
-                  id="controlTickerVolume"
+                  id="rangeTickerVolume"
                   width="80%"
                   type="range"
                   min="0"
@@ -454,12 +444,12 @@
                   >
                     <div class="card-body">
                       <div class="form-group bg-primary text-center">
-                        <label for="controlProfile" class="text-white">
+                        <label for="selectProfile" class="text-white">
                           Profile
                         </label>
                         <select
                           class="form-control"
-                          id="controlProfile"
+                          id="selectProfile"
                         ></select>
                       </div>
                       <div>
@@ -468,11 +458,11 @@
                             <input
                               type="checkbox"
                               class="custom-control-input"
-                              id="controlPopupAlertEnabled"
+                              id="checkboxPopupAlert"
                             />
                             <label
                               class="custom-control-label"
-                              for="controlPopupAlertEnabled"
+                              for="checkboxPopupAlert"
                             >
                               <span class="badge badge-secondary"
                                 >Popup Alert</span
@@ -483,11 +473,11 @@
                             <input
                               type="checkbox"
                               class="custom-control-input"
-                              id="controlVibrationEnabled"
+                              id="checkboxVibration"
                             />
                             <label
                               class="custom-control-label"
-                              for="controlVibrationEnabled"
+                              for="checkboxVibration"
                             >
                               <span class="badge badge-secondary">Vibrate</span>
                             </label>
@@ -496,11 +486,11 @@
                             <input
                               type="checkbox"
                               class="custom-control-input"
-                              id="controlQuarterEnabled"
+                              id="checkboxQuarterMode"
                             />
                             <label
                               class="custom-control-label"
-                              for="controlQuarterEnabled"
+                              for="checkboxQuarterMode"
                             >
                               <span class="badge badge-secondary"
                                 >Quarter Mode</span
@@ -515,26 +505,24 @@
                           <input
                             type="checkbox"
                             class="form-check-input"
-                            id="controlChunkBeforeAlertEnabled"
+                            id="checkboxChunkBeforeAlert"
                           />
                           <label
                             class="form-check-label"
-                            for="controlChunkBeforeAlertEnabled"
+                            for="checkboxChunkBeforeAlert"
                             >Before Alert</label
                           >
                         </div>
-                        <label for="controlTimeAlertMode">Time Alert</label>
-                        <select class="form-control" id="controlTimeAlertMode">
+                        <label for="selectTimeAlertMode">Time Alert</label>
+                        <select class="form-control" id="selectTimeAlertMode">
                           <option value="Silent" selected>🔕 Silent</option>
                           <option value="Audio">🎵 Audio</option>
                           <option value="Text">📝 Text-2-Speech</option>
                         </select>
-                        <label for="controlChunkNotifyMode"
-                          >Notification
-                        </label>
+                        <label for="selectChunkNotifyMode">Notification </label>
                         <select
                           class="form-control"
-                          id="controlChunkNotifyMode"
+                          id="selectChunkNotifyMode"
                         ></select>
                       </div>
                       <div class="form-group">
@@ -543,18 +531,18 @@
                           <input
                             type="checkbox"
                             class="form-check-input"
-                            id="controlMidBeforeAlertEnabled"
+                            id="checkboxMidBeforeAlert"
                           />
                           <label
                             class="form-check-label"
-                            for="controlMidBeforeAlertEnabled"
+                            for="checkboxMidBeforeAlert"
                             >Before Alert</label
                           >
                         </div>
-                        <label for="controlMidNotifyMode">Notification</label>
+                        <label for="selectMidNotifyMode">Notification</label>
                         <select
                           class="form-control"
-                          id="controlMidNotifyMode"
+                          id="selectMidNotifyMode"
                         ></select>
                       </div>
 
@@ -587,12 +575,12 @@
                     <div class="card-body">
                       <div class="form-group">
                         <label
-                          for="controlChunkBeforeAlertAudio"
+                          for="selectChunkBeforeAlertAudio"
                           class="text-info"
                         >
                           Chunk Before Audio
                           <a
-                            id="controlChunkBeforeAlertAudiotest"
+                            id="btnChunkBeforeAlertAudioTry"
                             role="button"
                             aria-expanded="false"
                           >
@@ -601,17 +589,17 @@
                         </label>
                         <select
                           class="form-control"
-                          id="controlChunkBeforeAlertAudio"
+                          id="selectChunkBeforeAlertAudio"
                         ></select>
                       </div>
 
                       <div class="form-group">
                         <label
-                          for="controlMidBeforeAlertAudio"
+                          for="selectMidBeforeAlertAudio"
                           class="text-info"
                         >
                           Mid Before Audio<a
-                            id="controlMidBeforeAlertAudiotest"
+                            id="btnMidBeforeAlertAudioTry"
                             role="button"
                             aria-expanded="false"
                           >
@@ -620,7 +608,7 @@
                         </label>
                         <select
                           class="form-control"
-                          id="controlMidBeforeAlertAudio"
+                          id="selectMidBeforeAlertAudio"
                         ></select>
                       </div>
                     </div>
@@ -671,11 +659,11 @@
                           <input
                             type="checkbox"
                             class="custom-control-input"
-                            id="controlAutoOffEnabled"
+                            id="checkboxAutoOff"
                           />
                           <label
                             class="custom-control-label"
-                            for="controlAutoOffEnabled"
+                            for="checkboxAutoOff"
                           >
                             <span class="badge badge-dark">Auto Turn Off</span>
                           </label>
@@ -684,8 +672,8 @@
                       <div class="form-group">
                         <div class="form-control">
                           <input type="time" id="controlAutoOffTime" />
-                          <input type="checkbox" id="controlNextDayEnabled" />
-                          <label for="controlNextDayEnabled"> Next day </label>
+                          <input type="checkbox" id="checkboxNextDayOff" />
+                          <label for="checkboxNextDayOff"> Next day </label>
                         </div>
                       </div>
 
@@ -694,21 +682,21 @@
                           <input
                             type="checkbox"
                             class="custom-control-input"
-                            id="controlTickerEnabled"
+                            id="checkboxTicker"
                           />
                           <label
                             class="custom-control-label"
-                            for="controlTickerEnabled"
+                            for="checkboxTicker"
                           >
                             <span class="badge badge-dark">Enable Ticker</span>
                           </label>
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="controlTickerDuration"
+                        <label for="selectTickerDuration"
                           >Ticker Duration</label
                         >
-                        <select class="form-control" id="controlTickerDuration">
+                        <select class="form-control" id="selectTickerDuration">
                           <option>1</option>
                           <option>3</option>
                           <option selected>6</option>
@@ -717,9 +705,9 @@
                       </div>
 
                       <div class="form-group">
-                        <label for="controlMidBeforeAlertAudio">
+                        <label for="selectMidBeforeAlertAudio">
                           Ticker Audio<a
-                            id="controlTickerAudiotest"
+                            id="btnTickerAudioTry"
                             role="button"
                             aria-expanded="false"
                           >
@@ -728,7 +716,7 @@
                         </label>
                         <select
                           class="form-control"
-                          id="controlTickerAudio"
+                          id="selectTickerAudio"
                         ></select>
                       </div>
                     </div>
@@ -817,7 +805,7 @@
       </div>
       <div class="row">
         <div class="col">
-          <div id="contentFrame" class="text-center" style="display: none">
+          <div id="containerWave" class="text-center" style="display: none">
             <iframe
               id="frameWave"
               src=""
