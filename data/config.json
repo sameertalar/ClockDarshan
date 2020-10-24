@@ -1,242 +1,129 @@
-[
-  {
-    "id": 1,
-    "chunk": 0,
-    "NaamText": "गणेशाय नमः",
-    "DisplayText": "",
-    "Instrument": "",
-    "NaamLang": "hi",
-    "NameEngText": "Sri Ganesha",
-    "NameLang": "eng",
-    "PopularText": "वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ",
-    "PopularLang": "hi",
-    "PrivateText": "The Begining",
-    "PrivateLang": "eng",
-    "MantraText": "श्री गणेशाय नमः",
-    "MantraLang": "hi",
-    "SubhashitText": "जिन खोजा तिन पाइया, गहरे पानी पैठ, मैं बपुरा बूडन डरा, रहा किनारे बैठ। - Kabir",
-    "SubhashitLang": "hi",
-    "QuoteText": "The journey of a thousand miles begins with a single step. Lao Tzu",
-    "QuoteLang": "eng"
-  },
-  {
-    "id": 2,
-    "chunk": 5,
-    "NaamText": "महालक्ष्मी नमो नमः",
-    "DisplayText": "",
-    "Instrument": "",
-    "NaamLang": "hi",
-    "NameEngText": "MahaLaxmi Devi",
-    "NameLang": "eng",
-    "PopularText": "Om श्री महालक्ष्म्यै नमः",
-    "PopularLang": "hi",
-    "PrivateText": "Prosperity",
-    "PrivateLang": "eng",
-    "MantraText": "Om श्री महालक्ष्म्यै नमः",
-    "MantraLang": "hi",
-    "SubhashitText": "अलसस्य कुतो विद्या, अविद्यस्य कुतो धनम् । अधनस्य कुतो मित्रं, अमित्रस्य कुतः सुखम्",
-    "SubhashitLang": "hi",
-    "QuoteText": "In truth you do not help others, because there are no others. (Nisargadatta)",
-    "QuoteLang": "eng"
-  },
-  {
-    "id": 3,
-    "chunk": 10,
-    "NaamText": "सरस्वती भगवती",
-    "DisplayText": "",
-    "Instrument": "",
-    "NaamLang": "hi",
-    "NameEngText": "Saraswati Devi",
-    "NameLang": "eng",
-    "PopularText": "स्वदेशे पूज्यते राजा, विद्वान सर्वत्र पूज्यते",
-    "PopularLang": "hi",
-    "PrivateText": "Knowledge",
-    "PrivateLang": "eng",
-    "MantraText": "स्वदेशे पूज्यते राजा, विद्वान सर्वत्र पूज्यते",
-    "MantraLang": "hi",
-    "SubhashitText": "ऐसी बानी बोलिए मन का आपा खोय। औरन को सीतल करे आपहु सीतल होय ।।―Kabir",
-    "SubhashitLang": "hi",
-    "QuoteText": "We all face death in the end. But on the way, be careful never to hurt a human heart! — Rumi",
-    "QuoteLang": "eng"
-  },
-  {
-    "id": 4,
-    "chunk": 15,
-    "NaamText": "जय गगनगिरी",
-    "DisplayText": "",
-    "Instrument": "Dholak taal",
-    "NaamLang": "hi",
-    "NameEngText": "Gagangiri Maharaj",
-    "NameLang": "eng",
-    "PopularText": "Om चैतन्य गगनगिरी नाथाय नमः",
-    "PopularLang": "hi",
-    "PrivateText": "Compassion",
-    "PrivateLang": "eng",
-    "MantraText": "Om चैतन्य गगनगिरी नाथाय नमः",
-    "MantraLang": "hi",
-    "SubhashitText": "कारुण्याचि ओतिव मुर्ति | ऐसा महाअवतार हा ||",
-    "SubhashitLang": "hi",
-    "QuoteText": "Let anything happen -- good or bad. But don't let yourself be submerged by what happens.(I am That)",
-    "QuoteLang": "eng"
-  },
-  {
-    "id": 5,
-    "chunk": 20,
-    "NaamText": "अन्नपूर्णे सदा पूर्णे",
-    "DisplayText": "",
-    "Instrument": "",
-    "NaamLang": "hi",
-    "NameEngText": "Nourishment",
-    "NameLang": "eng",
-    "PopularText": "हर्रि दाता हर्रि भोक्ता हर्रि अन्नं प्रजापति",
-    "PopularLang": "hi",
-    "PrivateText": "Nourishment",
-    "PrivateLang": "eng",
-    "MantraText": "अन्न. पूर्णे.. सदा पूर्णे",
-    "MantraLang": "hi",
-    "SubhashitText": "जैसा भोजन खाइये, तैसा ही मन होय । जैसा पानी पीजिये, तैसी वाणी होय ।। ―Kabir",
-    "SubhashitLang": "hi",
-    "QuoteText": "If we chew every morsel of our food, in that way we become grateful, and when you are grateful, you are happy. -Thich Nhat Hanh",
-    "QuoteLang": "eng"
-  },
-  {
-    "id": 6,
-    "chunk": 25,
-    "NaamText": "नर्मदे हर",
-    "DisplayText": "",
-    "Instrument": "Jalatarang",
-    "NaamLang": "hi",
-    "NameEngText": "Narmade Har",
-    "NameLang": "eng",
-    "PopularText": "नर्मदे हर हर नमामि देवी नर्मदे",
-    "PopularLang": "hi",
-    "PrivateText": "Element Water",
-    "PrivateLang": "eng",
-    "MantraText": "नर्मदे हर| नर्मदे हर हर",
-    "MantraLang": "hi",
-    "SubhashitText": "धीरे-धीरे रे मना, धीरे सब कुछ होय, माली सींचे सौ घड़ा, ॠतु आए फल होय। - Kabir",
-    "SubhashitLang": "hi",
-    "QuoteText": "Don’t grieve. Anything you lose comes round in another form. ―Rumi",
-    "QuoteLang": "eng"
-  },
-  {
-    "id": 7,
-    "chunk": 30,
-    "NaamText": "नमामि महिषासुरमर्दिनी",
-    "DisplayText": "",
-    "Instrument": "",
-    "NaamLang": "hi",
-    "NameEngText": "Durga Devi",
-    "NameLang": "eng",
-    "PopularText": "या देवी सर्वभुतेषु शक्तिरूपेण संस्थिता",
-    "PopularLang": "hi",
-    "PrivateText": "Fire Element",
-    "PrivateLang": "eng",
-    "MantraText": "महिषा सुरमर्दिनी..रम्य कपर्दिनी शैलसुते",
-    "MantraLang": "hi",
-    "SubhashitText": "कबीरा खड़ा बाज़ार में, मांगे सबकी खैर, ना काहू से दोस्ती,न काहू से बैर. ―Kabir",
-    "SubhashitLang": "hi",
-    "QuoteText": "Whatever pleases you, keeps you back. ( Nisargadatta)",
-    "QuoteLang": "eng"
-  },
-  {
-    "id": 8,
-    "chunk": 35,
-    "NaamText": "वीर हनुमान",
-    "DisplayText": "",
-    "Instrument": "",
-    "NaamLang": "hi",
-    "NameEngText": "Veer Hanuman",
-    "NameLang": "eng",
-    "PopularText": "जय हनुमान ज्ञान गुण सागर",
-    "PopularLang": "hi",
-    "PrivateText": "Element Air",
-    "PrivateLang": "eng",
-    "MantraText": "जय हनुमान ज्ञान गुण सागर",
-    "MantraLang": "hi",
-    "SubhashitText": "तेरी किस्मत का लिखा तुझसे कोई ले नहीं सकता, अगर उसकी रहमत हो तो तुझे वो भी मिल जायेगा, जो तेरा हो नहीं सकता\" ― Sai Baba",
-    "SubhashitLang": "hi",
-    "QuoteText": "Life is a manifestation of where your energy is going - Dhandapaani",
-    "QuoteLang": "eng"
-  },
-  {
-    "id": 9,
-    "chunk": 40,
-    "NaamText": "तथागत बुद्ध",
-    "DisplayText": "",
-    "Instrument": "Pipa",
-    "NaamLang": "hi",
-    "NameEngText": "Gautam Buddha",
-    "NameLang": "eng",
-    "PopularText": "अप्प दीपो भव",
-    "PopularLang": "hi",
-    "PrivateText": "Element Earth",
-    "PrivateLang": "eng",
-    "MantraText": "अप्प दीपो भव Buddha",
-    "MantraLang": "hi",
-    "SubhashitText": "निंदक नियरे राखिए, ऑंगन कुटी छवाय, बिन पानी, साबुन बिना, निर्मल करे सुभाय।",
-    "SubhashitLang": "hi",
-    "QuoteText": "Hatred does not cease through hatred at any time. Hatred ceases through love. This is eternal law.―Buddha",
-    "QuoteLang": "eng"
-  },
-  {
-    "id": 10,
-    "chunk": 45,
-    "NaamText": "जयजय शिव शंकर",
-    "DisplayText": "",
-    "Instrument": "Damaroo",
-    "NaamLang": "hi",
-    "NameEngText": "Shiv Shankar",
-    "NameLang": "eng",
-    "PopularText": "शिवोहंम शिवोहंम Om नमः शिवाय शिवाय नमः Om",
-    "PopularLang": "hi",
-    "PrivateText": "Frequency and Vibration",
-    "PrivateLang": "eng",
-    "MantraText": "Om नमः शिवाय| शिवाय नमः Om",
-    "MantraLang": "hi",
-    "SubhashitText": "माटी कहे कुम्हार से, तू क्या रोंदे मोहे । एक दिन ऐसा आएगा, मैं रोंदुंगी तोहे ।।― Kabir",
-    "SubhashitLang": "hi",
-    "QuoteText": "Seeing the false as the false, is meditation. This must go on all the time.(I am That)",
-    "QuoteLang": "eng"
-  },
-  {
-    "id": 11,
-    "chunk": 50,
-    "NaamText": "तत त्वम असि",
-    "DisplayText": "",
-    "Instrument": "",
-    "NaamLang": "hi",
-    "NameEngText": "Self Enquiry",
-    "NameLang": "eng",
-    "PopularText": "aham ब्रह्मास्मि ब्रह्मेण aham अस्ति",
-    "PopularLang": "hi",
-    "PrivateText": "Self Enquiry",
-    "PrivateLang": "eng",
-    "MantraText": "aham ब्रह्मास्मि | ब्रह्मेण aham अस्ति | तत् त्वम् असि",
-    "MantraLang": "hi",
-    "SubhashitText": "साईं इतना दीजिये, जा मे कुटुम समाय । मैं भी भूखा न रहूँ, साधु ना भूखा जाय ॥ ―Kabir",
-    "SubhashitLang": "hi",
-    "QuoteText": "The ‘I am’ is the door. Stay at it until it opens. (I am That)",
-    "QuoteLang": "eng"
-  },
-  {
-    "id": 12,
-    "chunk": 55,
-    "NaamText": "भज गोविंदम",
-    "DisplayText": "",
-    "Instrument": "Flute",
-    "NaamLang": "hi",
-    "NameEngText": "Lord Krisna",
-    "NameLang": "eng",
-    "PopularText": "श्री कृष्ण गोविंद हरे मुरारी",
-    "PopularLang": "hi",
-    "PrivateText": "Element Space",
-    "PrivateLang": "eng",
-    "MantraText": "श्री कृष्ण गोविंद हरे मुरारी",
-    "MantraLang": "hi",
-    "SubhashitText": "परिवर्तन संसार का नियम है|",
-    "SubhashitLang": "hi",
-    "QuoteText": "I used to create a world and populate it, now I don't do it anymore. (I am That)",
-    "QuoteLang": "eng"
-  }
-]
+{
+  "newConfig": [],
+
+  "chunkConfigs": [
+    {
+      "id": 1,
+      "chunk": 0,
+      "displayText": "गणेशाय नमः",
+      "displayIncogText": "The Begining"
+    },
+    {
+      "id": 2,
+      "chunk": 5,
+      "displayText": "महालक्ष्मी नमो नमः",
+      "displayIncogText": "Prosperity"
+    },
+    {
+      "id": 3,
+      "chunk": 10,
+      "displayText": "सरस्वती भगवती",
+      "displayIncogText": "Knowledge"
+    },
+    {
+      "id": 4,
+      "chunk": 15,
+      "displayText": "जय गगनगिरी",
+      "displayIncogText": "Compassion"
+    },
+    {
+      "id": 5,
+      "chunk": 20,
+      "displayText": "अन्नपूर्णे सदा पूर्णे",
+      "displayIncogText": "Nourishment"
+    },
+    {
+      "id": 6,
+      "chunk": 25,
+      "displayText": "नर्मदे हर",
+      "displayIncogText": "Element Water"
+    },
+    {
+      "id": 7,
+      "chunk": 30,
+      "displayText": "नमामि महिषासुरमर्दिनी",
+      "displayIncogText": "Fire Element"
+    },
+    {
+      "id": 8,
+      "chunk": 35,
+      "displayText": "वीर हनुमान",
+      "displayIncogText": "Element Air"
+    },
+    {
+      "id": 9,
+      "chunk": 40,
+      "displayText": "तथागत बुद्ध",
+      "displayIncogText": "Element Earth"
+    },
+    {
+      "id": 10,
+      "chunk": 45,
+      "displayText": "जयजय शिव शंकर",
+      "displayIncogText": "Frequency and Vibration"
+    },
+    {
+      "id": 11,
+      "chunk": 50,
+      "displayText": "रमण महर्षी",
+      "displayIncogText": "Self Enquiry"
+    },
+    {
+      "id": 12,
+      "chunk": 55,
+      "displayText": "भज गोविंदम",
+      "displayIncogText": "Element Space"
+    }
+  ],
+
+  "notifyModes": [
+    {
+      "value": "Silent",
+      "text": "🔕 Silent"
+    },
+    {
+      "value": "Audio_PopularSongs",
+      "text": "🎵 Popular Songs"
+    },
+    {
+      "value": "Audio_PopularTracks",
+      "text": "🎵 Popular Tracks"
+    },
+    {
+      "value": "Audio_IncognitoSongs",
+      "text": "🎵 Incognito Songs"
+    },
+    {
+      "value": "Audio_IncognitoTracks",
+      "text": "🎵 Incognito Tracks"
+    },
+    {
+      "value": "Text_Popular",
+      "text": "📝 Popular"
+    },
+    {
+      "value": "Text_IncognitoName",
+      "text": "📝 Incognito Name"
+    },
+    {
+      "value": "Text_Naam",
+      "text": "📝 Naam"
+    },
+    {
+      "value": "Text_NameEnglish",
+      "text": "📝 Name English"
+    },
+    {
+      "value": "Text_Quote",
+      "text": "📝 Quote"
+    },
+    {
+      "value": "Text_Subhashit",
+      "text": "📝 Subhashit"
+    },
+    {
+      "value": "Text_Mantra",
+      "text": "📝 Mantra"
+    }
+  ]
+}

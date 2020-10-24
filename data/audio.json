@@ -1,407 +1,256 @@
-[
-  {
-    "chunk": 0,
-    "fileTitle": "Pranamya Shirasa Devam",
-    "fileName": "00LS__Pranamya_Shirasa_Devam.mp3",
-    "forChunk": 1,
-    "forInt": 0,
-    "selChunk": 1,
-    "selInt": 0
-  },
-  {
-    "chunk": 0,
-    "fileTitle": "Vakratunda Mahakay Suresh",
-    "fileName": "00LS__Vakratunda_Mahakay_Suresh.mp3",
-    "forChunk": 1,
-    "forInt": 0,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 0,
-    "fileTitle": "Bal Ganesh Track",
-    "fileName": "00ST__Bal_Ganesh_Track.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": 0,
-    "selInt": 1
-  },
-  {
-    "chunk": 5,
-    "fileTitle": "Buddham Saranam Gacchami",
-    "fileName": "05LS__Buddham_Saranam_Gacchami.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 5,
-    "fileTitle": "Osho Nobel Dance Track",
-    "fileName": "05LT__Osho_Nobel_Dance_Track.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 1,
-    "selInt": 0
-  },
-  {
-    "chunk": 5,
-    "fileTitle": "Chinese Instrumental Track",
-    "fileName": "05ST__Chinese Instrumental_Track.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": null,
-    "selInt": 1
-  },
-  {
-    "chunk": 5,
-    "fileTitle": "Buddham Saranam Gacchami Track",
-    "fileName": "05LT__Buddham_Saranam_Gacchami_Track.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 10,
-    "fileTitle": "Gurumaharaj Guru Palkhi",
-    "fileName": "10LS__Gurumaharaj_Guru_Palkhi.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 10,
-    "fileTitle": "Om Chaitanya Gagangiri",
-    "fileName": "10LS__Om_Chaitanya_Gagangiri.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 10,
-    "fileTitle": "Swami Gagangiri Jai Sharaman",
-    "fileName": "10LS__Swami_Gagangiri_Jai_Sharaman.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 10,
-    "fileTitle": "Om Chaitanya Gagangiri",
-    "fileName": "10LV__Om_Chaitanya_Gagangiri.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 1,
-    "selInt": 0
-  },
-  {
-    "chunk": 10,
-    "fileTitle": "Om Shri Gurudev Hare Track",
-    "fileName": "10MT__Om_Shri_Gurudev_Hare_Track.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": 0,
-    "selInt": 1
-  },
-  {
-    "chunk": 15,
-    "fileTitle": "Mahalaxmi Stuti",
-    "fileName": "15LS__Mahalaxmi_Stuti.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 1,
-    "selInt": 0
-  },
-  {
-    "chunk": 15,
-    "fileTitle": "Mahalakshmi Stuti Track",
-    "fileName": "15ST__Mahalakshmi_Stuti_Track.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": 0,
-    "selInt": 1
-  },
-  {
-    "chunk": 20,
-    "fileTitle": "Har Har Narmade Har",
-    "fileName": "20LS__Har_Har_Narmade_Har.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 1,
-    "selInt": 0
-  },
-  {
-    "chunk": 20,
-    "fileTitle": "Namami Devi Narmade",
-    "fileName": "20LS__Namami_Devi_Narmade.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 20,
-    "fileTitle": "Narmade har tu gaye ja",
-    "fileName": "20LS__Narmade_har_tu_gaye_ja.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 20,
-    "fileTitle": "Namami Devi Narmade Track",
-    "fileName": "20LT__Namami_Devi_Narmade_Track.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": 0,
-    "selInt": 1
-  },
-  {
-    "chunk": 25,
-    "fileTitle": "Arunachala Siva",
-    "fileName": "25LS__Arunachala_Siva.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 1,
-    "selInt": 0
-  },
-  {
-    "chunk": 25,
-    "fileTitle": "Arunachala Siva Track",
-    "fileName": "25LT__Arunachala_Siva_Track.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": 0,
-    "selInt": 1
-  },
-  {
-    "chunk": 25,
-    "fileTitle": "Arunachala Siva Track2",
-    "fileName": "25ST__Arunachala_Siva_Track2.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 30,
-    "fileTitle": "Jai Saraswati Mata",
-    "fileName": "30LS__Jai_Saraswati_Mata.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 30,
-    "fileTitle": "Saraswathi Namasthubyam",
-    "fileName": "30LS__Saraswathi_Namasthubyam.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 1,
-    "selInt": 0
-  },
-  {
-    "chunk": 30,
-    "fileTitle": "Jai Saraswati Mata 2",
-    "fileName": "30MS__Jai_Saraswati_Mata_2.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 30,
-    "fileTitle": "Thaara Rang Mahal Mein Tipanya",
-    "fileName": "30LT__Thaara_Rang_Mahal_Mein_Tipanya.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": null,
-    "selInt": 1
-  },
-  {
-    "chunk": 35,
-    "fileTitle": "Aigiri Nandini",
-    "fileName": "35LS__Aigiri_Nandini_.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 1,
-    "selInt": 0
-  },
-  {
-    "chunk": 35,
-    "fileTitle": "Aigiri Nandini Track",
-    "fileName": "35LT__Aigiri_Nandini_Track.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": 0,
-    "selInt": 1
-  },
-  {
-    "chunk": 40,
-    "fileTitle": "Shankara Re Shankara Track",
-    "fileName": "40LM__Shankara_Re_Shankara_Track.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 40,
-    "fileTitle": "Jai Shiv Omkara Anup",
-    "fileName": "40LS__Jai_Shiv_Omkara_Anup.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 40,
-    "fileTitle": "Om Namah Shivay Kalpataru",
-    "fileName": "40LS__Om_Namah_Shivay_Kalpataru.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 1,
-    "selInt": 0
-  },
-  {
-    "chunk": 40,
-    "fileTitle": "Bal Ganesh Track",
-    "fileName": "40ST__Bal_Ganesh_Track.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": 0,
-    "selInt": 1
-  },
-  {
-    "chunk": 45,
-    "fileTitle": "Annapoorne Sada Poorne",
-    "fileName": "45LS__Annapoorne_Sada_Poorne.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 1,
-    "selInt": 1
-  },
-  {
-    "chunk": 45,
-    "fileTitle": "Shivaranjani Rachana Track",
-    "fileName": "45MT__Shivaranjani_Rachana_Track.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": null,
-    "selInt": 1
-  },
-  {
-    "chunk": 50,
-    "fileTitle": "Aarti Hanuman ki Track",
-    "fileName": "50LM__Aarti_Hanuman_ki_Track.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 50,
-    "fileTitle": "Aarti Hanuman ki Anup",
-    "fileName": "50LS__Aarti_Hanuman_ki_Anup.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 1,
-    "selInt": 0
-  },
-  {
-    "chunk": 50,
-    "fileTitle": "Hanuman Chalisa",
-    "fileName": "50LS__Hanuman_Chalisa.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 50,
-    "fileTitle": "Hanuman Chalisa Track2",
-    "fileName": "50LT__Hanuman_Chalisa_Track2.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": 0,
-    "selInt": 1
-  },
-  {
-    "chunk": 50,
-    "fileTitle": "Janni mai Ramdoot Track",
-    "fileName": "50LT__Janni_mai_Ramdoot_Track.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 50,
-    "fileTitle": "Hanuman Chalisa Track",
-    "fileName": "50ST__Hanuman_Chalisa_Track.mp3",
-    "forChunk": null,
-    "forInt": null,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 55,
-    "fileTitle": "Hare Krishna Amala",
-    "fileName": "55LS__Hare_Krishna_Amala.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 55,
-    "fileTitle": "Hare Krishna Badahari",
-    "fileName": "55LS__Hare_Krishna_Badahari.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 55,
-    "fileTitle": "Hey Govind Hey Gopal",
-    "fileName": "55LS__Hey_Govind_Hey_Gopal.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 55,
-    "fileTitle": "Jai radha madhav jai kunj",
-    "fileName": "55LS__Jai_radha_madhav_jai_kunj_.mp3",
-    "forChunk": 1,
-    "forInt": null,
-    "selChunk": 1,
-    "selInt": 0
-  },
-  {
-    "chunk": 55,
-    "fileTitle": "O Kanha",
-    "fileName": "55SS__O_Kanha.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": 0,
-    "selInt": 0
-  },
-  {
-    "chunk": 55,
-    "fileTitle": "Indian Flute Track",
-    "fileName": "55MT__Indian_Flute_Track.mp3",
-    "forChunk": null,
-    "forInt": 1,
-    "selChunk": null,
-    "selInt": 1
-  }
-]
+{
+  "profileAudios": [
+    {
+      "chunk": 0,
+      "Name": "Sri Ganesha",
+      "PopularSongs": "00LS__Pranamya_Shirasa_Devam.mp3",
+      "PopularSongsVol": 0.7,
+      "PopularTracks": "00ST__Bal_Ganesh_Track.mp3",
+      "PopularTracksVol": 0.7,
+      "PopularSongs2": "00LS__Vakratunda_Mahakay_Suresh.mp3",
+      "PopularSongs2Vol": 0.7,
+      "PopularTracks2": "99__NobelDanceTrack.mp3",
+      "PopularTracksVol2": 0.7,
+      "IncognitoSongs": "99__NobelDanceTrack.mp3",
+      "IncognitoSongsVol": 0.7,
+      "IncognitoTracks": "99__NobelDanceTrack.mp3",
+      "IncognitoTracksVol": 0.7
+    },
+    {
+      "chunk": 5,
+      "Name": "MahaLaxmi Devi",
+      "PopularSongs": "05LS__Mahalaxmi_Stuti.mp3",
+      "PopularSongsVol": 0.5,
+      "PopularTracks": "05ST__Mahalakshmi_Stuti_Track.mp3",
+      "PopularTracksVol": 0.7,
+      "PopularSongs2": "99__NobelDanceTrack.mp3",
+      "PopularSongs2Vol": 0.7,
+      "PopularTracks2": "99__NobelDanceTrack.mp3",
+      "PopularTracksVol2": 0.7,
+      "IncognitoSongs": "99__NobelDanceTrack.mp3",
+      "IncognitoSongsVol": 0.7,
+      "IncognitoTracks": "99__NobelDanceTrack.mp3",
+      "IncognitoTracksVol": 0.7
+    },
+    {
+      "chunk": 10,
+      "Name": "Saraswati Devi",
+      "PopularSongs": "10LS__Saraswathi_Namasthubyam.mp3",
+      "PopularSongsVol": 0.7,
+      "PopularTracks": "10LT__Thaara_Rang_Mahal_Mein_Tipanya.mp3",
+      "PopularTracksVol": 0.7,
+      "PopularSongs2": "10LS__Jai_Saraswati_Mata.mp3",
+      "PopularSongs2Vol": 0.7,
+      "PopularTracks2": "99__NobelDanceTrack.mp3",
+      "PopularTracksVol2": 0.7,
+      "IncognitoSongs": "99__NobelDanceTrack.mp3",
+      "IncognitoSongsVol": 0.7,
+      "IncognitoTracks": "99__NobelDanceTrack.mp3",
+      "IncognitoTracksVol": 0.7
+    },
+    {
+      "chunk": 15,
+      "Name": "Gagangiri Maharaj",
+      "PopularSongs": "15LV__Om_Chaitanya_Gagangiri.mp3",
+      "PopularSongsVol": 0.7,
+      "PopularTracks": "15MT__Om_Shri_Gurudev_Hare_Track.mp3",
+      "PopularTracksVol": 0.7,
+      "PopularSongs2": "15LS__Swami_Gagangiri_Jai_Sharaman.mp3",
+      "PopularSongs2Vol": 0.7,
+      "PopularTracks2": "99__NobelDanceTrack.mp3",
+      "PopularTracksVol2": 0.7,
+      "IncognitoSongs": "99__NobelDanceTrack.mp3",
+      "IncognitoSongsVol": 0.7,
+      "IncognitoTracks": "99__NobelDanceTrack.mp3",
+      "IncognitoTracksVol": 0.7
+    },
+    {
+      "chunk": 20,
+      "Name": "Annapurna",
+      "PopularSongs": "20LS__Annapoorne_Sada_Poorne.mp3",
+      "PopularSongsVol": 0.5,
+      "PopularTracks": "20MT__Shivaranjani_Rachana_Track.mp3",
+      "PopularTracksVol": 0.7,
+      "PopularSongs2": "99__NobelDanceTrack.mp3",
+      "PopularSongs2Vol": 0.7,
+      "PopularTracks2": "99__NobelDanceTrack.mp3",
+      "PopularTracksVol2": 0.7,
+      "IncognitoSongs": "99__NobelDanceTrack.mp3",
+      "IncognitoSongsVol": 0.7,
+      "IncognitoTracks": "99__NobelDanceTrack.mp3",
+      "IncognitoTracksVol": 0.7
+    },
+    {
+      "chunk": 25,
+      "Name": "Narmade Har",
+      "PopularSongs": "25LS__Har_Har_Narmade_Har.mp3",
+      "PopularSongsVol": 0.9,
+      "PopularTracks": "25LT__Namami_Devi_Narmade_Track.mp3",
+      "PopularTracksVol": 0.7,
+      "PopularSongs2": "99__NobelDanceTrack.mp3",
+      "PopularSongs2Vol": 0.7,
+      "PopularTracks2": "99__NobelDanceTrack.mp3",
+      "PopularTracksVol2": 0.7,
+      "IncognitoSongs": "99__NobelDanceTrack.mp3",
+      "IncognitoSongsVol": 0.7,
+      "IncognitoTracks": "99__NobelDanceTrack.mp3",
+      "IncognitoTracksVol": 0.7
+    },
+    {
+      "chunk": 30,
+      "Name": "Durga Devi",
+      "PopularSongs": "30LS__Aigiri_Nandini.mp3",
+      "PopularSongsVol": 0.7,
+      "PopularTracks": "30LT__Aigiri_Nandini_Track.mp3",
+      "PopularTracksVol": 0.7,
+      "PopularSongs2": "99__NobelDanceTrack.mp3",
+      "PopularSongs2Vol": 0.7,
+      "PopularTracks2": "99__NobelDanceTrack.mp3",
+      "PopularTracksVol2": 0.7,
+      "IncognitoSongs": "99__NobelDanceTrack.mp3",
+      "IncognitoSongsVol": 0.7,
+      "IncognitoTracks": "99__NobelDanceTrack.mp3",
+      "IncognitoTracksVol": 0.7
+    },
+    {
+      "chunk": 35,
+      "Name": "Veer Hanuman",
+      "PopularSongs": "35LS__Aarti_Hanuman_ki_Anup.mp3",
+      "PopularSongsVol": 0.7,
+      "PopularTracks": "35LT__Hanuman_Chalisa_Track2.mp3",
+      "PopularTracksVol": 0.7,
+      "PopularSongs2": "99__NobelDanceTrack.mp3",
+      "PopularSongs2Vol": 0.7,
+      "PopularTracks2": "35LT__Janni_mai_Ramdoot_Track.mp3",
+      "PopularTracksVol2": 0.7,
+      "IncognitoSongs": "99__NobelDanceTrack.mp3",
+      "IncognitoSongsVol": 0.7,
+      "IncognitoTracks": "99__NobelDanceTrack.mp3",
+      "IncognitoTracksVol": 0.7
+    },
+    {
+      "chunk": 40,
+      "Name": "Gautam Buddha",
+      "PopularSongs": "40LT__Osho_Nobel_Dance_Track.mp3",
+      "PopularSongsVol": 1,
+      "PopularTracks": "40ST__ChineseInstrumental_Track.mp3",
+      "PopularTracksVol": 0.7,
+      "PopularSongs2": "40LS__Buddham_Saranam_Gacchami.mp3",
+      "PopularSongs2Vol": 0.7,
+      "PopularTracks2": "40LT__Buddham_Saranam_Gacchami_Track.mp3",
+      "PopularTracksVol2": 0.7,
+      "IncognitoSongs": "99__NobelDanceTrack.mp3",
+      "IncognitoSongsVol": 0.7,
+      "IncognitoTracks": "99__NobelDanceTrack.mp3",
+      "IncognitoTracksVol": 0.7
+    },
+    {
+      "chunk": 45,
+      "Name": "Shiv Shankar",
+      "PopularSongs": "45LS__Om_Namah_Shivay_Kalpataru.mp3",
+      "PopularSongsVol": 0.7,
+      "PopularTracks": "45ST__Bal_Ganesh_Track.mp3",
+      "PopularTracksVol": 0.7,
+      "PopularSongs2": "99__NobelDanceTrack.mp3",
+      "PopularSongs2Vol": 0.7,
+      "PopularTracks2": "99__NobelDanceTrack.mp3",
+      "PopularTracksVol2": 0.7,
+      "IncognitoSongs": "99__NobelDanceTrack.mp3",
+      "IncognitoSongsVol": 0.7,
+      "IncognitoTracks": "99__NobelDanceTrack.mp3",
+      "IncognitoTracksVol": 0.7
+    },
+    {
+      "chunk": 50,
+      "Name": "Ramana Maharshi",
+      "PopularSongs": "50LS__Arunachala_Siva.mp3",
+      "PopularSongsVol": 0.7,
+      "PopularTracks": "50LT__Arunachala_Siva_Track.mp3",
+      "PopularTracksVol": 0.7,
+      "PopularSongs2": "99__NobelDanceTrack.mp3",
+      "PopularSongs2Vol": 0.7,
+      "PopularTracks2": "50ST__Arunachala_Siva_Track2.mp3",
+      "PopularTracksVol2": 0.7,
+      "IncognitoSongs": "99__NobelDanceTrack.mp3",
+      "IncognitoSongsVol": 0.7,
+      "IncognitoTracks": "99__NobelDanceTrack.mp3",
+      "IncognitoTracksVol": 0.7
+    },
+    {
+      "chunk": 55,
+      "Name": "Lord Krisna",
+      "PopularSongs": "55LS__Jai_radha_madhav_jai_kunj_.mp3",
+      "PopularSongsVol": 0.7,
+      "PopularTracks": "55MT__Indian_Flute_Track.mp3",
+      "PopularTracksVol": 0.7,
+      "PopularSongs2": "55LS__Hare_Krishna_Badahari.mp3",
+      "PopularSongs2Vol": 0.7,
+      "PopularTracks2": "55SS__O_Kanha.mp3",
+      "PopularTracksVol2": 0.7,
+      "IncognitoSongs": "99__NobelDanceTrack.mp3",
+      "IncognitoSongsVol": 0.7,
+      "IncognitoTracks": "99__NobelDanceTrack.mp3",
+      "IncognitoTracksVol": 0.7
+    }
+  ],
+
+  "alerts": [
+    {
+      "fileName": "alert_Ting1.mp3",
+      "id": 1,
+      "text": "Ting1"
+    },
+    {
+      "fileName": "alert_Tuk_Tuk.mp3",
+      "id": 2,
+      "text": "Tuk Tuk"
+    },
+    {
+      "fileName": "alert_Google_Event.mp3",
+      "id": 3,
+      "text": "Google Event"
+    },
+    {
+      "fileName": "alert_Attension_Seeker.wav",
+      "id": 4,
+      "text": "Attension Seeker.wav"
+    },
+    {
+      "fileName": "alert_China_Sameer.mp3",
+      "id": 5,
+      "text": "China Sameer"
+    },
+    {
+      "fileName": "alert_Indian_Flute_Chunk.mp3",
+      "id": 6,
+      "text": "Indian Flute Chunk"
+    }
+  ],
+  "tickers": [
+    {
+      "fileName": "ticking_Clock_1.mp3",
+      "id": 1,
+      "text": "Clock 1"
+    },
+    {
+      "fileName": "ticking_Clock_2.mp3",
+      "id": 2,
+      "text": "Clock 2"
+    },
+    {
+      "fileName": "ticking_Clock_Outside_1.mp3",
+      "id": 3,
+      "text": "Clock Outside 1"
+    },
+    {
+      "fileName": "ticking_Water_Bloop.mp3",
+      "id": 4,
+      "text": "Water Bloop"
+    },
+    {
+      "fileName": "ticking_Water_Two_Drops.mp3",
+      "id": 5,
+      "text": "Water Two Drops"
+    }
+  ]
+}

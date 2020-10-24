@@ -223,8 +223,6 @@
             &nbsp;&nbsp;
             <a id="speakIntervxalhBtn2" role="button" aria-expanded="false">
             </a>
-            &nbsp;&nbsp;
-            <a role="button" aria-expanded="false" id="batteryLxoadBtn"> </a>
           </div>
           <!-- Buttons 2nd row end-->
         </div>
@@ -513,7 +511,7 @@
                       </div>
                       <div class="form-group">
                         <div class="bg-warning text-center">Chunk</div>
-                        <div class="form-check">
+                        <div class="form-check form-control">
                           <input
                             type="checkbox"
                             class="form-check-input"
@@ -527,9 +525,9 @@
                         </div>
                         <label for="controlTimeAlertMode">Time Alert</label>
                         <select class="form-control" id="controlTimeAlertMode">
-                          <option>Silent</option>
-                          <option selected>Audio</option>
-                          <option value="Text">Text-2-Speech</option>
+                          <option value="Silent" selected>🔕 Silent</option>
+                          <option value="Audio">🎵 Audio</option>
+                          <option value="Text">📝 Text-2-Speech</option>
                         </select>
                         <label for="controlChunkNotifyMode"
                           >Notification
@@ -537,15 +535,11 @@
                         <select
                           class="form-control"
                           id="controlChunkNotifyMode"
-                        >
-                          <option>Silent</option>
-                          <option>Audio</option>
-                          <option selected value="Text">Text-2-Speech</option>
-                        </select>
+                        ></select>
                       </div>
                       <div class="form-group">
                         <div class="bg-warning text-center">Mid</div>
-                        <div class="form-check">
+                        <div class="form-check form-control">
                           <input
                             type="checkbox"
                             class="form-check-input"
@@ -558,43 +552,17 @@
                           >
                         </div>
                         <label for="controlMidNotifyMode">Notification</label>
-                        <select class="form-control" id="controlMidNotifyMode">
-                          <option>Silent</option>
-                          <option selected>Audio</option>
-                          <option value="Text">Text-2-Speech</option>
-                        </select>
+                        <select
+                          class="form-control"
+                          id="controlMidNotifyMode"
+                        ></select>
                       </div>
 
                       <div class="form-group"></div>
                     </div>
                   </div>
                 </div>
-                <!-- Card Volume-->
-                <div class="card">
-                  <div class="card-header" id="heading5">
-                    <h2 class="mb-0">
-                      <button
-                        class="btn btn-link collapsed"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#collapse5"
-                        aria-expanded="false"
-                        aria-controls="collapseThree"
-                      >
-                        Misc
-                      </button>
-                    </h2>
-                  </div>
-                  <div
-                    id="collapse5"
-                    class="collapse"
-                    aria-labelledby="heading5"
-                    data-parent="#accordionExample"
-                  >
-                    <div class="card-body"></div>
-                  </div>
-                </div>
-                <!--Card Volume end -->
+
                 <div class="card">
                   <div class="card-header" id="headingTwo">
                     <h2 class="mb-0">
@@ -618,262 +586,6 @@
                   >
                     <div class="card-body">
                       <div class="form-group">
-                        <label for="controlChunkAudio" class="text-info"
-                          >Chunk Audio</label
-                        >
-                        <ol>
-                          <li>
-                            <a
-                              id="controlAudioChunk00test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎵
-                            </a>
-                            <select id="controlAudioChunk00"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioChunk05test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎵
-                            </a>
-                            <select id="controlAudioChunk05"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioChunk10test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎵
-                            </a>
-                            <select id="controlAudioChunk10"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioChunk15test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎵
-                            </a>
-                            <select id="controlAudioChunk15"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioChunk20test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎵
-                            </a>
-                            <select id="controlAudioChunk20"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioChunk25test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎵
-                            </a>
-                            <select id="controlAudioChunk25"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioChunk30test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎵
-                            </a>
-                            <select id="controlAudioChunk30"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioChunk35test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎵
-                            </a>
-                            <select id="controlAudioChunk35"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioChunk40test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎵
-                            </a>
-                            <select id="controlAudioChunk40"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioChunk45test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎵
-                            </a>
-                            <select id="controlAudioChunk45"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioChunk50test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎵
-                            </a>
-                            <select id="controlAudioChunk50"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioChunk55test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎵
-                            </a>
-                            <select id="controlAudioChunk55"></select>
-                          </li>
-                        </ol>
-                      </div>
-                      <div class="form-group">
-                        <label for="controlMidAudio" class="text-info"
-                          >Mid Audio</label
-                        >
-
-                        <ol>
-                          <li>
-                            <a
-                              id="controlAudioMid00test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎧
-                            </a>
-                            <select id="controlAudioMid00"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioMid05test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎧
-                            </a>
-                            <select id="controlAudioMid05"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioMid10test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎧
-                            </a>
-                            <select id="controlAudioMid10"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioMid15test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎧
-                            </a>
-                            <select id="controlAudioMid15"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioMid20test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎧
-                            </a>
-                            <select id="controlAudioMid20"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioMid25test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎧
-                            </a>
-                            <select id="controlAudioMid25"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioMid30test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎧
-                            </a>
-                            <select id="controlAudioMid30"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioMid35test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎧
-                            </a>
-                            <select id="controlAudioMid35"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioMid40test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎧
-                            </a>
-                            <select id="controlAudioMid40"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioMid45test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎧
-                            </a>
-                            <select id="controlAudioMid45"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioMid50test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎧
-                            </a>
-                            <select id="controlAudioMid50"></select>
-                          </li>
-                          <li>
-                            <a
-                              id="controlAudioMid55test"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🎧
-                            </a>
-                            <select id="controlAudioMid55"></select>
-                          </li>
-                        </ol>
-                      </div>
-
-                      <div class="form-group">
                         <label
                           for="controlChunkBeforeAlertAudio"
                           class="text-info"
@@ -890,24 +602,7 @@
                         <select
                           class="form-control"
                           id="controlChunkBeforeAlertAudio"
-                        >
-                          <option value="None" selected>--None--</option>
-                          <option value="alert_Ting1.mp3">Ting 1</option>
-                          <option value="alert_tuk_tuk.mp3">Tuk Tuk</option>
-                          <option value="alert_Apple_Message_tone.mp3">
-                            Apple Message
-                          </option>
-                          <option value="alert_Google_Event.mp3">
-                            Google Event
-                          </option>
-                          <option value="alert_Attension_Seeker.wav">
-                            Attension Seeker
-                          </option>
-                          <option value="alert_China_Sameer.mp3">China</option>
-                          <option value="alert_Indian_Flute_Chunk.mp3">
-                            Flute
-                          </option>
-                        </select>
+                        ></select>
                       </div>
 
                       <div class="form-group">
@@ -926,85 +621,7 @@
                         <select
                           class="form-control"
                           id="controlMidBeforeAlertAudio"
-                        >
-                          <option value="None" selected>--None--</option>
-                          <option value="alert_Ting1.mp3">Ting 1</option>
-                          <option value="alert_tuk_tuk.mp3">Tuk Tuk</option>
-                          <option value="alert_Apple_Message_tone.mp3">
-                            Apple Message
-                          </option>
-                          <option value="alert_Google_Event.mp3">
-                            Google Event
-                          </option>
-                          <option value="alert_Attension_Seeker.wav">
-                            Attension Seeker
-                          </option>
-                          <option value="alert_China_Sameer.mp3">China</option>
-                          <option value="alert_Indian_Flute_Chunk.mp3">
-                            Flute
-                          </option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card">
-                  <div class="card-header" id="headingThree">
-                    <h2 class="mb-0">
-                      <button
-                        class="btn btn-link btn-block text-left collapsed"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#collapseThree"
-                        aria-expanded="false"
-                        aria-controls="collapseThree"
-                      >
-                        Text-2-Speech
-                      </button>
-                    </h2>
-                  </div>
-                  <div
-                    id="collapseThree"
-                    class="collapse"
-                    aria-labelledby="headingThree"
-                    data-parent="#accordionExample"
-                  >
-                    <div class="card-body">
-                      <div class="form-group">
-                        <label for="controlChunkTextSpeakMode" class="text-info"
-                          >Chunk Mode</label
-                        >
-                        <select
-                          class="form-control"
-                          id="controlChunkTextSpeakMode"
-                        >
-                          <option>None</option>
-                          <option>Private</option>
-                          <option>Naam</option>
-                          <option>NameEng</option>
-                          <option selected>Popular</option>
-                          <option>Quote</option>
-                          <option>Subhashit</option>
-                          <option>Mantra</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label for="controlMidTextSpeakMode" class="text-info">
-                          Mid Mode
-                        </label>
-                        <select
-                          class="form-control"
-                          id="controlMidTextSpeakMode"
-                        >
-                          <option>Private</option>
-                          <option>Naam</option>
-                          <option>NameEng</option>
-                          <option selected>Popular</option>
-                          <option>Quote</option>
-                          <option>Subhashit</option>
-                          <option>Mantra</option>
-                        </select>
+                        ></select>
                       </div>
                     </div>
                   </div>
@@ -1035,6 +652,21 @@
                   >
                     <div class="card-body">
                       <div class="form-group">
+                        <button
+                          id="btnGenerateQueryString"
+                          type="button"
+                          class="btn btn-sm btn-link"
+                        >
+                          Generate Query String
+                        </button>
+                        <a
+                          id="linkQueryString"
+                          for="btnGenerateQueryString"
+                          href="#"
+                        >
+                        </a>
+                      </div>
+                      <div class="form-group">
                         <div class="custom-control custom-switch">
                           <input
                             type="checkbox"
@@ -1055,21 +687,6 @@
                           <input type="checkbox" id="controlNextDayEnabled" />
                           <label for="controlNextDayEnabled"> Next day </label>
                         </div>
-                      </div>
-                      <div class="form-group">
-                        <button
-                          id="btnGenerateQueryString"
-                          type="button"
-                          class="btn btn-sm btn-link"
-                        >
-                          Generate Query String
-                        </button>
-                        <a
-                          id="linkQueryString"
-                          for="btnGenerateQueryString"
-                          href="#"
-                        >
-                        </a>
                       </div>
 
                       <div class="form-group">
@@ -1109,26 +726,41 @@
                             🔔
                           </a>
                         </label>
-                        <select class="form-control" id="controlTickerAudio">
-                          <option selected value="ticking_Water_Two_Drops.mp3">
-                            Water Two Drops
-                          </option>
-                          <option value="ticking_Water_Bloop.mp3">
-                            Water_Bloop
-                          </option>
-                          <option value="ticking_Clock_1.mp3">Clock 1</option>
-                          <option value="ticking_Clock_2.mp3">Clock 2</option>
-                          <option value="ticking_Clock_Outside_1.mp3">
-                            Clock 3 Outside
-                          </option>
-                          <option value="alert_Ting1.mp3">Ting 1</option>
-                          <option value="alert_tuk_tuk.mp3">Tuk Tuk</option>
-                        </select>
+                        <select
+                          class="form-control"
+                          id="controlTickerAudio"
+                        ></select>
                       </div>
                     </div>
                   </div>
                 </div>
                 <!-- Card 4 end -->
+                <!-- Card Misc-->
+                <div class="card">
+                  <div class="card-header" id="heading5">
+                    <h2 class="mb-0">
+                      <button
+                        class="btn btn-link collapsed"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapse5"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        Misc
+                      </button>
+                    </h2>
+                  </div>
+                  <div
+                    id="collapse5"
+                    class="collapse"
+                    aria-labelledby="heading5"
+                    data-parent="#accordionExample"
+                  >
+                    <div class="card-body"></div>
+                  </div>
+                </div>
+                <!--Card Misc end -->
               </div>
               <!--  Settings end-->
             </div>
