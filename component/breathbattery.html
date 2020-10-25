@@ -137,8 +137,8 @@
                
                
               
-                console.log("***** CYCLE:" + (noOfBreaths + 1) + " *******" + " Diff:" + TimeDiffInSec(lastCycleTime) + " *****");
-                console.log("1. [Go Up:" + timeInhale + "]......." + GetTime() + " Diff:" + TimeDiffInSec(lastStepTime));
+               // console.log("***** CYCLE:" + (noOfBreaths + 1) + " *******" + " Diff:" + TimeDiffInSec(lastCycleTime) + " *****");
+                //console.log("1. [Go Up:" + timeInhale + "]......." + GetTime() + " Diff:" + TimeDiffInSec(lastStepTime));
              
                 //DisplayTitle();
                 noOfBreaths++;
@@ -155,7 +155,7 @@
 
 
             } else {
-                console.log("3. [Go Down:" + timeExhale + "]....." + GetTime() + " Diff:" + TimeDiffInSec(lastStepTime));
+               // console.log("3. [Go Down:" + timeExhale + "]....." + GetTime() + " Diff:" + TimeDiffInSec(lastStepTime));
             }
 
             lastStepTime = new Date();
@@ -206,12 +206,12 @@
 
                     if (backwards) {
                         setTimeout(move, timeHoldE * 1000);
-                        console.log("4. [Hold Out:" + timeHoldI + "]..." + GetTime() + " Diff:" + TimeDiffInSec(lastStepTime));
+                        //console.log("4. [Hold Out:" + timeHoldI + "]..." + GetTime() + " Diff:" + TimeDiffInSec(lastStepTime));
                         lastStepTime = new Date();
 
                     } else {
                         setTimeout(move, timeHoldI * 1000);
-                        console.log("2. [Hold In:" + timeHoldI + "]....." + GetTime() + " Diff:" + TimeDiffInSec(lastStepTime));
+                        //console.log("2. [Hold In:" + timeHoldI + "]....." + GetTime() + " Diff:" + TimeDiffInSec(lastStepTime));
                         lastStepTime = new Date();
                        // countDownCounter = timeHoldI;
                        // funCountDown = window.setInterval(displayCountDown, 1000);
