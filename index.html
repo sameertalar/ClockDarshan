@@ -453,81 +453,111 @@
                         ></select>
                       </div>
                       <div>
-                        <div class="form-group" style="padding-left: 30px">
-                          <div class="custom-control custom-switch">
-                            <input
-                              type="checkbox"
-                              class="custom-control-input"
-                              id="checkboxPopupAlert"
-                            />
-                            <label
-                              class="custom-control-label"
-                              for="checkboxPopupAlert"
-                            >
-                              <span class="badge badge-secondary"
-                                >Popup Alert</span
-                              >
-                            </label>
-                          </div>
-                          <div class="custom-control custom-switch">
-                            <input
-                              type="checkbox"
-                              class="custom-control-input"
-                              id="checkboxVibration"
-                            />
-                            <label
-                              class="custom-control-label"
-                              for="checkboxVibration"
-                            >
-                              <span class="badge badge-secondary">Vibrate</span>
-                            </label>
-                          </div>
-                          <div class="custom-control custom-switch">
-                            <input
-                              type="checkbox"
-                              class="custom-control-input"
-                              id="checkboxQuarterMode"
-                            />
-                            <label
-                              class="custom-control-label"
-                              for="checkboxQuarterMode"
-                            >
-                              <span class="badge badge-secondary"
-                                >Quarter Mode</span
-                              >
-                            </label>
+                        <div class="form-group" style="padding-top: 30px">
+                          <div class="form-row">
+                            <div class="col">
+                              <div class="custom-control custom-switch">
+                                <input
+                                  type="checkbox"
+                                  class="custom-control-input"
+                                  id="checkboxPopupAlert"
+                                />
+                                <label
+                                  class="custom-control-label"
+                                  for="checkboxPopupAlert"
+                                >
+                                  <span class="badge badge-secondary"
+                                    >Popup Alert</span
+                                  >
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="custom-control custom-switch">
+                                <input
+                                  type="checkbox"
+                                  class="custom-control-input"
+                                  id="checkboxVibration"
+                                />
+                                <label
+                                  class="custom-control-label"
+                                  for="checkboxVibration"
+                                >
+                                  <span class="badge badge-secondary"
+                                    >Vibrate</span
+                                  >
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="custom-control custom-switch">
+                                <input
+                                  type="checkbox"
+                                  class="custom-control-input"
+                                  id="checkboxQuarterMode"
+                                />
+                                <label
+                                  class="custom-control-label"
+                                  for="checkboxQuarterMode"
+                                >
+                                  <span class="badge badge-secondary"
+                                    >Quarter Mode</span
+                                  >
+                                </label>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div class="form-group">
-                        <div class="bg-warning text-center">Chunk</div>
-                        <div class="form-check form-control">
-                          <input
-                            type="checkbox"
-                            class="form-check-input"
-                            id="checkboxChunkBeforeAlert"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="checkboxChunkBeforeAlert"
-                            >Before Alert</label
-                          >
+                        <div class="bg-warning text-center form-control">
+                          Chunk
                         </div>
-                        <label for="selectTimeAlertMode">Time Alert</label>
-                        <select class="form-control" id="selectTimeAlertMode">
-                          <option value="Silent" selected>🔕 Silent</option>
-                          <option value="Audio">🎵 Audio</option>
-                          <option value="Text">📝 Text-2-Speech</option>
-                        </select>
-                        <label for="selectChunkNotifyMode">Notification </label>
-                        <select
-                          class="form-control"
-                          id="selectChunkNotifyMode"
-                        ></select>
                       </div>
                       <div class="form-group">
-                        <div class="bg-warning text-center">Mid</div>
-                        <div class="form-check form-control">
+                        <div class="form-row">
+                          <div class="col text-center">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              id="checkboxChunkBeforeAlert"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="checkboxChunkBeforeAlert"
+                              >Before Alert</label
+                            >
+                          </div>
+                          <div class="col">
+                            <label for="selectTimeAlertMode">Time Alert</label>
+                            <select
+                              class="form-control"
+                              id="selectTimeAlertMode"
+                            >
+                              <option value="Silent" selected>🔕 Silent</option>
+                              <option value="Audio">🎵 Audio</option>
+                              <option value="Text">📝 Text-2-Speech</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="text-center">
+                          <label for="selectChunkNotifyMode"
+                            >Notification
+                          </label>
+                          <select
+                            class="form-control"
+                            id="selectChunkNotifyMode"
+                          ></select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="bg-warning text-center form-control">
+                          Mid
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-check text-center">
                           <input
                             type="checkbox"
                             class="form-check-input"
@@ -539,11 +569,13 @@
                             >Before Alert</label
                           >
                         </div>
-                        <label for="selectMidNotifyMode">Notification</label>
-                        <select
-                          class="form-control"
-                          id="selectMidNotifyMode"
-                        ></select>
+                        <div class="text-center">
+                          <label for="selectMidNotifyMode">Notification</label>
+                          <select
+                            class="form-control"
+                            id="selectMidNotifyMode"
+                          ></select>
+                        </div>
                       </div>
 
                       <div class="form-group"></div>
