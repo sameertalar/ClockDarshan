@@ -7,14 +7,12 @@
     "vibration": 0,
     "quartermode": 0,
     "ischunkbeforealert": 0,
-    "chunkbeforealertaudio": "None",
+    "chunkbeforealertaudio": 3,
     "timealertmode": "Silent",
     "chunknotifymode": "Silent",
-    "chunktextmode": "Private",
     "ismidbeforealert": 0,
-    "midbeforealertaudio": "None",
-    "midnotifymode": "Silent",
-    "midtextmode": "Private"
+    "midbeforealertaudio": 1,
+    "midnotifymode": "Silent"
   },
   {
     "profileValue": "OfficeMeeting",
@@ -24,14 +22,12 @@
     "vibration": 0,
     "quartermode": 0,
     "ischunkbeforealert": 0,
-    "chunkbeforealertaudio": "None",
+    "chunkbeforealertaudio": 3,
     "timealertmode": "Silent",
     "chunknotifymode": "Silent",
-    "chunktextmode": "Private",
     "ismidbeforealert": 0,
-    "midbeforealertaudio": "None",
-    "midnotifymode": "Silent",
-    "midtextmode": "Private"
+    "midbeforealertaudio": 1,
+    "midnotifymode": "Silent"
   },
   {
     "profileValue": "OfficeWorking",
@@ -41,48 +37,12 @@
     "vibration": 0,
     "quartermode": 0,
     "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": "alert_Google_Event.mp3",
+    "chunkbeforealertaudio": 3,
     "timealertmode": "Text",
-    "chunknotifymode": "Audio",
-    "chunktextmode": "Private",
+    "chunknotifymode": "Audio_PopularSongs",
     "ismidbeforealert": 1,
-    "midbeforealertaudio": "alert_Ting1.mp3",
-    "midnotifymode": "Text",
-    "midtextmode": "Popular"
-  },
-  {
-    "profileValue": "SelfIndoor",
-    "displayText": "📱 Self Indoor",
-    "selected": 0,
-    "popup": 0,
-    "vibration": 1,
-    "quartermode": 0,
-    "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": "alert_Google_Event.mp3",
-    "timealertmode": "Audio",
-    "chunknotifymode": "Audio",
-    "chunktextmode": "Private",
-    "ismidbeforealert": 1,
-    "midbeforealertaudio": "alert_Ting1.mp3",
-    "midnotifymode": "Audio",
-    "midtextmode": "Private"
-  },
-  {
-    "profileValue": "SelfOutdoor",
-    "displayText": "📱 Self Outdoor",
-    "selected": 0,
-    "popup": 0,
-    "vibration": 1,
-    "quartermode": 0,
-    "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": "alert_Google_Event.mp3",
-    "timealertmode": "Audio",
-    "chunknotifymode": "Silent",
-    "chunktextmode": "Private",
-    "ismidbeforealert": 1,
-    "midbeforealertaudio": "alert_Ting1.mp3",
-    "midnotifymode": "Silent",
-    "midtextmode": "Private"
+    "midbeforealertaudio": 1,
+    "midnotifymode": "Text_Popular"
   },
   {
     "profileValue": "HomeComputer",
@@ -92,14 +52,42 @@
     "vibration": 0,
     "quartermode": 0,
     "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": "alert_Google_Event.mp3",
+    "chunkbeforealertaudio": 3,
     "timealertmode": "Text",
-    "chunknotifymode": "Text",
-    "chunktextmode": "Popular",
+    "chunknotifymode": "Audio_PopularTracks",
     "ismidbeforealert": 1,
-    "midbeforealertaudio": "alert_Ting1.mp3",
-    "midnotifymode": "Text",
-    "midtextmode": "Naam"
+    "midbeforealertaudio": 1,
+    "midnotifymode": "Text_Popular"
+  },
+  {
+    "profileValue": "SelfIndoor",
+    "displayText": "📱 Self Indoor",
+    "selected": 0,
+    "popup": 0,
+    "vibration": 1,
+    "quartermode": 0,
+    "ischunkbeforealert": 1,
+    "chunkbeforealertaudio": 3,
+    "timealertmode": "Audio",
+    "chunknotifymode": "Audio_PopularSongs",
+    "ismidbeforealert": 1,
+    "midbeforealertaudio": 1,
+    "midnotifymode": "Text_Popular"
+  },
+  {
+    "profileValue": "SelfOutdoor",
+    "displayText": "📱 Self Outdoor",
+    "selected": 0,
+    "popup": 0,
+    "vibration": 1,
+    "quartermode": 0,
+    "ischunkbeforealert": 1,
+    "chunkbeforealertaudio": 3,
+    "timealertmode": "Audio",
+    "chunknotifymode": "Silent",
+    "ismidbeforealert": 1,
+    "midbeforealertaudio": 1,
+    "midnotifymode": "Silent"
   },
   {
     "profileValue": "HomeHousework",
@@ -109,14 +97,12 @@
     "vibration": 1,
     "quartermode": 0,
     "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": "alert_Google_Event.mp3",
+    "chunkbeforealertaudio": 3,
     "timealertmode": "Audio",
-    "chunknotifymode": "Audio",
-    "chunktextmode": "Private",
+    "chunknotifymode": "Audio_PopularSongs",
     "ismidbeforealert": 1,
-    "midbeforealertaudio": "alert_Ting1.mp3",
-    "midnotifymode": "Audio",
-    "midtextmode": "Private"
+    "midbeforealertaudio": 1,
+    "midnotifymode": "Audio_PopularTracks"
   },
   {
     "profileValue": "HomeFamilytime",
@@ -126,14 +112,12 @@
     "vibration": 1,
     "quartermode": 0,
     "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": "alert_Google_Event.mp3",
+    "chunkbeforealertaudio": 3,
     "timealertmode": "Audio",
-    "chunknotifymode": "Text",
-    "chunktextmode": "Private",
+    "chunknotifymode": "Text_IncognitoName",
     "ismidbeforealert": 1,
-    "midbeforealertaudio": "alert_Ting1.mp3",
-    "midnotifymode": "Silent",
-    "midtextmode": "Private"
+    "midbeforealertaudio": 1,
+    "midnotifymode": "Silent"
   },
   {
     "profileValue": "CarAlone",
@@ -143,14 +127,12 @@
     "vibration": 1,
     "quartermode": 0,
     "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": "alert_Google_Event.mp3",
+    "chunkbeforealertaudio": 3,
     "timealertmode": "Audio",
-    "chunknotifymode": "Audio",
-    "chunktextmode": "Private",
+    "chunknotifymode": "Audio_PopularSongs",
     "ismidbeforealert": 1,
-    "midbeforealertaudio": "alert_Ting1.mp3",
-    "midnotifymode": "Audio",
-    "midtextmode": "Private"
+    "midbeforealertaudio": 1,
+    "midnotifymode": "Audio_PopularTracks"
   },
   {
     "profileValue": "HomeSleep",
@@ -160,14 +142,12 @@
     "vibration": 1,
     "quartermode": 0,
     "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": "alert_Ting1.mp3",
+    "chunkbeforealertaudio": 1,
     "timealertmode": "Audio",
-    "chunknotifymode": "Audio",
-    "chunktextmode": "Private",
+    "chunknotifymode": "Text_Popular",
     "ismidbeforealert": 1,
-    "midbeforealertaudio": "alert_tuk_tuk.mp3",
-    "midnotifymode": "Audio",
-    "midtextmode": "Private"
+    "midbeforealertaudio": 2,
+    "midnotifymode": "Text_Naam"
   },
   {
     "profileValue": "MeditationStressRelief",
@@ -177,14 +157,12 @@
     "vibration": 1,
     "quartermode": 0,
     "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": "alert_Ting1.mp3",
+    "chunkbeforealertaudio": 1,
     "timealertmode": "Audio",
-    "chunknotifymode": "Audio",
-    "chunktextmode": "Private",
+    "chunknotifymode": "Text_Popular",
     "ismidbeforealert": 1,
-    "midbeforealertaudio": "alert_tuk_tuk.mp3",
-    "midnotifymode": "Audio",
-    "midtextmode": "Private"
+    "midbeforealertaudio": 2,
+    "midnotifymode": "Text_Quote"
   },
   {
     "profileValue": "MeditationPeace",
@@ -194,14 +172,12 @@
     "vibration": 1,
     "quartermode": 0,
     "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": "alert_Ting1.mp3",
+    "chunkbeforealertaudio": 1,
     "timealertmode": "Audio",
-    "chunknotifymode": "Audio",
-    "chunktextmode": "Private",
+    "chunknotifymode": "Text_Popular",
     "ismidbeforealert": 1,
-    "midbeforealertaudio": "alert_tuk_tuk.mp3",
-    "midnotifymode": "Audio",
-    "midtextmode": "Private"
+    "midbeforealertaudio": 2,
+    "midnotifymode": "Text_Subhashit"
   },
   {
     "profileValue": "CarFamily",
@@ -211,14 +187,12 @@
     "vibration": 1,
     "quartermode": 1,
     "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": "alert_Ting1.mp3",
+    "chunkbeforealertaudio": 1,
     "timealertmode": "Audio",
     "chunknotifymode": "Silent",
-    "chunktextmode": "Private",
     "ismidbeforealert": 0,
-    "midbeforealertaudio": "None",
-    "midnotifymode": "Silent",
-    "midtextmode": "Private"
+    "midbeforealertaudio": 1,
+    "midnotifymode": "Silent"
   },
   {
     "profileValue": "Public",
@@ -228,14 +202,12 @@
     "vibration": 1,
     "quartermode": 1,
     "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": "alert_tuk_tuk.mp3",
+    "chunkbeforealertaudio": 2,
     "timealertmode": "Silent",
     "chunknotifymode": "Silent",
-    "chunktextmode": "Private",
     "ismidbeforealert": 0,
-    "midbeforealertaudio": "None",
-    "midnotifymode": "Silent",
-    "midtextmode": "Private"
+    "midbeforealertaudio": 1,
+    "midnotifymode": "Silent"
   },
   {
     "profileValue": "Quarterly",
@@ -245,13 +217,11 @@
     "vibration": 1,
     "quartermode": 1,
     "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": "alert_Google_Event.mp3",
+    "chunkbeforealertaudio": 3,
     "timealertmode": "Audio",
     "chunknotifymode": "Silent",
-    "chunktextmode": "Private",
     "ismidbeforealert": 0,
-    "midbeforealertaudio": "None",
-    "midnotifymode": "Silent",
-    "midtextmode": "Private"
+    "midbeforealertaudio": 1,
+    "midnotifymode": "Silent"
   }
 ]
