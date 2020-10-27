@@ -23,7 +23,7 @@ select {
   height: 95%;
   vertical-align: middle;
   overflow: hidden;
-  background: url("../../media/img/clockDarshan.png");
+  background: url("../img/clockDarshan.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
