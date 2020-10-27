@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="theme-color" content="#12011e" />
+    <meta name="theme-color" content="#50676f" />
 
     <link rel="stylesheet" href="../libraries/bootstrap.min.css" />
     <link rel="stylesheet" href="lib/clock.darshan.css" />
-    <!-- https://getbootstrap.com/ -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <style></style>
   </head>
   <body>
@@ -59,7 +62,7 @@
                 id="checkboxAppOnOff"
               />
               <label class="custom-control-label" for="checkboxAppOnOff"
-                ><span class="text-white">Enable App</span></label
+                ><span class="text-white"> Be Here Now</span></label
               >
             </div>
           </div>
@@ -73,20 +76,7 @@
             type="button"
             class="btn btn-info btn-lg active"
           >
-            <svg
-              width="2em"
-              height="2em"
-              viewBox="0 0 16 16"
-              class="bi bi-app-indicator"
-              fill="white"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z"
-              />
-              <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-            </svg>
+            <i class="fa fa-hourglass"></i>
           </button>
           <a
             class="btn btn-info btn-lg active"
@@ -96,41 +86,14 @@
             aria-expanded="false"
             aria-controls="collapseExample"
           >
-            <svg
-              width="3em"
-              height="3em"
-              viewBox="0 0 16 16"
-              class="bi bi-gear"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"
-              />
-              <path
-                fill-rule="evenodd"
-                d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"
-              />
-            </svg>
+            <i class="fa fa-gear fa-2x"></i>
           </a>
           <button
             id="btnTryMid"
             type="button"
             class="btn btn-info btn-lg active"
           >
-            <svg
-              width="2em"
-              height="2em"
-              viewBox="0 0 16 16"
-              class="bi bi-align-middle"
-              fill="white"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6 13a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v10zM1 8a.5.5 0 0 0 .5.5H6v-1H1.5A.5.5 0 0 0 1 8zm14 0a.5.5 0 0 1-.5.5H10v-1h4.5a.5.5 0 0 1 .5.5z"
-              />
-            </svg>
+            <i class="fa fa-hourglass-1"></i>
           </button>
         </div>
       </div>
@@ -153,7 +116,7 @@
                         aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        Settings
+                        <i class="fa fa-wrench"></i> Settings
                       </button>
                     </h2>
                   </div>
@@ -166,7 +129,7 @@
                     <div class="card-body">
                       <div class="form-group bg-primary text-center">
                         <label for="selectProfile" class="text-white">
-                          Profile
+                          <i class="fa fa-certificate"></i> Profile
                         </label>
                         <select
                           class="form-control"
@@ -231,8 +194,9 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <div class="bg-warning text-center form-control">
-                          Chunk
+                        <div class="bg-dark text-center form-control">
+                          <i class="fa fa-hourglass text-info"></i>
+                          <span class="font-weight-bold text-white">Chunk</span>
                         </div>
                       </div>
                       <div class="form-group">
@@ -250,7 +214,10 @@
                             >
                           </div>
                           <div class="col">
-                            <label for="selectTimeAlertMode">Time Alert</label>
+                            <label for="selectTimeAlertMode"
+                              ><i class="fa fa-clock-o text-primary"></i> Time
+                              Alert</label
+                            >
                             <select
                               class="form-control"
                               id="selectTimeAlertMode"
@@ -263,8 +230,8 @@
                         </div>
 
                         <div class="text-left">
-                          <label for="selectChunkNotifyMode"
-                            >Notification
+                          <label for="selectChunkNotifyMode">
+                            <i class="fa fa-bell text-warning"></i> Notification
                           </label>
                           <select
                             class="form-control"
@@ -273,8 +240,9 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <div class="bg-warning text-center form-control">
-                          Mid
+                        <div class="bg-dark text-center form-control">
+                          <i class="fa fa-hourglass-1 text-info"></i>
+                          <span class="font-weight-bold text-white">Mid</span>
                         </div>
                       </div>
                       <div class="form-group">
@@ -291,7 +259,10 @@
                           >
                         </div>
                         <div class="text-left" style="padding-top: 10px">
-                          <label for="selectMidNotifyMode">Notification</label>
+                          <label for="selectMidNotifyMode">
+                            <i class="fa fa-bell text-warning"></i>
+                            Notification</label
+                          >
                           <select
                             class="form-control"
                             id="selectMidNotifyMode"
@@ -315,7 +286,7 @@
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Audio Sounds
+                        <i class="fa fa-bell"> </i> Alert Sounds
                       </button>
                     </h2>
                   </div>
@@ -380,7 +351,7 @@
                         aria-expanded="true"
                         aria-controls="collapse4"
                       >
-                        Advance
+                        <i class="fa fa-cubes"> </i> Advance
                       </button>
                     </h2>
                   </div>
@@ -393,19 +364,22 @@
                   >
                     <div class="card-body">
                       <div class="form-group">
-                        <button
-                          id="btnGenerateQueryString"
-                          type="button"
-                          class="btn btn-sm btn-link"
-                        >
-                          Generate Query String</button
-                        ><br />
-                        <a
-                          id="linkQueryString"
-                          for="btnGenerateQueryString"
-                          href="#"
-                        >
-                        </a>
+                        <div class="custom-control custom-switch">
+                          <input
+                            type="checkbox"
+                            checked
+                            class="custom-control-input"
+                            id="checkboxAlertWindow"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="checkboxAlertWindow"
+                          >
+                            <span class="badge badge-dark"
+                              >New window for alert</span
+                            >
+                          </label>
+                        </div>
                       </div>
                       <div class="form-group">
                         <div class="custom-control custom-switch">
@@ -488,7 +462,7 @@
                         aria-expanded="false"
                         aria-controls="collapseThree"
                       >
-                        Misc
+                        <i class="fa fa-cogs"></i> Tools
                       </button>
                     </h2>
                   </div>
@@ -498,7 +472,35 @@
                     aria-labelledby="heading5"
                     data-parent="#accordionExample"
                   >
-                    <div class="card-body"></div>
+                    <div class="card-body">
+                      <div class="form-group">
+                        <div class="py-lg-2">
+                          <button
+                            id="btnOpenPopupApp"
+                            type="button"
+                            class="btn btn-sm btn-link"
+                          >
+                            <i class="fa fa-external-link"></i> Open Popup App
+                          </button>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <button
+                          id="btnGenerateQueryString"
+                          type="button"
+                          class="btn btn-sm btn-link"
+                        >
+                          <i class="fa fa-external-link"></i> Generate Query
+                          String</button
+                        ><br />
+                        <a
+                          id="linkQueryString"
+                          for="btnGenerateQueryString"
+                          href="#"
+                        >
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <!--Card Misc end -->
@@ -514,26 +516,6 @@
           <!-- Buttons second row-->
           <!-- Buttons second row end <!-- Buttons 2nd row-->
           <div class="btn-group" role="group" aria-label="Basic example">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              id="btnBatteryLoader"
-            >
-              <svg
-                width="2em"
-                height="2em"
-                viewBox="0 0 16 16"
-                class="bi bi-battery-half"
-                fill="white"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M12 5H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zM2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2z"
-                />
-                <path d="M2 6h5v4H2V6zm12.5 3.5a1.5 1.5 0 0 0 0-3v3z" />
-              </svg>
-            </button>
             <a
               class="btn btn-secondary"
               data-toggle="collapse"
@@ -542,46 +524,28 @@
               aria-expanded="false"
               aria-controls="collapseExample"
             >
-              <svg
-                width="1.5em"
-                height="1.5em"
-                viewBox="0 0 16 16"
-                class="bi bi-file-earmark-music-fill"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M2 2a2 2 0 0 1 2-2h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm7.5 1.5v-2l3 3h-2a1 1 0 0 1-1-1zM11 6.64a1 1 0 0 0-1.243-.97l-1 .25A1 1 0 0 0 8 6.89v4.306A2.572 2.572 0 0 0 7 11c-.5 0-.974.134-1.338.377-.36.24-.662.628-.662 1.123s.301.883.662 1.123c.364.243.839.377 1.338.377.5 0 .974-.134 1.338-.377.36-.24.662-.628.662-1.123V8.89l2-.5V6.64z"
-                />
-              </svg>
+              <i class="fa fa-music"></i>
             </a>
+            <button
+              type="button"
+              class="btn btn-secondary btn-sm"
+              id="btnPauseAllAudios"
+            >
+              <i class="fa fa-bell-slash"></i>
+            </button>
 
             <button type="button" class="btn btn-secondary" id="btnWaveLoader">
-              <svg
-                width="1.5em"
-                height="1.5em"
-                viewBox="0 0 16 16"
-                class="bi bi-shuffle"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z"
-                />
-                <path
-                  d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"
-                />
-              </svg>
+              <i class="fa fa-random"></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="btnBatteryLoader"
+            >
+              <i class="fa fa-battery-3"></i>
             </button>
           </div>
 
-          <div
-            class="btn-group text-center"
-            role="group"
-            aria-label="Basic example2"
-          ></div>
           <!-- Buttons 2nd row end-->
         </div>
       </div>
@@ -621,19 +585,7 @@
                   type="button"
                   class="btn btn-success"
                 >
-                  <svg
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    class="bi bi-file-play-fill"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM6 5.883v4.234a.5.5 0 0 0 .757.429l3.528-2.117a.5.5 0 0 0 0-.858L6.757 5.454a.5.5 0 0 0-.757.43z"
-                    />
-                  </svg>
+                  <i class="fa fa-play"></i>
                   Play
                 </button>
                 <button
@@ -641,37 +593,12 @@
                   type="button"
                   class="btn btn-warning"
                 >
-                  <svg
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    class="bi bi-pause-fill"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"
-                    />
-                  </svg>
+                  <i class="fa fa-pause"></i>
                   Pause
                 </button>
               </div>
 
               <div class="form-group">
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input
-                    type="radio"
-                    id="radioMeditationMusic20"
-                    name="radioMeditationMusic"
-                    value="../media/saregama20Sec.mp3"
-                    class="custom-control-input"
-                  />
-                  <label
-                    class="custom-control-label"
-                    for="radioMeditationMusic20"
-                    >🎵 20 Sec</label
-                  >
-                </div>
                 <div class="custom-control custom-radio custom-control-inline">
                   <input
                     type="radio"
@@ -685,8 +612,22 @@
                     class="custom-control-label"
                     for="radioMeditationMusic18Low"
                   >
-                    🎵 18 Sec
+                    <i class="fa fa-music"></i> 18 Sec
                   </label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input
+                    type="radio"
+                    id="radioMeditationMusic20"
+                    name="radioMeditationMusic"
+                    value="../media/saregama20Sec.mp3"
+                    class="custom-control-input"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="radioMeditationMusic20"
+                    ><i class="fa fa-music"></i> 20 Sec</label
+                  >
                 </div>
                 <div class="custom-control custom-radio custom-control-inline">
                   <input
@@ -699,21 +640,22 @@
                   <label
                     class="custom-control-label"
                     for="radioMeditationMusic18"
-                    >🎵 18 Sec Low</label
+                  >
+                    <i class="fa fa-music"></i> 18 Sec Low</label
                   >
                 </div>
               </div>
-              <div class="text-center">
+
+              <div class="text-center p-3">
                 <span class="badge badge-dark">Volumes</span>
               </div>
               <div class="form-group">
                 <label for="rangeMeditationMusicVolume">
-                  🔊 Mediattion Music Volume:
+                  <i class="fa fa-volume-up"></i> Meditation Music Volume:
                   <span
                     id="rangeMeditationMusicVolumeLabel"
                     class="badge badge-light"
-                    >80%</span
-                  >
+                  ></span>
                 </label>
                 <input
                   class="form-control"
@@ -729,11 +671,10 @@
 
               <div class="form-group">
                 <label for="rangeAlertAudioVolume">
-                  🔊 Sound Alert Volume:<span
+                  <i class="fa fa-volume-up"></i> Sound Alert Volume:<span
                     id="rangeAlertAudioVolumeLabel"
                     class="badge badge-light"
-                    >80%</span
-                  >
+                  ></span>
                 </label>
                 <input
                   class="form-control-range"
@@ -747,11 +688,10 @@
               </div>
               <div class="form-group">
                 <label for="rangeSpeechVolume">
-                  🔊 Speech Volume:<span
+                  <i class="fa fa-volume-up"></i> Speech Volume:<span
                     id="rangeSpeechVolumeLabel"
                     class="badge badge-light"
-                    >80%</span
-                  >
+                  ></span>
                 </label>
                 <input
                   class="form-control-range"
@@ -765,7 +705,7 @@
               </div>
               <div class="form-groupr">
                 <label for="rangeTickerVolume">
-                  🔊 Ticker Volume:
+                  <i class="fa fa-volume-up"></i> Ticker Volume:
                   <span id="rangeTickerVolumeLabel" class="badge badge-light"
                     >80%</span
                   >
@@ -786,53 +726,6 @@
           <!-- collapse Music Controls end -->
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-md-4">
-          <div class="text-center" id="clockContainer" style="display: none">
-            <div id="clock-container">
-              <svg id="clock" viewBox="0 0 100 100">
-                <circle id="face" cx="50" cy="50" r="60" />
-                <g id="hands">
-                  <rect
-                    id="min"
-                    x="48.5"
-                    y="12.5"
-                    width="3"
-                    height="40"
-                    rx="2"
-                    ry="2"
-                  />
-                </g>
-              </svg>
-            </div>
-            <div>
-              <h4 id="currentTime">Be Here Now</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-4 text-center">&nbsp;</div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-4 text-center">
-          <video
-            id="videoDummy"
-            controls
-            loop
-            muted
-            style="width: 12px; height: 8px"
-          >
-            <source src="../media/video_dummy.mp4" type="video/mp4" />
-          </video>
-          <a role="button" aria-expanded="false" id="btnPauseAllAudios"
-            ><span id="errorMessage" class="text-info">Be Here Now</span></a
-          >
-        </div>
-      </div>
       <div class="row">
         <div class="col">
           <div id="containerWave" class="text-center" style="display: none">
@@ -849,19 +742,70 @@
         </div>
       </div>
       <div class="row">
+        <div class="col-md-4">
+          <div class="text-center" id="clockContainer" style="display: none">
+            <div id="clock-container">
+              <svg id="clock" viewBox="0 0 100 100">
+                <circle id="face" cx="50" cy="50" r="60" />
+                <g transform="translate(50, 50)">
+                  <circle
+                    cx="0"
+                    cy="0"
+                    r="5"
+                    style="
+                      fill: #0d2931;
+                      stroke: #58727a;
+                      stroke-width: 25;
+                      stroke-dasharray: 31, 10;
+                    "
+                  >
+                    <animateTransform
+                      attributeType="xml"
+                      attributeName="transform"
+                      type="rotate"
+                      from="0"
+                      to="360"
+                      begin="0"
+                      dur="5s"
+                      repeatCount="indefinite"
+                    />
+                  </circle>
+                </g>
+                <text id="currentTime" x="42" y="50">Be Here Now</text>
+                <g id="hands">
+                  <rect
+                    id="min"
+                    x="48.5"
+                    y="21"
+                    width="5"
+                    height="20"
+                    rx="2"
+                    ry="2"
+                  />
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <video
+            id="videoDummy"
+            controls
+            loop
+            muted
+            style="width: 12px; height: 8px"
+          >
+            <source src="../media/video_dummy.mp4" type="video/mp4" />
+          </video>
+
+          <span id="errorMessage" class="text-info"> अप्रमाद </span>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-4 text-center"></div>
-      </div>
-
-      <div class="row text-center">
-        <div class="col-md-4">&nbsp;</div>
-      </div>
-
-      <div class="row text-center">
-        <div class="col-md-4">&nbsp;</div>
-      </div>
-
-      <div class="row text-center">
-        <div class="col-md-4">&nbsp;</div>
       </div>
       <!--end container-->
     </div>

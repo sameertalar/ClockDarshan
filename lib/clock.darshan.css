@@ -19,8 +19,8 @@ select {
 #clock-container {
   display: inline-block;
   position: relative;
-  width: 90%;
-  height: 90%;
+  width: 95%;
+  height: 95%;
   vertical-align: middle;
   overflow: hidden;
   background: url("../../media/img/clockDarshan.png");
@@ -35,15 +35,15 @@ select {
 }
 
 #min {
-  stroke-width: 1px;
-  fill: #980000;
-  stroke: #f4b400;
+  stroke-width: 1.5px;
+  fill: #0d2931;
+
+  stroke: #ffffff;
 }
 
 #currentTime {
-  position: relative;
-  top: -200px;
-  color: whitesmoke;
+  fill: #ffffff;
+  font-size: 7px;
 }
 
 #timeStatus {
@@ -104,4 +104,10 @@ select {
   );
   background: linear-gradient(to bottom, #0fd30f 0%, #0cf459 48%, #17a504 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbff87', endColorstr='#17a504',GradientType=0 );
+}
+
+.video-mask {
+  width: 350px;
+  border-radius: 10px;
+  overflow: hidden;
 }
