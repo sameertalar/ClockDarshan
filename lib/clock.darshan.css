@@ -1,6 +1,6 @@
 h3 {
   color: whitesmoke; /* #ff5f0e;*/
-  margin-top: 10px;
+
 }
 
 body {
@@ -10,6 +10,19 @@ body {
 
 select {
   width: 90%;
+}
+
+.cdGreen {
+    color: #28a745;
+}
+.cdOrange {
+    color: #FA9207;
+}
+.cdRed {
+    color: #FF2E2D;
+}
+.cdBlue {
+    color: #007bff;
 }
 
 #clockContainer {
@@ -23,7 +36,7 @@ select {
   height: 95%;
   vertical-align: middle;
   overflow: hidden;
-  background: url("../img/clockDarshan.png");
+  background: url("../../media/img/clockDarshan.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -35,15 +48,22 @@ select {
 }
 
 #min {
-  stroke-width: 1.5px;
-  fill: #0d2931;
-
-  stroke: #ffffff;
+    stroke-width: 1.5px;
+    fill: #0d2931;
+ 
+    stroke: #ffffff;
 }
 
+#hour {
+    fill: #FF2E2D;
+    stroke: #ffffff;
+  
+}
+
+
 #currentTime {
-  fill: #ffffff;
-  font-size: 7px;
+    fill: #50676f;
+    font-size: 3px;
 }
 
 #timeStatus {
@@ -54,20 +74,22 @@ select {
 
 .circle {
   position: relative;
-  top: -30px;
+  top: -10px;
   border-right-color: #50676f !important;
   border-right-style: solid !important;
   border-right-width: 1px !important;
   border-left-color: rgb(222, 226, 230) !important;
   border-left-style: solid !important;
   border-left-width: 1px !important;
+  padding-bottom:0px;
+  padding-bottom:0px;
 }
 
 #chunkProgress {
   position: relative;
   left: 0;
   width: 100%;
-  height: 13px;
+  height: 8px;
   border: 1px solid #0d2931;
   background-color: #fef9e7;
   background-image: linear-gradient(
@@ -91,7 +113,7 @@ select {
   z-index: 1;
   left: 0;
   top: 0;
-  border: 30px 0;
+  border: 10px 0;
   width: 0;
   height: 100%;
   background: #0fd30f;
@@ -104,10 +126,4 @@ select {
   );
   background: linear-gradient(to bottom, #0fd30f 0%, #0cf459 48%, #17a504 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbff87', endColorstr='#17a504',GradientType=0 );
-}
-
-.video-mask {
-  width: 350px;
-  border-radius: 10px;
-  overflow: hidden;
 }
