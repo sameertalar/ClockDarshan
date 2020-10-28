@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Be Here Now</title>
     <link rel="icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,659 +10,828 @@
 
     <link rel="stylesheet" href="../libraries/bootstrap.min.css" />
     <link rel="stylesheet" href="lib/clock.darshan.css" />
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <style></style>
-</head>
-<body>
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-4">
-                <div class="text-center" id="containerBattery" style="display: none">
-                    <iframe id="frameBattery"
-                            src=""
-                            title="Battery Meditation"
-                            width="100%"
-                            height="20px"
-                            style="border: none">
-                    </iframe>
-                </div>
-            </div>
-        </div>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
 
-        <div class="row">
-            <div class="col-md-4">
-                <div class="text-center" style="-webkit-app-region: drag">
-                    <div>
-                        <div id="chunkProgress" style="bottom: 0">
-                            <div id="chunkStatus"></div>
-                        </div>
-                    </div>
-                    <span class="circle"></span>
-                    <h3 id="displayNaam">Welcome</h3>
-                </div>
-              
-                <!--    <div class="border" id="timeStatus"></div>
+      checkbox
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-lg-4">
+          <div class="text-center" id="containerBattery" style="display: none">
+            <iframe
+              id="frameBattery"
+              src=""
+              title="Battery Meditation"
+              width="100%"
+              height="20px"
+              style="border: none"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="text-center" style="-webkit-app-region: drag">
+            <div>
+              <div id="chunkProgress" style="bottom: 0">
+                <div id="chunkStatus"></div>
+              </div>
+            </div>
+            <span class="circle"></span>
+            <h3 id="displayNaam">Welcome</h3>
+          </div>
+
+          <!--    <div class="border" id="timeStatus"></div>
                                <div><div class="circle" id="statusdot"></div></div>-->
-            </div>
         </div>
-        <div class="row">
-            <div class="col-md-4 text-center">
-                <div>
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox"
-                               class="custom-control-input"
-                               id="checkboxAppOnOff" />
-                        <label class="custom-control-label" for="checkboxAppOnOff"><span class="text-white"> Be Here Now</span></label>
-                    </div>
-                </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 text-center">
+          <div>
+            <div class="custom-control custom-switch">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="checkboxAppOnOff"
+              />
+              <label class="custom-control-label" for="checkboxAppOnOff"
+                ><span class="text-white"> Be Here Now</span></label
+              >
             </div>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="text-center" id="clockContainer" style="display: none">
-                    <div id="clock-container">
-                        <svg id="clock" viewBox="0 0 100 100">
-                            <circle id="face" cx="50" cy="50" r="60" />
-                            <g transform="translate(50, 50)">
-                                <circle cx="0"
-                                        cy="0"
-                                        r="5"
-                                        style="
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="text-center" id="clockContainer" style="display: none">
+            <div id="clock-container">
+              <svg id="clock" viewBox="0 0 100 100">
+                <circle id="face" cx="50" cy="50" r="60" />
+                <g transform="translate(50, 50)">
+                  <circle
+                    cx="0"
+                    cy="0"
+                    r="5"
+                    style="
                       fill: #0d2931;
                       stroke: #58727a;
                       stroke-width: 25;
                       stroke-dasharray: 31, 10;
-                    ">
-                                    <animateTransform attributeType="xml"
-                                                      attributeName="transform"
-                                                      type="rotate"
-                                                      from="0"
-                                                      to="360"
-                                                      begin="0"
-                                                      dur="5s"
-                                                      repeatCount="indefinite" />
-                                </circle>
-                            </g>
-                            <text id="currentTime" x="46.5" y="50">Be Here Now</text>
-                            <g id="hands">
-
-
-                                <rect id="min"
-                                      x="48.5"
-                                      y="21"
-                                      width="5"
-                                      height="20"
-                                      rx="2"
-                                      ry="2" />
-                                <rect id="hour" x="48" y="29" width="5" height="5" rx="5" ry="5" />
-                            </g>
-                        </svg>
-                    </div>
-                </div>
+                    "
+                  >
+                    <animateTransform
+                      attributeType="xml"
+                      attributeName="transform"
+                      type="rotate"
+                      from="0"
+                      to="360"
+                      begin="0"
+                      dur="5s"
+                      repeatCount="indefinite"
+                    />
+                  </circle>
+                </g>
+                <text id="currentTime" x="46.5" y="50">Be Here Now</text>
+                <g id="hands">
+                  <rect
+                    id="min"
+                    x="48.5"
+                    y="21"
+                    width="5"
+                    height="20"
+                    rx="2"
+                    ry="2"
+                  />
+                  <rect
+                    id="hour"
+                    x="48"
+                    y="29"
+                    width="5"
+                    height="5"
+                    rx="5"
+                    ry="5"
+                  />
+                </g>
+              </svg>
             </div>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-md-4 text-center pt-3">
-                <button id="btnTryChunk"
+      </div>
+      <div class="row">
+        <div class="col-lg-4 text-center pt-3">
+          <button
+            id="btnTryChunk"
+            type="button"
+            class="btn btn-info btn-lg active"
+          >
+            <i class="fa fa-hourglass"></i>
+          </button>
+          <a
+            class="btn btn-info btn-lg active"
+            data-toggle="collapse"
+            href="#collapseControlsSettings"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+            <i class="fa fa-gear fa-2x"></i>
+          </a>
+          <button
+            id="btnTryMid"
+            type="button"
+            class="btn btn-info btn-lg active"
+          >
+            <i class="fa fa-hourglass-1"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <!-- collapse Controls begin -->
+          <div class="collapse" id="collapseControlsSettings">
+            <div class="card card-body">
+              <!-- Settings Start-->
+
+              <div class="accordion" id="accordionExample">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      <button
+                        class="btn btn-link btn-block text-left"
                         type="button"
-                        class="btn btn-info btn-lg active">
-                    <i class="fa fa-hourglass"></i>
-                </button>
-                <a class="btn btn-info btn-lg active"
-                   data-toggle="collapse"
-                   href="#collapseControlsSettings"
-                   role="button"
-                   aria-expanded="false"
-                   aria-controls="collapseExample">
-                    <i class="fa fa-gear fa-2x"></i>
-                </a>
-                <button id="btnTryMid"
+                        data-toggle="collapse"
+                        data-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        <i class="fa fa-wrench"></i> Settings
+                      </button>
+                    </h2>
+                  </div>
+                  <div
+                    id="collapseOne"
+                    class="collapse show"
+                    aria-labelledby="headingOne"
+                    data-parent="#accordionExample"
+                  >
+                    <div class="card-body">
+                      <div class="form-group bg-primary text-center">
+                        <label for="selectProfile" class="text-white">
+                          <i class="fa fa-certificate"></i> Profile
+                        </label>
+                        <select
+                          class="form-control"
+                          id="selectProfile"
+                        ></select>
+                      </div>
+                      <div>
+                        <div class="form-group" style="padding-top: 30px">
+                          <div class="form-row">
+                            <div class="col">
+                              <div class="custom-control custom-switch">
+                                <input
+                                  type="checkbox"
+                                  class="custom-control-input"
+                                  id="checkboxPopupAlert"
+                                />
+                                <label
+                                  class="custom-control-label"
+                                  for="checkboxPopupAlert"
+                                >
+                                  <span class="badge badge-secondary"
+                                    >Popup Alert</span
+                                  >
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="custom-control custom-switch">
+                                <input
+                                  type="checkbox"
+                                  class="custom-control-input"
+                                  id="checkboxVibration"
+                                />
+                                <label
+                                  class="custom-control-label"
+                                  for="checkboxVibration"
+                                >
+                                  <span class="badge badge-secondary"
+                                    >Vibrate</span
+                                  >
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="custom-control custom-switch">
+                                <input
+                                  type="checkbox"
+                                  class="custom-control-input"
+                                  id="checkboxQuarterMode"
+                                />
+                                <label
+                                  class="custom-control-label"
+                                  for="checkboxQuarterMode"
+                                >
+                                  <span class="badge badge-secondary"
+                                    >Quarter Mode</span
+                                  >
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="bg-dark text-center form-control">
+                          <i class="fa fa-hourglass text-info"></i>
+                          <span class="font-weight-bold text-white">Chunk</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-row">
+                          <div class="col">
+                            <div class="custom-control custom-switch">
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="checkboxChunkBeforeAlert"
+                              />
+                              <label
+                                class="custom-control-label"
+                                for="checkboxChunkBeforeAlert"
+                                ><span> Before Alert</span></label
+                              >
+                            </div>
+                          </div>
+                          <div class="col">
+                            <label for="selectTimeAlertMode">
+                              <i class="fa fa-clock-o text-primary"></i> Time
+                              Alert
+                            </label>
+                            <select
+                              class="form-control"
+                              id="selectTimeAlertMode"
+                            >
+                              <option value="Silent" selected>🔕 Silent</option>
+                              <option value="Audio">🎵 Audio</option>
+                              <option value="Text">📝 Text-2-Speech</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="text-left">
+                          <label for="selectChunkNotifyMode">
+                            <i class="fa fa-bell text-warning"></i> Notification
+                          </label>
+                          <select
+                            class="form-control"
+                            id="selectChunkNotifyMode"
+                          ></select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="bg-dark text-center form-control">
+                          <i class="fa fa-hourglass-1 text-info"></i>
+                          <span class="font-weight-bold text-white">Mid</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="custom-control custom-switch">
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="checkboxMidBeforeAlert"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="checkboxMidBeforeAlert"
+                            ><span> Before Alert</span></label
+                          >
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="text-left" style="padding-top: 10px">
+                          <label for="selectMidNotifyMode">
+                            <i class="fa fa-bell text-warning"></i>
+                            Notification
+                          </label>
+                          <select
+                            class="form-control"
+                            id="selectMidNotifyMode"
+                          ></select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                      <button
+                        class="btn btn-link btn-block text-left collapsed"
                         type="button"
-                        class="btn btn-info btn-lg active">
-                    <i class="fa fa-hourglass-1"></i>
+                        data-toggle="collapse"
+                        data-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        <i class="fa fa-bell"> </i> Alert Sounds
+                      </button>
+                    </h2>
+                  </div>
+                  <div
+                    id="collapseTwo"
+                    class="collapse"
+                    aria-labelledby="headingTwo"
+                    data-parent="#accordionExample"
+                  >
+                    <div class="card-body">
+                      <div class="form-group">
+                        <label
+                          for="selectChunkBeforeAlertAudio"
+                          class="text-info"
+                        >
+                          Chunk Before Audio
+                          <a
+                            id="btnChunkBeforeAlertAudioTry"
+                            role="button"
+                            aria-expanded="false"
+                          >
+                            🔔
+                          </a>
+                        </label>
+                        <select
+                          class="form-control"
+                          id="selectChunkBeforeAlertAudio"
+                        ></select>
+                      </div>
+
+                      <div class="form-group">
+                        <label
+                          for="selectMidBeforeAlertAudio"
+                          class="text-info"
+                        >
+                          Mid Before Audio<a
+                            id="btnMidBeforeAlertAudioTry"
+                            role="button"
+                            aria-expanded="false"
+                          >
+                            🔔
+                          </a>
+                        </label>
+                        <select
+                          class="form-control"
+                          id="selectMidBeforeAlertAudio"
+                        ></select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 4-->
+                <div class="card">
+                  <div class="card-header" id="heading4">
+                    <h2 class="mb-0">
+                      <button
+                        class="btn btn-link"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapse4"
+                        aria-expanded="true"
+                        aria-controls="collapse4"
+                      >
+                        <i class="fa fa-cubes"> </i> Advance
+                      </button>
+                    </h2>
+                  </div>
+
+                  <div
+                    id="collapse4"
+                    class="collapse"
+                    aria-labelledby="heading4"
+                    data-parent="#accordionExample"
+                  >
+                    <div class="card-body">
+                      <div class="form-group">
+                        <div class="custom-control custom-switch">
+                          <input
+                            type="checkbox"
+                            checked
+                            class="custom-control-input"
+                            id="checkboxAlertWindow"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="checkboxAlertWindow"
+                          >
+                            <span class="badge badge-dark"
+                              >New window for alert</span
+                            >
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="custom-control custom-switch">
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="checkboxAutoOff"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="checkboxAutoOff"
+                          >
+                            <span class="badge badge-dark">Auto Turn Off</span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-control">
+                          <input type="time" id="controlAutoOffTime" />
+                          <input type="checkbox" id="checkboxNextDayOff" />
+                          <label for="checkboxNextDayOff"> Next day </label>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="custom-control custom-switch">
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="checkboxTicker"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="checkboxTicker"
+                          >
+                            <span class="badge badge-dark">Enable Ticker</span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="selectTickerDuration"
+                          >Ticker Duration</label
+                        >
+                        <select class="form-control" id="selectTickerDuration">
+                          <option>1</option>
+                          <option>3</option>
+                          <option selected>6</option>
+                          <option>18</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="selectMidBeforeAlertAudio">
+                          Ticker Audio<a
+                            id="btnTickerAudioTry"
+                            role="button"
+                            aria-expanded="false"
+                          >
+                            🔔
+                          </a>
+                        </label>
+                        <select
+                          class="form-control"
+                          id="selectTickerAudio"
+                        ></select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 4 end -->
+                <!-- Card Misc-->
+                <div class="card">
+                  <div class="card-header" id="heading5">
+                    <h2 class="mb-0">
+                      <button
+                        class="btn btn-link collapsed"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapse5"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        <i class="fa fa-cogs"></i> Tools
+                      </button>
+                    </h2>
+                  </div>
+                  <div
+                    id="collapse5"
+                    class="collapse"
+                    aria-labelledby="heading5"
+                    data-parent="#accordionExample"
+                  >
+                    <div class="card-body">
+                      <div class="form-group">
+                        <div class="py-lg-2">
+                          <button
+                            id="btnOpenPopupApp"
+                            type="button"
+                            class="btn btn-sm btn-link"
+                          >
+                            <i class="fa fa-external-link"></i> Open Popup App
+                          </button>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <button
+                          id="btnGenerateQueryString"
+                          type="button"
+                          class="btn btn-sm btn-link"
+                        >
+                          <i class="fa fa-external-link"></i> Generate Query
+                          String</button
+                        ><br />
+                        <a
+                          id="linkQueryString"
+                          for="btnGenerateQueryString"
+                          href="#"
+                        >
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Card Misc end -->
+              </div>
+              <!--  Settings end-->
+            </div>
+          </div>
+          <!-- collapse Controls end -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 text-center">
+          <!-- Buttons second row-->
+          <!-- Buttons second row end <!-- Buttons 2nd row-->
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <a
+              class="btn btn-secondary"
+              data-toggle="collapse"
+              href="#collapseControlsMusic"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              <i class="fa fa-music"></i>
+            </a>
+            <button
+              type="button"
+              class="btn btn-secondary btn-sm"
+              id="btnPauseAllAudios"
+            >
+              <i class="fa fa-bell-slash"></i>
+            </button>
+
+            <button type="button" class="btn btn-secondary" id="btnWaveLoader">
+              <i class="fa fa-random"></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="btnBatteryLoader"
+            >
+              <i class="fa fa-battery-3"></i>
+            </button>
+          </div>
+
+          <!-- Buttons 2nd row end-->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <!-- collapse Music Controls begin -->
+          <div class="collapse" id="collapseControlsMusic">
+            <div class="card card-body">
+              <div class="form-group text-center">
+                <audio
+                  id="audioMeditation"
+                  class="form-control"
+                  controls
+                  loop
+                  style="width: 100%"
+                >
+                  <source src="../media/saregama18Sec.mp3" type="audio/mp3" />
+                  Your browser does not support the audio element.
+                </audio>
+                <audio id="audioAlert">
+                  <source
+                    src="../media/alerts/alert_Google_Event.mp3"
+                    type="audio/mpeg"
+                  />
+                </audio>
+                <audio id="audioTicker">
+                  <source
+                    src="../media/alerts/ticking_Water_Two_Drops.mp3"
+                    type="audio/mpeg"
+                  />
+                </audio>
+              </div>
+              <div class="text-center form-group">
+                <button
+                  id="btnPlayMeditationnAudio"
+                  type="button"
+                  class="btn btn-success"
+                >
+                  <i class="fa fa-play"></i>
+                  Play
                 </button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <!-- collapse Controls begin -->
-                <div class="collapse" id="collapseControlsSettings">
-                    <div class="card card-body">
-                        <!-- Settings Start-->
+                <button
+                  id="btnPauseMeditationAudio"
+                  type="button"
+                  class="btn btn-warning"
+                >
+                  <i class="fa fa-pause"></i>
+                  Pause
+                </button>
+              </div>
 
-                        <div class="accordion" id="accordionExample">
-                            <div class="card">
-                                <div class="card-header" id="headingOne">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block text-left"
-                                                type="button"
-                                                data-toggle="collapse"
-                                                data-target="#collapseOne"
-                                                aria-expanded="true"
-                                                aria-controls="collapseOne">
-                                            <i class="fa fa-wrench"></i> Settings
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div id="collapseOne"
-                                     class="collapse show"
-                                     aria-labelledby="headingOne"
-                                     data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <div class="form-group bg-primary text-center">
-                                            <label for="selectProfile" class="text-white">
-                                                <i class="fa fa-certificate"></i> Profile
-                                            </label>
-                                            <select class="form-control"
-                                                    id="selectProfile"></select>
-                                        </div>
-                                        <div>
-                                            <div class="form-group" style="padding-top: 30px">
-                                                <div class="form-row">
-                                                    <div class="col">
-                                                        <div class="custom-control custom-switch">
-                                                            <input type="checkbox"
-                                                                   class="custom-control-input"
-                                                                   id="checkboxPopupAlert" />
-                                                            <label class="custom-control-label"
-                                                                   for="checkboxPopupAlert">
-                                                                <span class="badge badge-secondary">Popup Alert</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="custom-control custom-switch">
-                                                            <input type="checkbox"
-                                                                   class="custom-control-input"
-                                                                   id="checkboxVibration" />
-                                                            <label class="custom-control-label"
-                                                                   for="checkboxVibration">
-                                                                <span class="badge badge-secondary">Vibrate</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="custom-control custom-switch">
-                                                            <input type="checkbox"
-                                                                   class="custom-control-input"
-                                                                   id="checkboxQuarterMode" />
-                                                            <label class="custom-control-label"
-                                                                   for="checkboxQuarterMode">
-                                                                <span class="badge badge-secondary">Quarter Mode</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="bg-dark text-center form-control">
-                                                <i class="fa fa-hourglass text-info"></i>
-                                                <span class="font-weight-bold text-white">Chunk</span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="form-row">
-                                                <div class="col text-center">
-                                                    <input type="checkbox"
-                                                           class="form-check-input"
-                                                           id="checkboxChunkBeforeAlert" />
-                                                    <label class="form-check-label"
-                                                           for="checkboxChunkBeforeAlert">Before Alert</label>
-                                                </div>
-                                                <div class="col">
-                                                    <label for="selectTimeAlertMode">
-                                                        <i class="fa fa-clock-o text-primary"></i> Time
-                                                        Alert
-                                                    </label>
-                                                    <select class="form-control"
-                                                            id="selectTimeAlertMode">
-                                                        <option value="Silent" selected>🔕 Silent</option>
-                                                        <option value="Audio">🎵 Audio</option>
-                                                        <option value="Text">📝 Text-2-Speech</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="text-left">
-                                                <label for="selectChunkNotifyMode">
-                                                    <i class="fa fa-bell text-warning"></i> Notification
-                                                </label>
-                                                <select class="form-control"
-                                                        id="selectChunkNotifyMode"></select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="bg-dark text-center form-control">
-                                                <i class="fa fa-hourglass-1 text-info"></i>
-                                                <span class="font-weight-bold text-white">Mid</span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="form-check text-left">
-                                                <input type="checkbox"
-                                                       class="form-check-input"
-                                                       id="checkboxMidBeforeAlert" />
-                                                <label class="form-check-label"
-                                                       for="checkboxMidBeforeAlert">Before Alert</label>
-                                            </div>
-                                            <div class="text-left" style="padding-top: 10px">
-                                                <label for="selectMidNotifyMode">
-                                                    <i class="fa fa-bell text-warning"></i>
-                                                    Notification
-                                                </label>
-                                                <select class="form-control"
-                                                        id="selectMidNotifyMode"></select>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-header" id="headingTwo">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block text-left collapsed"
-                                                type="button"
-                                                data-toggle="collapse"
-                                                data-target="#collapseTwo"
-                                                aria-expanded="false"
-                                                aria-controls="collapseTwo">
-                                            <i class="fa fa-bell"> </i> Alert Sounds
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div id="collapseTwo"
-                                     class="collapse"
-                                     aria-labelledby="headingTwo"
-                                     data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <div class="form-group">
-                                            <label for="selectChunkBeforeAlertAudio"
-                                                   class="text-info">
-                                                Chunk Before Audio
-                                                <a id="btnChunkBeforeAlertAudioTry"
-                                                   role="button"
-                                                   aria-expanded="false">
-                                                    🔔
-                                                </a>
-                                            </label>
-                                            <select class="form-control"
-                                                    id="selectChunkBeforeAlertAudio"></select>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="selectMidBeforeAlertAudio"
-                                                   class="text-info">
-                                                Mid Before Audio<a id="btnMidBeforeAlertAudioTry"
-                                                                   role="button"
-                                                                   aria-expanded="false">
-                                                    🔔
-                                                </a>
-                                            </label>
-                                            <select class="form-control"
-                                                    id="selectMidBeforeAlertAudio"></select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Card 4-->
-                            <div class="card">
-                                <div class="card-header" id="heading4">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link"
-                                                type="button"
-                                                data-toggle="collapse"
-                                                data-target="#collapse4"
-                                                aria-expanded="true"
-                                                aria-controls="collapse4">
-                                            <i class="fa fa-cubes"> </i> Advance
-                                        </button>
-                                    </h2>
-                                </div>
-
-                                <div id="collapse4"
-                                     class="collapse"
-                                     aria-labelledby="heading4"
-                                     data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <div class="form-group">
-                                            <div class="custom-control custom-switch">
-                                                <input type="checkbox"
-                                                       checked
-                                                       class="custom-control-input"
-                                                       id="checkboxAlertWindow" />
-                                                <label class="custom-control-label"
-                                                       for="checkboxAlertWindow">
-                                                    <span class="badge badge-dark">New window for alert</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-switch">
-                                                <input type="checkbox"
-                                                       class="custom-control-input"
-                                                       id="checkboxAutoOff" />
-                                                <label class="custom-control-label"
-                                                       for="checkboxAutoOff">
-                                                    <span class="badge badge-dark">Auto Turn Off</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="form-control">
-                                                <input type="time" id="controlAutoOffTime" />
-                                                <input type="checkbox" id="checkboxNextDayOff" />
-                                                <label for="checkboxNextDayOff"> Next day </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="custom-control custom-switch">
-                                                <input type="checkbox"
-                                                       class="custom-control-input"
-                                                       id="checkboxTicker" />
-                                                <label class="custom-control-label"
-                                                       for="checkboxTicker">
-                                                    <span class="badge badge-dark">Enable Ticker</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="selectTickerDuration">Ticker Duration</label>
-                                            <select class="form-control" id="selectTickerDuration">
-                                                <option>1</option>
-                                                <option>3</option>
-                                                <option selected>6</option>
-                                                <option>18</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="selectMidBeforeAlertAudio">
-                                                Ticker Audio<a id="btnTickerAudioTry"
-                                                               role="button"
-                                                               aria-expanded="false">
-                                                    🔔
-                                                </a>
-                                            </label>
-                                            <select class="form-control"
-                                                    id="selectTickerAudio"></select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card 4 end -->
-                            <!-- Card Misc-->
-                            <div class="card">
-                                <div class="card-header" id="heading5">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link collapsed"
-                                                type="button"
-                                                data-toggle="collapse"
-                                                data-target="#collapse5"
-                                                aria-expanded="false"
-                                                aria-controls="collapseThree">
-                                            <i class="fa fa-cogs"></i> Tools
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div id="collapse5"
-                                     class="collapse"
-                                     aria-labelledby="heading5"
-                                     data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <div class="form-group">
-                                            <div class="py-lg-2">
-                                                <button id="btnOpenPopupApp"
-                                                        type="button"
-                                                        class="btn btn-sm btn-link">
-                                                    <i class="fa fa-external-link"></i> Open Popup App
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <button id="btnGenerateQueryString"
-                                                    type="button"
-                                                    class="btn btn-sm btn-link">
-                                                <i class="fa fa-external-link"></i> Generate Query
-                                                String
-                                            </button><br />
-                                            <a id="linkQueryString"
-                                               for="btnGenerateQueryString"
-                                               href="#">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Card Misc end -->
-                        </div>
-                        <!--  Settings end-->
-                    </div>
+              <div class="form-group">
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input
+                    type="radio"
+                    id="radioMeditationMusic18Low"
+                    name="radioMeditationMusic"
+                    value="../media/saregama18Sec.mp3"
+                    checked
+                    class="custom-control-input"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="radioMeditationMusic18Low"
+                  >
+                    <i class="fa fa-music"></i> 18 Sec
+                  </label>
                 </div>
-                <!-- collapse Controls end -->
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 text-center">
-                <!-- Buttons second row-->
-                <!-- Buttons second row end <!-- Buttons 2nd row-->
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <a class="btn btn-secondary"
-                       data-toggle="collapse"
-                       href="#collapseControlsMusic"
-                       role="button"
-                       aria-expanded="false"
-                       aria-controls="collapseExample">
-                        <i class="fa fa-music"></i>
-                    </a>
-                    <button type="button"
-                            class="btn btn-secondary btn-sm"
-                            id="btnPauseAllAudios">
-                        <i class="fa fa-bell-slash"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-secondary" id="btnWaveLoader">
-                        <i class="fa fa-random"></i>
-                    </button>
-                    <button type="button"
-                            class="btn btn-secondary"
-                            id="btnBatteryLoader">
-                        <i class="fa fa-battery-3"></i>
-                    </button>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input
+                    type="radio"
+                    id="radioMeditationMusic20"
+                    name="radioMeditationMusic"
+                    value="../media/saregama20Sec.mp3"
+                    class="custom-control-input"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="radioMeditationMusic20"
+                    ><i class="fa fa-music"></i> 20 Sec</label
+                  >
                 </div>
-
-                <!-- Buttons 2nd row end-->
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                <!-- collapse Music Controls begin -->
-                <div class="collapse" id="collapseControlsMusic">
-                    <div class="card card-body">
-                        <div class="form-group text-center">
-                            <audio id="audioMeditation"
-                                   class="form-control"
-                                   controls
-                                   loop
-                                   style="width: 100%">
-                                <source src="../media/saregama18Sec.mp3" type="audio/mp3" />
-                                Your browser does not support the audio element.
-                            </audio>
-                            <audio id="audioAlert">
-                                <source src="../media/alerts/alert_Google_Event.mp3"
-                                        type="audio/mpeg" />
-                            </audio>
-                            <audio id="audioTicker">
-                                <source src="../media/alerts/ticking_Water_Two_Drops.mp3"
-                                        type="audio/mpeg" />
-                            </audio>
-                        </div>
-                        <div class="text-center form-group">
-                            <button id="btnPlayMeditationnAudio"
-                                    type="button"
-                                    class="btn btn-success">
-                                <i class="fa fa-play"></i>
-                                Play
-                            </button>
-                            <button id="btnPauseMeditationAudio"
-                                    type="button"
-                                    class="btn btn-warning">
-                                <i class="fa fa-pause"></i>
-                                Pause
-                            </button>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio"
-                                       id="radioMeditationMusic18Low"
-                                       name="radioMeditationMusic"
-                                       value="../media/saregama18Sec.mp3"
-                                       checked
-                                       class="custom-control-input" />
-                                <label class="custom-control-label"
-                                       for="radioMeditationMusic18Low">
-                                    <i class="fa fa-music"></i> 18 Sec
-                                </label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio"
-                                       id="radioMeditationMusic20"
-                                       name="radioMeditationMusic"
-                                       value="../media/saregama20Sec.mp3"
-                                       class="custom-control-input" />
-                                <label class="custom-control-label"
-                                       for="radioMeditationMusic20"><i class="fa fa-music"></i> 20 Sec</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio"
-                                       id="radioMeditationMusic18"
-                                       name="radioMeditationMusic"
-                                       value="../media/saregama18SecLow.wav"
-                                       class="custom-control-input" />
-                                <label class="custom-control-label"
-                                       for="radioMeditationMusic18">
-                                    <i class="fa fa-music"></i> 18 Sec Low
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="text-center p-3">
-                            <span class="badge badge-dark">Volumes</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="rangeMeditationMusicVolume">
-                                <i class="fa fa-volume-up"></i> Meditation Music Volume:
-                                <span id="rangeMeditationMusicVolumeLabel"
-                                      class="badge badge-light"></span>
-                            </label>
-                            <input class="form-control"
-                                   id="rangeMeditationMusicVolume"
-                                   width="80%"
-                                   type="range"
-                                   min="0"
-                                   max="1"
-                                   step="0.01"
-                                   value="0.8" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="rangeAlertAudioVolume">
-                                <i class="fa fa-volume-up"></i> Sound Alert Volume:<span id="rangeAlertAudioVolumeLabel"
-                                                                                         class="badge badge-light"></span>
-                            </label>
-                            <input class="form-control-range"
-                                   id="rangeAlertAudioVolume"
-                                   type="range"
-                                   min="0"
-                                   max="1"
-                                   step="0.01"
-                                   value="0.8" />
-                        </div>
-                        <div class="form-group">
-                            <label for="rangeSpeechVolume">
-                                <i class="fa fa-volume-up"></i> Speech Volume:<span id="rangeSpeechVolumeLabel"
-                                                                                    class="badge badge-light"></span>
-                            </label>
-                            <input class="form-control-range"
-                                   id="rangeSpeechVolume"
-                                   type="range"
-                                   min="0"
-                                   max="1"
-                                   step="0.01"
-                                   value="0.8" />
-                        </div>
-                        <div class="form-groupr">
-                            <label for="rangeTickerVolume">
-                                <i class="fa fa-volume-up"></i> Ticker Volume:
-                                <span id="rangeTickerVolumeLabel" class="badge badge-light">80%</span>
-                            </label>
-                            <input class="form-control"
-                                   id="rangeTickerVolume"
-                                   width="80%"
-                                   type="range"
-                                   min="0"
-                                   max="1"
-                                   step="0.01"
-                                   value="0.8" />
-                        </div>
-                    </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input
+                    type="radio"
+                    id="radioMeditationMusic18"
+                    name="radioMeditationMusic"
+                    value="../media/saregama18SecLow.wav"
+                    class="custom-control-input"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="radioMeditationMusic18"
+                  >
+                    <i class="fa fa-music"></i> 18 Sec Low
+                  </label>
                 </div>
-                <!-- collapse Music Controls end -->
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div id="containerWave" class="text-center" style="display: none">
-                    <iframe id="frameWave"
-                            src=""
-                            title="Wave Meditation"
-                            width="100%"
-                            height="650"
-                            style="border: none">
-                    </iframe>
-                </div>
-            </div>
-        </div>
+              </div>
 
-        <div class="row">
-            <div class="col-md-4 text-center">
-                <video id="videoDummy"
-                       controls
-                       loop
-                       muted
-                       style="width: 12px; height: 8px">
-                    <source src="../media/video_dummy.mp4" type="video/mp4" />
-                </video>
+              <div class="text-center p-3">
+                <span class="badge badge-dark">Volumes</span>
+              </div>
+              <div class="form-group">
+                <label for="rangeMeditationMusicVolume">
+                  <i class="fa fa-volume-up"></i> Meditation Music Volume:
+                  <span
+                    id="rangeMeditationMusicVolumeLabel"
+                    class="badge badge-light"
+                  ></span>
+                </label>
+                <input
+                  class="form-control"
+                  id="rangeMeditationMusicVolume"
+                  width="80%"
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.01"
+                  value="0.8"
+                />
+              </div>
 
-                <span id="errorMessage" class="text-white-50 small"> अप्रमाद </span>
+              <div class="form-group">
+                <label for="rangeAlertAudioVolume">
+                  <i class="fa fa-volume-up"></i> Sound Alert Volume:<span
+                    id="rangeAlertAudioVolumeLabel"
+                    class="badge badge-light"
+                  ></span>
+                </label>
+                <input
+                  class="form-control-range"
+                  id="rangeAlertAudioVolume"
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.01"
+                  value="0.8"
+                />
+              </div>
+              <div class="form-group">
+                <label for="rangeSpeechVolume">
+                  <i class="fa fa-volume-up"></i> Speech Volume:<span
+                    id="rangeSpeechVolumeLabel"
+                    class="badge badge-light"
+                  ></span>
+                </label>
+                <input
+                  class="form-control-range"
+                  id="rangeSpeechVolume"
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.01"
+                  value="0.8"
+                />
+              </div>
+              <div class="form-groupr">
+                <label for="rangeTickerVolume">
+                  <i class="fa fa-volume-up"></i> Ticker Volume:
+                  <span id="rangeTickerVolumeLabel" class="badge badge-light"
+                    >80%</span
+                  >
+                </label>
+                <input
+                  class="form-control"
+                  id="rangeTickerVolume"
+                  width="80%"
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.01"
+                  value="0.8"
+                />
+              </div>
             </div>
+          </div>
+          <!-- collapse Music Controls end -->
         </div>
-        <div class="row">
-            <div class="col-md-4 text-center"></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div id="containerWave" class="text-center" style="display: none">
+            <iframe
+              id="frameWave"
+              src=""
+              title="Wave Meditation"
+              width="100%"
+              height="650"
+              style="border: none"
+            >
+            </iframe>
+          </div>
         </div>
-        <!--end container-->
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 text-center">
+          <video
+            id="videoDummy"
+            controls
+            loop
+            muted
+            style="width: 12px; height: 8px"
+          >
+            <source src="../media/video_dummy.mp4" type="video/mp4" />
+          </video>
+
+          <span id="errorMessage" class="text-white-50 small"> अप्रमाद </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 text-center"></div>
+      </div>
+      <!--end container-->
     </div>
-    <footer class="text-center">
- 
-    </footer>
+    <footer class="text-center"></footer>
     <script src="../libraries/jquery-3.5.1.min.js"></script>
     <script src="../libraries/popper.min.js"></script>
     <script src="../libraries/bootstrap.min.js"></script>
     <script src="lib/clock.darshan.js"></script>
     <script>
-        function testFunction(min) {
-            var out = "";
+      function testFunction(min) {
+        var out = "";
 
-            return out;
-        }
+        return out;
+      }
     </script>
-</body>
+  </body>
 </html>
