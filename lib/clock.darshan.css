@@ -1,6 +1,6 @@
-h3 {
+h3,
+h4 {
   color: whitesmoke; /* #ff5f0e;*/
-
 }
 
 body {
@@ -13,16 +13,16 @@ select {
 }
 
 .cdGreen {
-    color: #28a745;
+  color: #28a745;
 }
 .cdOrange {
-    color: #FA9207;
+  color: #fa9207;
 }
 .cdRed {
-    color: #FF2E2D;
+  color: #ff2e2d;
 }
 .cdBlue {
-    color: #007bff;
+  color: #007bff;
 }
 
 #clockContainer {
@@ -48,22 +48,20 @@ select {
 }
 
 #min {
-    stroke-width: 1.5px;
-    fill: #0d2931;
- 
-    stroke: #ffffff;
+  stroke-width: 1.5px;
+  fill: #0d2931;
+
+  stroke: #ffffff;
 }
 
 #hour {
-    fill: #FF2E2D;
-    stroke: #ffffff;
-  
+  fill: #ff2e2d;
+  stroke: #ffffff;
 }
 
-
 #currentTime {
-    fill: #50676f;
-    font-size: 3px;
+  fill: #50676f;
+  font-size: 3px;
 }
 
 #timeStatus {
@@ -81,8 +79,8 @@ select {
   border-left-color: rgb(222, 226, 230) !important;
   border-left-style: solid !important;
   border-left-width: 1px !important;
-  padding-bottom:0px;
-  padding-bottom:0px;
+  padding-bottom: 0px;
+  padding-bottom: 0px;
 }
 
 #chunkProgress {

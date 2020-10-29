@@ -46,7 +46,7 @@
               </div>
             </div>
             <span class="circle"></span>
-            <h3 id="displayNaam">Welcome</h3>
+            <h4 id="displayNaam">Welcome</h4>
           </div>
 
           <!--    <div class="border" id="timeStatus"></div>
@@ -183,17 +183,112 @@
                     data-parent="#accordionExample"
                   >
                     <div class="card-body">
-                      <div class="form-group bg-primary text-center">
-                        <label for="selectProfile" class="text-white">
-                          <i class="fa fa-certificate"></i> Profile
-                        </label>
+                      <div>
+                        <div class="bg-primary text-center rounded">
+                          <label for="selectProfile" class="text-white">
+                            <i class="fa fa-certificate"></i> Profile
+                          </label>
+                        </div>
                         <select
-                          class="form-control"
+                          class="form-control bg-secondary text-white"
                           id="selectProfile"
                         ></select>
                       </div>
-                      <div>
-                        <div class="form-group" style="padding-top: 30px">
+
+                      <div class="border border-primary mt-5 p-3 mb-4 rounded">
+                        <div class="form-row mb-2">
+                          <div class="col">
+                            <div class="custom-control custom-switch">
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="checkboxChunkBeforeAlert"
+                              />
+                              <label
+                                class="custom-control-label"
+                                for="checkboxChunkBeforeAlert"
+                                ><span> Before Alert</span></label
+                              >
+                            </div>
+                          </div>
+                          <div class="text-center p-1 bg-primary col rounded">
+                            <span class="text-white"> Chunk &nbsp;</span>
+                            <i class="fa fa-hourglass text-white-50"></i>
+                          </div>
+                        </div>
+                        <div class="form-group mb-4 mt-2">
+                          <div class="form-row">
+                            <div class="col">
+                              <label for="selectTimeAlertMode">
+                                <i
+                                  class="fa fa-clock-o text-primary text-warning"
+                                ></i>
+                                Time Alert
+                              </label>
+                              <select
+                                class="form-control"
+                                id="selectTimeAlertMode"
+                              >
+                                <option value="Silent" selected>
+                                  🔕 Silent
+                                </option>
+                                <option value="Audio">🎵 Audio</option>
+                                <option value="Text">📝 Text-2-Speech</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="text-left mt-2">
+                            <label for="selectChunkNotifyMode">
+                              <i class="fa fa-bell text-warning"></i>
+                              Notification
+                            </label>
+                            <select
+                              class="form-control"
+                              id="selectChunkNotifyMode"
+                            ></select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="border border-warning p-3 mb-4 rounded">
+                        <div class="form-row">
+                          <div class="col">
+                            <div class="custom-control custom-switch">
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="checkboxMidBeforeAlert"
+                              />
+                              <label
+                                class="custom-control-label"
+                                for="checkboxMidBeforeAlert"
+                                ><span> Before Alert</span></label
+                              >
+                            </div>
+                          </div>
+                          <div class="text-center p-1 bg-primary col rounded">
+                            <span class="text-white"> Mid &nbsp; </span>
+                            <i class="fa fa-hourglass-1 text-white-50"></i>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <div class="text-left mt-2">
+                            <label for="selectMidNotifyMode">
+                              <i class="fa fa-bell text-warning"></i>
+                              Notification
+                            </label>
+                            <select
+                              class="form-control"
+                              id="selectMidNotifyMode"
+                            ></select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="p-3 border border-secondary rounded">
+                        <div class="form-group">
                           <div class="form-row">
                             <div class="col">
                               <div class="custom-control custom-switch">
@@ -249,87 +344,6 @@
                           </div>
                         </div>
                       </div>
-                      <div class="form-group">
-                        <div class="bg-dark text-center form-control">
-                          <i class="fa fa-hourglass text-info"></i>
-                          <span class="font-weight-bold text-white">Chunk</span>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="form-row">
-                          <div class="col">
-                            <div class="custom-control custom-switch">
-                              <input
-                                type="checkbox"
-                                class="custom-control-input"
-                                id="checkboxChunkBeforeAlert"
-                              />
-                              <label
-                                class="custom-control-label"
-                                for="checkboxChunkBeforeAlert"
-                                ><span> Before Alert</span></label
-                              >
-                            </div>
-                          </div>
-                          <div class="col">
-                            <label for="selectTimeAlertMode">
-                              <i class="fa fa-clock-o text-primary"></i> Time
-                              Alert
-                            </label>
-                            <select
-                              class="form-control"
-                              id="selectTimeAlertMode"
-                            >
-                              <option value="Silent" selected>🔕 Silent</option>
-                              <option value="Audio">🎵 Audio</option>
-                              <option value="Text">📝 Text-2-Speech</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <div class="text-left">
-                          <label for="selectChunkNotifyMode">
-                            <i class="fa fa-bell text-warning"></i> Notification
-                          </label>
-                          <select
-                            class="form-control"
-                            id="selectChunkNotifyMode"
-                          ></select>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="bg-dark text-center form-control">
-                          <i class="fa fa-hourglass-1 text-info"></i>
-                          <span class="font-weight-bold text-white">Mid</span>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="custom-control custom-switch">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="checkboxMidBeforeAlert"
-                          />
-                          <label
-                            class="custom-control-label"
-                            for="checkboxMidBeforeAlert"
-                            ><span> Before Alert</span></label
-                          >
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <div class="text-left" style="padding-top: 10px">
-                          <label for="selectMidNotifyMode">
-                            <i class="fa fa-bell text-warning"></i>
-                            Notification
-                          </label>
-                          <select
-                            class="form-control"
-                            id="selectMidNotifyMode"
-                          ></select>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -357,10 +371,7 @@
                   >
                     <div class="card-body">
                       <div class="form-group">
-                        <label
-                          for="selectChunkBeforeAlertAudio"
-                          class="text-info"
-                        >
+                        <label for="selectChunkBeforeAlertAudio">
                           Chunk Before Audio
                           <a
                             id="btnChunkBeforeAlertAudioTry"
@@ -377,10 +388,7 @@
                       </div>
 
                       <div class="form-group">
-                        <label
-                          for="selectMidBeforeAlertAudio"
-                          class="text-info"
-                        >
+                        <label for="selectMidBeforeAlertAudio">
                           Mid Before Audio<a
                             id="btnMidBeforeAlertAudioTry"
                             role="button"
@@ -742,7 +750,7 @@
                   min="0"
                   max="1"
                   step="0.01"
-                  value="0.8"
+                  value="0.5"
                 />
               </div>
               <div class="form-group">
@@ -759,7 +767,7 @@
                   min="0"
                   max="1"
                   step="0.01"
-                  value="0.8"
+                  value="0.7"
                 />
               </div>
               <div class="form-groupr">
