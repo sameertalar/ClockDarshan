@@ -197,7 +197,7 @@
 
                       <div class="border border-primary mt-5 p-3 mb-4 rounded">
                         <div class="form-row mb-2">
-                          <div class="col">
+                          <div class="col-8">
                             <div class="custom-control custom-switch">
                               <input
                                 type="checkbox"
@@ -211,8 +211,8 @@
                               >
                             </div>
                           </div>
-                          <div class="text-center p-1 bg-primary col rounded">
-                            <span class="text-white"> Chunk &nbsp;</span>
+                          <div class="text-center p-1 bg-primary col-4 rounded">
+                            <span class="text-white"> Chunk</span>
                             <i class="fa fa-hourglass text-white-50"></i>
                           </div>
                         </div>
@@ -220,9 +220,7 @@
                           <div class="form-row">
                             <div class="col">
                               <label for="selectTimeAlertMode">
-                                <i
-                                  class="fa fa-clock-o text-primary text-warning"
-                                ></i>
+                                <i class="fa fa-clock-o"></i>
                                 Time Alert
                               </label>
                               <select
@@ -240,7 +238,7 @@
 
                           <div class="text-left mt-2">
                             <label for="selectChunkNotifyMode">
-                              <i class="fa fa-bell text-warning"></i>
+                              <i class="fa fa-bell"></i>
                               Notification
                             </label>
                             <select
@@ -253,7 +251,7 @@
 
                       <div class="border border-warning p-3 mb-4 rounded">
                         <div class="form-row">
-                          <div class="col">
+                          <div class="col-8">
                             <div class="custom-control custom-switch">
                               <input
                                 type="checkbox"
@@ -267,8 +265,8 @@
                               >
                             </div>
                           </div>
-                          <div class="text-center p-1 bg-primary col rounded">
-                            <span class="text-white"> Mid &nbsp; </span>
+                          <div class="text-center p-1 bg-primary col-4 rounded">
+                            <span class="text-white"> Mid </span>
                             <i class="fa fa-hourglass-1 text-white-50"></i>
                           </div>
                         </div>
@@ -276,71 +274,13 @@
                         <div class="form-group">
                           <div class="text-left mt-2">
                             <label for="selectMidNotifyMode">
-                              <i class="fa fa-bell text-warning"></i>
+                              <i class="fa fa-bell"></i>
                               Notification
                             </label>
                             <select
                               class="form-control"
                               id="selectMidNotifyMode"
                             ></select>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="p-3 border border-secondary rounded">
-                        <div class="form-group">
-                          <div class="form-row">
-                            <div class="col">
-                              <div class="custom-control custom-switch">
-                                <input
-                                  type="checkbox"
-                                  class="custom-control-input"
-                                  id="checkboxPopupAlert"
-                                />
-                                <label
-                                  class="custom-control-label"
-                                  for="checkboxPopupAlert"
-                                >
-                                  <span class="badge badge-secondary"
-                                    >Popup Alert</span
-                                  >
-                                </label>
-                              </div>
-                            </div>
-                            <div class="col">
-                              <div class="custom-control custom-switch">
-                                <input
-                                  type="checkbox"
-                                  class="custom-control-input"
-                                  id="checkboxVibration"
-                                />
-                                <label
-                                  class="custom-control-label"
-                                  for="checkboxVibration"
-                                >
-                                  <span class="badge badge-secondary"
-                                    >Vibrate</span
-                                  >
-                                </label>
-                              </div>
-                            </div>
-                            <div class="col">
-                              <div class="custom-control custom-switch">
-                                <input
-                                  type="checkbox"
-                                  class="custom-control-input"
-                                  id="checkboxQuarterMode"
-                                />
-                                <label
-                                  class="custom-control-label"
-                                  for="checkboxQuarterMode"
-                                >
-                                  <span class="badge badge-secondary"
-                                    >Quarter Mode</span
-                                  >
-                                </label>
-                              </div>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -402,6 +342,64 @@
                           id="selectMidBeforeAlertAudio"
                         ></select>
                       </div>
+                      <div class="text-center p-3">
+                        <span class="badge badge-dark">Volumes</span>
+                      </div>
+                      <div class="form-group">
+                        <label for="rangeAlertAudioVolume">
+                          <i class="fa fa-volume-up"></i> Sound Alert
+                          Volume:<span
+                            id="rangeAlertAudioVolumeLabel"
+                            class="badge badge-light"
+                          ></span>
+                        </label>
+                        <input
+                          class="form-control-range"
+                          id="rangeAlertAudioVolume"
+                          type="range"
+                          min="0"
+                          max="1"
+                          step="0.01"
+                          value="0.5"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="rangeSpeechVolume">
+                          <i class="fa fa-volume-up"></i> Speech Volume:<span
+                            id="rangeSpeechVolumeLabel"
+                            class="badge badge-light"
+                          ></span>
+                        </label>
+                        <input
+                          class="form-control-range"
+                          id="rangeSpeechVolume"
+                          type="range"
+                          min="0"
+                          max="1"
+                          step="0.01"
+                          value="0.7"
+                        />
+                      </div>
+                      <div class="form-groupr">
+                        <label for="rangeTickerVolume">
+                          <i class="fa fa-volume-up"></i> Ticker Volume:
+                          <span
+                            id="rangeTickerVolumeLabel"
+                            class="badge badge-light"
+                            >80%</span
+                          >
+                        </label>
+                        <input
+                          class="form-control"
+                          id="rangeTickerVolume"
+                          width="80%"
+                          type="range"
+                          min="0"
+                          max="1"
+                          step="0.01"
+                          value="0.8"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -430,25 +428,84 @@
                     data-parent="#accordionExample"
                   >
                     <div class="card-body">
-                      <div class="form-group">
-                        <div class="custom-control custom-switch">
-                          <input
-                            type="checkbox"
-                            checked
-                            class="custom-control-input"
-                            id="checkboxAlertWindow"
-                          />
-                          <label
-                            class="custom-control-label"
-                            for="checkboxAlertWindow"
-                          >
-                            <span class="badge badge-dark"
-                              >New window for alert</span
-                            >
-                          </label>
+                      <div class="p-3 border border-secondary rounded">
+                        <div class="form-group">
+                          <div class="form-row">
+                            <div class="col">
+                              <div class="custom-control custom-switch">
+                                <input
+                                  type="checkbox"
+                                  class="custom-control-input"
+                                  id="checkboxPopupAlert"
+                                />
+                                <label
+                                  class="custom-control-label"
+                                  for="checkboxPopupAlert"
+                                >
+                                  <span class="badge badge-dark"
+                                    >Popup Alert</span
+                                  >
+                                </label>
+                              </div>
+                              <div class="custom-control custom-switch">
+                                <input
+                                  type="checkbox"
+                                  checked
+                                  class="custom-control-input"
+                                  id="checkboxAlertWindow"
+                                />
+                                <label
+                                  class="custom-control-label"
+                                  for="checkboxAlertWindow"
+                                >
+                                  <span class="badge-light"
+                                    >New window for alert</span
+                                  >
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-row mt-3">
+                            <div class="col">
+                              <div class="custom-control custom-switch">
+                                <input
+                                  type="checkbox"
+                                  class="custom-control-input"
+                                  id="checkboxVibration"
+                                />
+                                <label
+                                  class="custom-control-label"
+                                  for="checkboxVibration"
+                                >
+                                  <span class="badge badge-warning"
+                                    >Vibrate</span
+                                  >
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="custom-control custom-switch">
+                                <input
+                                  type="checkbox"
+                                  class="custom-control-input"
+                                  id="checkboxQuarterMode"
+                                />
+                                <label
+                                  class="custom-control-label"
+                                  for="checkboxQuarterMode"
+                                >
+                                  <span class="badge badge-success"
+                                    >Quarter Mode</span
+                                  >
+                                </label>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <div class="form-group">
+
+                      <div class="form-group"></div>
+                      <div class="form-group mt-5">
                         <div class="custom-control custom-switch">
                           <input
                             type="checkbox"
@@ -471,7 +528,7 @@
                         </div>
                       </div>
 
-                      <div class="form-group">
+                      <div class="form-group mt-5">
                         <div class="custom-control custom-switch">
                           <input
                             type="checkbox"
@@ -713,9 +770,6 @@
                 </div>
               </div>
 
-              <div class="text-center p-3">
-                <span class="badge badge-dark">Volumes</span>
-              </div>
               <div class="form-group">
                 <label for="rangeMeditationMusicVolume">
                   <i class="fa fa-volume-up"></i> Meditation Music Volume:
@@ -727,59 +781,6 @@
                 <input
                   class="form-control"
                   id="rangeMeditationMusicVolume"
-                  width="80%"
-                  type="range"
-                  min="0"
-                  max="1"
-                  step="0.01"
-                  value="0.8"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="rangeAlertAudioVolume">
-                  <i class="fa fa-volume-up"></i> Sound Alert Volume:<span
-                    id="rangeAlertAudioVolumeLabel"
-                    class="badge badge-light"
-                  ></span>
-                </label>
-                <input
-                  class="form-control-range"
-                  id="rangeAlertAudioVolume"
-                  type="range"
-                  min="0"
-                  max="1"
-                  step="0.01"
-                  value="0.5"
-                />
-              </div>
-              <div class="form-group">
-                <label for="rangeSpeechVolume">
-                  <i class="fa fa-volume-up"></i> Speech Volume:<span
-                    id="rangeSpeechVolumeLabel"
-                    class="badge badge-light"
-                  ></span>
-                </label>
-                <input
-                  class="form-control-range"
-                  id="rangeSpeechVolume"
-                  type="range"
-                  min="0"
-                  max="1"
-                  step="0.01"
-                  value="0.7"
-                />
-              </div>
-              <div class="form-groupr">
-                <label for="rangeTickerVolume">
-                  <i class="fa fa-volume-up"></i> Ticker Volume:
-                  <span id="rangeTickerVolumeLabel" class="badge badge-light"
-                    >80%</span
-                  >
-                </label>
-                <input
-                  class="form-control"
-                  id="rangeTickerVolume"
                   width="80%"
                   type="range"
                   min="0"
