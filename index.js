@@ -11,7 +11,7 @@ const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 400,
-    height: 200,
+    height: 600,
     title: "Be Here Now",
     frame: false,
     transparent: true,
