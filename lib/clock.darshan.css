@@ -132,6 +132,11 @@ select {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbff87', endColorstr='#17a504',GradientType=0 );
 }
 
+
+#displayNaam {
+  font-size: 1.5em;
+}
+
 @media only screen and (max-width: 300px) {
   #btnGear {
     font-size: 1rem;
@@ -141,5 +146,9 @@ select {
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     border-radius: 0.25rem;
+  }
+
+  #displayNaam {
+    font-size: 1em;
   }
 }
