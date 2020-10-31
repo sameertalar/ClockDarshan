@@ -14,7 +14,9 @@
       "IncognitoSongs": "99__NobelDanceTrack.mp3",
       "IncognitoSongsVol": 0.7,
       "IncognitoTracks": "99__NobelDanceTrack.mp3",
-      "IncognitoTracksVol": 0.7
+      "IncognitoTracksVol": 0.7,
+      "T$SoundEffects": "00SE__Door-Bell-Ding-A1.mp3",
+      "T$SoundEffectsVol": 0.7
     },
     {
       "chunk": 5,
@@ -30,7 +32,9 @@
       "IncognitoSongs": "99__NobelDanceTrack.mp3",
       "IncognitoSongsVol": 0.7,
       "IncognitoTracks": "99__NobelDanceTrack.mp3",
-      "IncognitoTracksVol": 0.7
+      "IncognitoTracksVol": 0.7,
+      "T$SoundEffects": "05SE__Single-Coin-Drop-On-Table.mp3",
+      "T$SoundEffectsVol": 0.7
     },
     {
       "chunk": 10,
@@ -46,7 +50,9 @@
       "IncognitoSongs": "99__NobelDanceTrack.mp3",
       "IncognitoSongsVol": 0.7,
       "IncognitoTracks": "99__NobelDanceTrack.mp3",
-      "IncognitoTracksVol": 0.7
+      "IncognitoTracksVol": 0.7,
+      "T$SoundEffects": "10SE__TharaRangMahal.mp3",
+      "T$SoundEffectsVol": 0.7
     },
     {
       "chunk": 15,
@@ -62,7 +68,9 @@
       "IncognitoSongs": "99__NobelDanceTrack.mp3",
       "IncognitoSongsVol": 0.7,
       "IncognitoTracks": "99__NobelDanceTrack.mp3",
-      "IncognitoTracksVol": 0.7
+      "IncognitoTracksVol": 0.7,
+      "T$SoundEffects": "15_Om_Shri_Gurudev_Hare_Track.mp3",
+      "T$SoundEffectsVol": 0.7
     },
     {
       "chunk": 20,
@@ -78,7 +86,9 @@
       "IncognitoSongs": "99__NobelDanceTrack.mp3",
       "IncognitoSongsVol": 0.7,
       "IncognitoTracks": "99__NobelDanceTrack.mp3",
-      "IncognitoTracksVol": 0.7
+      "IncognitoTracksVol": 0.7,
+      "T$SoundEffects": "20SE__Droping-Spoon-in-Mug.mp3",
+      "T$SoundEffectsVol": 0.7
     },
     {
       "chunk": 25,
@@ -94,12 +104,14 @@
       "IncognitoSongs": "99__NobelDanceTrack.mp3",
       "IncognitoSongsVol": 0.7,
       "IncognitoTracks": "99__NobelDanceTrack.mp3",
-      "IncognitoTracksVol": 0.7
+      "IncognitoTracksVol": 0.7,
+      "T$SoundEffects": "25SE__Ticking_Water_Two_Drops.mp3",
+      "T$SoundEffectsVol": 0.7
     },
     {
       "chunk": 30,
       "displayText": "Durga Devi",
-      "PopularSongs": "30LS__Aigiri_Nandini.mp3",
+      "PopularSongs": "30LS_Durge_Durghat_Bhari.mp3",
       "PopularSongsVol": 0.7,
       "PopularTracks": "30LT__Aigiri_Nandini_Track.mp3",
       "PopularTracksVol": 0.7,
@@ -110,7 +122,9 @@
       "IncognitoSongs": "99__NobelDanceTrack.mp3",
       "IncognitoSongsVol": 0.7,
       "IncognitoTracks": "99__NobelDanceTrack.mp3",
-      "IncognitoTracksVol": 0.7
+      "IncognitoTracksVol": 0.7,
+      "T$SoundEffects": "30SE__Drawing-A-Sword.mp3",
+      "T$SoundEffectsVol": 0.7
     },
     {
       "chunk": 35,
@@ -126,12 +140,14 @@
       "IncognitoSongs": "99__NobelDanceTrack.mp3",
       "IncognitoSongsVol": 0.7,
       "IncognitoTracks": "99__NobelDanceTrack.mp3",
-      "IncognitoTracksVol": 0.7
+      "IncognitoTracksVol": 0.7,
+      "T$SoundEffects": "35SE__Windy-Snow-Storm-Blizzard.mp3",
+      "T$SoundEffectsVol": 0.7
     },
     {
       "chunk": 40,
       "displayText": "Gautam Buddha",
-      "PopularSongs": "40LT__Osho_Nobel_Dance_Track.mp3",
+      "PopularSongs": "40LT__Osho_Nobel_Dance_Track1.mp3",
       "PopularSongsVol": 1,
       "PopularTracks": "40ST__ChineseInstrumental_Track.mp3",
       "PopularTracksVol": 0.7,
@@ -142,7 +158,9 @@
       "IncognitoSongs": "99__NobelDanceTrack.mp3",
       "IncognitoSongsVol": 0.7,
       "IncognitoTracks": "99__NobelDanceTrack.mp3",
-      "IncognitoTracksVol": 0.7
+      "IncognitoTracksVol": 0.7,
+      "T$SoundEffects": "40SE__Fire5.mp3",
+      "T$SoundEffectsVol": 0.7
     },
     {
       "chunk": 45,
@@ -158,12 +176,14 @@
       "IncognitoSongs": "99__NobelDanceTrack.mp3",
       "IncognitoSongsVol": 0.7,
       "IncognitoTracks": "99__NobelDanceTrack.mp3",
-      "IncognitoTracksVol": 0.7
+      "IncognitoTracksVol": 0.7,
+      "T$SoundEffects": "45SE__Damroo.mp3",
+      "T$SoundEffectsVol": 0.7
     },
     {
       "chunk": 50,
       "displayText": "Ramana Maharshi",
-      "PopularSongs": "50LS__Arunachala_Siva.mp3",
+      "PopularSongs": "50LS_Arunachala_Shiva_Chanting.mp3",
       "PopularSongsVol": 0.7,
       "PopularTracks": "50LT__Arunachala_Siva_Track.mp3",
       "PopularTracksVol": 0.7,
@@ -174,7 +194,9 @@
       "IncognitoSongs": "99__NobelDanceTrack.mp3",
       "IncognitoSongsVol": 0.7,
       "IncognitoTracks": "99__NobelDanceTrack.mp3",
-      "IncognitoTracksVol": 0.7
+      "IncognitoTracksVol": 0.7,
+      "T$SoundEffects": "50SE__ArunachalaRamana.mp3",
+      "T$SoundEffectsVol": 0.7
     },
     {
       "chunk": 55,
@@ -190,7 +212,9 @@
       "IncognitoSongs": "99__NobelDanceTrack.mp3",
       "IncognitoSongsVol": 0.7,
       "IncognitoTracks": "99__NobelDanceTrack.mp3",
-      "IncognitoTracksVol": 0.7
+      "IncognitoTracksVol": 0.7,
+      "T$SoundEffects": "55SE__Flute_fantasy.mp3",
+      "T$SoundEffectsVol": 0.7
     }
   ],
 

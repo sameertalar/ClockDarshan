@@ -42,6 +42,20 @@
     "midnotifymode": "Audio_PopularTracks"
   },
   {
+    "profileValue": "SoundEffects",
+    "displayText": "🔔 Sound Effects",
+    "popup": 0,
+    "vibration": 0,
+    "quartermode": 0,
+    "ischunkbeforealert": 0,
+    "chunkbeforealertaudio": 3,
+    "timealertmode": "Silent",
+    "chunknotifymode": "Audio_T$SoundEffects",
+    "ismidbeforealert": 0,
+    "midbeforealertaudio": 1,
+    "midnotifymode": "Silent"
+  },
+  {
     "profileValue": "PopularText",
     "displayText": "📝 Popular Text",
     "popup": 0,

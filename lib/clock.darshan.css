@@ -98,7 +98,7 @@ select {
   width: 100%;
   height: 8px;
   border: 1px solid #0d2931;
-  background-color: #fef9e7;
+  background-color: #fef9e7; 
   background-image: linear-gradient( right, #a6d8f5, #a6d8f5 50%, transparent 50%, transparent 50%);
   background-image: -webkit-linear-gradient( right, #a6d8f5, #a6d8f5 50%, transparent 50%, transparent 50%);
 }
@@ -138,3 +138,17 @@ select {
     display: none;
   }
 }
+
+ /*
+@media only screen and (max-height: 100px) {
+  #clock-container {
+    display: none;
+  }
+ 
+  body {
+    background-color: red;
+  };
+
+ 
+}
+  */
