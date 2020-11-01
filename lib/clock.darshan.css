@@ -39,8 +39,8 @@ select {
 #clock-container {
   display: inline-block;
   position: relative;
-  width: 95%;
-  height: 95%;
+  width: 80%;
+  height: 80%;
   vertical-align: middle;
   overflow: hidden;
   background: url("../img/clockDarshan.png");
@@ -66,7 +66,7 @@ select {
 }
 
 #currentTime {
-  fill: #50676f;
+  fill: #aababe;
   font-size: 3px;
 }
 

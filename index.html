@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="row ">
-        <div class="col-lg-4 text-center p-0">
+        <div class="col-lg-4 text-center">
           <div class="custom-control custom-switch mt-1 desktopMini">
             <input
               type="checkbox"
@@ -374,6 +374,23 @@
                           value="0.7"
                         />
                       </div>
+                      <div class="form-group">
+                        <label for="rangeTimeAlertVolume">
+                          <i class="fa fa-volume-up"></i> Time Volume:<span
+                            id="rangeTimeAlertVolumeLabel"
+                            class="badge badge-light"
+                          >50%</span>
+                        </label>
+                        <input
+                          class="form-control-range"
+                          id="rangeTimeAlertVolume"
+                          type="range"
+                          min="0"
+                          max="1"
+                          step="0.01"
+                          value="0.5"
+                        />
+                      </div>
                       <div class="form-groupr">
                         <label for="rangeTickerVolume">
                           <i class="fa fa-volume-up"></i> Ticker Volume:
@@ -454,6 +471,22 @@
                                 >
                                   <span class="badge-light"
                                     >New window for alert</span
+                                  >
+                                </label>
+                              </div>
+                              <div class="custom-control custom-switch">
+                                <input
+                                  type="checkbox"
+                                  checked
+                                  class="custom-control-input"
+                                  id="checkboxBrokenMinutesTime"
+                                />
+                                <label
+                                  class="custom-control-label"
+                                  for="checkboxBrokenMinutesTime"
+                                >
+                                  <span class="badgMinutese-light"
+                                    >Broken Minute Time</span
                                   >
                                 </label>
                               </div>
@@ -688,6 +721,9 @@
                   <source src="" type="audio/mp3" />
                 </audio>
                 <audio id="audioTicker">
+                  <source src="" type="audio/mp3" />
+                </audio>
+                <audio id="timeAlert">
                   <source src="" type="audio/mp3" />
                 </audio>
               </div>
