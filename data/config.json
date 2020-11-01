@@ -1,80 +1,92 @@
 {
   "newConfig": [],
 
-  "chunkConfigs": [
+  "chunkConfigs":[
     {
       "id": 1,
       "chunk": 0,
       "displayText": "गणेशाय नमः",
-      "displayIncogText": "The Begining"
+      "displayIncogText": "The Begining",
+      "color": "#28a745"
     },
     {
       "id": 2,
       "chunk": 5,
       "displayText": "महालक्ष्मी नमो नमः",
-      "displayIncogText": "Prosperity"
+      "displayIncogText": "Prosperity",
+      "color": "#28a745"
     },
     {
       "id": 3,
       "chunk": 10,
       "displayText": "सरस्वती भगवती",
-      "displayIncogText": "Knowledge"
+      "displayIncogText": "Knowledge",
+      "color": "#28a745"
     },
     {
       "id": 4,
       "chunk": 15,
       "displayText": "जय गगनगिरी",
-      "displayIncogText": "Compassion"
+      "displayIncogText": "Compassion",
+      "color": "#fa9207"
     },
     {
       "id": 5,
       "chunk": 20,
       "displayText": "अन्नपूर्णे सदा पूर्णे",
-      "displayIncogText": "Nourishment"
+      "displayIncogText": "Nourishment",
+      "color": "#fa9207"
     },
     {
       "id": 6,
       "chunk": 25,
       "displayText": "नर्मदे हर",
-      "displayIncogText": "Element Water"
+      "displayIncogText": "Element Water",
+      "color": "#fa9207"
     },
     {
       "id": 7,
       "chunk": 30,
       "displayText": "नमामि महिषासुरमर्दिनी",
-      "displayIncogText": "Fire Element"
+      "displayIncogText": "Fire Element",
+      "color": "#ff2e2d"
     },
     {
       "id": 8,
       "chunk": 35,
       "displayText": "वीर हनुमान",
-      "displayIncogText": "Element Air"
+      "displayIncogText": "Element Air",
+      "color": "#ff2e2d"
     },
     {
       "id": 9,
       "chunk": 40,
       "displayText": "तथागत बुद्ध",
-      "displayIncogText": "Element Earth"
+      "displayIncogText": "Element Earth",
+      "color": "#ff2e2d"
     },
     {
       "id": 10,
       "chunk": 45,
       "displayText": "जयजय शिव शंकर",
-      "displayIncogText": "Frequency and Vibration"
+      "displayIncogText": "Frequency and Vibration",
+      "color": "#007bff"
     },
     {
       "id": 11,
       "chunk": 50,
       "displayText": "रमण महर्षी",
-      "displayIncogText": "Self Enquiry"
+      "displayIncogText": "Self Enquiry",
+      "color": "#007bff"
     },
     {
       "id": 12,
       "chunk": 55,
       "displayText": "भज गोविंदम",
-      "displayIncogText": "Element Space"
+      "displayIncogText": "Element Space",
+      "color": "#007bff"
     }
-  ],
+   ],
 
   "notifyModes": [
     {
