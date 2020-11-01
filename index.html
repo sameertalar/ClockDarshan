@@ -19,8 +19,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <style> 
-    </style>
+    <style></style>
   </head>
   <body>
     <div class="container">
@@ -39,7 +38,7 @@
           </div>
         </div>
       </div>
-      <div class="row ">
+      <div class="row">
         <div class="col-lg-4">
           <div class="text-center" style="-webkit-app-region: drag">
             <div>
@@ -49,11 +48,11 @@
               <div class="here"></div>
             </div>
             <div><span class="circle"></span></div>
-            <span id="displayNaam" >Welcome</span>
+            <span id="displayNaam">Welcome</span>
           </div>
         </div>
       </div>
-      <div class="row ">
+      <div class="row">
         <div class="col-lg-4 text-center">
           <div class="custom-control custom-switch mt-1 desktopMini">
             <input
@@ -147,7 +146,7 @@
           </button>
         </div>
       </div>
-      <div class="row ">
+      <div class="row">
         <div class="col-lg-4">
           <!-- collapse Controls begin -->
           <div class="collapse" id="collapseControlsSettings">
@@ -224,8 +223,12 @@
                                 <option value="Silent" selected>
                                   🔕 Silent
                                 </option>
+                                <option value="Text">📝 Text</option>
                                 <option value="Audio">🎵 Audio</option>
-                                <option value="Text">📝 Text-2-Speech</option>
+                                <option value="TextBroken">
+                                  📝 Text Broken
+                                </option>
+                                <option value="AudioBroken">🎵 Audio Broken</option>
                               </select>
                             </div>
                           </div>
@@ -379,7 +382,8 @@
                           <i class="fa fa-volume-up"></i> Time Volume:<span
                             id="rangeTimeAlertVolumeLabel"
                             class="badge badge-light"
-                          >50%</span>
+                            >50%</span
+                          >
                         </label>
                         <input
                           class="form-control-range"
@@ -474,22 +478,6 @@
                                   >
                                 </label>
                               </div>
-                              <div class="custom-control custom-switch">
-                                <input
-                                  type="checkbox"
-                                  checked
-                                  class="custom-control-input"
-                                  id="checkboxBrokenMinutesTime"
-                                />
-                                <label
-                                  class="custom-control-label"
-                                  for="checkboxBrokenMinutesTime"
-                                >
-                                  <span class="badgMinutese-light"
-                                    >Broken Minute Time</span
-                                  >
-                                </label>
-                              </div>
                             </div>
                           </div>
                           <div class="form-row mt-3">
@@ -577,7 +565,7 @@
                         <select class="form-control" id="selectTickerDuration">
                           <option value="1">1 sec</option>
                           <option value="3">3 sec</option>
-                          <option  value="6" selected>6 sec</option>
+                          <option value="6" selected>6 sec</option>
                           <option value="18">18 sec</option>
                           <option value="30">30 sec</option>
                           <option value="60">60 sec</option>
@@ -668,7 +656,7 @@
         <div class="col-lg-4 text-center desktopMini">
           <!-- Buttons second row-->
           <!-- Buttons second row end <!-- Buttons 2nd row-->
-          <div  >
+          <div>
             <a
               class="btn btn-secondary"
               data-toggle="collapse"
@@ -851,10 +839,10 @@
           <span id="errorMessage" class="text-white-50 small"> अप्रमाद </span>
         </div>
       </div>
-    
+
       <!--end container-->
     </div>
- 
+
     <!--  
       <script src="../libraries/jquery-3.5.1.min.js"></script>
     <script src="../libraries/popper.min.js"></script>
