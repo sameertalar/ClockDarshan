@@ -257,9 +257,9 @@
       "text": "Clock 1"
     },
     {
-      "fileName": "ticking_Clock_2.mp3",
+      "fileName": "ticking_Dropping-A-Cardboard-Box.mp3",
       "id": 2,
-      "text": "Clock 2"
+      "text": "Dropping-A-Cardboard-Box"
     },
     {
       "fileName": "ticking_Clock_Outside_1.mp3",
@@ -275,6 +275,17 @@
       "fileName": "ticking_Water_Two_Drops.mp3",
       "id": 5,
       "text": "Water Two Drops"
+    },
+    {
+      "fileName": "ticking_Door_Bell_Ding.mp3",
+      "id": 6,
+      "text": "Door Bell Ding"
+    },
+    {
+      "fileName": "ticking_Ride-Cymbal-Bell_Hit.mp3",
+      "id": 7,
+      "text": "Ride-Cymbal-Bell Hit"
     }
+
   ]
 }
