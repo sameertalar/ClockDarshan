@@ -100,21 +100,11 @@ select {
   height: 8px;
   border: 1px solid #0d2931;
   background-color: #fef9e7;
-  background-image: linear-gradient(
-    right,
-    #a6d8f5,
-    #a6d8f5 50%,
-    transparent 50%,
-    transparent 50%
-  );
-  background-image: -webkit-linear-gradient(
-    right,
-    #a6d8f5,
-    #a6d8f5 50%,
-    transparent 50%,
-    transparent 50%
-  );
+  background: linear-gradient(to left,
+ #fa9207 25%, #007bff  25% 50%, #ff2e2d  50% 75%,  #fef9e7 75% );
+
 }
+
 
 #chunkStatus {
   position: relative;
@@ -168,11 +158,11 @@ select {
   #clock-container {
     display: none;
   }
- 
+
   body {
     background-color: red;
   };
 
- 
+
 }
   */
