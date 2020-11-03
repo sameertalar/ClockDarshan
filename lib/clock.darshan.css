@@ -1,4 +1,5 @@
-h3, h4 {
+h3,
+h4 {
   color: whitesmoke;
   /* #ff5f0e;*/
 }
@@ -39,8 +40,8 @@ select {
 #clock-container {
   display: inline-block;
   position: relative;
-  width: 80%;
-  height: 80%;
+  width: 300px;
+  height: 300px;
   vertical-align: middle;
   overflow: hidden;
   background: url("../img/clockDarshan.png");
@@ -98,9 +99,21 @@ select {
   width: 100%;
   height: 8px;
   border: 1px solid #0d2931;
-  background-color: #fef9e7; 
-  background-image: linear-gradient( right, #a6d8f5, #a6d8f5 50%, transparent 50%, transparent 50%);
-  background-image: -webkit-linear-gradient( right, #a6d8f5, #a6d8f5 50%, transparent 50%, transparent 50%);
+  background-color: #fef9e7;
+  background-image: linear-gradient(
+    right,
+    #a6d8f5,
+    #a6d8f5 50%,
+    transparent 50%,
+    transparent 50%
+  );
+  background-image: -webkit-linear-gradient(
+    right,
+    #a6d8f5,
+    #a6d8f5 50%,
+    transparent 50%,
+    transparent 50%
+  );
 }
 
 #chunkStatus {
@@ -113,7 +126,12 @@ select {
   height: 100%;
   background: #0fd30f;
   background: -moz-linear-gradient(top, #0fd30f 0%, #0cf459 48%, #17a504 100%);
-  background: -webkit-linear-gradient( top, #0fd30f 0%, #0cf459 48%, #17a504 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #0fd30f 0%,
+    #0cf459 48%,
+    #17a504 100%
+  );
   background: linear-gradient(to bottom, #0fd30f 0%, #0cf459 48%, #17a504 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbff87', endColorstr='#17a504', GradientType=0);
 }
@@ -139,9 +157,13 @@ select {
   }
 }
 
-
-
- /*
+@media only screen and (max-width: 350px) {
+  #clock-container {
+    width: 95%;
+    height: 95%;
+  }
+}
+/*
 @media only screen and (max-height: 100px) {
   #clock-container {
     display: none;
