@@ -100,8 +100,8 @@ select {
   height: 8px;
   border: 1px solid #0d2931;
   background-color: #fef9e7;
-  background: linear-gradient(to left,
- #fa9207 25%, #007bff  25% 50%, #ff2e2d  50% 75%,  #fef9e7 75% );
+  background: linear-gradient(to right,
+  #007bff  25%,  #ff2e2d 25% 49%, #ffffff 49% 50%,   #fa9207  50% 75%,  #28a745 75% );
 
 }
 
@@ -111,10 +111,15 @@ select {
   z-index: 1;
   left: 0;
   top: 0;
+
+  float: right;
   border: 10px 0;
   width: 0;
   height: 100%;
+  background: #ffffff;
+  /*
   background: #0fd30f;
+
   background: -moz-linear-gradient(top, #0fd30f 0%, #0cf459 48%, #17a504 100%);
   background: -webkit-linear-gradient(
     top,
@@ -124,6 +129,7 @@ select {
   );
   background: linear-gradient(to bottom, #0fd30f 0%, #0cf459 48%, #17a504 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbff87', endColorstr='#17a504', GradientType=0);
+/*
 }
 
 #displayNaam {
