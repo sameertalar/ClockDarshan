@@ -100,11 +100,15 @@ select {
   height: 8px;
   border: 1px solid #0d2931;
   background-color: #fef9e7;
-  background: linear-gradient(to right,
-  #007bff  25%,  #ff2e2d 25% 49%, #ffffff 49% 50%,   #fa9207  50% 75%,  #28a745 75% );
-
+  background: linear-gradient(
+    to right,
+    #007bff 25%,
+    #ff2e2d 25% 49%,
+    #ffffff 49% 50%,
+    #fa9207 50% 75%,
+    #28a745 75%
+  );
 }
-
 
 #chunkStatus {
   position: relative;
@@ -129,7 +133,7 @@ select {
   );
   background: linear-gradient(to bottom, #0fd30f 0%, #0cf459 48%, #17a504 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbff87', endColorstr='#17a504', GradientType=0);
-/*
+*/
 }
 
 #displayNaam {
