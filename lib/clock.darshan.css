@@ -150,7 +150,7 @@ select {
     border-radius: 0.25rem;
   }
   #displayNaam {
-    font-size: 1em;
+    font-size: 0.75rem;
   }
   .desktopMini {
     display: none;
