@@ -102,11 +102,13 @@ select {
   background-color: #fef9e7;
   background: linear-gradient(
     to right,
-    #007bff 25%,
-    #ff2e2d 25% 49.5%,
+    #007bff 20%,
+    #ff2e2d 20% 40%,
+    #0d2931 40% 49.5%,
     #ffffff 49.5% 50%,
-    #fa9207 50% 75%,
-    #28a745 75%
+    #0d2931 50% 60%,
+    #fa9207 60% 80%,
+    #28a745 80%
   );
 }
 
