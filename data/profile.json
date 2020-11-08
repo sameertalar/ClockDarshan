@@ -20,11 +20,11 @@
     "vibration": 0,
     "quartermode": 0,
     "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": 3,
+    "chunkbeforealertaudio": 10,
     "timealertmode": "Text",
     "chunknotifymode": "Audio_PopularSongs",
     "ismidbeforealert": 1,
-    "midbeforealertaudio": 1,
+    "midbeforealertaudio": 8,
     "midnotifymode": "Text_Popular"
   },
   {

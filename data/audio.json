@@ -248,6 +248,31 @@
       "fileName": "alert_Indian_Flute_Chunk.mp3",
       "id": 6,
       "text": "Indian Flute Chunk"
+    },
+    {
+      "fileName": "alert_Pebbles.mp3",
+      "id": 7,
+      "text": "Pebbles"
+    },
+    {
+      "fileName": "alert_DoMiSo.mp3",
+      "id": 8,
+      "text": "DoMiSo"
+    },
+    {
+      "fileName": "alert_Vector.mp3",
+      "id": 9,
+      "text": "Vector"
+    },
+    {
+      "fileName": "alert_Zeta.mp3",
+      "id": 10,
+      "text": "Zeta"
+    },
+    {
+      "fileName": "",
+      "id": null,
+      "text": ""
     }
   ],
   "tickers": [
@@ -285,7 +310,11 @@
       "fileName": "ticking_Ride-Cymbal-Bell_Hit.mp3",
       "id": 7,
       "text": "Ride-Cymbal-Bell Hit"
+    },
+    {
+      "fileName": "ticking_Woodblock.mp3",
+      "id": 8,
+      "text": "Woodblock"
     }
-
   ]
 }
