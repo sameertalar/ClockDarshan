@@ -28,6 +28,9 @@ select {
 .cdBlue {
   color: #007bff;
 }
+.cdinfo {
+  color: #117a8b;
+}
 
 #displayNaam {
   font-size: 1.5em;
@@ -104,9 +107,9 @@ select {
     to right,
     #007bff 20%,
     #ff2e2d 20% 40%,
-    #0d2931 40% 49.5%,
+    #117a8b 40% 49.5%,
     #ffffff 49.5% 50%,
-    #0d2931 50% 60%,
+    #117a8b 50% 60%,
     #fa9207 60% 80%,
     #28a745 80%
   );
