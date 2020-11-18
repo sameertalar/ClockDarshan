@@ -22,6 +22,9 @@
     <style></style>
   </head>
   <body>
+    <div class="alert alert-success text-center" id="success-alert">
+      <span id="alertMessage" class="text-danger">  </span>
+   </div>
     <div class="container">
       <div class="row text-center">
         <div class="col-lg-4">
@@ -680,10 +683,17 @@
             <i class="fa fa-music"></i>
           </a>
 
+
+          
+
             <button
             type="button"
             class="btn btn-secondary btn-sm px-3"
-            id="btnPauseAllAudios"
+            data-toggle="collapse"
+            href="#collapseControlsTracker"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+            id="btnTrackerCollapse"
           >
             <i class="fa fa-life-ring""></i>
           </button>
@@ -810,6 +820,81 @@
             </div>
           </div>
           <!-- collapse Music Controls end -->
+                    <!-- collapse Tracker Controls begin -->
+                    <div class="collapse" id="collapseControlsTracker">
+                   
+                      <div class="card card-body">
+                        <h5 class="card-title">Tracker</h5>
+                        <div class="form-row">
+                          <div class="col">
+                            <label for="selectMind">
+         
+                              Mind
+                           </label>
+                           <select
+                             class="form-control"
+                             id="selectMind"
+                           ></select>
+                          </div>
+                        </div>
+                         <div class="form-row mb-4 mt-2">
+
+                            <div class="col-6">
+                               <label for="selectEnergy">
+                               Energy
+                               </label>
+                               <select
+                                  class="form-control"
+                                  id="selectEnergy"
+                                  ></select>
+                            </div>
+                            <div class="col-6">
+                              <label for="selectWork">
+                  
+                                Work
+                               </label>
+                               <select
+                                 class="form-control"
+                                 id="selectWork"
+                               ></select>
+                            </div>
+                         </div>
+                         <div class="form-row mb-2">
+
+                          <div class="col-4">
+                             
+                            <select
+                            class="form-control"
+                            id="selectHour"
+                          ></select>
+                          </div>
+                          <div class="col-4">
+                            <select
+                            class="form-control"
+                            id="selectQuarter"
+                          >
+                          <option value="1">1 </option>
+                          >
+                          <option value="2">2 </option>
+                          >
+                          <option value="3">3 </option>
+                          >
+                          <option value="4">4 </option>
+                      
+                      </select>
+                          </div>
+                          <div class="col-4">
+                            <button type="button" id="btnTracker" class="btn btn-primary">
+                              Track
+                            </button>
+                          </div>
+                       </div>
+                       
+
+
+                      </div>
+                   </div>               
+                    <!-- collapse Tracker Controls end -->
         </div>
       </div>
       <div class="row">
