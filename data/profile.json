@@ -34,26 +34,12 @@
     "vibration": 0,
     "quartermode": 0,
     "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": 3,
+    "chunkbeforealertaudio": 10,
     "timealertmode": "Text",
     "chunknotifymode": "Audio_PopularSongs",
     "ismidbeforealert": 0,
-    "midbeforealertaudio": 1,
+    "midbeforealertaudio": 8,
     "midnotifymode": "Audio_PopularTracks"
-  },
-  {
-    "profileValue": "SoundEffects",
-    "displayText": "🔔 Sound Effects",
-    "popup": 0,
-    "vibration": 0,
-    "quartermode": 0,
-    "ischunkbeforealert": 0,
-    "chunkbeforealertaudio": 3,
-    "timealertmode": "Silent",
-    "chunknotifymode": "Audio_T$SoundEffects",
-    "ismidbeforealert": 0,
-    "midbeforealertaudio": 1,
-    "midnotifymode": "Silent"
   },
   {
     "profileValue": "PopularText",
@@ -68,6 +54,20 @@
     "ismidbeforealert": 1,
     "midbeforealertaudio": 1,
     "midnotifymode": "Text_Naam"
+  },
+  {
+    "profileValue": "ChunkAudios",
+    "displayText": "🎵 Chunk Audios",
+    "popup": 0,
+    "vibration": 0,
+    "quartermode": 0,
+    "ischunkbeforealert": 0,
+    "chunkbeforealertaudio": 3,
+    "timealertmode": "Silent",
+    "chunknotifymode": "Audio_ChunkAudios",
+    "ismidbeforealert": 0,
+    "midbeforealertaudio": 3,
+    "midnotifymode": "Silent"
   },
   {
     "profileValue": "TimeOnly",
