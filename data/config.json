@@ -1,7 +1,28 @@
 {
   "newConfig": [],
-
-  "chunkConfigs":[
+  "trackerConfigs": {
+    "mind": [
+      { "title": "🕊️ Peace", "code": "C", "column": "C" },
+      { "title": "🧘 ध्यान", "code": "M", "column": "D" },
+      { "title": "👁️ अप्रमाद", "code": "A", "column": "E" },
+      { "title": "🎳 Mishit", "code": "P", "column": "F" },
+      { "title": "😡 Buzzing", "code": "B", "column": "G" }
+    ],
+    "energy": [
+      { "title": "🟢 High", "code": "H", "column": "I" },
+      { "title": "🔵 Medium", "code": "M", "column": "J" },
+      { "title": "🚫 Low", "code": "L", "column": "K" }
+    ],
+    "work": [
+      { "title": "👷 Creativity", "code": "C", "column": "N" },
+      { "title": "💼 Office", "code": "W", "column": "O" },
+      { "title": "🌿 Routine", "code": "R", "column": "P" },
+      { "title": "👪 Family", "code": "F", "column": "Q" },
+      { "title": "☸ Social", "code": "S", "column": "R" },
+      { "title": "🚫 None", "code": "N", "column": "S" }
+    ]
+  },
+  "chunkConfigs": [
     {
       "id": 1,
       "chunk": 0,
@@ -86,7 +107,7 @@
       "displayIncogText": "Element Space",
       "color": "#007bff"
     }
-   ],
+  ],
 
   "notifyModes": [
     {
