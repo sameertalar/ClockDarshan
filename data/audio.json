@@ -5,84 +5,96 @@
       "displayText": "Sri Ganesha",
       "ChunkAudios": "Chunk_Audio_00_Ganesh.mp3",
       "PopularSongs": "00ST__Bal_Ganesh_Track.mp3",
-      "SoundEffects": "00SE__Door-Bell-Ding-A1.mp3"
+      "SoundEffects": "00SE__Door-Bell-Ding-A1.mp3",
+      "ChunkChants": "ChunkChant_00_Ganesh.mp3"
     },
     {
       "chunk": 5,
       "displayText": "MahaLaxmi Devi",
       "ChunkAudios": "Chunk_Audio_05_Mahalaxmi.mp3",
       "PopularSongs": "05ST__Mahalakshmi_Stuti_Track.mp3",
-      "SoundEffects": "05SE__Single-Coin-Drop-On-Table.mp3"
+      "SoundEffects": "05SE__Single-Coin-Drop-On-Table.mp3",
+      "ChunkChants": "ChunkChant_05_Mahalaxmi.mp3"
     },
     {
       "chunk": 10,
       "displayText": "Saraswati Devi",
       "ChunkAudios": "Chunk_Audio_10_Saraswari.mp3",
       "PopularSongs": "10LT__Thaara_Rang_Mahal_Mein_Tipanya.mp3",
-      "SoundEffects": "10SE__TharaRangMahal.mp3"
+      "SoundEffects": "10SE__TharaRangMahal.mp3",
+      "ChunkChants": "ChunkChant_10_Saraswati.mp3"
     },
     {
       "chunk": 15,
       "displayText": "Gagangiri Maharaj",
       "ChunkAudios": "Chunk_Audio_15_Gagangiri_Maharaj.mp3",
       "PopularSongs": "15MT__Om_Shri_Gurudev_Hare_Track.mp3",
-      "SoundEffects": "15_Om_Shri_Gurudev_Hare_Track.mp3"
+      "SoundEffects": "15_Om_Shri_Gurudev_Hare_Track.mp3",
+      "ChunkChants": "ChunkChant_15_Gagangiri.mp3"
     },
     {
       "chunk": 20,
       "displayText": "Annapurna",
       "ChunkAudios": "Chunk_Audio_20_Annapurna.mp3",
       "PopularSongs": "20MT__Shivaranjani_Rachana_Track.mp3",
-      "SoundEffects": "20SE__Droping-Spoon-in-Mug.mp3"
+      "SoundEffects": "20SE__Droping-Spoon-in-Mug.mp3",
+      "ChunkChants": "ChunkChant_20_Annapurna.mp3"
     },
     {
       "chunk": 25,
       "displayText": "Narmade Har",
       "ChunkAudios": "Chunk_Audio_25_Narmana.mp3",
       "PopularSongs": "25LT__Namami_Devi_Narmade_Track.mp3",
-      "SoundEffects": "25SE__Ticking_Water_Two_Drops.mp3"
+      "SoundEffects": "25SE__Ticking_Water_Two_Drops.mp3",
+      "ChunkChants": "ChunkChant_25_Naramada.mp3"
     },
     {
       "chunk": 30,
       "displayText": "Durga Devi",
       "ChunkAudios": "Chunk_Audio_30_Durga.mp3",
       "PopularSongs": "30LT__Aigiri_Nandini_Track.mp3",
-      "SoundEffects": "30SE__Drawing-A-Sword.mp3"
+      "SoundEffects": "30SE__Drawing-A-Sword.mp3",
+      "ChunkChants": "ChunkChant_30_Durga.mp3"
     },
     {
       "chunk": 35,
       "displayText": "Veer Hanuman",
       "ChunkAudios": "Chunk_Audio_35_Hanuman.mp3",
       "PopularSongs": "35LT__Hanuman_Chalisa_Track2.mp3",
-      "SoundEffects": "35SE__Windy-Snow-Storm-Blizzard.mp3"
+      "SoundEffects": "35SE__Windy-Snow-Storm-Blizzard.mp3",
+      "ChunkChants": "ChunkChant_35_Hanuman.mp3"
     },
     {
       "chunk": 40,
       "displayText": "Gautam Buddha",
       "ChunkAudios": "Chunk_Audio_40_Buddha.mp3",
       "PopularSongs": "40ST__ChineseInstrumental_Track.mp3",
-      "SoundEffects": "40SE__Fire5.mp3"
+      "SoundEffects": "40SE__Fire5.mp3",
+      "ChunkChants": "ChunkChant_40_Buddha.mp3"
     },
     {
       "chunk": 45,
       "displayText": "Shiv Shankar",
       "ChunkAudios": "Chunk_Audio_45_ShivShaker.mp3",
       "PopularSongs": "45ST__Bal_Ganesh_Track.mp3",
-      "SoundEffects": "45SE__Damroo.mp3"
+      "SoundEffects": "45SE__Damroo.mp3",
+      "ChunkChants": "ChunkChant_45_Shiv.mp3"
     },
     {
       "chunk": 50,
       "displayText": "Ramana Maharshi",
       "ChunkAudios": "Chunk_Audio_50_Ramana_Maharshi.mp3",
       "PopularSongs": "50LT__Arunachala_Siva_Track.mp3",
-      "SoundEffects": "50SE__ArunachalaRamana.mp3"
+      "SoundEffects": "50SE__ArunachalaRamana.mp3",
+      "ChunkChants": "ChunkChant_50_RamanaMaharshi.mp3"
     },
     {
       "chunk": 55,
       "displayText": "Lord Krisna",
       "ChunkAudios": "Chunk_Audio_55_Krishana.mp3",
       "PopularSongs": "55MT__Indian_Flute_Track.mp3",
-      "SoundEffects": "55SE__Flute_fantasy.mp3"
+      "SoundEffects": "55SE__Flute_fantasy.mp3",
+      "ChunkChants": "ChunkChant_55_Krishna.mp3"
     }
   ],
 

@@ -70,6 +70,20 @@
     "midnotifymode": "Silent"
   },
   {
+    "profileValue": "ChunkChants",
+    "displayText": "🎵 Chunk Chants",
+    "popup": 0,
+    "vibration": 0,
+    "quartermode": 0,
+    "ischunkbeforealert": 0,
+    "chunkbeforealertaudio": 3,
+    "timealertmode": "Silent",
+    "chunknotifymode": "Audio_ChunkChants",
+    "ismidbeforealert": 0,
+    "midbeforealertaudio": 3,
+    "midnotifymode": "Silent"
+  },
+  {
     "profileValue": "TimeOnly",
     "displayText": "🕘 Time Only",
     "popup": 0,
