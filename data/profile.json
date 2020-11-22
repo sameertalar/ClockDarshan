@@ -24,7 +24,7 @@
     "timealertmode": "Text",
     "chunknotifymode": "Audio_PopularSongs",
     "ismidbeforealert": 1,
-    "midbeforealertaudio": 8,
+    "midbeforealertaudio": 7,
     "midnotifymode": "Text_Popular"
   },
   {
@@ -81,7 +81,7 @@
     "chunknotifymode": "Audio_ChunkChants",
     "ismidbeforealert": 1,
     "midbeforealertaudio": 3,
-    "midnotifymode": "Silent"
+    "midnotifymode": "Audio_ChunkChants"
   },
   {
     "profileValue": "ChunkChantsBreath",
@@ -95,6 +95,20 @@
     "chunknotifymode": "Audio_ChunkChantsBreath",
     "ismidbeforealert": 1,
     "midbeforealertaudio": 3,
+    "midnotifymode": "Audio_ChunkChantsBreath"
+  },
+  {
+    "profileValue": "Incognito",
+    "displayText": "💀 Incognito",
+    "popup": 0,
+    "vibration": 0,
+    "quartermode": 0,
+    "ischunkbeforealert": 1,
+    "chunkbeforealertaudio": 10,
+    "timealertmode": "Silent",
+    "chunknotifymode": "Text_IncognitoName",
+    "ismidbeforealert": 0,
+    "midbeforealertaudio": 7,
     "midnotifymode": "Silent"
   },
   {

@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "chunk": 0,
     "NaamText": "गणेशाय नमः",
     "NaamLang": "hi",
@@ -10,7 +9,7 @@
     "PopularLang": "hi",
     "IncognitoNameText": "The Begining",
     "IncognitoNameLang": "eng",
-    "MantraText": "श्री गणेशाय नमः",
+    "MantraText": "ॐ गं गणपतेय नमः",
     "MantraLang": "hi",
     "SubhashitText": "जिन खोजा तिन पाइया, गहरे पानी पैठ, मैं बपुरा बूडन डरा, रहा किनारे बैठ। - Kabir",
     "SubhashitLang": "hi",
@@ -18,7 +17,6 @@
     "QuoteLang": "eng"
   },
   {
-    "id": 2,
     "chunk": 5,
     "NaamText": "महालक्ष्मी नमो नमः",
     "NaamLang": "hi",
@@ -28,7 +26,7 @@
     "PopularLang": "hi",
     "IncognitoNameText": "Prosperity",
     "IncognitoNameLang": "eng",
-    "MantraText": "Om श्री महालक्ष्म्यै नमः",
+    "MantraText": "ॐ महालक्ष्म्यै नमो नमः",
     "MantraLang": "hi",
     "SubhashitText": "अलसस्य कुतो विद्या, अविद्यस्य कुतो धनम् । अधनस्य कुतो मित्रं, अमित्रस्य कुतः सुखम्",
     "SubhashitLang": "hi",
@@ -36,7 +34,6 @@
     "QuoteLang": "eng"
   },
   {
-    "id": 3,
     "chunk": 10,
     "NaamText": "सरस्वती भगवती",
     "NaamLang": "hi",
@@ -46,7 +43,7 @@
     "PopularLang": "hi",
     "IncognitoNameText": "Knowledge",
     "IncognitoNameLang": "eng",
-    "MantraText": "स्वदेशे पूज्यते राजा, विद्वान सर्वत्र पूज्यते",
+    "MantraText": "ॐ श्रीं ह्रीं सरस्वत्यै नमः",
     "MantraLang": "hi",
     "SubhashitText": "ऐसी बानी बोलिए मन का आपा खोय। औरन को सीतल करे आपहु सीतल होय ।।―Kabir",
     "SubhashitLang": "hi",
@@ -54,17 +51,16 @@
     "QuoteLang": "eng"
   },
   {
-    "id": 4,
     "chunk": 15,
     "NaamText": "जय गगनगिरी",
     "NaamLang": "hi",
     "NameEnglishText": "Gagangiri Maharaj",
     "NameEnglishLang": "eng",
-    "PopularText": "गुरुर्ब्रह्मा गुरुर्विष्णु: गुरुर्देवो महेश्वरआ ",
+    "PopularText": "गुरुर्ब्रह्मा गुरुर्विष्णु: गुरुर्देवो महेश्वरआ",
     "PopularLang": "hi",
-    "IncognitoNameText": "Compassion",
+    "IncognitoNameText": "Guide",
     "IncognitoNameLang": "eng",
-    "MantraText": "Om चैतन्य गगनगिरी नाथाय नमः",
+    "MantraText": "ॐ चैतन्य गगनगिरी नाथाय नमः",
     "MantraLang": "hi",
     "SubhashitText": "कारुण्याचि ओतिव मुर्ति | ऐसा महाअवतार हा ||",
     "SubhashitLang": "hi",
@@ -72,7 +68,6 @@
     "QuoteLang": "eng"
   },
   {
-    "id": 5,
     "chunk": 20,
     "NaamText": "अन्नपूर्णे सदा पूर्णे",
     "NaamLang": "hi",
@@ -82,7 +77,7 @@
     "PopularLang": "hi",
     "IncognitoNameText": "Nourishment",
     "IncognitoNameLang": "eng",
-    "MantraText": "अन्न. पूर्णे.. सदा पूर्णे",
+    "MantraText": "हर्रि दाता हर्रि भोक्ता हर्रि अन्नं प्रजापति",
     "MantraLang": "hi",
     "SubhashitText": "जैसा भोजन खाइये, तैसा ही मन होय । जैसा पानी पीजिये, तैसी वाणी होय ।। ―Kabir",
     "SubhashitLang": "hi",
@@ -90,7 +85,6 @@
     "QuoteLang": "eng"
   },
   {
-    "id": 6,
     "chunk": 25,
     "NaamText": "नर्मदे हर",
     "NaamLang": "hi",
@@ -100,7 +94,7 @@
     "PopularLang": "hi",
     "IncognitoNameText": "Element Water",
     "IncognitoNameLang": "eng",
-    "MantraText": "नर्मदे हर| नर्मदे हर हर",
+    "MantraText": "नर्मदे हर",
     "MantraLang": "hi",
     "SubhashitText": "धीरे-धीरे रे मना, धीरे सब कुछ होय, माली सींचे सौ घड़ा, ॠतु आए फल होय। - Kabir",
     "SubhashitLang": "hi",
@@ -108,7 +102,6 @@
     "QuoteLang": "eng"
   },
   {
-    "id": 7,
     "chunk": 30,
     "NaamText": "नमामि महिषासुरमर्दिनी",
     "NaamLang": "hi",
@@ -118,7 +111,7 @@
     "PopularLang": "hi",
     "IncognitoNameText": "Fire Element",
     "IncognitoNameLang": "eng",
-    "MantraText": "महिषा सुरमर्दिनी..रम्य कपर्दिनी शैलसुते",
+    "MantraText": "ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे",
     "MantraLang": "hi",
     "SubhashitText": "कबीरा खड़ा बाज़ार में, मांगे सबकी खैर, ना काहू से दोस्ती,न काहू से बैर. ―Kabir",
     "SubhashitLang": "hi",
@@ -126,7 +119,6 @@
     "QuoteLang": "eng"
   },
   {
-    "id": 8,
     "chunk": 35,
     "NaamText": "वीर हनुमान",
     "NaamLang": "hi",
@@ -134,9 +126,9 @@
     "NameEnglishLang": "eng",
     "PopularText": "जय हनुमान ज्ञान गुण सागर",
     "PopularLang": "hi",
-    "IncognitoNameText": "Element Air",
+    "IncognitoNameText": "Workout",
     "IncognitoNameLang": "eng",
-    "MantraText": "जय हनुमान ज्ञान गुण सागर",
+    "MantraText": "ॐ हं हनुमते नमः",
     "MantraLang": "hi",
     "SubhashitText": "तेरी किस्मत का लिखा तुझसे कोई ले नहीं सकता, अगर उसकी रहमत हो तो तुझे वो भी मिल जायेगा, जो तेरा हो नहीं सकता\" ― Sai Baba",
     "SubhashitLang": "hi",
@@ -144,17 +136,16 @@
     "QuoteLang": "eng"
   },
   {
-    "id": 9,
     "chunk": 40,
     "NaamText": "तथागत बुद्ध",
     "NaamLang": "hi",
     "NameEnglishText": "Gautam Buddha",
     "NameEnglishLang": "eng",
-    "PopularText": "आनापानसती योग, अप्प दीपो भव, अप्रमाद",
+    "PopularText": "आनापानसती योग अप्रमाद",
     "PopularLang": "hi",
-    "IncognitoNameText": "Element Earth",
+    "IncognitoNameText": "Protection",
     "IncognitoNameLang": "eng",
-    "MantraText": "अप्प दीपो भव Buddha",
+    "MantraText": "ॐ मणिपद्मे हूँ",
     "MantraLang": "hi",
     "SubhashitText": "निंदक नियरे राखिए, ऑंगन कुटी छवाय, बिन पानी, साबुन बिना, निर्मल करे सुभाय।",
     "SubhashitLang": "hi",
@@ -162,7 +153,6 @@
     "QuoteLang": "eng"
   },
   {
-    "id": 10,
     "chunk": 45,
     "NaamText": "जयजय शिव शंकर",
     "NaamLang": "hi",
@@ -170,9 +160,9 @@
     "NameEnglishLang": "eng",
     "PopularText": "शिवोहंम शिवोहंम Om नमः शिवाय शिवाय नमः Om",
     "PopularLang": "hi",
-    "IncognitoNameText": "Frequency and Vibration",
+    "IncognitoNameText": "Peace",
     "IncognitoNameLang": "eng",
-    "MantraText": "Om नमः शिवाय| शिवाय नमः Om",
+    "MantraText": "ॐ नमः शिवाय",
     "MantraLang": "hi",
     "SubhashitText": "माटी कहे कुम्हार से, तू क्या रोंदे मोहे । एक दिन ऐसा आएगा, मैं रोंदुंगी तोहे ।।― Kabir",
     "SubhashitLang": "hi",
@@ -180,7 +170,6 @@
     "QuoteLang": "eng"
   },
   {
-    "id": 11,
     "chunk": 50,
     "NaamText": "तत त्वम असि",
     "NaamLang": "hi",
@@ -188,9 +177,9 @@
     "NameEnglishLang": "eng",
     "PopularText": "aham ब्रह्मास्मि ब्रह्मेण aham अस्ति",
     "PopularLang": "hi",
-    "IncognitoNameText": "Self Enquiry",
+    "IncognitoNameText": "Mountain",
     "IncognitoNameLang": "eng",
-    "MantraText": "aham ब्रह्मास्मि | ब्रह्मेण aham अस्ति | तत् त्वम् असि",
+    "MantraText": "तत् त्वम् असि",
     "MantraLang": "hi",
     "SubhashitText": "साईं इतना दीजिये, जा मे कुटुम समाय । मैं भी भूखा न रहूँ, साधु ना भूखा जाय ॥ ―Kabir",
     "SubhashitLang": "hi",
@@ -198,7 +187,6 @@
     "QuoteLang": "eng"
   },
   {
-    "id": 12,
     "chunk": 55,
     "NaamText": "भज गोविंदम",
     "NaamLang": "hi",
@@ -208,7 +196,7 @@
     "PopularLang": "hi",
     "IncognitoNameText": "Element Space",
     "IncognitoNameLang": "eng",
-    "MantraText": "श्री कृष्ण गोविंद हरे मुरारी",
+    "MantraText": "हरे राम हरे राम, राम राम हरे हरे। हरे कृष्ण हरे कृष्ण, कृष्ण कृष्ण हरे हरे।।",
     "MantraLang": "hi",
     "SubhashitText": "परिवर्तन संसार का नियम है|",
     "SubhashitLang": "hi",
