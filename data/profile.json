@@ -80,7 +80,7 @@
     "timealertmode": "Silent",
     "chunknotifymode": "Audio_ChunkChants",
     "ismidbeforealert": 1,
-    "midbeforealertaudio": 3,
+    "midbeforealertaudio": 7,
     "midnotifymode": "Audio_ChunkChants"
   },
   {
@@ -96,6 +96,20 @@
     "ismidbeforealert": 1,
     "midbeforealertaudio": 3,
     "midnotifymode": "Audio_ChunkChantsBreath"
+  },
+  {
+    "profileValue": "ChunkStotras",
+    "displayText": "🎵 Chunk Stotras",
+    "popup": 0,
+    "vibration": 0,
+    "quartermode": 0,
+    "ischunkbeforealert": 1,
+    "chunkbeforealertaudio": 5,
+    "timealertmode": "Silent",
+    "chunknotifymode": "Audio_ChunkStotras",
+    "ismidbeforealert": 0,
+    "midbeforealertaudio": 7,
+    "midnotifymode": "Silent"
   },
   {
     "profileValue": "Incognito",
