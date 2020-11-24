@@ -3,9 +3,10 @@
     {
       "chunk": 0,
       "displayText": "Sri Ganesha",
-      "ChunkAudios": "Chunk_Audio_00_Ganesh.mp3",
-      "PopularSongs": "00ST__Bal_Ganesh_Track.mp3",
+      "PopularSongs": "00LS__Pranamya_Shirasa_Devam.mp3",
+      "PopularTracks": "00ST__Bal_Ganesh_Track.mp3",
       "SoundEffects": "00SE__Door-Bell-Ding-A1.mp3",
+      "ChunkAudios": "Chunk_Audio_00_Ganesh.mp3",
       "ChunkChants": "ChunkChant_00_Ganesh.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_00_Ganesh.mp3",
       "ChunkStotras": "ChunkStotra_00_Ganesh.mp3"
@@ -13,9 +14,10 @@
     {
       "chunk": 5,
       "displayText": "MahaLaxmi Devi",
-      "ChunkAudios": "Chunk_Audio_05_Mahalaxmi.mp3",
-      "PopularSongs": "05ST__Mahalakshmi_Stuti_Track.mp3",
+      "PopularSongs": "05LS__Mahalaxmi_Stuti.mp3",
+      "PopularTracks": "05ST__Mahalakshmi_Stuti_Track.mp3",
       "SoundEffects": "05SE__Single-Coin-Drop-On-Table.mp3",
+      "ChunkAudios": "Chunk_Audio_05_Mahalaxmi.mp3",
       "ChunkChants": "ChunkChant_05_Mahalaxmi.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_05_Mahalaxmi2.mp3",
       "ChunkStotras": "ChunkStotra_05_Mahalaxmi_SriSuktam.mp3"
@@ -23,9 +25,10 @@
     {
       "chunk": 10,
       "displayText": "Saraswati Devi",
-      "ChunkAudios": "Chunk_Audio_10_Saraswari.mp3",
-      "PopularSongs": "10LT__Thaara_Rang_Mahal_Mein_Tipanya.mp3",
+      "PopularSongs": "10LS__Saraswathi_Namasthubyam.mp3",
+      "PopularTracks": "10LT__Thaara_Rang_Mahal_Mein_Tipanya.mp3",
       "SoundEffects": "10SE__TharaRangMahal.mp3",
+      "ChunkAudios": "Chunk_Audio_10_Saraswari.mp3",
       "ChunkChants": "ChunkChant_10_Saraswati.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_10_Saraswati2.mp3",
       "ChunkStotras": "ChunkStotra_10_Saraswati_Vandana.mp3"
@@ -33,9 +36,10 @@
     {
       "chunk": 15,
       "displayText": "Gagangiri Maharaj",
-      "ChunkAudios": "Chunk_Audio_15_Gagangiri_Maharaj.mp3",
-      "PopularSongs": "15MT__Om_Shri_Gurudev_Hare_Track.mp3",
+      "PopularSongs": "15LV__Om_Chaitanya_Gagangiri.mp3",
+      "PopularTracks": "15MT__Om_Shri_Gurudev_Hare_Track.mp3",
       "SoundEffects": "15_Om_Shri_Gurudev_Hare_Track.mp3",
+      "ChunkAudios": "Chunk_Audio_15_Gagangiri_Maharaj.mp3",
       "ChunkChants": "ChunkChant_15_Gagangiri.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_15_Gagangiri.mp3",
       "ChunkStotras": "ChunkStotra_15_Gagangiri_Saptashati.mp3"
@@ -43,9 +47,10 @@
     {
       "chunk": 20,
       "displayText": "Annapurna",
-      "ChunkAudios": "Chunk_Audio_20_Annapurna.mp3",
-      "PopularSongs": "20MT__Shivaranjani_Rachana_Track.mp3",
+      "PopularSongs": "20LS__Annapoorne_Sada_Poorne.mp3",
+      "PopularTracks": "20MT__Shivaranjani_Rachana_Track.mp3",
       "SoundEffects": "20SE__Droping-Spoon-in-Mug.mp3",
+      "ChunkAudios": "Chunk_Audio_20_Annapurna.mp3",
       "ChunkChants": "ChunkChant_20_Annapurna.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_20_Annapurna.mp3",
       "ChunkStotras": "ChunkStotra_20_Annapurna.mp3"
@@ -53,9 +58,10 @@
     {
       "chunk": 25,
       "displayText": "Narmade Har",
-      "ChunkAudios": "Chunk_Audio_25_Narmana.mp3",
-      "PopularSongs": "25LT__Namami_Devi_Narmade_Track.mp3",
+      "PopularSongs": "25LS__Har_Har_Narmade_Har.mp3",
+      "PopularTracks": "25LT__Namami_Devi_Narmade_Track.mp3",
       "SoundEffects": "25SE__Ticking_Water_Two_Drops.mp3",
+      "ChunkAudios": "Chunk_Audio_25_Narmana.mp3",
       "ChunkChants": "ChunkChant_25_Naramada.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_25_Naramada2.mp3",
       "ChunkStotras": "ChunkStotra_25_Narmada_Narmadastakam.mp3"
@@ -63,9 +69,10 @@
     {
       "chunk": 30,
       "displayText": "Durga Devi",
-      "ChunkAudios": "Chunk_Audio_30_Durga.mp3",
-      "PopularSongs": "30LT__Aigiri_Nandini_Track.mp3",
+      "PopularSongs": "30LS__Aigiri_Nandini.mp3",
+      "PopularTracks": "30LT__Aigiri_Nandini_Track.mp3",
       "SoundEffects": "30SE__Drawing-A-Sword.mp3",
+      "ChunkAudios": "Chunk_Audio_30_Durga.mp3",
       "ChunkChants": "ChunkChant_30_Durga.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_30_Durga.mp3",
       "ChunkStotras": "ChunkStotra_30_Durga.mp3"
@@ -73,9 +80,10 @@
     {
       "chunk": 35,
       "displayText": "Veer Hanuman",
-      "ChunkAudios": "Chunk_Audio_35_Hanuman.mp3",
-      "PopularSongs": "35LT__Hanuman_Chalisa_Track2.mp3",
+      "PopularSongs": "35LS__Aarti_Hanuman_ki_Anup.mp3",
+      "PopularTracks": "35LT__Hanuman_Chalisa_Track2.mp3",
       "SoundEffects": "35SE__Windy-Snow-Storm-Blizzard.mp3",
+      "ChunkAudios": "Chunk_Audio_35_Hanuman.mp3",
       "ChunkChants": "ChunkChant_35_Hanuman.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_35_Hanuman2.mp3",
       "ChunkStotras": "ChunkStotra_35_Hanuman.mp3"
@@ -83,9 +91,10 @@
     {
       "chunk": 40,
       "displayText": "Gautam Buddha",
-      "ChunkAudios": "Chunk_Audio_40_Buddha.mp3",
-      "PopularSongs": "40ST__ChineseInstrumental_Track.mp3",
+      "PopularSongs": "40LT__Osho_Nobel_Dance_Track.mp3",
+      "PopularTracks": "40ST__ChineseInstrumental_Track.mp3",
       "SoundEffects": "40SE__Fire5.mp3",
+      "ChunkAudios": "Chunk_Audio_40_Buddha.mp3",
       "ChunkChants": "ChunkChant_40_Buddha.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_40_Buddha.mp3",
       "ChunkStotras": "ChunkStotra_40_Buddha.mp3"
@@ -93,9 +102,10 @@
     {
       "chunk": 45,
       "displayText": "Shiv Shankar",
-      "ChunkAudios": "Chunk_Audio_45_ShivShaker.mp3",
-      "PopularSongs": "45ST__Bal_Ganesh_Track.mp3",
+      "PopularSongs": "45LS__Om_Namah_Shivay_Kalpataru.mp3",
+      "PopularTracks": "45ST__Bal_Ganesh_Track.mp3",
       "SoundEffects": "45SE__Damroo.mp3",
+      "ChunkAudios": "Chunk_Audio_45_ShivShaker.mp3",
       "ChunkChants": "ChunkChant_45_Shiv.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_45_Shiv.mp3",
       "ChunkStotras": "ChunkStotra_45_Shiva.mp3"
@@ -103,9 +113,10 @@
     {
       "chunk": 50,
       "displayText": "Ramana Maharshi",
-      "ChunkAudios": "Chunk_Audio_50_Ramana_Maharshi.mp3",
-      "PopularSongs": "50LT__Arunachala_Siva_Track.mp3",
+      "PopularSongs": "50LS__Arunachala_Siva.mp3",
+      "PopularTracks": "50LT__Arunachala_Siva_Track.mp3",
       "SoundEffects": "50SE__ArunachalaRamana.mp3",
+      "ChunkAudios": "Chunk_Audio_50_Ramana_Maharshi.mp3",
       "ChunkChants": "ChunkChant_50_RamanaMaharshi.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_50_RamanaMaharshi2.mp3",
       "ChunkStotras": "ChunkStotra_50_RamanaMaharshi.mp3"
@@ -113,9 +124,10 @@
     {
       "chunk": 55,
       "displayText": "Lord Krisna",
-      "ChunkAudios": "Chunk_Audio_55_Krishana.mp3",
-      "PopularSongs": "55MT__Indian_Flute_Track.mp3",
+      "PopularSongs": "55LS__Jai_radha_madhav_jai_kunj_.mp3",
+      "PopularTracks": "55MT__Indian_Flute_Track.mp3",
       "SoundEffects": "55SE__Flute_fantasy.mp3",
+      "ChunkAudios": "Chunk_Audio_55_Krishana.mp3",
       "ChunkChants": "ChunkChant_55_Krishna.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_55_Krishna2.mp3",
       "ChunkStotras": "ChunkStotra_55_Krishna.mp3"
