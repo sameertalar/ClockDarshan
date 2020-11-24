@@ -7,6 +7,7 @@ h4 {
 body {
   background-color: #50676f;
   /*  overflow-y: hidden;*/
+  line-height: 1;
 }
 
 select {
@@ -37,7 +38,7 @@ select {
 }
 
 #clockContainer {
-  margin-top: 20px;
+  margin-top: 3px;
 }
 
 #clock-container {
