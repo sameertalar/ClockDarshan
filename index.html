@@ -114,6 +114,7 @@
                               <circle id="face" cx="50" cy="50" r="60" />
                               <g transform="translate(50, 50)">
                                  <circle
+                                 id="ClockInnerCircle"
                                     cx="0"
                                     cy="0"
                                     r="5"
@@ -666,7 +667,7 @@
                      <!-- collapse Controls end -->
                   </div>
                </div>
-               <div  >
+               <div>
                   <div class="  text-center desktopMini">
                      <!-- Buttons second row-->
                      <div class="btn-group">
@@ -769,25 +770,23 @@
                               <div class="custom-control custom-radio custom-control-inline">
                                  <input
                                     type="radio"
-                                    id="radioMeditationMusic18Low"
-                                    name="radioMeditationMusic"
-                                    value=""
                                     checked
+                                    id="radioMeditationMusic18"
+                                    name="radioMeditationMusic"                                    
                                     class="custom-control-input"
                                     />
                                  <label
                                     class="custom-control-label"
-                                    for="radioMeditationMusic18Low"
+                                    for="radioMeditationMusic18"
                                     >
-                                 <i class="fa fa-music"></i> 18 Sec Low
+                                 <i class="fa fa-music"></i> 18 Sec
                                  </label>
                               </div>
                               <div class="custom-control custom-radio custom-control-inline">
                                  <input
                                     type="radio"
                                     id="radioMeditationMusic20"
-                                    name="radioMeditationMusic"
-                                    value=""
+                                    name="radioMeditationMusic"                                   
                                     class="custom-control-input"
                                     />
                                  <label
@@ -798,17 +797,30 @@
                               </div>
                               <div class="custom-control custom-radio custom-control-inline">
                                  <input
-                                    type="radio"
-                                    id="radioMeditationMusic18"
-                                    name="radioMeditationMusic"
-                                    value=""
+                                    type="radio"                                    
+                                    id="radioMeditationMusicChantBreath"
+                                    name="radioMeditationMusic"                                    
                                     class="custom-control-input"
                                     />
                                  <label
                                     class="custom-control-label"
-                                    for="radioMeditationMusic18"
+                                    for="radioMeditationMusicChantBreath"
                                     >
-                                 <i class="fa fa-music"></i> 18 Sec
+                                 <i class="fa fa-music"></i> Breath Chant
+                                 </label>
+                              </div>
+                              <div class="custom-control custom-radio custom-control-inline">
+                                 <input
+                                    type="radio"                                    
+                                    id="radioMeditationMusicChant"
+                                    name="radioMeditationMusic"                                    
+                                    class="custom-control-input"
+                                    />
+                                 <label
+                                    class="custom-control-label"
+                                    for="radioMeditationMusicChant"
+                                    >
+                                 <i class="fa fa-music"></i>  Chant
                                  </label>
                               </div>
                            </div>
@@ -883,6 +895,26 @@
                                  <button type="button" id="btnTracker" class="btn btn-primary form-control">
                                  Track It
                                  </button>
+                              </div>
+                              <div class="col-6 text-right">
+                                 <div class="btn-group ">
+                                    <button
+                                      class="btn btn-secondary-outline"
+                                      type="button"
+                                      id="minusQuarter"
+                                      type="button" id="btnTracker"
+                                    >
+                                      <i class="fa fa-minus"></i>
+                                    </button>
+                                    <button
+                                      class="btn btn-secondary-outline"
+                                      type="button"
+                                      id="plusQuarter"
+                                      type="button" id="btnTracker"
+                                    >
+                                      <i class="fa fa-plus"></i>
+                                    </button>
+                                  </div>
                               </div>
                            </div>
                         </div>
