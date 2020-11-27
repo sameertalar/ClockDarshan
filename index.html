@@ -48,17 +48,21 @@
                            </div>
                            <div class="here"></div>
                         </div>
-                        <div><span class="circle"></span></div>
+                        <div><span class="circle"></span>
+                                               
+                        </div>
                         <span id="displayNaam" class="text-white py-1 px-2 rounded-circle"
                            >Welcome</span
                            >
+                           <span class="badge badge-secondary rounded  " style="position: absolute;display: none;" id="listen-chant-count"
+                           >0</span >  
                      </div>
                   </div>
                </div>
                <div class="text-center " >
                   
-                     <div class="custom-control-inline my-2 " >
-                        <div class="custom-control custom-switch mt-1 mx-3 desktopMini">
+                     <div class="custom-control-inline mt-3 " >
+                        <div class="custom-control custom-switch mt-1 mx-1 desktopMini">
                            <input
                               type="checkbox" 
                               class="custom-control-input"
@@ -81,7 +85,7 @@
                            <i class="fa fa-bell  text-white "></i>
                            </label>
                         </div>
-                        <div class="custom-control custom-switch mt-1 mx-3 desktopMini">
+                        <div class="custom-control custom-switch mt-1 mx-1 desktopMini">
                            <input
                               type="checkbox"
                               class="custom-control-input"
@@ -94,19 +98,20 @@
                            <i class="fa fa-window-restore text-white "></i>
                            </label>
                         </div>
-                        <div class="custom-control custom-switch mt-1 mx-3 desktopMini">
+                        <div class="custom-control custom-switch mt-1 desktopMini">
                            <input
-                              type="checkbox"
-                              class="custom-control-input"
-                              id="checkboxIncognito"
-                              />
+                             type="checkbox"
+                             class="custom-control-input"
+                             id="checkboxListenChant"
+                           />
                            <label
-                              class="custom-control-label"
-                              for="checkboxIncognito"
-                              >
-                           <i class="fa fa-user-secret text-white "></i>
+                             class="custom-control-label"
+                             for="checkboxListenChant"
+                             id="listen-chant-lable"
+                           >
+                             <i class="fa fa-assistive-listening-systems text-white"></i>
                            </label>
-                        </div>
+                         </div>
                      </div>
                      <div  id="clockContainer" style="display: none">
                         <div id="clock-container">
@@ -495,11 +500,24 @@
                                                       for="checkboxAlertWindow"
                                                       >
                                                    <span class="badge-light"
-                                                      >New window for alert</span
+                                                      >Alert as window</span
                                                       >
                                                    </label>
                                                 </div>
                                              </div>
+                                             <div class="col">     <div class="custom-control custom-switch mt-1   desktopMini">
+                                                <input
+                                                   type="checkbox"
+                                                   class="custom-control-input"
+                                                   id="checkboxIncognito"
+                                                   />
+                                                <label
+                                                   class="custom-control-label"
+                                                   for="checkboxIncognito"
+                                                   >
+                                                <i class="fa fa-user-secret "></i> Incognito
+                                                </label>
+                                             </div></div>
                                           </div>
                                           <div class="form-row mt-3">
                                              <div class="col">
@@ -657,6 +675,21 @@
                                           <i class="fa fa-external-link mt-3"></i> Wave
                                           </a>
                                        </div>
+                                    </div>
+                                    <div class="form-group text-center">
+                                     <div class="mb-1 bg-info rounded py-2">  Listen Chant Status:</div>
+                                       <span class="badge" id="chant-count-past"
+                                       ></span> <br>
+                                      
+
+                                    </div>
+                                    <div class="form-group  text-center">
+                                       
+                                       <span class="alert alert-info text-danger" id="listen-chant-alert"
+                                       >Off</span> <br>
+                                     <div class="mt-3 d-block" >  <span id="listen-chant-Output"
+                                       ></span></div>
+
                                     </div>
                                  </div>
                               </div>
