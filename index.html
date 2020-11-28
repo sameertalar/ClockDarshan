@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="theme-color" content="#50676f" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="shortcut icon" href="./img/clockDarshan.png" />
     <link
       rel="stylesheet"
@@ -23,26 +23,29 @@
     <style></style>
   </head>
   <body>
-    <div class="alert alert-success text-center" id="success-alert">
-      <span id="alertMessage" class="text-danger"> </span>
-    </div>
-    <div
-      class="alert alert-warning text-center"
-      style="display: none"
-      id="progress-loading"
-    >
-      <h3>
-        <!--  <i class="fa fa-spinner fa-spin text-primary"></i> -->
-        <span
-          class="spinner-border text-primary"
-          id="spinner"
-          role="status"
-        ></span>
-      </h3>
-    </div>
     <div class="container">
-      <div class="row">
-        <!-- Left  container-->
+      <div class="row sticky-top">
+        <div class="col-lg-5">
+          <div class="alert alert-success text-center" id="success-alert">
+            <span id="alertMessage" class="text-danger"> </span>
+          </div>
+          <div
+            class="alert alert-warning text-center"
+            style="display: none"
+            id="progress-loading"
+          >
+            <h3>
+              <!--  <i class="fa fa-spinner fa-spin text-primary"></i> -->
+              <span
+                class="spinner-border text-primary"
+                id="spinner"
+                role="status"
+              ></span>
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="row sticky-top">
         <div class="col-lg-5">
           <div class="text-center">
             <div
@@ -73,7 +76,12 @@
                 <div><span class="circle"></span></div>
                 <span
                   class="badge badge-danger border border-warning px-2"
-                  style="position: relative; display: none; left: -2px; top:-5px"
+                  style="
+                    position: relative;
+                    display: none;
+                    left: -2px;
+                    top: -5px;
+                  "
                   id="listen-chant-count"
                   >0</span
                 >
@@ -85,6 +93,12 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Left  container-->
+        <div class="col-lg-5">
           <div class="text-center">
             <div class="custom-control-inline mt-3">
               <div class="custom-control custom-switch mt-1 mx-1 desktopMini">
