@@ -93,7 +93,7 @@
                   id="checkboxAppOnOff"
                 />
                 <label class="custom-control-label" for="checkboxAppOnOff">
-                  <i class="fa fa-power-off text-white"></i
+                  <i class="fa fa-power-off text-secondary"></i
                 ></label>
               </div>
               <div class="custom-control custom-switch mt-1 desktopMini">
@@ -104,7 +104,7 @@
                   id="checkboxAlertsOn"
                 />
                 <label class="custom-control-label" for="checkboxAlertsOn">
-                  <i class="fa fa-bell text-white"></i>
+                  <i class="fa fa-bell text-secondary"></i>
                 </label>
               </div>
               <div class="custom-control custom-switch mt-1 mx-1 desktopMini">
@@ -114,7 +114,7 @@
                   id="checkboxPopupAlert"
                 />
                 <label class="custom-control-label" for="checkboxPopupAlert">
-                  <i class="fa fa-window-restore text-white"></i>
+                  <i class="fa fa-window-restore text-secondary"></i>
                 </label>
               </div>
               <div class="custom-control custom-switch mt-1 desktopMini">
@@ -128,7 +128,9 @@
                   for="checkboxListenChant"
                   id="listen-chant-lable"
                 >
-                  <i class="fa fa-assistive-listening-systems text-white"></i>
+                  <i
+                    class="fa fa-assistive-listening-systems pr-2 text-secondary"
+                  ></i>
                 </label>
               </div>
             </div>
@@ -821,10 +823,10 @@
           <div>
             <div class="text-center desktopMini">
               <!-- Buttons second row-->
-              <div class="btn-group">
+              <div class="btn-group mt-1">
                 <div class="dropdown">
                   <button
-                    class="btn btn-secondary dropdown-toggle"
+                    class="btn btn-info active dropdown-toggle"
                     type="button"
                     id="dropdownMenu2"
                     data-toggle="dropdown"
@@ -834,19 +836,19 @@
                     <i class="fa fa-map"></i>
                   </button>
                   <div
-                    class="dropdown-menu bg-secondary"
+                    class="dropdown-menu bg-info"
                     aria-labelledby="dropdownMenu2"
                   >
                     <button
                       type="button"
-                      class="btn btn-secondary"
+                      class="btn btn-info"
                       id="btnBatteryLoader"
                     >
                       <i class="fa fa-battery-3"></i>
                     </button>
                     <button
                       type="button"
-                      class="btn btn-secondary"
+                      class="btn btn-info"
                       id="btnWaveLoader"
                     >
                       <i class="fa fa-random"></i>
@@ -856,13 +858,13 @@
 
                 <button
                   type="button"
-                  class="btn btn-secondary btn-sm px-3"
+                  class="btn btn-info active btn-sm px-3"
                   id="btnTryMid"
                 >
                   <i class="fa fa-hourglass-1"></i>
                 </button>
                 <a
-                  class="btn btn-secondary px-3"
+                  class="btn btn-info active px-3"
                   data-toggle="collapse"
                   href="#collapseControlsMusic"
                   role="button"
@@ -1036,7 +1038,7 @@
               >
                 <source src="" type="video/mp4" />
               </video>
-              <span id="errorMessage" class="text-white-50 small">
+              <span id="errorMessage" class="text-warning small">
                 Be Here Now
               </span>
             </div>

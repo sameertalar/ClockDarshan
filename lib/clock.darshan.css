@@ -1,17 +1,23 @@
-h3,
-h4 {
-  color: whitesmoke;
-  /* #ff5f0e;*/
-}
-
 body {
-  background-color: #50676f;
+  background-color: #ffffff; /* #50676f; */
   /*  overflow-y: hidden;*/
   line-height: 1;
 }
 
 select {
   width: 90%;
+}
+
+/* Bootstrap */
+
+h3,
+h4 {
+  color: whitesmoke;
+  /* #ff5f0e;*/
+}
+
+.card {
+  border: 1px solid #117a8b;
 }
 
 .cdGreen {
@@ -127,7 +133,7 @@ select {
 
   width: 0;
   height: 70%;
-  background: #ffffff;
+  background: #003da1;
   /*
   background: #0fd30f;
 
