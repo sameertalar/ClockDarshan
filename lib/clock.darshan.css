@@ -180,6 +180,14 @@ h4 {
     height: 95%;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .screen-border {
+    border-left: 5px solid #117a8b;
+    border-right: 5px solid #117a8b;
+  }
+}
+
 /*
 @media only screen and (max-height: 100px) {
   #clock-container {

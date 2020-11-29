@@ -23,73 +23,75 @@
     <style></style>
   </head>
   <body>
-    <div class="container">
-      <div class="row sticky-top">
-        <div class="col-lg-5">
-          <div class="alert alert-success text-center" id="success-alert">
-            <span id="alertMessage" class="text-danger"> </span>
-          </div>
-          <div
-            class="alert alert-warning text-center"
-            style="display: none"
-            id="progress-loading"
-          >
-            <h3>
-              <!--  <i class="fa fa-spinner fa-spin text-primary"></i> -->
-              <span
-                class="spinner-border text-primary"
-                id="spinner"
-                role="status"
-              ></span>
-            </h3>
-          </div>
-        </div>
-      </div>
-      <div class="row sticky-top">
-        <div class="col-lg-5">
-          <div class="text-center">
+    <div class="container screen-border">
+      <div class="sticky-top">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="alert alert-success text-center" id="success-alert">
+              <span id="alertMessage" class="text-danger"> </span>
+            </div>
             <div
-              class="text-center"
-              id="containerBattery"
+              class="alert alert-warning text-center"
               style="display: none"
+              id="progress-loading"
             >
-              <iframe
-                id="frameBattery"
-                src=""
-                title="Battery Meditation"
-                width="100%"
-                height="20px"
-                style="border: none"
-              >
-              </iframe>
+              <h3>
+                <!--  <i class="fa fa-spinner fa-spin text-primary"></i> -->
+                <span
+                  class="spinner-border text-primary"
+                  id="spinner"
+                  role="status"
+                ></span>
+              </h3>
             </div>
           </div>
-          <div>
+        </div>
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="text-center">
+              <div
+                class="text-center"
+                id="containerBattery"
+                style="display: none"
+              >
+                <iframe
+                  id="frameBattery"
+                  src=""
+                  title="Battery Meditation"
+                  width="100%"
+                  height="20px"
+                  style="border: none"
+                >
+                </iframe>
+              </div>
+            </div>
             <div>
-              <div class="text-center" style="-webkit-app-region: drag">
-                <div>
-                  <div id="chunkProgress" class="border mb-2">
-                    <div id="chunkStatus"></div>
+              <div>
+                <div class="text-center" style="-webkit-app-region: drag">
+                  <div>
+                    <div id="chunkProgress" class="border mb-2">
+                      <div id="chunkStatus"></div>
+                    </div>
+                    <div class="here"></div>
                   </div>
-                  <div class="here"></div>
+                  <div><span class="circle"></span></div>
+                  <span
+                    class="badge badge-danger border border-warning px-2"
+                    style="
+                      position: relative;
+                      display: none;
+                      left: -2px;
+                      top: -5px;
+                    "
+                    id="listen-chant-count"
+                    >0</span
+                  >
+                  <span
+                    id="displayNaam"
+                    class="text-white py-1 px-2 rounded-circle"
+                    >Welcome</span
+                  >
                 </div>
-                <div><span class="circle"></span></div>
-                <span
-                  class="badge badge-danger border border-warning px-2"
-                  style="
-                    position: relative;
-                    display: none;
-                    left: -2px;
-                    top: -5px;
-                  "
-                  id="listen-chant-count"
-                  >0</span
-                >
-                <span
-                  id="displayNaam"
-                  class="text-white py-1 px-2 rounded-circle"
-                  >Welcome</span
-                >
               </div>
             </div>
           </div>
