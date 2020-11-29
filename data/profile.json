@@ -42,18 +42,32 @@
     "midnotifymode": "Audio_PopularTracks"
   },
   {
-    "profileValue": "PopularText",
-    "displayText": "📝 Popular Text",
+    "profileValue": "ChunkText",
+    "displayText": "📝 Chunk Text",
     "popup": 0,
     "vibration": 0,
     "quartermode": 0,
-    "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": 3,
+    "ischunkbeforealert": 0,
+    "chunkbeforealertaudio": 0,
     "timealertmode": "Text",
     "chunknotifymode": "Text_Popular",
-    "ismidbeforealert": 1,
-    "midbeforealertaudio": 1,
-    "midnotifymode": "Text_Naam"
+    "ismidbeforealert": 0,
+    "midbeforealertaudio": 7,
+    "midnotifymode": "Silent"
+  },
+  {
+    "profileValue": "QuarterText",
+    "displayText": "📝 Quarter Text",
+    "popup": 0,
+    "vibration": 0,
+    "quartermode": 0,
+    "ischunkbeforealert": 0,
+    "chunkbeforealertaudio": 10,
+    "timealertmode": "Text",
+    "chunknotifymode": "Text_Naam",
+    "ismidbeforealert": 0,
+    "midbeforealertaudio": 7,
+    "midnotifymode": "Silent"
   },
   {
     "profileValue": "ChunkAudios",
@@ -110,6 +124,20 @@
     "ismidbeforealert": 0,
     "midbeforealertaudio": 7,
     "midnotifymode": "Silent"
+  },
+  {
+    "profileValue": "PopularText",
+    "displayText": "📝 Popular Text",
+    "popup": 0,
+    "vibration": 0,
+    "quartermode": 0,
+    "ischunkbeforealert": 1,
+    "chunkbeforealertaudio": 3,
+    "timealertmode": "Text",
+    "chunknotifymode": "Text_Popular",
+    "ismidbeforealert": 1,
+    "midbeforealertaudio": 1,
+    "midnotifymode": "Text_Naam"
   },
   {
     "profileValue": "Incognito",
