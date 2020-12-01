@@ -50,8 +50,8 @@ h4 {
 #clock-container {
   display: inline-block;
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 600px;
+  height: 600px;
   vertical-align: middle;
   overflow: hidden;
   background: url("../img/clockDarshan.png");
@@ -174,10 +174,16 @@ h4 {
   }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 1000px) {
   #clock-container {
     width: 95%;
     height: 95%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #clock-container {
+    width: 50%;
+    height: 50%;
   }
 }
 
