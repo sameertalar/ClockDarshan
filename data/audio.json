@@ -55,10 +55,10 @@
       "PopularTracks": "20MT__Shivaranjani_Rachana_Track.mp3",
       "SoundEffects": "20SE__Droping-Spoon-in-Mug.mp3",
       "ChunkAudios": "Chunk_Audio_20_Annapurna.mp3",
-      "ChunkChants": "ChunkChant_20_Annapurna.mp3",
+      "ChunkChants": "ChunkChant_45_Shiv.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_20_Annapurna.mp3",
       "ChunkStotras": "ChunkStotra_20_Annapurna.mp3",
-      "ChunkNaamDhun": "NaamDhun_55Krishana_Anup_Jalota.mp3"
+      "ChunkNaamDhun": "NaamDhun_55RadheRadheGovind_KrupaluKrishaDas.mp3"
     },
     {
       "chunk": 25,
@@ -106,7 +106,7 @@
       "ChunkChants": "ChunkChant_40_Buddha.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_40_Buddha.mp3",
       "ChunkStotras": "ChunkStotra_40_Buddha.mp3",
-      "ChunkNaamDhun": "NaamDhun_55Krishana_JagjitSingh.mp3"
+      "ChunkNaamDhun": "NaamDhun_40Buddha.mp3"
     },
     {
       "chunk": 45,
@@ -130,7 +130,7 @@
       "ChunkChants": "ChunkChant_50_RamanaMaharshi.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_50_RamanaMaharshi2.mp3",
       "ChunkStotras": "ChunkStotra_50_RamanaMaharshi.mp3",
-      "ChunkNaamDhun": "NaamDhun_55RadheRadheGovind_KrupaluKrishaDas.mp3"
+      "ChunkNaamDhun": "NaamDhun_55Krishana_JagjitSingh.mp3"
     },
     {
       "chunk": 55,
