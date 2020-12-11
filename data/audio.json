@@ -10,7 +10,8 @@
       "ChunkChants": "ChunkChant_00_Ganesh.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_00_Ganesh.mp3",
       "ChunkStotras": "ChunkStotra_00_Ganesh.mp3",
-      "ChunkNaamDhun": "NaamDhun_00Ganesh.mp3"
+      "ChunkNaamDhun": "NaamDhun_00Ganesh.mp3",
+      "ChunkSuprabhatam": "Suprabhatam_00_Ganesha.mp3"
     },
     {
       "chunk": 5,
@@ -22,7 +23,8 @@
       "ChunkChants": "ChunkChant_05_Mahalaxmi.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_05_Mahalaxmi2.mp3",
       "ChunkStotras": "ChunkStotra_05_Mahalaxmi_SriSuktam.mp3",
-      "ChunkNaamDhun": "NaamDhun_05Lakshmi.mp3"
+      "ChunkNaamDhun": "NaamDhun_05Lakshmi.mp3",
+      "ChunkSuprabhatam": "Suprabhatam_05_Laxmi.mp3"
     },
     {
       "chunk": 10,
@@ -34,7 +36,8 @@
       "ChunkChants": "ChunkChant_10_Saraswati.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_10_Saraswati2.mp3",
       "ChunkStotras": "ChunkStotra_10_Saraswati_Vandana.mp3",
-      "ChunkNaamDhun": "NaamDhun_55Krishana_AmalaPuran.mp3"
+      "ChunkNaamDhun": "NaamDhun_55Krishana_AmalaPuran.mp3",
+      "ChunkSuprabhatam": "Suprabhatam_10_Saraswati.mp3"
     },
     {
       "chunk": 15,
@@ -46,7 +49,8 @@
       "ChunkChants": "ChunkChant_15_Gagangiri.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_15_Gagangiri.mp3",
       "ChunkStotras": "ChunkStotra_15_Gagangiri_Saptashati.mp3",
-      "ChunkNaamDhun": "NaamDhun_15Gagangiri.mp3"
+      "ChunkNaamDhun": "NaamDhun_15Gagangiri.mp3",
+      "ChunkSuprabhatam": "Suprabhatam_15_GagangiriMaharaj.mp3"
     },
     {
       "chunk": 20,
@@ -58,7 +62,8 @@
       "ChunkChants": "ChunkChant_45_Shiv.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_20_Annapurna.mp3",
       "ChunkStotras": "ChunkStotra_20_Annapurna.mp3",
-      "ChunkNaamDhun": "NaamDhun_55RadheRadheGovind_KrupaluKrishaDas.mp3"
+      "ChunkNaamDhun": "NaamDhun_55RadheRadheGovind_KrupaluKrishaDas.mp3",
+      "ChunkSuprabhatam": "ChunkStotra_20_Annapurna.mp3"
     },
     {
       "chunk": 25,
@@ -70,7 +75,8 @@
       "ChunkChants": "ChunkChant_25_Naramada.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_25_Naramada2.mp3",
       "ChunkStotras": "ChunkStotra_25_Narmada_Narmadastakam.mp3",
-      "ChunkNaamDhun": "NaamDhun_GayatriMantra.mp3"
+      "ChunkNaamDhun": "NaamDhun_GayatriMantra.mp3",
+      "ChunkSuprabhatam": "ChunkStotra_25_Narmada_Narmadastakam.mp3"
     },
     {
       "chunk": 30,
@@ -82,7 +88,8 @@
       "ChunkChants": "ChunkChant_30_Durga.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_30_Durga.mp3",
       "ChunkStotras": "ChunkStotra_30_Durga.mp3",
-      "ChunkNaamDhun": "NaamDhun_30Durga.mp3"
+      "ChunkNaamDhun": "NaamDhun_30Durga.mp3",
+      "ChunkSuprabhatam": "Suprabhatam_30_Durga.mp3"
     },
     {
       "chunk": 35,
@@ -94,7 +101,8 @@
       "ChunkChants": "ChunkChant_35_Hanuman.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_35_Hanuman2.mp3",
       "ChunkStotras": "ChunkStotra_35_Hanuman.mp3",
-      "ChunkNaamDhun": "NaamDhun_40Hanuman.mp3"
+      "ChunkNaamDhun": "NaamDhun_40Hanuman.mp3",
+      "ChunkSuprabhatam": "Suprabhatam_35_Hanuman.mp3"
     },
     {
       "chunk": 40,
@@ -106,7 +114,8 @@
       "ChunkChants": "ChunkChant_40_Buddha.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_40_Buddha.mp3",
       "ChunkStotras": "ChunkStotra_40_Buddha.mp3",
-      "ChunkNaamDhun": "NaamDhun_40Buddha.mp3"
+      "ChunkNaamDhun": "NaamDhun_40Buddha.mp3",
+      "ChunkSuprabhatam": "ChunkStotra_40_Buddha.mp3"
     },
     {
       "chunk": 45,
@@ -118,7 +127,8 @@
       "ChunkChants": "ChunkChant_45_Shiv.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_45_Shiv.mp3",
       "ChunkStotras": "ChunkStotra_45_Shiva.mp3",
-      "ChunkNaamDhun": "NaamDhun_45Shiva.mp3"
+      "ChunkNaamDhun": "NaamDhun_45Shiva.mp3",
+      "ChunkSuprabhatam": "Suprabhatam_45_Shiv.mp3"
     },
     {
       "chunk": 50,
@@ -130,7 +140,8 @@
       "ChunkChants": "ChunkChant_50_RamanaMaharshi.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_50_RamanaMaharshi2.mp3",
       "ChunkStotras": "ChunkStotra_50_RamanaMaharshi.mp3",
-      "ChunkNaamDhun": "NaamDhun_55Krishana_JagjitSingh.mp3"
+      "ChunkNaamDhun": "NaamDhun_55Krishana_JagjitSingh.mp3",
+      "ChunkSuprabhatam": "Suprabhatam_50_SaiBaba.mp3"
     },
     {
       "chunk": 55,
@@ -142,7 +153,8 @@
       "ChunkChants": "ChunkChant_55_Krishna.mp3",
       "ChunkChantsBreath": "ChunkChantBreath_55_Krishna2.mp3",
       "ChunkStotras": "ChunkStotra_55_Krishna.mp3",
-      "ChunkNaamDhun": "NaamDhun_55Krishana_BadaHariDasFast.mp3"
+      "ChunkNaamDhun": "NaamDhun_55Krishana_BadaHariDasFast.mp3",
+      "ChunkSuprabhatam": "Suprabhatam_55_Venkatesha.mp3"
     }
   ],
 

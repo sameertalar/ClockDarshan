@@ -57,7 +57,7 @@
   },
   {
     "profileValue": "NaamDhun",
-    "displayText": "🎵 Naam Dhun",
+    "displayText": "🎵 नाम धुन ",
     "popup": 0,
     "vibration": 0,
     "quartermode": 0,
@@ -71,7 +71,7 @@
   },
   {
     "profileValue": "ChunkStotras",
-    "displayText": "🎵 Chunk Stotras",
+    "displayText": "🎵 Chunk स्तोत्रं ",
     "popup": 0,
     "vibration": 0,
     "quartermode": 0,
@@ -79,6 +79,20 @@
     "chunkbeforealertaudio": 5,
     "timealertmode": "Silent",
     "chunknotifymode": "Audio_ChunkStotras",
+    "ismidbeforealert": 0,
+    "midbeforealertaudio": 7,
+    "midnotifymode": "Silent"
+  },
+  {
+    "profileValue": "ChunkSuprabhatam",
+    "displayText": "🎵 Chunk सुप्रभातम ",
+    "popup": 0,
+    "vibration": 0,
+    "quartermode": 0,
+    "ischunkbeforealert": 1,
+    "chunkbeforealertaudio": 5,
+    "timealertmode": "Silent",
+    "chunknotifymode": "Audio_ChunkSuprabhatam",
     "ismidbeforealert": 0,
     "midbeforealertaudio": 7,
     "midnotifymode": "Silent"
