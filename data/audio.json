@@ -8,7 +8,7 @@
       "SoundEffects": "00SE__Door-Bell-Ding-A1.mp3",
       "ChunkAudios": "Chunk_Audio_00_Ganesh.mp3",
       "ChunkChants": "ChunkChant_00_Ganesh.mp3",
-      "ChunkChantsBreath": "ChunkChantBreath_00_Ganesh.mp3",
+      "Mantra": "ChunkChantBreath_00_Ganesh.mp3",
       "ChunkStotras": "ChunkStotra_00_Ganesh.mp3",
       "ChunkNaamDhun": "NaamDhun_00Ganesh.mp3",
       "ChunkSuprabhatam": "Suprabhatam_00_Ganesha.mp3"
@@ -21,7 +21,7 @@
       "SoundEffects": "05SE__Single-Coin-Drop-On-Table.mp3",
       "ChunkAudios": "Chunk_Audio_05_Mahalaxmi.mp3",
       "ChunkChants": "ChunkChant_05_Mahalaxmi.mp3",
-      "ChunkChantsBreath": "ChunkChantBreath_05_Mahalaxmi2.mp3",
+      "Mantra": "ChunkChantBreath_05_Mahalaxmi2.mp3",
       "ChunkStotras": "ChunkStotra_05_Mahalaxmi_SriSuktam.mp3",
       "ChunkNaamDhun": "NaamDhun_05Lakshmi.mp3",
       "ChunkSuprabhatam": "Suprabhatam_05_Laxmi.mp3"
@@ -34,7 +34,7 @@
       "SoundEffects": "10SE__TharaRangMahal.mp3",
       "ChunkAudios": "Chunk_Audio_10_Saraswari.mp3",
       "ChunkChants": "ChunkChant_10_Saraswati.mp3",
-      "ChunkChantsBreath": "ChunkChantBreath_10_Saraswati2.mp3",
+      "Mantra": "ChunkChantBreath_10_Saraswati2.mp3",
       "ChunkStotras": "ChunkStotra_10_Saraswati_Vandana.mp3",
       "ChunkNaamDhun": "NaamDhun_55Krishana_AmalaPuran.mp3",
       "ChunkSuprabhatam": "Suprabhatam_10_Saraswati.mp3"
@@ -47,7 +47,7 @@
       "SoundEffects": "15_Om_Shri_Gurudev_Hare_Track.mp3",
       "ChunkAudios": "Chunk_Audio_15_Gagangiri_Maharaj.mp3",
       "ChunkChants": "ChunkChant_15_Gagangiri.mp3",
-      "ChunkChantsBreath": "ChunkChantBreath_15_Gagangiri.mp3",
+      "Mantra": "ChunkChantBreath_15_Gagangiri.mp3",
       "ChunkStotras": "ChunkStotra_15_Gagangiri_Saptashati.mp3",
       "ChunkNaamDhun": "NaamDhun_15Gagangiri.mp3",
       "ChunkSuprabhatam": "Suprabhatam_15_GagangiriMaharaj.mp3"
@@ -60,7 +60,7 @@
       "SoundEffects": "20SE__Droping-Spoon-in-Mug.mp3",
       "ChunkAudios": "Chunk_Audio_20_Annapurna.mp3",
       "ChunkChants": "ChunkChant_45_Shiv.mp3",
-      "ChunkChantsBreath": "ChunkChantBreath_20_Annapurna.mp3",
+      "Mantra": "ChunkChantBreath_20_Annapurna.mp3",
       "ChunkStotras": "ChunkStotra_20_Annapurna.mp3",
       "ChunkNaamDhun": "NaamDhun_55RadheRadheGovind_KrupaluKrishaDas.mp3",
       "ChunkSuprabhatam": "ChunkStotra_20_Annapurna.mp3"
@@ -73,7 +73,7 @@
       "SoundEffects": "25SE__Ticking_Water_Two_Drops.mp3",
       "ChunkAudios": "Chunk_Audio_25_Narmana.mp3",
       "ChunkChants": "ChunkChant_25_Naramada.mp3",
-      "ChunkChantsBreath": "ChunkChantBreath_25_Naramada2.mp3",
+      "Mantra": "ChunkChantBreath_25_Naramada2.mp3",
       "ChunkStotras": "ChunkStotra_25_Narmada_Narmadastakam.mp3",
       "ChunkNaamDhun": "NaamDhun_GayatriMantra.mp3",
       "ChunkSuprabhatam": "ChunkStotra_25_Narmada_Narmadastakam.mp3"
@@ -86,7 +86,7 @@
       "SoundEffects": "30SE__Drawing-A-Sword.mp3",
       "ChunkAudios": "Chunk_Audio_30_Durga.mp3",
       "ChunkChants": "ChunkChant_30_Durga.mp3",
-      "ChunkChantsBreath": "ChunkChantBreath_30_Durga.mp3",
+      "Mantra": "ChunkChantBreath_30_Durga.mp3",
       "ChunkStotras": "ChunkStotra_30_Durga.mp3",
       "ChunkNaamDhun": "NaamDhun_30Durga.mp3",
       "ChunkSuprabhatam": "Suprabhatam_30_Durga.mp3"
@@ -99,7 +99,7 @@
       "SoundEffects": "35SE__Windy-Snow-Storm-Blizzard.mp3",
       "ChunkAudios": "Chunk_Audio_35_Hanuman.mp3",
       "ChunkChants": "ChunkChant_35_Hanuman.mp3",
-      "ChunkChantsBreath": "ChunkChantBreath_35_Hanuman2.mp3",
+      "Mantra": "ChunkChantBreath_35_Hanuman2.mp3",
       "ChunkStotras": "ChunkStotra_35_Hanuman.mp3",
       "ChunkNaamDhun": "NaamDhun_40Hanuman.mp3",
       "ChunkSuprabhatam": "Suprabhatam_35_Hanuman.mp3"
@@ -112,7 +112,7 @@
       "SoundEffects": "40SE__Fire5.mp3",
       "ChunkAudios": "Chunk_Audio_40_Buddha.mp3",
       "ChunkChants": "ChunkChant_40_Buddha.mp3",
-      "ChunkChantsBreath": "ChunkChantBreath_40_Buddha.mp3",
+      "Mantra": "ChunkChantBreath_40_Buddha.mp3",
       "ChunkStotras": "ChunkStotra_40_Buddha.mp3",
       "ChunkNaamDhun": "NaamDhun_40Buddha.mp3",
       "ChunkSuprabhatam": "ChunkStotra_40_Buddha.mp3"
@@ -125,7 +125,7 @@
       "SoundEffects": "45SE__Damroo.mp3",
       "ChunkAudios": "Chunk_Audio_45_ShivShaker.mp3",
       "ChunkChants": "ChunkChant_45_Shiv.mp3",
-      "ChunkChantsBreath": "ChunkChantBreath_45_Shiv.mp3",
+      "Mantra": "ChunkChantBreath_45_Shiv.mp3",
       "ChunkStotras": "ChunkStotra_45_Shiva.mp3",
       "ChunkNaamDhun": "NaamDhun_45Shiva.mp3",
       "ChunkSuprabhatam": "Suprabhatam_45_Shiv.mp3"
@@ -138,7 +138,7 @@
       "SoundEffects": "50SE__ArunachalaRamana.mp3",
       "ChunkAudios": "Chunk_Audio_50_Ramana_Maharshi.mp3",
       "ChunkChants": "ChunkChant_50_RamanaMaharshi.mp3",
-      "ChunkChantsBreath": "ChunkChantBreath_50_RamanaMaharshi2.mp3",
+      "Mantra": "ChunkChantBreath_50_RamanaMaharshi2.mp3",
       "ChunkStotras": "ChunkStotra_50_RamanaMaharshi.mp3",
       "ChunkNaamDhun": "NaamDhun_55Krishana_JagjitSingh.mp3",
       "ChunkSuprabhatam": "Suprabhatam_50_SaiBaba.mp3"
@@ -151,7 +151,7 @@
       "SoundEffects": "55SE__Flute_fantasy.mp3",
       "ChunkAudios": "Chunk_Audio_55_Krishana.mp3",
       "ChunkChants": "ChunkChant_55_Krishna.mp3",
-      "ChunkChantsBreath": "ChunkChantBreath_55_Krishna2.mp3",
+      "Mantra": "ChunkChantBreath_55_Krishna2.mp3",
       "ChunkStotras": "ChunkStotra_55_Krishna.mp3",
       "ChunkNaamDhun": "NaamDhun_55Krishana_BadaHariDasFast.mp3",
       "ChunkSuprabhatam": "Suprabhatam_55_Venkatesha.mp3"
