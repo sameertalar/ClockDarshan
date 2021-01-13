@@ -317,36 +317,28 @@
                         <div
                           class="border border-primary mt-5 p-3 mb-4 rounded"
                         >
-                          <div class="form-row mb-2">
-                            <div class="col-8">
-                              <div class="custom-control custom-switch">
-                                <input
-                                  type="checkbox"
-                                  class="custom-control-input"
-                                  id="checkboxChunkBeforeAlert"
-                                />
-                                <label
-                                  class="custom-control-label"
-                                  for="checkboxChunkBeforeAlert"
-                                  ><span> Before Alert</span></label
-                                >
-                              </div>
-                            </div>
-                            <div class="col-4 text-right">
-                              <button
-                                id="btnTryChunk2"
-                                type="button"
-                                class="btn btn-primary active shrinkbtn"
-                              >
-                                <i class="fa fa-hourglass"></i> Chunk
-                              </button>
-                            </div>
-                          </div>
+                 
                           <div class="form-group mb-4 mt-2">
+                            <div class="form-group">
+                              <label for="selectChunkBeforeAlertAudio">
+                             
+                                <a style="display: none;"
+                                  id="btnChunkBeforeAlertAudioTry"
+                                  role="button"
+                                  aria-expanded="false"
+                                >
+                                  🔔
+                                </a>    Before Audio
+                              </label>
+                              <select
+                                class="form-control"
+                                id="selectChunkBeforeAlertAudio"
+                              ></select>
+                            </div>
                             <div class="form-row">
                               <div class="col">
                                 <label for="selectTimeAlertMode">
-                                  <i class="fa fa-clock-o"></i>
+                                  <i style="display: none;" class="fa fa-clock-o"></i>
                                   Time Alert
                                 </label>
                                 <select
@@ -369,7 +361,7 @@
                             </div>
                             <div class="text-left mt-2">
                               <label for="selectChunkNotifyMode">
-                                <i class="fa fa-bell"></i>
+                                <i style="display: none;" class="fa fa-bell"></i>
                                 Notification
                               </label>
                               <select
@@ -379,46 +371,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="border border-warning p-3 mb-4 rounded">
-                          <div class="form-row">
-                            <div class="col-8">
-                              <div class="custom-control custom-switch">
-                                <input
-                                  type="checkbox"
-                                  class="custom-control-input"
-                                  id="checkboxMidBeforeAlert"
-                                />
-                                <label
-                                  class="custom-control-label"
-                                  for="checkboxMidBeforeAlert"
-                                  ><span> Before Alert</span></label
-                                >
-                              </div>
-                            </div>
-                            <div class="col-4 text-right">
-                              <button
-                                id="btnTryMid2"
-                                type="button"
-                                class="btn btn-primary active shrinkbtn"
-                              >
-                                <i class="fa fa-hourglass-1"></i>
-                                Mid
-                              </button>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="text-left mt-2">
-                              <label for="selectMidNotifyMode">
-                                <i class="fa fa-bell"></i>
-                                Notification
-                              </label>
-                              <select
-                                class="form-control"
-                                id="selectMidNotifyMode"
-                              ></select>
-                            </div>
-                          </div>
-                        </div>
+
                       </div>
                     </div>
                     <div
@@ -428,37 +381,8 @@
                       aria-labelledby="nav-alerts-tab"
                     >
                       <div id="divSettingsAlerts">
-                        <div class="form-group">
-                          <label for="selectChunkBeforeAlertAudio">
-                            Chunk Before Audio
-                            <a
-                              id="btnChunkBeforeAlertAudioTry"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🔔
-                            </a>
-                          </label>
-                          <select
-                            class="form-control"
-                            id="selectChunkBeforeAlertAudio"
-                          ></select>
-                        </div>
-                        <div class="form-group">
-                          <label for="selectMidBeforeAlertAudio">
-                            Mid Before Audio<a
-                              id="btnMidBeforeAlertAudioTry"
-                              role="button"
-                              aria-expanded="false"
-                            >
-                              🔔
-                            </a>
-                          </label>
-                          <select
-                            class="form-control"
-                            id="selectMidBeforeAlertAudio"
-                          ></select>
-                        </div>
+                  
+                    
                         <div class="text-center p-3">
                           <span class="badge badge-dark">Volumes</span>
                         </div>
@@ -479,6 +403,7 @@
                             step="0.01"
                             value="0.5"
                           />
+                          
                         </div>
                         <div class="form-group">
                           <label for="rangeSpeechVolume">
@@ -880,6 +805,7 @@
                     </button>
                   </div>
                 </div>
+                
 
                 <button
                   type="button"

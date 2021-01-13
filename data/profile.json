@@ -1,31 +1,23 @@
 [
   {
+    "profileValue": "Default",
+    "displayText": "🌿 Default",
+    "popup": 0,
+    "vibration": 0,
+    "quartermode": 0,
+    "chunkbeforealertaudio": 0,
+    "timealertmode": "Silent",
+    "chunknotifymode": "Silent"
+  },
+  {
     "profileValue": "OmShanti",
     "displayText": "📵 Om Shanti",
     "popup": 0,
     "vibration": 0,
     "quartermode": 0,
-    "ischunkbeforealert": 0,
-    "chunkbeforealertaudio": 3,
+    "chunkbeforealertaudio": 0,
     "timealertmode": "Silent",
-    "chunknotifymode": "Silent",
-    "ismidbeforealert": 0,
-    "midbeforealertaudio": 1,
-    "midnotifymode": "Silent"
-  },
-  {
-    "profileValue": "PopularSongText",
-    "displayText": "🌿 Popular Song Text",
-    "popup": 0,
-    "vibration": 0,
-    "quartermode": 0,
-    "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": 10,
-    "timealertmode": "Text",
-    "chunknotifymode": "Audio_PopularSongs",
-    "ismidbeforealert": 1,
-    "midbeforealertaudio": 7,
-    "midnotifymode": "Text_Popular"
+    "chunknotifymode": "Silent"
   },
   {
     "profileValue": "PopularSongs",
@@ -33,139 +25,9 @@
     "popup": 0,
     "vibration": 0,
     "quartermode": 0,
-    "ischunkbeforealert": 1,
     "chunkbeforealertaudio": 10,
     "timealertmode": "Text",
-    "chunknotifymode": "Audio_PopularSongs",
-    "ismidbeforealert": 0,
-    "midbeforealertaudio": 8,
-    "midnotifymode": "Audio_PopularTracks"
-  },
-  {
-    "profileValue": "ChunkAudios",
-    "displayText": "🎵 Chunk Audios",
-    "popup": 0,
-    "vibration": 0,
-    "quartermode": 0,
-    "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": 3,
-    "timealertmode": "Silent",
-    "chunknotifymode": "Audio_ChunkAudios",
-    "ismidbeforealert": 0,
-    "midbeforealertaudio": 3,
-    "midnotifymode": "Silent"
-  },
-  {
-    "profileValue": "NaamDhun",
-    "displayText": "🎵 नाम धुन",
-    "popup": 0,
-    "vibration": 0,
-    "quartermode": 0,
-    "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": 5,
-    "timealertmode": "Silent",
-    "chunknotifymode": "Audio_ChunkNaamDhun",
-    "ismidbeforealert": 0,
-    "midbeforealertaudio": 3,
-    "midnotifymode": "Silent"
-  },
-  {
-    "profileValue": "ChunkStotras",
-    "displayText": "🎵 Chunk स्तोत्रं",
-    "popup": 0,
-    "vibration": 0,
-    "quartermode": 0,
-    "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": 5,
-    "timealertmode": "Silent",
-    "chunknotifymode": "Audio_ChunkStotras",
-    "ismidbeforealert": 0,
-    "midbeforealertaudio": 7,
-    "midnotifymode": "Silent"
-  },
-  {
-    "profileValue": "ChunkSuprabhatam",
-    "displayText": "🎵 Chunk सुप्रभातम",
-    "popup": 0,
-    "vibration": 0,
-    "quartermode": 0,
-    "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": 5,
-    "timealertmode": "Silent",
-    "chunknotifymode": "Audio_ChunkSuprabhatam",
-    "ismidbeforealert": 0,
-    "midbeforealertaudio": 7,
-    "midnotifymode": "Silent"
-  },
-  {
-    "profileValue": "ChunkChants",
-    "displayText": "🎵 Chunk Chants",
-    "popup": 0,
-    "vibration": 0,
-    "quartermode": 0,
-    "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": 5,
-    "timealertmode": "Silent",
-    "chunknotifymode": "Audio_ChunkChants",
-    "ismidbeforealert": 0,
-    "midbeforealertaudio": 7,
-    "midnotifymode": "Silent"
-  },
-  {
-    "profileValue": "Mantra",
-    "displayText": "🎵 Mantra",
-    "popup": 0,
-    "vibration": 0,
-    "quartermode": 0,
-    "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": 5,
-    "timealertmode": "Silent",
-    "chunknotifymode": "Audio_Mantra",
-    "ismidbeforealert": 0,
-    "midbeforealertaudio": 3,
-    "midnotifymode": "Silent"
-  },
-  {
-    "profileValue": "ChunkText",
-    "displayText": "📝 Chunk Text",
-    "popup": 0,
-    "vibration": 0,
-    "quartermode": 0,
-    "ischunkbeforealert": 0,
-    "chunkbeforealertaudio": 0,
-    "timealertmode": "Text",
-    "chunknotifymode": "Text_Popular",
-    "ismidbeforealert": 0,
-    "midbeforealertaudio": 7,
-    "midnotifymode": "Silent"
-  },
-  {
-    "profileValue": "QuarterText",
-    "displayText": "📝 Quarter Text",
-    "popup": 0,
-    "vibration": 0,
-    "quartermode": 0,
-    "ischunkbeforealert": 0,
-    "chunkbeforealertaudio": 10,
-    "timealertmode": "Text",
-    "chunknotifymode": "Text_Naam",
-    "ismidbeforealert": 0,
-    "midbeforealertaudio": 7,
-    "midnotifymode": "Silent"
-  },
-  {
-    "profileValue": "PopularText",
-    "displayText": "📝 Popular Text",
-    "popup": 0,
-    "vibration": 0,
-    "quartermode": 0,
-    "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": 3,
-    "timealertmode": "Text",
-    "chunknotifymode": "Text_Popular",
-    "ismidbeforealert": 1,
-    "midbeforealertaudio": 1,
-    "midnotifymode": "Text_Naam"
+    "chunknotifymode": "Audio_PopularSongs"
   },
   {
     "profileValue": "Incognito",
@@ -173,13 +35,9 @@
     "popup": 0,
     "vibration": 0,
     "quartermode": 0,
-    "ischunkbeforealert": 1,
     "chunkbeforealertaudio": 10,
     "timealertmode": "Silent",
-    "chunknotifymode": "Text_IncognitoName",
-    "ismidbeforealert": 0,
-    "midbeforealertaudio": 7,
-    "midnotifymode": "Silent"
+    "chunknotifymode": "Text_IncognitoName"
   },
   {
     "profileValue": "TimeOnly",
@@ -187,13 +45,9 @@
     "popup": 0,
     "vibration": 0,
     "quartermode": 0,
-    "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": 3,
+    "chunkbeforealertaudio": 10,
     "timealertmode": "Text",
-    "chunknotifymode": "Silent",
-    "ismidbeforealert": 0,
-    "midbeforealertaudio": 1,
-    "midnotifymode": "Silent"
+    "chunknotifymode": "Silent"
   },
   {
     "profileValue": "AlertOnly",
@@ -201,13 +55,9 @@
     "popup": 0,
     "vibration": 0,
     "quartermode": 0,
-    "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": 3,
+    "chunkbeforealertaudio": 10,
     "timealertmode": "Silent",
-    "chunknotifymode": "Silent",
-    "ismidbeforealert": 1,
-    "midbeforealertaudio": 1,
-    "midnotifymode": "Silent"
+    "chunknotifymode": "Silent"
   },
   {
     "profileValue": "QuarterlyTimeAlert",
@@ -215,12 +65,9 @@
     "popup": 0,
     "vibration": 0,
     "quartermode": 1,
-    "ischunkbeforealert": 1,
-    "chunkbeforealertaudio": 3,
+    "chunkbeforealertaudio": 10,
     "timealertmode": "Text",
-    "chunknotifymode": "Silent",
-    "ismidbeforealert": 0,
-    "midbeforealertaudio": 1,
-    "midnotifymode": "Silent"
+    "chunknotifymode": "Silent"
   }
-]
+ ]
+

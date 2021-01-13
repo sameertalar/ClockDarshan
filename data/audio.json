@@ -160,6 +160,11 @@
 
   "alerts": [
     {
+      "fileName": "",
+      "id": 0,
+      "text": "🔕 Silent"
+    },
+    {
       "fileName": "alert_Ting1.mp3",
       "id": 1,
       "text": "Ting1"
@@ -258,3 +263,5 @@
     }
   ]
 }
+
+
