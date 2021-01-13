@@ -28,42 +28,42 @@
       "chunk": 0,
       "displayText": "गणेशाय नमः",
       "displayIncogText": "The Begining",
-      "color": "#28a745"
+      "color": "#fa9207"
     },
     {
       "id": 2,
       "chunk": 5,
       "displayText": "महालक्ष्मी नमो नमः",
       "displayIncogText": "Prosperity",
-      "color": "#28a745"
+      "color": "#fa9207"
     },
     {
       "id": 3,
       "chunk": 10,
       "displayText": "सरस्वती भगवती",
       "displayIncogText": "Knowledge",
-      "color": "#28a745"
+      "color": "#fa9207"
     },
     {
       "id": 4,
       "chunk": 15,
       "displayText": "जय गगनगिरी",
       "displayIncogText": "Compassion",
-      "color": "#fa9207"
+      "color": "#28a745"
     },
     {
       "id": 5,
       "chunk": 20,
       "displayText": "अन्नपूर्णे सदा पूर्णे",
       "displayIncogText": "Nourishment",
-      "color": "#fa9207"
+      "color": "#28a745"
     },
     {
       "id": 6,
       "chunk": 25,
       "displayText": "नर्मदे हर",
       "displayIncogText": "Element Water",
-      "color": "#fa9207"
+      "color": "#28a745"
     },
     {
       "id": 7,

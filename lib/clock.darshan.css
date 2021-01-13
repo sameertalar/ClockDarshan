@@ -112,15 +112,27 @@ h4 {
   background-color: #fef9e7;
   background: linear-gradient(
     to right,
-    #007bff 20%,
+    #007bff 25%,
+    #ff2e2d 25% 49.5%,
+    #117a8b 40% 49.5%,
+    #ffffff 49.5% 50.5%,
+    #28a745 50.5% 75%,
+    #fa9207 75%
+  );
+}
+
+/*
+
+  #007bff 20%,
     #ff2e2d 20% 40%,
     #117a8b 40% 49.5%,
     #ffffff 49.5% 50%,
     #117a8b 50% 60%,
     #fa9207 60% 80%,
     #28a745 80%
-  );
-}
+*/
+
+
 
 #chunkStatus {
   position: relative;
