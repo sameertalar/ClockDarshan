@@ -212,34 +212,78 @@
         <div class="col-lg-4">
           <div class="desktopMini">
             <div class="text-center pt-3">
-              <button
-                id="btnTryChunk"
-                type="button"
-                class="btn btn-info btn-lg active shrinkbtn"
-              >
-                <i class="fa fa-hourglass"></i>
-              </button>
-              <a
-                class="btn btn-info btn-lg active shrinkbtn"
-                data-toggle="collapse"
-                href="#collapseControlsSettings"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                <i id="btnGear" class="fa fa-gear fa-2x"></i>
-              </a>
-              <button
-                id="btnTrackerCollapse"
-                data-toggle="collapse"
-                href="#collapseControlsTracker"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-                type="button"
-                class="btn btn-info btn-lg active shrinkbtn"
-              >
-                <i class="fa fa-paper-plane-o"></i>
-              </button>
+              <div class="btn-group mt-1">
+                <button
+                  id="btnTryChunk"
+                  type="button"
+                  class="btn btn-info btn-lg active shrinkbtn"
+                >
+                  <i class="fa fa-hourglass"></i>
+                </button>
+                <div class="dropdown">
+                  <button
+                    class="btn btn-info btn-lg active shrinkbtn active dropdown-toggle"
+                    type="button"
+                    id="dropdownMenu2"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i class="fa fa-map fa-2x"></i>
+                  </button>
+                  <div
+                    class="dropdown-menu bg-info"
+                    aria-labelledby="dropdownMenu2"
+                  >
+                    <button
+                      id="btnTrackerCollapse"
+                      data-toggle="collapse"
+                      href="#collapseControlsTracker"
+                      aria-expanded="false"
+                      aria-controls="collapseExample"
+                      type="button"
+                      class="btn btn-info btn-lg shrinkbtn"
+                    >
+                      <i class="fa fa-paper-plane-o"></i>
+                    </button>
+                    <a
+                      class="btn btn-info px-3"
+                      data-toggle="collapse"
+                      href="#collapseControlsMusic"
+                      role="button"
+                      aria-expanded="false"
+                      aria-controls="collapseExample"
+                    >
+                      <i class="fa fa-music"></i>
+                    </a>
+                    <button
+                      type="button"
+                      class="btn btn-info"
+                      id="btnBatteryLoader"
+                    >
+                      <i class="fa fa-battery-3"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-info"
+                      id="btnWaveLoader"
+                    >
+                      <i class="fa fa-random"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <a
+                  class="btn btn-info btn-lg active shrinkbtn"
+                  data-toggle="collapse"
+                  href="#collapseControlsSettings"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                >
+                  <i id="btnGear" class="fa fa-gear fa-2x"></i>
+                </a>
+              </div>
             </div>
           </div>
           <div>
@@ -304,31 +348,31 @@
                     >
                       <div id="divSettings">
                         <div>
-                          <div class="bg-primary text-center rounded">
-                            <label for="selectProfile" class="text-white">
-                              <i class="fa fa-certificate"></i> Profile
+                          <div class="text-secondary">
+                            <label for="selectProfile" class="py-1">
+                              Profile
                             </label>
                           </div>
                           <select
-                            class="form-control bg-secondary text-white"
+                            class="form-control"
                             id="selectProfile"
                           ></select>
                         </div>
                         <div
                           class="border border-primary mt-5 p-3 mb-4 rounded"
                         >
-                 
                           <div class="form-group mb-4 mt-2">
                             <div class="form-group">
                               <label for="selectChunkBeforeAlertAudio">
-                             
-                                <a style="display: none;"
+                                <a
+                                  style="display: none"
                                   id="btnChunkBeforeAlertAudioTry"
                                   role="button"
                                   aria-expanded="false"
                                 >
                                   🔔
-                                </a>    Before Audio
+                                </a>
+                                Before Audio
                               </label>
                               <select
                                 class="form-control"
@@ -338,7 +382,10 @@
                             <div class="form-row">
                               <div class="col">
                                 <label for="selectTimeAlertMode">
-                                  <i style="display: none;" class="fa fa-clock-o"></i>
+                                  <i
+                                    style="display: none"
+                                    class="fa fa-clock-o"
+                                  ></i>
                                   Time Alert
                                 </label>
                                 <select
@@ -361,7 +408,7 @@
                             </div>
                             <div class="text-left mt-2">
                               <label for="selectChunkNotifyMode">
-                                <i style="display: none;" class="fa fa-bell"></i>
+                                <i style="display: none" class="fa fa-bell"></i>
                                 Notification
                               </label>
                               <select
@@ -369,9 +416,25 @@
                                 id="selectChunkNotifyMode"
                               ></select>
                             </div>
+                            <div class="form-row mt-3 text-right">
+                              <div class="col">
+                                <div class="custom-control custom-switch">
+                                  <input
+                                    type="checkbox"
+                                    class="custom-control-input"
+                                    id="checkboxQuarterMode"
+                                  />
+                                  <label
+                                    class="custom-control-label"
+                                    for="checkboxQuarterMode"
+                                  >
+                                    <span>Quarter Mode</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
-
                       </div>
                     </div>
                     <div
@@ -381,8 +444,6 @@
                       aria-labelledby="nav-alerts-tab"
                     >
                       <div id="divSettingsAlerts">
-                  
-                    
                         <div class="text-center p-3">
                           <span class="badge badge-dark">Volumes</span>
                         </div>
@@ -403,7 +464,6 @@
                             step="0.01"
                             value="0.5"
                           />
-                          
                         </div>
                         <div class="form-group">
                           <label for="rangeSpeechVolume">
@@ -526,23 +586,7 @@
                                   </label>
                                 </div>
                               </div>
-                              <div class="col">
-                                <div class="custom-control custom-switch">
-                                  <input
-                                    type="checkbox"
-                                    class="custom-control-input"
-                                    id="checkboxQuarterMode"
-                                  />
-                                  <label
-                                    class="custom-control-label"
-                                    for="checkboxQuarterMode"
-                                  >
-                                    <span class="badge badge-success"
-                                      >Quarter Mode</span
-                                    >
-                                  </label>
-                                </div>
-                              </div>
+                              <div class="col">&nbsp;</div>
                             </div>
                           </div>
                         </div>
@@ -773,58 +817,7 @@
           <div>
             <div class="text-center desktopMini">
               <!-- Buttons second row-->
-              <div class="btn-group mt-1">
-                <div class="dropdown">
-                  <button
-                    class="btn btn-info active dropdown-toggle"
-                    type="button"
-                    id="dropdownMenu2"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <i class="fa fa-map"></i>
-                  </button>
-                  <div
-                    class="dropdown-menu bg-info"
-                    aria-labelledby="dropdownMenu2"
-                  >
-                    <button
-                      type="button"
-                      class="btn btn-info"
-                      id="btnBatteryLoader"
-                    >
-                      <i class="fa fa-battery-3"></i>
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-info"
-                      id="btnWaveLoader"
-                    >
-                      <i class="fa fa-random"></i>
-                    </button>
-                  </div>
-                </div>
-                
 
-                <button
-                  type="button"
-                  class="btn btn-info active btn-sm px-3"
-                  id="btnTryMid"
-                >
-                  <i class="fa fa-hourglass-1"></i>
-                </button>
-                <a
-                  class="btn btn-info active px-3"
-                  data-toggle="collapse"
-                  href="#collapseControlsMusic"
-                  role="button"
-                  aria-expanded="false"
-                  aria-controls="collapseExample"
-                >
-                  <i class="fa fa-music"></i>
-                </a>
-              </div>
               <!-- Buttons 2nd row end-->
             </div>
           </div>
