@@ -211,7 +211,24 @@
         <!-- Right  container-->
         <div class="col-lg-4">
           <div class="desktopMini">
-            <div class="text-center pt-3">
+            <div class="text-center">
+              <span id="errorMessage" class="text-secondary small">
+                Be Here Now
+              </span>
+              <video
+                id="videoDummy"
+                controls
+                loop
+                muted
+                style="width: 12px; height: 8px"
+              >
+                <source src="" type="video/mp4" />
+              </video>
+             
+            </div>
+          </div>
+          <div class="desktopMini">
+            <div class="text-center">
               <div class="btn-group mt-1">
                 <button
                   id="btnTryChunk"
@@ -728,8 +745,8 @@
               </div>
               <!--  Settings collapse  end -->
               <!-- collapse Tracker Controls begin -->
-              <div class="collapse" id="collapseControlsTracker">
-                <div class="card text-white bg-secondary card-body">
+              <div class="collapse show" id="collapseControlsTracker">
+                <div class="card  card-body">
                   <h5 class="card-title">
                     <i class="fa fa-paper-plane"></i> Tracker
                   </h5>
@@ -789,13 +806,13 @@
                       </div>
                     </div>
                   </div>
-                  <div class="mt-5">
+                  <div class="mt-5 d-none">
                     <h5 class="card-title">
                       <i class="fa fa-assistive-listening-systems"></i> Listen
                       Chant Status
                     </h5>
                   </div>
-                  <div class="form-row">
+                  <div class="form-row  d-none">
                     <div class="col-6">
                       Previous Chunk Count:
                       <span class="badge" id="chant-count-past">0</span>
@@ -804,7 +821,7 @@
                       <span class="alert" id="listen-chant-status"></span>
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group  d-none">
                     <div class="mt-3 d-block">
                       <span id="listen-chant-Output"></span>
                     </div>
@@ -971,22 +988,7 @@
               </div>
             </div>
           </div>
-          <div class="desktopMini">
-            <div class="text-center">
-              <video
-                id="videoDummy"
-                controls
-                loop
-                muted
-                style="width: 12px; height: 8px"
-              >
-                <source src="" type="video/mp4" />
-              </video>
-              <span id="errorMessage" class="text-secondary small">
-                Be Here Now
-              </span>
-            </div>
-          </div>
+       
         </div>
         <!-- Right  container end -->
       </div>
