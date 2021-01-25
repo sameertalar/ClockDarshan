@@ -24,30 +24,9 @@
   </head>
   <body>
     <div class="container-fluid screen-border">
-      <div class="sticky-top">
+      <div class="sticky-top">     
         <div class="row">
-          <div class="col-lg-5">
-            <div class="alert alert-success text-center" id="success-alert">
-              <span id="alertMessage" class="text-danger"> </span>
-            </div>
-            <div
-              class="alert alert-warning text-center"
-              style="display: none"
-              id="progress-loading"
-            >
-              <h3>
-                <!--  <i class="fa fa-spinner fa-spin text-primary"></i> -->
-                <span
-                  class="spinner-border text-primary"
-                  id="spinner"
-                  role="status"
-                ></span>
-              </h3>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-5">
+          <div class="col-lg-4">
             <div class="text-center">
               <div
                 class="text-center"
@@ -64,36 +43,7 @@
                 >
                 </iframe>
               </div>
-            </div>
-            <div>
-              <div>
-                <div class="text-center" style="-webkit-app-region: drag">
-                  <div>
-                    <div id="chunkProgress" class="border mb-2">
-                      <div id="chunkStatus"></div>
-                    </div>
-                    <div class="here"></div>
-                  </div>
-                  <div><span class="circle"></span></div>
-                  <span
-                    class="badge badge-danger border border-warning px-2"
-                    style="
-                      position: relative;
-                      display: none;
-                      left: -2px;
-                      top: -5px;
-                    "
-                    id="listen-chant-count"
-                    >0</span
-                  >
-                  <span
-                    id="displayNaam"
-                    class="text-white py-1 px-2 rounded-circle"
-                    >Welcome</span
-                  >
-                </div>
-              </div>
-            </div>
+            </div>          
           </div>
         </div>
       </div>
@@ -101,6 +51,35 @@
       <div class="row">
         <!-- Left  container-->
         <div class="col-lg-4">
+            <!-- Chunk-Progress-Start -->
+            <div class="class="sticky-top">
+            <div class="text-center" style="-webkit-app-region: drag">
+              <div>
+                <div id="chunkProgress" class="border mb-2">
+                  <div id="chunkStatus"></div>
+                </div>
+                <div class="here"></div>
+              </div>
+              <div><span class="circle"></span></div>
+              <span
+                class="badge badge-danger border border-warning px-2"
+                style="
+                  position: relative;
+                  display: none;
+                  left: -2px;
+                  top: -5px;
+                "
+                id="listen-chant-count"
+                >0</span
+              >
+              <span
+                id="displayNaam"
+                class="text-white py-1 px-2 rounded-circle"
+                >Welcome</span
+              >
+            </div>
+          </div>
+               <!-- Chunk-Progress-End -->
           <div class="text-center">
             <div class="custom-control-inline mt-3">
               <div class="custom-control custom-switch mt-1 mx-1 desktopMini">
@@ -204,12 +183,31 @@
                 </svg>
               </div>
             </div>
+               <!--  Progress-Start -->
+               <div class="alert alert-success text-center" id="success-alert">
+                <span id="alertMessage" class="text-danger"> </span>
+              </div>
+              <div
+                class="alert alert-warning text-center"
+                style="display: none"
+                id="progress-loading"
+              >
+                <h3>
+                  <!--  <i class="fa fa-spinner fa-spin text-primary"></i> -->
+                  <span
+                    class="spinner-border text-primary"
+                    id="spinner"
+                    role="status"
+                  ></span>
+                </h3>
+              </div>
+                    <!--  Progress-End -->
           </div>
         </div>
         <!-- Left  container end -->
-        <div class="col-lg-1">&nbsp;</div>
+       
         <!-- Right  container-->
-        <div class="col-lg-4">
+        <div class="col-lg-8  ">
           <div class="desktopMini">
             <div class="text-center">
               <span id="errorMessage" class="text-secondary small">
@@ -300,6 +298,13 @@
                 >
                   <i id="btnGear" class="fa fa-gear fa-2x"></i>
                 </a>
+                <button
+                id="btnTrackerSheetLoader"
+                type="button"
+                class="btn btn-info btn-lg active shrinkbtn"
+              >
+                <i class="fa fa-bar-chart"></i>
+              </button>
               </div>
             </div>
           </div>
@@ -836,6 +841,28 @@
                 </div>
               </div>
               <!-- collapse Tracker Controls end -->
+               <!-- Tracker Sheet  begin -->
+               <div class="collapse show" id="collapseTrackerSheet">
+                <div
+                class="text-center"
+                id="containerTrackerSheet"
+                style="display: none"
+              >
+                  
+	     <iframe
+                  id="frameTrackerSheet"
+                  src=""
+                  title="Tracker Sheet"
+                     width="100%"
+					 height="800"
+                  style="border: none"
+                >
+                </iframe>			
+				
+		 </div>
+          </div>
+
+ <!-- Tracker Sheet  end -->
             </div>
           </div>
           <div>
