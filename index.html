@@ -130,7 +130,7 @@
                 </label>
               </div>
             </div>
-            <div id="clockContainer" style="display: none">
+            <div id="clockContainer" >
               <div id="clock-container">
                 <svg id="clock" viewBox="0 0 100 100">
                   <circle id="face" cx="50" cy="50" r="60" />
@@ -225,8 +225,9 @@
              
             </div>
           </div>
-          <div class="desktopMini">
-            <div class="text-center">
+          <div class="row desktopMini mt-2">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-5 text-center">
               <div class="btn-group mt-1">
                 <button
                   id="btnTryChunk"
@@ -306,6 +307,44 @@
                 <i class="fa fa-bar-chart"></i>
               </button>
               </div>
+            </div>
+            <div class="col-lg-4 text-center">
+                    
+              <div class="btn-group">
+             
+                <button
+                  class="btn "
+                  type="button"
+                  id="minusQuarter"
+                  type="button"
+                  id="btnTracker"
+                >
+                  <i class="fa fa-minus"></i> 
+                </button>
+              
+                <select
+                  class="form-control-lg   bg-secondary text-white"
+                  id="selectTrackerTime"
+                ></select>
+                <button
+                  class="btn "
+                  type="button"
+                  id="plusQuarter"
+                  type="button"
+                  id="btnTracker"s
+                >
+                  <i class="fa fa-plus"></i>
+                </button>
+                <button
+                class="btn "
+                type="button"
+                id="refreshQuarter"
+                type="button"
+                id="btnTracker"
+              >
+                <i class="fa fa-refresh"></i>
+              </button>
+              </div>                     
             </div>
           </div>
           <div>
@@ -751,61 +790,10 @@
               <!--  Settings collapse  end -->
               <!-- collapse Tracker Controls begin -->
               <div class="collapse show" id="collapseControlsTracker">
-                <div class="card  card-body">
+                <div class="mb-3">
                   
                               
-                  <div class="form-row text-center">
-                    <div class="col-lg-2 mt-4"></div>
-                    
-                    <div class="col-lg-4 text-center">
-                    
-                      <div class="btn-group">
-                     
-                        <button
-                          class="btn "
-                          type="button"
-                          id="minusQuarter"
-                          type="button"
-                          id="btnTracker"
-                        >
-                          <i class="fa fa-minus"></i> 
-                        </button>
-                      
-                        <select
-                          class="form-control-lg   bg-secondary text-white"
-                          id="selectTrackerTime"
-                        ></select>
-                        <button
-                          class="btn "
-                          type="button"
-                          id="plusQuarter"
-                          type="button"
-                          id="btnTracker"s
-                        >
-                          <i class="fa fa-plus"></i>
-                        </button>
-                        <button
-                        class="btn "
-                        type="button"
-                        id="refreshQuarter"
-                        type="button"
-                        id="btnTracker"
-                      >
-                        <i class="fa fa-refresh"></i>
-                      </button>
-                      </div>                     
-                    </div>
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-3 ">
-                      <button
-                      type="button"
-                      id="btnTracker"
-                      class="btn btn-lg btn-outline-primary rounded form-control"
-                    >
-                    <i class="fa fa-paper-plane"></i>
-                    </button>
-                    </div>
-                  </div>
+                 
                   <div class="form-row mb-3 text-center ">
                     <div class="col-lg-1 "></div>
                     <div class="col-lg-3 mt-4 ">
@@ -823,6 +811,15 @@
                       <label class="badge" for="containerWork"> Work </label>
                               <div id="containerWork"></div>
                 
+                    </div>
+                    <div class="col-lg-2 ">
+                      <button
+                      type="button"
+                      id="btnTracker"
+                      class=" mt-5 btn btn-lg btn-outline-primary rounded form-control"
+                    >
+                    <i class="fa fa-paper-plane"></i>
+                    </button>
                     </div>
                   </div>
                   <div class="mt-5 d-none">
@@ -849,28 +846,15 @@
               </div>
               <!-- collapse Tracker Controls end -->
                <!-- Tracker Sheet  begin -->
-               <div class="collapse show" id="collapseTrackerSheet">
-                <div
-                class="text-center"
-                id="containerTrackerSheet"
-                style="display: none"
-              >
-                  
-	     <iframe
-                  id="frameTrackerSheet"
-                  src=""
-                  title="Tracker Sheet"
-                     width="100%"
-					 height="500"
-                  style="border-left:solid 1px #B7B7B7;
-                  border-top: none;"
-                >
-                </iframe>			
-				
-		 </div>
+              
+                <div class="text-center border rounded" id="containerTrackerSheet" style="display: none">
+                  <div id="containerTrackerSheetscroll" style="height: 420px;overflow-y: scroll;">
+                     <iframe id="frameTrackerSheet" src="" title="Tracker Sheet" style="border:none;" width="100%" height="600" />
+                  </div>
+              
           </div>
 
- <!-- Tracker Sheet  end -->
+          <!-- Tracker Sheet  end -->
             </div>
           </div>
           <div>
