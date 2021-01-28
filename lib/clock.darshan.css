@@ -16,6 +16,17 @@ h4 {
   /* #ff5f0e;*/
 }
 
+input[type="radio"]{
+  transform: scale(1);
+}
+
+input[type="radio"]:checked{
+  transform: scale(2);
+  background-color: #f4b400;
+  color: #28a745;
+
+}
+
 .card {
   border: 1px solid #117a8b;
 }

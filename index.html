@@ -754,9 +754,10 @@
                 <div class="card  card-body">
                   
                               
-                  <div class="form-row">
-                 
-                    <div class="col-10 text-left">
+                  <div class="form-row text-center">
+                    <div class="col-lg-2 mt-4"></div>
+                    
+                    <div class="col-lg-4 text-center">
                     
                       <div class="btn-group">
                      
@@ -771,7 +772,7 @@
                         </button>
                       
                         <select
-                          class="form-control"
+                          class="form-control-lg   bg-secondary text-white"
                           id="selectTrackerTime"
                         ></select>
                         <button
@@ -794,28 +795,34 @@
                       </button>
                       </div>                     
                     </div>
-                    <div class="col-2 ">
+                    <div class="col-lg-1"></div>
+                    <div class="col-3 ">
                       <button
                       type="button"
                       id="btnTracker"
-                      class="btn btn-outline-primary rounded form-control"
+                      class="btn btn-lg btn-outline-primary rounded form-control"
                     >
                     <i class="fa fa-paper-plane"></i>
                     </button>
                     </div>
                   </div>
-                  <div class="form-row mb-1 mt-2">
-                    <div class="col-4">
-                      <label for="selectMind"> Mind </label>
-                      <select class="form-control" id="selectMind"></select>
+                  <div class="form-row mb-3 text-center ">
+                    <div class="col-lg-1 "></div>
+                    <div class="col-lg-3 mt-4 ">
+                      <label class="badge" for="containerMind"> Mind </label>
+                        <div id="containerMind"></div>
                     </div>
-                    <div class="col-4">
-                      <label for="selectEnergy"> Energy </label>
-                      <select class="form-control" id="selectEnergy"></select>
+                   
+                    <div class="col-lg-2 mt-4">
+                      <label class="badge" for="containerEnergy"> Energy </label>
+                           <div id="containerEnergy"></div>
+                   
                     </div>
-                    <div class="col-4">
-                      <label for="selectWork"> Work </label>
-                      <select class="form-control" id="selectWork"></select>
+                    <div class="col-lg-1 mt-4"></div>
+                    <div class="col-lg-3 mt-4 ">
+                      <label class="badge" for="containerWork"> Work </label>
+                              <div id="containerWork"></div>
+                
                     </div>
                   </div>
                   <div class="mt-5 d-none">
@@ -854,7 +861,7 @@
                   src=""
                   title="Tracker Sheet"
                      width="100%"
-					 height="800"
+					 height="500"
                   style="border-left:solid 1px #B7B7B7;
                   border-top: none;"
                 >
