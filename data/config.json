@@ -9,7 +9,7 @@
       { "title": "😡 Buzzing", "code": "B", "column": "G" }
     ],
     "energy": [
-      { "title": "🟢 High", "code": "H", "column": "I" },
+      { "title": "💚 High", "code": "H", "column": "I" },
       { "title": "🔵 Medium", "code": "M", "column": "J" },
       { "title": "🚫 Low", "code": "L", "column": "K" }
     ],

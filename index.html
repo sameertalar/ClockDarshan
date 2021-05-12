@@ -77,32 +77,27 @@
                         </div>
                      </div>
                   </div>
-                  <div>
-                     <div class="form-row mb-3 text-center ">
-                       
-                        <div class="col mt-4 text-right">
+                  <div >
+                     <div class="form-row mt-4 ml-2 text-center ">
+                        <div class="col-xs-4 py-3 border  rounded">
                          
                           <div id="containerMind"></div>
                         </div>
-                  
-                        <div class="col mt-4 ml-4 text-left">
+                        <div class="col-xs-3 py-3 border border-warning rounded">
                            
-                          <div id="containerEnergy"></div>
-                  
-                        </div>
+                           <div  id="containerEnergy" ></div>
+                   
+                         </div>
+                        <div class="col-xs-5 py-3  border  rounded">
+                           
+                           <div id="containerWork"></div>
+                   
+                         </div>
+                      
                        
                   
                       </div>
-                      <div class="form-row mb-3 text-center ">
-                       
-                        <div class="col mt-4">
-                           
-                          <div id="containerWork"></div>
-                  
-                        </div>
-                  
-                      </div>
-                  
+                     
                   </div>
 
 
@@ -424,7 +419,7 @@
       */
 
       $("#containerMind")
-        .append(`<div class="form-check form-check-inline mr-2">`)
+        .append(`<div class="form-check form-check-inline mr-0">`)
         .append(
           `<label class="form-check-label  " for="${
             value.code
@@ -440,7 +435,7 @@
 
     $.each(__dataConfig.trackerConfigs.energy, function (index, value) {
       $("#containerEnergy")
-        .append(`<div class="form-check form-check-inline mr-2">`)
+        .append(`<div class="form-check form-check-inline mr-0">`)
         .append(
           `<label class="form-check-label " for="${
             value.code
@@ -456,7 +451,7 @@
 
     $.each(__dataConfig.trackerConfigs.work, function (index, value) {
       $("#containerWork")
-        .append(`<div class="form-check form-check-inline mr-2">`)
+        .append(`<div class="form-check form-check-inline mr-0">`)
         .append(
           `<label class="form-check-label " for="${
             value.code
