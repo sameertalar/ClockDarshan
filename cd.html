@@ -39,7 +39,7 @@
                            <text id="currentTime" x="46.5" y="50">Be Here Now</text>
                            <g id="hands">
                               <rect id="min" x="48.5" y="21" width="5" height="20" rx="2" ry="2" />
-                              <rect id="hour" x="48" y="29" width="9" height="9" rx="9" ry="9" />
+                              <rect id="hour" x="48.5" y="21" width="9" height="9" rx="9" ry="9" />
                            </g>
                         </svg>
                      </div>
@@ -68,7 +68,7 @@
                            <a class="btn btn-info btn-lg active shrinkbtn" data-toggle="collapse" href="#collapseControlsSettings"
                               role="button" aria-expanded="false" aria-controls="collapseExample">
                            <i id="btnGear" class="fa fa-gear fa-2x"></i>
-                           </a>
+                           </a>                       
                            <button id="btnTrackerSheetLoader" type="button" class="btn btn-info btn-lg active shrinkbtn">
                            <i class="fa fa-bar-chart"></i>
                            </button>
@@ -162,6 +162,14 @@
           // Load
           $("#btnTryChunk").on("click", tryChunkClick);
           $("#btnTrackerSheetLoader").on("click", loadTrackerSheetFrame);
+          $("#ClockInnerCircle").on("click", oneClickTracker);
+          $("#success-alert").hide();
+          console.log(
+         "%cClock Darshan",
+         "font-weight: bold; font-size: 50px; color: #ff4f51; text-shadow: 1px 1px 0px black, 1px -1px 0px black, -1px 1px 0px black, -1px -1px 0px black;"
+         );
+         
+          // Load End
          
           __ClockdarshanStatus = setInterval(function () {
                  function r(el, deg) {
@@ -275,6 +283,91 @@
                $("#containerTrackerSheetscroll").scrollTop(100);
              }
            }
+         
+         
+           function oneClickTracker() {
+         
+         
+         postToGoogle();
+           }
+         
+         
+         
+         
+           function postToGoogle() {
+         $("#progress-loading").show();
+         $("#success-alert").hide();  
+         
+         let apiurl =
+         "https://script.google.com/macros/s/AKfycbxJLoWhDykykVFykQfnvVAwri6wrYwU6xAIrhvOCGOh/dev";
+         // "https://script.google.com/macros/s/AKfycbyOlFS1KprVp0UFfsfsjs8ibP-LbX4bnmDgKfy4s1qMUbaL6iLr/exec";
+         
+         let paramMind = "A";
+         let paramEnergy = "M";
+         let paramWork = "N";
+         
+         let now = new Date();
+         let hours = now.getHours();
+         let minutes = now.getMinutes();
+         let quarter = 4;
+         if (minutes < 45) {
+         quarter = 3;
+         if (minutes < 30) {
+         quarter = 2;
+         if (minutes < 15) {
+          quarter = 1;
+         }
+         }
+         }
+         
+         
+         var paramtext = "&text=" + hours + "_" + minutes;
+         
+         let queryString =
+         "?hour=" +
+         hours +
+         "&quarter=" +
+         quarter+
+         "&mind=" +
+         paramMind +
+         "&energy=" +
+         paramEnergy +
+         "&work=" +
+         paramWork;
+         
+         console.log("queryString", queryString);
+         
+         let googleurl = apiurl + queryString + paramtext + "&callback=?";
+         
+         $.ajax({
+         crossOrigin: true,
+         url: googleurl,
+         
+         dataType: "jsonp",
+         success: function (data, textStatus, xhr) {
+         console.log(data);
+         
+         
+         showAlert(  "<h2>" + data + "</h2>");
+         console.log("response data", data);
+         $("#progress-loading").hide();
+         },
+         error: function (xhr, error_text, statusText) {
+         showAlert(error_text + "<br> Error while Processing");
+         console.log("error_text", error_text);
+         $("#progress-loading").hide();
+         },
+         });
+         }
+         
+         function showAlert(text) {
+         $("#alertMessage").html(text);
+         $("#success-alert")
+         .fadeTo(2000, 1500)
+         .slideUp(15000, function () {
+         $("#success-alert").slideUp(15000);
+         });
+         }
          
            // ******* TIME Functions *******
            function showCurrentTime(hours, min, sec) {
