@@ -313,8 +313,8 @@
                $("#containerTrackerSheet").hide(500);
              } else {
                $("#frameTrackerSheet").attr("src", "https://docs.google.com/spreadsheets/d/1IeLBIUnPFC6-raeOoD1s80C-v8-Sl5rY1p38qFlQ0RY/edit#gid=1698318143");
-               var trackerHeight = $(window).height() - $("#containerControls").height();
-               $("#frameTrackerSheet").height(trackerHeight - 50);
+             
+               $("#frameTrackerSheet").height( $(window).height() - 20);
                $("#containerTrackerSheet").show(500);
                $("#containerTrackerSheetscroll").scrollTop(100);
              }
