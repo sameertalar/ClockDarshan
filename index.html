@@ -147,9 +147,9 @@
                      <!--  Settings collapse  end -->
                      <!-- Tracker Sheet  begin -->
                      <div class="text-center border rounded" id="containerTrackerSheet" style="display: none">
-                        <div id="containerTrackerSheetscroll" style="height: 600px;overflow-y: scroll;">
+                        <div id="containerTrackerSheetscroll" class="border border-primary" style="height: 600px;overflow-y: scroll;">
                            <iframe id="frameTrackerSheet" src="" title="Tracker Sheet" style="border:none;" width="100%"
-                              height="600" >   </iframe>
+                              height="800" >   </iframe>
                         </div>
                      </div>
                      <!-- Tracker Sheet  end -->
@@ -314,7 +314,8 @@
              } else {
                $("#frameTrackerSheet").attr("src", "https://docs.google.com/spreadsheets/d/1IeLBIUnPFC6-raeOoD1s80C-v8-Sl5rY1p38qFlQ0RY/edit#gid=1698318143");
              
-               $("#frameTrackerSheet").height( $(window).height() - 20);
+               $("#containerTrackerSheetscroll").height( $(window).height() - 20);
+               $("#frameTrackerSheet").height( $(window).height() - 40);
                $("#containerTrackerSheet").show(500);
                $("#containerTrackerSheetscroll").scrollTop(100);
              }
