@@ -78,16 +78,17 @@ input[type="radio"]:checked{
 }
 
 #min {
-  stroke-width: 1px;
+  stroke-width: 0.21rem;
 
-  fill: #FFFF00;
-  stroke: #0000FF;
+  fill:  #0000FF;
+  stroke:#FFFF00;
+  
 }
 
 #hour {
-  stroke-width: 1px;
-  fill: #ff2e2d;
-  stroke: #ffffff;
+  stroke-width: 0.31rem;
+  fill: #0000FF;
+  stroke: #ff2e2d;
 }
 
 #currentTime {
