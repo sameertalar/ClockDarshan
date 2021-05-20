@@ -85,9 +85,9 @@ input[type="radio"]:checked{
 }
 
 #hour {
- 
+  stroke-width: 1px;
   fill: #ff2e2d;
-  stroke: #000000;
+  stroke: #ffffff;
 }
 
 #currentTime {
