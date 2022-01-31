@@ -16,16 +16,14 @@ h4 {
   /* #ff5f0e;*/
 }
 
-
-input[type="radio"]{
+input[type="radio"] {
   transform: scale(1);
 }
 
-input[type="radio"]:checked{
+input[type="radio"]:checked {
   transform: scale(2);
   background-color: #f4b400;
   color: #28a745;
-
 }
 
 .card {
@@ -78,16 +76,23 @@ input[type="radio"]:checked{
 }
 
 #min {
-  stroke-width: 0.21rem;
-
-  fill:  #0000FF;
-  stroke:#FFFF00;
-  
+  stroke-width: 0.1rem;
+  opacity: 0.6;
+  fill: #ffff00;
+  stroke: #117a8b;
 }
 
 #hour {
-  stroke-width: 0.31rem;
-  fill: #0000FF;
+  stroke-width: 0.1rem;
+  fill: #0000ff;
+  stroke: #ff2e2d;
+  opacity: 0.6;
+}
+
+#onepointer {
+  stroke-width: 0.05rem;
+
+  fill: #ffff00;
   stroke: #ff2e2d;
 }
 
@@ -146,8 +151,6 @@ input[type="radio"]:checked{
     #fa9207 60% 80%,
     #28a745 80%
 */
-
-
 
 #chunkStatus {
   position: relative;
