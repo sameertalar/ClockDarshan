@@ -76,8 +76,8 @@ input[type="radio"]:checked {
 }
 
 #min {
-  stroke-width: 0.1rem;
-  opacity: 0.6;
+  stroke-width: 0.05rem;
+
   fill: #ffff00;
   stroke: #117a8b;
 }
@@ -86,7 +86,6 @@ input[type="radio"]:checked {
   stroke-width: 0.1rem;
   fill: #0000ff;
   stroke: #ff2e2d;
-  opacity: 0.6;
 }
 
 #onepointer {
