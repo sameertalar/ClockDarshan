@@ -14,12 +14,11 @@
       { "title": "🚫 Low", "code": "L", "column": "K" }
     ],
     "work": [
-      { "title": "👷 Creativity", "code": "C", "column": "N" },
-      { "title": "💼 Office", "code": "W", "column": "O" },
-      { "title": "🌿 Routine", "code": "R", "column": "P" },
-      { "title": "👪 Family", "code": "F", "column": "Q" },
-      { "title": "☸ Social", "code": "S", "column": "R" },
-      { "title": "🚫 None", "code": "N", "column": "S" }
+      { "title": "🕉️ Spiritual", "code": "S", "column": "N" },
+      { "title": "👷 Creative", "code": "C", "column": "O" },
+      { "title": "🌿 Health", "code": "H", "column": "P" },
+      { "title": "👪 कर्तव्य", "code": "K", "column": "Q" },
+       { "title": "🚫 None", "code": "N", "column": "R" }
     ]
   },
   "chunkConfigs": [

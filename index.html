@@ -153,14 +153,14 @@
               </div>
             </div>
             <div class="text-center">
-              <div class="form-row mt-4 ml-2 mb-5">
-                <div class="col-xs-4 py-3 border rounded">
+              <div class="form-row mt-1 ml-2 mb-5">
+                <div class="col-xs-4 py-3 pr-3 border rounded">
                   <div id="containerMind"></div>
                 </div>
-                <div class="col-xs-3 py-3 border border-warning rounded">
+                <div class="col-xs-3 py-3 px-3 ms-3 border border-warning rounded">
                   <div id="containerEnergy"></div>
                 </div>
-                <div class="col-xs-5 py-3 border rounded">
+                <div class="col-xs-5 py-3 pl-3 border rounded">
                   <div id="containerWork"></div>
                 </div>
               </div>
@@ -177,52 +177,14 @@
                 <div class="card card-body">
                   <!-- Settings Begin -->
                   <div>
-                    <div class="form-group">
-                      <div class="form-group">
-                        <label for="selectChunkBeforeAlertAudio">
-                          <a
-                            style="display: none"
-                            id="btnChunkBeforeAlertAudioTry"
-                            role="button"
-                            aria-expanded="false"
-                          >
-                            🔔
-                          </a>
-                          Audio Alert
-                        </label>
-                        <select
-                          class="form-control"
-                          id="selectChunkBeforeAlertAudio"
-                        ></select>
-                        <audio id="audioAlert">
-                          <source src="" type="audio/mp3" />
-                        </audio>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="rangeAlertAudioVolume">
-                        <i class="fa fa-volume-up"></i> Volume:<span
-                          id="rangeAlertAudioVolumeLabel"
-                          class="badge badge-light"
-                        ></span>
-                      </label>
-                      <input
-                        class="form-control-range"
-                        id="rangeAlertAudioVolume"
-                        type="range"
-                        min="0"
-                        max="1"
-                        step="0.01"
-                        value="0.5"
-                      />
-                    </div>
+
                     <div class="form-group">
                       <button
-                        id="btnTryChunk"
+                        id="btnResetSheetk"
                         type="button"
                         class="btn btn-primary btn-lg active shrinkbtn"
                       >
-                        <i class="fa fa-play"></i>
+                        <i class="fa fa-random"></i> Reset Sheet
                       </button>
                     </div>
                   </div>
@@ -296,6 +258,7 @@
         $("#btnTryChunk").on("click", tryChunkClick);
         $("#btnTrackerSheetLoader").on("click", loadTrackerSheetFrame);
         $("#ClockInnerCircle").on("click", oneClickTracker);
+        $("#btnResetSheetk").on("click", oneClickResetSheet);
         $("#success-alert").hide();
         console.log(
           "%cClock Darshan",
@@ -428,6 +391,40 @@
           }
         }
 
+        function oneClickResetSheet() {
+
+          $("#progress-loading").show();
+          $("#success-alert").hide();
+
+
+          let googleapireseturl =
+            "https://script.google.com/macros/s/AKfycbzhx9voh2A2FOd-E2hR4-CFinQKV-R0X3CKvheKTBYa/dev?callback=?";
+
+
+            $.ajax({
+              crossOrigin: true,
+              url: googleapireseturl,
+
+              dataType: "jsonp",
+              success: function (data, textStatus, xhr) {                     
+                console.log("oneClickResetSheet response data", data);
+                //alert('SUCCESS - ' + data)   
+                showAlert("<h2> Done : " + data + "</h2>"); 
+                $("#progress-loading").hide();         
+              
+              },
+              error: function (xhr, error_text, statusText) {
+                //alert('Sheet Reset Done with - ' + error_text)    
+                console.log("error_text", error_text);   
+                showAlert("<h2> Reset :" + error_text + "</h2>"); 
+                $("#progress-loading").hide();            
+              },
+            });
+            
+
+        }
+        
+
         function oneClickTracker() {
           postToGoogle();
         }
@@ -438,6 +435,7 @@
 
           let apiurl =
             "https://script.google.com/macros/s/AKfycbxJLoWhDykykVFykQfnvVAwri6wrYwU6xAIrhvOCGOh/dev";
+            // Use Dev link no need to publish
           // "https://script.google.com/macros/s/AKfycbyOlFS1KprVp0UFfsfsjs8ibP-LbX4bnmDgKfy4s1qMUbaL6iLr/exec";
 
           let paramMind = $(".radioMind:checked").val(); // $("#selectMind option:selected").val();
@@ -520,14 +518,14 @@
             */
 
             $("#containerMind")
-              .append(`<div class="form-check form-check-inline mr-0">`)
+              .append(`<div class="form-check form-check-inline mt-5 mr-0">`)
               .append(
                 `<label class="form-check-label  " for="${
                   value.code
                 }">${value.title.substring(0, 2)}  </label>`
               )
               .append(
-                `<input type="radio" class="radioMind form-check-input mt-4   " id="radioMind${value.code}" name="radioMind" value="${value.code}">`
+                `<input type="radio" class="radioMind form-check-input   mr-2   " id="radioMind${value.code}" name="radioMind" value="${value.code}">`
               )
               .append(`</div> `);
           });
@@ -536,14 +534,14 @@
 
           $.each(__dataConfig.trackerConfigs.energy, function (index, value) {
             $("#containerEnergy")
-              .append(`<div class="form-check form-check-inline mr-0">`)
+              .append(`<div class="form-check form-check-inline  mt-5 mr-0">`)
               .append(
                 `<label class="form-check-label " for="${
                   value.code
                 }">${value.title.substring(0, 2)}  </label>`
               )
               .append(
-                `<input type="radio" class="radioEnergy form-check-input  mt-4  " id="radioEnergy${value.code}" name="radioEnergy" value="${value.code}">`
+                `<input type="radio" class="radioEnergy form-check-input   mr-2   " id="radioEnergy${value.code}" name="radioEnergy" value="${value.code}">`
               )
               .append(`</div> `);
           });
@@ -552,14 +550,14 @@
 
           $.each(__dataConfig.trackerConfigs.work, function (index, value) {
             $("#containerWork")
-              .append(`<div class="form-check form-check-inline mr-0">`)
+              .append(`<div class="form-check form-check-inline  mt-5 mr-0">`)
               .append(
                 `<label class="form-check-label " for="${
                   value.code
                 }">${value.title.substring(0, 2)}  </label>`
               )
               .append(
-                `<input type="radio" class="radioWork form-check-input  mt-4  " id="radioWork${value.code}" name="radioWork" value="${value.code}">`
+                `<input type="radio" class="radioWork form-check-input  mr-2  " id="radioWork${value.code}" name="radioWork" value="${value.code}">`
               )
               .append(`</div> `);
           });
