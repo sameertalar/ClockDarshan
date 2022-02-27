@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     />
     <!-- <link rel="stylesheet" href="../libraries/bootstrap.min.css" />-->
-    <link rel="stylesheet" href="lib/clock.darshan.css" />
+    <link rel="stylesheet" href="lib/clock.darshan.css?v=002" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -154,13 +154,15 @@
             </div>
             <div class="text-center">
               <div class="form-row mt-1 ml-2 mb-5">
-                <div class="col-xs-4 py-3 pr-3 border rounded">
+                <div class="col-xs-4 py-3 pr-1 border rounded">
                   <div id="containerMind"></div>
                 </div>
-                <div class="col-xs-3 py-3 px-3 ms-3 border border-warning rounded">
+                <div
+                  class="col-xs-3 py-3 px-3 ms-3 border border-warning rounded"
+                >
                   <div id="containerEnergy"></div>
                 </div>
-                <div class="col-xs-5 py-3 pl-3 border rounded">
+                <div class="col-xs-5 py-3 pl-1 border rounded">
                   <div id="containerWork"></div>
                 </div>
               </div>
@@ -177,7 +179,6 @@
                 <div class="card card-body">
                   <!-- Settings Begin -->
                   <div>
-
                     <div class="form-group">
                       <button
                         id="btnResetSheetk"
@@ -265,7 +266,7 @@
           "font-weight: bold; font-size: 50px; color: #ff4f51; text-shadow: 1px 1px 0px black, 1px -1px 0px black, -1px 1px 0px black, -1px -1px 0px black;"
         );
 
-        $.getJSON("data/config.json", function (data) {
+        $.getJSON("data/config.json?v=001", function (data) {
           __dataConfig = data;
 
           populateConfigSelectLists();
@@ -392,38 +393,31 @@
         }
 
         function oneClickResetSheet() {
-
           $("#progress-loading").show();
           $("#success-alert").hide();
-
 
           let googleapireseturl =
             "https://script.google.com/macros/s/AKfycbzhx9voh2A2FOd-E2hR4-CFinQKV-R0X3CKvheKTBYa/dev?callback=?";
 
+          $.ajax({
+            crossOrigin: true,
+            url: googleapireseturl,
 
-            $.ajax({
-              crossOrigin: true,
-              url: googleapireseturl,
-
-              dataType: "jsonp",
-              success: function (data, textStatus, xhr) {                     
-                console.log("oneClickResetSheet response data", data);
-                //alert('SUCCESS - ' + data)   
-                showAlert("<h2> Done : " + data + "</h2>"); 
-                $("#progress-loading").hide();         
-              
-              },
-              error: function (xhr, error_text, statusText) {
-                //alert('Sheet Reset Done with - ' + error_text)    
-                console.log("error_text", error_text);   
-                showAlert("<h2> Reset :" + error_text + "</h2>"); 
-                $("#progress-loading").hide();            
-              },
-            });
-            
-
+            dataType: "jsonp",
+            success: function (data, textStatus, xhr) {
+              console.log("oneClickResetSheet response data", data);
+              //alert('SUCCESS - ' + data)
+              showAlert("<h2> Done : " + data + "</h2>");
+              $("#progress-loading").hide();
+            },
+            error: function (xhr, error_text, statusText) {
+              //alert('Sheet Reset Done with - ' + error_text)
+              console.log("error_text", error_text);
+              showAlert("<h2> Reset :" + error_text + "</h2>");
+              $("#progress-loading").hide();
+            },
+          });
         }
-        
 
         function oneClickTracker() {
           postToGoogle();
@@ -435,7 +429,7 @@
 
           let apiurl =
             "https://script.google.com/macros/s/AKfycbxJLoWhDykykVFykQfnvVAwri6wrYwU6xAIrhvOCGOh/dev";
-            // Use Dev link no need to publish
+          // Use Dev link no need to publish
           // "https://script.google.com/macros/s/AKfycbyOlFS1KprVp0UFfsfsjs8ibP-LbX4bnmDgKfy4s1qMUbaL6iLr/exec";
 
           let paramMind = $(".radioMind:checked").val(); // $("#selectMind option:selected").val();

@@ -9,16 +9,16 @@
       { "title": "😡 Buzzing", "code": "B", "column": "G" }
     ],
     "energy": [
-      { "title": "💚 High", "code": "H", "column": "I" },
-      { "title": "🔵 Medium", "code": "M", "column": "J" },
-      { "title": "🚫 Low", "code": "L", "column": "K" }
+      { "title": "🔋 High", "code": "H", "column": "I" },
+      { "title": "🌗 Medium", "code": "M", "column": "J" },
+      { "title": "🚫️ Low", "code": "L", "column": "K" }
     ],
     "work": [
       { "title": "🕉️ Spiritual", "code": "S", "column": "N" },
       { "title": "👷 Creative", "code": "C", "column": "O" },
       { "title": "🌿 Health", "code": "H", "column": "P" },
       { "title": "👪 कर्तव्य", "code": "K", "column": "Q" },
-       { "title": "🚫 None", "code": "N", "column": "R" }
+      { "title": "🚫 None", "code": "N", "column": "R" }
     ]
   },
   "chunkConfigs": [
