@@ -25,6 +25,7 @@ input[type="radio"]:checked {
 
 input[type="radio"] {
   transform: scale(2);
+  accent-color: #ff2e2d;
 }
 
 
