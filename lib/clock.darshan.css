@@ -16,15 +16,19 @@ h4 {
   /* #ff5f0e;*/
 }
 
-input[type="radio"] {
-  transform: scale(1);
-}
 
 input[type="radio"]:checked {
-  transform: scale(2);
+
   background-color: #f4b400;
   color: #28a745;
 }
+
+input[type="radio"] {
+  transform: scale(2);
+}
+
+
+
 
 .card {
   border: 1px solid #117a8b;
@@ -78,8 +82,8 @@ input[type="radio"]:checked {
 #min {
   stroke-width: 0.05rem;
 
-  fill: #ffff00;
-  stroke: #117a8b;
+  fill: #22e8f7;
+  stroke: #ff2e2d;
 }
 
 #hour {
