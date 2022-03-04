@@ -124,22 +124,62 @@
             <!--  Progress-End -->
          
             <div id="containerRadios" >
-              <div >
-                <div class="mt-4 container">
-                  <div class="row justify-content-center ">
-                    <div id="containerWork" class="col-xs-4 mr-3  pull-left"></div>                      
-                    <div id="containerEnergy" class="col-xs-4 mr-3 "></div>
-                    <div id="containerMind" class="col-xs-4   text-right "></div>
-                    <div>
-                 
+              <div  id="containerWork2" >
+                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-primary active">
+                    <input type="radio" class="radioWork" id="radioWorkS"  name="radioWork" value="S"   > 🕉
+                    </label>
+                    <label class="btn btn-outline-primary active">
+                    <input type="radio" class="radioWork" id="radioWorkC"  name="radioWork" value="C"   > 👷
+                    </label>
+                    <label class="btn btn-outline-warning active">
+                    <input type="radio" class="radioWork" id="radioWorkK"  name="radioWork" value="K"  checked > 👪
+                    </label>
+                    <label class="btn btn-outline-success">
+                    <input type="radio" class="radioWork" id="radioWorkH" name="radioWork"  value="H" >  🌿
+                    </label>
+                    <label class="btn btn-outline-danger">
+                    <input type="radio" class="radioWork" id="radioWorkN" name="radioWork"  value="N"> 🚫
+                    </label>
+                 </div>
+              </div>
+              <div id="containerEnergy2">
+                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-success active">
+                    <input type="radio" class="radioEnergy" id="radioEnergyH"  name="radioEnergy" value="H"   > 🔋
+                    </label>
+                    <label class="btn btn-outline-warning">
+                    <input type="radio" class="radioEnergy" id="radioEnergyM" name="radioEnergy"  value="M" checked>  🌗
+                    </label>
+                    <label class="btn btn-outline-danger">
+                    <input type="radio" class="radioEnergy" id="radioEnergyL" name="radioEnergy"  value="L"> 🚫️
+                    </label>
+                 </div>
+              </div>
+              <div id="containerMind2">
+                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-primary active">
+                    <input type="radio" class="radioMind" id="radioMindC"  name="radioMind" value="C"   > 🕊 
+                    </label>
+                    <label class="btn btn-outline-success active">
+                    <input type="radio" class="radioMind" id="radioMindM"  name="radioMind" value="M"   > 🧘
+                    </label>
+                    <label class="btn btn-outline-warning active">
+                    <input type="radio" class="radioMind" id="radioMindA"  name="radioMind" value="A"  checked > 👁
+                    </label>
+                    <label class="btn btn-outline-dark">
+                    <input type="radio" class="radioMind" id="radioMindP" name="radioMind"  value="P" >  🎳
+                    </label>
+                    <label class="btn btn-outline-danger">
+                    <input type="radio" class="radioMind" id="radioMindB" name="radioMind"  value="B"> 😡
+                    </label>
+                 </div>
+              </div>
+           </div>
 
-                    </div>            
-                  </div>
 
-                </div>
-              </div>         
-            </div>
-  
+          
+
             <div id="containerControls2" class="mt-2 ">
               <div class="text-center">
                 <div class="btn-group">
@@ -277,12 +317,7 @@
           "%cClock Darshan",
           "font-weight: bold; font-size: 50px; color: #ff4f51; text-shadow: 1px 1px 0px black, 1px -1px 0px black, -1px 1px 0px black, -1px -1px 0px black;"
         );
-
-        $.getJSON("data/config.json?v=001", function (data) {
-          __dataConfig = data;
-
-          populateConfigSelectLists();
-        });
+     
 
         // Load End
 
@@ -318,24 +353,8 @@
 
           return minDeg - mrem + hdeg;
         }
+ 
 
-        $.getJSON("data/audio.json", function (data) {
-          __dataAudio = data;
-          populateSelectAudioLists();
-        });
-
-        function populateSelectAudioLists() {
-          $.each(__dataAudio.alerts, function (index, value) {
-            $("#selectChunkBeforeAlertAudio").append(
-              $("<option></option>")
-                .attr("value", value.id)
-                .text(value.text)
-                .attr("data-filename", value.fileName)
-            );
-          });
-
-          $("#selectChunkBeforeAlertAudio").prop("selectedIndex", 0);
-        }
 
         function tryChunkClick() {
           let now = new Date();
@@ -514,68 +533,7 @@
             });
         }
 
-        function populateConfigSelectLists() {
-          $.each(__dataConfig.notifyModes, function (index, value) {
-            $("#selectChunkNotifyMode").append(
-              $("<option></option>").attr("value", value.value).text(value.text)
-            );
-          });
-
-          $.each(__dataConfig.trackerConfigs.mind, function (index, value) {
-            /*
-            $("#selectMind").append(
-              $("<option></option>").attr("value", value.code).text(value.title)
-            );
-            */
-
-            $("#containerMind")
-              .append(`<div class="form-check form-check-inline mt-1 mr-0">`)
-              .append(
-                `<label class="form-check-label   mt-4" for="${
-                  value.code
-                }">${value.title.substring(0, 2)}  </label>`
-              )
-              .append(
-                `<input type="radio" class="radioMind form-check-input     " id="radioMind${value.code}" name="radioMind" value="${value.code}">`
-              )
-              .append(`</div> `);
-          });
-
-          $("#radioMindA").prop("checked", true);
-
-          $.each(__dataConfig.trackerConfigs.energy, function (index, value) {
-            $("#containerEnergy")
-              .append(`<div class="form-check form-check-inline  mt-1 mr-0">`)
-              .append(
-                `<label class="form-check-label  mt-4" for="${
-                  value.code
-                }">${value.title.substring(0, 2)}  </label>`
-              )
-              .append(
-                `<input type="radio" class="radioEnergy form-check-input      " id="radioEnergy${value.code}" name="radioEnergy" value="${value.code}">`
-              )
-              .append(`</div> `);
-          });
-
-          $("#radioEnergyM").prop("checked", true);
-
-          $.each(__dataConfig.trackerConfigs.work, function (index, value) {
-            $("#containerWork")
-              .append(`<div class="form-check form-check-inline  mt-1 mr-0">`)
-              .append(
-                `<label class="form-check-label mt-4 " for="${
-                  value.code
-                }">${value.title.substring(0, 2)}  </label>`
-              )
-              .append(
-                `<input type="radio" class="radioWork form-check-input   " id="radioWork${value.code}" name="radioWork" value="${value.code}">`
-              )
-              .append(`</div> `);
-          });
-
-          $("#radioWorkK").prop("checked", true);
-        }
-
+    
         // ******* TIME Functions *******
         function showCurrentTime(hours, min, sec) {
           let hrs = hours % 12;
