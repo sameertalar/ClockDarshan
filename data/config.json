@@ -2,11 +2,11 @@
   "newConfig": [],
   "trackerConfigs": {
     "mind": [
-      { "title": "🕊️ Peace", "code": "C", "column": "C" },
-      { "title": "🧘 ध्यान", "code": "M", "column": "D" },
-      { "title": "👁️ अप्रमाद", "code": "A", "column": "E" },
-      { "title": "🎳 Pramad", "code": "P", "column": "F" },
-      { "title": "😡 Buzzing", "code": "B", "column": "G" }
+      { "title": "🕊️ Peace", "code": "C", "column": "N" },
+      { "title": "🧘 ध्यान", "code": "M", "column": "O" },
+      { "title": "👁️ अप्रमाद", "code": "A", "column": "P" },
+      { "title": "🎳 Pramad", "code": "P", "column": "Q" },
+      { "title": "😡 Buzzing", "code": "B", "column": "R" }
     ],
     "energy": [
       { "title": "🔋 High", "code": "H", "column": "I" },
@@ -14,11 +14,11 @@
       { "title": "🚫️ Low", "code": "L", "column": "K" }
     ],
     "work": [
-      { "title": "🕉️ Spiritual", "code": "S", "column": "N" },
-      { "title": "👷 Creative", "code": "C", "column": "O" },
-      { "title": "🌿 Health", "code": "H", "column": "P" },
-      { "title": "👪 कर्तव्य", "code": "K", "column": "Q" },
-      { "title": "🚫 None", "code": "N", "column": "R" }
+      { "title": "🕉️ Spiritual", "code": "S", "column": "C" },
+      { "title": "👷 Creative", "code": "C", "column": "D" },
+      { "title": "👪 कर्तव्य", "code": "K", "column": "E" },
+      { "title": "🌿 Health", "code": "H", "column": "F" }, 
+      { "title": "🚫 None", "code": "N", "column": "G" }
     ]
   },
   "chunkConfigs": [
