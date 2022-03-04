@@ -125,11 +125,11 @@
          
             <div id="containerRadios" >
               <div >
-                <div class="mt-4">
-                  <div class="form-row justify-content-center">
-                    <div id="containerWork" class="col-xs-4 pl-3  "></div>                      
-                    <div id="containerEnergy" class="col-xs-4 pl-3  "></div>
-                    <div id="containerMind" class="col-xs-4   "></div>
+                <div class="mt-4 container">
+                  <div class="row justify-content-center ">
+                    <div id="containerWork" class="col-xs-4 mr-5  pull-left"></div>                      
+                    <div id="containerEnergy" class="col-xs-4 mr-5  "></div>
+                    <div id="containerMind" class="col-xs-4   text-right "></div>
                     <div>
                  
 
@@ -529,14 +529,14 @@
             */
 
             $("#containerMind")
-              .append(`<div class="form-check form-check-inline mt-5 mr-0">`)
+              .append(`<div class="form-check form-check-inline mt-1 mr-0">`)
               .append(
-                `<label class="form-check-label text-primary " for="${
+                `<label class="form-check-label   mt-4" for="${
                   value.code
                 }">${value.title.substring(0, 2)}  </label>`
               )
               .append(
-                `<input type="radio" class="radioMind form-check-input   mr-2   " id="radioMind${value.code}" name="radioMind" value="${value.code}">`
+                `<input type="radio" class="radioMind form-check-input     " id="radioMind${value.code}" name="radioMind" value="${value.code}">`
               )
               .append(`</div> `);
           });
@@ -545,14 +545,14 @@
 
           $.each(__dataConfig.trackerConfigs.energy, function (index, value) {
             $("#containerEnergy")
-              .append(`<div class="form-check form-check-inline text-warning  mt-5 mr-0">`)
+              .append(`<div class="form-check form-check-inline  mt-1 mr-0">`)
               .append(
-                `<label class="form-check-label " for="${
+                `<label class="form-check-label  mt-4" for="${
                   value.code
                 }">${value.title.substring(0, 2)}  </label>`
               )
               .append(
-                `<input type="radio" class="radioEnergy form-check-input   mr-2   " id="radioEnergy${value.code}" name="radioEnergy" value="${value.code}">`
+                `<input type="radio" class="radioEnergy form-check-input      " id="radioEnergy${value.code}" name="radioEnergy" value="${value.code}">`
               )
               .append(`</div> `);
           });
@@ -561,14 +561,14 @@
 
           $.each(__dataConfig.trackerConfigs.work, function (index, value) {
             $("#containerWork")
-              .append(`<div class="form-check form-check-inline  mt-5 mr-0">`)
+              .append(`<div class="form-check form-check-inline  mt-1 mr-0">`)
               .append(
-                `<label class="form-check-label " for="${
+                `<label class="form-check-label mt-4 " for="${
                   value.code
                 }">${value.title.substring(0, 2)}  </label>`
               )
               .append(
-                `<input type="radio" class="radioWork form-check-input  mr-2  " id="radioWork${value.code}" name="radioWork" value="${value.code}">`
+                `<input type="radio" class="radioWork form-check-input   " id="radioWork${value.code}" name="radioWork" value="${value.code}">`
               )
               .append(`</div> `);
           });
