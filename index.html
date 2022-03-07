@@ -23,7 +23,23 @@
     <style></style>
   </head>
   <body>
+    <span id="trackerStatus" class="text-secondary small" style="position:absolute;">
+      🧿
+    </span>
     <div class="container-fluid screen-border">
+        <div class="sticky-top">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="text-center">
+              <div class="text-center" id="containerBattery" style="display: none">
+                <iframe id="frameBattery" src="" title="Battery Meditation" width="100%" height="20px"
+                  style="border: none">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="row">
         <!-- Left  container-->
         <div class="col-lg-4">
@@ -238,6 +254,11 @@
                     >
                       <i class="fa fa-window-restore"></i> Pop Up
                     </button>
+
+                    <button type="button" class="btn btn-info" id="btnBatteryLoader">
+                      <i class="fa fa-battery-3"></i>
+                    </button>
+
                     </div>
                   </div>
                   <!-- Settings End -->
@@ -309,6 +330,7 @@
         // Load
         $("#btnTryChunk").on("click", tryChunkClick);
         $("#btnTrackerSheetLoader").on("click", loadTrackerSheetFrame);
+        $("#btnBatteryLoader").on("click", loadBatteryFrame);
         $("#ClockInnerCircle").on("click", oneClickTracker);
         $("#btnResetSheetk").on("click", oneClickResetSheet);
         $("#btnPopup").on("click", btnPopupClick);
@@ -512,7 +534,8 @@
             success: function (data, textStatus, xhr) {
               console.log(data);
 
-              showAlert("<h2>" + data + "</h2>");
+              showAlert("<p>" + data + "</p>");
+              $("#trackerStatus").html(data.replace("Success ", "") +" ⇦"+ ((hours % 12) || 12) + '✤'+quarter);
               console.log("response data", data);
               $("#progress-loading").hide();
             },
@@ -532,6 +555,19 @@
               $("#success-alert").slideUp(15000);
             });
         }
+
+
+        function loadBatteryFrame() {
+          if ($("#containerBattery").is(":visible")) {
+            $("#frameBattery").attr("src", "");
+            $("#containerBattery").hide(500);
+          } else {
+            $("#frameBattery").attr("src", "component/breathbattery.html");
+
+            $("#containerBattery").show(500);
+          }
+        }
+
 
     
         // ******* TIME Functions *******
