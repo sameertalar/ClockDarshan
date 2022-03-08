@@ -34,11 +34,11 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="text-center">
-              <div id="chunkProgress" class="border" style="position: absolute;">
+              <div id="chunkProgress" class="border" style="position: absolute">
                 <div id="chunkStatus"></div>
               </div>
               <div
-                class="text-center"
+                class="text-center pt-3"
                 id="containerBattery"
                 style="display: none"
               >
@@ -306,6 +306,13 @@
             <div id="containerControls2" class="mt-2">
               <div class="text-center">
                 <div class="btn-group">
+                  <button
+                    id="btnTrackerSheetLoader"
+                    type="button"
+                    class="btn btn-info btn-lg active shrinkbtn"
+                  >
+                    <i class="fa fa-bar-chart"></i>
+                  </button>
                   <a
                     class="btn btn-info btn-lg active shrinkbtn"
                     data-toggle="collapse"
@@ -317,29 +324,28 @@
                     <i id="btnGear" class="fa fa-gear fa-2x"></i>
                   </a>
                   <video
-                  id="videoDummy"
-                  controls
-                  loop
-                  muted
-                  style="width: 36px; height: 50px; display: none"
-                >
-                  <source src="media/video_dummy.mp4" type="video/mp4" />
-                </video>
+                    id="videoDummy"
+                    controls
+                    loop
+                    muted
+                    style="width: 36px; height: 50px; display: none"
+                  >
+                    <source src="media/video_dummy.mp4" type="video/mp4" />
+                  </video>
+
                   <button
-                    id="btnTrackerSheetLoader"
+                    id="btnCounter"
                     type="button"
                     class="btn btn-info btn-lg active shrinkbtn"
                   >
-                    <i class="fa fa-bar-chart"></i>
+                    0
                   </button>
-
-                 
                 </div>
               </div>
             </div>
             <div class="desktopMini">
               <div class="text-center">
-                <span id="errorMessage" class="text-secondary small">
+                <span id="errorMessage" class="text-info small">
                   Be Here Now
                 </span>
               </div>
@@ -600,6 +606,9 @@
         $("#ClockInnerCircle").on("click", oneClickTracker);
         $("#btnResetSheetk").on("click", oneClickResetSheet);
         $("#btnPopup").on("click", btnPopupClick);
+        $("#btnCounter").on("click", btnCounterClick);
+        $("#errorMessage").on("click", btnCounterReset);
+
         $("#success-alert").hide();
 
         $("#radioMeditationMusic18").on("change", function (event) {
@@ -655,6 +664,16 @@
           return minDeg - mrem + hdeg;
         }
 
+        function btnCounterClick() {
+          let count = parseInt($("#btnCounter").html());
+          $("#btnCounter").html(count + 1);
+        }
+        function btnCounterReset() {        
+          $("#btnCounter").html(0);
+        }
+
+        
+
         function tryChunkClick() {
           let now = new Date();
           let min = now.getMinutes();
@@ -682,8 +701,6 @@
             showCurrentTime(hours, min, sec);
 
             showTimeElaspeProgress(min, sec);
-
-     
           } catch (error) {
             console.log("Unhandled Error", error);
             $("#errorMessage").html("Unhandled Error: " + error);
@@ -815,7 +832,7 @@
               showAlert("<p>" + data + "</p>");
               $("#errorMessage").html(
                 data.replace("Success ", "") +
-                  " ⇦" +
+                  " " +
                   (hours % 12 || 12) +
                   "(" +
                   quarter +
@@ -902,24 +919,18 @@
           $("#videoDummy").hide();
         }
 
+        // Chunk Progress
+        var __AppEnabledStatus = false;
+        function checkboxAppOnOffChanged() {
+          __AppEnabledStatus = setInterval(processBeHereNow, 1000);
+        }
 
-// Chunk Progress
-var __AppEnabledStatus = false;
-function checkboxAppOnOffChanged() {
+        function showTimeElaspeProgress(min, sec) {
+          let elaspePercent = ((min % 5) * 60 + sec) / 3;
+          //$("#controltimeStatus").val() = elaspePercent;
 
-  __AppEnabledStatus = setInterval(processBeHereNow, 1000);
-
-}
-
-function showTimeElaspeProgress(min, sec) {
-    let elaspePercent = ((min % 5) * 60 + sec) / 3;
-    //$("#controltimeStatus").val() = elaspePercent;
-
-    $("#chunkStatus").width(elaspePercent + "%");
-
-
-  }
-
+          $("#chunkStatus").width(elaspePercent + "%");
+        }
 
         // ******* TIME Functions *******
         function showCurrentTime(hours, min, sec) {
