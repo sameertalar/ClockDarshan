@@ -412,6 +412,47 @@
                         <i class="fa fa-video-camera"></i>
                       </button>
                     </div>
+                    <div class="form-group">
+                      <button
+                        id="btnTracker"
+                        type="button"
+                        class="btn btn-primary btn-lg pl-3 active"
+                      >
+                        <i class="fa fa-paper-plane"></i>
+                      </button>
+
+                      <div class="btn-group">
+                        <button
+                          class="btn"
+                          type="button"
+                          id="minusQuarter"
+                          type="button"                        
+                        >
+                          <i class="fa fa-minus"></i>
+                        </button>
+
+                        <select
+                          class="form-control"
+                          id="selectTrackerTime"
+                        ></select>
+                        <button
+                          class="btn"
+                          type="button"
+                          id="plusQuarter"
+                          type="button"                         
+                        >
+                          <i class="fa fa-plus"></i>
+                        </button>
+                        <button
+                          class="btn"
+                          type="button"
+                          id="refreshQuarter"
+                          type="button"                         
+                        >
+                          <i class="fa fa-refresh"></i>
+                        </button>
+                      </div>
+                    </div>
 
                     <div class="form-group">
                       <div
@@ -595,6 +636,8 @@
         var __alertPlayIndicator = 0;
         var __dataConfig;
 
+        page_Load();
+
         // Load
         $("#btnTryChunk").on("click", tryChunkClick);
         $("#btnTrackerSheetLoader").on("click", loadTrackerSheetFrame);
@@ -607,6 +650,11 @@
         $("#btnResetSheetk").on("click", oneClickResetSheet);
         $("#btnPopup").on("click", btnPopupClick);
         $("#btnCounter").on("click", btnCounterClick);
+        $("#btnTracker").on("click", postToGoogle);
+        $("#plusQuarter").on("click", plusQuarter);
+        $("#minusQuarter").on("click", minusQuarter);
+        $("#refreshQuarter").on("click", setTrackerTime);
+
         $("#errorMessage").on("click", btnCounterReset);
 
         $("#success-alert").hide();
@@ -647,6 +695,20 @@
 
         __AppEnabledStatus = setInterval(processBeHereNow, 1000);
 
+        function page_Load() {
+          for (let h = 0; h < 24; ++h) {
+            for (let m = 1; m <= 4; ++m) {
+              $("#selectTrackerTime").append(
+                $("<option></option>")
+                  .attr("value", h + "-" + m)
+                  .text((h % 12) + (h > 12 ? "pm" : "am") + " : " + m + " Q")
+              );
+            }
+          }
+
+          setTrackerTime();
+        }
+
         function setAlertAudioVolume(value) {
           $("#audioAlert")[0].volume = value;
           $("#rangeAlertAudioVolumeLabel").text(parseInt(value * 100) + "%");
@@ -668,11 +730,9 @@
           let count = parseInt($("#btnCounter").html());
           $("#btnCounter").html(count + 1);
         }
-        function btnCounterReset() {        
+        function btnCounterReset() {
           $("#btnCounter").html(0);
         }
-
-        
 
         function tryChunkClick() {
           let now = new Date();
@@ -701,6 +761,10 @@
             showCurrentTime(hours, min, sec);
 
             showTimeElaspeProgress(min, sec);
+
+            if (min % 15 === 0 && sec === 1) {
+              setTrackerTime();
+            }
           } catch (error) {
             console.log("Unhandled Error", error);
             $("#errorMessage").html("Unhandled Error: " + error);
@@ -788,28 +852,20 @@
           let paramMind = $(".radioMind:checked").val(); // $("#selectMind option:selected").val();
           let paramEnergy = $(".radioEnergy:checked").val();
           let paramWork = $(".radioWork:checked").val();
+          let selectedPeriod = $("#selectTrackerTime option:selected")
+            .val()
+            .split("-");
 
           let now = new Date();
           let hours = now.getHours();
           let minutes = now.getMinutes();
-          let quarter = 4;
-          if (minutes < 45) {
-            quarter = 3;
-            if (minutes < 30) {
-              quarter = 2;
-              if (minutes < 15) {
-                quarter = 1;
-              }
-            }
-          }
-
           var paramtext = "&text=" + hours + "_" + minutes;
 
           let queryString =
             "?hour=" +
-            hours +
+            selectedPeriod[0] +
             "&quarter=" +
-            quarter +
+            selectedPeriod[1] +
             "&mind=" +
             paramMind +
             "&energy=" +
@@ -833,9 +889,9 @@
               $("#errorMessage").html(
                 data.replace("Success ", "") +
                   " " +
-                  (hours % 12 || 12) +
+                  (selectedPeriod[0] % 12 || 12) +
                   "(" +
-                  quarter +
+                  selectedPeriod[1] +
                   ")"
               );
               console.log("response data", data);
@@ -847,6 +903,115 @@
               $("#progress-loading").hide();
             },
           });
+        }
+
+        function setTrackerTime(isLoad) {
+          let now = new Date();
+          let hours = now.getHours();
+          let minutes = now.getMinutes();
+          var day = now.getDay(); // 0 Sun, 6 Sat
+          let quarter = 4;
+          let selEnergy = "L";
+          let selWork = "R";
+
+          if (minutes < 45) {
+            quarter = 3;
+            if (minutes < 30) {
+              quarter = 2;
+              if (minutes < 15) {
+                quarter = 1;
+              }
+            }
+          }
+          $("#selectTrackerTime").val(hours + "-" + quarter);
+
+          if (isLoad) {
+            if (day === 6 || day === 0) {
+              if (hours >= 8 && hours <= 10) {
+                selEnergy = "H";
+                selWork = "R";
+              }
+              if (hours >= 11 && hours <= 13) {
+                selEnergy = "H";
+                selWork = "F";
+              }
+
+              if (hours >= 14 && hours <= 17) {
+                selEnergy = "M";
+                selWork = "C";
+              }
+              if (hours >= 18 && hours <= 21) {
+                selEnergy = "H";
+                selWork = "R";
+              }
+              if (hours === 21 || hours === 22) {
+                selEnergy = "H";
+                selWork = "C";
+              }
+            } else {
+              if (hours >= 8 && hours <= 16) {
+                selEnergy = "M";
+                selWork = "W";
+              }
+              if (hours > 16 && hours < 21) {
+                selEnergy = "M";
+                selWork = "F";
+              }
+              if (hours === 21 || hours === 22) {
+                selEnergy = "H";
+                selWork = "C";
+              }
+
+              $("#selectMindA").prop("checked", true);
+              $("#radioEnergy" + selEnergy).prop("checked", true);
+              $("#radioWork" + selWork).prop("checked", true);
+
+              displayTrackers();
+            }
+          }
+        }
+
+        function oneClickTracker() {
+          setTrackerTime();
+          postToGoogle();
+        }
+
+        function plusQuarter() {
+          let selectedPeriod = $("#selectTrackerTime option:selected")
+            .val()
+            .split("-");
+
+          let hours = parseInt(selectedPeriod[0]);
+          let quarter = parseInt(selectedPeriod[1]);
+
+          if (quarter < 4) {
+            quarter++;
+          } else {
+            hours++;
+            quarter = 1;
+          }
+
+          $("#selectTrackerTime").val(hours + "-" + quarter);
+          $("#success-alert").hide();
+        }
+
+        function minusQuarter() {
+          let selectedPeriod = $("#selectTrackerTime option:selected")
+            .val()
+            .split("-");
+
+          let hours = parseInt(selectedPeriod[0]);
+          let quarter = parseInt(selectedPeriod[1]);
+
+          if (quarter === 1) {
+            hours--;
+            quarter = 4;
+          } else {
+            quarter--;
+          }
+
+          $("#selectTrackerTime").val(hours + "-" + quarter);
+          $("#success-alert").hide();
         }
 
         function showAlert(text) {
