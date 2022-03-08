@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     />
     <!-- <link rel="stylesheet" href="../libraries/bootstrap.min.css" />-->
-    <link rel="stylesheet" href="lib/clock.darshan.css?v=003" />
+    <link rel="stylesheet" href="lib/clock.darshan.css?v=004" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -28,13 +28,15 @@
       class="text-secondary small"
       style="position: absolute"
     >
-      👀
     </span>
     <div class="container-fluid screen-border">
       <div class="sticky-top">
         <div class="row">
           <div class="col-lg-4">
             <div class="text-center">
+              <div id="chunkProgress" class="border" style="position: absolute;">
+                <div id="chunkStatus"></div>
+              </div>
               <div
                 class="text-center"
                 id="containerBattery"
@@ -679,11 +681,9 @@
             // show Current Time
             showCurrentTime(hours, min, sec);
 
-            // process
-            if (min % 15 === 0 && sec === 1) {
-              playNotification(hours, min, sec, ms);
-              console.log(" 🔔***** Quarter (15 min) alert at ", new Date());
-            }
+            showTimeElaspeProgress(min, sec);
+
+     
           } catch (error) {
             console.log("Unhandled Error", error);
             $("#errorMessage").html("Unhandled Error: " + error);
@@ -813,7 +813,7 @@
               console.log(data);
 
               showAlert("<p>" + data + "</p>");
-              $("#trackerStatus").html(
+              $("#errorMessage").html(
                 data.replace("Success ", "") +
                   " ⇦" +
                   (hours % 12 || 12) +
@@ -901,6 +901,25 @@
           $("#videoDummy")[0].pause();
           $("#videoDummy").hide();
         }
+
+
+// Chunk Progress
+var __AppEnabledStatus = false;
+function checkboxAppOnOffChanged() {
+
+  __AppEnabledStatus = setInterval(processBeHereNow, 1000);
+
+}
+
+function showTimeElaspeProgress(min, sec) {
+    let elaspePercent = ((min % 5) * 60 + sec) / 3;
+    //$("#controltimeStatus").val() = elaspePercent;
+
+    $("#chunkStatus").width(elaspePercent + "%");
+
+
+  }
+
 
         // ******* TIME Functions *******
         function showCurrentTime(hours, min, sec) {
