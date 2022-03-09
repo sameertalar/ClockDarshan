@@ -797,9 +797,18 @@
             $("#frameTrackerSheet").attr("src", "");
             $("#containerTrackerSheet").hide(500);
           } else {
+
+            const linkMobile = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1698318143&single=true";
+            const linkDesktop = "https://docs.google.com/spreadsheets/d/1IeLBIUnPFC6-raeOoD1s80C-v8-Sl5rY1p38qFlQ0RY/edit#gid=1698318143";
+
+            const isMobile = localStorage.mobile || window.navigator.maxTouchPoints > 1;
+
+            sheetLink =isMobile?linkMobile:linkDesktop;
+      
+
             $("#frameTrackerSheet").attr(
               "src",
-              "https://docs.google.com/spreadsheets/d/1IeLBIUnPFC6-raeOoD1s80C-v8-Sl5rY1p38qFlQ0RY/edit#gid=1698318143"
+              sheetLink
             );
 
             $("#containerTrackerSheetscroll").height($(window).height() - 20);
