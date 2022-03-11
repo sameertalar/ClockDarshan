@@ -896,12 +896,7 @@
 
               showAlert("<p>" + data + "</p>");
               $("#errorMessage").html(
-                data.replace("Success ", "") +
-                  " " +
-                  (selectedPeriod[0] % 12 || 12) +
-                  "(" +
-                  selectedPeriod[1] +
-                  ")"
+                data.replace("Success ", "") 
               );
               console.log("response data", data);
               $("#progress-loading").hide();
