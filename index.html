@@ -315,6 +315,13 @@
               <div class="text-center">
                 <div class="btn-group">
                   <button
+                  id="btnStats"
+                  type="button"
+                  class="btn btn-outline-info  shrinkbtn"
+                >
+                <i class="fa fa-superpowers"></i>
+                </button>
+                  <button
                     id="btnTrackerSheetLoader"
                     type="button"
                     class="btn btn-info btn-lg active shrinkbtn"
@@ -344,7 +351,7 @@
                   <button
                     id="btnCounter"
                     type="button"
-                    class="btn btn-info btn-lg active shrinkbtn"
+                    class="btn btn-outline-info  shrinkbtn"
                   >
                     0
                   </button>
@@ -354,7 +361,7 @@
             <div class="desktopMini">
               
               <div class="text-center mt-2">
-                <iframe height="230" width="100%" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1210536617&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+                <iframe id="frameStatsSheet" height="230" width="100%" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1210536617&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
               </div>
             </div>
@@ -643,6 +650,7 @@
         var __ClockdarshanStatus = false;
         var __alertPlayIndicator = 0;
         var __dataConfig;
+        const _StatsSheetUrl ="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1210536617&amp;single=true&amp;widget=true&amp;headers=false";
 
         page_Load();
 
@@ -662,6 +670,7 @@
         $("#plusQuarter").on("click", plusQuarter);
         $("#minusQuarter").on("click", minusQuarter);
         $("#refreshQuarter").on("click", setTrackerTime);
+        $("#btnStats").on("click", reloadStatusSheet);
 
         $("#errorMessage").on("click", btnCounterReset);
 
@@ -732,6 +741,9 @@
           $("#audioAlert")[0].volume = value;
           $("#rangeAlertAudioVolumeLabel").text(parseInt(value * 100) + "%");
         }
+
+        
+
 
         function getOnePointerDegree(hourDeg, minDeg) {
           let hdeg = 15;
@@ -810,6 +822,13 @@
             console.log("Audio alert is off. No file selected.");
           }
         }
+
+
+        function reloadStatusSheet(value) {
+          $("#frameStatsSheet").attr("src",_StatsSheetUrl);
+      
+        }
+
 
         function loadTrackerSheetFrame() {
           if ($("#containerTrackerSheet").is(":visible")) {
