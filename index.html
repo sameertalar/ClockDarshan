@@ -157,7 +157,7 @@
 
             <div id="containerRadios">
               <div class="text-center small mute text-secondary">
-<label id="labelWork">👪</label>-<label id="labelEnergy">🥥</label>-<label  id="labelMind">🧿</label>
+<label id="labelWork">D</label>-<label id="labelEnergy">M</label>-<label  id="labelMind">A</label>
               </div>
               <div id="containerWork2">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -175,22 +175,11 @@
                     <input
                       type="radio"
                       class="radioWork"
-                      id="radioWorkC"
+                      id="radioWorkV"
                       name="radioWork"
-                      value="C"
+                      value="V"
                     />
                     🛠️
-                  </label>
-                  <label class="btn btn-outline-warning active">
-                    <input
-                      type="radio"
-                      class="radioWork"
-                      id="radioWorkK"
-                      name="radioWork"
-                      value="K"
-                      checked
-                    />
-                    👪
                   </label>
                   <label class="btn btn-outline-success">
                     <input
@@ -202,6 +191,17 @@
                     />
                     🌿
                   </label>
+                  <label class="btn btn-outline-warning active">
+                    <input
+                      type="radio"
+                      class="radioWork"
+                      id="radioWorkD"
+                      name="radioWork"
+                      value="D"
+                      checked
+                    />
+                    👪
+                  </label>  
                   <label class="btn btn-outline-danger">
                     <input
                       type="radio"
@@ -280,7 +280,7 @@
                       value="A"
                       checked
                     />
-                    👀
+                    🧿
                   </label>
                   <label class="btn btn-outline-dark">
                     <input
@@ -843,17 +843,17 @@
             reloadStatusSheet();
           } else {
 
-            const linkMobile = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1698318143&single=true";
+            //const linkMobile = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1698318143&single=true";
             const linkDesktop = "https://docs.google.com/spreadsheets/d/1IeLBIUnPFC6-raeOoD1s80C-v8-Sl5rY1p38qFlQ0RY/edit#gid=1698318143";
 
-            const isMobile = localStorage.mobile || window.navigator.maxTouchPoints > 1;
+            //const isMobile = localStorage.mobile || window.navigator.maxTouchPoints > 1;
 
-            sheetLink =isMobile?linkMobile:linkDesktop;
+            //sheetLink =isMobile?linkMobile:linkDesktop;
       
 
             $("#frameTrackerSheet").attr(
               "src",
-              sheetLink
+              linkDesktop
             );
 
             $("#containerTrackerSheetscroll").height($(window).height() - 20);
