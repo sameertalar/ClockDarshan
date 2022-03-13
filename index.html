@@ -947,6 +947,7 @@
               $("#errorMessage").html(
                 data.replace("Success ", "") 
               );
+              reloadStatusSheet();
               console.log("response data", data);
               $("#progress-loading").hide();
             },
