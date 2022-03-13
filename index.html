@@ -328,6 +328,15 @@
                   >
                     <i class="fa fa-bar-chart"></i>
                   </button>
+                  <video
+                  id="videoDummy"
+                  controls
+                  loop
+                  muted
+                  style="width: 36px; height: 50px; display: none"
+                >
+                  <source src="media/video_dummy.mp4" type="video/mp4" />
+                </video>
                   <a
                     class="btn btn-info btn-lg active shrinkbtn"
                     data-toggle="collapse"
@@ -338,15 +347,7 @@
                   >
                     <i id="btnGear" class="fa fa-gear fa-2x"></i>
                   </a>
-                  <video
-                    id="videoDummy"
-                    controls
-                    loop
-                    muted
-                    style="width: 36px; height: 50px; display: none"
-                  >
-                    <source src="media/video_dummy.mp4" type="video/mp4" />
-                  </video>
+                 
 
                   <button
                     id="btnCounter"
@@ -363,40 +364,32 @@
               <div class="card card-body">
                 <!-- Settings Begin -->
                 <div>
-                  <div class="form-group">
-                    <button
-                      id="btnResetSheetk"
-                      type="button"
-                      class="btn btn-danger btn-lg active shrinkbtn"
-                    >
-                      <i class="fa fa-random"></i> Reset Sheet
-                    </button>
-                  </div>
+   
                   <div class="form-group">
                     <button
                       id="btnPopup"
                       type="button"
-                      class="btn btn-info pl-3 active shrinkbtn"
+                      class="btn btn-outline-info pl-3  shrinkbtn"
                     >
                       <i class="fa fa-window-restore"></i>
                     </button>
 
                     <button
                       type="button"
-                      class="btn btn-info active"
+                      class="btn btn-outline-info "
                       id="btnBatteryLoader"
                     >
                       <i class="fa fa-battery-3"></i>
                     </button>
                     <button
                       type="button"
-                      class="btn btn-info active"
+                      class="btn btn-outline-info "
                       id="btnWaveLoader"
                     >
                       <i class="fa fa-random"></i>
                     </button>
                     <a
-                      class="btn btn-info active px-3"
+                      class="btn btn-outline-info  px-3"
                       data-toggle="collapse"
                       href="#collapseControlsMusic"
                       role="button"
@@ -407,7 +400,7 @@
                     </a>
                     <button
                       type="button"
-                      class="btn btn-info active"
+                      class="btn btn-outline-info "
                       id="btnPlayVideo"
                     >
                       <i class="fa fa-video-camera"></i>
@@ -417,7 +410,7 @@
                     <button
                       id="btnTracker"
                       type="button"
-                      class="btn btn-primary btn-lg pl-3 active"
+                      class="btn btn-outline-info btn-lg pl-3 "
                     >
                       <i class="fa fa-paper-plane"></i>
                     </button>
@@ -429,11 +422,11 @@
                         id="minusQuarter"
                         type="button"                        
                       >
-                        <i class="fa fa-minus"></i>
+                        <i class="fa fa-minus text-info"></i>
                       </button>
 
                       <select
-                        class="form-control"
+                        class="form-control  text-info"
                         id="selectTrackerTime"
                       ></select>
                       <button
@@ -442,7 +435,7 @@
                         id="plusQuarter"
                         type="button"                         
                       >
-                        <i class="fa fa-plus"></i>
+                        <i class="fa fa-plus  text-info"></i>
                       </button>
                       <button
                         class="btn"
@@ -450,11 +443,19 @@
                         id="refreshQuarter"
                         type="button"                         
                       >
-                        <i class="fa fa-refresh"></i>
+                        <i class="fa fa-refresh  text-info"></i>
                       </button>
                     </div>
                   </div>
-
+                  <div class="form-group">
+                    <button
+                      id="btnResetSheetk"
+                      type="button"
+                      class="btn btn-outline-warning btn-lg text-danger  shrinkbtn"
+                    >
+                      <i class="fa fa-random "></i> Reset Sheet
+                    </button>
+                  </div>
                   <div class="form-group">
                     <div
                       id="containerWave"
