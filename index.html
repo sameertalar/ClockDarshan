@@ -156,6 +156,9 @@
             <!--  Progress-End -->
 
             <div id="containerRadios">
+              <div class="text-center small mute text-secondary">
+<label id="labelWork">👪</label>-<label id="labelEnergy">🥥</label>-<label  id="labelMind">🧿</label>
+              </div>
               <div id="containerWork2">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label class="btn btn-outline-primary active">
@@ -187,7 +190,7 @@
                       value="K"
                       checked
                     />
-                    🔄
+                    👪
                   </label>
                   <label class="btn btn-outline-success">
                     <input
@@ -674,6 +677,17 @@
           setMeditationMusicVolume(this.value);
         });
 
+        $(".radioWork").on("change", function (event) {          
+          $("#labelWork").html($(".radioWork:checked").val());
+        });
+        $(".radioEnergy").on("change", function (event) {          
+          $("#labelEnergy").html($(".radioEnergy:checked").val());
+        });
+        $(".radioMind").on("change", function (event) {          
+          $("#labelMind").html($(".radioMind:checked").val());
+        });
+
+
         setMeditationMusicVolume(0.8);
 
         console.log(
@@ -900,12 +914,7 @@
 
               showAlert("<p>" + data + "</p>");
               $("#errorMessage").html(
-                data.replace("Success ", "") +
-                  " " +
-                  (selectedPeriod[0] % 12 || 12) +
-                  "(" +
-                  selectedPeriod[1] +
-                  ")"
+                data.replace("Success ", "") 
               );
               console.log("response data", data);
               $("#progress-loading").hide();
