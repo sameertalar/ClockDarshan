@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     />
     <!-- <link rel="stylesheet" href="../libraries/bootstrap.min.css" />-->
-    <link rel="stylesheet" href="lib/clock.darshan.css?v=004" />
+    <link rel="stylesheet" href="lib/clock.darshan.css?v=005" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -156,12 +156,9 @@
             <!--  Progress-End -->
 
             <div id="containerRadios">
-              <div class="text-center small mute text-secondary">
-<label id="labelWork">D</label>-<label id="labelEnergy">M</label>-<label  id="labelMind">A</label>
-              </div>
               <div id="containerWork2">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                  <label class="btn btn-outline-primary active">
+                  <label class="btn btn-sm btn-outline-primary active">
                     <input
                       type="radio"
                       class="radioWork"
@@ -169,9 +166,9 @@
                       name="radioWork"
                       value="S"
                     />
-                    🕉
+                    🪔
                   </label>
-                  <label class="btn btn-outline-primary active">
+                  <label class="btn btn-sm btn-outline-primary active">
                     <input
                       type="radio"
                       class="radioWork"
@@ -179,9 +176,9 @@
                       name="radioWork"
                       value="V"
                     />
-                    🛠️
+                    💎
                   </label>
-                  <label class="btn btn-outline-success">
+                  <label class="btn btn-sm btn-outline-success">
                     <input
                       type="radio"
                       class="radioWork"
@@ -191,7 +188,7 @@
                     />
                     🌿
                   </label>
-                  <label class="btn btn-outline-warning active">
+                  <label class="btn btn-sm btn-outline-warning active">
                     <input
                       type="radio"
                       class="radioWork"
@@ -201,8 +198,8 @@
                       checked
                     />
                     👪
-                  </label>  
-                  <label class="btn btn-outline-danger">
+                  </label>
+                  <label class="btn btn-sm btn-outline-danger">
                     <input
                       type="radio"
                       class="radioWork"
@@ -210,13 +207,22 @@
                       name="radioWork"
                       value="N"
                     />
-                    🚫
+                    🍂
                   </label>
+                  
                 </div>
+                <div
+                style="position: absolute; right: 0; color: lightgrey"
+                class="small"
+              >
+                <label id="labelWork">D</label>-<label id="labelEnergy"
+                  >M</label
+                >-<label id="labelMind">A</label>
+              </div>
               </div>
               <div id="containerEnergy2">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                  <label class="btn btn-outline-success active">
+                  <label class="btn btn-sm btn-outline-success active">
                     <input
                       type="radio"
                       class="radioEnergy"
@@ -226,7 +232,7 @@
                     />
                     🔋
                   </label>
-                  <label class="btn btn-outline-warning">
+                  <label class="btn btn-sm btn-outline-warning">
                     <input
                       type="radio"
                       class="radioEnergy"
@@ -237,7 +243,7 @@
                     />
                     🥥
                   </label>
-                  <label class="btn btn-outline-danger">
+                  <label class="btn btn-sm btn-outline-danger">
                     <input
                       type="radio"
                       class="radioEnergy"
@@ -248,10 +254,11 @@
                     ⚪
                   </label>
                 </div>
+       
               </div>
               <div id="containerMind2">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                  <label class="btn btn-outline-primary active">
+                  <label class="btn btn-sm btn-outline-primary active">
                     <input
                       type="radio"
                       class="radioMind"
@@ -261,7 +268,7 @@
                     />
                     🕊
                   </label>
-                  <label class="btn btn-outline-success active">
+                  <label class="btn btn-sm btn-outline-success active">
                     <input
                       type="radio"
                       class="radioMind"
@@ -271,7 +278,7 @@
                     />
                     🧘
                   </label>
-                  <label class="btn btn-outline-warning active">
+                  <label class="btn btn-sm btn-outline-warning active">
                     <input
                       type="radio"
                       class="radioMind"
@@ -282,7 +289,7 @@
                     />
                     🧿
                   </label>
-                  <label class="btn btn-outline-dark">
+                  <label class="btn btn-sm btn-outline-dark">
                     <input
                       type="radio"
                       class="radioMind"
@@ -292,7 +299,7 @@
                     />
                     🎳
                   </label>
-                  <label class="btn btn-outline-danger">
+                  <label class="btn btn-sm btn-outline-danger">
                     <input
                       type="radio"
                       class="radioMind"
@@ -300,45 +307,48 @@
                       name="radioMind"
                       value="B"
                     />
-                    😡
+                    🔥
                   </label>
                 </div>
               </div>
             </div>
 
             <div id="containerControls2" class="mt-2">
-              <div class="text-center">
-                <span id="errorMessage" class="text-info small">
+              <div
+                class="text-center"
+                style="position: absolute; top: 20px; right: 0"
+              >
+                <span id="errorMessage" class="text-warning small">
                   Be Here Now
                 </span>
               </div>
               <div class="text-center">
                 <div class="btn-group">
                   <button
-                  id="btnStats"
-                  type="button"
-                  class="btn btn-outline-info  shrinkbtn"
-                >
-                <i class="fa fa-superpowers"></i>
-                </button>
+                    id="btnStats"
+                    type="button"
+                    class="btn btn-outline-info shrinkbtn"
+                  >
+                    <i class="fa fa-superpowers"></i>
+                  </button>
                   <button
                     id="btnTrackerSheetLoader"
                     type="button"
-                    class="btn btn-info btn-lg active shrinkbtn"
+                    class="btn btn-info active shrinkbtn"
                   >
                     <i class="fa fa-bar-chart"></i>
                   </button>
                   <video
-                  id="videoDummy"
-                  controls
-                  loop
-                  muted
-                  style="width: 36px; height: 50px; display: none"
-                >
-                  <source src="media/video_dummy.mp4" type="video/mp4" />
-                </video>
+                    id="videoDummy"
+                    controls
+                    loop
+                    muted
+                    style="width: 36px; height: 50px; display: none"
+                  >
+                    <source src="media/video_dummy.mp4" type="video/mp4" />
+                  </video>
                   <a
-                    class="btn btn-info btn-lg active shrinkbtn"
+                    class="btn btn-info active shrinkbtn"
                     data-toggle="collapse"
                     href="#collapseControlsSettings"
                     role="button"
@@ -347,12 +357,11 @@
                   >
                     <i id="btnGear" class="fa fa-gear fa-2x"></i>
                   </a>
-                 
 
                   <button
                     id="btnCounter"
                     type="button"
-                    class="btn btn-outline-info  shrinkbtn"
+                    class="btn btn-outline-info shrinkbtn"
                   >
                     0
                   </button>
@@ -364,32 +373,31 @@
               <div class="card card-body">
                 <!-- Settings Begin -->
                 <div>
-   
                   <div class="form-group">
                     <button
                       id="btnPopup"
                       type="button"
-                      class="btn btn-outline-info pl-3  shrinkbtn"
+                      class="btn btn-outline-info"
                     >
                       <i class="fa fa-window-restore"></i>
                     </button>
 
                     <button
                       type="button"
-                      class="btn btn-outline-info "
+                      class="btn btn-outline-info"
                       id="btnBatteryLoader"
                     >
                       <i class="fa fa-battery-3"></i>
                     </button>
                     <button
                       type="button"
-                      class="btn btn-outline-info "
+                      class="btn btn-outline-info"
                       id="btnWaveLoader"
                     >
                       <i class="fa fa-random"></i>
                     </button>
                     <a
-                      class="btn btn-outline-info  px-3"
+                      class="btn btn-outline-info px-3"
                       data-toggle="collapse"
                       href="#collapseControlsMusic"
                       role="button"
@@ -400,7 +408,7 @@
                     </a>
                     <button
                       type="button"
-                      class="btn btn-outline-info "
+                      class="btn btn-outline-info"
                       id="btnPlayVideo"
                     >
                       <i class="fa fa-video-camera"></i>
@@ -410,7 +418,7 @@
                     <button
                       id="btnTracker"
                       type="button"
-                      class="btn btn-outline-info btn-lg pl-3 "
+                      class="btn btn-outline-info btn-lg pl-3"
                     >
                       <i class="fa fa-paper-plane"></i>
                     </button>
@@ -420,30 +428,30 @@
                         class="btn"
                         type="button"
                         id="minusQuarter"
-                        type="button"                        
+                        type="button"
                       >
                         <i class="fa fa-minus text-info"></i>
                       </button>
 
                       <select
-                        class="form-control  text-info"
+                        class="form-control text-info"
                         id="selectTrackerTime"
                       ></select>
                       <button
                         class="btn"
                         type="button"
                         id="plusQuarter"
-                        type="button"                         
+                        type="button"
                       >
-                        <i class="fa fa-plus  text-info"></i>
+                        <i class="fa fa-plus text-info"></i>
                       </button>
                       <button
                         class="btn"
                         type="button"
                         id="refreshQuarter"
-                        type="button"                         
+                        type="button"
                       >
-                        <i class="fa fa-refresh  text-info"></i>
+                        <i class="fa fa-refresh text-info"></i>
                       </button>
                     </div>
                   </div>
@@ -451,9 +459,9 @@
                     <button
                       id="btnResetSheetk"
                       type="button"
-                      class="btn btn-outline-warning btn-lg text-danger  shrinkbtn"
+                      class="btn btn-outline-warning btn-lg text-danger shrinkbtn"
                     >
-                      <i class="fa fa-random "></i> Reset Sheet
+                      <i class="fa fa-random"></i> Reset Sheet
                     </button>
                   </div>
                   <div class="form-group">
@@ -576,17 +584,19 @@
               </div>
             </div>
             <!--  Settings collapse  end -->
-  
- <!-- Stats  begin -->
-            <div class="desktopMini">
-              
-              <div id="containerStatsSheet" class="text-center mt-2">
-                <iframe id="frameStatsSheet" height="230" width="100%" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1210536617&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
+            <!-- Stats  begin -->
+            <div class="desktopMini">
+              <div id="containerStatsSheet" class="text-center mt-2">
+                <iframe
+                  id="frameStatsSheet"
+                  height="230"
+                  width="100%"
+                  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1210536617&amp;single=true&amp;widget=true&amp;headers=false"
+                ></iframe>
               </div>
             </div>
- <!-- Stats end -->
-
+            <!-- Stats end -->
           </div>
         </div>
         <!-- Left  container end -->
@@ -594,7 +604,6 @@
         <div class="col-lg-8">
           <div>
             <div>
-  
               <!-- Tracker Sheet  begin -->
               <div
                 class="text-center border rounded"
@@ -656,7 +665,8 @@
         var __ClockdarshanStatus = false;
         var __alertPlayIndicator = 0;
         var __dataConfig;
-        const _StatsSheetUrl ="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1210536617&amp;single=true&amp;widget=true&amp;headers=false";
+        const _StatsSheetUrl =
+          "https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1210536617&amp;single=true&amp;widget=true&amp;headers=false";
 
         page_Load();
 
@@ -693,16 +703,15 @@
           setMeditationMusicVolume(this.value);
         });
 
-        $(".radioWork").on("change", function (event) {          
+        $(".radioWork").on("change", function (event) {
           $("#labelWork").html($(".radioWork:checked").val());
         });
-        $(".radioEnergy").on("change", function (event) {          
+        $(".radioEnergy").on("change", function (event) {
           $("#labelEnergy").html($(".radioEnergy:checked").val());
         });
-        $(".radioMind").on("change", function (event) {          
+        $(".radioMind").on("change", function (event) {
           $("#labelMind").html($(".radioMind:checked").val());
         });
-
 
         setMeditationMusicVolume(0.8);
 
@@ -747,9 +756,6 @@
           $("#audioAlert")[0].volume = value;
           $("#rangeAlertAudioVolumeLabel").text(parseInt(value * 100) + "%");
         }
-
-        
-
 
         function getOnePointerDegree(hourDeg, minDeg) {
           let hdeg = 15;
@@ -829,12 +835,10 @@
           }
         }
 
-
         function reloadStatusSheet() {
-          $("#frameStatsSheet").attr("src",_StatsSheetUrl);  
-          $("#containerStatsSheet").show(500);    
+          $("#frameStatsSheet").attr("src", _StatsSheetUrl);
+          $("#containerStatsSheet").show(500);
         }
-
 
         function loadTrackerSheetFrame() {
           if ($("#containerTrackerSheet").is(":visible")) {
@@ -842,28 +846,23 @@
             $("#containerTrackerSheet").hide(500);
             reloadStatusSheet();
           } else {
-
             //const linkMobile = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1698318143&single=true";
-            const linkDesktop = "https://docs.google.com/spreadsheets/d/1IeLBIUnPFC6-raeOoD1s80C-v8-Sl5rY1p38qFlQ0RY/edit#gid=1698318143";
+            const linkDesktop =
+              "https://docs.google.com/spreadsheets/d/1IeLBIUnPFC6-raeOoD1s80C-v8-Sl5rY1p38qFlQ0RY/edit#gid=1698318143";
 
             //const isMobile = localStorage.mobile || window.navigator.maxTouchPoints > 1;
 
             //sheetLink =isMobile?linkMobile:linkDesktop;
-      
 
-            $("#frameTrackerSheet").attr(
-              "src",
-              linkDesktop
-            );
+            $("#frameTrackerSheet").attr("src", linkDesktop);
 
             $("#containerTrackerSheetscroll").height($(window).height() - 20);
             $("#frameTrackerSheet").height($(window).height() - 40);
             $("#containerTrackerSheet").show(500);
             $("#containerTrackerSheetscroll").scrollTop(100);
 
-            $("#frameStatsSheet").attr("src","");   
+            $("#frameStatsSheet").attr("src", "");
             $("#containerStatsSheet").hide(500);
-           
           }
         }
 
@@ -944,9 +943,7 @@
               console.log(data);
 
               showAlert("<p>" + data + "</p>");
-              $("#errorMessage").html(
-                data.replace("Success ", "") 
-              );
+              $("#errorMessage").html(data.replace("Success ", ""));
               reloadStatusSheet();
               console.log("response data", data);
               $("#progress-loading").hide();

@@ -65,8 +65,8 @@ input[type="radio"] {
 #clock-container {
   display: inline-block;
   position: relative;
-  width: 95%;
-  height: 95%;
+  width: 85%;
+  height: 85%;
   vertical-align: middle;
   overflow: hidden;
   background: url("../img/clockDarshan.png");
