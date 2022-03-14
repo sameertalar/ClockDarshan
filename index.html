@@ -156,6 +156,9 @@
             <!--  Progress-End -->
 
             <div id="containerRadios">
+              <div class="text-center small mute text-secondary">
+<label id="labelWork">D</label>-<label id="labelEnergy">M</label>-<label  id="labelMind">A</label>
+              </div>
               <div id="containerWork2">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label class="btn btn-outline-primary active">
@@ -172,22 +175,11 @@
                     <input
                       type="radio"
                       class="radioWork"
-                      id="radioWorkC"
+                      id="radioWorkV"
                       name="radioWork"
-                      value="C"
+                      value="V"
                     />
                     🛠️
-                  </label>
-                  <label class="btn btn-outline-warning active">
-                    <input
-                      type="radio"
-                      class="radioWork"
-                      id="radioWorkK"
-                      name="radioWork"
-                      value="K"
-                      checked
-                    />
-                    🔄
                   </label>
                   <label class="btn btn-outline-success">
                     <input
@@ -199,6 +191,17 @@
                     />
                     🌿
                   </label>
+                  <label class="btn btn-outline-warning active">
+                    <input
+                      type="radio"
+                      class="radioWork"
+                      id="radioWorkD"
+                      name="radioWork"
+                      value="D"
+                      checked
+                    />
+                    👪
+                  </label>  
                   <label class="btn btn-outline-danger">
                     <input
                       type="radio"
@@ -277,7 +280,7 @@
                       value="A"
                       checked
                     />
-                    👀
+                    🧿
                   </label>
                   <label class="btn btn-outline-dark">
                     <input
@@ -305,7 +308,19 @@
 
             <div id="containerControls2" class="mt-2">
               <div class="text-center">
+                <span id="errorMessage" class="text-info small">
+                  Be Here Now
+                </span>
+              </div>
+              <div class="text-center">
                 <div class="btn-group">
+                  <button
+                  id="btnStats"
+                  type="button"
+                  class="btn btn-outline-info  shrinkbtn"
+                >
+                <i class="fa fa-superpowers"></i>
+                </button>
                   <button
                     id="btnTrackerSheetLoader"
                     type="button"
@@ -313,6 +328,15 @@
                   >
                     <i class="fa fa-bar-chart"></i>
                   </button>
+                  <video
+                  id="videoDummy"
+                  controls
+                  loop
+                  muted
+                  style="width: 36px; height: 50px; display: none"
+                >
+                  <source src="media/video_dummy.mp4" type="video/mp4" />
+                </video>
                   <a
                     class="btn btn-info btn-lg active shrinkbtn"
                     data-toggle="collapse"
@@ -323,33 +347,246 @@
                   >
                     <i id="btnGear" class="fa fa-gear fa-2x"></i>
                   </a>
-                  <video
-                    id="videoDummy"
-                    controls
-                    loop
-                    muted
-                    style="width: 36px; height: 50px; display: none"
-                  >
-                    <source src="media/video_dummy.mp4" type="video/mp4" />
-                  </video>
+                 
 
                   <button
                     id="btnCounter"
                     type="button"
-                    class="btn btn-info btn-lg active shrinkbtn"
+                    class="btn btn-outline-info  shrinkbtn"
                   >
                     0
                   </button>
                 </div>
               </div>
             </div>
-            <div class="desktopMini">
-              <div class="text-center">
-                <span id="errorMessage" class="text-info small">
-                  Be Here Now
-                </span>
+            <!-- Settings collapse  begin -->
+            <div class="collapse" id="collapseControlsSettings">
+              <div class="card card-body">
+                <!-- Settings Begin -->
+                <div>
+   
+                  <div class="form-group">
+                    <button
+                      id="btnPopup"
+                      type="button"
+                      class="btn btn-outline-info pl-3  shrinkbtn"
+                    >
+                      <i class="fa fa-window-restore"></i>
+                    </button>
+
+                    <button
+                      type="button"
+                      class="btn btn-outline-info "
+                      id="btnBatteryLoader"
+                    >
+                      <i class="fa fa-battery-3"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-outline-info "
+                      id="btnWaveLoader"
+                    >
+                      <i class="fa fa-random"></i>
+                    </button>
+                    <a
+                      class="btn btn-outline-info  px-3"
+                      data-toggle="collapse"
+                      href="#collapseControlsMusic"
+                      role="button"
+                      aria-expanded="false"
+                      aria-controls="collapseExample"
+                    >
+                      <i class="fa fa-music"></i>
+                    </a>
+                    <button
+                      type="button"
+                      class="btn btn-outline-info "
+                      id="btnPlayVideo"
+                    >
+                      <i class="fa fa-video-camera"></i>
+                    </button>
+                  </div>
+                  <div class="form-group">
+                    <button
+                      id="btnTracker"
+                      type="button"
+                      class="btn btn-outline-info btn-lg pl-3 "
+                    >
+                      <i class="fa fa-paper-plane"></i>
+                    </button>
+
+                    <div class="btn-group">
+                      <button
+                        class="btn"
+                        type="button"
+                        id="minusQuarter"
+                        type="button"                        
+                      >
+                        <i class="fa fa-minus text-info"></i>
+                      </button>
+
+                      <select
+                        class="form-control  text-info"
+                        id="selectTrackerTime"
+                      ></select>
+                      <button
+                        class="btn"
+                        type="button"
+                        id="plusQuarter"
+                        type="button"                         
+                      >
+                        <i class="fa fa-plus  text-info"></i>
+                      </button>
+                      <button
+                        class="btn"
+                        type="button"
+                        id="refreshQuarter"
+                        type="button"                         
+                      >
+                        <i class="fa fa-refresh  text-info"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <button
+                      id="btnResetSheetk"
+                      type="button"
+                      class="btn btn-outline-warning btn-lg text-danger  shrinkbtn"
+                    >
+                      <i class="fa fa-random "></i> Reset Sheet
+                    </button>
+                  </div>
+                  <div class="form-group">
+                    <div
+                      id="containerWave"
+                      class="text-center"
+                      style="display: none"
+                    >
+                      <iframe
+                        id="frameWave"
+                        src=""
+                        title="Wave Meditation"
+                        width="100%"
+                        height="650"
+                        style="border: none"
+                      >
+                      </iframe>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <!-- collapse Music Controls begin -->
+                    <div class="collapse" id="collapseControlsMusic">
+                      <div class="card card-body">
+                        <div class="text-center form-group">
+                          <button
+                            id="btnPlayMeditationnAudio"
+                            type="button"
+                            class="btn btn-success"
+                          >
+                            <i class="fa fa-play"></i>
+                            Play
+                          </button>
+                          <button
+                            id="btnPauseMeditationAudio"
+                            type="button"
+                            class="btn btn-warning"
+                          >
+                            <i class="fa fa-pause"></i>
+                            Pause
+                          </button>
+
+                          <div
+                            class="custom-control pl-5 custom-radio custom-control-inline"
+                          >
+                            <input
+                              type="radio"
+                              checked
+                              id="radioMeditationMusic18"
+                              name="radioMeditationMusic"
+                              class="custom-control-input"
+                              value="media/SaReGaMa18Sec.mp3"
+                            />
+                            <label
+                              class="custom-control-label"
+                              for="radioMeditationMusic18"
+                            >
+                              <i class="fa fa-music"></i> 18 Sec
+                            </label>
+                          </div>
+                          <div
+                            class="custom-control custom-radio custom-control-inline"
+                          >
+                            <input
+                              type="radio"
+                              id="radioMeditationMusic20"
+                              name="radioMeditationMusic"
+                              class="custom-control-input"
+                              value="media/SaReGaMa20Sec.mp3"
+                            />
+                            <label
+                              class="custom-control-label"
+                              for="radioMeditationMusic20"
+                              ><i class="fa fa-music"></i> 20 Sec</label
+                            >
+                          </div>
+                        </div>
+                        <div class="form-group"></div>
+                        <div class="form-group text-center">
+                          <audio
+                            id="audioMeditation"
+                            class="form-control"
+                            controls
+                            loop
+                            style="width: 100%"
+                          >
+                            <source
+                              src="media/SaReGaMa18Sec.mp3"
+                              type="audio/mp3"
+                            />
+                            Your browser does not support the audio element.
+                          </audio>
+                        </div>
+                        <div class="form-group">
+                          <label for="rangeMeditationMusicVolume">
+                            <i class="fa fa-volume-up"></i> Meditation Music
+                            Volume:
+                            <span
+                              id="rangeMeditationMusicVolumeLabel"
+                              class="badge badge-light"
+                            ></span>
+                          </label>
+                          <input
+                            class="form-control"
+                            id="rangeMeditationMusicVolume"
+                            width="80%"
+                            type="range"
+                            min="0"
+                            max="1"
+                            step="0.01"
+                            value="0.8"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- collapse Music Controls end -->
+                  </div>
+                </div>
+                <!-- Settings End -->
               </div>
             </div>
+            <!--  Settings collapse  end -->
+  
+ <!-- Stats  begin -->
+            <div class="desktopMini">
+              
+              <div id="containerStatsSheet" class="text-center mt-2">
+                <iframe id="frameStatsSheet" height="230" width="100%" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1210536617&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
+              </div>
+            </div>
+ <!-- Stats end -->
+
           </div>
         </div>
         <!-- Left  container end -->
@@ -357,223 +594,7 @@
         <div class="col-lg-8">
           <div>
             <div>
-              <!-- Settings collapse  begin -->
-              <div class="collapse" id="collapseControlsSettings">
-                <div class="card card-body">
-                  <!-- Settings Begin -->
-                  <div>
-                    <div class="form-group">
-                      <button
-                        id="btnResetSheetk"
-                        type="button"
-                        class="btn btn-danger btn-lg active shrinkbtn"
-                      >
-                        <i class="fa fa-random"></i> Reset Sheet
-                      </button>
-                    </div>
-                    <div class="form-group">
-                      <button
-                        id="btnPopup"
-                        type="button"
-                        class="btn btn-info pl-3 active shrinkbtn"
-                      >
-                        <i class="fa fa-window-restore"></i>
-                      </button>
-
-                      <button
-                        type="button"
-                        class="btn btn-info active"
-                        id="btnBatteryLoader"
-                      >
-                        <i class="fa fa-battery-3"></i>
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-info active"
-                        id="btnWaveLoader"
-                      >
-                        <i class="fa fa-random"></i>
-                      </button>
-                      <a
-                        class="btn btn-info active px-3"
-                        data-toggle="collapse"
-                        href="#collapseControlsMusic"
-                        role="button"
-                        aria-expanded="false"
-                        aria-controls="collapseExample"
-                      >
-                        <i class="fa fa-music"></i>
-                      </a>
-                      <button
-                        type="button"
-                        class="btn btn-info active"
-                        id="btnPlayVideo"
-                      >
-                        <i class="fa fa-video-camera"></i>
-                      </button>
-                    </div>
-                    <div class="form-group">
-                      <button
-                        id="btnTracker"
-                        type="button"
-                        class="btn btn-primary btn-lg pl-3 active"
-                      >
-                        <i class="fa fa-paper-plane"></i>
-                      </button>
-
-                      <div class="btn-group">
-                        <button
-                          class="btn"
-                          type="button"
-                          id="minusQuarter"
-                          type="button"                        
-                        >
-                          <i class="fa fa-minus"></i>
-                        </button>
-
-                        <select
-                          class="form-control"
-                          id="selectTrackerTime"
-                        ></select>
-                        <button
-                          class="btn"
-                          type="button"
-                          id="plusQuarter"
-                          type="button"                         
-                        >
-                          <i class="fa fa-plus"></i>
-                        </button>
-                        <button
-                          class="btn"
-                          type="button"
-                          id="refreshQuarter"
-                          type="button"                         
-                        >
-                          <i class="fa fa-refresh"></i>
-                        </button>
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                      <div
-                        id="containerWave"
-                        class="text-center"
-                        style="display: none"
-                      >
-                        <iframe
-                          id="frameWave"
-                          src=""
-                          title="Wave Meditation"
-                          width="100%"
-                          height="650"
-                          style="border: none"
-                        >
-                        </iframe>
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                      <!-- collapse Music Controls begin -->
-                      <div class="collapse" id="collapseControlsMusic">
-                        <div class="card card-body">
-                          <div class="text-center form-group">
-                            <button
-                              id="btnPlayMeditationnAudio"
-                              type="button"
-                              class="btn btn-success"
-                            >
-                              <i class="fa fa-play"></i>
-                              Play
-                            </button>
-                            <button
-                              id="btnPauseMeditationAudio"
-                              type="button"
-                              class="btn btn-warning"
-                            >
-                              <i class="fa fa-pause"></i>
-                              Pause
-                            </button>
-
-                            <div
-                              class="custom-control pl-5 custom-radio custom-control-inline"
-                            >
-                              <input
-                                type="radio"
-                                checked
-                                id="radioMeditationMusic18"
-                                name="radioMeditationMusic"
-                                class="custom-control-input"
-                                value="media/SaReGaMa18Sec.mp3"
-                              />
-                              <label
-                                class="custom-control-label"
-                                for="radioMeditationMusic18"
-                              >
-                                <i class="fa fa-music"></i> 18 Sec
-                              </label>
-                            </div>
-                            <div
-                              class="custom-control custom-radio custom-control-inline"
-                            >
-                              <input
-                                type="radio"
-                                id="radioMeditationMusic20"
-                                name="radioMeditationMusic"
-                                class="custom-control-input"
-                                value="media/SaReGaMa20Sec.mp3"
-                              />
-                              <label
-                                class="custom-control-label"
-                                for="radioMeditationMusic20"
-                                ><i class="fa fa-music"></i> 20 Sec</label
-                              >
-                            </div>
-                          </div>
-                          <div class="form-group"></div>
-                          <div class="form-group text-center">
-                            <audio
-                              id="audioMeditation"
-                              class="form-control"
-                              controls
-                              loop
-                              style="width: 100%"
-                            >
-                              <source
-                                src="media/SaReGaMa18Sec.mp3"
-                                type="audio/mp3"
-                              />
-                              Your browser does not support the audio element.
-                            </audio>
-                          </div>
-                          <div class="form-group">
-                            <label for="rangeMeditationMusicVolume">
-                              <i class="fa fa-volume-up"></i> Meditation Music
-                              Volume:
-                              <span
-                                id="rangeMeditationMusicVolumeLabel"
-                                class="badge badge-light"
-                              ></span>
-                            </label>
-                            <input
-                              class="form-control"
-                              id="rangeMeditationMusicVolume"
-                              width="80%"
-                              type="range"
-                              min="0"
-                              max="1"
-                              step="0.01"
-                              value="0.8"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <!-- collapse Music Controls end -->
-                    </div>
-                  </div>
-                  <!-- Settings End -->
-                </div>
-              </div>
-              <!--  Settings collapse  end -->
+  
               <!-- Tracker Sheet  begin -->
               <div
                 class="text-center border rounded"
@@ -635,6 +656,7 @@
         var __ClockdarshanStatus = false;
         var __alertPlayIndicator = 0;
         var __dataConfig;
+        const _StatsSheetUrl ="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1210536617&amp;single=true&amp;widget=true&amp;headers=false";
 
         page_Load();
 
@@ -654,6 +676,7 @@
         $("#plusQuarter").on("click", plusQuarter);
         $("#minusQuarter").on("click", minusQuarter);
         $("#refreshQuarter").on("click", setTrackerTime);
+        $("#btnStats").on("click", reloadStatusSheet);
 
         $("#errorMessage").on("click", btnCounterReset);
 
@@ -669,6 +692,17 @@
         $("#rangeMeditationMusicVolume").on("change", function (event) {
           setMeditationMusicVolume(this.value);
         });
+
+        $(".radioWork").on("change", function (event) {          
+          $("#labelWork").html($(".radioWork:checked").val());
+        });
+        $(".radioEnergy").on("change", function (event) {          
+          $("#labelEnergy").html($(".radioEnergy:checked").val());
+        });
+        $(".radioMind").on("change", function (event) {          
+          $("#labelMind").html($(".radioMind:checked").val());
+        });
+
 
         setMeditationMusicVolume(0.8);
 
@@ -713,6 +747,9 @@
           $("#audioAlert")[0].volume = value;
           $("#rangeAlertAudioVolumeLabel").text(parseInt(value * 100) + "%");
         }
+
+        
+
 
         function getOnePointerDegree(hourDeg, minDeg) {
           let hdeg = 15;
@@ -792,29 +829,41 @@
           }
         }
 
+
+        function reloadStatusSheet() {
+          $("#frameStatsSheet").attr("src",_StatsSheetUrl);  
+          $("#containerStatsSheet").show(500);    
+        }
+
+
         function loadTrackerSheetFrame() {
           if ($("#containerTrackerSheet").is(":visible")) {
             $("#frameTrackerSheet").attr("src", "");
             $("#containerTrackerSheet").hide(500);
+            reloadStatusSheet();
           } else {
 
-            const linkMobile = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1698318143&single=true";
+            //const linkMobile = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1698318143&single=true";
             const linkDesktop = "https://docs.google.com/spreadsheets/d/1IeLBIUnPFC6-raeOoD1s80C-v8-Sl5rY1p38qFlQ0RY/edit#gid=1698318143";
 
-            const isMobile = localStorage.mobile || window.navigator.maxTouchPoints > 1;
+            //const isMobile = localStorage.mobile || window.navigator.maxTouchPoints > 1;
 
-            sheetLink =isMobile?linkMobile:linkDesktop;
+            //sheetLink =isMobile?linkMobile:linkDesktop;
       
 
             $("#frameTrackerSheet").attr(
               "src",
-              sheetLink
+              linkDesktop
             );
 
             $("#containerTrackerSheetscroll").height($(window).height() - 20);
             $("#frameTrackerSheet").height($(window).height() - 40);
             $("#containerTrackerSheet").show(500);
             $("#containerTrackerSheetscroll").scrollTop(100);
+
+            $("#frameStatsSheet").attr("src","");   
+            $("#containerStatsSheet").hide(500);
+           
           }
         }
 
@@ -898,6 +947,7 @@
               $("#errorMessage").html(
                 data.replace("Success ", "") 
               );
+              reloadStatusSheet();
               console.log("response data", data);
               $("#progress-loading").hide();
             },
