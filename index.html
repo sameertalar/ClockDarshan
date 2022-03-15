@@ -157,7 +157,6 @@
 
             <div id="containerRadios">
               <div id="containerWork2">
-          
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label class="btn btn-sm btn-outline-primary active">
                     <input
@@ -214,17 +213,13 @@
               </div>
               <div id="containerEnergy2">
                 <div
-                style="
-                  position: absolute;
-                  right: 10px;                
-                  color: lightgrey;
-                "
-                class="small"
-              >
-                <label id="labelWork">
-                  👪</label><br><label id="labelEnergy">🥥</label
-                ><br><label id="labelMind">🧿</label>
-              </div>
+                  style="position: absolute; right: 10px; color: lightgrey"
+                  class="small"
+                >
+                  <label id="labelWork"> 👪</label><br /><label id="labelEnergy"
+                    >🥥</label
+                  ><br /><label id="labelMind">🧿</label>
+                </div>
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label class="btn btn-sm btn-outline-success active">
                     <input
@@ -325,7 +320,7 @@
                   Be Here Now
                 </span>
               </div>
-       
+
               <div class="text-center">
                 <div class="btn-group">
                   <button
@@ -673,30 +668,29 @@
         const _StatsSheetUrl =
           "https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1210536617&amp;single=true&amp;widget=true&amp;headers=false";
 
-          const __Configuration = {
-            mind: [
-              { title: "Peace", code: "C", icon: "🕊️" },
-              { title: "ध्यान", code: "M", icon: "🧘" },
-              { title: "अप्रमाद", code: "A", icon: "🧿" },
-              { title: "Pramad", code: "P", icon: "🎳" },
-              { title: "Buzzing", code: "B", icon: "🔥" },
-            ],
-            energy: [
-              { title: "High", code: "H", icon: "🔋" },
-              { title: "Medium", code: "M", icon: "🥥" },
-              { title: "Low", code: "L", icon: "⚪" },
-            ],
-            work: [
-              { title: "Spiritual", code: "S", icon: "🪔" },
-              { title: "Value Add", code: "V", icon: "💎" },
-              { title: "Health", code: "H", icon: "🌿" },
-              { title: "Duty ", code: "D", icon: "👪" },
-              { title: "None", code: "N", icon: "🍂" },
-            ],
-          };
+        const __Configuration = {
+          mind: [
+            { title: "Peace", code: "C", icon: "🕊️" },
+            { title: "ध्यान", code: "M", icon: "🧘" },
+            { title: "अप्रमाद", code: "A", icon: "🧿" },
+            { title: "Pramad", code: "P", icon: "🎳" },
+            { title: "Buzzing", code: "B", icon: "🔥" },
+          ],
+          energy: [
+            { title: "High", code: "H", icon: "🔋" },
+            { title: "Medium", code: "M", icon: "🥥" },
+            { title: "Low", code: "L", icon: "⚪" },
+          ],
+          work: [
+            { title: "Spiritual", code: "S", icon: "🪔" },
+            { title: "Value Add", code: "V", icon: "💎" },
+            { title: "Health", code: "H", icon: "🌿" },
+            { title: "Duty ", code: "D", icon: "👪" },
+            { title: "None", code: "N", icon: "🍂" },
+          ],
+        };
 
         page_Load();
-
 
         // Load
         $("#btnTryChunk").on("click", tryChunkClick);
@@ -731,17 +725,27 @@
           setMeditationMusicVolume(this.value);
         });
 
-        $(".radioWork").on("change", function (event) {      
-          $("#labelWork").html(__Configuration["work"].find((x) => x.code === $(".radioWork:checked").val()).icon);
+        $(".radioWork").on("change", function (event) {
+          $("#labelWork").html(
+            __Configuration["work"].find(
+              (x) => x.code === $(".radioWork:checked").val()
+            ).icon
+          );
         });
         $(".radioEnergy").on("change", function (event) {
-          $("#labelEnergy").html(__Configuration["energy"].find((x) => x.code === $(".radioEnergy:checked").val()).icon);      
+          $("#labelEnergy").html(
+            __Configuration["energy"].find(
+              (x) => x.code === $(".radioEnergy:checked").val()
+            ).icon
+          );
         });
         $(".radioMind").on("change", function (event) {
-          $("#labelMind").html(__Configuration["mind"].find((x) => x.code === $(".radioMind:checked").val()).icon);  
+          $("#labelMind").html(
+            __Configuration["mind"].find(
+              (x) => x.code === $(".radioMind:checked").val()
+            ).icon
+          );
         });
-
-     
 
         setMeditationMusicVolume(0.8);
 
