@@ -839,8 +839,12 @@
 
             showTimeElaspeProgress(min, sec);
 
+            if (min % 5 === 0 && sec === 1) {
+                 reloadStatusSheet();
+            }
+
             if (min % 15 === 0 && sec === 1) {
-              setTrackerTime();
+              setTrackerTime();            
             }
           } catch (error) {
             console.log("Unhandled Error", error);
