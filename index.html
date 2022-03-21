@@ -157,6 +157,12 @@
 
             <div id="containerRadios">
               <div id="containerWork2">
+                <div
+                style="position: absolute; right: 22%; color: lightgrey"
+                class="small"
+              >
+                <label id="labelWork"> 👪</label>
+              </div>
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label class="btn btn-sm btn-outline-primary active">
                     <input
@@ -210,17 +216,17 @@
                     🍂
                   </label>
                 </div>
+           
+              </div>
+              <div id="containerEnergy2">
                 <div
                 style="position: absolute; right: 22%; color: lightgrey"
                 class="small"
               >
-                <label id="labelWork"> 👪</label><br /><label id="labelEnergy"
+               <label id="labelEnergy"
                   >🥥</label
-                ><br /><label id="labelMind">🧿</label>
+                >
               </div>
-              </div>
-              <div id="containerEnergy2">
-      
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label class="btn btn-sm btn-outline-success active">
                     <input
@@ -256,6 +262,12 @@
                 </div>
               </div>
               <div id="containerMind2">
+                <div
+                style="position: absolute; right: 22%; color: lightgrey"
+                class="small"
+              >
+              <label id="labelMind">🧿</label>
+              </div>
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label class="btn btn-sm btn-outline-primary active">
                     <input
@@ -841,11 +853,11 @@
             showTimeElaspeProgress(min, sec);
 
             if (min % 5 === 0 && sec === 1) {
-                 reloadStatusSheet();
+              reloadStatusSheet();
             }
 
             if (min % 15 === 0 && sec === 1) {
-              setTrackerTime();            
+              setTrackerTime();
             }
           } catch (error) {
             console.log("Unhandled Error", error);
