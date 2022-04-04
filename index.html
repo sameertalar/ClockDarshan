@@ -448,27 +448,27 @@
                     <button
                       id="btnPopup"
                       type="button"
-                      class="btn btn-outline-info"
+                      class="btn btn-outline-success"
                     >
                       <i class="fa fa-window-restore"></i>
                     </button>
 
                     <button
                       type="button"
-                      class="btn btn-outline-info"
+                      class="btn btn-outline-primary"
                       id="btnBatteryLoader"
                     >
                       <i class="fa fa-battery-3"></i>
                     </button>
                     <button
                       type="button"
-                      class="btn btn-outline-info"
+                      class="btn btn-outline-success"
                       id="btnWaveLoader"
                     >
                       <i class="fa fa-random"></i>
                     </button>
                     <a
-                      class="btn btn-outline-info px-3"
+                      class="btn btn-outline-primary px-3"
                       data-toggle="collapse"
                       href="#collapseControlsMusic"
                       role="button"
@@ -479,13 +479,13 @@
                     </a>
                     <button
                       type="button"
-                      class="btn btn-outline-info"
+                      class="btn btn-outline-success"
                       id="btnPlayVideo"
                     >
                       <i class="fa fa-video-camera"></i>
                     </button>
                   </div>
-                  <div class="form-group">
+                  <!--      <div class="form-group">
                     <button
                       id="btnTracker"
                       type="button"
@@ -493,7 +493,7 @@
                     >
                       <i class="fa fa-paper-plane"></i>
                     </button>
-                  </div>
+                  </div>-->
                   <div class="form-group">
                     <button
                       id="btnResetSheetk"
@@ -502,23 +502,6 @@
                     >
                       <i class="fa fa-random"></i> Reset Sheet
                     </button>
-                  </div>
-                  <div class="form-group">
-                    <div
-                      id="containerWave"
-                      class="text-center"
-                      style="display: none"
-                    >
-                      <iframe
-                        id="frameWave"
-                        src=""
-                        title="Wave Meditation"
-                        width="100%"
-                        height="650"
-                        style="border: none"
-                      >
-                      </iframe>
-                    </div>
                   </div>
 
                   <div class="form-group">
@@ -667,6 +650,23 @@
                 </div>
               </div>
               <!-- Tracker Sheet  end -->
+              <div class="form-group">
+                <div
+                  id="containerWave"
+                  class="text-center"
+                  style="display: none"
+                >
+                  <iframe
+                    id="frameWave"
+                    src=""
+                    title="Wave Meditation"
+                    width="100%"
+                    height="650"
+                    style="border: none"
+                  >
+                  </iframe>
+                </div>
+              </div>
             </div>
           </div>
           <div>
@@ -744,7 +744,7 @@
         $("#btnResetSheetk").on("click", oneClickResetSheet);
         $("#btnPopup").on("click", btnPopupClick);
         $("#btnCounter").on("click", btnCounterClick);
-        $("#btnTracker").on("click", postToGoogle);
+        // $("#btnTracker").on("click", postToGoogle);
         $("#plusQuarter").on("click", plusQuarter);
         $("#minusQuarter").on("click", minusQuarter);
         //  $("#refreshQuarter").on("click", setTrackerTime);
