@@ -159,10 +159,27 @@
               <div id="containerMind2">
                 <div class="row">
                   <div class="col-5">
-                    <div class="float-right" style="font-size: 1.8rem">
-                      <label id="labelWork">👪</label>
-                      <label id="labelEnergy">🥥</label
-                      ><label id="labelMind">🧿</label>
+                    <div class="btn-group float-right">
+                      <button
+                        class="btn btn-sm"
+                        type="button"
+                        id="minusQuarter"
+                        type="button"
+                      >
+                        <i class="fa fa-arrow-left text-secondary"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm"
+                        type="button"
+                        id="plusQuarter"
+                        type="button"
+                      >
+                        <i class="fa fa-arrow-right text-secondary"></i>
+                      </button>
+                      <select
+                        class="form-control text-danger py-2 mt-1"
+                        id="selectTrackerTime"
+                      ></select>
                     </div>
                   </div>
                   <div class="col-7">
@@ -350,25 +367,24 @@
               </div>
 
               <div class="text-center">
+                <div class="btn-group" style="font-size: 1.8rem">
+                  <label id="labelWork">👪</label>
+                  <label id="labelEnergy">🥥</label
+                  ><label id="labelMind">🧿</label>
+                </div>
+
                 <div class="btn-group">
-                  <button
-                    class="btn"
-                    type="button"
-                    id="minusQuarter"
-                    type="button"
-                  >
-                    <i class="fa fa-minus text-secondary"></i>
-                  </button>
+                  <!--
                   <button
                     id="btnCounter"
                     type="button"
                     class="btn btn-outline-info active shrinkbtn"
                   >
                     0
-                  </button>
+                  </button>-->
 
                   <a
-                    class="btn btn-info active shrinkbtn"
+                    class="btn btn-outline-info active shrinkbtn"
                     target="_blank"
                     href="https://script.google.com/macros/s/AKfycby45MlbIOt0UYUqS4llQFW_CrMvvT-2n-aK-Ynbouk/dev"
                     role="button"
@@ -402,11 +418,6 @@
                     <source src="media/video_dummy.mp4" type="video/mp4" />
                   </video>
 
-                  <select
-                    class="form-control text-danger border-0 py-2 mt-1"
-                    id="selectTrackerTime"
-                  ></select>
-
                   <a
                     class="btn btn-info active shrinkbtn"
                     data-toggle="collapse"
@@ -424,14 +435,6 @@
                     class="btn btn-outline-info active shrinkbtn"
                   >
                     <i class="fa fa-superpowers"></i>
-                  </button>
-                  <button
-                    class="btn"
-                    type="button"
-                    id="plusQuarter"
-                    type="button"
-                  >
-                    <i class="fa fa-plus text-secondary"></i>
                   </button>
                 </div>
               </div>
