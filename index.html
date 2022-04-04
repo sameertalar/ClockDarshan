@@ -357,38 +357,16 @@
                     id="minusQuarter"
                     type="button"
                   >
-                    <i class="fa fa-minus text-info"></i>
+                    <i class="fa fa-minus text-secondary"></i>
                   </button>
-
-                  <select
-                    class="form-control text-danger"
-                    id="selectTrackerTime"
-                  ></select>
                   <button
-                    class="btn"
-                    type="button"
-                    id="plusQuarter"
-                    type="button"
-                  >
-                    <i class="fa fa-plus text-info"></i>
-                  </button>
-                  <!--   <button
-                    class="btn"
-                    type="button"
-                    id="refreshQuarter"
-                    type="button"
-                  >
-                    <i class="fa fa-refresh text-info"></i>
-                  </button> -->
-                </div>
-                <div class="btn-group">
-                  <button
-                    id="btnStats"
+                    id="btnCounter"
                     type="button"
                     class="btn btn-outline-info active shrinkbtn"
                   >
-                    <i class="fa fa-superpowers"></i>
+                    0
                   </button>
+
                   <a
                     class="btn btn-info active shrinkbtn"
                     target="_blank"
@@ -406,6 +384,14 @@
                     <i class="fa fa-bar-chart"></i>
                   </button>
                   -->
+                  <!--   <button
+                    class="btn"
+                    type="button"
+                    id="refreshQuarter"
+                    type="button"
+                  >
+                    <i class="fa fa-refresh text-info"></i>
+                  </button> -->
                   <video
                     id="videoDummy"
                     controls
@@ -415,8 +401,14 @@
                   >
                     <source src="media/video_dummy.mp4" type="video/mp4" />
                   </video>
+
+                  <select
+                    class="form-control text-danger border-0 py-2 mt-1"
+                    id="selectTrackerTime"
+                  ></select>
+
                   <a
-                    class="btn btn-outline-info active shrinkbtn"
+                    class="btn btn-info active shrinkbtn"
                     data-toggle="collapse"
                     href="#collapseControlsSettings"
                     role="button"
@@ -425,15 +417,22 @@
                   >
                     <i id="btnGear" class="fa fa-gear fa-2x"></i>
                   </a>
-                  <!--
+
                   <button
-                    id="btnCounter"
+                    id="btnStats"
                     type="button"
-                    class="btn btn-outline-info shrinkbtn"
+                    class="btn btn-outline-info active shrinkbtn"
                   >
-                    0
+                    <i class="fa fa-superpowers"></i>
                   </button>
-                  -->
+                  <button
+                    class="btn"
+                    type="button"
+                    id="plusQuarter"
+                    type="button"
+                  >
+                    <i class="fa fa-plus text-secondary"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -745,7 +744,7 @@
         $("#btnTracker").on("click", postToGoogle);
         $("#plusQuarter").on("click", plusQuarter);
         $("#minusQuarter").on("click", minusQuarter);
-        $("#refreshQuarter").on("click", setTrackerTime);
+        //  $("#refreshQuarter").on("click", setTrackerTime);
         $("#btnStats").on("click", reloadStatusSheet);
 
         $("#errorMessage").on("click", btnCounterReset);
@@ -915,6 +914,7 @@
         function reloadStatusSheet() {
           $("#frameStatsSheet").attr("src", _StatsSheetUrl);
           $("#containerStatsSheet").show(500);
+          setTrackerTime();
         }
 
         function loadTrackerSheetFrame() {
@@ -1101,11 +1101,6 @@
               displayTrackers();
             }
           }
-        }
-
-        function oneClickTracker() {
-          setTrackerTime();
-          postToGoogle();
         }
 
         function plusQuarter() {
