@@ -352,12 +352,52 @@
               <div class="text-center">
                 <div class="btn-group">
                   <button
+                    class="btn"
+                    type="button"
+                    id="minusQuarter"
+                    type="button"
+                  >
+                    <i class="fa fa-minus text-info"></i>
+                  </button>
+
+                  <select
+                    class="form-control text-danger"
+                    id="selectTrackerTime"
+                  ></select>
+                  <button
+                    class="btn"
+                    type="button"
+                    id="plusQuarter"
+                    type="button"
+                  >
+                    <i class="fa fa-plus text-info"></i>
+                  </button>
+                  <!--   <button
+                    class="btn"
+                    type="button"
+                    id="refreshQuarter"
+                    type="button"
+                  >
+                    <i class="fa fa-refresh text-info"></i>
+                  </button> -->
+                </div>
+                <div class="btn-group">
+                  <button
                     id="btnStats"
                     type="button"
-                    class="btn btn-outline-info shrinkbtn"
+                    class="btn btn-outline-info active shrinkbtn"
                   >
                     <i class="fa fa-superpowers"></i>
                   </button>
+                  <a
+                    class="btn btn-info active shrinkbtn"
+                    target="_blank"
+                    href="https://script.google.com/macros/s/AKfycby45MlbIOt0UYUqS4llQFW_CrMvvT-2n-aK-Ynbouk/dev"
+                    role="button"
+                  >
+                    <i class="fa fa-braille fa-2x"></i>
+                  </a>
+                  <!--
                   <button
                     id="btnTrackerSheetLoader"
                     type="button"
@@ -365,6 +405,7 @@
                   >
                     <i class="fa fa-bar-chart"></i>
                   </button>
+                  -->
                   <video
                     id="videoDummy"
                     controls
@@ -375,7 +416,7 @@
                     <source src="media/video_dummy.mp4" type="video/mp4" />
                   </video>
                   <a
-                    class="btn btn-info active shrinkbtn"
+                    class="btn btn-outline-info active shrinkbtn"
                     data-toggle="collapse"
                     href="#collapseControlsSettings"
                     role="button"
@@ -384,7 +425,7 @@
                   >
                     <i id="btnGear" class="fa fa-gear fa-2x"></i>
                   </a>
-
+                  <!--
                   <button
                     id="btnCounter"
                     type="button"
@@ -392,6 +433,7 @@
                   >
                     0
                   </button>
+                  -->
                 </div>
               </div>
             </div>
@@ -449,38 +491,6 @@
                     >
                       <i class="fa fa-paper-plane"></i>
                     </button>
-
-                    <div class="btn-group">
-                      <button
-                        class="btn"
-                        type="button"
-                        id="minusQuarter"
-                        type="button"
-                      >
-                        <i class="fa fa-minus text-info"></i>
-                      </button>
-
-                      <select
-                        class="form-control text-info"
-                        id="selectTrackerTime"
-                      ></select>
-                      <button
-                        class="btn"
-                        type="button"
-                        id="plusQuarter"
-                        type="button"
-                      >
-                        <i class="fa fa-plus text-info"></i>
-                      </button>
-                      <button
-                        class="btn"
-                        type="button"
-                        id="refreshQuarter"
-                        type="button"
-                      >
-                        <i class="fa fa-refresh text-info"></i>
-                      </button>
-                    </div>
                   </div>
                   <div class="form-group">
                     <button
@@ -804,9 +814,10 @@
           for (let h = 0; h < 24; ++h) {
             for (let m = 1; m <= 4; ++m) {
               $("#selectTrackerTime").append(
-                $("<option></option>")
+                $("<option class='text-primary'></option>")
                   .attr("value", h + "-" + m)
-                  .text((h % 12) + (h > 12 ? "pm" : "am") + " : " + m + " Q")
+                  .text((h % 12) + " (" + m + ")")
+                //.text((h % 12) + (h > 12 ? "pm" : "am") + " : " + m + " Q")
               );
             }
           }
