@@ -161,7 +161,8 @@
                 <div class="row">
                   <div class="col-5">
                     <div
-                      class="btn-group"
+                      id="displaySelectedValues"
+                      class="btn-group bg-info border rounded-pill px-3"
                       style="font-size: 1.8rem; position: relative; top: -10px"
                     >
                       <label id="labelWork">👪</label>
@@ -241,7 +242,7 @@
                       </button>
 
                       <select
-                        class="text-danger border rounded-pill"
+                        class="text-white bg-danger border rounded-pill"
                         id="selectTrackerTime"
                       ></select>
                       <button
@@ -756,8 +757,8 @@
         $("#minusQuarter").on("click", minusQuarter);
         //  $("#refreshQuarter").on("click", setTrackerTime);
         $("#btnStats").on("click", reloadStatusSheet);
-
         $("#errorMessage").on("click", btnCounterReset);
+        $("#displaySelectedValues").focus();
 
         $("#success-alert").hide();
 
@@ -823,7 +824,7 @@
           for (let h = 0; h < 24; ++h) {
             for (let m = 1; m <= 4; ++m) {
               $("#selectTrackerTime").append(
-                $("<option class='text-primary'></option>")
+                $("<option class='text-primary bg-white'></option>")
                   .attr("value", h + "-" + m)
                   .text((h % 12) + " (" + m + ")")
                 //.text((h % 12) + (h > 12 ? "pm" : "am") + " : " + m + " Q")
