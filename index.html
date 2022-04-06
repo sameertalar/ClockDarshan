@@ -134,6 +134,7 @@
                 </svg>
               </div>
             </div>
+
             <!--  Progress-Start -->
             <div class="alert alert-success text-center" id="success-alert">
               <span id="alertMessage" class="text-danger"> </span>
@@ -159,27 +160,13 @@
               <div id="containerMind2">
                 <div class="row">
                   <div class="col-5">
-                    <div class="btn-group float-right">
-                      <button
-                        class="btn btn-sm border-0"
-                        type="button"
-                        id="minusQuarter"
-                        type="button"
-                      >
-                        <i class="fa fa-arrow-left text-secondary"></i>
-                      </button>
-                      <button
-                        class="btn btn-sm border-0"
-                        type="button"
-                        id="plusQuarter"
-                        type="button"
-                      >
-                        <i class="fa fa-arrow-right text-secondary"></i>
-                      </button>
-                      <select
-                        class="text-danger border-0"
-                        id="selectTrackerTime"
-                      ></select>
+                    <div
+                      class="btn-group"
+                      style="font-size: 1.8rem; position: relative; top: -10px"
+                    >
+                      <label id="labelWork">👪</label>
+                      <label id="labelEnergy">🥥</label
+                      ><label id="labelMind">🧿</label>
                     </div>
                   </div>
                   <div class="col-7">
@@ -243,16 +230,32 @@
                 </div>
                 <div class="row">
                   <div class="col-5">
-                    <input
-                      type="checkbox"
-                      class="btn-check checkSleep mt-2"
-                      id="checkSleep"
-                      autocomplete="off"
-                      name="checkSleep"
-                      value="S"
-                    />
+                    <div class="btn-group">
+                      <button
+                        class="btn btn-sm border-0"
+                        type="button"
+                        id="minusQuarter"
+                        type="button"
+                      >
+                        <i class="fa fa-arrow-left text-secondary"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm border-0"
+                        type="button"
+                        id="plusQuarter"
+                        type="button"
+                      >
+                        <i class="fa fa-arrow-right text-secondary"></i>
+                      </button>
+                      <select
+                        class="text-danger border rounded-pill"
+                        id="selectTrackerTime"
+                      ></select>
+                    </div>
+                  </div>
+                  <div class="col-7">
                     <div
-                      class="btn-group btn-group-toggle float-right"
+                      class="btn-group btn-group-toggle float-left"
                       data-toggle="buttons"
                     >
                       <label class="btn btn-sm btn-outline-success">
@@ -286,6 +289,82 @@
                         />
                         ⚪
                       </label>
+                    </div>
+                    <input
+                      type="checkbox"
+                      class="btn-check checkSleep mt-2 ml-3 float-left"
+                      id="checkSleep"
+                      autocomplete="off"
+                      name="checkSleep"
+                      value="S"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-5">
+                    <div class="btn-group">
+                      <!--
+                    <button
+                      id="btnCounter"
+                      type="button"
+                      class="btn btn-outline-info active shrinkbtn"
+                    >
+                      0
+                    </button>-->
+
+                      <a
+                        class="btn btn-outline-info active shrinkbtn"
+                        target="_blank"
+                        href="https://script.google.com/macros/s/AKfycby45MlbIOt0UYUqS4llQFW_CrMvvT-2n-aK-Ynbouk/dev"
+                        role="button"
+                      >
+                        <i class="fa fa-podcast fa-2x"></i>
+                      </a>
+                      <!--
+                    <button
+                      id="btnTrackerSheetLoader"
+                      type="button"
+                      class="btn btn-info active shrinkbtn"
+                    >
+                      <i class="fa fa-bar-chart"></i>
+                    </button>
+                    -->
+                      <!--   <button
+                      class="btn"
+                      type="button"
+                      id="refreshQuarter"
+                      type="button"
+                    >
+                      <i class="fa fa-refresh text-info"></i>
+                    </button> -->
+                      <video
+                        id="videoDummy"
+                        controls
+                        loop
+                        muted
+                        style="width: 36px; height: 50px; display: none"
+                      >
+                        <source src="media/video_dummy.mp4" type="video/mp4" />
+                      </video>
+
+                      <a
+                        class="btn btn-info active shrinkbtn"
+                        data-toggle="collapse"
+                        href="#collapseControlsSettings"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="collapseExample"
+                      >
+                        <i id="btnGear" class="fa fa-braille fa-2x"></i>
+                      </a>
+
+                      <button
+                        id="btnStats"
+                        type="button"
+                        class="btn btn-outline-info active shrinkbtn"
+                      >
+                        <i class="fa fa-superpowers"></i>
+                      </button>
                     </div>
                   </div>
                   <div class="col-7">
@@ -364,79 +443,6 @@
                 style="position: absolute; top: 20px; left: 5px"
               >
                 .
-              </div>
-
-              <div class="text-center">
-                <div class="btn-group" style="font-size: 1.8rem">
-                  <label id="labelWork">👪</label>
-                  <label id="labelEnergy">🥥</label
-                  ><label id="labelMind">🧿</label>
-                </div>
-
-                <div class="btn-group">
-                  <!--
-                  <button
-                    id="btnCounter"
-                    type="button"
-                    class="btn btn-outline-info active shrinkbtn"
-                  >
-                    0
-                  </button>-->
-
-                  <a
-                    class="btn btn-outline-info active shrinkbtn"
-                    target="_blank"
-                    href="https://script.google.com/macros/s/AKfycby45MlbIOt0UYUqS4llQFW_CrMvvT-2n-aK-Ynbouk/dev"
-                    role="button"
-                  >
-                    <i class="fa fa-braille fa-2x"></i>
-                  </a>
-                  <!--
-                  <button
-                    id="btnTrackerSheetLoader"
-                    type="button"
-                    class="btn btn-info active shrinkbtn"
-                  >
-                    <i class="fa fa-bar-chart"></i>
-                  </button>
-                  -->
-                  <!--   <button
-                    class="btn"
-                    type="button"
-                    id="refreshQuarter"
-                    type="button"
-                  >
-                    <i class="fa fa-refresh text-info"></i>
-                  </button> -->
-                  <video
-                    id="videoDummy"
-                    controls
-                    loop
-                    muted
-                    style="width: 36px; height: 50px; display: none"
-                  >
-                    <source src="media/video_dummy.mp4" type="video/mp4" />
-                  </video>
-
-                  <a
-                    class="btn btn-info active shrinkbtn"
-                    data-toggle="collapse"
-                    href="#collapseControlsSettings"
-                    role="button"
-                    aria-expanded="false"
-                    aria-controls="collapseExample"
-                  >
-                    <i id="btnGear" class="fa fa-gear fa-2x"></i>
-                  </a>
-
-                  <button
-                    id="btnStats"
-                    type="button"
-                    class="btn btn-outline-info active shrinkbtn"
-                  >
-                    <i class="fa fa-superpowers"></i>
-                  </button>
-                </div>
               </div>
             </div>
             <!-- Settings collapse  begin -->
@@ -1028,7 +1034,7 @@
 
               showAlert("<p>" + data + "</p>");
               $("#errorMessage").html(data);
-              reloadStatusSheet();
+              // reloadStatusSheet();
               console.log("response data", data);
               $("#progress-loading").hide();
             },
