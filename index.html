@@ -304,7 +304,6 @@
                             id="radioWorkD"
                             name="radioWork"
                             value="F"
-                            checked
                           />
                           👪
                         </label>
@@ -347,7 +346,6 @@
                             id="radioEnergyM"
                             name="radioEnergy"
                             value="J"
-                            checked
                           />
                           🥥
                         </label>
@@ -408,7 +406,6 @@
                             id="radioMindA"
                             name="radioMind"
                             value="P"
-                            checked
                           />
                           🧿
                         </label>
@@ -766,7 +763,10 @@
         //  $("#refreshQuarter").on("click", setTrackerTime);
         $("#btnStats").on("click", reloadStatusSheet);
         $("#errorMessage").on("click", btnCounterReset);
-        $("#displaySelectedValues").focus();
+
+        $("#radioWorkD").click();
+        $("#radioEnergyM").click();
+        $("#radioMindA").click();
 
         $("#success-alert").hide();
 
