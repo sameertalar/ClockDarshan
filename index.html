@@ -439,10 +439,11 @@
             <div id="containerControls2" class="mt-2">
               <div
                 class="text-center"
-                style="position: absolute; top: 20px; right: 5px"
+                style="position: absolute; top: 15px; right: 0"
               >
-                <span id="errorMessage" class="text-warning small">
-                  Be Here Now
+                <span id="errorMessage" class="btn btn-sm text-primary small"
+                 style="font-size: 0.5em;">
+                  Clock Darshan
                 </span>
               </div>
               <div
@@ -762,7 +763,7 @@
         $("#minusQuarter").on("click", minusQuarter);
         //  $("#refreshQuarter").on("click", setTrackerTime);
         $("#btnStats").on("click", reloadStatusSheet);
-        $("#errorMessage").on("click", btnCounterReset);
+        $("#errorMessage").on("click", btnErrorMessageClick);
 
         $("#radioWorkD").click();
         $("#radioEnergyM").click();
@@ -867,6 +868,8 @@
         function btnCounterReset() {
           $("#btnCounter").html(0);
         }
+
+
 
         function tryChunkClick() {
           let now = new Date();
@@ -991,10 +994,14 @@
         }
 
         function oneClickTracker() {
-          postToGoogle();
+          postToGoogle(true);
         }
 
-        function postToGoogle() {
+        function btnErrorMessageClick() {
+          postToGoogle(false);
+        }
+
+        function postToGoogle(update) {
           $("#progress-loading").show();
           $("#success-alert").hide();
 
@@ -1014,9 +1021,13 @@
           let now = new Date();
           let hours = now.getHours();
           let minutes = now.getMinutes();
-          var paramtext = "&text=" + hours + "_" + minutes;
 
-          let queryString =
+          let queryString ="";
+         
+
+          if(update)
+          {
+            queryString =
             "?hour=" +
             selectedPeriod[0] +
             "&quarter=" +
@@ -1026,13 +1037,14 @@
             "&energy=" +
             paramEnergy +
             "&mind=" +
-            paramMind;
-
-          if (paramSleep) queryString += "&sleep=" + paramSleep;
-
+            paramMind+
+            "&sleep=" + paramSleep+
+             "&callback=?";
+          }
+   
           console.log("queryString", queryString);
 
-          let googleurl = apiurl + queryString + paramtext + "&callback=?";
+          let googleurl = apiurl + queryString ;
 
           $.ajax({
             crossOrigin: true,
