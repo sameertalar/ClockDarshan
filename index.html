@@ -172,7 +172,7 @@
                         </button>
 
                         <select
-                          class="text-white bg-danger border rounded-pill mb-2"
+                          class="text-white bg-danger border rounded-pill px-2 mb-2"
                           style="font-size: 1.5em"
                           id="selectTrackerTime"
                         ></select>
@@ -196,15 +196,14 @@
                       >
                         0
                       </button>-->
-
-                        <a
-                          class="btn btn-outline-info active shrinkbtn"
-                          target="_blank"
-                          href="https://script.google.com/macros/s/AKfycby45MlbIOt0UYUqS4llQFW_CrMvvT-2n-aK-Ynbouk/dev"
-                          role="button"
-                        >
-                          <i class="fa fa-podcast fa-2x"></i>
-                        </a>
+                      <button
+                      id="btnStats"
+                      type="button"
+                      class="btn btn-outline-info active shrinkbtn"
+                    >
+                      <i class="fa fa-refresh fa-2x"></i>
+                    </button>
+                   
                         <!--
                       <button
                         id="btnTrackerSheetLoader"
@@ -246,13 +245,14 @@
                           <i id="btnGear" class="fa fa-braille fa-2x"></i>
                         </a>
 
-                        <button
-                          id="btnStats"
-                          type="button"
-                          class="btn btn-outline-info active shrinkbtn"
-                        >
-                          <i class="fa fa-superpowers"></i>
-                        </button>
+                        <a
+                        class="btn btn-outline-info active shrinkbtn"
+                        target="_blank"
+                        href="https://script.google.com/macros/s/AKfycby45MlbIOt0UYUqS4llQFW_CrMvvT-2n-aK-Ynbouk/dev"
+                        role="button"
+                      >
+                        <i class="fa fa-podcast fa-2x"></i>
+                      </a>
                       </div>
                     </div>
                   </div>
@@ -834,7 +834,7 @@
               $("#selectTrackerTime").append(
                 $("<option class='text-primary bg-white'></option>")
                   .attr("value", h + "-" + m)
-                  .text((h % 12) + " (" + m + ")")
+                  .text(  (h % 12).toString().padStart(2, '0') + " (" + m + ")")
                 //.text((h % 12) + (h > 12 ? "pm" : "am") + " : " + m + " Q")
               );
             }
