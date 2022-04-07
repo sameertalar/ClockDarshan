@@ -137,7 +137,7 @@
 
             <!--  Progress-Start -->
             <div class="alert alert-success text-center" id="success-alert">
-              <span id="alertMessage" class="text-danger"> </span>
+              <span id="alertMessage" class="text-primary"> </span>
             </div>
             <div
               class="alert alert-warning text-center"
@@ -1053,8 +1053,8 @@
             dataType: "jsonp",
             success: function (data, textStatus, xhr) {
               console.log(data);
-
-              showAlert("<p>" + data + "</p>");
+              showAlert("Deep Breath");
+              //showAlert("<p>" + data + "</p>");
               $("#errorMessage").html(data);
               // reloadStatusSheet();
               console.log("response data", data);
