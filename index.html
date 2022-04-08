@@ -1072,7 +1072,7 @@
             dataType: "jsonp",
             success: function (data, textStatus, xhr) {
               console.log(data);
-              showAlert("Deep Breath");
+             // showAlert("Deep Breath");
               //showAlert("<p>" + data + "</p>");
               $("#errorMessage").html(data);
               // reloadStatusSheet();
@@ -1192,14 +1192,14 @@
         }
 
         function showAlert(text) {
-/*
+
           $("#alertMessage").html(text);
           $("#success-alert")
             .fadeTo(2000, 1500)
             .slideUp(15000, function () {
               $("#success-alert").slideUp(15000);
             });
-*/
+
         }
 
         function loadBatteryFrame() {
