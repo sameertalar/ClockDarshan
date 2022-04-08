@@ -56,8 +56,8 @@
         </div>
       </div>
     </div>
-    <div class="sticky-top" 
-    style="top: 20px; padding-left: 100px;">
+    <div class="fixed-bottom" 
+    style="padding-left: 10px;">
       <video
         id="videoDummy"
         controls
@@ -1218,10 +1218,13 @@
           if ($("#containerWave").is(":visible")) {
             $("#frameWave").attr("src", "");
             $("#containerWave").hide(500);
+            
           } else {
             $("#frameWave").attr("src", "component/wave.html");
             $("#containerWave").show(500);
+           
           }
+          playVideo();
         }
 
         function musicSelected(value) {
