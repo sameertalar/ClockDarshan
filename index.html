@@ -58,8 +58,6 @@
     </div>
     <div style="position: absolute; top: 18px; z-index: 999">
       <div class="btn-group">
-      
-
         <select
           class="text-white bg-danger border rounded-pill px-1 mb-2"
           style="font-size: 1.5em"
@@ -74,13 +72,13 @@
           <i class="fa fa-arrow-up text-secondary"></i>
         </button>
         <button
-        class="btn btn-sm border-0"
-        type="button"
-        id="minusQuarter"
-        type="button"
-      >
-        <i class="fa fa-arrow-down text-secondary mb-3"></i>
-      </button>
+          class="btn btn-sm border-0"
+          type="button"
+          id="minusQuarter"
+          type="button"
+        >
+          <i class="fa fa-arrow-down text-secondary mb-3"></i>
+        </button>
       </div>
     </div>
     <div
@@ -204,8 +202,7 @@
                     <div class="row">
                       <div class="col-5">
                         <div class="row">
-                          
-                           <!--Space Available: top of Button tow -->
+                          <!--Space Available: top of Button tow -->
                         </div>
                         <div class="row">
                           <div class="btn-group">
@@ -502,7 +499,7 @@
                       </div>-->
                       <div class="form-group">
                         <button
-                          id="btnResetSheetk"
+                          id="btnResetSheet"
                           type="button"
                           class="btn btn-outline-warning btn-lg text-danger shrinkbtn"
                         >
@@ -766,14 +763,14 @@
 
         // Load
         $("#btnTryChunk").on("click", tryChunkClick);
-        $("#btnTrackerSheetLoader").on("click", loadTrackerSheetFrame);
+        //$("#btnTrackerSheetLoader").on("click", loadTrackerSheetFrame);
         $("#btnBatteryLoader").on("click", loadBatteryFrame);
         $("#btnWaveLoader").on("click", loadWaveFrame);
         $("#btnPlayMeditationnAudio").on("click", playMeditationAudio);
         $("#btnPauseMeditationAudio").on("click", pauseMeditationAudio);
         $("#btnPlayVideo").on("click", playVideo);
         $("#ClockInnerCircle").on("click", oneClickTracker);
-        $("#btnResetSheetk").on("click", oneClickResetSheet);
+        $("#btnResetSheet").on("click", oneClickResetSheet);
         $("#btnPopup").on("click", btnPopupClick);
         $("#btnCounter").on("click", btnCounterClick);
         // $("#btnTracker").on("click", postToGoogle);
@@ -899,8 +896,9 @@
           var myWindow = window.open(
             window.location.href,
             "",
-            "width=250,height=250"
+            "width=400,height=470"
           );
+          $("#collapseControlsSettings").collapse("toggle");
         }
 
         function processBeHereNow() {
@@ -950,12 +948,6 @@
           }
         }
 
-        function reloadStatusSheet() {
-          $("#frameStatsSheet").attr("src", _StatsSheetUrl);
-          $("#containerStatsSheet").show(500);
-          setTrackerTime();
-        }
-
         function loadTrackerSheetFrame() {
           if ($("#containerTrackerSheet").is(":visible")) {
             $("#frameTrackerSheet").attr("src", "");
@@ -983,9 +975,32 @@
           }
         }
 
+        function toggleStatsSheetFrame() {
+          if ($("#containerStatsSheet").is(":visible")) {
+            $("#frameStatsSheet").attr("src", "");
+            $("#containerStatsSheet").hide(500);
+          } else {
+            reloadStatusSheet();
+          }
+        }
+
+        function reloadStatusSheet() {
+          if ($("#containerWave").is(":visible")) {
+            //nothing
+          } else {
+            $("#frameStatsSheet").attr("src", _StatsSheetUrl);
+            $("#containerStatsSheet").show(500);
+          }
+
+          setTrackerTime();
+        }
+
+        function oneClickResetSheet() {}
+
         function oneClickResetSheet() {
           $("#progress-loading").show();
           $("#success-alert").hide();
+          $("#collapseControlsSettings").collapse("toggle");
 
           let googleapireseturl =
             "https://script.google.com/macros/s/AKfycbzhx9voh2A2FOd-E2hR4-CFinQKV-R0X3CKvheKTBYa/dev?callback=?";
@@ -1206,17 +1221,28 @@
 
             $("#containerBattery").show(500);
           }
+          playVideo();
+          $("#collapseControlsSettings").collapse("toggle");
         }
 
         function loadWaveFrame() {
           if ($("#containerWave").is(":visible")) {
             $("#frameWave").attr("src", "");
             $("#containerWave").hide(500);
+            $("#frameStatsSheet").attr("src", _StatsSheetUrl);
+            $("#containerStatsSheet").show(500);
+        
           } else {
             $("#frameWave").attr("src", "component/wave.html");
             $("#containerWave").show(500);
+
+            $("#frameStatsSheet").attr("src", "");
+            $("#containerStatsSheet").hide(500);
           }
+
           playVideo();
+          $("#collapseControlsSettings").collapse("toggle");
+   
         }
 
         function musicSelected(value) {
