@@ -57,30 +57,12 @@
       </div>
     </div>
     <div style="position: absolute; top: 18px; z-index: 999">
-      <div class="btn-group">
-        <select
-          class="text-white bg-danger border rounded-pill px-1 mb-2"
-          style="font-size: 1.5em"
-          id="selectTrackerTime"
-        ></select>
- 
-        <button
-          class="btn btn-sm border-0"
-          type="button"
-          id="minusQuarter"
-          type="button"
-        >
-          <i class="fa fa-arrow-down text-secondary mb-3"></i>
-        </button>
-        <button
-        class="btn btn-sm border-0 mb-3"
-        type="button"
-        id="plusQuarter"
-        type="button"
-      >
-        <i class="fa fa-arrow-up text-secondary"></i>
-      </button>
-      </div>
+      <select
+      class="text-white bg-danger border rounded-pill px-1 mb-2"
+      style="font-size: 1.5em"
+      id="selectTrackerTime"
+    ></select>
+    
     </div>
     <div
       class="text-center"
@@ -202,11 +184,37 @@
                   <div id="containerMind2">
                     <div class="row">
                       <div class="col-5">
-                        <div class="row">
-                          <!--Space Available: top of Button tow -->
-                        </div>
-                        <div class="row">
+                        <div class="row  d-flex justify-content-center">
                           <div class="btn-group">
+
+ 
+                            <button
+                              class="btn btn-sm btn-outline-info "
+                              type="button"
+                              id="minusQuarter"
+                              type="button"
+                            >
+                              <i class="fa fa-arrow-down     fa-2x "></i>
+                            </button>
+                            <button
+                            id="btnRefresh"
+                            type="button"
+                            class="btn btn-outline-info  shrinkbtn"
+                          >
+                            <i class="fa fa-refresh fa-2x"></i>
+                          </button>
+                            <button
+                            class="btn btn-sm  btn-outline-info"
+                            type="button"
+                            id="plusQuarter"
+                            type="button"
+                          >
+                            <i class="fa fa-arrow-up  fa-2x"></i>
+                          </button>
+                          </div>
+                        </div>
+                        <div class="row   d-flex justify-content-center">
+                          <div class="btn-group" >
                             <!--
                           <button
                             id="btnCounter"
@@ -215,13 +223,7 @@
                           >
                             0
                           </button>-->
-                            <button
-                              id="btnStats"
-                              type="button"
-                              class="btn btn-outline-info active shrinkbtn"
-                            >
-                              <i class="fa fa-refresh fa-2x"></i>
-                            </button>
+                         
 
                             <!--
                           <button
@@ -242,7 +244,7 @@
                           </button> -->
 
                             <a
-                              class="btn btn-info active shrinkbtn"
+                              class="btn btn-info active shrinkbtn px-4"
                               data-toggle="collapse"
                               href="#collapseControlsSettings"
                               role="button"
@@ -632,7 +634,7 @@
                         id="spinner"
                         role="status"
                       ></span>
-                      <span class="text-success">Deep Breath</span>
+                      <span class="text-success font-weight-light">Deep Breath</span>
                     </h3>
                   </div>
 
@@ -643,7 +645,7 @@
                       height="240"
                       width="100%"
                       frameborder="0"
-                      src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1210536617&amp;single=true&amp;widget=true&amp;headers=false"
+                      src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1210536617&amp;single=true&amp;widget=true&amp;headers=false&&range=A1:O100"
                     ></iframe>
                   </div>
                 </div>
@@ -778,7 +780,7 @@
         $("#plusQuarter").on("click", plusQuarter);
         $("#minusQuarter").on("click", minusQuarter);
         //  $("#refreshQuarter").on("click", setTrackerTime);
-        $("#btnStats").on("click", reloadStatusSheet);
+        $("#btnRefresh").on("click", reloadStatusSheet);
         $("#errorMessage").on("click", btnErrorMessageClick);
 
         $("#radioWorkD").click();
@@ -971,14 +973,14 @@
             $("#containerTrackerSheet").show(500);
             $("#containerTrackerSheetscroll").scrollTop(100);
 
-            $("#frameStatsSheet").attr("src", "");
+           // $("#frameStatsSheet").attr("src", "");
             $("#containerStatsSheet").hide(500);
           }
         }
 
         function toggleStatsSheetFrame() {
           if ($("#containerStatsSheet").is(":visible")) {
-            $("#frameStatsSheet").attr("src", "");
+          //  $("#frameStatsSheet").attr("src", "");
             $("#containerStatsSheet").hide(500);
           } else {
             reloadStatusSheet();
@@ -989,7 +991,7 @@
           if ($("#containerWave").is(":visible")) {
             //nothing
           } else {
-            $("#frameStatsSheet").attr("src", _StatsSheetUrl);
+           // $("#frameStatsSheet").attr("src", _StatsSheetUrl);
             $("#containerStatsSheet").show(500);
           }
 
@@ -1230,14 +1232,14 @@
           if ($("#containerWave").is(":visible")) {
             $("#frameWave").attr("src", "");
             $("#containerWave").hide(500);
-            $("#frameStatsSheet").attr("src", _StatsSheetUrl);
+            //$("#frameStatsSheet").attr("src", _StatsSheetUrl);
             $("#containerStatsSheet").show(500);
         
           } else {
             $("#frameWave").attr("src", "component/wave.html");
             $("#containerWave").show(500);
 
-            $("#frameStatsSheet").attr("src", "");
+           // $("#frameStatsSheet").attr("src", "");
             $("#containerStatsSheet").hide(500);
           }
 
