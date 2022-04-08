@@ -23,617 +23,639 @@
     <style></style>
   </head>
   <body>
+    <!-- Stickey and Floating - Start-->
     <span
       id="trackerStatus"
       class="text-secondary small"
       style="position: absolute"
     >
     </span>
-    <div class="container-fluid screen-border">
-      <div class="sticky-top">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="text-center">
-              <div id="chunkProgress" class="border" style="position: absolute">
-                <div id="chunkStatus"></div>
-              </div>
-              <div
-                class="text-center pt-3"
-                id="containerBattery"
-                style="display: none"
+    <div class="sticky-top">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="text-center">
+            <div id="chunkProgress" class="border" style="position: absolute">
+              <div id="chunkStatus"></div>
+            </div>
+            <div
+              class="text-center pt-3"
+              id="containerBattery"
+              style="display: none"
+            >
+              <iframe
+                id="frameBattery"
+                src=""
+                title="Battery Meditation"
+                width="100%"
+                height="20px"
+                style="border: none"
               >
-                <iframe
-                  id="frameBattery"
-                  src=""
-                  title="Battery Meditation"
-                  width="100%"
-                  height="20px"
-                  style="border: none"
-                >
-                </iframe>
-              </div>
+              </iframe>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="sticky-top" 
+    style="position: absolute; top: 20px; right: 5px; z-index: 999;">
+      <video
+        id="videoDummy"
+        controls
+        loop
+        muted
+        style="width: 36px; height: 50px; display: none"
+      >
+        <source src="media/video_dummy.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div
+    class="text-center"
+    style="position: absolute; top: 20px; left: -5px; z-index: 999;"
+   
+  >
+    <span
+      id="errorMessage"
+      class="btn btn-sm text-primary small"
+    >
+      Clock<br />Darshan
+    </span>
+  </div>
+   
+
+
+     <!-- Stickey and Floating - End-->
+    <div class="container-fluid screen-border">
+
       <div class="row">
         <!-- Left  container-->
         <div class="col-lg-4">
           <div class="text-center">
-            <div id="clockContainer">
-              <div id="clock-container">
-                <svg id="clock" viewBox="0 0 100 100">
-                  <defs>
-                    <linearGradient id="Gradient1">
-                      <stop class="stop1" offset="0%" />
-                      <stop class="stop2" offset="50%" />
-                      <stop class="stop3" offset="100%" />
-                    </linearGradient>
-                    <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
-                      <stop offset="0%" stop-color="red" />
-                      <stop offset="50%" stop-color="black" stop-opacity="0" />
-                      <stop offset="100%" stop-color="blue" />
-                    </linearGradient>
-                  </defs>
-                  <circle id="face" cx="50" cy="50" r="60" />
-                  <g transform="translate(50, 50)">
-                    <circle
-                      id="ClockInnerCircle"
-                      cx="0"
-                      cy="0"
-                      r="5"
-                      style="
-                        fill: #0d2931;
-                        stroke: #58727a;
-                        stroke-width: 25;
-                        stroke-dasharray: 31, 10;
-                      "
-                    >
-                      <animateTransform
-                        attributeType="xml"
-                        attributeName="transform"
-                        type="rotate"
-                        from="0"
-                        to="360"
-                        begin="0"
-                        dur="18s"
-                        repeatCount="indefinite"
-                      />
-                    </circle>
-                  </g>
-                  <text id="currentTime" x="46.5" y="50">Be Here Now</text>
-                  <g id="hands">
-                    <rect
-                      id="min"
-                      x="48.5"
-                      y="21"
-                      width="5"
-                      height="15"
-                      rx="7"
-                      ry="7"
-                    />
-                    <rect
-                      id="hour"
-                      x="48.5"
-                      y="21"
-                      width="7"
-                      height="7"
-                      rx="7"
-                      ry="7"
-                    />
-                    <rect
-                      id="onepointer"
-                      x="48.5"
-                      y="19"
-                      width="4"
-                      height="27"
-                      rx="2"
-                      ry="2"
-                    />
-                  </g>
-                </svg>
+            <div class="row">
+              <div class="col">
+                <div id="clockContainer" >
+                  <div id="clock-container" class="text-right">
+                    <svg id="clock" viewBox="0 0 100 100">
+                      <defs>
+                        <linearGradient id="Gradient1">
+                          <stop class="stop1" offset="0%" />
+                          <stop class="stop2" offset="50%" />
+                          <stop class="stop3" offset="100%" />
+                        </linearGradient>
+                        <linearGradient
+                          id="Gradient2"
+                          x1="0"
+                          x2="0"
+                          y1="0"
+                          y2="1"
+                        >
+                          <stop offset="0%" stop-color="red" />
+                          <stop
+                            offset="50%"
+                            stop-color="black"
+                            stop-opacity="0"
+                          />
+                          <stop offset="100%" stop-color="blue" />
+                        </linearGradient>
+                      </defs>
+                      <circle id="face" cx="50" cy="50" r="60" />
+                      <g transform="translate(50, 50)">
+                        <circle
+                          id="ClockInnerCircle"
+                          cx="0"
+                          cy="0"
+                          r="5"
+                          style="
+                            fill: #0d2931;
+                            stroke: #58727a;
+                            stroke-width: 25;
+                            stroke-dasharray: 31, 10;
+                          "
+                        >
+                          <animateTransform
+                            attributeType="xml"
+                            attributeName="transform"
+                            type="rotate"
+                            from="0"
+                            to="360"
+                            begin="0"
+                            dur="18s"
+                            repeatCount="indefinite"
+                          />
+                        </circle>
+                      </g>
+                      <text id="currentTime" x="46.5" y="50">Be Here Now</text>
+                      <g id="hands">
+                        <rect
+                          id="min"
+                          x="48.5"
+                          y="21"
+                          width="5"
+                          height="15"
+                          rx="7"
+                          ry="7"
+                        />
+                        <rect
+                          id="hour"
+                          x="48.5"
+                          y="21"
+                          width="7"
+                          height="7"
+                          rx="7"
+                          ry="7"
+                        />
+                        <rect
+                          id="onepointer"
+                          x="48.5"
+                          y="19"
+                          width="4"
+                          height="27"
+                          rx="2"
+                          ry="2"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col">
+           
 
-            <!--  Progress-Start -->
-            <div class="alert alert-success text-center" id="success-alert">
-              <span id="alertMessage" class="text-primary"> </span>
-            </div>
-            <div
-              class="alert alert-warning text-center"
-              style="display: none"
-              id="progress-loading"
-            >
-              <h3>
-                <!--  <i class="fa fa-spinner fa-spin text-primary"></i> -->
-                <span
-                  class="spinner-border text-primary"
-                  id="spinner"
-                  role="status"
-                ></span>
-              </h3>
-            </div>
-
-            <!--  Progress-End -->
-
-            <div id="containerRadios">
-              <div id="containerMind2">
-                <div class="row">
-                  <div class="col-5">
+                <div id="containerRadios">
+                  <div id="containerMind2">
                     <div class="row">
-                      <div class="btn-group">
-                        <button
-                          class="btn btn-sm border-0"
-                          type="button"
-                          id="minusQuarter"
-                          type="button"
-                        >
-                          <i class="fa fa-arrow-left text-secondary mr-2"></i>
-                        </button>
+                      <div class="col-5">
+                        <div class="row">
+                          <div class="btn-group">
+                            <button
+                              class="btn btn-sm border-0"
+                              type="button"
+                              id="minusQuarter"
+                              type="button"
+                            >
+                              <i
+                                class="fa fa-arrow-left text-secondary mr-2"
+                              ></i>
+                            </button>
 
-                        <select
-                          class="text-white bg-danger border rounded-pill px-1 mb-2"
-                          style="font-size: 1.5em"
-                          id="selectTrackerTime"
-                        ></select>
-                        <button
-                          class="btn btn-sm border-0 ml-2"
-                          type="button"
-                          id="plusQuarter"
-                          type="button"
-                        >
-                          <i class="fa fa-arrow-right text-secondary"></i>
-                        </button>
+                            <select
+                              class="text-white bg-danger border rounded-pill px-1 mb-2"
+                              style="font-size: 1.5em"
+                              id="selectTrackerTime"
+                            ></select>
+                            <button
+                              class="btn btn-sm border-0 ml-2"
+                              type="button"
+                              id="plusQuarter"
+                              type="button"
+                            >
+                              <i class="fa fa-arrow-right text-secondary"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="btn-group">
+                            <!--
+                          <button
+                            id="btnCounter"
+                            type="button"
+                            class="btn btn-outline-info active shrinkbtn"
+                          >
+                            0
+                          </button>-->
+                            <button
+                              id="btnStats"
+                              type="button"
+                              class="btn btn-outline-info active shrinkbtn"
+                            >
+                              <i class="fa fa-refresh fa-2x"></i>
+                            </button>
+
+                            <!--
+                          <button
+                            id="btnTrackerSheetLoader"
+                            type="button"
+                            class="btn btn-info active shrinkbtn"
+                          >
+                            <i class="fa fa-bar-chart"></i>
+                          </button>
+                          -->
+                            <!--   <button
+                            class="btn"
+                            type="button"
+                            id="refreshQuarter"
+                            type="button"
+                          >
+                            <i class="fa fa-refresh text-info"></i>
+                          </button> -->
+
+                            <a
+                              class="btn btn-info active shrinkbtn"
+                              data-toggle="collapse"
+                              href="#collapseControlsSettings"
+                              role="button"
+                              aria-expanded="false"
+                              aria-controls="collapseExample"
+                            >
+                              <i id="btnGear" class="fa fa-gear fa-2x"></i>
+                            </a>
+
+                            <a
+                              class="btn btn-outline-info active shrinkbtn"
+                              target="_blank"
+                              href="https://script.google.com/macros/s/AKfycby45MlbIOt0UYUqS4llQFW_CrMvvT-2n-aK-Ynbouk/dev"
+                              role="button"
+                            >
+                              <i class="fa fa-podcast fa-2x"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-7">
+                        <div class="row">
+                          <div
+                            class="btn-group btn-group-toggle float-left"
+                            data-toggle="buttons"
+                          >
+                            <label
+                              id="labelWork"
+                              class="btn btn-sm bg-primary border rounded"
+                              >👪</label
+                            >
+                            <label class="btn btn-sm btn-outline-info">
+                              <input
+                                type="radio"
+                                class="radioWork"
+                                id="radioWorkS"
+                                name="radioWork"
+                                value="C"
+                              />
+                              🪔
+                            </label>
+                            <label class="btn btn-sm btn-outline-primary">
+                              <input
+                                type="radio"
+                                class="radioWork"
+                                id="radioWorkV"
+                                name="radioWork"
+                                value="D"
+                              />
+                              💎
+                            </label>
+                            <label class="btn btn-sm btn-outline-success">
+                              <input
+                                type="radio"
+                                class="radioWork"
+                                id="radioWorkH"
+                                name="radioWork"
+                                value="E"
+                              />
+                              🌿
+                            </label>
+                            <label class="btn btn-sm btn-outline-warning">
+                              <input
+                                type="radio"
+                                class="radioWork"
+                                id="radioWorkD"
+                                name="radioWork"
+                                value="F"
+                              />
+                              👪
+                            </label>
+                            <label class="btn btn-sm btn-outline-danger">
+                              <input
+                                type="radio"
+                                class="radioWork"
+                                id="radioWorkN"
+                                name="radioWork"
+                                value="G"
+                              />
+                              🍂
+                            </label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div
+                            class="btn-group btn-group-toggle float-left"
+                            data-toggle="buttons"
+                          >
+                            <label
+                              id="labelEnergy"
+                              class="btn btn-sm bg-primary border rounded"
+                              >🥥</label
+                            >
+                            <label class="btn btn-sm btn-outline-success">
+                              <input
+                                type="radio"
+                                class="radioEnergy"
+                                id="radioEnergyH"
+                                name="radioEnergy"
+                                value="I"
+                              />
+                              🔋
+                            </label>
+                            <label class="btn btn-sm btn-outline-warning">
+                              <input
+                                type="radio"
+                                class="radioEnergy"
+                                id="radioEnergyM"
+                                name="radioEnergy"
+                                value="J"
+                              />
+                              🥥
+                            </label>
+                            <label class="btn btn-sm btn-outline-danger">
+                              <input
+                                type="radio"
+                                class="radioEnergy"
+                                id="radioEnergyL"
+                                name="radioEnergy"
+                                value="K"
+                              />
+                              ⚪
+                            </label>
+                          </div>
+                          <input
+                            type="checkbox"
+                            class="btn-check checkSleep mt-2 ml-3 float-left"
+                            id="checkSleep"
+                            autocomplete="off"
+                            name="checkSleep"
+                            value="S"
+                          />
+                        </div>
+                        <div class="row">
+                          <div
+                            class="btn-group btn-group-toggle float-left"
+                            data-toggle="buttons"
+                          >
+                            <label
+                              id="labelMind"
+                              class="btn btn-sm bg-primary border rounded"
+                              >🧿</label
+                            >
+                            <label class="btn btn-sm btn-outline-info">
+                              <input
+                                type="radio"
+                                class="radioMind"
+                                id="radioMindC"
+                                name="radioMind"
+                                value="N"
+                              />
+                              🕊️
+                            </label>
+                            <label class="btn btn-sm btn-outline-success">
+                              <input
+                                type="radio"
+                                class="radioMind"
+                                id="radioMindM"
+                                name="radioMind"
+                                value="O"
+                              />
+                              🧘
+                            </label>
+                            <label class="btn btn-sm btn-outline-warning">
+                              <input
+                                type="radio"
+                                class="radioMind"
+                                id="radioMindA"
+                                name="radioMind"
+                                value="P"
+                              />
+                              🧿
+                            </label>
+                            <label class="btn btn-sm btn-outline-dark">
+                              <input
+                                type="radio"
+                                class="radioMind"
+                                id="radioMindP"
+                                name="radioMind"
+                                value="Q"
+                              />
+                              🎳
+                            </label>
+                            <label class="btn btn-sm btn-outline-danger">
+                              <input
+                                type="radio"
+                                class="radioMind"
+                                id="radioMindB"
+                                name="radioMind"
+                                value="R"
+                              />
+                              🔥
+                            </label>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="btn-group">
-                        <!--
-                      <button
-                        id="btnCounter"
-                        type="button"
-                        class="btn btn-outline-info active shrinkbtn"
-                      >
-                        0
-                      </button>-->
-                      <button
-                      id="btnStats"
-                      type="button"
-                      class="btn btn-outline-info active shrinkbtn"
-                    >
-                      <i class="fa fa-refresh fa-2x"></i>
-                    </button>
-                   
-                        <!--
-                      <button
-                        id="btnTrackerSheetLoader"
-                        type="button"
-                        class="btn btn-info active shrinkbtn"
-                      >
-                        <i class="fa fa-bar-chart"></i>
-                      </button>
-                      -->
-                        <!--   <button
-                        class="btn"
-                        type="button"
-                        id="refreshQuarter"
-                        type="button"
-                      >
-                        <i class="fa fa-refresh text-info"></i>
-                      </button> -->
-                        <video
-                          id="videoDummy"
-                          controls
-                          loop
-                          muted
-                          style="width: 36px; height: 50px; display: none"
-                        >
-                          <source
-                            src="media/video_dummy.mp4"
-                            type="video/mp4"
-                          />
-                        </video>
+                  </div>
+                </div>
 
+
+                <!-- Settings collapse  begin -->
+                <div class="collapse" id="collapseControlsSettings">
+                  <div class="card card-body">
+                    <!-- Settings Begin -->
+                    <div>
+                      <div class="form-group">
+                        <button
+                          id="btnPopup"
+                          type="button"
+                          class="btn btn-outline-success"
+                        >
+                          <i class="fa fa-window-restore"></i>
+                        </button>
+
+                        <button
+                          type="button"
+                          class="btn btn-outline-primary"
+                          id="btnBatteryLoader"
+                        >
+                          <i class="fa fa-battery-3"></i>
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-outline-success"
+                          id="btnWaveLoader"
+                        >
+                          <i class="fa fa-random"></i>
+                        </button>
                         <a
-                          class="btn btn-info active shrinkbtn"
+                          class="btn btn-outline-primary px-3"
                           data-toggle="collapse"
-                          href="#collapseControlsSettings"
+                          href="#collapseControlsMusic"
                           role="button"
                           aria-expanded="false"
                           aria-controls="collapseExample"
                         >
-                          <i id="btnGear" class="fa fa-gear fa-2x"></i>
+                          <i class="fa fa-music"></i>
                         </a>
-
-                        <a
-                        class="btn btn-outline-info active shrinkbtn"
-                        target="_blank"
-                        href="https://script.google.com/macros/s/AKfycby45MlbIOt0UYUqS4llQFW_CrMvvT-2n-aK-Ynbouk/dev"
-                        role="button"
-                      >
-                        <i class="fa fa-podcast fa-2x"></i>
-                      </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-7">
-                    <div class="row">
-                      <div
-                        class="btn-group btn-group-toggle float-left"
-                        data-toggle="buttons"
-                      >
-                        <label
-                          id="labelWork"
-                          class="btn btn-sm bg-primary border rounded"
-                          >👪</label
+                        <button
+                          type="button"
+                          class="btn btn-outline-success"
+                          id="btnPlayVideo"
                         >
-                        <label class="btn btn-sm btn-outline-info">
-                          <input
-                            type="radio"
-                            class="radioWork"
-                            id="radioWorkS"
-                            name="radioWork"
-                            value="C"
-                          />
-                          🪔
-                        </label>
-                        <label class="btn btn-sm btn-outline-primary">
-                          <input
-                            type="radio"
-                            class="radioWork"
-                            id="radioWorkV"
-                            name="radioWork"
-                            value="D"
-                          />
-                          💎
-                        </label>
-                        <label class="btn btn-sm btn-outline-success">
-                          <input
-                            type="radio"
-                            class="radioWork"
-                            id="radioWorkH"
-                            name="radioWork"
-                            value="E"
-                          />
-                          🌿
-                        </label>
-                        <label class="btn btn-sm btn-outline-warning">
-                          <input
-                            type="radio"
-                            class="radioWork"
-                            id="radioWorkD"
-                            name="radioWork"
-                            value="F"
-                          />
-                          👪
-                        </label>
-                        <label class="btn btn-sm btn-outline-danger">
-                          <input
-                            type="radio"
-                            class="radioWork"
-                            id="radioWorkN"
-                            name="radioWork"
-                            value="G"
-                          />
-                          🍂
-                        </label>
+                          <i class="fa fa-video-camera"></i>
+                        </button>
                       </div>
-                    </div>
-                    <div class="row">
-                      <div
-                        class="btn-group btn-group-toggle float-left"
-                        data-toggle="buttons"
-                      >
-                        <label
-                          id="labelEnergy"
-                          class="btn btn-sm bg-primary border rounded"
-                          >🥥</label
+                      <!--      <div class="form-group">
+                        <button
+                          id="btnTracker"
+                          type="button"
+                          class="btn btn-outline-info btn-lg pl-3"
                         >
-                        <label class="btn btn-sm btn-outline-success">
-                          <input
-                            type="radio"
-                            class="radioEnergy"
-                            id="radioEnergyH"
-                            name="radioEnergy"
-                            value="I"
-                          />
-                          🔋
-                        </label>
-                        <label class="btn btn-sm btn-outline-warning">
-                          <input
-                            type="radio"
-                            class="radioEnergy"
-                            id="radioEnergyM"
-                            name="radioEnergy"
-                            value="J"
-                          />
-                          🥥
-                        </label>
-                        <label class="btn btn-sm btn-outline-danger">
-                          <input
-                            type="radio"
-                            class="radioEnergy"
-                            id="radioEnergyL"
-                            name="radioEnergy"
-                            value="K"
-                          />
-                          ⚪
-                        </label>
-                      </div>
-                      <input
-                        type="checkbox"
-                        class="btn-check checkSleep mt-2 ml-3 float-left"
-                        id="checkSleep"
-                        autocomplete="off"
-                        name="checkSleep"
-                        value="S"
-                      />
-                    </div>
-                    <div class="row">
-                      <div
-                        class="btn-group btn-group-toggle float-left"
-                        data-toggle="buttons"
-                      >
-                        <label
-                          id="labelMind"
-                          class="btn btn-sm bg-primary border rounded"
-                          >🧿</label
+                          <i class="fa fa-paper-plane"></i>
+                        </button>
+                      </div>-->
+                      <div class="form-group">
+                        <button
+                          id="btnResetSheetk"
+                          type="button"
+                          class="btn btn-outline-warning btn-lg text-danger shrinkbtn"
                         >
-                        <label class="btn btn-sm btn-outline-info">
-                          <input
-                            type="radio"
-                            class="radioMind"
-                            id="radioMindC"
-                            name="radioMind"
-                            value="N"
-                          />
-                          🕊️
-                        </label>
-                        <label class="btn btn-sm btn-outline-success">
-                          <input
-                            type="radio"
-                            class="radioMind"
-                            id="radioMindM"
-                            name="radioMind"
-                            value="O"
-                          />
-                          🧘
-                        </label>
-                        <label class="btn btn-sm btn-outline-warning">
-                          <input
-                            type="radio"
-                            class="radioMind"
-                            id="radioMindA"
-                            name="radioMind"
-                            value="P"
-                          />
-                          🧿
-                        </label>
-                        <label class="btn btn-sm btn-outline-dark">
-                          <input
-                            type="radio"
-                            class="radioMind"
-                            id="radioMindP"
-                            name="radioMind"
-                            value="Q"
-                          />
-                          🎳
-                        </label>
-                        <label class="btn btn-sm btn-outline-danger">
-                          <input
-                            type="radio"
-                            class="radioMind"
-                            id="radioMindB"
-                            name="radioMind"
-                            value="R"
-                          />
-                          🔥
-                        </label>
+                          <i class="fa fa-random"></i> Reset Sheet
+                        </button>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div id="containerControls2" class="mt-2">
-              <div
-                class="text-center"
-                style="position: absolute; top: 220px; left: 0"
-              >
-                <span id="errorMessage" class="btn btn-sm text-primary small"
-                 >
-                  Clock<br>Darshan
-                </span>
-              </div>
-              <div
-                class="text-center"
-                style="position: absolute; top: 20px; left: 5px"
-              >
-                .
-              </div>
-            </div>
-            <!-- Settings collapse  begin -->
-            <div class="collapse" id="collapseControlsSettings">
-              <div class="card card-body">
-                <!-- Settings Begin -->
-                <div>
-                  <div class="form-group">
-                    <button
-                      id="btnPopup"
-                      type="button"
-                      class="btn btn-outline-success"
-                    >
-                      <i class="fa fa-window-restore"></i>
-                    </button>
+                      <div class="form-group">
+                        <!-- collapse Music Controls begin -->
+                        <div class="collapse" id="collapseControlsMusic">
+                          <div class="card card-body">
+                            <div class="text-center form-group">
+                              <button
+                                id="btnPlayMeditationnAudio"
+                                type="button"
+                                class="btn btn-success"
+                              >
+                                <i class="fa fa-play"></i>
+                                Play
+                              </button>
+                              <button
+                                id="btnPauseMeditationAudio"
+                                type="button"
+                                class="btn btn-warning"
+                              >
+                                <i class="fa fa-pause"></i>
+                                Pause
+                              </button>
 
-                    <button
-                      type="button"
-                      class="btn btn-outline-primary"
-                      id="btnBatteryLoader"
-                    >
-                      <i class="fa fa-battery-3"></i>
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-outline-success"
-                      id="btnWaveLoader"
-                    >
-                      <i class="fa fa-random"></i>
-                    </button>
-                    <a
-                      class="btn btn-outline-primary px-3"
-                      data-toggle="collapse"
-                      href="#collapseControlsMusic"
-                      role="button"
-                      aria-expanded="false"
-                      aria-controls="collapseExample"
-                    >
-                      <i class="fa fa-music"></i>
-                    </a>
-                    <button
-                      type="button"
-                      class="btn btn-outline-success"
-                      id="btnPlayVideo"
-                    >
-                      <i class="fa fa-video-camera"></i>
-                    </button>
-                  </div>
-                  <!--      <div class="form-group">
-                    <button
-                      id="btnTracker"
-                      type="button"
-                      class="btn btn-outline-info btn-lg pl-3"
-                    >
-                      <i class="fa fa-paper-plane"></i>
-                    </button>
-                  </div>-->
-                  <div class="form-group">
-                    <button
-                      id="btnResetSheetk"
-                      type="button"
-                      class="btn btn-outline-warning btn-lg text-danger shrinkbtn"
-                    >
-                      <i class="fa fa-random"></i> Reset Sheet
-                    </button>
-                  </div>
-
-                  <div class="form-group">
-                    <!-- collapse Music Controls begin -->
-                    <div class="collapse" id="collapseControlsMusic">
-                      <div class="card card-body">
-                        <div class="text-center form-group">
-                          <button
-                            id="btnPlayMeditationnAudio"
-                            type="button"
-                            class="btn btn-success"
-                          >
-                            <i class="fa fa-play"></i>
-                            Play
-                          </button>
-                          <button
-                            id="btnPauseMeditationAudio"
-                            type="button"
-                            class="btn btn-warning"
-                          >
-                            <i class="fa fa-pause"></i>
-                            Pause
-                          </button>
-
-                          <div
-                            class="custom-control pl-5 custom-radio custom-control-inline"
-                          >
-                            <input
-                              type="radio"
-                              checked
-                              id="radioMeditationMusic18"
-                              name="radioMeditationMusic"
-                              class="custom-control-input"
-                              value="media/SaReGaMa18Sec.mp3"
-                            />
-                            <label
-                              class="custom-control-label"
-                              for="radioMeditationMusic18"
-                            >
-                              <i class="fa fa-music"></i> 18 Sec
-                            </label>
-                          </div>
-                          <div
-                            class="custom-control custom-radio custom-control-inline"
-                          >
-                            <input
-                              type="radio"
-                              id="radioMeditationMusic20"
-                              name="radioMeditationMusic"
-                              class="custom-control-input"
-                              value="media/SaReGaMa20Sec.mp3"
-                            />
-                            <label
-                              class="custom-control-label"
-                              for="radioMeditationMusic20"
-                              ><i class="fa fa-music"></i> 20 Sec</label
-                            >
+                              <div
+                                class="custom-control pl-5 custom-radio custom-control-inline"
+                              >
+                                <input
+                                  type="radio"
+                                  checked
+                                  id="radioMeditationMusic18"
+                                  name="radioMeditationMusic"
+                                  class="custom-control-input"
+                                  value="media/SaReGaMa18Sec.mp3"
+                                />
+                                <label
+                                  class="custom-control-label"
+                                  for="radioMeditationMusic18"
+                                >
+                                  <i class="fa fa-music"></i> 18 Sec
+                                </label>
+                              </div>
+                              <div
+                                class="custom-control custom-radio custom-control-inline"
+                              >
+                                <input
+                                  type="radio"
+                                  id="radioMeditationMusic20"
+                                  name="radioMeditationMusic"
+                                  class="custom-control-input"
+                                  value="media/SaReGaMa20Sec.mp3"
+                                />
+                                <label
+                                  class="custom-control-label"
+                                  for="radioMeditationMusic20"
+                                  ><i class="fa fa-music"></i> 20 Sec</label
+                                >
+                              </div>
+                            </div>
+                            <div class="form-group"></div>
+                            <div class="form-group text-center">
+                              <audio
+                                id="audioMeditation"
+                                class="form-control"
+                                controls
+                                loop
+                                style="width: 100%"
+                              >
+                                <source
+                                  src="media/SaReGaMa18Sec.mp3"
+                                  type="audio/mp3"
+                                />
+                                Your browser does not support the audio element.
+                              </audio>
+                            </div>
+                            <div class="form-group">
+                              <label for="rangeMeditationMusicVolume">
+                                <i class="fa fa-volume-up"></i> Meditation Music
+                                Volume:
+                                <span
+                                  id="rangeMeditationMusicVolumeLabel"
+                                  class="badge badge-light"
+                                ></span>
+                              </label>
+                              <input
+                                class="form-control"
+                                id="rangeMeditationMusicVolume"
+                                width="80%"
+                                type="range"
+                                min="0"
+                                max="1"
+                                step="0.01"
+                                value="0.8"
+                              />
+                            </div>
                           </div>
                         </div>
-                        <div class="form-group"></div>
-                        <div class="form-group text-center">
-                          <audio
-                            id="audioMeditation"
-                            class="form-control"
-                            controls
-                            loop
-                            style="width: 100%"
-                          >
-                            <source
-                              src="media/SaReGaMa18Sec.mp3"
-                              type="audio/mp3"
-                            />
-                            Your browser does not support the audio element.
-                          </audio>
-                        </div>
-                        <div class="form-group">
-                          <label for="rangeMeditationMusicVolume">
-                            <i class="fa fa-volume-up"></i> Meditation Music
-                            Volume:
-                            <span
-                              id="rangeMeditationMusicVolumeLabel"
-                              class="badge badge-light"
-                            ></span>
-                          </label>
-                          <input
-                            class="form-control"
-                            id="rangeMeditationMusicVolume"
-                            width="80%"
-                            type="range"
-                            min="0"
-                            max="1"
-                            step="0.01"
-                            value="0.8"
-                          />
-                        </div>
+                        <!-- collapse Music Controls end -->
                       </div>
                     </div>
-                    <!-- collapse Music Controls end -->
+                    <!-- Settings End -->
                   </div>
                 </div>
-                <!-- Settings End -->
-              </div>
-            </div>
-            <!--  Settings collapse  end -->
+                <!--  Settings collapse  end -->
 
-            <!-- Stats  begin -->
-            <div class="desktopMini">
-              <div id="containerStatsSheet" class="text-center">
-                <iframe
-                  id="frameStatsSheet"
-                  height="240"
-                  width="100%"
-                  frameborder="0"
-                  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1210536617&amp;single=true&amp;widget=true&amp;headers=false"
-                ></iframe>
+                <!-- Stats  begin -->
+                <div class="desktopMini">
+                       <!--  Progress-Start -->
+                <div class="alert alert-success text-center" id="success-alert">
+                  <span id="alertMessage" class="text-primary"> </span>
+                </div>
+                <div
+                  class="alert alert-warning text-center"
+                  style="display: none"
+                  id="progress-loading"
+                >
+                  <h3>
+                    <!--  <i class="fa fa-spinner fa-spin text-primary"></i> -->
+                    <span
+                      class="spinner-border text-primary"
+                      id="spinner"
+                      role="status"
+                    ></span>
+                  </h3>
+                </div>
+
+                <!--  Progress-End -->
+                  <div id="containerStatsSheet" class="text-center">
+                    <iframe
+                      id="frameStatsSheet"
+                      height="240"
+                      width="100%"
+                      frameborder="0"
+                      src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1210536617&amp;single=true&amp;widget=true&amp;headers=false"
+                    ></iframe>
+                  </div>
+                </div>
+                <!-- Stats end -->
               </div>
             </div>
-            <!-- Stats end -->
           </div>
         </div>
         <!-- Left  container end -->
@@ -835,7 +857,7 @@
               $("#selectTrackerTime").append(
                 $("<option class='text-primary bg-white'></option>")
                   .attr("value", h + "-" + m)
-                  .text(  (h % 12).toString().padStart(2, '0') + "-" + m + "")
+                  .text((h % 12).toString().padStart(2, "0") + "-" + m + "")
                 //.text((h % 12) + (h > 12 ? "pm" : "am") + " : " + m + " Q")
               );
             }
@@ -868,8 +890,6 @@
         function btnCounterReset() {
           $("#btnCounter").html(0);
         }
-
-
 
         function tryChunkClick() {
           let now = new Date();
@@ -1022,29 +1042,28 @@
           let hours = now.getHours();
           let minutes = now.getMinutes();
 
-          let queryString ="";
-         
+          let queryString = "";
 
-          if(update)
-          {
+          if (update) {
             queryString =
-            "?hour=" +
-            selectedPeriod[0] +
-            "&quarter=" +
-            selectedPeriod[1] +
-            "&work=" +
-            paramWork +
-            "&energy=" +
-            paramEnergy +
-            "&mind=" +
-            paramMind+
-            "&sleep=" + paramSleep+
-             "&callback=?";
+              "?hour=" +
+              selectedPeriod[0] +
+              "&quarter=" +
+              selectedPeriod[1] +
+              "&work=" +
+              paramWork +
+              "&energy=" +
+              paramEnergy +
+              "&mind=" +
+              paramMind +
+              "&sleep=" +
+              paramSleep +
+              "&callback=?";
           }
-   
+
           console.log("queryString", queryString);
 
-          let googleurl = apiurl + queryString ;
+          let googleurl = apiurl + queryString;
 
           $.ajax({
             crossOrigin: true,
