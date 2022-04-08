@@ -56,8 +56,42 @@
         </div>
       </div>
     </div>
-    <div class="fixed-bottom" 
-    style="padding-left: 10px;">
+    <div style="position: absolute; top: 20px; z-index: 999">
+      <div class="btn-group">
+      
+
+        <select
+          class="text-white bg-danger border rounded-pill px-1 mb-2"
+          style="font-size: 1.5em"
+          id="selectTrackerTime"
+        ></select>
+        <button
+          class="btn btn-sm border-0 mb-2"
+          type="button"
+          id="plusQuarter"
+          type="button"
+        >
+          <i class="fa fa-arrow-up text-secondary"></i>
+        </button>
+        <button
+        class="btn btn-sm border-0"
+        type="button"
+        id="minusQuarter"
+        type="button"
+      >
+        <i class="fa fa-arrow-down text-secondary mb-2"></i>
+      </button>
+      </div>
+    </div>
+    <div
+      class="text-center"
+      style="position: absolute; top: 55px; left: -5px; z-index: 999"
+    >
+      <span id="errorMessage" class="btn btn-sm text-primary small">
+        Clock<br />Darshan
+      </span>
+    </div>
+    <div class="fixed-bottom" style="padding-left: 10px">
       <video
         id="videoDummy"
         controls
@@ -68,31 +102,16 @@
         <source src="media/video_dummy.mp4" type="video/mp4" />
       </video>
     </div>
-    <div
-    class="text-center"
-    style="position: absolute; top: 20px; left: -5px; z-index: 999;"
-   
-  >
-    <span
-      id="errorMessage"
-      class="btn btn-sm text-primary small"
-    >
-      Clock<br />Darshan
-    </span>
-  </div>
-   
 
-
-     <!-- Stickey and Floating - End-->
+    <!-- Stickey and Floating - End-->
     <div class="container-fluid screen-border">
-
       <div class="row">
         <!-- Left  container-->
         <div class="col-lg-4">
           <div class="text-center">
             <div class="row">
               <div class="col">
-                <div id="clockContainer" >
+                <div id="clockContainer">
                   <div id="clock-container" class="float-right">
                     <svg id="clock" viewBox="0 0 100 100">
                       <defs>
@@ -180,39 +199,13 @@
             </div>
             <div class="row">
               <div class="col">
-           
-
                 <div id="containerRadios">
                   <div id="containerMind2">
                     <div class="row">
                       <div class="col-5">
                         <div class="row">
-                          <div class="btn-group">
-                            <button
-                              class="btn btn-sm border-0"
-                              type="button"
-                              id="minusQuarter"
-                              type="button"
-                            >
-                              <i
-                                class="fa fa-arrow-left text-secondary mr-2"
-                              ></i>
-                            </button>
-
-                            <select
-                              class="text-white bg-danger border rounded-pill px-1 mb-2"
-                              style="font-size: 1.5em"
-                              id="selectTrackerTime"
-                            ></select>
-                            <button
-                              class="btn btn-sm border-0 ml-2"
-                              type="button"
-                              id="plusQuarter"
-                              type="button"
-                            >
-                              <i class="fa fa-arrow-right text-secondary"></i>
-                            </button>
-                          </div>
+                          
+                           <!--Space Available: top of Button tow -->
                         </div>
                         <div class="row">
                           <div class="btn-group">
@@ -452,7 +445,6 @@
                   </div>
                 </div>
 
-
                 <!-- Settings collapse  begin -->
                 <div class="collapse" id="collapseControlsSettings">
                   <div class="card card-body">
@@ -623,26 +615,30 @@
 
                 <!-- Stats  begin -->
                 <div class="desktopMini">
-                       <!--  Progress-Start -->
-                <div class="alert alert-success text-center" id="success-alert">
-                  <span id="alertMessage" class="text-primary"> </span>
-                </div>
-                <div
-                  class="alert alert-warning text-center"
-                  style="display: none"
-                  id="progress-loading"
-                >
-                  <h3>
-                    <!--  <i class="fa fa-spinner fa-spin text-primary"></i> -->
-                    <span
-                      class="spinner-border text-primary"
-                      id="spinner"
-                      role="status"
-                    ></span> <span class="text-success">Deep Breath</span>
-                  </h3>
-                </div>
+                  <!--  Progress-Start -->
+                  <div
+                    class="alert alert-success text-center"
+                    id="success-alert"
+                  >
+                    <span id="alertMessage" class="text-primary"> </span>
+                  </div>
+                  <div
+                    class="alert alert-warning text-center"
+                    style="display: none"
+                    id="progress-loading"
+                  >
+                    <h3>
+                      <!--  <i class="fa fa-spinner fa-spin text-primary"></i> -->
+                      <span
+                        class="spinner-border text-primary"
+                        id="spinner"
+                        role="status"
+                      ></span>
+                      <span class="text-success">Deep Breath</span>
+                    </h3>
+                  </div>
 
-                <!--  Progress-End -->
+                  <!--  Progress-End -->
                   <div id="containerStatsSheet" class="text-center">
                     <iframe
                       id="frameStatsSheet"
@@ -1073,7 +1069,7 @@
             dataType: "jsonp",
             success: function (data, textStatus, xhr) {
               console.log(data);
-             // showAlert("Deep Breath");
+              // showAlert("Deep Breath");
               //showAlert("<p>" + data + "</p>");
               $("#errorMessage").html(data);
               // reloadStatusSheet();
@@ -1193,14 +1189,12 @@
         }
 
         function showAlert(text) {
-
           $("#alertMessage").html(text);
           $("#success-alert")
             .fadeTo(2000, 1500)
             .slideUp(15000, function () {
               $("#success-alert").slideUp(15000);
             });
-
         }
 
         function loadBatteryFrame() {
@@ -1218,11 +1212,9 @@
           if ($("#containerWave").is(":visible")) {
             $("#frameWave").attr("src", "");
             $("#containerWave").hide(500);
-            
           } else {
             $("#frameWave").attr("src", "component/wave.html");
             $("#containerWave").show(500);
-           
           }
           playVideo();
         }
