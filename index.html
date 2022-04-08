@@ -58,11 +58,10 @@
     </div>
     <div style="position: absolute; top: 18px; z-index: 999">
       <select
-      class="text-white bg-danger border form-control"
-      style="font-size: 1.3em"
-      id="selectTrackerTime"
-    ></select>
-    
+        class="text-white bg-danger border form-control"
+        style="font-size: 1.3em"
+        id="selectTrackerTime"
+      ></select>
     </div>
     <div
       class="text-center"
@@ -184,37 +183,35 @@
                   <div id="containerMind2">
                     <div class="row">
                       <div class="col-5">
-                        <div class="row  d-flex justify-content-center">
+                        <div class="row d-flex justify-content-center">
                           <div class="btn-group">
-
- 
                             <button
-                              class="btn btn-sm btn-outline-info "
+                              class="btn btn-sm btn-outline-info"
                               type="button"
                               id="minusQuarter"
                               type="button"
                             >
-                              <i class="fa fa-arrow-down     fa-2x "></i>
+                              <i class="fa fa-arrow-down fa-2x"></i>
                             </button>
                             <button
-                            id="btnRefresh"
-                            type="button"
-                            class="btn btn-outline-info  shrinkbtn"
-                          >
-                            <i class="fa fa-refresh fa-2x"></i>
-                          </button>
+                              id="btnRefresh"
+                              type="button"
+                              class="btn btn-outline-info shrinkbtn"
+                            >
+                              <i class="fa fa-refresh fa-2x"></i>
+                            </button>
                             <button
-                            class="btn btn-sm  btn-outline-info"
-                            type="button"
-                            id="plusQuarter"
-                            type="button"
-                          >
-                            <i class="fa fa-arrow-up  fa-2x"></i>
-                          </button>
+                              class="btn btn-sm btn-outline-info"
+                              type="button"
+                              id="plusQuarter"
+                              type="button"
+                            >
+                              <i class="fa fa-arrow-up fa-2x"></i>
+                            </button>
                           </div>
                         </div>
-                        <div class="row   d-flex justify-content-center">
-                          <div class="btn-group" >
+                        <div class="row d-flex justify-content-center">
+                          <div class="btn-group">
                             <!--
                           <button
                             id="btnCounter"
@@ -223,7 +220,6 @@
                           >
                             0
                           </button>-->
-                         
 
                             <!--
                           <button
@@ -634,7 +630,9 @@
                         id="spinner"
                         role="status"
                       ></span>
-                      <span class="text-success font-weight-light">Deep Breath</span>
+                      <span class="text-success font-weight-light"
+                        >Deep Breath</span
+                      >
                     </h3>
                   </div>
 
@@ -645,7 +643,7 @@
                       height="240"
                       width="100%"
                       frameborder="0"
-                      src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1210536617&amp;single=true&amp;widget=true&amp;headers=false&&range=A1:O30"
+                      src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1210536617&amp;single=true&amp;widget=true&amp;headers=false&range=A1:O30&start=true&loop=true&delayms=5000"
                     ></iframe>
                   </div>
                 </div>
@@ -973,14 +971,14 @@
             $("#containerTrackerSheet").show(500);
             $("#containerTrackerSheetscroll").scrollTop(100);
 
-           // $("#frameStatsSheet").attr("src", "");
+            // $("#frameStatsSheet").attr("src", "");
             $("#containerStatsSheet").hide(500);
           }
         }
 
         function toggleStatsSheetFrame() {
           if ($("#containerStatsSheet").is(":visible")) {
-          //  $("#frameStatsSheet").attr("src", "");
+            //  $("#frameStatsSheet").attr("src", "");
             $("#containerStatsSheet").hide(500);
           } else {
             reloadStatusSheet();
@@ -991,7 +989,7 @@
           if ($("#containerWave").is(":visible")) {
             //nothing
           } else {
-           // $("#frameStatsSheet").attr("src", _StatsSheetUrl);
+            // $("#frameStatsSheet").attr("src", _StatsSheetUrl);
             $("#containerStatsSheet").show(500);
           }
 
@@ -1234,18 +1232,16 @@
             $("#containerWave").hide(500);
             //$("#frameStatsSheet").attr("src", _StatsSheetUrl);
             $("#containerStatsSheet").show(500);
-        
           } else {
             $("#frameWave").attr("src", "component/wave.html");
             $("#containerWave").show(500);
 
-           // $("#frameStatsSheet").attr("src", "");
+            // $("#frameStatsSheet").attr("src", "");
             $("#containerStatsSheet").hide(500);
           }
 
           playVideo();
           $("#collapseControlsSettings").collapse("toggle");
-   
         }
 
         function musicSelected(value) {
