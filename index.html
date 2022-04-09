@@ -182,9 +182,17 @@
                 <div id="containerRadios">
                   <div id="containerMind2">
                     <div class="row">
-                      <div class="col-5">
+                      <div class="col-3">
                         <div class="row d-flex justify-content-center">
                           <div class="btn-group">
+                            <a
+                              class="btn btn-outline-secondary active shrinkbtn"
+                              target="_blank"
+                              href="https://script.google.com/macros/s/AKfycby45MlbIOt0UYUqS4llQFW_CrMvvT-2n-aK-Ynbouk/dev"
+                              role="button"
+                            >
+                              <i class="fa fa-podcast fa-2x"></i>
+                            </a>
                             <button
                               class="btn btn-sm btn-outline-info"
                               type="button"
@@ -193,26 +201,18 @@
                             >
                               <i class="fa fa-arrow-down fa-2x"></i>
                             </button>
-                            <button
+                          </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                          <div class="btn-group">
+                            <!--
+                              <button
                               id="btnRefresh"
                               type="button"
                               class="btn btn-outline-info shrinkbtn"
                             >
                               <i class="fa fa-refresh fa-2x"></i>
                             </button>
-                            <button
-                              class="btn btn-sm btn-outline-info"
-                              type="button"
-                              id="plusQuarter"
-                              type="button"
-                            >
-                              <i class="fa fa-arrow-up fa-2x"></i>
-                            </button>
-                          </div>
-                        </div>
-                        <div class="row d-flex justify-content-center">
-                          <div class="btn-group">
-                            <!--
                           <button
                             id="btnCounter"
                             type="button"
@@ -249,19 +249,18 @@
                             >
                               <i id="btnGear" class="fa fa-gear fa-2x"></i>
                             </a>
-
-                            <a
-                              class="btn btn-outline-info active shrinkbtn"
-                              target="_blank"
-                              href="https://script.google.com/macros/s/AKfycby45MlbIOt0UYUqS4llQFW_CrMvvT-2n-aK-Ynbouk/dev"
-                              role="button"
+                            <button
+                              class="btn btn-sm btn-outline-info"
+                              type="button"
+                              id="plusQuarter"
+                              type="button"
                             >
-                              <i class="fa fa-podcast fa-2x"></i>
-                            </a>
+                              <i class="fa fa-arrow-up"></i>
+                            </button>
                           </div>
                         </div>
                       </div>
-                      <div class="col-7">
+                      <div class="col-9">
                         <div class="row">
                           <div
                             class="btn-group btn-group-toggle float-left"
@@ -269,10 +268,10 @@
                           >
                             <label
                               id="labelWork"
-                              class="btn btn-sm bg-primary border rounded"
+                              class="btn bg-primary border rounded d-none"
                               >👪</label
                             >
-                            <label class="btn btn-sm btn-outline-info">
+                            <label class="btn btn-outline-info border-0">
                               <input
                                 type="radio"
                                 class="radioWork"
@@ -282,7 +281,7 @@
                               />
                               🪔
                             </label>
-                            <label class="btn btn-sm btn-outline-primary">
+                            <label class="btn btn-outline-primary border-0">
                               <input
                                 type="radio"
                                 class="radioWork"
@@ -292,7 +291,7 @@
                               />
                               💎
                             </label>
-                            <label class="btn btn-sm btn-outline-success">
+                            <label class="btn btn-outline-success border-0">
                               <input
                                 type="radio"
                                 class="radioWork"
@@ -302,7 +301,7 @@
                               />
                               🌿
                             </label>
-                            <label class="btn btn-sm btn-outline-warning">
+                            <label class="btn btn-outline-warning border-0">
                               <input
                                 type="radio"
                                 class="radioWork"
@@ -312,7 +311,7 @@
                               />
                               👪
                             </label>
-                            <label class="btn btn-sm btn-outline-danger">
+                            <label class="btn btn-outline-danger border-0">
                               <input
                                 type="radio"
                                 class="radioWork"
@@ -331,10 +330,10 @@
                           >
                             <label
                               id="labelEnergy"
-                              class="btn btn-sm bg-primary border rounded"
+                              class="btn bg-primary border rounded d-none"
                               >🥥</label
                             >
-                            <label class="btn btn-sm btn-outline-success">
+                            <label class="btn btn-outline-success border-0">
                               <input
                                 type="radio"
                                 class="radioEnergy"
@@ -344,7 +343,7 @@
                               />
                               🔋
                             </label>
-                            <label class="btn btn-sm btn-outline-warning">
+                            <label class="btn btn-outline-warning border-0">
                               <input
                                 type="radio"
                                 class="radioEnergy"
@@ -354,7 +353,7 @@
                               />
                               🥥
                             </label>
-                            <label class="btn btn-sm btn-outline-danger">
+                            <label class="btn btn-outline-danger border-0">
                               <input
                                 type="radio"
                                 class="radioEnergy"
@@ -381,10 +380,10 @@
                           >
                             <label
                               id="labelMind"
-                              class="btn btn-sm bg-primary border rounded"
+                              class="btn bg-primary border rounded border-0 d-none"
                               >🧿</label
                             >
-                            <label class="btn btn-sm btn-outline-info">
+                            <label class="btn btn-sm btn-outline-info border-0">
                               <input
                                 type="radio"
                                 class="radioMind"
@@ -394,7 +393,7 @@
                               />
                               🕊️
                             </label>
-                            <label class="btn btn-sm btn-outline-success">
+                            <label class="btn btn-outline-success border-0">
                               <input
                                 type="radio"
                                 class="radioMind"
@@ -404,7 +403,7 @@
                               />
                               🧘
                             </label>
-                            <label class="btn btn-sm btn-outline-warning">
+                            <label class="btn btn-outline-warning border-0">
                               <input
                                 type="radio"
                                 class="radioMind"
@@ -414,7 +413,7 @@
                               />
                               🧿
                             </label>
-                            <label class="btn btn-sm btn-outline-dark">
+                            <label class="btn btn-outline-dark border-0">
                               <input
                                 type="radio"
                                 class="radioMind"
@@ -424,7 +423,9 @@
                               />
                               🎳
                             </label>
-                            <label class="btn btn-sm btn-outline-danger">
+                            <label
+                              class="btn btn-sm btn-outline-danger border-0"
+                            >
                               <input
                                 type="radio"
                                 class="radioMind"
@@ -1223,7 +1224,6 @@
             $("#containerBattery").show(500);
           }
           playVideo();
-          $("#collapseControlsSettings").collapse("toggle");
         }
 
         function loadWaveFrame() {
@@ -1241,7 +1241,6 @@
           }
 
           playVideo();
-          $("#collapseControlsSettings").collapse("toggle");
         }
 
         function musicSelected(value) {
@@ -1277,6 +1276,8 @@
             $("#errorMessage").html("Video playing failed! " + err);
             console.log("Video playing failed! ", err);
           }
+
+          $("#collapseControlsSettings").collapse("toggle");
         }
 
         function pauseVideo() {
