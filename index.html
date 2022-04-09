@@ -56,6 +56,16 @@
         </div>
       </div>
     </div>
+    <div style="position: absolute; right: 10px; top: 18px; z-index: 999">
+      <input
+        type="checkbox"
+        class="btn-check checkEdit mt-2 ml-2"
+        id="checkEdit"
+        autocomplete="off"
+        name="checkEdit"
+        value="T"
+      />
+    </div>
     <div style="position: absolute; top: 18px; z-index: 999">
       <select
         class="text-white bg-primary border rounded-pill form-control"
@@ -392,14 +402,16 @@
                           </label>
                         </div>
                         <div class="ml-5">
-                          <input
-                            type="checkbox"
-                            class="btn-check checkSleep mt-2 ml-2"
-                            id="checkSleep"
-                            autocomplete="off"
-                            name="checkSleep"
-                            value="S"
-                          />
+                          <label for="checkSleep">
+                            <input
+                              type="checkbox"
+                              class="btn-check checkSleep mt-2 ml-2"
+                              id="checkSleep"
+                              autocomplete="off"
+                              name="checkSleep"
+                              value="S"
+                            />
+                          </label>
                         </div>
                       </div>
                       <div class="row">
