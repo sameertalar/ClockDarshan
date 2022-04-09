@@ -58,7 +58,7 @@
     </div>
     <div style="position: absolute; top: 18px; z-index: 999">
       <select
-        class="text-white bg-danger border form-control"
+        class="text-white bg-primary border rounded-pill form-control"
         style="font-size: 1.3em"
         id="selectTrackerTime"
       ></select>
@@ -92,7 +92,10 @@
             <div class="row">
               <div class="col">
                 <div id="clockContainer">
-                  <div id="clock-container" class="float-right">
+                  <div
+                    id="clock-container"
+                    class="float-right border border-white rounded"
+                  >
                     <svg id="clock" viewBox="0 0 100 100">
                       <defs>
                         <linearGradient id="Gradient1">
@@ -180,32 +183,31 @@
             <div class="row">
               <div class="col">
                 <div id="containerRadios">
-                  <div id="containerMind2">
-                    <div class="row">
-                      <div class="col-4">
-                        <div class="row d-flex justify-content-center">
-                          <div class="btn-group">
-                            <a
-                              class="btn btn-outline-secondary active shrinkbtn"
-                              target="_blank"
-                              href="https://script.google.com/macros/s/AKfycby45MlbIOt0UYUqS4llQFW_CrMvvT-2n-aK-Ynbouk/dev"
-                              role="button"
-                            >
-                              <i class="fa fa-podcast fa-2x"></i>
-                            </a>
-                            <button
-                              class="btn btn-sm btn-outline-info"
-                              type="button"
-                              id="minusQuarter"
-                              type="button"
-                            >
-                              <i class="fa fa-arrow-down fa-2x"></i>
-                            </button>
-                          </div>
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="row d-flex justify-content-center">
+                        <div class="btn-group">
+                          <a
+                            class="btn btn-outline-secondary active shrinkbtn"
+                            target="_blank"
+                            href="https://script.google.com/macros/s/AKfycby45MlbIOt0UYUqS4llQFW_CrMvvT-2n-aK-Ynbouk/dev"
+                            role="button"
+                          >
+                            <i class="fa fa-podcast fa-2x"></i>
+                          </a>
+                          <button
+                            class="btn btn-sm btn-outline-info"
+                            type="button"
+                            id="minusQuarter"
+                            type="button"
+                          >
+                            <i class="fa fa-arrow-down fa-2x"></i>
+                          </button>
                         </div>
-                        <div class="row d-flex justify-content-center">
-                          <div class="btn-group">
-                            <!--
+                      </div>
+                      <div class="row d-flex justify-content-center">
+                        <div class="btn-group">
+                          <!--
                               <button
                               id="btnRefresh"
                               type="button"
@@ -221,7 +223,7 @@
                             0
                           </button>-->
 
-                            <!--
+                          <!--
                           <button
                             id="btnTrackerSheetLoader"
                             type="button"
@@ -230,7 +232,7 @@
                             <i class="fa fa-bar-chart"></i>
                           </button>
                           -->
-                            <!--   <button
+                          <!--   <button
                             class="btn"
                             type="button"
                             id="refreshQuarter"
@@ -239,203 +241,202 @@
                             <i class="fa fa-refresh text-info"></i>
                           </button> -->
 
-                            <a
-                              class="btn btn-info active shrinkbtn px-4"
-                              data-toggle="collapse"
-                              href="#collapseControlsSettings"
-                              role="button"
-                              aria-expanded="false"
-                              aria-controls="collapseExample"
-                            >
-                              <i id="btnGear" class="fa fa-gear fa-2x"></i>
-                            </a>
-                            <button
-                              class="btn btn-sm btn-outline-info"
-                              type="button"
-                              id="plusQuarter"
-                              type="button"
-                            >
-                              <i class="fa fa-arrow-up"></i>
-                            </button>
-                          </div>
+                          <a
+                            class="btn btn-info active shrinkbtn px-4"
+                            data-toggle="collapse"
+                            href="#collapseControlsSettings"
+                            role="button"
+                            aria-expanded="false"
+                            aria-controls="collapseExample"
+                          >
+                            <i id="btnGear" class="fa fa-gear fa-2x"></i>
+                          </a>
+                          <button
+                            class="btn btn-sm btn-outline-info"
+                            type="button"
+                            id="plusQuarter"
+                            type="button"
+                          >
+                            <i class="fa fa-arrow-up"></i>
+                          </button>
                         </div>
                       </div>
-                      <div class="col-8">
-                        <label
-                          id="labelWork"
-                          class="btn bg-primary border rounded d-none"
-                          >👪</label
+                    </div>
+                    <div class="col-8">
+                      <label
+                        id="labelWork"
+                        class="btn bg-primary border rounded d-none"
+                        >👪</label
+                      >
+                      <div class="row">
+                        <div
+                          class="btn-group btn-group-toggle float-left border rounded-pill"
+                          data-toggle="buttons"
                         >
-                        <div class="row">
-                          <div
-                            class="btn-group btn-group-toggle float-left"
-                            data-toggle="buttons"
-                          >
-                            <label class="btn btn-outline-info border-0">
-                              <input
-                                type="radio"
-                                class="radioWork"
-                                id="radioWorkS"
-                                name="radioWork"
-                                value="C"
-                              />
-                              🪔
-                            </label>
-                            <label class="btn btn-outline-primary border-0">
-                              <input
-                                type="radio"
-                                class="radioWork"
-                                id="radioWorkV"
-                                name="radioWork"
-                                value="D"
-                              />
-                              💎
-                            </label>
-                            <label class="btn btn-outline-success border-0">
-                              <input
-                                type="radio"
-                                class="radioWork"
-                                id="radioWorkH"
-                                name="radioWork"
-                                value="E"
-                              />
-                              🌿
-                            </label>
-                            <label class="btn btn-outline-warning border-0">
-                              <input
-                                type="radio"
-                                class="radioWork"
-                                id="radioWorkD"
-                                name="radioWork"
-                                value="F"
-                              />
-                              👪
-                            </label>
-                            <label class="btn btn-outline-danger border-0">
-                              <input
-                                type="radio"
-                                class="radioWork"
-                                id="radioWorkN"
-                                name="radioWork"
-                                value="G"
-                              />
-                              🍂
-                            </label>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <label
-                            id="labelEnergy"
-                            class="btn bg-primary border rounded d-none"
-                            >🥥</label
-                          >
-                          <div
-                            class="btn-group btn-group-toggle float-left"
-                            data-toggle="buttons"
-                          >
-                            <label class="btn btn-outline-success border-0">
-                              <input
-                                type="radio"
-                                class="radioEnergy"
-                                id="radioEnergyH"
-                                name="radioEnergy"
-                                value="I"
-                              />
-                              🔋
-                            </label>
-                            <label class="btn btn-outline-warning border-0">
-                              <input
-                                type="radio"
-                                class="radioEnergy"
-                                id="radioEnergyM"
-                                name="radioEnergy"
-                                value="J"
-                              />
-                              🥥
-                            </label>
-                            <label class="btn btn-outline-danger border-0">
-                              <input
-                                type="radio"
-                                class="radioEnergy"
-                                id="radioEnergyL"
-                                name="radioEnergy"
-                                value="K"
-                              />
-                              ⚪
-                            </label>
-                          </div>
-                          <div class="ml-5">
+                          <label class="btn btn-outline-info border-0">
                             <input
-                              type="checkbox"
-                              class="btn-check checkSleep mt-2 ml-3"
-                              id="checkSleep"
-                              autocomplete="off"
-                              name="checkSleep"
-                              value="S"
+                              type="radio"
+                              class="radioWork"
+                              id="radioWorkS"
+                              name="radioWork"
+                              value="C"
                             />
-                          </div>
+                            🪔
+                          </label>
+                          <label class="btn btn-outline-primary border-0">
+                            <input
+                              type="radio"
+                              class="radioWork"
+                              id="radioWorkV"
+                              name="radioWork"
+                              value="D"
+                            />
+                            💎
+                          </label>
+                          <label class="btn btn-outline-success border-0">
+                            <input
+                              type="radio"
+                              class="radioWork"
+                              id="radioWorkH"
+                              name="radioWork"
+                              value="E"
+                            />
+                            🌿
+                          </label>
+                          <label class="btn btn-outline-warning border-0">
+                            <input
+                              type="radio"
+                              class="radioWork"
+                              id="radioWorkD"
+                              name="radioWork"
+                              value="F"
+                            />
+                            👪
+                          </label>
+                          <label class="btn btn-outline-danger border-0">
+                            <input
+                              type="radio"
+                              class="radioWork"
+                              id="radioWorkN"
+                              name="radioWork"
+                              value="G"
+                            />
+                            🍂
+                          </label>
                         </div>
-                        <div class="row">
-                          <label
-                            id="labelMind"
-                            class="btn bg-primary border rounded border-0 d-none"
-                            >🧿</label
-                          >
-                          <div
-                            class="btn-group btn-group-toggle float-left"
-                            data-toggle="buttons"
-                          >
-                            <label class="btn btn-outline-info border-0">
-                              <input
-                                type="radio"
-                                class="radioMind"
-                                id="radioMindC"
-                                name="radioMind"
-                                value="N"
-                              />
-                              🕊️
-                            </label>
-                            <label class="btn btn-outline-success border-0">
-                              <input
-                                type="radio"
-                                class="radioMind"
-                                id="radioMindM"
-                                name="radioMind"
-                                value="O"
-                              />
-                              🧘
-                            </label>
-                            <label class="btn btn-outline-warning border-0">
-                              <input
-                                type="radio"
-                                class="radioMind"
-                                id="radioMindA"
-                                name="radioMind"
-                                value="P"
-                              />
-                              🧿
-                            </label>
-                            <label class="btn btn-outline-dark border-0">
-                              <input
-                                type="radio"
-                                class="radioMind"
-                                id="radioMindP"
-                                name="radioMind"
-                                value="Q"
-                              />
-                              🎳
-                            </label>
-                            <label class="btn btn-outline-danger border-0">
-                              <input
-                                type="radio"
-                                class="radioMind"
-                                id="radioMindB"
-                                name="radioMind"
-                                value="R"
-                              />
-                              🔥
-                            </label>
-                          </div>
+                      </div>
+                      <div class="row">
+                        <label
+                          id="labelEnergy"
+                          class="btn bg-primary border rounded d-none"
+                          >🥥</label
+                        >
+                        <div
+                          class="btn-group btn-group-toggle float-left border rounded-pill"
+                          data-toggle="buttons"
+                        >
+                          <label class="btn btn-outline-success border-0">
+                            <input
+                              type="radio"
+                              class="radioEnergy"
+                              id="radioEnergyH"
+                              name="radioEnergy"
+                              value="I"
+                            />
+                            🔋
+                          </label>
+                          <label class="btn btn-outline-warning border-0">
+                            <input
+                              type="radio"
+                              class="radioEnergy"
+                              id="radioEnergyM"
+                              name="radioEnergy"
+                              value="J"
+                            />
+                            🥥
+                          </label>
+                          <label class="btn btn-outline-danger border-0">
+                            <input
+                              type="radio"
+                              class="radioEnergy"
+                              id="radioEnergyL"
+                              name="radioEnergy"
+                              value="K"
+                            />
+                            ⚪
+                          </label>
+                        </div>
+                        <div class="ml-5">
+                          <input
+                            type="checkbox"
+                            class="btn-check checkSleep mt-2 ml-2"
+                            id="checkSleep"
+                            autocomplete="off"
+                            name="checkSleep"
+                            value="S"
+                          />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <label
+                          id="labelMind"
+                          class="btn bg-primary border rounded border-0 d-none"
+                          >🧿</label
+                        >
+                        <div
+                          class="btn-group btn-group-toggle float-left border rounded-pill"
+                          data-toggle="buttons"
+                        >
+                          <label class="btn btn-outline-info border-0">
+                            <input
+                              type="radio"
+                              class="radioMind"
+                              id="radioMindC"
+                              name="radioMind"
+                              value="N"
+                            />
+                            🕊️
+                          </label>
+                          <label class="btn btn-outline-success border-0">
+                            <input
+                              type="radio"
+                              class="radioMind"
+                              id="radioMindM"
+                              name="radioMind"
+                              value="O"
+                            />
+                            🧘
+                          </label>
+                          <label class="btn btn-outline-warning border-0">
+                            <input
+                              type="radio"
+                              class="radioMind"
+                              id="radioMindA"
+                              name="radioMind"
+                              value="P"
+                            />
+                            🧿
+                          </label>
+                          <label class="btn btn-outline-dark border-0">
+                            <input
+                              type="radio"
+                              class="radioMind"
+                              id="radioMindP"
+                              name="radioMind"
+                              value="Q"
+                            />
+                            🎳
+                          </label>
+                          <label class="btn btn-outline-danger border-0">
+                            <input
+                              type="radio"
+                              class="radioMind"
+                              id="radioMindB"
+                              name="radioMind"
+                              value="R"
+                            />
+                            🔥
+                          </label>
                         </div>
                       </div>
                     </div>
@@ -915,6 +916,15 @@
             showCurrentTime(hours, min, sec);
 
             showTimeElaspeProgress(min, sec);
+
+            if (
+              $("#trackerCurrentValue").html() !=
+              $("#selectTrackerTime option:selected").html()
+            ) {
+              $("#clock-container").addClass("bg-dark");
+            } else {
+              $("#clock-container").removeClass("bg-dark");
+            }
 
             if (min % 5 === 0 && sec === 1) {
               reloadStatusSheet();
