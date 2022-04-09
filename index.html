@@ -182,7 +182,7 @@
                 <div id="containerRadios">
                   <div id="containerMind2">
                     <div class="row">
-                      <div class="col-3">
+                      <div class="col-4">
                         <div class="row d-flex justify-content-center">
                           <div class="btn-group">
                             <a
@@ -260,17 +260,17 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-9">
+                      <div class="col-8">
+                        <label
+                          id="labelWork"
+                          class="btn bg-primary border rounded d-none"
+                          >👪</label
+                        >
                         <div class="row">
                           <div
                             class="btn-group btn-group-toggle float-left"
                             data-toggle="buttons"
                           >
-                            <label
-                              id="labelWork"
-                              class="btn bg-primary border rounded d-none"
-                              >👪</label
-                            >
                             <label class="btn btn-outline-info border-0">
                               <input
                                 type="radio"
@@ -324,15 +324,15 @@
                           </div>
                         </div>
                         <div class="row">
+                          <label
+                            id="labelEnergy"
+                            class="btn bg-primary border rounded d-none"
+                            >🥥</label
+                          >
                           <div
                             class="btn-group btn-group-toggle float-left"
                             data-toggle="buttons"
                           >
-                            <label
-                              id="labelEnergy"
-                              class="btn bg-primary border rounded d-none"
-                              >🥥</label
-                            >
                             <label class="btn btn-outline-success border-0">
                               <input
                                 type="radio"
@@ -374,16 +374,16 @@
                           />
                         </div>
                         <div class="row">
+                          <label
+                            id="labelMind"
+                            class="btn bg-primary border rounded border-0 d-none"
+                            >🧿</label
+                          >
                           <div
                             class="btn-group btn-group-toggle float-left"
                             data-toggle="buttons"
                           >
-                            <label
-                              id="labelMind"
-                              class="btn bg-primary border rounded border-0 d-none"
-                              >🧿</label
-                            >
-                            <label class="btn btn-sm btn-outline-info border-0">
+                            <label class="btn btn-outline-info border-0">
                               <input
                                 type="radio"
                                 class="radioMind"
@@ -423,9 +423,7 @@
                               />
                               🎳
                             </label>
-                            <label
-                              class="btn btn-sm btn-outline-danger border-0"
-                            >
+                            <label class="btn btn-outline-danger border-0">
                               <input
                                 type="radio"
                                 class="radioMind"
@@ -988,9 +986,10 @@
 
         function reloadStatusSheet() {
           if ($("#containerWave").is(":visible")) {
-            //nothing
+            $("#frameStatsSheet").attr("src", "");
+            $("#containerStatsSheet").hide(500);
           } else {
-            // $("#frameStatsSheet").attr("src", _StatsSheetUrl);
+            $("#frameStatsSheet").attr("src", _StatsSheetUrl);
             $("#containerStatsSheet").show(500);
           }
 
@@ -1032,6 +1031,7 @@
         }
 
         function btnErrorMessageClick() {
+          reloadStatusSheet();
           postToGoogle(false);
         }
 
