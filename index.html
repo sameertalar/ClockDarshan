@@ -77,6 +77,7 @@
         controls
         loop
         muted
+        class="mb-5"
         style="width: 36px; height: 50px; display: none"
       >
         <source src="media/video_dummy.mp4" type="video/mp4" />
@@ -94,7 +95,7 @@
                 <div id="clockContainer">
                   <div
                     id="clock-container"
-                    class="float-right border border-white rounded"
+                    class="float-right border border-white rounded bg-white"
                   >
                     <svg id="clock" viewBox="0 0 100 100">
                       <defs>
@@ -183,20 +184,44 @@
             <div class="row">
               <div class="col">
                 <div id="containerRadios">
+                  <!--  Progress-Start -->
+                  <div
+                    class="alert alert-success text-center"
+                    id="success-alert"
+                  >
+                    <span id="alertMessage" class="text-primary"> </span>
+                  </div>
+                  <div
+                    class="alert alert-warning text-center"
+                    style="display: none"
+                    id="progress-loading"
+                  >
+                    <h3>
+                      <!--  <i class="fa fa-spinner fa-spin text-primary"></i> -->
+                      <span
+                        class="spinner-border text-primary"
+                        id="spinner"
+                        role="status"
+                      ></span>
+                      <span class="text-success font-weight-light"
+                        >Deep Breath</span
+                      >
+                    </h3>
+                  </div>
+                  <!--  Progress-End -->
                   <div class="row">
                     <div class="col-4">
                       <div class="row d-flex justify-content-center">
                         <div class="btn-group">
-                          <a
-                            class="btn btn-outline-secondary active shrinkbtn"
-                            target="_blank"
-                            href="https://script.google.com/macros/s/AKfycby45MlbIOt0UYUqS4llQFW_CrMvvT-2n-aK-Ynbouk/dev"
-                            role="button"
-                          >
-                            <i class="fa fa-podcast fa-2x"></i>
-                          </a>
                           <button
-                            class="btn btn-sm btn-outline-info"
+                            type="button"
+                            class="btn btn-sm btn-info active"
+                            id="btnPlayVideo"
+                          >
+                            <i class="fa fa-video-camera fa-2x"></i>
+                          </button>
+                          <button
+                            class="btn btn-outline-info"
                             type="button"
                             id="minusQuarter"
                             type="button"
@@ -449,6 +474,21 @@
                     <!-- Settings Begin -->
                     <div>
                       <div class="form-group">
+                        <a
+                          class="btn btn-outline-info active shrinkbtn"
+                          target="_blank"
+                          href="https://script.google.com/macros/s/AKfycby45MlbIOt0UYUqS4llQFW_CrMvvT-2n-aK-Ynbouk/dev"
+                          role="button"
+                        >
+                          <i class="fa fa-podcast px-2"></i>
+                        </a>
+                        <button
+                          type="button"
+                          class="btn btn-outline-primary"
+                          id="btnWaveLoader"
+                        >
+                          <i class="fa fa-random"></i>
+                        </button>
                         <button
                           id="btnPopup"
                           type="button"
@@ -459,20 +499,14 @@
 
                         <button
                           type="button"
-                          class="btn btn-outline-primary"
+                          class="btn btn-outline-success"
                           id="btnBatteryLoader"
                         >
                           <i class="fa fa-battery-3"></i>
                         </button>
-                        <button
-                          type="button"
-                          class="btn btn-outline-success"
-                          id="btnWaveLoader"
-                        >
-                          <i class="fa fa-random"></i>
-                        </button>
+
                         <a
-                          class="btn btn-outline-primary px-3"
+                          class="btn btn-outline-success px-3"
                           data-toggle="collapse"
                           href="#collapseControlsMusic"
                           role="button"
@@ -481,13 +515,6 @@
                         >
                           <i class="fa fa-music"></i>
                         </a>
-                        <button
-                          type="button"
-                          class="btn btn-outline-success"
-                          id="btnPlayVideo"
-                        >
-                          <i class="fa fa-video-camera"></i>
-                        </button>
                       </div>
                       <!--      <div class="form-group">
                         <button
@@ -613,32 +640,6 @@
 
                 <!-- Stats  begin -->
                 <div class="desktopMini">
-                  <!--  Progress-Start -->
-                  <div
-                    class="alert alert-success text-center"
-                    id="success-alert"
-                  >
-                    <span id="alertMessage" class="text-primary"> </span>
-                  </div>
-                  <div
-                    class="alert alert-warning text-center"
-                    style="display: none"
-                    id="progress-loading"
-                  >
-                    <h3>
-                      <!--  <i class="fa fa-spinner fa-spin text-primary"></i> -->
-                      <span
-                        class="spinner-border text-primary"
-                        id="spinner"
-                        role="status"
-                      ></span>
-                      <span class="text-success font-weight-light"
-                        >Deep Breath</span
-                      >
-                    </h3>
-                  </div>
-
-                  <!--  Progress-End -->
                   <div id="containerStatsSheet" class="text-center">
                     <iframe
                       id="frameStatsSheet"
@@ -730,7 +731,7 @@
       integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
       crossorigin="anonymous"
     ></script>
-    <script src="lib/clock.darshan.js"></script>
+    <script src="lib/clock.darshan.js?ver=001"></script>
     <script>
       function testFunction(min) {
         var out = "";
