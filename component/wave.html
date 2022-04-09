@@ -27,8 +27,9 @@
 
       #canvasOne {
         top: 0px;
-        border: 1px solid rgba(58, 176, 195, 0.5);
+        /*  border: 1px solid rgba(58, 176, 195, 0.5);
         border-radius: 10px;
+        */
       }
 
       #html5colorpicker {
@@ -59,8 +60,8 @@
   <body onresize="setWaveParams()">
     <canvas id="canvasOne" width="300" height="800"></canvas>
     <!-- Floating Elements 2-->
-    <div>
-      <input type="color" id="html5colorpicker" value="#2d5d6b" />
+    <div style="display: none">
+      <input type="color" id="html5colorpicker" value="#ffffff" />
       <span class="cntL">Breaths:</span
       ><span class="cntN" id="noOfBreaths">0</span>
       <span class="cntL">Time:</span
