@@ -87,18 +87,9 @@ input[type="radio"] {
   stroke: #000000; /*#ff2e2d;*/
 }
 
-#hour {
-  stroke-width: 0.05rem;
-  fill:#0000ff;
-  stroke: #000000;
-}
 
-#onepointer {
-  stroke-width: 0.08rem;
-  fill:  #ffff00 ;
-  stroke: #000000;
 
-}
+ 
 
 #currentTime {
   fill: #aababe;
