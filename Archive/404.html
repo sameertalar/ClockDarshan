@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>404 Page Not Found</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+      body {
+        background-color: #f1f1f1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <hr />
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <h1 class="text-danger">404 Page Not Found</h1>
+          <h2 id="errorCode" class="badge badge"></h2>
+        </div>
+      </div>
+
+      <div class="row"><div class="col"></div></div>
+    </div>
+    <script>
+      var beHereNowJson = [
+        { From: 0, To: 5, Icon: "🎯", Name: "GAN" },
+        { From: 5, To: 10, Icon: "🔥", Name: "LAX" },
+        { From: 10, To: 15, Icon: "🙏", Name: "SAR" },
+        { From: 15, To: 20, Icon: "💰", Name: "MAH" },
+        { From: 20, To: 25, Icon: "💦", Name: "ANN" },
+        { From: 25, To: 30, Icon: "👤", Name: "NAR" },
+        { From: 30, To: 35, Icon: "🎤", Name: "DUR" },
+        { From: 35, To: 40, Icon: "🗡️", Name: "HAN" },
+        { From: 40, To: 45, Icon: "🧘", Name: "BUD" },
+        { From: 45, To: 50, Icon: "🍜", Name: "SHI" },
+        { From: 50, To: 55, Icon: "🔩", Name: "RAM" },
+        { From: 55, To: 60, Icon: "🌞", Name: "KRI" },
+      ];
+
+      close_window();
+
+      function close_window() {
+        let now = new Date();
+        let min = now.getMinutes();
+        let chunk = min - (min % 5);
+
+        // DisplayText
+        let code = DisplayNameText(chunk);
+        let errorCode = pad(chunk, 2) + "-" + code + "";
+
+        document.title = "404 Not Found: " + errorCode;
+
+        $("#errorCode").text(errorCode);
+
+        if (confirm("Close Window?  Code:" + errorCode)) {
+          close();
+        }
+      }
+
+      function DisplayNameText(minuteChunk) {
+        for (let i = 0; i < beHereNowJson.length; i++) {
+          if (minuteChunk === beHereNowJson[i].From) {
+            return beHereNowJson[i].Name;
+          }
+        }
+      }
+
+      function pad(number, length) {
+        var str = "" + number;
+        while (str.length < length) {
+          str = "0" + str;
+        }
+
+        return str;
+      }
+    </script>
+  </body>
+</html>

@@ -84,20 +84,20 @@ input[type="radio"] {
   stroke-width: 0.05rem;
 
   fill: #22e8f7;
-  stroke: #ff2e2d;
+  stroke: #000000; /*#ff2e2d;*/
 }
 
 #hour {
-  stroke-width: 0.1rem;
-  fill: #0000ff;
-  stroke: #ff2e2d;
+  stroke-width: 0.05rem;
+  fill:#0000ff;
+  stroke: #000000;
 }
 
 #onepointer {
-  stroke-width: 0.05rem;
+  stroke-width: 0.08rem;
+  fill:  #ffff00 ;
+  stroke: #000000;
 
-  fill: #ffff00;
-  stroke: #ff2e2d;
 }
 
 #currentTime {
