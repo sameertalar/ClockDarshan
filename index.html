@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     />
     <!-- <link rel="stylesheet" href="../libraries/bootstrap.min.css" />-->
-    <link rel="stylesheet" href="lib/clock.darshan.css?v=006" />
+    <link rel="stylesheet" href="lib/clock.darshan.css?v=007" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -140,7 +140,7 @@
                           style="
                             fill: #0d2931;
                             stroke: #58727a;
-                            stroke-width: 25;
+                            stroke-width: 30;
                             stroke-dasharray: 31, 10;
                           "
                         >
@@ -156,7 +156,7 @@
                           />
                         </circle>
                       </g>
-                      <text id="currentTime" x="46.5" y="50">Be Here Now</text>
+                      <text id="currentTime" x="45" y="51.5">Be Here Now</text>
                       <g id="hands">
                         <circle
                           id="onepointer"
@@ -185,21 +185,25 @@
                           stroke-width="0.5%"
                           fill="none"
                         />
-                        <circle
+
+                        <rect
                           id="hour"
-                          cx="48.5"
-                          cy="27"
-                          r="4"
+                          x="48.5"
+                          y="23"
+                          width="5"
+                          height="9"
+                          rx="7"
+                          ry="7"
+                          fill="#ffffff"
                           stroke="#000000"
-                          stroke-width="1%"
-                          fill="#0000ff"
                         />
+
                         <rect
                           id="min"
                           x="48.5"
-                          y="21"
-                          width="5"
-                          height="15"
+                          y="25"
+                          width="4"
+                          height="20"
                           rx="7"
                           ry="7"
                         />
