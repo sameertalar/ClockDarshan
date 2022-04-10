@@ -120,7 +120,7 @@ input[type="radio"] {
 
 #chunkProgress {
   position: relative;
-  left: 25px;
+  left: 15px;
   width: 90%;
   height: 11px;
   border: 1px solid #0d2931;
