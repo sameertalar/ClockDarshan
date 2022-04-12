@@ -27,6 +27,10 @@ input[type="radio"] {
   transform: scale(2);
   accent-color: #ff2e2d;
 }
+input[type="checkbox"] {
+  transform: scale(1.5);  
+ 
+}
 
 
 

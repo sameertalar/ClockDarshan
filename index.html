@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     />
     <!-- <link rel="stylesheet" href="../libraries/bootstrap.min.css" />-->
-    <link rel="stylesheet" href="lib/clock.darshan.css?v=009" />
+    <link rel="stylesheet" href="lib/clock.darshan.css?v=010" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -87,17 +87,8 @@
         </div>
       </div>
     </div>
-    <div style="position: absolute; right: 10px; top: 18px; z-index: 999">
-      <input
-        type="checkbox"
-        class="btn-check checkEdit mt-2 ml-2"
-        id="checkEdit"
-        autocomplete="off"
-        name="checkEdit"
-        value="T"
-      />
-    </div>
-
+    <div style="position: absolute; right: 10px; top: 18px; z-index: 999"></div>
+    <!-- Top Right Corner-->
     <div
       class="text-center"
       style="position: absolute; top: 60px; left: 1px; z-index: 999"
@@ -128,10 +119,7 @@
             <div class="row mt-2">
               <div class="col">
                 <div id="clockContainer ">
-                  <div
-                    id="clock-container"
-                    class="float-right border border-white rounded bg-white"
-                  >
+                  <div id="clock-container" class="float-right">
                     <svg id="clock" viewBox="0 0 100 100">
                       <defs>
                         <linearGradient id="Gradient1">
@@ -246,21 +234,31 @@
                       <div class="row d-flex justify-content-center">
                         <div class="btn-group">
                           <button
-                            type="button"
-                            class="btn btn-sm btn-info active"
-                            id="btnPlayVideo"
-                          >
-                            <i class="fa fa-video-camera fa-2x"></i>
-                          </button>
-                          <button
-                            class="btn btn-outline-info"
+                            class="btn btn-outline-info active"
                             type="button"
                             id="minusQuarter"
                             type="button"
                           >
                             <i class="fa fa-arrow-down fa-2x"></i>
                           </button>
+                          <button
+                            class="btn btn-sm btn-outline-info"
+                            type="button"
+                            id="plusQuarter"
+                            type="button"
+                          >
+                            <i class="fa fa-arrow-up"></i>
+                          </button>
                         </div>
+                        <input
+                          type="checkbox"
+                          class="btn-check checkEdit mt-3 ml-3"
+                          id="checkEdit"
+                          autocomplete="off"
+                          name="checkEdit"
+                          value="T"
+                          style="transform: scale(2.5); position: relative"
+                        />
                       </div>
                       <div class="row d-flex justify-content-center">
                         <div class="btn-group">
@@ -299,22 +297,21 @@
                           </button> -->
 
                           <a
-                            class="btn btn-info active shrinkbtn px-4"
+                            class="btn btn-info active shrinkbtn"
                             data-toggle="collapse"
                             href="#collapseControlsSettings"
                             role="button"
                             aria-expanded="false"
                             aria-controls="collapseExample"
                           >
-                            <i id="btnGear" class="fa fa-gear fa-2x"></i>
+                            <i id="btnGear" class="fa fa-gear fa-2x px-2"></i>
                           </a>
                           <button
+                            type="button"
                             class="btn btn-sm btn-outline-info"
-                            type="button"
-                            id="plusQuarter"
-                            type="button"
+                            id="btnPlayVideo"
                           >
-                            <i class="fa fa-arrow-up"></i>
+                            <i class="fa fa-video-camera fa-2x"></i>
                           </button>
                         </div>
                       </div>
@@ -327,7 +324,7 @@
                       >
                       <div class="row">
                         <div
-                          class="btn-group btn-group-toggle float-left border rounded-pill"
+                          class="btn-group btn-group-toggle float-left border rounded-pill bg-white"
                           data-toggle="buttons"
                         >
                           <label class="btn btn-outline-info border-0">
@@ -389,7 +386,7 @@
                           >🥥</label
                         >
                         <div
-                          class="btn-group btn-group-toggle float-left border rounded-pill"
+                          class="btn-group btn-group-toggle float-left border rounded-pill bg-white"
                           data-toggle="buttons"
                         >
                           <label class="btn btn-outline-success border-0">
@@ -443,7 +440,7 @@
                           >🧿</label
                         >
                         <div
-                          class="btn-group btn-group-toggle float-left border rounded-pill"
+                          class="btn-group btn-group-toggle float-left border rounded-pill bg-white"
                           data-toggle="buttons"
                         >
                           <label class="btn btn-outline-info border-0">
