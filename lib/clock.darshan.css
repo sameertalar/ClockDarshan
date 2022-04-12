@@ -32,7 +32,10 @@ input[type="checkbox"] {
  
 }
 
-
+.bag
+{
+  background-color: #58727a;
+}
 
 
 .card {
