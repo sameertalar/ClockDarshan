@@ -27,6 +27,12 @@
       }
 
       /* Bootstrap */
+      .row {
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+      }
 
       h3,
       h4 {
@@ -125,9 +131,9 @@
 
       #chunkProgress {
         position: relative;
-        left: 20px;
-        width: 93%;
-        height: 11px;
+        left: 0px;
+        width: 99%;
+        height: 20px;
         border: 1px solid #0d2931;
         background-color: #fef9e7;
         background: linear-gradient(
@@ -167,7 +173,11 @@
     </style>
   </head>
   <body>
-    <div class="container-fluid border border-primary mt-3">
+    <div id="chunkProgress" class="border" style="text-align: center">
+      <div id="chunkStatus"></div>
+    </div>
+
+    <div class="container-fluid border border-primary">
       <div class="row border">
         <div class="col">
           <div id="clockContainer ">
@@ -281,7 +291,93 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      $(document).ready(function () {});
+      $(document).ready(function () {
+        setInterval(processBeHereNow, 1000);
+
+        function processBeHereNow() {
+          try {
+            let now = new Date();
+            let hours = now.getHours();
+            let min = now.getMinutes();
+            let sec = now.getSeconds();
+            let ms = now.getMilliseconds() / 1000;
+
+            // show Current Time
+            showCurrentTime(hours, min, sec);
+
+            showTimeElaspeProgress(min, sec);
+
+            /*
+            let selectedQuarterRow = $(
+              "#selectTrackerTime option:selected"
+            ).data("row");
+
+            if ($(".checkEdit:checked").val() != "T") {
+              setTrackerTime();
+              if (
+                Number($("#LoggedQuarterRow").val()) + 1 <
+                Number(selectedQuarterRow)
+              ) {
+                $("body").addClass("bag");
+              } else {
+                $("body").removeClass("bag");
+              }
+            } else {
+              if (
+                $("#LoggedQuarterRow").val() == $("#CurrentQuarterRow").val()
+              ) {
+                $("#checkEdit").prop("checked", false);
+              }
+
+              $("body").removeClass("bag");
+            }
+            */
+
+            if (min % 5 === 0 && sec === 1) {
+              //  reloadStatusSheet();
+              // postToGoogle(false);
+            }
+
+            if (min % 15 === 0 && sec === 1) {
+              //setTrackerTime();
+            }
+          } catch (error) {
+            console.log("Unhandled Error", error);
+            $("#errorMessage").html("Unhandled Error: " + error);
+          }
+        }
+
+        // Chunk Progress
+
+        function showTimeElaspeProgress(min, sec) {
+          let elaspePercent = ((min % 5) * 60 + sec) / 3;
+          //$("#controltimeStatus").val() = elaspePercent;
+
+          $("#chunkStatus").width(elaspePercent + "%");
+        }
+
+        // ******* TIME Functions *******
+        function showCurrentTime(hours, min, sec) {
+          let hrs = hours % 12;
+          var timeNow =
+            //  (hrs === 0 ? "12" : pad(hrs, 2)) +   ":" +
+            pad(min, 2) + ":" + pad(sec, 2);
+          // +            " "
+          // +            (hours > 12 ? "PM" : "AM");
+          $("#currentTime").text(timeNow);
+        }
+
+        function pad(number, length) {
+          var str = "" + number;
+          while (str.length < length) {
+            str = "0" + str;
+          }
+
+          return str;
+        }
+
+        // end of script
+      });
     </script>
   </body>
 </html>
