@@ -177,7 +177,7 @@
       <div id="chunkStatus"></div>
     </div>
 
-    <div class="container-fluid border border-primary">
+    <div class="container-fluid border border-primary mt-1">
       <div class="row border">
         <div class="col">
           <div id="clockContainer ">
@@ -294,6 +294,23 @@
       $(document).ready(function () {
         setInterval(processBeHereNow, 1000);
 
+        // Clock hands position
+        setInterval(function () {
+          function r(el, deg) {
+            el.setAttribute("transform", "rotate(" + deg + " 50 50)");
+          }
+          var d = new Date();
+          let hourDeg = 30 * (d.getHours() % 12) + d.getMinutes() / 2;
+          let minDeg = 6 * d.getMinutes();
+
+          r(hour, hourDeg);
+          r(min, 6 * d.getMinutes());
+          let deg = getOnePointerDegree(hourDeg, minDeg);
+          r(onepointer, deg);
+          r(onepointer2, deg);
+          r(onepointer3, deg);
+        }, 1000);
+
         function processBeHereNow() {
           try {
             let now = new Date();
@@ -347,7 +364,19 @@
           }
         }
 
-        // Chunk Progress
+        // Chunk Progress & Clock Functions
+
+        function getOnePointerDegree(hourDeg, minDeg) {
+          let hdeg = 15;
+          let hrem = hourDeg % 90;
+
+          let mrem = minDeg % 90;
+
+          if (hrem >= 30) hdeg = 45;
+          if (hrem >= 60) hdeg = 75;
+
+          return minDeg - mrem + hdeg;
+        }
 
         function showTimeElaspeProgress(min, sec) {
           let elaspePercent = ((min % 5) * 60 + sec) / 3;
