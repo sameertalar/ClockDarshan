@@ -164,6 +164,136 @@
 
       @media only screen and (max-width: 600px) {
       }
+
+      /*  ----------------------- */
+      .container {
+        width: 20em;
+        height: 20em;
+        margin: 5em auto 0;
+      }
+      .circular {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding: 0 0 100% 0;
+        margin: 0;
+        border-radius: 50%;
+        list-style: none;
+        border: solid 5px tomato;
+      }
+      .circular > * {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40%;
+        height: 40%;
+        margin: -20%;
+      }
+      .circular > *:nth-of-type(1) {
+        transform: rotate(0) translate(125%);
+      }
+      .circular > *:nth-last-child(2):first-child ~ :nth-of-type(2) {
+        transform: rotate(180deg) translate(125%) rotate(-180deg);
+      }
+      .circular > *:nth-last-child(3):first-child ~ :nth-of-type(2) {
+        transform: rotate(120deg) translate(125%) rotate(-120deg);
+      }
+      .circular > *:nth-last-child(3):first-child ~ :nth-of-type(3) {
+        transform: rotate(240deg) translate(125%) rotate(-240deg);
+      }
+      .circular > *:nth-last-child(4):first-child ~ :nth-of-type(2) {
+        transform: rotate(90deg) translate(125%) rotate(-90deg);
+      }
+      .circular > *:nth-last-child(4):first-child ~ :nth-of-type(3) {
+        transform: rotate(180deg) translate(125%) rotate(-180deg);
+      }
+      .circular > *:nth-last-child(4):first-child ~ :nth-of-type(4) {
+        transform: rotate(270deg) translate(125%) rotate(-270deg);
+      }
+      .circular > *:nth-last-child(5):first-child ~ :nth-of-type(2) {
+        transform: rotate(72deg) translate(125%) rotate(-72deg);
+      }
+      .circular > *:nth-last-child(5):first-child ~ :nth-of-type(3) {
+        transform: rotate(144deg) translate(125%) rotate(-144deg);
+      }
+      .circular > *:nth-last-child(5):first-child ~ :nth-of-type(4) {
+        transform: rotate(216deg) translate(125%) rotate(-216deg);
+      }
+      .circular > *:nth-last-child(5):first-child ~ :nth-of-type(5) {
+        transform: rotate(288deg) translate(125%) rotate(-288deg);
+      }
+      .circular > *:nth-last-child(6):first-child ~ :nth-of-type(2) {
+        transform: rotate(60deg) translate(125%) rotate(-60deg);
+      }
+      .circular > *:nth-last-child(6):first-child ~ :nth-of-type(3) {
+        transform: rotate(120deg) translate(125%) rotate(-120deg);
+      }
+      .circular > *:nth-last-child(6):first-child ~ :nth-of-type(4) {
+        transform: rotate(180deg) translate(125%) rotate(-180deg);
+      }
+      .circular > *:nth-last-child(6):first-child ~ :nth-of-type(5) {
+        transform: rotate(240deg) translate(125%) rotate(-240deg);
+      }
+      .circular > *:nth-last-child(6):first-child ~ :nth-of-type(6) {
+        transform: rotate(300deg) translate(125%) rotate(-300deg);
+      }
+      .circular > *:nth-last-child(7):first-child ~ :nth-of-type(2) {
+        transform: rotate(51.42857143deg) translate(125%)
+          rotate(-51.42857143deg);
+      }
+      .circular > *:nth-last-child(7):first-child ~ :nth-of-type(3) {
+        transform: rotate(102.85714286deg) translate(125%)
+          rotate(-102.85714286deg);
+      }
+      .circular > *:nth-last-child(7):first-child ~ :nth-of-type(4) {
+        transform: rotate(154.28571429deg) translate(125%)
+          rotate(-154.28571429deg);
+      }
+      .circular > *:nth-last-child(7):first-child ~ :nth-of-type(5) {
+        transform: rotate(205.71428571deg) translate(125%)
+          rotate(-205.71428571deg);
+      }
+      .circular > *:nth-last-child(7):first-child ~ :nth-of-type(6) {
+        transform: rotate(257.14285714deg) translate(125%)
+          rotate(-257.14285714deg);
+      }
+      .circular > *:nth-last-child(7):first-child ~ :nth-of-type(7) {
+        transform: rotate(308.57142857deg) translate(125%)
+          rotate(-308.57142857deg);
+      }
+      .circular > *:nth-last-child(8):first-child ~ :nth-of-type(2) {
+        transform: rotate(45deg) translate(125%) rotate(-45deg);
+      }
+      .circular > *:nth-last-child(8):first-child ~ :nth-of-type(3) {
+        transform: rotate(90deg) translate(125%) rotate(-90deg);
+      }
+      .circular > *:nth-last-child(8):first-child ~ :nth-of-type(4) {
+        transform: rotate(135deg) translate(125%) rotate(-135deg);
+      }
+      .circular > *:nth-last-child(8):first-child ~ :nth-of-type(5) {
+        transform: rotate(180deg) translate(125%) rotate(-180deg);
+      }
+      .circular > *:nth-last-child(8):first-child ~ :nth-of-type(6) {
+        transform: rotate(225deg) translate(125%) rotate(-225deg);
+      }
+      .circular > *:nth-last-child(8):first-child ~ :nth-of-type(7) {
+        transform: rotate(270deg) translate(125%) rotate(-270deg);
+      }
+      .circular > *:nth-last-child(8):first-child ~ :nth-of-type(8) {
+        transform: rotate(315deg) translate(125%) rotate(-315deg);
+      }
+      .circular img {
+        display: block;
+        max-width: 100%;
+        border-radius: 50%;
+        filter: grayscale(100%);
+        border: solid 5px tomato;
+        transition: 0.15s;
+      }
+      .circular img:hover {
+        filter: grayscale(0);
+      }
     </style>
   </head>
   <body>
@@ -273,6 +403,52 @@
       </div>
       <div class="row border">
         <div class="col">2</div>
+      </div>
+      <div class="row border">
+        <div class="col">
+          <div class="container">
+            <ul class="circular">
+              <li>
+                <a href="#"
+                  ><img src="https://picsum.photos/seed/city/200"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="https://picsum.photos/seed/abstract/200"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="https://picsum.photos/seed/cats/200"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="https://picsum.photos/seed/food/200"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="https://picsum.photos/seed/animals/200"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="https://picsum.photos/seed/business/200"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="https://picsum.photos/seed/people/200"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row border">
+        <div class="col">4</div>
       </div>
     </div>
     <script
