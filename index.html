@@ -20,7 +20,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <style></style>
+    <style>
+      .chunkLable {
+        fill: #ffffff;
+        font-size: 2px;
+      }
+    </style>
   </head>
   <body>
     <!-- Stickey and Floating - Start-->
@@ -172,6 +177,7 @@
                         </circle>
                       </g>
                       <text id="currentTime" x="45" y="51.5">Be Here Now</text>
+
                       <g id="hands">
                         <circle
                           id="onepointer"
@@ -222,6 +228,14 @@
                           stroke="#000000"
                         />
                       </g>
+
+                      <text
+                        class="chunkLable"
+                        text-anchor="middle"
+                        transform="translate(25,55) rotate(70)"
+                      >
+                        10-2
+                      </text>
                     </svg>
                   </div>
                 </div>
