@@ -17,9 +17,25 @@
         font-size: 16px;
         text-align: center;
       }
+
+  
     </style>
 
     <style>
+
+.donutText
+      {
+        color: #ffffff;
+        font-size: 0.7em;
+        padding: 0px;
+      }
+
+      .donutArcs
+      {
+        background-color: red;
+      }
+
+
       body {
         background-color: #ffffff; /* #50676f; */
         /*  overflow-y: hidden;*/
@@ -178,7 +194,7 @@
         <svg id="clock" viewBox="0 0 100 100"></svg>
       </div>
     </div>
-    <div id="chart" style="position: relative; top: 10px">
+    <div id="chart" style="position: absolute; top: 10px">
       <svg id="sameer" width="500" height="500"></svg>
     </div>
 
@@ -189,21 +205,21 @@
 
       var screenWidth = window.innerWidth;
 
-      var margin = { left: 20, top: 20, right: 20, bottom: 20 };
+      var margin = { left: 0, top: 0, right: 0, bottom: 0 };
 
       //var width = Math.min(screenWidth, 500) - margin.left - margin.right;
       //var height = Math.min(screenWidth, 500) - margin.top - margin.bottom;
 
       var svg = d3.select("#clock");
-      var width = svg[0][0].clientWidth / 2;
-      var height = svg[0][0].clientWidth / 2;
+      var width = svg[0][0].clientWidth ;
+      var height = svg[0][0].clientWidth ;
 
       //var svg = d3.select("#sameer");
 
       // debugger;
 
       svg = d3
-        .select("#clock")
+        .select("#sameer")
         // .select("#chart")
         // .append("svg")
         // .attr("width", width + margin.left + margin.right)
@@ -238,14 +254,19 @@
 
       //Some random data
       var donutData = [
-        { name: "Antelope", value: 15 },
-        { name: "Bear", value: 9 },
-        { name: "Cheetah", value: 19 },
-        { name: "Dolphin", value: 12 },
-        { name: "Elephant", value: 14 },
-        { name: "Flamingo", value: 21 },
-        { name: "Giraffe", value: 18 },
-        { name: "Other", value: 8 },
+      { name: "10", value: 5 },
+        { name: "11", value: 5 },
+        { name: "12", value: 5 },
+        { name: "1", value: 5 },
+        { name: "2", value: 5 },
+        { name: "3", value: 5 },
+        { name: "4", value: 5 },
+        { name: "5", value: 5 },
+        { name: "6", value: 5 },
+        { name: "7", value: 5 },
+        { name: "8", value: 5 },
+        { name: "9", value: 5 },
+     
       ];
 
       //Create a color scale
@@ -258,8 +279,8 @@
       //Create an arc function
       var arc = d3.svg
         .arc()
-        .innerRadius((width * 0.75) / 2)
-        .outerRadius((width * 0.75) / 2 + 30);
+        .innerRadius((width * 0.44) / 2)
+        .outerRadius((width * 0.44) / 2 + 0.001); //Sameer : adjust inner arch size here
 
       //Turn the pie chart 90 degrees counter clockwise, so it starts at the left
       var pie = d3.layout
@@ -286,7 +307,7 @@
         .attr("d", arc)
         .style("fill", function (d, i) {
           if (i === 7) return "#CCCCCC"; //Other
-          else return colorScale(i);
+          else return "#CCCCCC"; // colorScale(i);
         })
         .each(function (d, i) {
           //Search pattern for everything between the start and the first capital L
