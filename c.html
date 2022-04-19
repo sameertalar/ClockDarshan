@@ -125,6 +125,11 @@
         font-size: 4px;
       }
 
+      #currentTimeH {
+      
+        font-size: 6px;
+      }
+
       #timeStatus {
         left: 0;
         height: 7px;
@@ -221,6 +226,7 @@
                     />
                   </circle>
                 </g>
+                <text id="currentTimeH" x="48" y="44">4</text>
                 <text id="currentTime" x="45" y="51.5">10:10</text>
                 <g id="circleCurrent">
                   <circle
@@ -391,9 +397,7 @@
                 />
               </g>
 
-              <g id="digital"  class="x-clock-digital">
-                <text id="digital-text" x="-40" y="30"></text>
-              </g>
+          
 
             
               <!-- https://medium.com/allenhwkim/html-analog-clock-in-few-minutes-13e5983e6543-->
@@ -448,12 +452,24 @@
           var d = new Date();
           d.getHours() % 12
           let hours =d.getHours() % 12;
-
+/*
           $("#chunkLablelH1").html(hours);
+          $("#chunkLablelH4").html(hours);
+          $("#chunkLablelH7").html(hours);
           $("#chunkLablelH10").html(hours);
-          $("#chunkLablelH1").html(hours);
-          $("#chunkLablelH1").html(hours);
 
+          $("#chunkLablelH2").html(hours);
+          $("#chunkLablelH5").html(hours);
+          $("#chunkLablelH8").html(hours);
+          $("#chunkLablelH11").html(hours);
+
+
+          $("#chunkLablelH3").html(hours);
+          $("#chunkLablelH6").html(hours);
+          $("#chunkLablelH9").html(hours);
+          $("#chunkLablelH12").html(hours);
+
+*/
           let hourDeg = 30 * (hours) + d.getMinutes() / 2;
           let minDeg = 6 * d.getMinutes();
 
@@ -549,6 +565,7 @@
           // +            " "
           // +            (hours > 12 ? "PM" : "AM");
           $("#currentTime").text(timeNow);
+          $("#currentTimeH").text(hours%12 || 12);
         }
 
         function pad(number, length) {
