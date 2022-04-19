@@ -24,7 +24,7 @@
 
       .chunkLablelQ {
         fill: #58727a;
-        font-size: 2px;
+        font-size: 2.5px;
       }
 
       .chunkLablelT
@@ -222,7 +222,7 @@
                   </circle>
                 </g>
                 <text id="currentTime" x="45" y="51.5">10:10</text>
-                <g id="hands">
+                <g id="circleCurrent">
                   <circle
                     id="onepointer"
                     cx="49.7"
@@ -248,29 +248,29 @@
                     cy="13.7"
                     r="13.7"
                     stroke="#ff2e2d"
-                    stroke-width="0.5%"
+                    stroke-width="0.4%"
                     fill="none"
-                  />
-                  <rect
-                    id="min"
-                    x="48.5"
-                    y="21"
-                    width="4"
-                    height="24"
-                    rx="7"
-                    ry="7"
-                  />
-                  <rect
-                    id="hour"
-                    x="48.5"
-                    y="22"
-                    width="5"
-                    height="9"
-                    rx="7"
-                    ry="7"
-                    fill="#ffffff"
-                    stroke="#000000"
-                  />
+                  /> 
+                  <circle
+                  id="onepointer5"
+                  cx="51"
+                  cy="30"
+                  r="2"
+                  stroke="#58727a"
+                  stroke-width="0.3%"
+                  fill="none"
+                /> 
+                  
+                  <circle
+                  id="onepointer4"
+                  cx="51"
+                  cy="26"
+                  r="3"
+                  stroke="pink"
+                  stroke-width="0.3%"
+                  fill="blue"
+                /> 
+               
                 </g>
 
              
@@ -301,7 +301,7 @@
                </g>
 
 
-                <g transform="rotate(4)" class="chunkLablelQ">
+                <g transform="rotate(3)" class="chunkLablelQ">
                   <text x = "0" y="-19" id="chunkLablelQ1" transform="rotate(12.5)">1</text>
                   <text x = "0" y="-19" id="chunkLablelQ2" transform="rotate(42.5)">1</text>
                   <text x = "0" y="-19" id="chunkLablelQ3" transform="rotate(72.5)">1</text>
@@ -359,67 +359,36 @@
               <text x = "0" y="-47" id="chunkLablelM10" transform="rotate(282.5)">🧿</text>
               <text x = "0" y="-47" id="chunkLablelM11" transform="rotate(312.5)">🎳</text>
               <text x = "0" y="-47" id="chunkLablelM12" transform="rotate(342.5)">🎳</text>
-             </g>	  
-                <!-- numbers 
+             </g>	      
 
-         
-                <g transform="rotate(0)" class="chunkLablel" >
+              </g>
+
+              <g id="digital"  class="x-clock-digital">
+                <text id="digital-text" x="-40" y="30"></text>
+              </g>
+
+              <g id="hands">
               
-                  <g transform="rotate(0)" >
-     
-                  </g>
-                  <g transform="rotate(25)" >
-                    <text x="0" y="-23">2</text>
-                  </g>
-                  <g transform="rotate(65)" >
-                    <text x="0" y="-23">3</text>
-                  </g>
-                  <g transform="rotate(95)" >
-                    <text x="0" y="-23">3</text>
-                  </g>
-        
-                </g>
-
-
-                <g id="numbers" class="chunkLablel">
-                  <text x="15.90909091" y="-29.54545455">1</text>
-                  <text x="29.54545455" y="-15.90909091">2</text>
-                  <text x="34.09090909" y="2.272727273">3</text>
-                  <text x="29.54545455" y="20.45454545">4</text>
-                  <text x="15.90909091" y="34.09090909">5</text>
-                  <text x="-2.272727273"  y="38.63636364">6</text>
-                  <text x="-20.45454545" y="34.09090909">7</text>
-                  <text x="-34.09090909" y="20.45454545">8</text>
-                  <text x="-38.63636364" y="2.272727273">9</text>
-                  <text x="-34.09090909" y="-15.90909091">10</text>
-                  <text x="-22.72727273" y="-29.54545455">11</text>
-                  <text x="0" y="-23">12</text>
-                </g>
-                
-                
-                -->
-
-
-
-
-
-
-
-
-
-
-
-
-                
-             
-                
-                
-
-
-            
-                <g id="digital"  class="x-clock-digital">
-                  <text id="digital-text" x="-40" y="30"></text>
-                </g>
+                <rect
+                  id="min"
+                  x="48.5"
+                  y="21"
+                  width="4"
+                  height="24"
+                  rx="7"
+                  ry="7"
+                />
+                <rect
+                  id="hour"
+                  x="48.5"
+                  y="22"
+                  width="5"
+                  height="9"
+                  rx="7"
+                  ry="7"
+                  fill="#ffffff"
+                  stroke="#000000"
+                />
               </g>
               <!-- https://medium.com/allenhwkim/html-analog-clock-in-few-minutes-13e5983e6543-->
               </svg>
@@ -479,9 +448,8 @@
           let deg = getOnePointerDegree(hourDeg, minDeg);
          console.log(deg);
          
-          r(onepointer, deg);
-          r(onepointer2, deg);
-          r(onepointer3, deg);
+          r(circleCurrent, deg);
+      
         }, 1000);
 
         function processBeHereNow() {
