@@ -14,6 +14,10 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
 
     <style>
 
@@ -189,10 +193,292 @@
     <div id="chunkProgress" class="border" style="text-align: center">
       <div id="chunkStatus"></div>
     </div>
-  top
+ 
     <div class="container-fluid border border-primary mt-1">
       <div class="row border">
-        <div class="col-lg-3"></div>
+        <div class="col-lg-4"> 
+          <div
+          class="btn-group btn-group-toggle float-left border rounded-pill"
+          data-toggle="buttons"
+        >
+          <label class="btn btn-outline-info border-0">
+            <input
+              type="radio"
+              class="radioWork"
+              id="radioWorkS"
+              name="radioWork"
+              value="C"
+            />
+            🪔
+          </label>
+          <label class="btn btn-outline-primary border-0">
+            <input
+              type="radio"
+              class="radioWork"
+              id="radioWorkV"
+              name="radioWork"
+              value="D"
+            />
+            💎
+          </label>
+          <label class="btn btn-outline-success border-0">
+            <input
+              type="radio"
+              class="radioWork"
+              id="radioWorkH"
+              name="radioWork"
+              value="E"
+            />
+            🌿
+          </label>
+          <label class="btn btn-outline-warning border-0">
+            <input
+              type="radio"
+              class="radioWork"
+              id="radioWorkD"
+              name="radioWork"
+              value="F"
+            />
+            👪
+          </label>
+          <label class="btn btn-outline-danger border-0">
+            <input
+              type="radio"
+              class="radioWork"
+              id="radioWorkN"
+              name="radioWork"
+              value="G"
+            />
+            🍂
+          </label>
+        </div>
+        <div
+        class="btn-group btn-group-toggle float-left border rounded-pill"
+        data-toggle="buttons"
+      >
+        <label class="btn btn-outline-success border-0">
+          <input
+            type="radio"
+            class="radioEnergy"
+            id="radioEnergyH"
+            name="radioEnergy"
+            value="I"
+          />
+          🔋
+        </label>
+        <label class="btn btn-outline-warning border-0">
+          <input
+            type="radio"
+            class="radioEnergy"
+            id="radioEnergyM"
+            name="radioEnergy"
+            value="J"
+          />
+          🥥
+        </label>
+        <label class="btn btn-outline-danger border-0">
+          <input
+            type="radio"
+            class="radioEnergy"
+            id="radioEnergyL"
+            name="radioEnergy"
+            value="K"
+          />
+          ⚪
+        </label>
+      </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4">     
+          <div
+          class="btn-group btn-group-toggle float-left border rounded-pill"
+          data-toggle="buttons"
+        >
+          <label class="btn btn-outline-info border-0">
+            <input
+              type="radio"
+              class="radioMind"
+              id="radioMindC"
+              name="radioMind"
+              value="N"
+            />
+            🕊️
+          </label>
+          <label class="btn btn-outline-success border-0">
+            <input
+              type="radio"
+              class="radioMind"
+              id="radioMindM"
+              name="radioMind"
+              value="O"
+            />
+            🧘
+          </label>
+          <label class="btn btn-outline-warning border-0">
+            <input
+              type="radio"
+              class="radioMind"
+              id="radioMindA"
+              name="radioMind"
+              value="P"
+            />
+            🧿
+          </label>
+          <label class="btn btn-outline-dark border-0">
+            <input
+              type="radio"
+              class="radioMind"
+              id="radioMindP"
+              name="radioMind"
+              value="Q"
+            />
+            🎳
+          </label>
+          <label class="btn btn-outline-danger border-0">
+            <input
+              type="radio"
+              class="radioMind"
+              id="radioMindB"
+              name="radioMind"
+              value="R"
+            />
+            🔥
+          </label>
+        </div> 
+        <label for="checkSleep">
+          <input
+            type="checkbox"
+            class="btn-check checkSleep mt-2 ml-2"
+            id="checkSleep"
+            autocomplete="off"
+            name="checkSleep"
+            value="S"
+          /> 💤
+        </label>
+        
+        <label for="checkEdit">
+
+        <input
+        type="checkbox"
+        class="btn-check checkEdit mt-3 ml-3"
+        id="checkEdit"
+        autocomplete="off"
+        name="checkEdit"
+        value="T"
+      /> 🖋️
+    </label>
+
+
+       </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">    b   </div>
+      </div>
+
+        <div class="col-lg-4">
+          <div id="containerRadios">
+            <div class="row">
+              <div class="col-4">
+                <div class="row d-flex justify-content-center">
+                  <div class="btn-group">
+                    <button
+                      class="btn btn-outline-info active"
+                      type="button"
+                      id="minusQuarter"
+                      type="button"
+                    >
+                      <i class="fa fa-arrow-down fa-2x"></i>
+                    </button>
+                    <button
+                      class="btn btn-sm btn-outline-info"
+                      type="button"
+                      id="plusQuarter"
+                      type="button"
+                    >
+                      <i class="fa fa-arrow-up"></i>
+                    </button>
+                  </div>
+                  
+                </div>
+                <div class="row d-flex justify-content-center">
+                  <div class="btn-group">
+                    <!--
+                        <button
+                        id="btnRefresh"
+                        type="button"
+                        class="btn btn-outline-info shrinkbtn"
+                      >
+                        <i class="fa fa-refresh fa-2x"></i>
+                      </button>
+                    <button
+                      id="btnCounter"
+                      type="button"
+                      class="btn btn-outline-info active shrinkbtn"
+                    >
+                      0
+                    </button>-->
+
+                    <!--
+                    <button
+                      id="btnTrackerSheetLoader"
+                      type="button"
+                      class="btn btn-info active shrinkbtn"
+                    >
+                      <i class="fa fa-bar-chart"></i>
+                    </button>
+                    -->
+                    <!--   <button
+                      class="btn"
+                      type="button"
+                      id="refreshQuarter"
+                      type="button"
+                    >
+                      <i class="fa fa-refresh text-info"></i>
+                    </button> -->
+
+                    <a
+                      class="btn btn-info active shrinkbtn"
+                      data-toggle="collapse"
+                      href="#collapseControlsSettings"
+                      role="button"
+                      aria-expanded="false"
+                      aria-controls="collapseExample"
+                    >
+                      <i id="btnGear" class="fa fa-gear fa-2x px-2"></i>
+                    </a>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-info"
+                      id="btnPlayVideo"
+                    >
+                      <i class="fa fa-video-camera fa-2x"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-8">
+               
+                <div class="row">
+                 
+                </div>
+                <div class="row">
+                  
+                  <div class="ml-2 mr-5">
+                  
+                  </div>
+               
+                </div>
+                <div class="row">
+            
+               
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
       <div class="row border">
         <div class="col-lg-4">
@@ -407,13 +693,8 @@
         </div>
       </div>
       <div class="row border">
-        <div class="col">
-          <div
-            class="container2"
-            style="position: absolute; top: 100px; left: 160px"
-          >
-    
-          </div>
+        <div class="col-lg-4">
+           bottom
         </div>
       </div>
 
@@ -577,7 +858,89 @@
           return str;
         }
 
-        // end of script
+
+// --------------------------------------------------
+function postToGoogle(update) {
+    $("#progress-loading").show();
+    $("#success-alert").hide();
+
+    let apiurl =
+      "https://script.google.com/macros/s/AKfycbxJLoWhDykykVFykQfnvVAwri6wrYwU6xAIrhvOCGOh/dev";
+    // Use Dev link no need to publish
+    // "https://script.google.com/macros/s/AKfycbyOlFS1KprVp0UFfsfsjs8ibP-LbX4bnmDgKfy4s1qMUbaL6iLr/exec";
+
+    let paramMind = $(".radioMind:checked").val(); // $("#selectMind option:selected").val();
+    let paramEnergy = $(".radioEnergy:checked").val();
+    let paramWork = $(".radioWork:checked").val();
+    let selectedPeriod = $("#selectTrackerTime option:selected")
+      .val()
+      .split("-");
+    let paramSleep = $(".checkSleep:checked").val();
+
+    let now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+
+    let queryString = "";
+
+    if (update) {
+      queryString =
+        "?hour=" +
+        selectedPeriod[0] +
+        "&quarter=" +
+        selectedPeriod[1] +
+        "&work=" +
+        paramWork +
+        "&energy=" +
+        paramEnergy +
+        "&mind=" +
+        paramMind +
+        "&sleep=" +
+        paramSleep +
+        "&callback=?";
+    }
+
+    console.log("queryString", queryString);
+
+    let googleurl = apiurl + queryString;
+
+    $.ajax({
+      crossOrigin: true,
+      url: googleurl,
+
+      dataType: "jsonp",
+      success: function (data, textStatus, xhr) {
+
+        debugger;
+        console.log(data);
+        // showAlert("Deep Breath");
+        //showAlert("<p>" + data + "</p>");
+        $("#errorMessage").html(data);
+        // reloadStatusSheet();
+        console.log("response data", data);
+        $("#progress-loading").hide();
+      },
+      error: function (xhr, error_text, statusText) {
+        showAlert(error_text + "<br> Error while Processing");
+        console.log("error_text", error_text);
+        $("#progress-loading").hide();
+      },
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // end of script ***************************************
       });
     </script>
   </body>
