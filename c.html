@@ -17,10 +17,21 @@
 
     <style>
 
-.chunkLablel {
-        fill: #11116c;
-        font-size: 4px;
+    .chunkLablelH {
+        fill: #ffffff;
+        font-size: 3px;
       }
+
+      .chunkLablelQ {
+        fill: #58727a;
+        font-size: 2px;
+      }
+
+      .chunkLablelT
+      {
+        font-size: 3px;
+      }
+
       body {
         background-color: #ffffff; /* #50676f; */
         /*  overflow-y: hidden;*/
@@ -100,11 +111,7 @@
         background-size: 100% 100%;
       }
 
-      #face {
-        stroke-width: 1px;
-        stroke: transparent;
-        fill: transparent;
-      }
+   
 
       #min {
         stroke-width: 0.05rem;
@@ -183,23 +190,12 @@
         <div class="col-lg-3"></div>
       </div>
       <div class="row border">
-        <div class="col-lg-3">
+        <div class="col-lg-4">
           <div id="clockContainer ">
             <div id="clock-container">
               <svg id="clock" viewBox="0 0 100 100">
-                <defs>
-                  <linearGradient id="Gradient1">
-                    <stop class="stop1" offset="0%" />
-                    <stop class="stop2" offset="50%" />
-                    <stop class="stop3" offset="100%" />
-                  </linearGradient>
-                  <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
-                    <stop offset="0%" stop-color="red" />
-                    <stop offset="50%" stop-color="black" stop-opacity="0" />
-                    <stop offset="100%" stop-color="blue" />
-                  </linearGradient>
-                </defs>
-                <circle id="face" cx="50" cy="50" r="60" />
+           
+            <!---->
                 <g transform="translate(50, 50)">
                   <circle
                     id="ClockInnerCircle"
@@ -207,8 +203,8 @@
                     cy="0"
                     r="5"
                     style="
-                      fill: #0d2931;
-                      stroke: #58727a;
+                      fill: #58727a;
+                      stroke: #ffffff;
                       stroke-width: 30;
                       stroke-dasharray: 31, 10;
                     "
@@ -276,17 +272,115 @@
                     stroke="#000000"
                   />
                 </g>
+
+             
                  
-              <g transform="translate(50,50) rotate(10)" >
-                <!-- tick -->
+              <g transform="translate(50,50)" >
+                <!-- tick 
                 <g>
                   <circle r="50" class="x-clock-circle" fill="none" stroke-width="1" stroke="gray" />
                   <circle r="49" class="x-clock-1-minute" fill="none" stroke-width="3" stroke="black" 
                     stroke-dasharray="2 23.789082" transform="rotate(-1.5)" />
-                         </g>
-            
-               
-                <!-- numbers -->
+                </g>
+                -->
+         
+                
+                <g transform="rotate(0)" class="chunkLablelH"  >
+                  <text x="0" y="-23" id="chunkLablelH1" transform="rotate(12.5)">10</text>
+                  <text x="0" y="-23" id="chunkLablelH2" transform="rotate(42.5)">11</text>
+                  <text x="0" y="-23" id="chunkLablelH3" transform="rotate(72.5)">12</text>
+                  <text x="0" y="-23" id="chunkLablelH4" transform="rotate(102.5)">10</text>
+                  <text x="0" y="-23" id="chunkLablelH5" transform="rotate(132.5)">11</text>
+                  <text x="0" y="-23" id="chunkLablelH6" transform="rotate(162.5)">12</text>
+                  <text x="0" y="-23" id="chunkLablelH7" transform="rotate(192.5)">10</text>
+                  <text x="0" y="-23" id="chunkLablelH8" transform="rotate(222.5)">11</text>
+                  <text x="0" y="-23" id="chunkLablelH9" transform="rotate(252.5)">12</text>
+                  <text x="0" y="-23" id="chunkLablelH10" transform="rotate(282.5)">10</text>
+                  <text x="0" y="-23" id="chunkLablelH11" transform="rotate(312.5)">11</text>
+                  <text x="0" y="-23" id="chunkLablelH12" transform="rotate(342.5)">12</text>
+               </g>
+
+
+                <g transform="rotate(4)" class="chunkLablelQ">
+                  <text x = "0" y="-19" id="chunkLablelQ1" transform="rotate(12.5)">1</text>
+                  <text x = "0" y="-19" id="chunkLablelQ2" transform="rotate(42.5)">1</text>
+                  <text x = "0" y="-19" id="chunkLablelQ3" transform="rotate(72.5)">1</text>
+                  <text x = "0" y="-19" id="chunkLablelQ4" transform="rotate(102.5)">2</text>
+                  <text x = "0" y="-19" id="chunkLablelQ5" transform="rotate(132.5)">2</text>
+                  <text x = "0" y="-19" id="chunkLablelQ6" transform="rotate(162.5)">2</text>
+                  <text x = "0" y="-19" id="chunkLablelQ7" transform="rotate(192.5)">3</text>
+                  <text x = "0" y="-19" id="chunkLablelQ8" transform="rotate(222.5)">3</text>
+                  <text x = "0" y="-19" id="chunkLablelQ9" transform="rotate(252.5)">4</text>
+                  <text x = "0" y="-19" id="chunkLablelQ10" transform="rotate(282.5)">4</text>
+                  <text x = "0" y="-19" id="chunkLablelQ11" transform="rotate(312.5)">4</text>
+                  <text x = "0" y="-19" id="chunkLablelQ12" transform="rotate(342.5)">4</text>
+               </g>
+
+               <g transform="rotate(0)" class="chunkLablelT">
+                <text x = "0" y="-47" id="chunkLablelE1" transform="rotate(12.5)">🥥</text>
+                <text x = "0" y="-47" id="chunkLablelE2" transform="rotate(42.5)">🥥</text>
+                <text x = "0" y="-47" id="chunkLablelE3" transform="rotate(72.5)">🥥</text>
+                <text x = "0" y="-47" id="chunkLablelE4" transform="rotate(102.5)">🔋</text>
+                <text x = "0" y="-47" id="chunkLablelE5" transform="rotate(132.5)">🔋</text>
+                <text x = "0" y="-47" id="chunkLablelE6" transform="rotate(162.5)">🔋</text>
+                <text x = "0" y="-47" id="chunkLablelE7" transform="rotate(192.5)">🔋</text>
+                <text x = "0" y="-47" id="chunkLablelE8" transform="rotate(222.5)">🔋</text>
+                <text x = "0" y="-47" id="chunkLablelE9" transform="rotate(252.5)">🔋</text>
+                <text x = "0" y="-47" id="chunkLablelE10" transform="rotate(282.5)">⚪</text>
+                <text x = "0" y="-47" id="chunkLablelE11" transform="rotate(312.5)">⚪</text>
+                <text x = "0" y="-47" id="chunkLablelE12" transform="rotate(342.5)">⚪</text>
+             </g>
+
+             <g transform="rotate(-5)" class="chunkLablelT">
+              <text x = "0" y="-47" id="chunkLablelW1" transform="rotate(12.5)">🪔</text>
+              <text x = "0" y="-47" id="chunkLablelW2" transform="rotate(42.5)">🪔</text>
+              <text x = "0" y="-47" id="chunkLablelW3" transform="rotate(72.5)">🥥</text>
+              <text x = "0" y="-47" id="chunkLablelW4" transform="rotate(102.5)">💎</text>
+              <text x = "0" y="-47" id="chunkLablelW5" transform="rotate(132.5)">💎</text>
+              <text x = "0" y="-47" id="chunkLablelW6" transform="rotate(162.5)">🌿</text>
+              <text x = "0" y="-47" id="chunkLablelW7" transform="rotate(192.5)">💎</text>
+              <text x = "0" y="-47" id="chunkLablelW8" transform="rotate(222.5)">🌿</text>
+              <text x = "0" y="-47" id="chunkLablelW9" transform="rotate(252.5)">💎</text>
+              <text x = "0" y="-47" id="chunkLablelW10" transform="rotate(282.5)">🍂</text>
+              <text x = "0" y="-47" id="chunkLablelW11" transform="rotate(312.5)">🍂</text>
+              <text x = "0" y="-47" id="chunkLablelW12" transform="rotate(342.5)">🍂</text>
+             </g>
+
+             <g transform="rotate(5)" class="chunkLablelT">
+              <text x = "0" y="-47" id="chunkLablelM1" transform="rotate(12.5)">🕊️</text>
+              <text x = "0" y="-47" id="chunkLablelM2" transform="rotate(42.5)">🕊️</text>
+              <text x = "0" y="-47" id="chunkLablelM3" transform="rotate(72.5)">🔥</text>
+              <text x = "0" y="-47" id="chunkLablelM4" transform="rotate(102.5)">🔥</text>
+              <text x = "0" y="-47" id="chunkLablelM5" transform="rotate(132.5)">🧘</text>
+              <text x = "0" y="-47" id="chunkLablelM6" transform="rotate(162.5)">🧘</text>
+              <text x = "0" y="-47" id="chunkLablelM7" transform="rotate(192.5)">🧘</text>
+              <text x = "0" y="-47" id="chunkLablelM8" transform="rotate(222.5)">🧿</text>
+              <text x = "0" y="-47" id="chunkLablelM9" transform="rotate(252.5)">🧿</text>
+              <text x = "0" y="-47" id="chunkLablelM10" transform="rotate(282.5)">🧿</text>
+              <text x = "0" y="-47" id="chunkLablelM11" transform="rotate(312.5)">🎳</text>
+              <text x = "0" y="-47" id="chunkLablelM12" transform="rotate(342.5)">🎳</text>
+             </g>	  
+                <!-- numbers 
+
+         
+                <g transform="rotate(0)" class="chunkLablel" >
+              
+                  <g transform="rotate(0)" >
+     
+                  </g>
+                  <g transform="rotate(25)" >
+                    <text x="0" y="-23">2</text>
+                  </g>
+                  <g transform="rotate(65)" >
+                    <text x="0" y="-23">3</text>
+                  </g>
+                  <g transform="rotate(95)" >
+                    <text x="0" y="-23">3</text>
+                  </g>
+        
+                </g>
+
+
                 <g id="numbers" class="chunkLablel">
                   <text x="15.90909091" y="-29.54545455">1</text>
                   <text x="29.54545455" y="-15.90909091">2</text>
@@ -303,7 +397,7 @@
                 </g>
                 
                 
-                
+                -->
 
 
 
@@ -346,42 +440,7 @@
 
       <div class="row border">
         <div class="col">
-
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 220 220">
-            <style>
-             text { font-family: Courier New; font-weight: bold; user-select: none;}
-            </style>
-          
-            <g transform="translate(110,110)">
-              <!-- tick -->
-              <g>
-                <circle r="108" class="x-clock-circle" fill="none" stroke-width="4" stroke="gray" />
-                <circle r="97" class="x-clock-1-minute" fill="none" stroke-width="11" stroke="black" 
-                  stroke-dasharray="4 46.789082" transform="rotate(-1.5)" />
-                       </g>
-          
-             
-              <!-- numbers -->
-              <g id="numbers" class="x-clock-numbers">
-                <text x="35" y="-65">1</text>
-                <text x="65" y="-35">2</text>
-                <text x="75" y="5">3</text>
-                <text x="65" y="45">4</text>
-                <text x="35" y="75">5</text>
-                <text x="-5"  y="85">6</text>
-                <text x="-45" y="75">7</text>
-                <text x="-75" y="45">8</text>
-                <text x="-85" y="5">9</text>
-                <text x="-75" y="-35">10</text>
-                <text x="-50" y="-65">11</text>
-                <text x="-10" y="-75">12</text>
-              </g>
-          
-              <g id="digital"  class="x-clock-digital">
-                <text id="digital-text" x="-40" y="30"></text>
-              </g>
-            </g>
-          </svg>
+ sandbox area
           
         </div>
       </div>
