@@ -191,11 +191,14 @@
   <body>
     <div id="clockContainer ">
       <div id="clock-container" class="float-right">
-        <svg id="clock" viewBox="0 0 100 100"></svg>
+        <svg id="clock" viewBox="0 0 100 100">
+        </svg>
       </div>
     </div>
-    <div id="chart" style="position: absolute; top: 10px">
-      <svg id="sameer" width="500" height="500"></svg>
+    <div id="chart" style="position: relative; top: 10px">
+      <svg id="sameer" <svg viewBox="0 0 1000 400">
+     
+      </svg>
     </div>
 
     <script>
@@ -210,7 +213,7 @@
       //var width = Math.min(screenWidth, 500) - margin.left - margin.right;
       //var height = Math.min(screenWidth, 500) - margin.top - margin.bottom;
 
-      var svg = d3.select("#clock");
+      var svg = d3.select("#sameer");
       var width = svg[0][0].clientWidth ;
       var height = svg[0][0].clientWidth ;
 
@@ -280,7 +283,7 @@
       var arc = d3.svg
         .arc()
         .innerRadius((width * 0.44) / 2)
-        .outerRadius((width * 0.44) / 2 + 0.001); //Sameer : adjust inner arch size here
+        .outerRadius((width * 0.44) / 2 + 4); //Sameer : adjust inner arch size here
 
       //Turn the pie chart 90 degrees counter clockwise, so it starts at the left
       var pie = d3.layout

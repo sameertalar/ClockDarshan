@@ -16,6 +16,11 @@
     />
 
     <style>
+
+.chunkLable {
+        fill: #ffffff;
+        font-size: 4px;
+      }
       body {
         background-color: #ffffff; /* #50676f; */
         /*  overflow-y: hidden;*/
@@ -172,22 +177,13 @@
     <div id="chunkProgress" class="border" style="text-align: center">
       <div id="chunkStatus"></div>
     </div>
-    <label class="btn btn-outline-danger border-0">
-      <input
-        type="radio"
-        class="radioWork"
-        id="radioWorkN4"
-        name="radioWork"
-        value="G"
-      />
-      🍂</label
-    >
+  top
     <div class="container-fluid border border-primary mt-1">
       <div class="row border">
-        <div class="col"></div>
+        <div class="col-lg-3"></div>
       </div>
       <div class="row border">
-        <div class="col">
+        <div class="col-lg-3">
           <div id="clockContainer ">
             <div id="clock-container">
               <svg id="clock" viewBox="0 0 100 100">
@@ -280,6 +276,64 @@
                     stroke="#000000"
                   />
                 </g>
+                <text id="chunkLable1"
+                class="chunkLable"
+                text-anchor="middle"
+                transform="translate(50,25) rotate(15)"
+              >
+                08-3
+              </text>
+              <g transform="translate(50,50)">
+                <!-- tick -->
+                <g>
+                  <circle r="50" class="x-clock-circle" fill="none" stroke-width="1" stroke="gray" />
+                  <circle r="49" class="x-clock-1-minute" fill="none" stroke-width="3" stroke="black" 
+                    stroke-dasharray="2 23.789082" transform="rotate(-1.5)" />
+                         </g>
+            
+               
+                <!-- numbers -->
+                <g id="numbers" class="chunkLable">
+                  <text x="15.90909091" y="-29.54545455">1</text>
+                  <text x="29.54545455" y="-15.90909091">2</text>
+                  <text x="34.09090909" y="2.272727273">3</text>
+                  <text x="29.54545455" y="20.45454545">4</text>
+                  <text x="15.90909091" y="34.09090909">5</text>
+                  <text x="-2.272727273"  y="38.63636364">6</text>
+                  <text x="-20.45454545" y="34.09090909">7</text>
+                  <text x="-34.09090909" y="20.45454545">8</text>
+                  <text x="-38.63636364" y="2.272727273">9</text>
+                  <text x="-34.09090909" y="-15.90909091">10</text>
+                  <text x="-22.72727273" y="-29.54545455">11</text>
+                  <text x="-4.545454545" y="-34.09090909">12</text>
+                </g>
+                
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+                
+             
+                
+                
+
+
+            
+                <g id="digital"  class="x-clock-digital">
+                  <text id="digital-text" x="-40" y="30"></text>
+                </g>
+              </g>
+              <!-- https://medium.com/allenhwkim/html-analog-clock-in-few-minutes-13e5983e6543-->
               </svg>
             </div>
           </div>
@@ -291,170 +345,51 @@
             class="container2"
             style="position: absolute; top: 100px; left: 160px"
           >
-            <ul class="circular2">
-              <li>
-                <label class="btn btn-outline-danger border-0">
-                  <input
-                    type="radio"
-                    class="radioWork"
-                    id="radioWorkN"
-                    name="radioWork"
-                    value="G"
-                  />
-                  🍂</label
-                >
-              </li>
-              <li>
-                <label class="btn btn-outline-danger border-0">
-                  <input
-                    type="radio"
-                    class="radioWork"
-                    id="radioWorkN"
-                    name="radioWork"
-                    value="G"
-                  />
-                  🍂</label
-                >
-              </li>
-              <li>
-                <label class="btn btn-outline-danger border-0">
-                  <input
-                    type="radio"
-                    class="radioWork"
-                    id="radioWorkN"
-                    name="radioWork"
-                    value="G"
-                  />
-                  🍂</label
-                >
-              </li>
-              <li>
-                <label class="btn btn-outline-danger border-0">
-                  <input
-                    type="radio"
-                    class="radioWork"
-                    id="radioWorkN"
-                    name="radioWork"
-                    value="G"
-                  />
-                  🍂</label
-                >
-              </li>
-              <li>
-                <label class="btn btn-outline-danger border-0">
-                  <input
-                    type="radio"
-                    class="radioWork"
-                    id="radioWorkN"
-                    name="radioWork"
-                    value="G"
-                  />
-                  🍂</label
-                >
-              </li>
-              <li>
-                <label class="btn btn-outline-danger border-0">
-                  <input
-                    type="radio"
-                    class="radioWork"
-                    id="radioWorkN"
-                    name="radioWork"
-                    value="G"
-                  />
-                  🍂</label
-                >
-              </li>
-              <li>
-                <label class="btn btn-outline-danger border-0">
-                  <input
-                    type="radio"
-                    class="radioWork"
-                    id="radioWorkN"
-                    name="radioWork"
-                    value="G"
-                  />
-                  🍂</label
-                >
-              </li>
-              <li>
-                <label class="btn btn-outline-danger border-0">
-                  <input
-                    type="radio"
-                    class="radioWork"
-                    id="radioWorkN"
-                    name="radioWork"
-                    value="G"
-                  />
-                  🍂</label
-                >
-              </li>
-              <li>
-                <label class="btn btn-outline-danger border-0">
-                  <input
-                    type="radio"
-                    class="radioWork"
-                    id="radioWorkN"
-                    name="radioWork"
-                    value="G"
-                  />
-                  🍂</label
-                >
-              </li>
-              <li>
-                <label class="btn btn-outline-danger border-0">
-                  <input
-                    type="radio"
-                    class="radioWork"
-                    id="radioWorkN"
-                    name="radioWork"
-                    value="G"
-                  />
-                  🍂</label
-                >
-              </li>
-              <li>
-                <label class="btn btn-outline-danger border-0">
-                  <input
-                    type="radio"
-                    class="radioWork"
-                    id="radioWorkN"
-                    name="radioWork"
-                    value="G"
-                  />
-                  🍂</label
-                >
-              </li>
-              <li>
-                <label class="btn btn-outline-danger border-0">
-                  <input
-                    type="radio"
-                    class="radioWork"
-                    id="radioWorkN"
-                    name="radioWork"
-                    value="G"
-                  />
-                  🍂</label
-                >
-              </li>
-              <li>
-                <label class="btn btn-outline-danger border-0">
-                  <input
-                    type="radio"
-                    class="radioWork"
-                    id="radioWorkN"
-                    name="radioWork"
-                    value="G"
-                  />
-                  🍂</label
-                >
-              </li>
-            </ul>
+    
           </div>
         </div>
       </div>
 
       <div class="row border">
-        <div class="col"></div>
+        <div class="col">
+
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 220 220">
+            <style>
+             text { font-family: Courier New; font-weight: bold; user-select: none;}
+            </style>
+          
+            <g transform="translate(110,110)">
+              <!-- tick -->
+              <g>
+                <circle r="108" class="x-clock-circle" fill="none" stroke-width="4" stroke="gray" />
+                <circle r="97" class="x-clock-1-minute" fill="none" stroke-width="11" stroke="black" 
+                  stroke-dasharray="4 46.789082" transform="rotate(-1.5)" />
+                       </g>
+          
+             
+              <!-- numbers -->
+              <g id="numbers" class="x-clock-numbers">
+                <text x="35" y="-65">1</text>
+                <text x="65" y="-35">2</text>
+                <text x="75" y="5">3</text>
+                <text x="65" y="45">4</text>
+                <text x="35" y="75">5</text>
+                <text x="-5"  y="85">6</text>
+                <text x="-45" y="75">7</text>
+                <text x="-75" y="45">8</text>
+                <text x="-85" y="5">9</text>
+                <text x="-75" y="-35">10</text>
+                <text x="-50" y="-65">11</text>
+                <text x="-10" y="-75">12</text>
+              </g>
+          
+              <g id="digital"  class="x-clock-digital">
+                <text id="digital-text" x="-40" y="30"></text>
+              </g>
+            </g>
+          </svg>
+          
+        </div>
       </div>
     </div>
     <script
@@ -470,6 +405,13 @@
       $(document).ready(function () {
         setInterval(processBeHereNow, 1000);
 
+        //ro(chunkLable1, 0);
+
+        function ro(el, deg) {
+            el.setAttribute("transform", "rotate(" + deg + " 50 50)");
+        }
+
+
         // Clock hands position
         setInterval(function () {
           function r(el, deg) {
@@ -482,6 +424,8 @@
           r(hour, hourDeg);
           r(min, 6 * d.getMinutes());
           let deg = getOnePointerDegree(hourDeg, minDeg);
+         console.log(deg);
+         
           r(onepointer, deg);
           r(onepointer2, deg);
           r(onepointer3, deg);
