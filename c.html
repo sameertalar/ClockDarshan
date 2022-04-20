@@ -148,7 +148,7 @@
         position: relative;
         left: 0px;
         width: 99%;
-        height: 20px;
+        height: 12px;
         border: 1px solid #0d2931;
         background-color: #fef9e7;
         background: linear-gradient(
@@ -190,6 +190,35 @@
     </style>
   </head>
   <body>
+
+
+<!--     -------------------------      -->
+<div style="position: absolute; top: 70px; right: 0; z-index: 999">
+  <select
+    class="text-white bg-primary ml-3 border rounded-pill form-control"
+    style="font-size: 1.3em"
+    id="selectTrackerTime"
+  ></select>
+</div>
+
+    <div style="position: fixed; bottom: 10px; right: 20px; z-index: 999">
+      <video
+        id="videoDummy"
+        controls
+        loop
+        muted
+        class="mb-1"
+        style="width: 36px; height: 50px; display: none"
+      >
+        <source src="media/video_dummy.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+
+
+<!--     -------------------------      -->
+
+
     <div id="chunkProgress" class="border" style="text-align: center">
       <div id="chunkStatus"></div>
     </div>
@@ -373,90 +402,14 @@
 
        </div>
       </div>
-      <div class="row">
-        <div class="col-lg-4">    b   </div>
-      </div>
+  
 
         <div class="col-lg-4">
           <div id="containerRadios">
             <div class="row">
               <div class="col-4">
-                <div class="row d-flex justify-content-center">
-                  <div class="btn-group">
-                    <button
-                      class="btn btn-outline-info active"
-                      type="button"
-                      id="minusQuarter"
-                      type="button"
-                    >
-                      <i class="fa fa-arrow-down fa-2x"></i>
-                    </button>
-                    <button
-                      class="btn btn-sm btn-outline-info"
-                      type="button"
-                      id="plusQuarter"
-                      type="button"
-                    >
-                      <i class="fa fa-arrow-up"></i>
-                    </button>
-                  </div>
-                  
-                </div>
-                <div class="row d-flex justify-content-center">
-                  <div class="btn-group">
-                    <!--
-                        <button
-                        id="btnRefresh"
-                        type="button"
-                        class="btn btn-outline-info shrinkbtn"
-                      >
-                        <i class="fa fa-refresh fa-2x"></i>
-                      </button>
-                    <button
-                      id="btnCounter"
-                      type="button"
-                      class="btn btn-outline-info active shrinkbtn"
-                    >
-                      0
-                    </button>-->
-
-                    <!--
-                    <button
-                      id="btnTrackerSheetLoader"
-                      type="button"
-                      class="btn btn-info active shrinkbtn"
-                    >
-                      <i class="fa fa-bar-chart"></i>
-                    </button>
-                    -->
-                    <!--   <button
-                      class="btn"
-                      type="button"
-                      id="refreshQuarter"
-                      type="button"
-                    >
-                      <i class="fa fa-refresh text-info"></i>
-                    </button> -->
-
-                    <a
-                      class="btn btn-info active shrinkbtn"
-                      data-toggle="collapse"
-                      href="#collapseControlsSettings"
-                      role="button"
-                      aria-expanded="false"
-                      aria-controls="collapseExample"
-                    >
-                      <i id="btnGear" class="fa fa-gear fa-2x px-2"></i>
-                    </a>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-outline-info"
-                      id="btnPlayVideo"
-                    >
-                      <i class="fa fa-video-camera fa-2x"></i>
-                    </button>
-                  </div>
-                </div>
+               
+            
               </div>
               <div class="col-8">
                
@@ -478,6 +431,30 @@
             </div>
           </div>
 
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <!--  Progress-Start -->
+          <div class="alert alert-success text-center" id="success-alert">
+            <span id="alertMessage" class="text-primary"> </span>
+          </div>
+          <div
+            class="alert alert-warning text-center bg-success"
+            style="display: none"
+            id="progress-loading"
+          >
+            <h3>
+              <!--  <i class="fa fa-spinner fa-spin text-primary"></i> -->
+              <span
+                class="spinner-border text-white"
+                id="spinner"
+                role="status"
+              ></span>
+              <span class="text-warning font-weight-light">Deep Breath</span>
+            </h3>
+          </div>
+          <!--  Progress-End -->
         </div>
       </div>
       <div class="row border">
@@ -697,7 +674,86 @@
            bottom
         </div>
       </div>
+      <div class="row border">
+        <div class="col-lg-4">
+          <div class="row d-flex justify-content-center">
+            <div class="btn-group">
+              <button
+                class="btn btn-outline-info active"
+                type="button"
+                id="minusQuarter"
+                type="button"
+              >
+                <i class="fa fa-arrow-down fa-2x"></i>
+              </button>
+              <button
+                class="btn btn-sm btn-outline-info"
+                type="button"
+                id="plusQuarter"
+                type="button"
+              >
+                <i class="fa fa-arrow-up"></i>
+              </button>
+            </div>
+            
+          </div>
+          <div class="row d-flex justify-content-center">
+            <div class="btn-group">
+              <!--
+                  <button
+                  id="btnRefresh"
+                  type="button"
+                  class="btn btn-outline-info shrinkbtn"
+                >
+                  <i class="fa fa-refresh fa-2x"></i>
+                </button>
+              <button
+                id="btnCounter"
+                type="button"
+                class="btn btn-outline-info active shrinkbtn"
+              >
+                0
+              </button>-->
 
+              <!--
+              <button
+                id="btnTrackerSheetLoader"
+                type="button"
+                class="btn btn-info active shrinkbtn"
+              >
+                <i class="fa fa-bar-chart"></i>
+              </button>
+              -->
+              <!--   <button
+                class="btn"
+                type="button"
+                id="refreshQuarter"
+                type="button"
+              >
+                <i class="fa fa-refresh text-info"></i>
+              </button> -->
+
+              <a
+                class="btn btn-info active shrinkbtn"
+                data-toggle="collapse"
+                href="#collapseControlsSettings"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              >
+                <i id="btnGear" class="fa fa-gear fa-2x px-2"></i>
+              </a>
+              <button
+                type="button"
+                class="btn btn-sm btn-outline-info"
+                id="btnPlayVideo"
+              >
+                <i class="fa fa-video-camera fa-2x"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="row border">
         <div class="col">
  sandbox area
@@ -716,6 +772,176 @@
     ></script>
     <script>
       $(document).ready(function () {
+
+
+        page_Load();
+
+// Load
+
+$("#onepointer").on("click", oneClickTracker);
+$("#ClockInnerCircle").on("click", oneClickTracker);
+$("#btnResetSheet").on("click", oneClickResetSheet);
+
+$("#errorMessage").on("click", btnErrorMessageClick);
+
+$("#radioWorkD").click();
+$("#radioEnergyM").click();
+$("#radioMindA").click();
+
+$("#selectTrackerTime").focus();
+
+$("#success-alert").hide();
+//postToGoogle(false);
+
+
+
+function page_Load() {
+    for (let h = 0; h < 24; ++h) {
+      for (let m = 1; m <= 4; ++m) {
+        $("#selectTrackerTime").append(
+          $("<option class='text-primary bg-white'></option>")
+            .attr("value", h + "-" + m)
+            .text((h % 12 || 12).toString().padStart(2, "0") + "-" + m + "")
+            .attr("data-row", h * 4 + m + 3)
+          //.text((h % 12) + (h > 12 ? "pm" : "am") + " : " + m + " Q")
+        );
+      }
+    }
+
+    setTrackerTime();
+  }
+
+  function setTrackerTime() {
+    $("#selectTrackerTime").val(getCurrentTrackerTime());
+  }
+
+  function oneClickTracker() {
+    postToGoogle(true);
+  }
+
+  function postToGoogle(update) {
+    $("#progress-loading").show();
+    $("#success-alert").hide();
+
+    let apiurl =
+      "https://script.google.com/macros/s/AKfycbxJLoWhDykykVFykQfnvVAwri6wrYwU6xAIrhvOCGOh/dev";
+    // Use Dev link no need to publish
+    // "https://script.google.com/macros/s/AKfycbyOlFS1KprVp0UFfsfsjs8ibP-LbX4bnmDgKfy4s1qMUbaL6iLr/exec";
+
+    let paramMind = $(".radioMind:checked").val(); // $("#selectMind option:selected").val();
+    let paramEnergy = $(".radioEnergy:checked").val();
+    let paramWork = $(".radioWork:checked").val();
+    let selectedPeriod = $("#selectTrackerTime option:selected")
+      .val()
+      .split("-");
+    let paramSleep = $(".checkSleep:checked").val();
+
+    let now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+
+    let queryString = "";
+
+    if (update) {
+      queryString =
+        "?hour=" +
+        selectedPeriod[0] +
+        "&quarter=" +
+        selectedPeriod[1] +
+        "&work=" +
+        paramWork +
+        "&energy=" +
+        paramEnergy +
+        "&mind=" +
+        paramMind +
+        "&sleep=" +
+        paramSleep +
+        "&callback=?";
+    }
+
+    console.log("queryString", queryString);
+
+    let googleurl = apiurl + queryString;
+
+    $.ajax({
+      crossOrigin: true,
+      url: googleurl,
+
+      dataType: "jsonp",
+      success: function (data, textStatus, xhr) {
+        console.log(data);
+        // showAlert("Deep Breath");
+        //showAlert("<p>" + data + "</p>");
+        $("#errorMessage").html(data);
+        // reloadStatusSheet();
+        console.log("response data", data);
+        $("#progress-loading").hide();
+      },
+      error: function (xhr, error_text, statusText) {
+        showAlert(error_text + "<br> Error while Processing");
+        console.log("error_text", error_text);
+        $("#progress-loading").hide();
+      },
+    });
+  }
+
+  
+  function btnErrorMessageClick() {
+    reloadStatusSheet();
+    postToGoogle(false);
+  }
+
+
+  
+  function oneClickResetSheet() {
+    $("#progress-loading").show();
+    $("#success-alert").hide();
+    $("#collapseControlsSettings").collapse("toggle");
+
+    let googleapireseturl =
+      "https://script.google.com/macros/s/AKfycbzhx9voh2A2FOd-E2hR4-CFinQKV-R0X3CKvheKTBYa/dev?callback=?";
+
+    $.ajax({
+      crossOrigin: true,
+      url: googleapireseturl,
+
+      dataType: "jsonp",
+      success: function (data, textStatus, xhr) {
+        console.log("oneClickResetSheet response data", data);
+        //alert('SUCCESS - ' + data)
+        showAlert("<h2> Done : " + data + "</h2>");
+        $("#progress-loading").hide();
+      },
+      error: function (xhr, error_text, statusText) {
+        //alert('Sheet Reset Done with - ' + error_text)
+        console.log("error_text", error_text);
+        showAlert("<h2> Reset :" + error_text + "</h2>");
+        $("#progress-loading").hide();
+      },
+    });
+  }
+
+  function getCurrentTrackerTime() {
+    let now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let quarter = 4;
+
+    if (minutes < 45) {
+      quarter = 3;
+      if (minutes < 30) {
+        quarter = 2;
+        if (minutes < 15) {
+          quarter = 1;
+        }
+      }
+    }
+    return hours + "-" + quarter;
+  }
+
+
+
+
         setInterval(processBeHereNow, 1000);
 
         //ro(chunkLable1, 0);
@@ -757,7 +983,7 @@
           r(hourHand, hourDeg);
           r(minHand, 6 * d.getMinutes());
           let deg = getOnePointerDegree(hourDeg, minDeg);
-         console.log(deg);
+         
          
           r(circleCurrent, deg);
       
