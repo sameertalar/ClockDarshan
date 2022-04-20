@@ -22,8 +22,14 @@
     <style>
 
     .chunkLablelH {
+        fill: #ffffff;
+        font-size: 3px;    
+ 
+      }
+      .chunkLablelHB {
         fill: #117a8b;
-        font-size: 3px;
+        font-size: 3px;    
+ 
       }
 
       .chunkLablelQ {
@@ -33,7 +39,13 @@
 
       .chunkLablelT
       {
-        font-size: 2px;
+        font-size: 2.6px;
+      }
+
+      
+      .chunkLablelM
+      {
+        font-size: 5px;
       }
 
       body {
@@ -193,7 +205,7 @@
 
 
 <!--     -------------------------      -->
-<div style="position: absolute; top: 70px; right: 0; z-index: 999">
+<div style="position: absolute; top: 100px; right: 0; z-index: 999">
   <select
     class="text-white bg-primary ml-3 border rounded-pill form-control"
     style="font-size: 1.3em"
@@ -223,7 +235,7 @@
       <div id="chunkStatus"></div>
     </div>
  
-    <div class="container-fluid border border-primary mt-1">
+    <div class="container-fluid border border-primary">
       <div class="row border">
         <div class="col-lg-4"> 
           <div
@@ -520,15 +532,7 @@
                     stroke-width="0.4%"
                     fill="none"
                   /> 
-                  <circle
-                  id="onepointer4"
-                  cx="51"
-                  cy="26"
-                  r="2"
-                  stroke="none"
-                  stroke-width="0.3%"
-                  fill="blue"
-                />
+             
 
                   <!--
                
@@ -547,6 +551,31 @@
                
                 </g>
 
+
+                <g id="hands">
+             
+                  <rect
+                    id="minHand"
+                    x="48.5"
+                    y="21"
+                    width="5"
+                    height="8"
+                    rx="7"
+                    ry="7"
+                  />
+                  <rect
+                    id="hourHand"
+                    x="48.5"
+                    y="21"
+                    width="5"
+                    height="8"
+                    rx="7"
+                    ry="7"
+                    fill="#ffffff"
+                    stroke="#000000"
+                  />
+                </g>
+  
                  
               <g transform="translate(50,50)" >
                 <!-- tick 
@@ -556,29 +585,52 @@
                     stroke-dasharray="2 23.789082" transform="rotate(-1.5)" />
                 </g>
                 -->
+
+               
          
-                
+                <g transform="rotate(0)" class="chunkLablelHB"  >
+                  <circle  cx="2" cy="-24" r="2.5" stroke="none"stroke-width="0.3%"  transform="rotate(12.5)"  />
+                  <circle  cx="2" cy="-24" r="2.5" stroke="none"stroke-width="0.3%"  transform="rotate(42.5)"  />
+                  <circle  cx="2" cy="-24" r="2.5" stroke="none"stroke-width="0.3%"  transform="rotate(72.5)"  />
+                  <circle  cx="2" cy="-24" r="2.5" stroke="none"stroke-width="0.3%"  transform="rotate(102.5)"  />
+                  <circle  cx="2" cy="-24" r="2.5" stroke="none"stroke-width="0.3%"  transform="rotate(132.5)"  />
+                  <circle  cx="2" cy="-24" r="2.5" stroke="none"stroke-width="0.3%"  transform="rotate(162.5)"  />
+                  <circle  cx="2" cy="-24" r="2.5" stroke="none"stroke-width="0.3%"  transform="rotate(192.5)"  />
+                  <circle  cx="2" cy="-24" r="2.5" stroke="none"stroke-width="0.3%"  transform="rotate(222.5)"  />
+                  <circle  cx="2" cy="-24" r="2.5" stroke="none"stroke-width="0.3%"  transform="rotate(252.5)"  />
+                  <circle  cx="2" cy="-24" r="2.5" stroke="none"stroke-width="0.3%"  transform="rotate(282.5)"  />
+                  <circle  cx="2" cy="-24" r="2.5" stroke="none"stroke-width="0.3%"  transform="rotate(312.5)"  />
+                  <circle  cx="2" cy="-24" r="2.5" stroke="none"stroke-width="0.3%"  transform="rotate(342.5)"  />
+              
+
+        
+               </g>
                 <g transform="rotate(0)" class="chunkLablelH"  >
-                  <text x="0" y="-18" id="chunkLablelH1" transform="rotate(12.5)">10</text>
-                  <text x="0" y="-18" id="chunkLablelH2" transform="rotate(42.5)">11</text>
-                  <text x="0" y="-18" id="chunkLablelH3" transform="rotate(72.5)">12</text>
-                  <text x="0" y="-18" id="chunkLablelH4" transform="rotate(102.5)">10</text>
-                  <text x="0" y="-18" id="chunkLablelH5" transform="rotate(132.5)">11</text>
-                  <text x="0" y="-18" id="chunkLablelH6" transform="rotate(162.5)">12</text>
-                  <text x="0" y="-18" id="chunkLablelH7" transform="rotate(192.5)">10</text>
-                  <text x="0" y="-18" id="chunkLablelH8" transform="rotate(222.5)">11</text>
-                  <text x="0" y="-18" id="chunkLablelH9" transform="rotate(252.5)">12</text>
-                  <text x="0" y="-18" id="chunkLablelH10" transform="rotate(282.5)">10</text>
-                  <text x="0" y="-18" id="chunkLablelH11" transform="rotate(312.5)">11</text>
-                  <text x="0" y="-18" id="chunkLablelH12" transform="rotate(342.5)">12</text>
+                   <text x="0" y="-23" id="chunkLablelH1" transform="rotate(12.5)">10</text>
+                  <text x="0" y="-23" id="chunkLablelH2" transform="rotate(42.5)">11</text>
+                  <text x="0" y="-23" id="chunkLablelH3" transform="rotate(72.5)">12</text>
+                  <text x="0" y="-23" id="chunkLablelH4" transform="rotate(102.5)">10</text>
+                  <text x="0" y="-23" id="chunkLablelH5" transform="rotate(132.5)">11</text>
+                  <text x="0" y="-23" id="chunkLablelH6" transform="rotate(162.5)">12</text>
+                  <text x="0" y="-23" id="chunkLablelH7" transform="rotate(192.5)">10</text>
+                  <text x="0" y="-23" id="chunkLablelH8" transform="rotate(222.5)">11</text>
+                  <text x="0" y="-23" id="chunkLablelH9" transform="rotate(252.5)">12</text>
+                  <text x="0" y="-23" id="chunkLablelH10" transform="rotate(282.5)">10</text>
+                  <text x="0" y="-23" id="chunkLablelH11" transform="rotate(312.5)">11</text>
+                  <text x="0" y="-23" id="chunkLablelH12" transform="rotate(342.5)">12</text>
                </g>
 
+      
+
                <g transform="rotate(3)" class="chunkLablelQ">
-                <text x = "0" y="-23" id="chunkLablelQ2" transform="rotate(42.5)">1</text>
-                <text x = "0" y="-23" id="chunkLablelQ5" transform="rotate(132.5)">2</text>
-                <text x = "0" y="-23" id="chunkLablelQ8" transform="rotate(222.5)">3</text>
-                <text x = "0" y="-23" id="chunkLablelQ11" transform="rotate(312.5)">4</text>
+
                 <!--    
+                <text x = "0" y="-48" id="chunkLablelQ2" transform="rotate(42.5)">1</text>
+                <text x = "0" y="-48" id="chunkLablelQ5" transform="rotate(132.5)">2</text>
+                <text x = "0" y="-48" id="chunkLablelQ8" transform="rotate(222.5)">3</text>
+                <text x = "0" y="-48" id="chunkLablelQ11" transform="rotate(312.5)">4</text>
+
+
                 <text x = "0" y="-23" id="chunkLablelQ1" transform="rotate(12.5)">1</text>
                 <text x = "0" y="-23" id="chunkLablelQ2" transform="rotate(42.5)">1</text>
                 <text x = "0" y="-23" id="chunkLablelQ3" transform="rotate(72.5)">1</text>
@@ -597,35 +649,7 @@
 
 
              <!--
-             <g transform="rotate(0)" class="chunkLablelT">
-                <text x = "0" y="-47" id="chunkLablelE1" transform="rotate(12.5)">🥥</text>
-                <text x = "0" y="-47" id="chunkLablelE2" transform="rotate(42.5)">🥥</text>
-                <text x = "0" y="-47" id="chunkLablelE3" transform="rotate(72.5)">🥥</text>
-                <text x = "0" y="-47" id="chunkLablelE4" transform="rotate(102.5)">🔋</text>
-                <text x = "0" y="-47" id="chunkLablelE5" transform="rotate(132.5)">🔋</text>
-                <text x = "0" y="-47" id="chunkLablelE6" transform="rotate(162.5)">🔋</text>
-                <text x = "0" y="-47" id="chunkLablelE7" transform="rotate(192.5)">🔋</text>
-                <text x = "0" y="-47" id="chunkLablelE8" transform="rotate(222.5)">🔋</text>
-                <text x = "0" y="-47" id="chunkLablelE9" transform="rotate(252.5)">🔋</text>
-                <text x = "0" y="-47" id="chunkLablelE10" transform="rotate(282.5)">⚪</text>
-                <text x = "0" y="-47" id="chunkLablelE11" transform="rotate(312.5)">⚪</text>
-                <text x = "0" y="-47" id="chunkLablelE12" transform="rotate(342.5)">⚪</text>
-             </g>
 
-             <g transform="rotate(-5)" class="chunkLablelT">
-              <text x = "0" y="-47" id="chunkLablelW1" transform="rotate(12.5)">🪔</text>
-              <text x = "0" y="-47" id="chunkLablelW2" transform="rotate(42.5)">🪔</text>
-              <text x = "0" y="-47" id="chunkLablelW3" transform="rotate(72.5)">🥥</text>
-              <text x = "0" y="-47" id="chunkLablelW4" transform="rotate(102.5)">💎</text>
-              <text x = "0" y="-47" id="chunkLablelW5" transform="rotate(132.5)">💎</text>
-              <text x = "0" y="-47" id="chunkLablelW6" transform="rotate(162.5)">🌿</text>
-              <text x = "0" y="-47" id="chunkLablelW7" transform="rotate(192.5)">💎</text>
-              <text x = "0" y="-47" id="chunkLablelW8" transform="rotate(222.5)">🌿</text>
-              <text x = "0" y="-47" id="chunkLablelW9" transform="rotate(252.5)">💎</text>
-              <text x = "0" y="-47" id="chunkLablelW10" transform="rotate(282.5)">🍂</text>
-              <text x = "0" y="-47" id="chunkLablelW11" transform="rotate(312.5)">🍂</text>
-              <text x = "0" y="-47" id="chunkLablelW12" transform="rotate(342.5)">🍂</text>
-             </g>
 
              <g transform="rotate(5)" class="chunkLablelT">
               <text x = "0" y="-47" id="chunkLablelM1" transform="rotate(12.5)">🕊️</text>
@@ -644,79 +668,57 @@
 
               
              --> 
-             <g transform="rotate(-5)" class="chunkLablelT">
-              <text x = "0" y="-8" id="chunkLablelW1" transform="rotate(12.5)">🪔</text>
-              <text x = "0" y="-8" id="chunkLablelW2" transform="rotate(42.5)">🪔</text>
-              <text x = "0" y="-8" id="chunkLablelW3" transform="rotate(72.5)">🍂</text>
-              <text x = "0" y="-8" id="chunkLablelW4" transform="rotate(102.5)">💎</text>
-              <text x = "0" y="-8" id="chunkLablelW5" transform="rotate(132.5)">💎</text>
-              <text x = "0" y="-8" id="chunkLablelW6" transform="rotate(162.5)">🌿</text>
-              <text x = "0" y="-8" id="chunkLablelW7" transform="rotate(192.5)">💎</text>
-              <text x = "0" y="-8" id="chunkLablelW8" transform="rotate(222.5)">🌿</text>
-              <text x = "0" y="-8" id="chunkLablelW9" transform="rotate(252.5)">💎</text>
-              <text x = "0" y="-8" id="chunkLablelW10" transform="rotate(282.5)">🍂</text>
-              <text x = "0" y="-8" id="chunkLablelW11" transform="rotate(312.5)">🍂</text>
-              <text x = "0" y="-8" id="chunkLablelW12" transform="rotate(342.5)">🍂</text>
-             </g>  
-             <g transform="rotate(-5)" class="chunkLablelT">
-              <text x = "0" y="-11" id="chunkLablelE1" transform="rotate(12.5)">🥥</text>
-              <text x = "0" y="-11" id="chunkLablelE2" transform="rotate(42.5)">🥥</text>
-              <text x = "0" y="-11" id="chunkLablelE3" transform="rotate(72.5)">🥥</text>
-              <text x = "0" y="-11" id="chunkLablelE4" transform="rotate(102.5)">🔋</text>
-              <text x = "0" y="-11" id="chunkLablelE5" transform="rotate(132.5)">🔋</text>
-              <text x = "0" y="-11" id="chunkLablelE6" transform="rotate(162.5)">🔋</text>
-              <text x = "0" y="-11" id="chunkLablelE7" transform="rotate(192.5)">🔋</text>
-              <text x = "0" y="-11" id="chunkLablelE8" transform="rotate(222.5)">🔋</text>
-              <text x = "0" y="-11" id="chunkLablelE9" transform="rotate(252.5)">🔋</text>
-              <text x = "0" y="-11" id="chunkLablelE10" transform="rotate(282.5)">⚪</text>
-              <text x = "0" y="-11" id="chunkLablelE11" transform="rotate(312.5)">⚪</text>
-              <text x = "0" y="-11" id="chunkLablelE12" transform="rotate(342.5)">⚪</text>
+             <g transform="rotate(0)" class="chunkLablelT">
+              <text x = "0" y="-47" id="chunkLablelE1" transform="rotate(12.5)">🥥</text>
+              <text x = "0" y="-47" id="chunkLablelE2" transform="rotate(42.5)">🥥</text>
+              <text x = "0" y="-47" id="chunkLablelE3" transform="rotate(72.5)">🥥</text>
+              <text x = "0" y="-47" id="chunkLablelE4" transform="rotate(102.5)">🔋</text>
+              <text x = "0" y="-47" id="chunkLablelE5" transform="rotate(132.5)">🔋</text>
+              <text x = "0" y="-47" id="chunkLablelE6" transform="rotate(162.5)">🔋</text>
+              <text x = "0" y="-47" id="chunkLablelE7" transform="rotate(192.5)">🔋</text>
+              <text x = "0" y="-47" id="chunkLablelE8" transform="rotate(222.5)">🔋</text>
+              <text x = "0" y="-47" id="chunkLablelE9" transform="rotate(252.5)">🔋</text>
+              <text x = "0" y="-47" id="chunkLablelE10" transform="rotate(282.5)">⚪</text>
+              <text x = "0" y="-47" id="chunkLablelE11" transform="rotate(312.5)">⚪</text>
+              <text x = "0" y="-47" id="chunkLablelE12" transform="rotate(342.5)">⚪</text>
+           </g>
+
+           <g transform="rotate(-4)" class="chunkLablelT">
+            <text x = "0" y="-47" id="chunkLablelW1" transform="rotate(12.5)">🪔</text>
+            <text x = "0" y="-47" id="chunkLablelW2" transform="rotate(42.5)">🪔</text>
+            <text x = "0" y="-47" id="chunkLablelW3" transform="rotate(72.5)">🪔</text>
+            <text x = "0" y="-47" id="chunkLablelW4" transform="rotate(102.5)">💎</text>
+            <text x = "0" y="-47" id="chunkLablelW5" transform="rotate(132.5)">💎</text>
+            <text x = "0" y="-47" id="chunkLablelW6" transform="rotate(162.5)">🌿</text>
+            <text x = "0" y="-47" id="chunkLablelW7" transform="rotate(192.5)">💎</text>
+            <text x = "0" y="-47" id="chunkLablelW8" transform="rotate(222.5)">🌿</text>
+            <text x = "0" y="-47" id="chunkLablelW9" transform="rotate(252.5)">💎</text>
+            <text x = "0" y="-47" id="chunkLablelW10" transform="rotate(282.5)">🍂</text>
+            <text x = "0" y="-47" id="chunkLablelW11" transform="rotate(312.5)">🍂</text>
+            <text x = "0" y="-47" id="chunkLablelW12" transform="rotate(342.5)">🍂</text>
            </g>
 
 
-           <g transform="rotate(-5)" class="chunkLablelT">
-            <text x = "0" y="-14" id="chunkLablelM1" transform="rotate(12.5)">🕊️</text>
-            <text x = "0" y="-14" id="chunkLablelM2" transform="rotate(42.5)">🕊️</text>
-            <text x = "0" y="-14" id="chunkLablelM3" transform="rotate(72.5)">🔥</text>
-            <text x = "0" y="-14" id="chunkLablelM4" transform="rotate(102.5)">🔥</text>
-            <text x = "0" y="-14" id="chunkLablelM5" transform="rotate(132.5)">🧘</text>
-            <text x = "0" y="-14" id="chunkLablelM6" transform="rotate(162.5)">🧘</text>
-            <text x = "0" y="-14" id="chunkLablelM7" transform="rotate(192.5)">🧘</text>
-            <text x = "0" y="-14" id="chunkLablelM8" transform="rotate(222.5)">🧿</text>
-            <text x = "0" y="-14" id="chunkLablelM9" transform="rotate(252.5)">🧿</text>
-            <text x = "0" y="-14" id="chunkLablelM10" transform="rotate(282.5)">🧿</text>
-            <text x = "0" y="-14" id="chunkLablelM11" transform="rotate(312.5)">🎳</text>
-            <text x = "0" y="-14" id="chunkLablelM12" transform="rotate(342.5)">🎳</text>
+           <g transform="rotate(-5)" class="chunkLablelM">
+            <text x = "0" y="-16" id="chunkLablelM1" transform="rotate(12.5)">🕊️</text>
+            <text x = "0" y="-16" id="chunkLablelM2" transform="rotate(42.5)">🕊️</text>
+            <text x = "0" y="-16" id="chunkLablelM3" transform="rotate(72.5)">🔥</text>
+            <text x = "0" y="-16" id="chunkLablelM4" transform="rotate(102.5)">🔥</text>
+            <text x = "0" y="-16" id="chunkLablelM5" transform="rotate(132.5)">🧘</text>
+            <text x = "0" y="-16" id="chunkLablelM6" transform="rotate(162.5)">🧘</text>
+            <text x = "0" y="-16" id="chunkLablelM7" transform="rotate(192.5)">🧘</text>
+            <text x = "0" y="-16" id="chunkLablelM8" transform="rotate(222.5)">🧿</text>
+            <text x = "0" y="-16" id="chunkLablelM9" transform="rotate(252.5)">🧿</text>
+            <text x = "0" y="-16" id="chunkLablelM10" transform="rotate(282.5)">🧿</text>
+            <text x = "0" y="-16" id="chunkLablelM11" transform="rotate(312.5)">🎳</text>
+            <text x = "0" y="-16" id="chunkLablelM12" transform="rotate(342.5)">🎳</text>
            </g>	 
 
 
               </g>
 
               
-              <g id="hands">
-             
-                <rect
-                  id="minHand"
-                  x="48.5"
-                  y="21"
-                  width="5"
-                  height="8"
-                  rx="7"
-                  ry="7"
-                />
-                <rect
-                  id="hourHand"
-                  x="48.5"
-                  y="21"
-                  width="5"
-                  height="8"
-                  rx="7"
-                  ry="7"
-                  fill="#ffffff"
-                  stroke="#000000"
-                />
-              </g>
-
+      
           
 
             
