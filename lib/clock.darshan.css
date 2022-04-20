@@ -76,7 +76,7 @@ input[type="checkbox"] {
   height: 100%;
   vertical-align: middle;
   overflow: hidden;
-  background: url("../img/ClockDarshan.png");
+  background: url("../img/ClockDarshan1.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -101,8 +101,7 @@ input[type="checkbox"] {
 
 }
 .chunkLablelHB {
-  fill: #58727a;
-  opacity: 0.7;
+  fill: #117a8b; 
   font-size: 3px;    
 
 }
