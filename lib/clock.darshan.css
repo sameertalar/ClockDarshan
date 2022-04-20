@@ -101,7 +101,8 @@ input[type="checkbox"] {
 
 }
 .chunkLablelHB {
-  fill: #117a8b;
+  fill: #58727a;
+  opacity: 0.7;
   font-size: 3px;    
 
 }
@@ -124,7 +125,7 @@ input[type="checkbox"] {
  
 
 #currentTime {
-  fill: #58727a;
+  fill: #ffffff;
   font-size: 3px;
 }
 
