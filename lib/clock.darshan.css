@@ -76,7 +76,7 @@ input[type="checkbox"] {
   height: 100%;
   vertical-align: middle;
   overflow: hidden;
-  background: url("../img/ClockDarshan6.3.1.png");
+  background: url("../img/ClockDarshan7.1.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -101,7 +101,7 @@ input[type="checkbox"] {
 
 }
 .chunkLablelHB {
-  fill: #117a8b; 
+  fill: none;
   font-size: 10px;    
 
 }
@@ -156,7 +156,7 @@ input[type="checkbox"] {
 #chunkProgress {
   position: relative;
   left: 5px;
-  width: 97%;
+  width: 99%;
   height: 11px;
   border: 1px solid #0d2931;
   background-color: #fef9e7;
@@ -207,15 +207,15 @@ input[type="checkbox"] {
 #quarterProgress {
   position: relative;
   left: 5px;
-  width: 97%;
+  width: 99%;
   height: 11px;
   border: 1px solid #0d2931;
   background-color: #fef9e7;
   background: linear-gradient(
     to right,
-    #FC766AFF 33.33%,
-    #783937FF 33.33% 66.66%,
-     #F1AC88FF 66.66%
+    #F3EAD4 33.33%,
+    #A5E5D9 33.33% 66.66%,
+     #D1D3D4 66.66%
   );
 }
 
@@ -228,7 +228,7 @@ input[type="checkbox"] {
   float: right;
   width: 0;
   height: 98%;
-  background: #117a8b; 
+  background:#0d2931; 
   border-top: solid 2px #003da1;
   border-bottom: solid 2px #003da1;
   border-left: solid 4px #aa272f;
