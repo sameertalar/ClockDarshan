@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     />
     <!-- <link rel="stylesheet" href="../libraries/bootstrap.min.css" />-->
-    <link rel="stylesheet" href="lib/clock.darshan.css?v=019.1" />
+    <link rel="stylesheet" href="lib/clock.darshan.css?v=019.2" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -36,11 +36,16 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="text-center">
-            <div id="chunkProgress" class="border" style="position: absolute">
-              <div id="chunkStatus"></div>
-            </div>        
+       
+            <div id="quarterProgress" class="border progressOuter" style="position: absolute">
+              <div id="quarterStatus"></div>
+            </div> 
+            <div id="chunkProgress" class="border" style="position: absolute; top:10px">
+              <div id="chunkStatus" ></div>
+            </div> 
+              
 
-            <div style="position: absolute; top: 12px; right: 20px; z-index: 999">
+            <div style="position: absolute; top: 23px; right: 20px; z-index: 999">
               <select
                 class="text-white bg-primary ml-3 border rounded-pill form-control"
                 style="font-size: 1.3em"
@@ -49,7 +54,7 @@
             </div>
             <div
             class="text-center"
-            style="position: absolute; top: 15px; left: 5px; z-index: 999"
+            style="position: absolute; top: 23px; left: 5px; z-index: 999"
           >
             <span id="errorMessage" class="btn btn-sm bg-danger text-white small">
               Clock<br />Darshan
@@ -121,8 +126,8 @@
       <div class="row">
         <!-- Left  container-->
         <div class="col-lg-4">
-          <div class="text-center">
-            <div class="row mt-2">
+          <div class="text-center mt-4">
+            <div class="row mt-4">
               <div class="col">
                 <div id="clockContainer ">
                   <div id="clock-container" class="float-right">
@@ -980,7 +985,7 @@
       integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
       crossorigin="anonymous"
     ></script>
-    <script src="lib/clock.darshan.js?ver=009"></script>
+    <script src="lib/clock.darshan.js?ver=009.1"></script>
     <script>
       function testFunction(min) {
         var out = "";

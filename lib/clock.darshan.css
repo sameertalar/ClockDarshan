@@ -155,8 +155,8 @@ input[type="checkbox"] {
 
 #chunkProgress {
   position: relative;
-  left: 10px;
-  width: 95%;
+  left: 5px;
+  width: 97%;
   height: 11px;
   border: 1px solid #0d2931;
   background-color: #fef9e7;
@@ -171,16 +171,7 @@ input[type="checkbox"] {
   );
 }
 
-/*
-
-  #007bff 20%,
-    #ff2e2d 20% 40%,
-    #117a8b 40% 49.5%,
-    #ffffff 49.5% 50%,
-    #117a8b 50% 60%,
-    #fa9207 60% 80%,
-    #28a745 80%
-*/
+ 
 
 #chunkStatus {
   position: relative;
@@ -211,6 +202,37 @@ input[type="checkbox"] {
   background: linear-gradient(to bottom, #0fd30f 0%, #0cf459 48%, #17a504 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbff87', endColorstr='#17a504', GradientType=0);
 */
+}
+
+#quarterProgress {
+  position: relative;
+  left: 5px;
+  width: 97%;
+  height: 11px;
+  border: 1px solid #0d2931;
+  background-color: #fef9e7;
+  background: linear-gradient(
+    to right,
+    #FC766AFF 33.33%,
+    #783937FF 33.33% 66.66%,
+     #F1AC88FF 66.66%
+  );
+}
+
+#quarterStatus {
+  position: relative;
+  z-index: 1;
+  left: 0;
+  margin-top: 0px;
+  top: 0;
+  float: right;
+  width: 0;
+  height: 98%;
+  background: #117a8b; 
+  border-top: solid 2px #003da1;
+  border-bottom: solid 2px #003da1;
+  border-left: solid 4px #aa272f;
+  border-right: double 1px #003da1; 
 }
 
 #displayNaam {
