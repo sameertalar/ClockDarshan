@@ -155,8 +155,8 @@ input[type="checkbox"] {
 
 #chunkProgress {
   position: relative;
-  left: 20px;
-  width: 93%;
+  left: 10px;
+  width: 95%;
   height: 11px;
   border: 1px solid #0d2931;
   background-color: #fef9e7;
