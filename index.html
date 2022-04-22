@@ -29,35 +29,34 @@
   </head>
   <body>
     <!-- Stickey and Floating - Start-->
- 
+
     <div style="position: absolute; top: 110px; right: 20px; z-index: 999">
-      
-            
       <select
-      class="text-white bg-primary ml-3 border rounded-pill form-control"
-      style="font-size: 1.3em"
-      id="selectTrackerTime"
-    ></select>
-     
+        class="text-white bg-primary ml-3 border rounded-pill form-control"
+        style="font-size: 1.3em"
+        id="selectTrackerTime"
+      ></select>
     </div>
-    <div    class="text-center"   style="position: absolute; top: 110px; left: 5px; z-index: 999">
+    <div
+      class="text-center"
+      style="position: absolute; top: 110px; left: 5px; z-index: 999"
+    >
       <span id="errorMessage" class="btn btn-sm bg-danger text-white small">
         Clock<br />Darshan
-      </span> 
+      </span>
       <input
-      type="checkbox"
-      class="btn-check checkEdit mt-3 ml-3"             
-      id="checkEdit"
-      autocomplete="off"
-      name="checkEdit"
-      value="T"
-    />
+        type="checkbox"
+        class="btn-check checkEdit mt-3 ml-3"
+        id="checkEdit"
+        autocomplete="off"
+        name="checkEdit"
+        value="T"
+      />
+    </div>
 
-  </div>
-
-  <div style="position: absolute; top: 450px; right: 20px; z-index: 999">
-    <div class="btn-group">
-      <!--
+    <div style="position: absolute; top: 450px; right: 20px; z-index: 999">
+      <div class="btn-group">
+        <!--
           <button
           id="btnRefresh"
           type="button"
@@ -73,7 +72,7 @@
         0
       </button>-->
 
-      <!--
+        <!--
       <button
         id="btnTrackerSheetLoader"
         type="button"
@@ -82,7 +81,7 @@
         <i class="fa fa-bar-chart"></i>
       </button>
       -->
-      <!--   <button
+        <!--   <button
         class="btn"
         type="button"
         id="refreshQuarter"
@@ -91,51 +90,40 @@
         <i class="fa fa-refresh text-info"></i>
       </button> -->
 
-      <a
-        class="btn btn-info active shrinkbtn"
-        data-toggle="collapse"
-        href="#collapseControlsSettings"
-        role="button"
-        aria-expanded="false"
-        aria-controls="collapseExample"
-      >
-        <i id="btnGear" class="fa fa-gear fa-2x px-2"></i>
-      </a>
-      <button
-        type="button"
-        class="btn btn-sm btn-outline-info"
-        id="btnPlayVideo"
-      >
-        <i class="fa fa-video-camera fa-2x"></i>
-      </button>
+   
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-info"
+          id="btnPlayVideo"
+        >
+          <i class="fa fa-video-camera fa-2x"></i>
+        </button>
+      </div>
     </div>
-  
-  
-  </div>
-  <div    class="text-center"   style="position: absolute; top: 110px; left: 5px; z-index: 999">
-    b</div>
-
+    <div
+      class="text-center"
+      style="position: absolute; top: 450px; left: 5px; z-index: 999"
+    >
+    <a
+    class="btn btn-info active shrinkbtn"
+    data-toggle="collapse"
+    href="#collapseControlsSettings"
+    role="button"
+    aria-expanded="false"
+    aria-controls="collapseExample"
+  >
+    <i id="btnGear" class="fa fa-gear fa-2x px-2"></i>
+  </a>
+    </div>
 
     <div class="container-fluid sticky-top">
-         
-  
-
-
-
       <div class="row">
         <div class="col-lg-4">
           <div class="text-center">
-       
-   
-              
-
-        
             <div
-            class="text-center"
-            style="position: absolute; top: 23px; left: 5px; z-index: 999"
-          >
-         
-          </div>
+              class="text-center"
+              style="position: absolute; top: 23px; left: 5px; z-index: 999"
+            ></div>
             <div
               class="text-center pt-3"
               id="containerBattery"
@@ -155,16 +143,22 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-4">
-     
-        </div>
+        <div class="col-lg-4"></div>
       </div>
     </div>
-    <div style="display:none; position: absolute; right: 10px; top: 118px; z-index: 999">
+    <div
+      style="
+        display: none;
+        position: absolute;
+        right: 10px;
+        top: 118px;
+        z-index: 999;
+      "
+    >
       <a href="c.html"> New Page</a>
     </div>
     <!-- Top Right Corner-->
-   
+
     <div style="position: fixed; bottom: 25px; right: 15px; z-index: 999">
       <video
         id="videoDummy"
@@ -181,181 +175,202 @@
     <!-- Stickey and Floating - End-->
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-4 ">
-          <div id="quarterProgress" class="border progressOuter"  >
+        <div class="col-lg-4">
+          <div id="quarterProgress" class="border progressOuter">
             <div id="quarterStatus"></div>
-          </div> 
-          <div id="chunkProgress" class="border"  >
-            <div id="chunkStatus" ></div>
-          </div> 
+          </div>
+          <div id="chunkProgress" class="border">
+            <div id="chunkStatus"></div>
+          </div>
         </div>
-
       </div>
       <div class="row">
-        <div class="col-lg-4 ">
+        <div class="col-lg-4">
+          <!--  Progress-Start -->
+          <div class="alert alert-success text-center" id="success-alert">
+            <span id="alertMessage" class="text-primary"> </span>
+          </div>
           <div
-          class="btn-group btn-group-toggle float-left border rounded-pill"
-          data-toggle="buttons"
-        >
-          <label class="btn btn-outline-info border-0">
-            <input
-              type="radio"
-              class="radioWork"
-              id="radioWorkS"
-              name="radioWork"
-              value="C"
-            />
-            🪔
-          </label>
-          <label class="btn btn-outline-primary border-0">
-            <input
-              type="radio"
-              class="radioWork"
-              id="radioWorkV"
-              name="radioWork"
-              value="D"
-            />
-            💎
-          </label>
-          <label class="btn btn-outline-success border-0">
-            <input
-              type="radio"
-              class="radioWork"
-              id="radioWorkH"
-              name="radioWork"
-              value="E"
-            />
-            🌿
-          </label>
-          <label class="btn btn-outline-warning border-0">
-            <input
-              type="radio"
-              class="radioWork"
-              id="radioWorkD"
-              name="radioWork"
-              value="F"
-            />
-            👪
-          </label>
-          <label class="btn btn-outline-danger border-0">
-            <input
-              type="radio"
-              class="radioWork"
-              id="radioWorkN"
-              name="radioWork"
-              value="G"
-            />
-            🍂
-          </label>
+            class="alert alert-warning text-center bg-success"
+            style="display: none"
+            id="progress-loading"
+          >
+            <h3>
+              <!--  <i class="fa fa-spinner fa-spin text-primary"></i> -->
+              <span
+                class="spinner-border text-white"
+                id="spinner"
+                role="status"
+              ></span>
+              <span class="text-warning font-weight-light">Deep Breath</span>
+            </h3>
+          </div>
+          <!--  Progress-End -->
         </div>
-        <div
-        class="btn-group btn-group-toggle float-left border rounded-pill"
-        data-toggle="buttons"
-      >
-        <label class="btn btn-outline-success border-0">
-          <input
-            type="radio"
-            class="radioEnergy"
-            id="radioEnergyH"
-            name="radioEnergy"
-            value="I"
-          />
-          🔋
-        </label>
-        <label class="btn btn-outline-warning border-0">
-          <input
-            type="radio"
-            class="radioEnergy"
-            id="radioEnergyM"
-            name="radioEnergy"
-            value="J"
-          />
-          🥥
-        </label>
-        <label class="btn btn-outline-danger border-0">
-          <input
-            type="radio"
-            class="radioEnergy"
-            id="radioEnergyL"
-            name="radioEnergy"
-            value="K"
-          />
-          ⚪
-        </label>
       </div>
-      
-  
+      <div class="row">
+        <div class="col-lg-4">
+          <div
+            class="btn-group btn-group-toggle float-left border rounded-pill"
+            data-toggle="buttons"
+          >
+            <label class="btn btn-outline-info border-0">
+              <input
+                type="radio"
+                class="radioWork"
+                id="radioWorkS"
+                name="radioWork"
+                value="C"
+              />
+              🪔
+            </label>
+            <label class="btn btn-outline-primary border-0">
+              <input
+                type="radio"
+                class="radioWork"
+                id="radioWorkV"
+                name="radioWork"
+                value="D"
+              />
+              💎
+            </label>
+            <label class="btn btn-outline-success border-0">
+              <input
+                type="radio"
+                class="radioWork"
+                id="radioWorkH"
+                name="radioWork"
+                value="E"
+              />
+              🌿
+            </label>
+            <label class="btn btn-outline-warning border-0">
+              <input
+                type="radio"
+                class="radioWork"
+                id="radioWorkD"
+                name="radioWork"
+                value="F"
+              />
+              👪
+            </label>
+            <label class="btn btn-outline-danger border-0">
+              <input
+                type="radio"
+                class="radioWork"
+                id="radioWorkN"
+                name="radioWork"
+                value="G"
+              />
+              🍂
+            </label>
+          </div>
+          <div
+            class="btn-group btn-group-toggle float-left border rounded-pill"
+            data-toggle="buttons"
+          >
+            <label class="btn btn-outline-success border-0">
+              <input
+                type="radio"
+                class="radioEnergy"
+                id="radioEnergyH"
+                name="radioEnergy"
+                value="I"
+              />
+              🔋
+            </label>
+            <label class="btn btn-outline-warning border-0">
+              <input
+                type="radio"
+                class="radioEnergy"
+                id="radioEnergyM"
+                name="radioEnergy"
+                value="J"
+              />
+              🥥
+            </label>
+            <label class="btn btn-outline-danger border-0">
+              <input
+                type="radio"
+                class="radioEnergy"
+                id="radioEnergyL"
+                name="radioEnergy"
+                value="K"
+              />
+              ⚪
+            </label>
+          </div>
         </div>
-
       </div>
 
       <div class="row">
-        <div class="col-lg-4 ">
+        <div class="col-lg-4">
           <div
-          class="btn-group btn-group-toggle float-left border rounded-pill"
-          data-toggle="buttons"
-        >
-          <label class="btn btn-outline-info border-0">
+            class="btn-group btn-group-toggle float-left border rounded-pill"
+            data-toggle="buttons"
+          >
+            <label class="btn btn-outline-info border-0">
+              <input
+                type="radio"
+                class="radioMind"
+                id="radioMindC"
+                name="radioMind"
+                value="N"
+              />
+              🕊️
+            </label>
+            <label class="btn btn-outline-success border-0">
+              <input
+                type="radio"
+                class="radioMind"
+                id="radioMindM"
+                name="radioMind"
+                value="O"
+              />
+              🧘
+            </label>
+            <label class="btn btn-outline-warning border-0">
+              <input
+                type="radio"
+                class="radioMind"
+                id="radioMindA"
+                name="radioMind"
+                value="P"
+              />
+              🧿
+            </label>
+            <label class="btn btn-outline-dark border-0">
+              <input
+                type="radio"
+                class="radioMind"
+                id="radioMindP"
+                name="radioMind"
+                value="Q"
+              />
+              🎳
+            </label>
+            <label class="btn btn-outline-danger border-0">
+              <input
+                type="radio"
+                class="radioMind"
+                id="radioMindB"
+                name="radioMind"
+                value="R"
+              />
+              🔥
+            </label>
+          </div>
+          <label for="checkSleep">
             <input
-              type="radio"
-              class="radioMind"
-              id="radioMindC"
-              name="radioMind"
-              value="N"
+              type="checkbox"
+              class="btn-check checkSleep mt-2"
+              id="checkSleep"
+              autocomplete="off"
+              name="checkSleep"
+              value="S"
             />
-            🕊️
+            💤
           </label>
-          <label class="btn btn-outline-success border-0">
-            <input
-              type="radio"
-              class="radioMind"
-              id="radioMindM"
-              name="radioMind"
-              value="O"
-            />
-            🧘
-          </label>
-          <label class="btn btn-outline-warning border-0">
-            <input
-              type="radio"
-              class="radioMind"
-              id="radioMindA"
-              name="radioMind"
-              value="P"
-            />
-            🧿
-          </label>
-          <label class="btn btn-outline-dark border-0">
-            <input
-              type="radio"
-              class="radioMind"
-              id="radioMindP"
-              name="radioMind"
-              value="Q"
-            />
-            🎳
-          </label>
-          <label class="btn btn-outline-danger border-0">
-            <input
-              type="radio"
-              class="radioMind"
-              id="radioMindB"
-              name="radioMind"
-              value="R"
-            />
-            🔥
-          </label>
-        </div>
-        <label for="checkSleep">
-          <input
-            type="checkbox"
-            class="btn-check checkSleep mt-2 ml-3"
-            id="checkSleep"
-            autocomplete="off"
-            name="checkSleep"
-            value="S"
-          /> 💤
-        </label>
           <div class="btn-group">
             <button
               class="btn btn-sm btn-outline-info active"
@@ -374,97 +389,64 @@
               <i class="fa fa-arrow-up fa-2x"></i>
             </button>
           </div>
-
         </div>
-
       </div>
 
-
-
-      <div class="row">
-        <div class="col-lg-4 ">
-               <!--  Progress-Start -->
-               <div class="alert alert-success text-center" id="success-alert">
-                <span id="alertMessage" class="text-primary"> </span>
-              </div>
-              <div
-                class="alert alert-warning text-center bg-success"
-                style="display: none"
-                id="progress-loading"
-              >
-                <h3>
-                  <!--  <i class="fa fa-spinner fa-spin text-primary"></i> -->
-                  <span
-                    class="spinner-border text-white"
-                    id="spinner"
-                    role="status"
-                  ></span>
-                  <span class="text-warning font-weight-light">Deep Breath</span>
-                </h3>
-              </div>
-              <!--  Progress-End -->
-        </div>
-
-      </div>
+   
       <div class="row">
         <!-- Left  container-->
         <div class="col-lg-4">
           <div class="text-center">
             <div class="row">
               <div class="col">
-         
-
                 <div id="clockContainer">
                   <div id="clock-container">
                     <svg id="clock" viewBox="0 0 100 100">
-           
                       <!---->
-                          <g transform="translate(50, 50)">
-                            <circle
-                              id="ClockInnerCircle"
-                              cx="0"
-                              cy="0"
-                              r="5"
-                              style="
-                                fill: #d8dcdd;
-                                stroke: #ffffff;
-                                stroke-width: 30;
-                                stroke-dasharray: 50, 50;
-                                cursor: pointer;
-                                
-                              "
-                            >
-                            <!--
+                      <g transform="translate(50, 50)">
+                        <circle
+                          id="ClockInnerCircle"
+                          cx="0"
+                          cy="0"
+                          r="5"
+                          style="
+                            fill: #d8dcdd;
+                            stroke: #ffffff;
+                            stroke-width: 30;
+                            stroke-dasharray: 50, 50;
+                            cursor: pointer;
+                          "
+                        >
+                          <!--
                             <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0" to="360"
                             begin="0" dur="18s" repeatCount="indefinite" /> -->
-                            </circle>
-                          </g>
-                         <!-- <text id="currentTimeH" x="48" y="44">4</text>    <text id="currentTime" x="48" y="51.5">10</text>-->
-                       
-                          <g id="onepointer">
-                           
-                            <circle
-                              id="onepointer1"
-                              cx="49.7"
-                              cy="13.7"
-                              r="12.3"
-                              stroke="#ffff00"
-                              stroke-width="7%"
-                              fill="none"
-                            />
-                            <rect
-                            id="tailforCurrent"
-                            x="47"
-                            y="22"
-                            width="6"
-                            height="18"
-                            rx="2"
-                            ry="2"
-                            fill="#ffff00"
-                            stroke="#000000"
-                            stroke-width="0.1" 
-                          />
-                          <rect
+                        </circle>
+                      </g>
+                      <!-- <text id="currentTimeH" x="48" y="44">4</text>    <text id="currentTime" x="48" y="51.5">10</text>-->
+
+                      <g id="onepointer">
+                        <circle
+                          id="onepointer1"
+                          cx="49.7"
+                          cy="13.7"
+                          r="12.3"
+                          stroke="#ffff00"
+                          stroke-width="7%"
+                          fill="none"
+                        />
+                        <rect
+                          id="tailforCurrent"
+                          x="47"
+                          y="22"
+                          width="6"
+                          height="18"
+                          rx="2"
+                          ry="2"
+                          fill="#ffff00"
+                          stroke="#000000"
+                          stroke-width="0.1"
+                        />
+                        <rect
                           id="tailforCurrentOpposite"
                           x="47"
                           y="60"
@@ -474,58 +456,56 @@
                           ry="2"
                           fill="#F0FFFF"
                           stroke="#117a8b"
-                          stroke-width="0.1" 
+                          stroke-width="0.1"
                         />
 
                         <rect
-                        id="tailforCurrentOpposite2"                       
-                        x="60"
-                        y="47"
-                        width="18"
-                        height="6"
-                        rx="2"
-                        ry="2"
-                        fill="#F0FFFF"
-                        stroke="#117a8b"
-                        stroke-width="0.1" 
-                      />
+                          id="tailforCurrentOpposite2"
+                          x="60"
+                          y="47"
+                          width="18"
+                          height="6"
+                          rx="2"
+                          ry="2"
+                          fill="#F0FFFF"
+                          stroke="#117a8b"
+                          stroke-width="0.1"
+                        />
 
-                      <rect
-                      id="tailforCurrentOpposite3"                       
-                      x="22"
-                      y="47"
-                      width="18"
-                      height="6"
-                      rx="2"
-                      ry="2"
-                      fill="#F0FFFF"
-                      stroke="#117a8b"
-                      stroke-width="0.1" 
-                    />
+                        <rect
+                          id="tailforCurrentOpposite3"
+                          x="22"
+                          y="47"
+                          width="18"
+                          height="6"
+                          rx="2"
+                          ry="2"
+                          fill="#F0FFFF"
+                          stroke="#117a8b"
+                          stroke-width="0.1"
+                        />
 
+                        <circle
+                          id="onepointer2"
+                          cx="49.7"
+                          cy="13.7"
+                          r="13.7"
+                          stroke="#000000"
+                          stroke-width="3%"
+                          fill="none"
+                        />
 
-                            <circle
-                              id="onepointer2"
-                              cx="49.7"
-                              cy="13.7"
-                              r="13.7"
-                              stroke="#000000"
-                              stroke-width="3%"
-                              fill="none"
-                            />
-                        
-                            <circle
-                              id="onepointer3"
-                              cx="49.7"
-                              cy="13.7"
-                              r="13.7"
-                              stroke="#ff2e2d"
-                              stroke-width="0.4%"
-                              fill="none"
-                            /> 
-                           
-          
-                            <!--
+                        <circle
+                          id="onepointer3"
+                          cx="49.7"
+                          cy="13.7"
+                          r="13.7"
+                          stroke="#ff2e2d"
+                          stroke-width="0.4%"
+                          fill="none"
+                        />
+
+                        <!--
                          
                             <circle
                             id="onepointer5"
@@ -539,96 +519,250 @@
                             
                           
                           -->
-                         
-                          </g>
-          
-          
-                          <g id="hands">
-                       
-                            <rect
-                              id="minHand"
-                              x="48.5"
-                              y="0"
-                              width="3"
-                              height="10"
-                              rx="4"
-                              ry="4"
-                            />
-                            <rect
-                              id="hourHand"
-                              x="48.5"
-                              y="-1"
-                              width="5"
-                              height="5"
-                              rx="4.5"
-                              ry="4.5"
-                              fill="#A5E5D9"
-                              stroke="#000000"
-                              stroke-width="0.3%"
-                            />
-                          </g>
-            
-                           
-                        <g transform="translate(50,50)" >
-                          <!-- tick 
+                      </g>
+
+                      <g id="hands">
+                        <rect
+                          id="minHand"
+                          x="48.5"
+                          y="0"
+                          width="3"
+                          height="10"
+                          rx="4"
+                          ry="4"
+                        />
+                        <rect
+                          id="hourHand"
+                          x="48.5"
+                          y="-1"
+                          width="5"
+                          height="5"
+                          rx="4.5"
+                          ry="4.5"
+                          fill="#A5E5D9"
+                          stroke="#000000"
+                          stroke-width="0.3%"
+                        />
+                      </g>
+
+                      <g transform="translate(50,50)">
+                        <!-- tick 
                           <g>
                             <circle r="50" class="x-clock-circle" fill="none" stroke-width="1" stroke="gray" />
                             <circle r="49" class="x-clock-1-minute" fill="none" stroke-width="3" stroke="black" 
                               stroke-dasharray="2 23.789082" transform="rotate(-1.5)" />
                           </g>
                           -->
-          
-                         
-                   
-                          <g transform="rotate(0)" class="chunkLablelHB"  >
-                            <circle  cx="2" cy="-48" r="3" stroke="none"stroke-width="0.3%"  transform="rotate(13)"  />
-                            <circle  cx="2" cy="-48" r="3" stroke="none"stroke-width="0.3%"  transform="rotate(43)"  />
-                            <circle  cx="2" cy="-48" r="3" stroke="none"stroke-width="0.3%"  transform="rotate(73)"  />
-                            <circle  cx="2" cy="-48" r="3" stroke="none"stroke-width="0.3%"  transform="rotate(103)"  />
-                            <circle  cx="2" cy="-48" r="3" stroke="none"stroke-width="0.3%"  transform="rotate(133)"  />
-                            <circle  cx="2" cy="-48" r="3" stroke="none"stroke-width="0.3%"  transform="rotate(163)"  />
-                            <circle  cx="2" cy="-48" r="3" stroke="none"stroke-width="0.3%"  transform="rotate(193)"  />
-                            <circle  cx="2" cy="-48" r="3" stroke="none"stroke-width="0.3%"  transform="rotate(223)"  />
-                            <circle  cx="2" cy="-48" r="3" stroke="none"stroke-width="0.3%"  transform="rotate(253)"  />
-                            <circle  cx="2" cy="-48" r="3" stroke="none"stroke-width="0.3%"  transform="rotate(283)"  />
-                            <circle  cx="2" cy="-48" r="3" stroke="none"stroke-width="0.3%"  transform="rotate(313)"  />
-                            <circle  cx="2" cy="-48" r="3" stroke="none"stroke-width="0.3%"  transform="rotate(343)"  />
-                        
-          
-                  
-                         </g>
-                          <g transform="rotate(0)" class="chunkLablelH"  >
-                             <text x="0" y="-47" id="chunkLablelH1" transform="rotate(12.5)"  >01</text>
-                            <text x="0" y="-47" id="chunkLablelH2" transform="rotate(42.5)">02</text>
-                            <text x="0" y="-47" id="chunkLablelH3" transform="rotate(72.5)">03</text>
-                            <text x="0" y="-47" id="chunkLablelH4" transform="rotate(102.5)">04</text>
-                            <text x="0" y="-47" id="chunkLablelH5" transform="rotate(132.5)">05</text>
-                            <text x="0" y="-47" id="chunkLablelH6" transform="rotate(162.5)">06</text>
-                            <text x="0" y="-47" id="chunkLablelH7" transform="rotate(192.5)">07</text>
-                            <text x="0" y="-47" id="chunkLablelH8" transform="rotate(222.5) ">08</text>
-                            <text x="0" y="-47" id="chunkLablelH9" transform="rotate(252.5)">09</text>
-                            <text x="0" y="-47" id="chunkLablelH10" transform="rotate(282.5)">10</text>
-                            <text x="0" y="-47" id="chunkLablelH11" transform="rotate(312.5)">11</text>
-                            <text x="0" y="-47" id="chunkLablelH12" transform="rotate(342.5)">12</text>
-                         </g>
-          
-                
-          
-                         <g transform="rotate(-1)" class="chunkLablelQ">
-          
-                          <text x = "0" y="-44"   transform="rotate(30)">1</text>
-                          <text x = "0" y="-44"   transform="rotate(60)">1</text>
-                          <text x = "0" y="-44"   transform="rotate(120)">2</text>
-                          <text x = "0" y="-44"   transform="rotate(150)">2</text>
-                          <text x = "0" y="-44"   transform="rotate(240)">3</text>
-                          <text x = "0" y="-44"   transform="rotate(210)">3</text>
-                          <text x = "0" y="-44"   transform="rotate(300)">4</text>
-                          <text x = "0" y="-44"   transform="rotate(330)">4</text>
-               
-                       </g>
-          
-          
-                       <!--
+
+                        <g transform="rotate(0)" class="chunkLablelHB">
+                          <circle
+                            cx="2"
+                            cy="-48"
+                            r="3"
+                            stroke="none"
+                            stroke-width="0.3%"
+                            transform="rotate(13)"
+                          />
+                          <circle
+                            cx="2"
+                            cy="-48"
+                            r="3"
+                            stroke="none"
+                            stroke-width="0.3%"
+                            transform="rotate(43)"
+                          />
+                          <circle
+                            cx="2"
+                            cy="-48"
+                            r="3"
+                            stroke="none"
+                            stroke-width="0.3%"
+                            transform="rotate(73)"
+                          />
+                          <circle
+                            cx="2"
+                            cy="-48"
+                            r="3"
+                            stroke="none"
+                            stroke-width="0.3%"
+                            transform="rotate(103)"
+                          />
+                          <circle
+                            cx="2"
+                            cy="-48"
+                            r="3"
+                            stroke="none"
+                            stroke-width="0.3%"
+                            transform="rotate(133)"
+                          />
+                          <circle
+                            cx="2"
+                            cy="-48"
+                            r="3"
+                            stroke="none"
+                            stroke-width="0.3%"
+                            transform="rotate(163)"
+                          />
+                          <circle
+                            cx="2"
+                            cy="-48"
+                            r="3"
+                            stroke="none"
+                            stroke-width="0.3%"
+                            transform="rotate(193)"
+                          />
+                          <circle
+                            cx="2"
+                            cy="-48"
+                            r="3"
+                            stroke="none"
+                            stroke-width="0.3%"
+                            transform="rotate(223)"
+                          />
+                          <circle
+                            cx="2"
+                            cy="-48"
+                            r="3"
+                            stroke="none"
+                            stroke-width="0.3%"
+                            transform="rotate(253)"
+                          />
+                          <circle
+                            cx="2"
+                            cy="-48"
+                            r="3"
+                            stroke="none"
+                            stroke-width="0.3%"
+                            transform="rotate(283)"
+                          />
+                          <circle
+                            cx="2"
+                            cy="-48"
+                            r="3"
+                            stroke="none"
+                            stroke-width="0.3%"
+                            transform="rotate(313)"
+                          />
+                          <circle
+                            cx="2"
+                            cy="-48"
+                            r="3"
+                            stroke="none"
+                            stroke-width="0.3%"
+                            transform="rotate(343)"
+                          />
+                        </g>
+                        <g transform="rotate(0)" class="chunkLablelH">
+                          <text
+                            x="0"
+                            y="-47"
+                            id="chunkLablelH1"
+                            transform="rotate(12.5)"
+                          >
+                            01
+                          </text>
+                          <text
+                            x="0"
+                            y="-47"
+                            id="chunkLablelH2"
+                            transform="rotate(42.5)"
+                          >
+                            02
+                          </text>
+                          <text
+                            x="0"
+                            y="-47"
+                            id="chunkLablelH3"
+                            transform="rotate(72.5)"
+                          >
+                            03
+                          </text>
+                          <text
+                            x="0"
+                            y="-47"
+                            id="chunkLablelH4"
+                            transform="rotate(102.5)"
+                          >
+                            04
+                          </text>
+                          <text
+                            x="0"
+                            y="-47"
+                            id="chunkLablelH5"
+                            transform="rotate(132.5)"
+                          >
+                            05
+                          </text>
+                          <text
+                            x="0"
+                            y="-47"
+                            id="chunkLablelH6"
+                            transform="rotate(162.5)"
+                          >
+                            06
+                          </text>
+                          <text
+                            x="0"
+                            y="-47"
+                            id="chunkLablelH7"
+                            transform="rotate(192.5)"
+                          >
+                            07
+                          </text>
+                          <text
+                            x="0"
+                            y="-47"
+                            id="chunkLablelH8"
+                            transform="rotate(222.5) "
+                          >
+                            08
+                          </text>
+                          <text
+                            x="0"
+                            y="-47"
+                            id="chunkLablelH9"
+                            transform="rotate(252.5)"
+                          >
+                            09
+                          </text>
+                          <text
+                            x="0"
+                            y="-47"
+                            id="chunkLablelH10"
+                            transform="rotate(282.5)"
+                          >
+                            10
+                          </text>
+                          <text
+                            x="0"
+                            y="-47"
+                            id="chunkLablelH11"
+                            transform="rotate(312.5)"
+                          >
+                            11
+                          </text>
+                          <text
+                            x="0"
+                            y="-47"
+                            id="chunkLablelH12"
+                            transform="rotate(342.5)"
+                          >
+                            12
+                          </text>
+                        </g>
+
+                        <g transform="rotate(-1)" class="chunkLablelQ">
+                          <text x="0" y="-44" transform="rotate(30)">1</text>
+                          <text x="0" y="-44" transform="rotate(60)">1</text>
+                          <text x="0" y="-44" transform="rotate(120)">2</text>
+                          <text x="0" y="-44" transform="rotate(150)">2</text>
+                          <text x="0" y="-44" transform="rotate(240)">3</text>
+                          <text x="0" y="-44" transform="rotate(210)">3</text>
+                          <text x="0" y="-44" transform="rotate(300)">4</text>
+                          <text x="0" y="-44" transform="rotate(330)">4</text>
+                        </g>
+
+                        <!--
           
           
                        <g transform="rotate(5)" class="chunkLablelT">
@@ -647,82 +781,321 @@
                        </g>	 
           
                         
-                       --> 
-                       <g transform="rotate(-5)" class="chunkLablelE">
-                        <text x = "0" y="-11" id="chunkLablelE1" transform="rotate(12.5)">⏳</text>
-                        <text x = "0" y="-11" id="chunkLablelE2" transform="rotate(42.5)">⏳</text>
-                        <text x = "0" y="-11" id="chunkLablelE3" transform="rotate(72.5)">⏳</text>
-                        <text x = "0" y="-11" id="chunkLablelE4" transform="rotate(102.5)">⏳</text>
-                        <text x = "0" y="-11" id="chunkLablelE5" transform="rotate(132.5)">⏳</text>
-                        <text x = "0" y="-11" id="chunkLablelE6" transform="rotate(162.5)">⏳</text>
-                        <text x = "0" y="-11" id="chunkLablelE7" transform="rotate(192.5)">⏳</text>
-                        <text x = "0" y="-11" id="chunkLablelE8" transform="rotate(222.5)">⏳</text>
-                        <text x = "0" y="-11" id="chunkLablelE9" transform="rotate(252.5)">⏳</text>
-                        <text x = "0" y="-11" id="chunkLablelE10" transform="rotate(282.5)">⏳</text>
-                        <text x = "0" y="-11" id="chunkLablelE11" transform="rotate(312.5)">⏳</text>
-                        <text x = "0" y="-11" id="chunkLablelE12" transform="rotate(342.5)">⏳</text>
-                     </g>
-          
-                     <g transform="rotate(-5)" class="chunkLablelW">
-                      <text x = "0" y="-23.2" id="chunkLablelW1" transform="rotate(12.5)">⏳</text>
-                      <text x = "0" y="-23.2" id="chunkLablelW2" transform="rotate(42.5)">⏳</text>
-                      <text x = "0" y="-23.2" id="chunkLablelW3" transform="rotate(72.5)">⏳</text>
-                      <text x = "0" y="-23.2" id="chunkLablelW4" transform="rotate(102.5)">⏳</text>
-                      <text x = "0" y="-23.2" id="chunkLablelW5" transform="rotate(132.5)">⏳</text>
-                      <text x = "0" y="-23.2" id="chunkLablelW6" transform="rotate(162.5)">⏳</text>
-                      <text x = "0" y="-23.2" id="chunkLablelW7" transform="rotate(192.5)">⏳</text>
-                      <text x = "0" y="-23.2" id="chunkLablelW8" transform="rotate(222.5)">⏳</text>
-                      <text x = "0" y="-23.2" id="chunkLablelW9" transform="rotate(252.5)">⏳</text>
-                      <text x = "0" y="-23.2" id="chunkLablelW10" transform="rotate(282.5)">⏳</text>
-                      <text x = "0" y="-23.2" id="chunkLablelW11" transform="rotate(312.5)">⏳</text>
-                      <text x = "0" y="-23.2" id="chunkLablelW12" transform="rotate(342.5)">⏳</text>
-                     </g>
-          
-          
-                     <g transform="rotate(-10)" class="chunkLablelM">
-                      <text x = "0" y="-15.5" id="chunkLablelM1" transform="rotate(12.5)">⏳</text>
-                      <text x = "0" y="-15.5" id="chunkLablelM2" transform="rotate(42.5)">⏳</text>
-                      <text x = "0" y="-15.5" id="chunkLablelM3" transform="rotate(72.5)">⏳</text>
-                      <text x = "0" y="-15.5" id="chunkLablelM4" transform="rotate(102.5)">⏳</text>
-                      <text x = "0" y="-15.5" id="chunkLablelM5" transform="rotate(132.5)">⏳</text>
-                      <text x = "0" y="-15.5" id="chunkLablelM6" transform="rotate(162.5)">⏳</text>
-                      <text x = "0" y="-15.5" id="chunkLablelM7" transform="rotate(192.5)">⏳</text>
-                      <text x = "0" y="-15.5" id="chunkLablelM8" transform="rotate(222.5)">⏳</text>
-                      <text x = "0" y="-15.5" id="chunkLablelM9" transform="rotate(252.5)">⏳</text>
-                      <text x = "0" y="-15.5" id="chunkLablelM10" transform="rotate(282.5)">⏳</text>
-                      <text x = "0" y="-15.5" id="chunkLablelM11" transform="rotate(312.5)">⏳</text>
-                      <text x = "0" y="-15.5" id="chunkLablelM12" transform="rotate(342.5)">⏳</text>
-                     </g>	           
-          
+                       -->
+                        <g transform="rotate(-5)" class="chunkLablelE">
+                          <text
+                            x="0"
+                            y="-11"
+                            id="chunkLablelE1"
+                            transform="rotate(12.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-11"
+                            id="chunkLablelE2"
+                            transform="rotate(42.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-11"
+                            id="chunkLablelE3"
+                            transform="rotate(72.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-11"
+                            id="chunkLablelE4"
+                            transform="rotate(102.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-11"
+                            id="chunkLablelE5"
+                            transform="rotate(132.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-11"
+                            id="chunkLablelE6"
+                            transform="rotate(162.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-11"
+                            id="chunkLablelE7"
+                            transform="rotate(192.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-11"
+                            id="chunkLablelE8"
+                            transform="rotate(222.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-11"
+                            id="chunkLablelE9"
+                            transform="rotate(252.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-11"
+                            id="chunkLablelE10"
+                            transform="rotate(282.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-11"
+                            id="chunkLablelE11"
+                            transform="rotate(312.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-11"
+                            id="chunkLablelE12"
+                            transform="rotate(342.5)"
+                          >
+                            ⏳
+                          </text>
                         </g>
-        
-                        <!-- https://medium.com/allenhwkim/html-analog-clock-in-few-minutes-13e5983e6543-->
-                        </svg>
+
+                        <g transform="rotate(-5)" class="chunkLablelW">
+                          <text
+                            x="0"
+                            y="-23.2"
+                            id="chunkLablelW1"
+                            transform="rotate(12.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-23.2"
+                            id="chunkLablelW2"
+                            transform="rotate(42.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-23.2"
+                            id="chunkLablelW3"
+                            transform="rotate(72.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-23.2"
+                            id="chunkLablelW4"
+                            transform="rotate(102.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-23.2"
+                            id="chunkLablelW5"
+                            transform="rotate(132.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-23.2"
+                            id="chunkLablelW6"
+                            transform="rotate(162.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-23.2"
+                            id="chunkLablelW7"
+                            transform="rotate(192.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-23.2"
+                            id="chunkLablelW8"
+                            transform="rotate(222.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-23.2"
+                            id="chunkLablelW9"
+                            transform="rotate(252.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-23.2"
+                            id="chunkLablelW10"
+                            transform="rotate(282.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-23.2"
+                            id="chunkLablelW11"
+                            transform="rotate(312.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-23.2"
+                            id="chunkLablelW12"
+                            transform="rotate(342.5)"
+                          >
+                            ⏳
+                          </text>
+                        </g>
+
+                        <g transform="rotate(-10)" class="chunkLablelM">
+                          <text
+                            x="0"
+                            y="-15.5"
+                            id="chunkLablelM1"
+                            transform="rotate(12.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-15.5"
+                            id="chunkLablelM2"
+                            transform="rotate(42.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-15.5"
+                            id="chunkLablelM3"
+                            transform="rotate(72.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-15.5"
+                            id="chunkLablelM4"
+                            transform="rotate(102.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-15.5"
+                            id="chunkLablelM5"
+                            transform="rotate(132.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-15.5"
+                            id="chunkLablelM6"
+                            transform="rotate(162.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-15.5"
+                            id="chunkLablelM7"
+                            transform="rotate(192.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-15.5"
+                            id="chunkLablelM8"
+                            transform="rotate(222.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-15.5"
+                            id="chunkLablelM9"
+                            transform="rotate(252.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-15.5"
+                            id="chunkLablelM10"
+                            transform="rotate(282.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-15.5"
+                            id="chunkLablelM11"
+                            transform="rotate(312.5)"
+                          >
+                            ⏳
+                          </text>
+                          <text
+                            x="0"
+                            y="-15.5"
+                            id="chunkLablelM12"
+                            transform="rotate(342.5)"
+                          >
+                            ⏳
+                          </text>
+                        </g>
+                      </g>
+
+                      <!-- https://medium.com/allenhwkim/html-analog-clock-in-few-minutes-13e5983e6543-->
+                    </svg>
                   </div>
                 </div>
-                <div style="position: absolute;z-index: 9">                
-           
-                 
-
-              </div>
-
+                <div style="position: absolute; z-index: 9"></div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-lg-4 ">
-                aaaaaaaaaaaaaaaaaaaaaaa
-              </div>
-      
+            <div class="row" style="display: none;"> 
+              <div class="col-lg-4">aaaaaaaaaaaaaaaaaaaaaaa</div>
             </div>
             <div class="row">
               <div class="col">
                 <div id="containerRadios">
                   <div class="row">
                     <div class="col-4">
-                    
-                      <div class="row d-flex justify-content-center">
-                   
-                      </div>
+                      <div class="row d-flex justify-content-center"></div>
                     </div>
                     <div class="col-8">
                       <label
@@ -731,9 +1104,7 @@
                         >👪</label
                       >
                       <div class="row">
-                        <div class="ml-2 mr-5">
-                
-                        </div>
+                        <div class="ml-2 mr-5"></div>
                       </div>
                       <div class="row">
                         <label
@@ -741,8 +1112,6 @@
                           class="btn bg-primary border rounded d-none"
                           >🥥</label
                         >
-                      
-                   
                       </div>
                       <div class="row">
                         <label
@@ -750,7 +1119,6 @@
                           class="btn bg-primary border rounded border-0 d-none"
                           >🧿</label
                         >
-                     
                       </div>
                     </div>
                   </div>
@@ -1005,19 +1373,19 @@
          <script src="../libraries/popper.min.js"></script>
          <script src="../libraries/bootstrap.min.js"></script>
          -->
-         <input type="hidden" id="hiddenTime1"   value="">
-         <input type="hidden" id="hiddenTime2"   value="">
-         <input type="hidden" id="hiddenTime3"   value="">
-         <input type="hidden" id="hiddenTime4"   value="">
-         <input type="hidden" id="hiddenTime5"   value="">
-         <input type="hidden" id="hiddenTime6"   value="">
-         <input type="hidden" id="hiddenTime7"   value="">
-         <input type="hidden" id="hiddenTime8"   value="">
-         <input type="hidden" id="hiddenTime9"   value="">
-         <input type="hidden" id="hiddenTime10"   value="">
-         <input type="hidden" id="hiddenTime11"   value="">
-         <input type="hidden" id="hiddenTime12"   value="">
-         <input type="hidden" id="hiddenLoggedRow"   value="0">
+    <input type="hidden" id="hiddenTime1" value="" />
+    <input type="hidden" id="hiddenTime2" value="" />
+    <input type="hidden" id="hiddenTime3" value="" />
+    <input type="hidden" id="hiddenTime4" value="" />
+    <input type="hidden" id="hiddenTime5" value="" />
+    <input type="hidden" id="hiddenTime6" value="" />
+    <input type="hidden" id="hiddenTime7" value="" />
+    <input type="hidden" id="hiddenTime8" value="" />
+    <input type="hidden" id="hiddenTime9" value="" />
+    <input type="hidden" id="hiddenTime10" value="" />
+    <input type="hidden" id="hiddenTime11" value="" />
+    <input type="hidden" id="hiddenTime12" value="" />
+    <input type="hidden" id="hiddenLoggedRow" value="0" />
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
