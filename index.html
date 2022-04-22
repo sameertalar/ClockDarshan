@@ -30,35 +30,23 @@
   <body>
     <!-- Stickey and Floating - Start-->
  
- 
 
     <div class="container-fluid sticky-top">
       <div class="row">
         <div class="col-lg-4">
           <div class="text-center">
        
-            <div id="quarterProgress" class="border progressOuter" style="position: absolute">
-              <div id="quarterStatus"></div>
-            </div> 
-            <div id="chunkProgress" class="border" style="position: absolute; top:10px">
-              <div id="chunkStatus" ></div>
-            </div> 
+   
               
 
             <div style="position: absolute; top: 23px; right: 20px; z-index: 999">
-              <select
-                class="text-white bg-primary ml-3 border rounded-pill form-control"
-                style="font-size: 1.3em"
-                id="selectTrackerTime"
-              ></select>
+             
             </div>
             <div
             class="text-center"
             style="position: absolute; top: 23px; left: 5px; z-index: 999"
           >
-            <span id="errorMessage" class="btn btn-sm bg-danger text-white small">
-              Clock<br />Darshan
-            </span>
+         
           </div>
             <div
               class="text-center pt-3"
@@ -123,6 +111,234 @@
 
     <!-- Stickey and Floating - End-->
     <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 ">
+          <div id="quarterProgress" class="border progressOuter"  >
+            <div id="quarterStatus"></div>
+          </div> 
+          <div id="chunkProgress" class="border"  >
+            <div id="chunkStatus" ></div>
+          </div> 
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-lg-4 ">
+          <div
+          class="btn-group btn-group-toggle float-left border rounded-pill"
+          data-toggle="buttons"
+        >
+          <label class="btn btn-outline-info border-0">
+            <input
+              type="radio"
+              class="radioWork"
+              id="radioWorkS"
+              name="radioWork"
+              value="C"
+            />
+            🪔
+          </label>
+          <label class="btn btn-outline-primary border-0">
+            <input
+              type="radio"
+              class="radioWork"
+              id="radioWorkV"
+              name="radioWork"
+              value="D"
+            />
+            💎
+          </label>
+          <label class="btn btn-outline-success border-0">
+            <input
+              type="radio"
+              class="radioWork"
+              id="radioWorkH"
+              name="radioWork"
+              value="E"
+            />
+            🌿
+          </label>
+          <label class="btn btn-outline-warning border-0">
+            <input
+              type="radio"
+              class="radioWork"
+              id="radioWorkD"
+              name="radioWork"
+              value="F"
+            />
+            👪
+          </label>
+          <label class="btn btn-outline-danger border-0">
+            <input
+              type="radio"
+              class="radioWork"
+              id="radioWorkN"
+              name="radioWork"
+              value="G"
+            />
+            🍂
+          </label>
+        </div>
+        <div
+        class="btn-group btn-group-toggle float-left border rounded-pill"
+        data-toggle="buttons"
+      >
+        <label class="btn btn-outline-info border-0">
+          <input
+            type="radio"
+            class="radioMind"
+            id="radioMindC"
+            name="radioMind"
+            value="N"
+          />
+          🕊️
+        </label>
+        <label class="btn btn-outline-success border-0">
+          <input
+            type="radio"
+            class="radioMind"
+            id="radioMindM"
+            name="radioMind"
+            value="O"
+          />
+          🧘
+        </label>
+        <label class="btn btn-outline-warning border-0">
+          <input
+            type="radio"
+            class="radioMind"
+            id="radioMindA"
+            name="radioMind"
+            value="P"
+          />
+          🧿
+        </label>
+        <label class="btn btn-outline-dark border-0">
+          <input
+            type="radio"
+            class="radioMind"
+            id="radioMindP"
+            name="radioMind"
+            value="Q"
+          />
+          🎳
+        </label>
+        <label class="btn btn-outline-danger border-0">
+          <input
+            type="radio"
+            class="radioMind"
+            id="radioMindB"
+            name="radioMind"
+            value="R"
+          />
+          🔥
+        </label>
+      </div>
+  
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+
+          <div class="row">
+            <div class="col-lg-9 border">
+              <div
+              class="btn-group btn-group-toggle float-left border rounded-pill"
+              data-toggle="buttons"
+            >
+              <label class="btn btn-outline-success border-0">
+                <input
+                  type="radio"
+                  class="radioEnergy"
+                  id="radioEnergyH"
+                  name="radioEnergy"
+                  value="I"
+                />
+                🔋
+              </label>
+              <label class="btn btn-outline-warning border-0">
+                <input
+                  type="radio"
+                  class="radioEnergy"
+                  id="radioEnergyM"
+                  name="radioEnergy"
+                  value="J"
+                />
+                🥥
+              </label>
+              <label class="btn btn-outline-danger border-0">
+                <input
+                  type="radio"
+                  class="radioEnergy"
+                  id="radioEnergyL"
+                  name="radioEnergy"
+                  value="K"
+                />
+                ⚪
+              </label>
+            </div>
+            <label for="checkSleep">
+              <input
+                type="checkbox"
+                class="btn-check checkSleep mt-2 ml-2"
+                id="checkSleep"
+                autocomplete="off"
+                name="checkSleep"
+                value="S"
+              />Z
+            </label>
+              <div class="btn-group">
+                <button
+                  class="btn btn-outline-info active"
+                  type="button"
+                  id="minusQuarter"
+                  type="button"
+                >
+                  <i class="fa fa-arrow-down fa-2x"></i>
+                </button>
+                <button
+                  class="btn btn-sm btn-outline-info"
+                  type="button"
+                  id="plusQuarter"
+                  type="button"
+                >
+                  <i class="fa fa-arrow-up"></i>
+                </button>
+              </div>
+           
+           
+            <span id="errorMessage" class="btn btn-sm bg-danger text-white small">
+              Clock<br />Darshan
+            </span> 
+            <input
+            type="checkbox"
+            class="btn-check checkEdit mt-3 ml-3"             
+            id="checkEdit"
+            autocomplete="off"
+            name="checkEdit"
+            value="T"
+          />
+            </div>
+
+          
+              <div class="col-lg-3 border">
+            
+                <select
+                class="text-white bg-primary ml-3 border rounded-pill form-control"
+                style="font-size: 1.3em"
+                id="selectTrackerTime"
+              ></select>
+
+              </div>           
+ 
+          </div>
+        
+        </div>
+ 
+
+      </div>
+
       <div class="row">
         <!-- Left  container-->
         <div class="col-lg-4">
@@ -339,28 +555,7 @@
                           <text x = "0" y="-44"   transform="rotate(210)">3</text>
                           <text x = "0" y="-44"   transform="rotate(300)">4</text>
                           <text x = "0" y="-44"   transform="rotate(330)">4</text>
-     
-                          <!--    
-                          <text x = "0" y="-48" id="chunkLablelQ2" transform="rotate(42.5)">1</text>
-                          <text x = "0" y="-48" id="chunkLablelQ5" transform="rotate(132.5)">2</text>
-                          <text x = "0" y="-48" id="chunkLablelQ8" transform="rotate(222.5)">3</text>
-                          <text x = "0" y="-48" id="chunkLablelQ11" transform="rotate(312.5)">4</text>
-          
-          
-                          <text x = "0" y="-23" id="chunkLablelQ1" transform="rotate(12.5)">1</text>
-                          <text x = "0" y="-23" id="chunkLablelQ2" transform="rotate(42.5)">1</text>
-                          <text x = "0" y="-23" id="chunkLablelQ3" transform="rotate(72.5)">1</text>
-                          <text x = "0" y="-23" id="chunkLablelQ4" transform="rotate(102.5)">2</text>
-                          <text x = "0" y="-23" id="chunkLablelQ5" transform="rotate(132.5)">2</text>
-                          <text x = "0" y="-23" id="chunkLablelQ6" transform="rotate(162.5)">2</text>
-                          <text x = "0" y="-23" id="chunkLablelQ7" transform="rotate(192.5)">3</text>
-                          <text x = "0" y="-23" id="chunkLablelQ8" transform="rotate(222.5)">3</text>
-                          <text x = "0" y="-23" id="chunkLablelQ9" transform="rotate(252.5)">4</text>
-                          <text x = "0" y="-23" id="chunkLablelQ10" transform="rotate(282.5)">4</text>
-                          <text x = "0" y="-23" id="chunkLablelQ11" transform="rotate(312.5)">4</text>
-                          <text x = "0" y="-23" id="chunkLablelQ12" transform="rotate(342.5)">4</text>
-                          -->
-          
+               
                        </g>
           
           
@@ -439,38 +634,17 @@
               </div>
             </div>
             <div class="row">
+              <div class="col-lg-4 ">
+                aaaaaaaaaaaaaaaaaaaaaaa
+              </div>
+      
+            </div>
+            <div class="row">
               <div class="col">
                 <div id="containerRadios">
                   <div class="row">
                     <div class="col-4">
-                      <div class="row d-flex justify-content-center">
-                        <div class="btn-group">
-                          <button
-                            class="btn btn-outline-info active"
-                            type="button"
-                            id="minusQuarter"
-                            type="button"
-                          >
-                            <i class="fa fa-arrow-down fa-2x"></i>
-                          </button>
-                          <button
-                            class="btn btn-sm btn-outline-info"
-                            type="button"
-                            id="plusQuarter"
-                            type="button"
-                          >
-                            <i class="fa fa-arrow-up"></i>
-                          </button>
-                        </div>
-                        <input
-                          type="checkbox"
-                          class="btn-check checkEdit mt-3 ml-3"
-                          id="checkEdit"
-                          autocomplete="off"
-                          name="checkEdit"
-                          value="T"
-                        />
-                      </div>
+                    
                       <div class="row d-flex justify-content-center">
                         <div class="btn-group">
                           <!--
@@ -534,60 +708,8 @@
                         >👪</label
                       >
                       <div class="row">
-                        <div
-                          class="btn-group btn-group-toggle float-left border rounded-pill"
-                          data-toggle="buttons"
-                        >
-                          <label class="btn btn-outline-info border-0">
-                            <input
-                              type="radio"
-                              class="radioWork"
-                              id="radioWorkS"
-                              name="radioWork"
-                              value="C"
-                            />
-                            🪔
-                          </label>
-                          <label class="btn btn-outline-primary border-0">
-                            <input
-                              type="radio"
-                              class="radioWork"
-                              id="radioWorkV"
-                              name="radioWork"
-                              value="D"
-                            />
-                            💎
-                          </label>
-                          <label class="btn btn-outline-success border-0">
-                            <input
-                              type="radio"
-                              class="radioWork"
-                              id="radioWorkH"
-                              name="radioWork"
-                              value="E"
-                            />
-                            🌿
-                          </label>
-                          <label class="btn btn-outline-warning border-0">
-                            <input
-                              type="radio"
-                              class="radioWork"
-                              id="radioWorkD"
-                              name="radioWork"
-                              value="F"
-                            />
-                            👪
-                          </label>
-                          <label class="btn btn-outline-danger border-0">
-                            <input
-                              type="radio"
-                              class="radioWork"
-                              id="radioWorkN"
-                              name="radioWork"
-                              value="G"
-                            />
-                            🍂
-                          </label>
+                        <div class="ml-2 mr-5">
+                
                         </div>
                       </div>
                       <div class="row">
@@ -596,53 +718,8 @@
                           class="btn bg-primary border rounded d-none"
                           >🥥</label
                         >
-                        <div class="ml-2 mr-5">
-                          <label for="checkSleep">
-                            <input
-                              type="checkbox"
-                              class="btn-check checkSleep mt-2 ml-2"
-                              id="checkSleep"
-                              autocomplete="off"
-                              name="checkSleep"
-                              value="S"
-                            />
-                          </label>
-                        </div>
-                        <div
-                          class="btn-group btn-group-toggle float-left border rounded-pill"
-                          data-toggle="buttons"
-                        >
-                          <label class="btn btn-outline-success border-0">
-                            <input
-                              type="radio"
-                              class="radioEnergy"
-                              id="radioEnergyH"
-                              name="radioEnergy"
-                              value="I"
-                            />
-                            🔋
-                          </label>
-                          <label class="btn btn-outline-warning border-0">
-                            <input
-                              type="radio"
-                              class="radioEnergy"
-                              id="radioEnergyM"
-                              name="radioEnergy"
-                              value="J"
-                            />
-                            🥥
-                          </label>
-                          <label class="btn btn-outline-danger border-0">
-                            <input
-                              type="radio"
-                              class="radioEnergy"
-                              id="radioEnergyL"
-                              name="radioEnergy"
-                              value="K"
-                            />
-                            ⚪
-                          </label>
-                        </div>
+                      
+                   
                       </div>
                       <div class="row">
                         <label
@@ -650,61 +727,7 @@
                           class="btn bg-primary border rounded border-0 d-none"
                           >🧿</label
                         >
-                        <div
-                          class="btn-group btn-group-toggle float-left border rounded-pill"
-                          data-toggle="buttons"
-                        >
-                          <label class="btn btn-outline-info border-0">
-                            <input
-                              type="radio"
-                              class="radioMind"
-                              id="radioMindC"
-                              name="radioMind"
-                              value="N"
-                            />
-                            🕊️
-                          </label>
-                          <label class="btn btn-outline-success border-0">
-                            <input
-                              type="radio"
-                              class="radioMind"
-                              id="radioMindM"
-                              name="radioMind"
-                              value="O"
-                            />
-                            🧘
-                          </label>
-                          <label class="btn btn-outline-warning border-0">
-                            <input
-                              type="radio"
-                              class="radioMind"
-                              id="radioMindA"
-                              name="radioMind"
-                              value="P"
-                            />
-                            🧿
-                          </label>
-                          <label class="btn btn-outline-dark border-0">
-                            <input
-                              type="radio"
-                              class="radioMind"
-                              id="radioMindP"
-                              name="radioMind"
-                              value="Q"
-                            />
-                            🎳
-                          </label>
-                          <label class="btn btn-outline-danger border-0">
-                            <input
-                              type="radio"
-                              class="radioMind"
-                              id="radioMindB"
-                              name="radioMind"
-                              value="R"
-                            />
-                            🔥
-                          </label>
-                        </div>
+                     
                       </div>
                     </div>
                   </div>
