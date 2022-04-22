@@ -155,7 +155,7 @@ input[type="checkbox"] {
 
 #chunkProgress {
   position: relative;
-  left: 5px;
+  left: 0;
   width: 100%;
   height: 11px;
   border: 1px solid #0d2931;
@@ -206,7 +206,7 @@ input[type="checkbox"] {
 
 #quarterProgress {
   position: relative;
-  left: 5px;
+  left: 0;
   width: 100%;
   height: 11px;
   border: 1px solid #0d2931;
