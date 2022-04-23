@@ -127,6 +127,14 @@ input[type="checkbox"] {
  
 
 .centerCore {
+   font-size: 3.5px;  
+}
+#centerCoreG {
+  fill: #ff2e2d;
+  font-size: 3.5px;
+  
+}
+#centerCoreD {
   fill: #007bff;
   font-size: 3.5px;
   font-weight: 800;
