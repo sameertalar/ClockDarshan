@@ -96,12 +96,19 @@ input[type="checkbox"] {
 
 
 .chunkLablelH {
-  fill: #ffffff;
-  font-size: 4px;    
+  fill:  #ffffff; 
+  font-size: 4px;  
+  cursor: pointer;  
 
 }
+.chunkLablelH:hover {
+  fill: #ff2e2d;  
+
+}
+
+
 .chunkLablelHB {
-  fill: none;
+  fill: #D1CAC0;
   font-size: 10px;    
 
 }
@@ -222,9 +229,9 @@ input[type="checkbox"] {
   background-color: #fef9e7;
   background: linear-gradient(
     to right,
-    #F3EAD4 33.33%,
-    #A5E5D9 33.33% 66.66%,
-     #D1D3D4 66.66%
+    #ffffff 33.33%,
+    #fef9e7 33.33% 66.66%,
+    #ffffff 66.66%
   );
 }
 
