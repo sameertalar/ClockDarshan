@@ -39,41 +39,6 @@
     </span>
 
     <div
-      class="text-center"
-      style="
-        position: absolute;
-        top: 102px;
-        left: 5px;
-        z-index: 999;
-        cursor: pointer;
-      "
-    >
-      <span
-        id="errorMessage"
-        class="border border-primary rounded bg-danger text-white"
-      >
-        00-0
-      </span>
-    </div>
-    <div
-      class="text-center"
-      style="
-        position: absolute;
-        top: 126px;
-        left: 5px;
-        z-index: 999;
-        cursor: pointer;
-      "
-    >
-      <span
-        id="currentQuarter"
-        class="text-primary border border-primary rounded"
-      >
-        00-0
-      </span>
-    </div>
-
-    <div
       style="
         position: absolute;
         top: 422px;
@@ -135,7 +100,7 @@
     </div>
     <div
       class="text-center"
-      style="position: absolute; top: 422px; left: 5px; z-index: 999"
+      style="position: absolute; top: 180px; left: 5px; z-index: 999"
     >
       <a
         class="btn btn-outline-info shrinkbtn"
@@ -384,23 +349,30 @@
               🍂
             </label>
           </div>
-          <div class="btn-group">
-            <button
-              class="btn btn-sm btn-outline-info ml-2"
-              type="button"
-              id="minusQuarter"
-              type="button"
-            >
-              <i class="fa fa-arrow-down fa-2x"></i>
-            </button>
-            <button
-              class="btn btn-sm btn-outline-info"
-              type="button"
-              id="plusQuarter"
-              type="button"
-            >
-              <i class="fa fa-arrow-up fa-2x"></i>
-            </button>
+          <div style="position: absolute; top: 0px; right: 20px; z-index: 999">
+            <div class="btn-group">
+              <button
+                class="btn btn-sm btn-outline-info ml-4"
+                type="button"
+                id="minusQuarter"
+                type="button"
+              >
+                <i class="fa fa-arrow-down fa-2x"></i>
+              </button>
+              <button
+                class="btn btn-sm btn-outline-info"
+                type="button"
+                id="plusQuarter"
+                type="button"
+              >
+                <i class="fa fa-arrow-up fa-2x"></i>
+              </button>
+            </div>
+            <select
+              class="text-white bg-primary ml-3 border rounded-pill form-control"
+              style="font-size: 1.3em"
+              id="selectTrackerTime"
+            ></select>
           </div>
         </div>
       </div>
@@ -442,12 +414,19 @@
               ⚪
             </label>
           </div>
-          <div style="position: absolute; top: 0px; right: 20px; z-index: 999">
-            <select
-              class="text-white bg-primary ml-3 border rounded-pill form-control"
-              style="font-size: 1.3em"
-              id="selectTrackerTime"
-            ></select>
+          <div class="mt-3">
+            <span
+              id="errorMessage"
+              class="border border-primary rounded bg-danger text-white ml-3"
+            >
+              00-0
+            </span>
+            <span
+              id="currentQuarter"
+              class="text-primary border border-primary rounded ml-2"
+            >
+              00-0
+            </span>
           </div>
         </div>
       </div>
