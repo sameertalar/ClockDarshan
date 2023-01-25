@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     />
     <!-- <link rel="stylesheet" href="../libraries/bootstrap.min.css" />-->
-    <link rel="stylesheet" href="lib/clock.darshan.css?v=019.14" />
+    <link rel="stylesheet" href="lib/clock.darshan.css?v=019.15" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -32,8 +32,8 @@
 
     <span
       id="timeLeft"
-      class="border rounded-circle bg-dark text-white px-1 small py-1"
-      style="position: absolute; top: 0px; right: 1px; z-index: 999"
+      class="border border-dark rounded h6 bg-danger text-white px-1 py-1"
+      style="position: absolute; top: 8px; left: 1px; z-index: 999"
     >
       10:10
     </span>
@@ -156,11 +156,11 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-4">
-          <div id="quarterProgress" class="progressOuter">
-            <div id="quarterStatus"></div>
-          </div>
           <div id="chunkProgress" class="border">
             <div id="chunkStatus"></div>
+          </div>
+          <div id="quarterProgress" class="progressOuter">
+            <div id="quarterStatus"></div>
           </div>
         </div>
       </div>
@@ -435,7 +435,7 @@
                           style="
                             fill: #ffffff;
                             stroke: #ffffff;
-                            stroke-width: 30;
+                            stroke-width: 10;
 
                             cursor: pointer;
                           "
@@ -453,7 +453,7 @@
                           x="47"
                           y="28"
                           width="6"
-                          height="12"
+                          height="9"
                           rx="2"
                           ry="2"
                           fill="#ffff00"
@@ -463,9 +463,9 @@
                         <rect
                           id="tailforCurrentOpposite"
                           x="47"
-                          y="60"
+                          y="62"
                           width="6"
-                          height="12"
+                          height="9"
                           rx="2"
                           ry="2"
                           fill="#F0FFFF"
@@ -475,9 +475,9 @@
 
                         <rect
                           id="tailforCurrentOpposite2"
-                          x="60"
+                          x="62"
                           y="47"
-                          width="12"
+                          width="9"
                           height="6"
                           rx="2"
                           ry="2"
@@ -488,9 +488,9 @@
 
                         <rect
                           id="tailforCurrentOpposite3"
-                          x="28"
+                          x="29"
                           y="47"
-                          width="12"
+                          width="9"
                           height="6"
                           rx="2"
                           ry="2"
@@ -851,7 +851,7 @@
           
                         
                        -->
-                        <g transform="rotate(-2)" class="chunkLablelE">
+                        <g transform="rotate(-2)" class="chunkLablelE d-none">
                           <text
                             x="0"
                             y="-15"
@@ -950,7 +950,7 @@
                           </text>
                         </g>
 
-                        <g transform="rotate(-5)" class="chunkLablelW">
+                        <g transform="rotate(-5)" class="chunkLablelW d-none">
                           <text
                             x="0"
                             y="-11"
@@ -1049,10 +1049,10 @@
                           </text>
                         </g>
 
-                        <g transform="rotate(-5.5)" class="chunkLablelM">
+                        <g transform="rotate(-6)" class="chunkLablelM">
                           <text
                             x="0"
-                            y="-18"
+                            y="-16"
                             id="chunkLablelM1"
                             transform="rotate(12.5)"
                           >
@@ -1060,7 +1060,7 @@
                           </text>
                           <text
                             x="0"
-                            y="-18"
+                            y="-15"
                             id="chunkLablelM2"
                             transform="rotate(42.5)"
                           >
@@ -1068,7 +1068,7 @@
                           </text>
                           <text
                             x="0"
-                            y="-18"
+                            y="-16"
                             id="chunkLablelM3"
                             transform="rotate(72.5)"
                           >
@@ -1076,7 +1076,7 @@
                           </text>
                           <text
                             x="0"
-                            y="-18"
+                            y="-16"
                             id="chunkLablelM4"
                             transform="rotate(102.5)"
                           >
@@ -1084,7 +1084,7 @@
                           </text>
                           <text
                             x="0"
-                            y="-18"
+                            y="-15"
                             id="chunkLablelM5"
                             transform="rotate(132.5)"
                           >
@@ -1092,7 +1092,7 @@
                           </text>
                           <text
                             x="0"
-                            y="-18"
+                            y="-16"
                             id="chunkLablelM6"
                             transform="rotate(162.5)"
                           >
@@ -1100,7 +1100,7 @@
                           </text>
                           <text
                             x="0"
-                            y="-18"
+                            y="-16"
                             id="chunkLablelM7"
                             transform="rotate(192.5)"
                           >
@@ -1108,7 +1108,7 @@
                           </text>
                           <text
                             x="0"
-                            y="-18"
+                            y="-16"
                             id="chunkLablelM8"
                             transform="rotate(222.5)"
                           >
@@ -1116,7 +1116,7 @@
                           </text>
                           <text
                             x="0"
-                            y="-18"
+                            y="-16"
                             id="chunkLablelM9"
                             transform="rotate(252.5)"
                           >
@@ -1124,7 +1124,7 @@
                           </text>
                           <text
                             x="0"
-                            y="-18"
+                            y="-16"
                             id="chunkLablelM10"
                             transform="rotate(282.5)"
                           >
@@ -1132,7 +1132,7 @@
                           </text>
                           <text
                             x="0"
-                            y="-18"
+                            y="-16"
                             id="chunkLablelM11"
                             transform="rotate(312.5)"
                           >
@@ -1140,7 +1140,7 @@
                           </text>
                           <text
                             x="0"
-                            y="-18"
+                            y="-16"
                             id="chunkLablelM12"
                             transform="rotate(342.5)"
                           >
