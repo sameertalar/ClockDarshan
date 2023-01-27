@@ -5,6 +5,22 @@ padding-left: 20px;
 padding-right: 20px;
 }
 
+input[type="radio"]:checked {
+
+    background-color: #f4b400;
+    color: #28a745;
+  }
+  
+  input[type="radio"] {
+    transform: scale(2);
+    accent-color: #ff2e2d;
+  }
+  input[type="checkbox"] {
+    transform: scale(1.5);  
+   
+  }
+
+
 #quarterProgress {
   position: relative;
   left: 35px;
@@ -50,4 +66,50 @@ padding-right: 20px;
   border-bottom: solid 3px #babec4;
   border-left:solid 4px #0d2931;
   border-right:   double 1px #003da1 ;
+}
+
+/* Analog Clock */
+
+#clock-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  overflow: hidden;
+  background: url("../img/ClockDarshan7.1.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#face {
+  stroke-width: 1px;
+  stroke: transparent;
+  fill: transparent;
+}
+
+#minHand {
+  stroke-width: 0.05rem;
+
+  fill: #22e8f7;
+  stroke: #000000; /*#ff2e2d;*/
+}
+
+.centerCore {
+  font-size: 3.5px;  
+}
+#centerCoreG {
+ fill: #ff2e2d;
+ font-size: 3.5px;
+ 
+}
+#centerCoreD {
+ fill: #007bff;
+ font-size: 6px;
+ font-weight: 800;
+}
+
+.circle {
+  display: none;
+ 
 }
