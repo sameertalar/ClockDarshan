@@ -86,9 +86,13 @@
         </div>
       </div>
       <!--  Progress-End -->
-
-      <!--  SelectionInputs-Start -->
-      <!--  xxx-Start -->
+      <div class="row">
+        <div class="col-lg-4">
+          <span id="errorMessage" class="bg-danger text-white ml-3"> </span>
+          <!--   Inputs-Mind -->
+        </div>
+      </div>
+      <!--  SelectionInputsClock-Start -->
 
       <div class="row no-gutters mt-4">
         <div class="col-lg-4">
@@ -373,39 +377,16 @@
         </div>
       </div>
 
-      <!--  xxx-end -->
+      <!--  SelectionInputsClock-end -->
 
-      <div class="row mt-4">
-        <div class="col-lg-4">
-          <span id="errorMessage" class="bg-danger text-white ml-3"> </span>
-          <!--   Inputs-Mind -->
-        </div>
-      </div>
-      <!--   Inputs-Work -->
-      <div class="row mt-2">
-        <div class="col-lg-4"></div>
-      </div>
-
-      <!--   Inputs-Energy -->
-      <div class="row">
-        <div class="col-lg-4 mt-2"></div>
-      </div>
-
-      <!--  SelectionInputs-end -->
       <!--  Selecttime-Start -->
       <div class="row mt-3">
         <div class="col-lg-4">
           <div class="row border">
-            <div class="col-8"></div>
-
-            <div class="col-4">
+            <div class="col-4 align-self-center">
               <label class="ml-4" id="lableSelectedGod"></label>
-              <select
-                class="text-white bg-primary border rounded-pill form-control"
-                style="font-size: 1.3em"
-                id="selectTrackerTime"
-              ></select>
-
+            </div>
+            <div class="col-4 align-self-center">
               <div class="mt-3 ml-3">
                 <label for="checkSleep">
                   <input
@@ -430,6 +411,13 @@
                   🛡️
                 </label>
               </div>
+            </div>
+            <div class="col-4">
+              <select
+                class="text-white bg-primary border rounded-pill form-control"
+                style="font-size: 1.3em"
+                id="selectTrackerTime"
+              ></select>
             </div>
           </div>
         </div>
@@ -537,7 +525,7 @@
       <!--  Controls-Start -->
       <div class="row">
         <div class="col-lg-4">
-          <div class="btn-group mt-5">
+          <div class="btn-group mt-5 justify-content-center">
             <a
               class="btn btn-outline-info"
               target="_blank"
