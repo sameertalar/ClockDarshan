@@ -76,6 +76,7 @@ input[type="radio"]:checked {
   background: url("../img/ClockDarshan7.1.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  cursor: pointer;  
 }
 
 #face {
