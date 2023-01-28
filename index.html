@@ -78,15 +78,81 @@
         </div>
       </div>
       <!--  SelectionInputsClock-Start -->
+      <div class="row no-gutters">
+        <div class="col-lg-4">
+          <div class="row no-gutters justify-content-center">
+            <div class="col-4 align-self-center">
+              <div>
+                <label for="checkSleep">
+                  <input
+                    type="checkbox"
+                    class="btn-check checkSleep"
+                    id="checkSleep"
+                    autocomplete="off"
+                    name="checkSleep"
+                    value="S"
+                  />
+                  💤
+                </label>
+                <label for="checkSleep">
+                  <input
+                    type="checkbox"
+                    class="btn-check checkEdit ml-2"
+                    id="checkEdit"
+                    autocomplete="off"
+                    name="checkEdit"
+                    value="T"
+                  />
+                  🛡️
+                </label>
+              </div>
+            </div>
+            <div class="col-8 align-self-center">
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-outline-warning btn-md">
+                  <input
+                    type="radio"
+                    class="radioEnergy"
+                    id="radioEnergyH"
+                    name="radioEnergy"
+                    value="I"
+                  />
+                  🔋
+                </label>
+                <label class="btn btn-outline-warning btn-md">
+                  <input
+                    type="radio"
+                    class="radioEnergy"
+                    id="radioEnergyM"
+                    name="radioEnergy"
+                    value="J"
+                    checked
+                  />
+                  🥥
+                </label>
+                <label class="btn btn-outline-warning btn-md">
+                  <input
+                    type="radio"
+                    class="radioEnergy"
+                    id="radioEnergyL"
+                    name="radioEnergy"
+                    value="K"
+                  />
+                  ⚪
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="row no-gutters mt-2">
         <div class="col-lg-4">
           <div class="row no-gutters justify-content-left">
-            <div class="col-1 align-self-center">
+            <div class="col-2 align-self-center">
               <div
                 class="btn-group-vertical btn-group-toggle"
                 data-toggle="buttons"
-                style="position: relative; left: 0px"
               >
                 <label class="btn btn-outline-primary btn-md">
                   <input
@@ -141,7 +207,7 @@
                 </label>
               </div>
             </div>
-            <div class="col-7">
+            <div class="col-8">
               <!--  Clock-Start -->
               <div
                 id="clockContainer"
@@ -260,11 +326,10 @@
               <!--  Clock-End -->
             </div>
 
-            <div class="col-1 align-self-center">
+            <div class="col-2 align-self-center">
               <div
-                class="btn-group-vertical btn-group-toggle"
+                class="btn-group-vertical btn-group-toggle ml-3"
                 data-toggle="buttons"
-                style="position: relative; left: 20px"
               >
                 <label class="btn btn-outline-success btn-md">
                   <input
@@ -320,45 +385,6 @@
                 </label>
               </div>
             </div>
-            <div class="col-1 align-self-center">
-              <div
-                class="btn-group-vertical btn-group-toggle"
-                data-toggle="buttons"
-                style="position: relative; left: 40px"
-              >
-                <label class="btn btn-outline-warning btn-md">
-                  <input
-                    type="radio"
-                    class="radioEnergy"
-                    id="radioEnergyH"
-                    name="radioEnergy"
-                    value="I"
-                  />
-                  🔋
-                </label>
-                <label class="btn btn-outline-warning btn-md my-2">
-                  <input
-                    type="radio"
-                    class="radioEnergy"
-                    id="radioEnergyM"
-                    name="radioEnergy"
-                    value="J"
-                    checked
-                  />
-                  🥥
-                </label>
-                <label class="btn btn-outline-warning btn-md">
-                  <input
-                    type="radio"
-                    class="radioEnergy"
-                    id="radioEnergyL"
-                    name="radioEnergy"
-                    value="K"
-                  />
-                  ⚪
-                </label>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -369,7 +395,7 @@
       <div class="row mt-4 no-gutters">
         <div class="col-lg-4">
           <div class="row">
-            <div class="col-2 align-self-center">
+            <div class="col-4 align-self-center">
               <span
                 id="timeLeft"
                 class="border border-dark rounded h5 bg-success text-white px-1 py-1"
@@ -377,35 +403,10 @@
                 10:10
               </span>
             </div>
-            <div class="col-2 align-self-center">
-              <h4 class="text-primary" id="lableSelectedGod"></h4>
-            </div>
             <div class="col-4 align-self-center">
-              <div>
-                <label for="checkSleep">
-                  <input
-                    type="checkbox"
-                    class="btn-check checkSleep"
-                    id="checkSleep"
-                    autocomplete="off"
-                    name="checkSleep"
-                    value="S"
-                  />
-                  💤
-                </label>
-                <label for="checkSleep">
-                  <input
-                    type="checkbox"
-                    class="btn-check checkEdit ml-2"
-                    id="checkEdit"
-                    autocomplete="off"
-                    name="checkEdit"
-                    value="T"
-                  />
-                  🛡️
-                </label>
-              </div>
+              <h4 class="text-primary text-center" id="lableSelectedGod"></h4>
             </div>
+
             <div class="col-4">
               <select
                 class="text-white bg-primary border rounded-pill form-control"
