@@ -80,10 +80,37 @@
       <!--  SelectionInputsClock-Start -->
       <div class="row no-gutters">
         <div class="col-lg-4">
-          <div class="row no-gutters justify-content-center">
+          <div class="row no-gutters">
             <div class="col-4 align-self-center"></div>
-            <div class="col-8 align-self-center">
+
+            <div class="col-4 align-self-center">
               <h4 class="text-primary text-center" id="lableSelectedGod"></h4>
+            </div>
+            <div class="col-4 align-self-right">
+              <div>
+                <label for="checkSleep">
+                  <input
+                    type="checkbox"
+                    class="btn-check checkSleep"
+                    id="checkSleep"
+                    autocomplete="off"
+                    name="checkSleep"
+                    value="S"
+                  />
+                  <i class="fa fa-bed"> </i>
+                </label>
+                <label for="checkEdit">
+                  <input
+                    type="checkbox"
+                    class="btn-check checkEdit ml-2"
+                    id="checkEdit"
+                    autocomplete="off"
+                    name="checkEdit"
+                    value="T"
+                  />
+                  <i class="fa fa-edit"></i>
+                </label>
+              </div>
             </div>
           </div>
         </div>
@@ -338,7 +365,7 @@
       <div class="row mt-2 no-gutters">
         <div class="col-lg-4">
           <div class="row">
-            <div class="col-2 align-self-center">
+            <div class="col-4 align-self-center">
               <span
                 id="timeLeft"
                 class="border border-dark rounded h5 bg-success text-white px-1 py-1"
@@ -381,38 +408,8 @@
                 </label>
               </div>
             </div>
-            <div class="col-3 align-self-center">
-              <div>
-                <div class="btn-group-toggle" data-toggle="buttons">
-                  <label class="btn btn-outline-secondary">
-                    <input
-                      class="btn-check checkSleep"
-                      type="checkbox"
-                      autocomplete="off"
-                      name="checkSleep"
-                      id="checkSleep"
-                      value="S"
-                    />
-                    <i class="fa fa-bed"></i>
-                  </label>
-                </div>
-                <div class="btn-group-toggle" data-toggle="buttons">
-                  <label class="btn btn-outline-secondary">
-                    <input
-                      class="btn-check checkEdit"
-                      type="checkbox"
-                      autocomplete="off"
-                      name="checkEdit"
-                      id="checkEdit"
-                      value="T"
-                    />
-                    <i class="fa fa-edit"></i>
-                  </label>
-                </div>
-              </div>
-            </div>
 
-            <div class="col-3">
+            <div class="col-4">
               <select
                 class="text-white bg-primary border rounded-pill form-control"
                 style="font-size: 1.3em"
