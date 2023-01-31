@@ -23,6 +23,21 @@ input[type="radio"]:checked {
   }
 
 
+  #centerCoreM
+  {
+    font-size: 0.5rem;
+  }
+
+  #centerCoreW
+  {
+    font-size: 0.35rem;
+  }
+
+  #centerCoreE
+  {
+    font-size: 0.35rem;
+  }
+
 #quarterProgress {
   position: relative;
  
