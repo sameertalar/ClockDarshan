@@ -62,7 +62,19 @@
       <div class="row no-gutters">
         <div class="col-lg-4">
           <div class="row no-gutters">
-            <div class="col-4 align-self-center"></div>
+            <div class="col-4 text-left">
+              <label for="checkSleep">
+                <input
+                  type="checkbox"
+                  class="btn-check checkSleep ml-5"
+                  id="checkSleep"
+                  autocomplete="off"
+                  name="checkSleep"
+                  value="S"
+                />
+                <i class="fa fa-bed"> </i>
+              </label>
+            </div>
 
             <div class="col-4 align-self-center">
               <h4
@@ -71,31 +83,18 @@
                 id="lableSelectedGod"
               ></h4>
             </div>
-            <div class="col-4 align-self-right">
-              <div>
-                <label for="checkSleep">
-                  <input
-                    type="checkbox"
-                    class="btn-check checkSleep ml-5"
-                    id="checkSleep"
-                    autocomplete="off"
-                    name="checkSleep"
-                    value="S"
-                  />
-                  <i class="fa fa-bed"> </i>
-                </label>
-                <label for="checkEdit">
-                  <input
-                    type="checkbox"
-                    class="btn-check checkEdit ml-2"
-                    id="checkEdit"
-                    autocomplete="off"
-                    name="checkEdit"
-                    value="T"
-                  />
-                  <i class="fa fa-edit"></i>
-                </label>
-              </div>
+            <div class="col-4 text-right">
+              <label for="checkEdit">
+                <input
+                  type="checkbox"
+                  class="btn-check checkEdit ml-2"
+                  id="checkEdit"
+                  autocomplete="off"
+                  name="checkEdit"
+                  value="T"
+                />
+                <i class="fa fa-edit"></i>
+              </label>
             </div>
           </div>
         </div>
