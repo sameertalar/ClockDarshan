@@ -1,5 +1,11 @@
 
-
+#bodyCD{
+background-repeat: no-repeat;
+background-size: 90%;
+background-position: right left;
+background-image: linear-gradient(#babec4, #babec4);
+background-color: white;
+}
 
 input[type="radio"]:checked {
 

@@ -27,7 +27,7 @@
       }
     </style>
   </head>
-  <body>
+  <body id="bodyCD" class="border">
     <!--- **************    Content-Start   **************    -->
 
     <!-- Stickey and Floating - Start-->
@@ -81,66 +81,9 @@
       <div class="row no-gutters">
         <div class="col-lg-4">
           <div class="row no-gutters justify-content-center">
-            <div class="col-4 align-self-center">
-              <div>
-                <label for="checkSleep">
-                  <input
-                    type="checkbox"
-                    class="btn-check checkSleep"
-                    id="checkSleep"
-                    autocomplete="off"
-                    name="checkSleep"
-                    value="S"
-                  />
-                  💤
-                </label>
-                <label for="checkSleep">
-                  <input
-                    type="checkbox"
-                    class="btn-check checkEdit ml-2"
-                    id="checkEdit"
-                    autocomplete="off"
-                    name="checkEdit"
-                    value="T"
-                  />
-                  🛡️
-                </label>
-              </div>
-            </div>
+            <div class="col-4 align-self-center"></div>
             <div class="col-8 align-self-center">
-              <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-outline-warning btn-md">
-                  <input
-                    type="radio"
-                    class="radioEnergy"
-                    id="radioEnergyH"
-                    name="radioEnergy"
-                    value="I"
-                  />
-                  🔋
-                </label>
-                <label class="btn btn-outline-warning btn-md">
-                  <input
-                    type="radio"
-                    class="radioEnergy"
-                    id="radioEnergyM"
-                    name="radioEnergy"
-                    value="J"
-                    checked
-                  />
-                  🥥
-                </label>
-                <label class="btn btn-outline-warning btn-md">
-                  <input
-                    type="radio"
-                    class="radioEnergy"
-                    id="radioEnergyL"
-                    name="radioEnergy"
-                    value="K"
-                  />
-                  ⚪
-                </label>
-              </div>
+              <h4 class="text-primary text-center" id="lableSelectedGod"></h4>
             </div>
           </div>
         </div>
@@ -395,7 +338,7 @@
       <div class="row mt-2 no-gutters">
         <div class="col-lg-4">
           <div class="row">
-            <div class="col-4 align-self-center">
+            <div class="col-2 align-self-center">
               <span
                 id="timeLeft"
                 class="border border-dark rounded h5 bg-success text-white px-1 py-1"
@@ -404,10 +347,72 @@
               </span>
             </div>
             <div class="col-4 align-self-center">
-              <h4 class="text-primary text-center" id="lableSelectedGod"></h4>
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-outline-warning btn-md">
+                  <input
+                    type="radio"
+                    class="radioEnergy"
+                    id="radioEnergyH"
+                    name="radioEnergy"
+                    value="I"
+                  />
+                  🔋
+                </label>
+                <label class="btn btn-outline-warning btn-md">
+                  <input
+                    type="radio"
+                    class="radioEnergy"
+                    id="radioEnergyM"
+                    name="radioEnergy"
+                    value="J"
+                    checked
+                  />
+                  🥥
+                </label>
+                <label class="btn btn-outline-warning btn-md">
+                  <input
+                    type="radio"
+                    class="radioEnergy"
+                    id="radioEnergyL"
+                    name="radioEnergy"
+                    value="K"
+                  />
+                  ⚪
+                </label>
+              </div>
+            </div>
+            <div class="col-3 align-self-center">
+              <div>
+                <div class="btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-outline-secondary">
+                    <input
+                      class="btn-check checkSleep"
+                      type="checkbox"
+                      autocomplete="off"
+                      name="checkSleep"
+                      id="checkSleep"
+                      value="S"
+                    />
+                    <i class="fa fa-bed"></i>
+                  </label>
+                </div>
+                <div class="btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-outline-secondary">
+                    <input
+                      class="btn-check checkEdit"
+                      type="checkbox"
+                      autocomplete="off"
+                      name="checkEdit"
+                      id="checkEdit"
+                      value="T"
+                    />
+                    <i class="fa fa-edit"></i>
+                  </label>
+                </div>
+              </div>
             </div>
 
-            <div class="col-4">
+            <div class="col-3">
               <select
                 class="text-white bg-primary border rounded-pill form-control"
                 style="font-size: 1.3em"
@@ -418,7 +423,7 @@
         </div>
       </div>
       <!--  Selecttime-end -->
-      <div class="row mt-3">
+      <div class="row mt-3 d-none">
         <div class="col-lg-4">
           <div id="quarterProgress" class="progressOuter">
             <div id="quarterStatus"></div>
@@ -426,7 +431,7 @@
         </div>
       </div>
       <!--  History-Start -->
-      <div class="row border bg-warning">
+      <div class="row border bg-warning mt-2">
         <div class="col-lg-4">
           <div class="row justify-content-center">
             <div class="col-4 text-right">
