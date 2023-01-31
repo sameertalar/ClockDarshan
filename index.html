@@ -54,29 +54,10 @@
           <div class="alert alert-success text-center" id="success-alert">
             <span id="alertMessage" class="text-primary"> </span>
           </div>
-          <div
-            class="alert alert-warning text-center bg-success"
-            style="display: none"
-            id="progress-loading"
-          >
-            <h3>
-              <span
-                class="spinner-border text-white"
-                id="spinner"
-                role="status"
-              ></span>
-              <span class="text-warning font-weight-light">Deep Breath</span>
-            </h3>
-          </div>
         </div>
       </div>
       <!--  Progress-End -->
-      <div class="row">
-        <div class="col-lg-4">
-          <span id="errorMessage" class="bg-danger text-white ml-3"> </span>
-          <!--   Inputs-Mind -->
-        </div>
-      </div>
+
       <!--  SelectionInputsClock-Start -->
       <div class="row no-gutters">
         <div class="col-lg-4">
@@ -84,14 +65,18 @@
             <div class="col-4 align-self-center"></div>
 
             <div class="col-4 align-self-center">
-              <h4 class="text-primary text-center" id="lableSelectedGod"></h4>
+              <h4
+                class="text-primary text-center border rounded-circle"
+                style="background-color: rgb(170, 255, 0)"
+                id="lableSelectedGod"
+              ></h4>
             </div>
             <div class="col-4 align-self-right">
               <div>
                 <label for="checkSleep">
                   <input
                     type="checkbox"
-                    class="btn-check checkSleep"
+                    class="btn-check checkSleep ml-5"
                     id="checkSleep"
                     autocomplete="off"
                     name="checkSleep"
@@ -124,7 +109,7 @@
                 class="btn-group-vertical btn-group-toggle"
                 data-toggle="buttons"
               >
-                <label class="btn btn-outline-primary btn-md">
+                <label class="btn btn-outline-info btn-md">
                   <input
                     type="radio"
                     class="radioMind"
@@ -144,7 +129,7 @@
                   />
                   🧘
                 </label>
-                <label class="btn btn-outline-primary btn-md">
+                <label class="btn btn-outline-warning btn-md">
                   <input
                     type="radio"
                     class="radioMind"
@@ -155,7 +140,7 @@
                   />
                   🧿
                 </label>
-                <label class="btn btn-outline-primary btn-md my-2">
+                <label class="btn btn-outline-dark btn-md my-2">
                   <input
                     type="radio"
                     class="radioMind"
@@ -165,7 +150,7 @@
                   />
                   🎳
                 </label>
-                <label class="btn btn-outline-primary btn-md">
+                <label class="btn btn-outline-danger btn-md">
                   <input
                     type="radio"
                     class="radioMind"
@@ -301,7 +286,7 @@
                 class="btn-group-vertical btn-group-toggle ml-3"
                 data-toggle="buttons"
               >
-                <label class="btn btn-outline-success btn-md">
+                <label class="btn btn-outline-info btn-md">
                   <input
                     type="radio"
                     class="radioWork"
@@ -311,7 +296,7 @@
                   />
                   🪔
                 </label>
-                <label class="btn btn-outline-success btn-md my-2">
+                <label class="btn btn-outline-primary btn-md my-2">
                   <input
                     type="radio"
                     class="radioWork"
@@ -321,7 +306,7 @@
                   />
                   💎
                 </label>
-                <label class="btn btn-outline-success btn-md">
+                <label class="btn btn-outline-warning btn-md">
                   <input
                     type="radio"
                     class="radioWork"
@@ -343,7 +328,7 @@
                   🌿
                 </label>
 
-                <label class="btn btn-outline-success btn-md">
+                <label class="btn btn-outline-danger btn-md">
                   <input
                     type="radio"
                     class="radioWork"
@@ -365,17 +350,16 @@
       <div class="row mt-2 no-gutters">
         <div class="col-lg-4">
           <div class="row">
-            <div class="col-4 align-self-center">
-              <span
-                id="timeLeft"
-                class="border border-dark rounded h5 bg-success text-white px-1 py-1"
-              >
-                10:10
-              </span>
+            <div class="col-4 align-self-right">
+              <select
+                class="text-white bg-primary border rounded-pill form-control"
+                style="font-size: 1.3em"
+                id="selectTrackerTime"
+              ></select>
             </div>
             <div class="col-4 align-self-center">
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-outline-warning btn-md">
+                <label class="btn btn-outline-success btn-md">
                   <input
                     type="radio"
                     class="radioEnergy"
@@ -396,7 +380,7 @@
                   />
                   🥥
                 </label>
-                <label class="btn btn-outline-warning btn-md">
+                <label class="btn btn-outline-danger btn-md">
                   <input
                     type="radio"
                     class="radioEnergy"
@@ -409,14 +393,41 @@
               </div>
             </div>
 
-            <div class="col-4">
-              <select
-                class="text-white bg-primary border rounded-pill form-control"
-                style="font-size: 1.3em"
-                id="selectTrackerTime"
-              ></select>
+            <div class="col-4 align-middle mt-2">
+              <span
+                id="timeLeft"
+                class="border border-dark rounded h5 bg-success text-white px-1 py-1"
+              >
+                10:10
+              </span>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-4 no-gutters">
+          <span
+            id="errorMessage"
+            class="bg-danger text-white"
+            style="height: 5px"
+          >
+          </span>
+          <div
+            class="alert alert-warning text-center bg-success"
+            style="display: none"
+            id="progress-loading"
+          >
+            <h3>
+              <span
+                class="spinner-border text-white"
+                id="spinner"
+                role="status"
+              ></span>
+              <span class="text-warning font-weight-light">Deep Breath</span>
+            </h3>
+          </div>
+
+          <!--   Inputs-Mind -->
         </div>
       </div>
       <!--  Selecttime-end -->
@@ -428,7 +439,7 @@
         </div>
       </div>
       <!--  History-Start -->
-      <div class="row border bg-warning mt-2">
+      <div class="row border bg-info mt-2">
         <div class="col-lg-4">
           <div class="row justify-content-center">
             <div class="col-4 text-right">
@@ -446,7 +457,7 @@
               <label id="lblChunkW4">💎</label>
               <label id="lblChunkE4">🥥</label>
             </div>
-            <div class="col-4 text-left text-danger">
+            <div class="col-4 text-left text-white">
               <h5 id="lblChunkGod4">कृष्ण</h5>
             </div>
           </div>
