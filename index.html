@@ -59,46 +59,6 @@
       <!--  Progress-End -->
 
       <!--  SelectionInputsClock-Start -->
-      <div class="row no-gutters">
-        <div class="col-lg-4">
-          <div class="row no-gutters">
-            <div class="col-4 text-left">
-              <label for="checkSleep">
-                <input
-                  type="checkbox"
-                  class="btn-check checkSleep"
-                  id="checkSleep"
-                  autocomplete="off"
-                  name="checkSleep"
-                  value="S"
-                />
-                <i class="fa fa-bed"> </i>
-              </label>
-            </div>
-
-            <div class="col-4 align-self-center">
-              <h4
-                class="text-primary text-center border rounded-circle"
-                style="background-color: rgb(170, 255, 0)"
-                id="lableSelectedGod"
-              ></h4>
-            </div>
-            <div class="col-4 text-right">
-              <label for="checkEdit">
-                <input
-                  type="checkbox"
-                  class="btn-check checkEdit ml-2"
-                  id="checkEdit"
-                  autocomplete="off"
-                  name="checkEdit"
-                  value="T"
-                />
-                <i class="fa fa-edit"></i>
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div class="row no-gutters mt-2">
         <div class="col-lg-4">
@@ -349,18 +309,50 @@
       </div>
 
       <!--  SelectionInputsClock-end -->
-
-      <!--  Selecttime-Start -->
-      <div class="row mt-2 no-gutters">
+      <div class="row no-gutters">
         <div class="col-lg-4">
           <div class="row">
-            <div class="col-4 align-self-right">
-              <select
-                class="text-white bg-primary border rounded-pill form-control"
-                style="font-size: 1.3em"
-                id="selectTrackerTime"
-              ></select>
+            <div class="col-4 text-left">
+              <label for="checkSleep">
+                <input
+                  type="checkbox"
+                  class="btn-check checkSleep"
+                  id="checkSleep"
+                  autocomplete="off"
+                  name="checkSleep"
+                  value="S"
+                />
+                <i class="fa fa-bed"> </i>
+              </label>
             </div>
+
+            <div class="col-4 align-self-center">
+              <h4
+                class="text-primary text-center border rounded-pill"
+                style="background-color: rgb(170, 255, 0)"
+                id="lableSelectedGod"
+              ></h4>
+            </div>
+            <div class="col-4 text-right">
+              <label for="checkEdit">
+                <input
+                  type="checkbox"
+                  class="btn-check checkEdit ml-2"
+                  id="checkEdit"
+                  autocomplete="off"
+                  name="checkEdit"
+                  value="T"
+                />
+                <i class="fa fa-edit"></i>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  Selecttime-Start -->
+      <div class="row no-gutters">
+        <div class="col-lg-4">
+          <div class="row">
             <div class="col-4 align-self-center">
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-outline-success btn-md">
@@ -396,7 +388,13 @@
                 </label>
               </div>
             </div>
-
+            <div class="col-4 text-left">
+              <select
+                class="text-white bg-primary border rounded rounded-pill form-control text-left"
+                style="font-size: 1.3em"
+                id="selectTrackerTime"
+              ></select>
+            </div>
             <div class="col-4 text-right mt-2">
               <span
                 id="timeLeft"
@@ -456,7 +454,7 @@
                 <label id="lblChunkQuarter4">00-0</label>
               </button>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <label id="lblChunkM4">🧿</label>
               <label id="lblChunkW4">💎</label>
               <label id="lblChunkE4">🥥</label>
@@ -480,7 +478,7 @@
                 <label id="lblChunkQuarter3">00-0</label>
               </button>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <label id="lblChunkM3">🧿</label>
               <label id="lblChunkW3">💎</label>
               <label id="lblChunkE3">🥥</label>
@@ -504,7 +502,7 @@
                 <label id="lblChunkQuarter2">00-0</label>
               </button>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <label id="lblChunkM2">🧿</label>
               <label id="lblChunkW2">💎</label>
               <label id="lblChunkE2">🥥</label>
@@ -528,7 +526,7 @@
                 <label id="lblChunkQuarter1">00-0</label>
               </button>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <label id="lblChunkM1">🧿</label>
               <label id="lblChunkW1">💎</label>
               <label id="lblChunkE1">🥥</label>

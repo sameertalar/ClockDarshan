@@ -1,9 +1,16 @@
+/* Orange back #ffdfb6
+background-image: linear-gradient(#ffdfb6 ,white,white,white,#ffdfb6  );
+
+*/
+
 
 #bodyCD{
 background-repeat: no-repeat;
 background-size: 90%;
 background-position: left;
-background-image: linear-gradient(#babec4, #babec4);
+background-image: linear-gradient(#ccffe6 ,white,white,white,#ccffe6  );
+
+
 background-color: white;
 }
 
