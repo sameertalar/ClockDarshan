@@ -282,7 +282,7 @@
           <!--  ClockRow-End -->
 
           <!--  GodNameRow-Start -->
-          <div class="row">
+          <div class="row mt-2">
             <div class="col-4 text-left">
               <label for="checkSleep">
                 <input
@@ -322,7 +322,7 @@
 
           <!--  EnergyRow-Start -->
           <div class="row">
-            <div class="col-4 align-self-center">
+            <div class="col-4 align-self-left">
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-outline-success btn-md">
                   <input
@@ -357,20 +357,20 @@
                 </label>
               </div>
             </div>
-            <div class="col-4 text-left">
-              <select
-                class="text-white bg-primary border rounded rounded-pill form-control text-left"
-                style="font-size: 1.3em"
-                id="selectTrackerTime"
-              ></select>
-            </div>
-            <div class="col-4 text-right mt-2">
+            <div class="col-4 text-center mt-2">
               <span
                 id="timeLeft"
                 class="border border-dark rounded h5 bg-success text-white px-1 py-1"
               >
                 10:10
               </span>
+            </div>
+            <div class="col-4 align-self-right text-right">
+              <select
+                class="text-white bg-primary border rounded rounded-pill form-control text-left"
+                style="font-size: 1.3em"
+                id="selectTrackerTime"
+              ></select>
             </div>
           </div>
           <!--  EnergyRow-End -->
@@ -405,32 +405,47 @@
           <!--  SpinnerRow-End -->
 
           <!--  HistoryRow-Start -->
-          <!--  HistoryRow 1 -->
-          <div class="row justify-content-center">
-            <div class="col-4 border text-right">
+          <!--  HistoryRow 4 -->
+          <div class="row mt-3">
+            <div class="col-4 text-right font-weight-bold align-self-center">
+              <h5 id="lblChunkGod4">4</h5>
+            </div>
+
+            <div
+              class="col-4 text-center align-self-center"
+              style="font-size: 1.2em"
+            >
+              <strong>
+                <label id="lblChunkM4">🧿</label>
+                <label id="lblChunkW4">💎</label>
+                <label id="lblChunkE4">🥥</label></strong
+              >
+            </div>
+            <div class="col-4 text-center">
               <button
-                class="btn btn-sm btn-danger"
+                class="btn btn-outline-primary rounded-circle font-weight-bold"
                 type="button"
                 id="btnChunkPush4"
                 type="button"
               >
-                <label id="lblChunkQuarter4">00-0</label>
+                <label id="lblChunkQuarter4">10-4</label>
               </button>
             </div>
-            <div class="col-4 border">
-              <label id="lblChunkM4">🧿</label>
-              <label id="lblChunkW4">💎</label>
-              <label id="lblChunkE4">🥥</label>
-            </div>
-            <div class="col-4 border text-left text-white">
-              <h5 id="lblChunkGod4">कृष्ण</h5>
-            </div>
           </div>
-          <!--  HistoryRow 2 -->
-          <div class="row justify-content-center">
-            <div class="col-4 text-right">
+          <!--  HistoryRow 3 -->
+          <div class="row">
+            <div class="col-4 text-right align-self-center">
+              <label id="lblChunkGod3"> 3</label>
+            </div>
+
+            <div class="col-4 text-center align-self-center">
+              <label id="lblChunkM3">🧿</label>
+              <label id="lblChunkW3">💎</label>
+              <label id="lblChunkE3">🥥</label>
+            </div>
+            <div class="col-4 text-center align-self-center">
               <button
-                class="btn btn-sm btn-outline-primary"
+                class="btn rounded-circle btn-outline-primary"
                 type="button"
                 id="btnChunkPush3"
                 type="button"
@@ -438,21 +453,22 @@
                 <label id="lblChunkQuarter3">00-0</label>
               </button>
             </div>
-            <div class="col-4">
-              <label id="lblChunkM3">🧿</label>
-              <label id="lblChunkW3">💎</label>
-              <label id="lblChunkE3">🥥</label>
-            </div>
-            <div class="col-4 text-left">
-              <label id="lblChunkGod3">कृष्ण</label>
-            </div>
           </div>
 
-          <!--  HistoryRow 3 -->
-          <div class="row justify-content-center">
-            <div class="col-4 text-right">
+          <!--  HistoryRow 2 -->
+          <div class="row">
+            <div class="col-4 text-right align-self-center">
+              <label id="lblChunkGod2">2</label>
+            </div>
+            <div class="col-4 text-center align-self-center">
+              <label id="lblChunkM2">🧿</label>
+              <label id="lblChunkW2">💎</label>
+              <label id="lblChunkE2">🥥</label>
+            </div>
+
+            <div class="col-4 text-center">
               <button
-                class="btn btn-sm btn-outline-primary"
+                class="btn rounded-circle btn-outline-primary"
                 type="button"
                 id="btnChunkPush2"
                 type="button"
@@ -460,35 +476,28 @@
                 <label id="lblChunkQuarter2">00-0</label>
               </button>
             </div>
-            <div class="col-4">
-              <label id="lblChunkM2">🧿</label>
-              <label id="lblChunkW2">💎</label>
-              <label id="lblChunkE2">🥥</label>
-            </div>
-            <div class="col-4 text-left">
-              <label id="lblChunkGod2">कृष्ण</label>
-            </div>
           </div>
-          <!--  HistoryRow 4 -->
+          <!--  HistoryRow 1 -->
 
-          <div class="row justify-content-center">
-            <div class="col-4 text-right">
+          <div class="row">
+            <div class="col-4 text-right align-self-center">
+              <label id="lblChunkGod1">1</label>
+            </div>
+
+            <div class="col-4 text-center align-self-center">
+              <label id="lblChunkM1">🧿</label>
+              <label id="lblChunkW1">💎</label>
+              <label id="lblChunkE1">🥥</label>
+            </div>
+            <div class="col-4 text-center">
               <button
-                class="btn btn-sm btn-outline-primary"
+                class="btn rounded-circle btn-outline-primary"
                 type="button"
                 id="btnChunkPush1"
                 type="button"
               >
                 <label id="lblChunkQuarter1">00-0</label>
               </button>
-            </div>
-            <div class="col-4">
-              <label id="lblChunkM1">🧿</label>
-              <label id="lblChunkW1">💎</label>
-              <label id="lblChunkE1">🥥</label>
-            </div>
-            <div class="col-4 text-left">
-              <label id="lblChunkGod1">कृष्ण</label>
             </div>
           </div>
 
