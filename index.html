@@ -28,46 +28,14 @@
     </style>
   </head>
   <body id="bodyCD" class="border">
-    <!--- **************    Content-Start   **************    -->
+    <!--- **************    BODY-Start   **************    -->
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-4 border-primary border-right">Hello</div>
-      </div>
-    </div>
+        <div class="col-lg-4 border-primary border-right">
+          <!----------------- Content-Start  -------------- -->
 
-    <!-- Stickey and Floating - Start-->
-
-    <div style="position: fixed; bottom: 15px; left: 15px; z-index: 999">
-      <video
-        id="videoDummy"
-        controls
-        loop
-        muted
-        class="mb-1"
-        style="width: 36px; height: 50px; display: none"
-      >
-        <source src="media/video_dummy.mp4" type="video/mp4" />
-      </video>
-    </div>
-
-    <!-- Stickey and Floating - End-->
-
-    <div class="container-fluid">
-      <!--  Progress-Start -->
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="alert alert-success text-center" id="success-alert">
-            <span id="alertMessage" class="text-primary"> </span>
-          </div>
-        </div>
-      </div>
-      <!--  Progress-End -->
-
-      <!--  SelectionInputsClock-Start -->
-
-      <div class="row no-gutters mt-2">
-        <div class="col-lg-4">
+          <!--  ClockRow-Start -->
           <div class="row no-gutters justify-content-left">
             <div class="col-2 align-self-center">
               <div
@@ -311,12 +279,9 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
+          <!--  ClockRow-End -->
 
-      <!--  SelectionInputsClock-end -->
-      <div class="row no-gutters">
-        <div class="col-lg-4">
+          <!--  GodNameRow-Start -->
           <div class="row">
             <div class="col-4 text-left">
               <label for="checkSleep">
@@ -353,11 +318,9 @@
               </label>
             </div>
           </div>
-        </div>
-      </div>
-      <!--  Selecttime-Start -->
-      <div class="row no-gutters">
-        <div class="col-lg-4">
+          <!--  GodNameRow-End -->
+
+          <!--  EnergyRow-Start -->
           <div class="row">
             <div class="col-4 align-self-center">
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -410,47 +373,41 @@
               </span>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row no-gutters">
-        <div class="col-lg-4 no-gutters">
-          <span
-            id="errorMessage"
-            class="bg-danger text-white"
-            style="height: 5px"
-          >
-          </span>
-          <div
-            class="alert alert-warning text-center bg-success"
-            style="display: none"
-            id="progress-loading"
-          >
-            <h3>
-              <span
-                class="spinner-border text-white"
-                id="spinner"
-                role="status"
-              ></span>
-              <span class="text-warning font-weight-light">Deep Breath</span>
-            </h3>
-          </div>
+          <!--  EnergyRow-End -->
 
-          <!--   Inputs-Mind -->
-        </div>
-      </div>
-      <!--  Selecttime-end -->
-      <div class="row mt-3 d-none">
-        <div class="col-lg-4">
-          <div id="quarterProgress" class="progressOuter">
-            <div id="quarterStatus"></div>
+          <!--  SpinnerRow-Start -->
+          <div class="row no-gutters">
+            <div class="col no-gutters">
+              <span
+                id="errorMessage"
+                class="bg-danger text-white"
+                style="height: 5px"
+              >
+              </span>
+              <div
+                class="alert alert-warning text-center bg-success"
+                style="display: none"
+                id="progress-loading"
+              >
+                <h3>
+                  <span
+                    class="spinner-border text-white"
+                    id="spinner"
+                    role="status"
+                  ></span>
+                  <span class="text-warning font-weight-light"
+                    >Deep Breath</span
+                  >
+                </h3>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <!--  History-Start -->
-      <div class="row border bg-info mt-2">
-        <div class="col-lg-4">
+          <!--  SpinnerRow-End -->
+
+          <!--  HistoryRow-Start -->
+          <!--  HistoryRow 1 -->
           <div class="row justify-content-center">
-            <div class="col-4 text-right">
+            <div class="col-4 border text-right">
               <button
                 class="btn btn-sm btn-danger"
                 type="button"
@@ -460,19 +417,16 @@
                 <label id="lblChunkQuarter4">00-0</label>
               </button>
             </div>
-            <div class="col-4">
+            <div class="col-4 border">
               <label id="lblChunkM4">🧿</label>
               <label id="lblChunkW4">💎</label>
               <label id="lblChunkE4">🥥</label>
             </div>
-            <div class="col-4 text-left text-white">
+            <div class="col-4 border text-left text-white">
               <h5 id="lblChunkGod4">कृष्ण</h5>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row border-bottom">
-        <div class="col-lg-4">
+          <!--  HistoryRow 2 -->
           <div class="row justify-content-center">
             <div class="col-4 text-right">
               <button
@@ -493,10 +447,8 @@
               <label id="lblChunkGod3">कृष्ण</label>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4">
+
+          <!--  HistoryRow 3 -->
           <div class="row justify-content-center">
             <div class="col-4 text-right">
               <button
@@ -517,10 +469,8 @@
               <label id="lblChunkGod2">कृष्ण</label>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row border">
-        <div class="col-lg-4">
+          <!--  HistoryRow 4 -->
+
           <div class="row justify-content-center">
             <div class="col-4 text-right">
               <button
@@ -541,52 +491,83 @@
               <label id="lblChunkGod1">कृष्ण</label>
             </div>
           </div>
+
+          <!--  HistoryRow-End -->
+
+          <!--  BottomButtonsRow-End -->
+          <div class="row mt-3">
+            <div class="col text-center">
+              <div class="btn-group">
+                <a
+                  class="btn btn-outline-info"
+                  target="_blank"
+                  href="https://script.google.com/macros/s/AKfycby45MlbIOt0UYUqS4llQFW_CrMvvT-2n-aK-Ynbouk/dev"
+                  role="button"
+                >
+                  <i class="fa fa-podcast fa-2x text-danger"></i>
+                </a>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-info"
+                  id="btnPlayVideo"
+                >
+                  <i class="fa fa-video-camera fa-2x"></i>
+                </button>
+
+                <button
+                  id="btnPopup"
+                  type="button"
+                  class="btn btn-outline-info"
+                >
+                  <i class="fa fa-window-restore"></i>
+                </button>
+
+                <button
+                  id="btnResetSheet"
+                  type="button"
+                  class="btn btn-outline-info btn-lg"
+                >
+                  <i class="fa fa-random text-danger"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!--  BottomButtonsRow-End -->
+
+          <!----------------- Content-End  -------------- -->
         </div>
       </div>
-      <!--  xxx-end -->
+    </div>
 
-      <!--  Controls-Start -->
-      <div class="row mt-3">
-        <div class="col-lg-4 text-center">
-          <div class="btn-group">
-            <a
-              class="btn btn-outline-info"
-              target="_blank"
-              href="https://script.google.com/macros/s/AKfycby45MlbIOt0UYUqS4llQFW_CrMvvT-2n-aK-Ynbouk/dev"
-              role="button"
-            >
-              <i class="fa fa-podcast fa-2x text-danger"></i>
-            </a>
-            <button
-              type="button"
-              class="btn btn-sm btn-outline-info"
-              id="btnPlayVideo"
-            >
-              <i class="fa fa-video-camera fa-2x"></i>
-            </button>
+    <!-- Stickey and Floating - Start-->
 
-            <button id="btnPopup" type="button" class="btn btn-outline-info">
-              <i class="fa fa-window-restore"></i>
-            </button>
+    <div style="position: fixed; bottom: 15px; left: 15px; z-index: 999">
+      <video
+        id="videoDummy"
+        controls
+        loop
+        muted
+        class="mb-1"
+        style="width: 36px; height: 50px; display: none"
+      >
+        <source src="media/video_dummy.mp4" type="video/mp4" />
+      </video>
+    </div>
 
-            <button
-              id="btnResetSheet"
-              type="button"
-              class="btn btn-outline-info btn-lg"
-            >
-              <i class="fa fa-random text-danger"></i>
-            </button>
+    <!-- Stickey and Floating - End-->
+
+    <div class="container-fluid">
+      <!--  Progress-Start -->
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="alert alert-success text-center" id="success-alert">
+            <span id="alertMessage" class="text-primary"> </span>
           </div>
         </div>
       </div>
-      <!--  controls-end -->
+      <!--  Progress-End -->
     </div>
-
-    <!--  xxx-Start  
-    <div class="row">
-      <div class="col-lg-4">xxx</div>
-    </div>
-       xxx-end -->
 
     <!--- **************   Content-End   **************    -->
     <input type="hidden" id="hiddenLoggedRow" value="0" />
