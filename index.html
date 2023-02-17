@@ -134,7 +134,7 @@
                         id="onepointer2"
                         cx="49.7"
                         cy="13.7"
-                        r="13.7"
+                        r="11"
                         stroke="#436EE0"
                         stroke-width="1.7%"
                         fill="none"
@@ -144,14 +144,51 @@
                         id="onepointer3"
                         cx="49.7"
                         cy="13.7"
-                        r="13.7"
+                        r="11"
                         stroke="#F757CA"
                         stroke-width="0.6%"
                         fill="none"
                       />
                       <g class="centerCore"></g>
                     </g>
-
+                    <g transform="translate(50, 50)">
+                      <circle
+                        id="ClockInnerCircle"
+                        cx="0"
+                        cy="0"
+                        r="23"
+                        fill-opacity="0"
+                        style="
+                          fill: #ffffff;
+                          stroke: #0d2931;
+                          stroke-width: 4px;
+                        "
+                      ></circle>
+                      <circle
+                        id="ClockInnerCircle"
+                        cx="0"
+                        cy="0"
+                        r="23"
+                        fill-opacity="0"
+                        style="
+                          fill: #ffffff;
+                          stroke: #dfe5ec;
+                          stroke-width: 4px;
+                          stroke-dasharray: 135;
+                        "
+                      >
+                        <animateTransform
+                          attributeType="xml"
+                          attributeName="transform"
+                          type="rotate"
+                          from="0"
+                          to="360"
+                          begin="0"
+                          dur="15s"
+                          repeatCount="indefinite"
+                        />
+                      </circle>
+                    </g>
                     <g id="hands">
                       <rect
                         id="minHand"
@@ -180,15 +217,15 @@
                       <text
                         id="centerCoreD"
                         x="-5"
-                        y="-2"
+                        y="5"
                         style="cursor: pointer"
                       >
                         ⏳
                       </text>
 
-                      <text id="centerCoreM" x="-12" y="11">🧿</text>
-                      <text id="centerCoreE" x="-2" y="17">🥥</text>
-                      <text id="centerCoreW" x="5" y="9">👪</text>
+                      <text id="centerCoreM" x="-13" y="13">🧿</text>
+                      <text id="centerCoreE" x="-3" y="13">🥥</text>
+                      <text id="centerCoreW" x="4" y="13">👪</text>
                     </g>
 
                     <!-- https://medium.com/allenhwkim/html-analog-clock-in-few-minutes-13e5983e6543-->
