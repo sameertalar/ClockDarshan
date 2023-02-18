@@ -119,12 +119,7 @@ input[type="radio"]:checked {
   fill: transparent;
 }
 
-#minHand {
-  stroke-width: 0.05rem;
-
-  fill: #22e8f7;
-  stroke: #000000; /*#ff2e2d;*/
-}
+ 
 
 .centerCore {
   font-size: 3.5px;  
