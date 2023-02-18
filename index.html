@@ -316,7 +316,7 @@
             </div>
 
             <div class="col-4 align-self-center">
-              <h4 class="text-primary text-center" id="lableSelectedGod"></h4>
+              <h4 class="text-center text-primary" id="lableSelectedGod"></h4>
             </div>
             <div class="col-4 text-right">
               <label for="checkEdit">
@@ -372,7 +372,11 @@
               </div>
             </div>
             <div class="col-4 text-center mt-2">
-              <span id="timeLeft" class="h5 text-danger px-1 py-1">
+              <span
+                id="timeLeft"
+                style="color: #22e8f7"
+                class="h5 px-3 py-1 text-white bg-success rounded-pill"
+              >
                 10:10
               </span>
             </div>
@@ -396,8 +400,8 @@
               >
               </span>
               <div
-                class="alert alert-warning text-center bg-info"
-                style="display: none"
+                class="alert alert-warning text-center"
+                style="display: none; background-color: #22e8f7"
                 id="progress-loading"
               >
                 <h3>
@@ -406,9 +410,7 @@
                     id="spinner"
                     role="status"
                   ></span>
-                  <span class="text-warning font-weight-light"
-                    >Deep Breath</span
-                  >
+                  <span class="text-danger">Deep Breath</span>
                 </h3>
               </div>
             </div>
@@ -524,7 +526,7 @@
                   href="https://script.google.com/macros/s/AKfycby45MlbIOt0UYUqS4llQFW_CrMvvT-2n-aK-Ynbouk/dev"
                   role="button"
                 >
-                  <i class="fa fa-podcast fa-2x text-danger"></i>
+                  <i class="fa fa-podcast fa-2x text-info"></i>
                 </a>
                 <button
                   type="button"
@@ -547,7 +549,7 @@
                   type="button"
                   class="btn btn-outline-info btn-lg"
                 >
-                  <i class="fa fa-random text-danger"></i>
+                  <i class="fa fa-random text-info"></i>
                 </button>
               </div>
             </div>
@@ -607,7 +609,7 @@
       integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
       crossorigin="anonymous"
     ></script>
-    <script src="lib/D.js?ver=00.03"></script>
+    <script src="lib/D.js?ver=00.04"></script>
     <script>
       function testFunction(min) {
         var out = "";
