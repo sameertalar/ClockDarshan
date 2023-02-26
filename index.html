@@ -405,20 +405,6 @@
                 style="height: 5px"
               >
               </span>
-              <div
-                class="alert alert-warning text-center"
-                style="display: none; background-color: #22e8f7"
-                id="progress-loading"
-              >
-                <h3>
-                  <span
-                    class="spinner-border text-primary"
-                    id="spinner"
-                    role="status"
-                  ></span>
-                  <span class="text-white">Deep Breath</span>
-                </h3>
-              </div>
             </div>
           </div>
           <!--  SpinnerRow-End -->
@@ -564,6 +550,36 @@
       </div>
     </div>
 
+    <!-- modal-Start -->
+    <div
+      class="modal fade bd-progress-modal-lg"
+      tabindex="-1"
+      role="dialog"
+      id="progress-modal"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-secondary">
+          <div
+            class="alert alert-warning text-center mt-5 mb-5"
+            style="background-color: #22e8f7"
+            id="progress-loading"
+          >
+            <h3>
+              <span
+                class="spinner-border text-danger"
+                id="spinner"
+                role="status"
+              ></span>
+              <span class="text-white">Deep Breath</span>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal-Start -->
+
     <!-- Stickey and Floating - Start-->
 
     <div style="position: fixed; bottom: 15px; left: 15px; z-index: 999">
@@ -611,7 +627,7 @@
       integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
       crossorigin="anonymous"
     ></script>
-    <script src="lib/D.js?ver=00.05"></script>
+    <script src="lib/D.js?ver=00.06"></script>
     <script>
       function testFunction(min) {
         var out = "";
