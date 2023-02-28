@@ -144,3 +144,9 @@ small
 {
   font-size: 0.65em;
 }
+
+small.smallfocus
+{
+  font-size: 0.75em;
+  font-weight: bolder;
+}
