@@ -1,0 +1,152 @@
+/* Orange back #ffdfb6
+background-image: linear-gradient(#ffdfb6 ,white,white,white,#ffdfb6  );
+
+*/
+
+
+#bodyCD{
+background-repeat: no-repeat;
+background-size: 90%;
+background-position: left;
+background-image: linear-gradient(white ,#babec4 );
+
+
+background-color: white;
+}
+
+input[type="radio"]:checked {
+
+    background-color: #f4b400;
+    color: #28a745;
+  }
+  
+  input[type="radio"] {
+    transform: scale(2);
+    accent-color: #ff2e2d;
+  }
+  input[type="checkbox"] {
+    transform: scale(1.5);  
+   
+  }
+
+  .centerCoreB
+  {
+    font-size: 0.25rem;
+  }
+
+  #centerCoreM
+  {
+    font-size: 0.5rem;
+  }
+
+  #centerCoreW
+  {
+    font-size: 0.35rem;
+  }
+
+  #centerCoreE
+  {
+    font-size: 0.35rem;
+  }
+
+#quarterProgress {
+  position: relative;
+ 
+  width: 100%;
+  height: 25px;
+  
+  border: 1px solid #0d2931;
+  background-color: #fef9e7;
+  background: linear-gradient(
+    to right,
+    rgba(40, 167, 69, 0.1) 6.66%,
+    rgba(40, 167, 69, 0.2) 6.66% 13.33% ,
+    rgba(40, 167, 69, 0.1)  13.33% 20%,
+    rgba(40, 167, 69, 0.2) 20% 26.66%,
+    rgba(40, 167, 69, 0.1)  26.66% 33.33%,
+    rgba(236, 192, 33, 0.3) 33.33% 40%,
+    rgba(236, 192, 33, 0.1) 40% 46.66%,
+    rgba(236, 192, 33, 0.9) 46.66% 53.33%,
+    rgba(236, 192, 33, 0.1) 53.33% 60%,
+    rgba(236, 192, 33, 0.3) 60% 66.66%,
+    rgba(0, 123, 255, 0.1) 66.66% 73.33%,
+    rgba(0, 123, 255, 0.2) 73.33% 80%,
+    rgba(0, 123, 255, 0.1) 80% 86.66%,
+    rgba(0, 123, 255, 0.2) 86.66% 93.33%,
+    rgba(0, 123, 255, 0.1) 93.33%
+  
+
+
+  );
+}
+
+ 
+
+#quarterStatus {
+  position: relative;
+  z-index: 1;
+  right: 0;
+  margin-top: 0px;
+  top: 0;
+  float: right;
+  width: 0;
+  height: 98%;
+  background:#007bff; 
+  border-top: solid 3px #babec4;
+  border-bottom: solid 3px #babec4;
+  border-left:solid 4px #0d2931;
+  border-right:   double 1px #003da1 ;
+}
+
+/* Analog Clock */
+
+#clock-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  overflow: hidden;
+  background: url("../img/clockDarshan5. 1-min.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;  
+}
+
+#face {
+  stroke-width: 1px;
+  stroke: transparent;
+  fill: transparent;
+}
+
+ 
+
+.centerCore {
+  font-size: 3.5px;  
+}
+#centerCoreG {
+ fill: #ff2e2d;
+ font-size: 3.5px;
+ 
+}
+#centerCoreD {
+ fill: #007bff;
+ font-size: 18px;
+ font-weight: 800;
+}
+
+.circle {
+  display: none;
+ 
+}
+
+small
+{
+  font-size: 0.65em;
+}
+
+small.smallfocus
+{
+  font-size: 0.75em;
+  font-weight: bolder;
+}
