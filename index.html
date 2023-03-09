@@ -367,27 +367,7 @@
 
           <!--  GodNameRow-Start -->
           <div class="row mt-2">
-            <div class="col-4 text-left">
-              <label for="checkSleep">
-                <input
-                  type="checkbox"
-                  class="btn-check checkSleep"
-                  id="checkSleep"
-                  autocomplete="off"
-                  name="checkSleep"
-                  value="S"
-                />
-                <i class="fa fa-bed"> </i>
-              </label>
-            </div>
-
-            <div class="col-4 align-self-center">
-              <h4 class="text-center text-primary" id="lableSelectedGod"></h4>
-            </div>
-            <div class="col-4 text-right">
-              <span id="centerCoreM"  >🧿</span>
-              <span id="centerCoreE"  >🥥</span>
-              <span id="centerCoreW"  >👪</span>
+            <div class="col-4 text-left ">
               <label for="checkEdit">
                 <input
                   type="checkbox"
@@ -399,7 +379,28 @@
                 />
                 <i class="fa fa-edit"></i>
               </label>
+              <label for="checkSleep" class="d-none">
+                <input
+                  type="checkbox"
+                  class="btn-check checkSleep "
+                  id="checkSleep"
+                  autocomplete="off"
+                  name="checkSleep"
+                  value="S"
+                />
+                <i class="fa fa-bed"> </i>
+              </label>
             </div>
+            <div class="col-4 text-center">
+              <span id="centerCoreM"  >🧿</span>
+              <span id="centerCoreE"  >🥥</span>
+              <span id="centerCoreW"  >👪</span>
+            
+            </div>
+            <div class="col-4 align-self-center">
+              <h5 class="text-center text-primary" id="lableSelectedGod"></h5>
+            </div>
+        
           </div>
           <!--  GodNameRow-End -->
 
