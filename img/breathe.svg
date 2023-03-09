@@ -1,1 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><circle cx="1" cy="1" r="1" fill="#08c" style="animation:b 9s infinite"/><style>@keyframes b{0%,to{transform-origin:center;transform:scale(.2)}50%{transform:scale(1)}}</style></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><circle cx="1" cy="1" r="1" fill="#007bff" style="animation:b 12s infinite"/><style>@keyframes b{0%,to{transform-origin:center;transform:scale(.2)}50%{transform:scale(1)}}</style></svg>
