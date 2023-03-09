@@ -408,7 +408,7 @@
             🥥
             <small
               id="lblEM"
-              style="position: absolute; top: 35px; left: 15px"
+              style="position: absolute; top: 38px; left: 15px"
               class="font-weight-light text-warning"
               ></small
             >
@@ -424,7 +424,7 @@
             ⚪
             <small
               id="lblEL"
-              style="position: absolute; top: 35px; left: 15px"
+              style="position: absolute; top: 38px; left: 15px"
               class="font-weight-light  text-danger"
               ></small
             >
@@ -546,109 +546,7 @@
 
   </div>
 </div>
-
-
-<!-- Row 3 -->
-<div class="row">
-  <div class="col">
-  
-  
-    row 3
-  </div>
-</div>
-
-<!--  row1-End -->
-      <!----------------- New Content Above -------------- -->
-
-
-
-
-          <!--  ClockRow-Start -->
-          <div class="row no-gutters justify-content-left">
-            <div class="col-2 align-self-center">
-            
-            </div>
-            <div class="col-8">
-       
-            </div>
-
-            <div class="col-2 align-self-center">
-        
-            </div>
-          </div>
-          <!--  ClockRow-End -->
-
-          <!--  GodNameRow-Start -->
-          <div class="row mt-2">
-            <div class="col-4 text-left ">
-              <label for="checkEdit">
-                <input
-                  type="checkbox"
-                  class="btn-check checkEdit ml-2"
-                  id="checkEdit"
-                  autocomplete="off"
-                  name="checkEdit"
-                  value="T"
-                />
-                <i class="fa fa-edit"></i>
-              </label>
-              <label for="checkSleep" class="d-none">
-                <input
-                  type="checkbox"
-                  class="btn-check checkSleep "
-                  id="checkSleep"
-                  autocomplete="off"
-                  name="checkSleep"
-                  value="S"
-                />
-                <i class="fa fa-bed"> </i>
-              </label>
-            </div>
-            <div class="col-4 text-center">
-              <span id="centerCoreM"  >🧿</span>
-              <span id="centerCoreE"  >🥥</span>
-              <span id="centerCoreW"  >👪</span>
-            
-            </div>
-            <div class="col-4 align-self-center">
-              <h5 class="text-center text-primary" id="lableSelectedGod"></h5>
-            </div>
-        
-          </div>
-          <!--  GodNameRow-End -->
-
-          <!--  EnergyRow-Start -->
-          <div class="row">
-            <div class="col-4 align-self-left">
-           
-            </div>
-          
-            <div class="col-4 align-self-right text-right">
-              <select
-                class="text-primary bg-white border rounded rounded-pill form-control text-left"
-                style="font-size: 1.3em"
-                id="selectTrackerTime"
-              ></select>
-            </div>
-          </div>
-          <!--  EnergyRow-End -->
-
-          <!--  SpinnerRow-Start -->
-          <div class="row no-gutters">
-            <div class="col no-gutters">
-              <span
-                id="errorMessage"
-                class="bg-danger text-white"
-                style="height: 5px"
-              >
-              </span>
-            </div>
-          </div>
-          <!--  SpinnerRow-End -->
-
-    
-
-          <!--  BottomButtonsRow-Start -->
+<!-- Row 3 BottomButtonsRow-Start-->
           <div class="row mt-3">
             <div class="col text-center">
               <div class="btn-group">
@@ -684,6 +582,132 @@
           </div>
 
           <!--  BottomButtonsRow-End -->
+
+<!-- Row 4 Floters-->
+<div class="row">
+  <div class="col">
+    <div style="position: fixed; bottom: 15px; left: 15px; z-index: 999">
+      <video
+        id="videoDummy"
+        controls
+        loop
+        muted
+        class="mb-1"
+        style="width: 36px; height: 50px; display: none"
+      >
+        <source src="media/video_dummy.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div style="position: fixed; top: 15px; right: 15px; z-index: 999">
+      <label for="checkEdit">
+        <input
+          type="checkbox"
+          class="btn-check checkEdit ml-2"
+          id="checkEdit"
+          autocomplete="off"
+          name="checkEdit"
+          value="T"
+        />
+        <i class="fa fa-edit"></i>
+      </label>
+      <label for="checkSleep" class="d-none">
+        <input
+          type="checkbox"
+          class="btn-check checkSleep "
+          id="checkSleep"
+          autocomplete="off"
+          name="checkSleep"
+          value="S"
+        />
+        <i class="fa fa-bed"> </i>
+      </label>
+</div>
+<div style="position: fixed; top: 290px; right: 10px; z-index: 999">
+  <select
+  class="text-primary bg-white border rounded rounded-pill form-control text-left"
+  style="font-size: 1.3em"
+  id="selectTrackerTime"
+></select>
+</div>
+<div style="position: fixed; top: 310px; left: 30px; z-index: 999">
+  <span id="centerCoreM"  >🧿</span>
+  <span id="centerCoreE"  >🥥</span>
+  <span id="centerCoreW"  >👪</span>
+</div>
+
+<div style="position: fixed; top: 10px; left: 30px; z-index: 999">
+  <h5 class="text-center text-primary" id="lableSelectedGod"></h5>
+</div>
+
+  </div>
+</div>
+
+<!--  row1-End -->
+      <!----------------- New Content Above -------------- -->
+
+
+
+
+          <!--  ClockRow-Start -->
+          <div class="row no-gutters justify-content-left">
+            <div class="col-2 align-self-center">
+            abc
+            </div>
+            <div class="col-8">
+       aaa
+            </div>
+
+            <div class="col-2 align-self-center">
+        bbbb
+            </div>
+          </div>
+          <!--  ClockRow-End -->
+
+          <!--  GodNameRow-Start -->
+          <div class="row mt-2">
+            <div class="col-4 text-left ">
+          
+            </div>
+            <div class="col-4 text-center">
+
+            
+            </div>
+            <div class="col-4 align-self-center">
+             
+            </div>
+        
+          </div>
+          <!--  GodNameRow-End -->
+
+          <!--  EnergyRow-Start -->
+          <div class="row">
+            <div class="col-4 align-self-left">
+           
+            </div>
+          
+            <div class="col-4 align-self-right text-right">
+         
+            </div>
+          </div>
+          <!--  EnergyRow-End -->
+
+          <!--  SpinnerRow-Start -->
+          <div class="row no-gutters">
+            <div class="col no-gutters">
+              <span
+                id="errorMessage"
+                class="bg-danger text-white"
+                style="height: 5px"
+              >
+              </span>
+            </div>
+          </div>
+          <!--  SpinnerRow-End -->
+
+    
+
+
 
           <!----------------- Content-End  -------------- -->
         </div>
@@ -723,72 +747,7 @@
 
     <!-- Stickey and Floating - Start-->
 
-    <div style="position: fixed; bottom: 15px; left: 15px; z-index: 999">
-      <video
-        id="videoDummy"
-        controls
-        loop
-        muted
-        class="mb-1"
-        style="width: 36px; height: 50px; display: none"
-      >
-        <source src="media/video_dummy.mp4" type="video/mp4" />
-      </video>
-    </div>
 
-    <div style="position: fixed; display: none" class="text-dark">
-      <small
-        style="position: fixed; left: 70px; top: 35px"
-        class="font-weight-light"
-        >11</small
-      >
-      <small
-        style="position: fixed; left: 70px; top: 80px"
-        class="font-weight-light"
-        >12</small
-      >
-      <small
-        style="position: fixed; left: 70px; top: 125px"
-        class="font-weight-light"
-        >13</small
-      >
-      <small
-        style="position: fixed; left: 70px; top: 170px"
-        class="font-weight-light"
-        >14</small
-      >
-      <small
-        style="position: fixed; left: 70px; top: 215px"
-        class="font-weight-light"
-        >15</small
-      >
-      <!-- Right -->
-      <small
-        style="position: fixed; right: 75px; top: 35px"
-        class="font-weight-light"
-        >11</small
-      >
-      <small
-        style="position: fixed; right: 75px; top: 80px"
-        class="font-weight-light"
-        >12</small
-      >
-      <small
-        style="position: fixed; right: 75px; top: 125px"
-        class="font-weight-light"
-        >13</small
-      >
-      <small
-        style="position: fixed; right: 75px; top: 170px"
-        class="font-weight-light"
-        >14</small
-      >
-      <small
-        style="position: fixed; right: 75px; top: 215px"
-        class="font-weight-light"
-        >15</small
-      >
-    </div>
 
     <!-- Stickey and Floating - End-->
 
