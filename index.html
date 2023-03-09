@@ -35,9 +35,171 @@
         <div id="bodyCD" class="col-lg-4 border-secondary border-right">
           <!----------------- Content-Start  -------------- -->
 
-<!--  row1-start -->
+<!-- Row 1-->
 <div class="row">
-  <div class="col-4">
+  <div class="col-1">
+  
+  
+  </div>
+  <div class="col-9">
+        <!--  Clock-Start -->
+        <div id="clockContainer" class="   ">
+          <div id="clock-container">
+            <svg id="clock" viewBox="0 0 100 100">
+              <!---->
+
+              <!-- <text id="currentTimeH" x="48" y="44">4</text>    <text id="currentTime" x="48" y="51.5">10</text>-->
+              <circle cx="50" cy="50" r="21" fill="#06d3e2" style="animation:b 12s infinite"/><style>@keyframes b{0%,to{transform-origin:center;transform:scale(.2)}50%{transform:scale(1)}}</style>
+              <g id="onepointerBase">
+                <rect
+                  id="tailforCurrent"
+                  x="47"
+                  y="28"
+                  width="6"
+                  height="4"
+                  rx="2"
+                  ry="2"
+                  fill="#AAFF00"
+                  stroke="#000000"
+                  stroke-width="0.1"
+                />
+
+                <circle
+                  id="onepointer1"
+                  cx="49.7"
+                  cy="13.7"
+                  r="12"
+                  stroke="#AAFF00"
+                  stroke-width="7%"
+                  fill="none"
+                />
+              </g>
+              <!-- Inner Ring In-Out-->
+              <g id="onepointerCircle">
+                <circle
+                  id="onepointer2"
+                  cx="49.7"
+                  cy="13.7"
+                  r="11"
+                  stroke="#436EE0"
+                  stroke-width="1.7%"
+                  fill="none"
+                />
+                <!-- Inner Ring-->
+                <circle
+                  id="onepointer3"
+                  cx="49.7"
+                  cy="13.7"
+                  r="11"
+                  stroke="#F757CA"
+                  stroke-width="0.6%"
+                  fill="none"
+                />
+                <g class="centerCore"></g>
+              </g>
+              
+              <g transform="translate(50, 50)">
+
+                <!--
+                <circle
+                  id="ClockInnerCircle"
+                  cx="0"
+                  cy="0"
+                  r="20"
+                  fill-opacity="0"
+                  style="
+                    fill: #ebeef1;
+                    stroke: #06d3e2;
+                    stroke-width: 6.5px;
+                  "
+                ></circle>
+                <circle
+                  id="ClockInnerCircle"
+                  cx="0"
+                  cy="0"
+                  r="20"
+                  fill-opacity="0"
+                  style="
+                    fill: #ebeef1;
+                    stroke: #ebeef1;
+                    stroke-width: 6px;
+                    stroke-dasharray: 120;
+                  "
+                >
+                  <animateTransform
+                    attributeType="xml"
+                    attributeName="transform"
+                    type="rotate"
+                    from="0"
+                    to="360"
+                    begin="0"
+                    dur="15s"
+                    repeatCount="indefinite"
+                  />
+                </circle>-->
+              </g>
+              <g id="hands">
+                <rect
+                  id="minHand"
+                  x="48.5"
+                  y="0"
+                  width="3"
+                  height="10"
+                  rx="4"
+                  ry="4"
+                  fill="#AAFF00"
+                  stroke="#000000"
+                  stroke-width="0.5%"
+                />
+                <rect
+                  id="hourHand"
+                  x="48.5"
+                  y="1"
+                  width="5"
+                  height="5"
+                  rx="4.5"
+                  ry="4.5"
+                  fill="#AAFF00"
+                  stroke="#000000"
+                  stroke-width="0.5%"
+                />
+              </g>
+
+              <g transform="translate(50,50)">
+                <text
+                  id="centerCoreD"
+                  x="-2"
+                  y="3"
+          
+                  style="cursor: pointer"
+                >
+                  ⏳
+                </text>
+<!--
+                <text id="centerCoreM" x="-13" y="9">🧿</text>
+                <text id="centerCoreE" x="-3" y="9">🥥</text>
+                <text id="centerCoreW" x="4" y="9">👪</text>
+                <text class="centerCoreB" x="14" y="12">✎</text>
+                <text class="centerCoreB" x="-2.5" y="-19">👃</text>-->
+              </g>
+
+              <!-- https://medium.com/allenhwkim/html-analog-clock-in-few-minutes-13e5983e6543-->
+            </svg>
+          </div>
+        </div>
+        <!--  Clock-End -->
+  </div>
+  <div class="col-2">
+  
+  
+   
+  </div>
+</div>
+
+
+<!--  row 2 start -->
+<div class="row">
+  <div class="col-4 border">
   
   
   <div
@@ -55,7 +217,7 @@
       <small
         id="lblMC"
         style="position: absolute; right: -15px"
-        class="font-weight-light"
+        class="font-weight-light d-none"
         ></small
       >
       🕊️
@@ -71,7 +233,7 @@
       <small
         id="lblMM"
         style="position: absolute; right: -15px"
-        class="font-weight-light text-primary"
+        class="font-weight-light text-primary  d-none"
         ></small
       >
       🧘
@@ -88,7 +250,7 @@
       <small
         id="lblMA"
         style="position: absolute; right: -15px"
-        class="smallfocus text-primary"
+        class="smallfocus text-primary  d-none"
         ></small
       >
       🧿
@@ -104,7 +266,7 @@
       <small
         id="lblMP"
         style="position: absolute; right: -15px"
-        class="smallfocus text-danger"
+        class="smallfocus text-danger  d-none"
         ></small
       >
       🎳
@@ -120,14 +282,14 @@
       <small
         id="lblMB"
         style="position: absolute; right: -15px"
-        class="font-weight-light text-danger"
+        class="font-weight-light text-danger  d-none"
         ></small
       >
       🔥
     </label>
   </div>
   <div
-  class="btn-group-vertical btn-group-toggle ml-3"
+  class="btn-group-vertical btn-group-toggle"
   data-toggle="buttons"
 >
   <label class="btn btn-outline-info btn-md">
@@ -142,7 +304,7 @@
     <small
       id="lblWC"
       style="position: absolute; left: -15px"
-      class="smallfocus font-weight-light text-primary"
+      class="smallfocus font-weight-light text-primary  d-none"
       ></small
     >
   </label>
@@ -158,7 +320,7 @@
     <small
       id="lblWV"
       style="position: absolute; left: -15px"
-      class="smallfocus font-weight-bold text-primary"
+      class="smallfocus font-weight-bold text-primary  d-none"
       ></small
     >
   </label>
@@ -175,7 +337,7 @@
     <small
       id="lblWD"
       style="position: absolute; left: -15px"
-      class="font-weight-bold text-warning"
+      class="font-weight-bold text-warning  d-none"
       ></small
     >
   </label>
@@ -190,7 +352,7 @@
     🌿<small
       id="lblWH"
       style="position: absolute; left: -15px"
-      class="font-weight-bold text-success"
+      class="font-weight-bold text-success  d-none"
       ></small
     >
   </label>
@@ -207,7 +369,7 @@
     <small
       id="lblWN"
       style="position: absolute; left: -15px"
-      class="smallfocus font-weight-bold text-danger"
+      class="smallfocus font-weight-bold text-danger  d-none"
       ></small
     >
   </label>
@@ -216,7 +378,7 @@
   </div>
   <div class="col-8">
     <div class="row">
-      <div class="col">
+      <div class="col ">
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
           <label class="btn btn-outline-success btn-md">
             <input
@@ -276,23 +438,16 @@
             <!--  HistoryRow-Start -->
           <!--  HistoryRow 4 -->
           <div class="row border mt-3">
-            <div class="col-3 text-right align-self-center">
-              <h5 id="lblChunkGod4">4</h5>
+            <div class="col-4 text-right align-self-center">
+              <label id="lblChunkGod4">4</label>
             </div>
-
-            <div
-              class="col-5 text-center align-self-center"
-             
-            >
-              <strong>
-                <label id="lblChunkM4">⌛</label>
-                <label id="lblChunkE4">⌛</label>
-                <label id="lblChunkW4">⌛</label>
-              </strong>
-            </div>
-            <div class="col-4 text-center">
+ 
+            <div class="col-8 text-center">
+              <label id="lblChunkM4">⌛</label>
+              <label id="lblChunkE4">⌛</label>
+              <label id="lblChunkW4">⌛</label>
               <button
-                class="btn btn-outline-primary rounded-circle "
+                class="btn btn-outline-primary rounded-circle  ml-2"
                 type="button"
                 id="btnChunkPush4"
                 type="button"
@@ -303,18 +458,17 @@
           </div>
           <!--  HistoryRow 3 -->
           <div class="row">
-            <div class="col-3 text-right align-self-center">
+            <div class="col-4 text-right align-self-center">
               <label id="lblChunkGod3"> 3</label>
             </div>
 
-            <div class="col-5 text-center align-self-center">
+          
+            <div class="col-8 text-center align-self-center">
               <label id="lblChunkM3">⌛</label>
               <label id="lblChunkE3">⌛</label>
               <label id="lblChunkW3">⌛</label>
-            </div>
-            <div class="col-4 text-center align-self-center">
               <button
-                class="btn rounded-circle btn-outline-primary"
+                class="btn rounded-circle btn-outline-primary  ml-2"
                 type="button"
                 id="btnChunkPush3"
                 type="button"
@@ -326,18 +480,17 @@
 
           <!--  HistoryRow 2 -->
           <div class="row">
-            <div class="col-3 text-right align-self-center">
+            <div class="col-4 text-right align-self-center">
               <label id="lblChunkGod2">2</label>
             </div>
-            <div class="col-5 text-center align-self-center">
+       
+
+            <div class="col-8 text-center">
               <label id="lblChunkM2">⌛</label>
               <label id="lblChunkE2">⌛</label>
               <label id="lblChunkW2">⌛</label>
-            </div>
-
-            <div class="col-4 text-center">
               <button
-                class="btn rounded-circle btn-outline-primary"
+                class="btn rounded-circle btn-outline-primary  ml-2"
                 type="button"
                 id="btnChunkPush2"
                 type="button"
@@ -349,18 +502,17 @@
           <!--  HistoryRow 1 -->
 
           <div class="row">
-            <div class="col-3 text-right align-self-center">
+            <div class="col-4 text-right align-self-center">
               <label id="lblChunkGod1">1</label>
             </div>
 
-            <div class="col-5 text-center align-self-center">
+           
+            <div class="col-8 text-center">
               <label id="lblChunkM1">⌛</label>
               <label id="lblChunkE1">⌛</label>
               <label id="lblChunkW1">⌛</label>
-            </div>
-            <div class="col-4 text-center">
               <button
-                class="btn rounded-circle btn-outline-primary"
+                class="btn rounded-circle btn-outline-primary ml-2"
                 type="button"
                 id="btnChunkPush1"
                 type="button"
@@ -377,14 +529,9 @@
 
   </div>
 </div>
-<!-- Row 2 -->
-<div class="row">
-  <div class="col">
-  
-  
-    row 2
-  </div>
-</div>
+
+
+<!-- Row 3 -->
 <div class="row">
   <div class="col">
   
@@ -405,152 +552,7 @@
             
             </div>
             <div class="col-8">
-              <!--  Clock-Start -->
-              <div id="clockContainer" class="   ">
-                <div id="clock-container">
-                  <svg id="clock" viewBox="0 0 100 100">
-                    <!---->
-
-                    <!-- <text id="currentTimeH" x="48" y="44">4</text>    <text id="currentTime" x="48" y="51.5">10</text>-->
-                    <circle cx="50" cy="50" r="21" fill="#06d3e2" style="animation:b 12s infinite"/><style>@keyframes b{0%,to{transform-origin:center;transform:scale(.2)}50%{transform:scale(1)}}</style>
-                    <g id="onepointerBase">
-                      <rect
-                        id="tailforCurrent"
-                        x="47"
-                        y="28"
-                        width="6"
-                        height="4"
-                        rx="2"
-                        ry="2"
-                        fill="#AAFF00"
-                        stroke="#000000"
-                        stroke-width="0.1"
-                      />
-
-                      <circle
-                        id="onepointer1"
-                        cx="49.7"
-                        cy="13.7"
-                        r="12"
-                        stroke="#AAFF00"
-                        stroke-width="7%"
-                        fill="none"
-                      />
-                    </g>
-                    <!-- Inner Ring In-Out-->
-                    <g id="onepointerCircle">
-                      <circle
-                        id="onepointer2"
-                        cx="49.7"
-                        cy="13.7"
-                        r="11"
-                        stroke="#436EE0"
-                        stroke-width="1.7%"
-                        fill="none"
-                      />
-                      <!-- Inner Ring-->
-                      <circle
-                        id="onepointer3"
-                        cx="49.7"
-                        cy="13.7"
-                        r="11"
-                        stroke="#F757CA"
-                        stroke-width="0.6%"
-                        fill="none"
-                      />
-                      <g class="centerCore"></g>
-                    </g>
-                    
-                    <g transform="translate(50, 50)">
-
-                      <!--
-                      <circle
-                        id="ClockInnerCircle"
-                        cx="0"
-                        cy="0"
-                        r="20"
-                        fill-opacity="0"
-                        style="
-                          fill: #ebeef1;
-                          stroke: #06d3e2;
-                          stroke-width: 6.5px;
-                        "
-                      ></circle>
-                      <circle
-                        id="ClockInnerCircle"
-                        cx="0"
-                        cy="0"
-                        r="20"
-                        fill-opacity="0"
-                        style="
-                          fill: #ebeef1;
-                          stroke: #ebeef1;
-                          stroke-width: 6px;
-                          stroke-dasharray: 120;
-                        "
-                      >
-                        <animateTransform
-                          attributeType="xml"
-                          attributeName="transform"
-                          type="rotate"
-                          from="0"
-                          to="360"
-                          begin="0"
-                          dur="15s"
-                          repeatCount="indefinite"
-                        />
-                      </circle>-->
-                    </g>
-                    <g id="hands">
-                      <rect
-                        id="minHand"
-                        x="48.5"
-                        y="0"
-                        width="3"
-                        height="10"
-                        rx="4"
-                        ry="4"
-                        fill="#AAFF00"
-                        stroke="#000000"
-                        stroke-width="0.5%"
-                      />
-                      <rect
-                        id="hourHand"
-                        x="48.5"
-                        y="1"
-                        width="5"
-                        height="5"
-                        rx="4.5"
-                        ry="4.5"
-                        fill="#AAFF00"
-                        stroke="#000000"
-                        stroke-width="0.5%"
-                      />
-                    </g>
-
-                    <g transform="translate(50,50)">
-                      <text
-                        id="centerCoreD"
-                        x="-2"
-                        y="3"
-                
-                        style="cursor: pointer"
-                      >
-                        ⏳
-                      </text>
-<!--
-                      <text id="centerCoreM" x="-13" y="9">🧿</text>
-                      <text id="centerCoreE" x="-3" y="9">🥥</text>
-                      <text id="centerCoreW" x="4" y="9">👪</text>
-                      <text class="centerCoreB" x="14" y="12">✎</text>
-                      <text class="centerCoreB" x="-2.5" y="-19">👃</text>-->
-                    </g>
-
-                    <!-- https://medium.com/allenhwkim/html-analog-clock-in-few-minutes-13e5983e6543-->
-                  </svg>
-                </div>
-              </div>
-              <!--  Clock-End -->
+       
             </div>
 
             <div class="col-2 align-self-center">
