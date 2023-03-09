@@ -133,7 +133,7 @@
                     <!---->
 
                     <!-- <text id="currentTimeH" x="48" y="44">4</text>    <text id="currentTime" x="48" y="51.5">10</text>-->
-
+                    <circle cx="50" cy="50" r="21" fill="#06d3e2" style="animation:b 12s infinite"/><style>@keyframes b{0%,to{transform-origin:center;transform:scale(.2)}50%{transform:scale(1)}}</style>
                     <g id="onepointerBase">
                       <rect
                         id="tailforCurrent"
@@ -181,7 +181,10 @@
                       />
                       <g class="centerCore"></g>
                     </g>
+                    
                     <g transform="translate(50, 50)">
+
+                      <!--
                       <circle
                         id="ClockInnerCircle"
                         cx="0"
@@ -217,7 +220,7 @@
                           dur="15s"
                           repeatCount="indefinite"
                         />
-                      </circle>
+                      </circle>-->
                     </g>
                     <g id="hands">
                       <rect
@@ -249,18 +252,19 @@
                     <g transform="translate(50,50)">
                       <text
                         id="centerCoreD"
-                        x="-5"
-                        y="1"
+                        x="-2"
+                        y="3"
+                
                         style="cursor: pointer"
                       >
                         ⏳
                       </text>
-
+<!--
                       <text id="centerCoreM" x="-13" y="9">🧿</text>
                       <text id="centerCoreE" x="-3" y="9">🥥</text>
                       <text id="centerCoreW" x="4" y="9">👪</text>
                       <text class="centerCoreB" x="14" y="12">✎</text>
-                      <text class="centerCoreB" x="-2.5" y="-19">👃</text>
+                      <text class="centerCoreB" x="-2.5" y="-19">👃</text>-->
                     </g>
 
                     <!-- https://medium.com/allenhwkim/html-analog-clock-in-few-minutes-13e5983e6543-->
@@ -381,6 +385,9 @@
               <h4 class="text-center text-primary" id="lableSelectedGod"></h4>
             </div>
             <div class="col-4 text-right">
+              <span id="centerCoreM"  >🧿</span>
+              <span id="centerCoreE"  >🥥</span>
+              <span id="centerCoreW"  >👪</span>
               <label for="checkEdit">
                 <input
                   type="checkbox"

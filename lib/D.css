@@ -34,20 +34,7 @@ input[type="radio"]:checked {
     font-size: 0.25rem;
   }
 
-  #centerCoreM
-  {
-    font-size: 0.5rem;
-  }
-
-  #centerCoreW
-  {
-    font-size: 0.35rem;
-  }
-
-  #centerCoreE
-  {
-    font-size: 0.35rem;
-  }
+ 
 
 #quarterProgress {
   position: relative;
@@ -130,9 +117,10 @@ input[type="radio"]:checked {
  
 }
 #centerCoreD {
- fill: #007bff;
- font-size: 18px;
- font-weight: 800;
+
+ font-size: 8px;
+ fill: #ffffff;
+
 }
 
 .circle {
