@@ -135,8 +135,8 @@ small
 
 small.smallfocus
 {
-  font-size: 0.75em;
-  font-weight: bolder;
+  font-size: 0.6em;
+  font-weight: 600;
 }
 
 #centerCoreM,#centerCoreW,#centerCoreE {
