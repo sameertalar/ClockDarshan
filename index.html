@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     />
     <!-- <link rel="stylesheet" href="../libraries/bootstrap.min.css" />-->
-    <link rel="stylesheet" href="lib/D.css?v=00.06" />
+    <link rel="stylesheet" href="lib/D.css?v=00.07" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -198,10 +198,10 @@
 
           <!--  Row 2 selected ddl -->
           <div class="row " style="position:relative;top: -10px;">
-            <div class="col text-left ml-3">
-              <span id="centerCoreM"  >🧿</span>             
-              <span id="centerCoreW"  >👪</span>
-              <span id="centerCoreE"  >🥥</span>
+            <div class="col text-left ml-4">            
+              <i id="centerCoreM" class="fa fa-eye  text-warning" aria-hidden="true"></i>
+              <i id="centerCoreW" class="fa fa-life-ring text-warning" aria-hidden="true"></i>
+              <i id="centerCoreE" class="fa fa-battery-half  text-warning" aria-hidden="true"></i>
             </div>
             <div class="col text-left"></div>
             <div class="col text-right">
@@ -238,7 +238,7 @@
         class="font-weight-light"
         ></small
       >
-      🕊️
+      <i class="fa fa-paper-plane" aria-hidden="true"></i>
     </label>
     <label class="btn btn-outline-primary btn-md my-2">
       <input
@@ -254,7 +254,7 @@
         class="font-weight-light text-primary "
         ></small
       >
-      🧘
+      <i class="fa fa-user-circle" aria-hidden="true"></i>
     </label>
     <label class="btn btn-outline-warning btn-md">
       <input
@@ -271,7 +271,7 @@
         class="smallfocus text-primary "
         ></small
       >
-      🧿
+      <i class="fa fa-eye" aria-hidden="true"></i>
     </label>
     <label class="btn btn-outline-dark btn-md my-2">
       <input
@@ -287,7 +287,7 @@
         class="smallfocus text-danger "
         ></small
       >
-      🎳
+      <i class="fa fa-eye-slash" aria-hidden="true"></i>
     </label>
     <label class="btn btn-outline-danger btn-md">
       <input
@@ -303,7 +303,7 @@
         class="font-weight-light text-danger "
         ></small
       >
-      🔥
+      <i class="fa fa-fire" aria-hidden="true"></i>
     </label>
   </div>
   <div
@@ -318,7 +318,7 @@
       name="radioWork"
       value="C"
     />
-    🪔
+    <i class="fa fa-certificate" aria-hidden="true"></i>
     <small
       id="lblWC"
       style="position: absolute; right: -15px"
@@ -334,7 +334,7 @@
       name="radioWork"
       value="D"
     />
-    💎
+    <i class="fa fa-diamond" aria-hidden="true"></i>
     <small
       id="lblWV"
       style="position: absolute; right: -15px"
@@ -351,7 +351,7 @@
       value="F"
       checked
     />
-    👪
+    <i class="fa fa-life-ring" aria-hidden="true"></i>
     <small
       id="lblWD"
       style="position: absolute; right: -15px"
@@ -367,7 +367,8 @@
       name="radioWork"
       value="E"
     />
-    🌿<small
+    <i class="fa fa-leaf" aria-hidden="true"></i>
+    <small
       id="lblWH"
       style="position: absolute; right: -15px"
       class="font-weight-bold text-success "
@@ -383,7 +384,7 @@
       name="radioWork"
       value="G"
     />
-    🍂
+    <i class="fa fa-ban" aria-hidden="true"></i>
     <small
       id="lblWN"
       style="position: absolute; right: -15px"
@@ -406,7 +407,7 @@
               name="radioEnergy"
               value="I"
             />
-            🔋
+            <i class="fa fa-battery-full" aria-hidden="true"></i>
             <small
               id="lblEH"
               style="position: absolute; top: 35px; left: 15px"
@@ -423,7 +424,7 @@
               value="J"
               checked
             />
-            🥥
+            <i class="fa fa-battery-half" aria-hidden="true"></i>
             <small
               id="lblEM"
               style="position: absolute; top: 38px; left: 15px"
@@ -439,7 +440,7 @@
               name="radioEnergy"
               value="K"
             />
-            ⚪
+            <i class="fa fa-battery-empty" aria-hidden="true"></i>
             <small
               id="lblEL"
               style="position: absolute; top: 38px; left: 15px"
@@ -478,8 +479,9 @@
             </div>
  
             <div class="col-8 text-center">
-              <label id="lblChunkM4">⌛</label>   <label id="lblChunkW4">⌛</label>
-              <label id="lblChunkE4">⌛</label>
+              <i id="lblChunkM4" class="fa fa-times" aria-hidden="true"></i>
+              <i id="lblChunkW4" class="fa fa-times" aria-hidden="true"></i>
+              <i id="lblChunkE4" class="fa fa-times" aria-hidden="true"></i>
            
               <button
                 class="btn btn-outline-primary rounded-circle  ml-2"
@@ -499,8 +501,9 @@
 
           
             <div class="col-8 text-center align-self-center">
-              <label id="lblChunkM3">⌛</label>    <label id="lblChunkW3">⌛</label>
-              <label id="lblChunkE3">⌛</label>
+               <i id="lblChunkM3" class="fa fa-times" aria-hidden="true"></i>
+              <i id="lblChunkW3" class="fa fa-times" aria-hidden="true"></i>
+              <i id="lblChunkE3" class="fa fa-times" aria-hidden="true"></i>
           
               <button
                 class="btn rounded-circle btn-outline-primary  ml-2"
@@ -521,8 +524,10 @@
        
 
             <div class="col-8 text-center">
-              <label id="lblChunkM2">⌛</label>  <label id="lblChunkW2">⌛</label>
-              <label id="lblChunkE2">⌛</label>
+               
+              <i id="lblChunkM2" class="fa fa-times" aria-hidden="true"></i>
+              <i id="lblChunkW2" class="fa fa-times" aria-hidden="true"></i>
+              <i id="lblChunkE2" class="fa fa-times" aria-hidden="true"></i>
             
               <button
                 class="btn rounded-circle btn-outline-primary  ml-2"
@@ -543,8 +548,9 @@
 
            
             <div class="col-8 text-center">
-              <label id="lblChunkM1">⌛</label>  <label id="lblChunkW1">⌛</label>
-              <label id="lblChunkE1">⌛</label>
+              <i id="lblChunkM1" class="fa fa-times" aria-hidden="true"></i>
+              <i id="lblChunkW1" class="fa fa-times" aria-hidden="true"></i>           
+              <i id="lblChunkE1" class="fa fa-times" aria-hidden="true"></i>
             
               <button
                 class="btn rounded-circle btn-outline-primary ml-2"
@@ -746,7 +752,7 @@
       integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
       crossorigin="anonymous"
     ></script>
-    <script src="lib/D.js?ver=00.09"></script>
+    <script src="lib/D.js?ver=01.09"></script>
     <script>
       function testFunction(min) {
         var out = "";
