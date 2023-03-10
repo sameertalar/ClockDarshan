@@ -139,6 +139,12 @@ small.smallfocus
   font-weight: 600;
 }
 
+i.cdicon
+{
+  font-size: 1.3em;
+  font-weight: bolder;
+}
+
 #centerCoreM,#centerCoreW,#centerCoreE {
 
 font-size: 1.2em;
