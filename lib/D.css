@@ -29,21 +29,6 @@ input[type="checkbox"] {
   font-size: 0.25rem;
 }
 
-#chunkProgress {
-  position: relative;
-  left: 35px;
-  width: 90%;
-  height: 11px;
-  border: 1px solid #0d2931;
-  background-color: #fef9e7;
-  background: linear-gradient(
-    to right,
-    #e5e8e8 33%,
-    #8d9797 33% 66%,
-    #4e545c 66%
-  );
-}
-
 #quarterProgress {
   position: relative;
   left: 35px;
