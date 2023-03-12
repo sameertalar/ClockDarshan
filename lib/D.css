@@ -99,6 +99,10 @@ input[type="checkbox"] {
   display: none;
 }
 
+.selectedCD i {
+  font-size: 1.2em;
+}
+
 small {
   font-size: 0.65em;
 }
