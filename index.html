@@ -267,7 +267,7 @@
         class="smallfocus "
         ></small
       >
-      <i class="fa fa-eye cdicon" aria-hidden="true"></i>
+      <i id="apramadCtrl" class="fa cdicon" aria-hidden="true"></i>
     </label>
     <label class="btn btn-outline-dark btn-md my-2">
       <input
@@ -589,6 +589,10 @@
                 >
                   <i class="fa fa-podcast fa-2x"></i>
                 </a>
+                <button id="btnPopup" type="button" class="btn btn-info border">
+                  <i class="fa fa-window-restore"></i>
+                </button>
+
                 <button
                   type="button"
                   class="btn btn-sm btn-info border"
@@ -597,9 +601,7 @@
                   <i class="fa fa-video-camera fa-2x"></i>
                 </button>
 
-                <button id="btnPopup" type="button" class="btn btn-info border">
-                  <i class="fa fa-window-restore"></i>
-                </button>
+      
 
                 <button
                   id="btnResetSheet"
@@ -673,12 +675,7 @@
           <!--  SpinnerRow-Start -->
           <div class="row no-gutters">
             <div class="col no-gutters">
-              <span
-                id="errorMessage"
-                class="bg-danger text-white"
-                style="height: 5px"
-              >
-              </span>
+              
             </div>
           </div>
           <!--  SpinnerRow-End -->
@@ -721,6 +718,11 @@
               <i id="selectedE1" class="fa fa-star-half-o  text-warning" aria-hidden="true"></i>
 
             </div>
+            <span
+                id="errorMessage"
+                class="bg-danger text-white"             
+              >
+              </span>
          
         </div>
       </div>
