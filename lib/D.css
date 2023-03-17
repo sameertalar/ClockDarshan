@@ -33,7 +33,7 @@ input[type="checkbox"] {
   position: relative;
   left: 35px;
   width: 90%;
-  height: 11px;
+  height: 20px;
   border: 1px solid #0d2931;
   background-color: #fef9e7;
   background: linear-gradient(
