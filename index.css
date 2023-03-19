@@ -1,0 +1,124 @@
+/* Orange back #ffdfb6
+background-image: linear-gradient(#ffdfb6 ,white,white,white,#ffdfb6  );
+
+*/
+
+#bodyCD {
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: left;
+  background-image: linear-gradient(white, #babec4);
+
+  background-color: white;
+}
+
+input[type="radio"]:checked {
+  background-color: #f4b400;
+  color: #28a745;
+}
+
+input[type="radio"] {
+  transform: scale(2);
+  accent-color: #ff2e2d;
+}
+input[type="checkbox"] {
+  transform: scale(1.5);
+}
+
+.centerCoreB {
+  font-size: 0.25rem;
+}
+
+#quarterProgress {
+  position: relative;
+  left: 35px;
+  width: 90%;
+  height: 20px;
+  border: 1px solid #0d2931;
+  background-color: #fef9e7;
+  background: linear-gradient(
+    to right,
+    #e5e8e8 33%,
+    #8d9797 33% 66%,
+    #4e545c 66%
+  );
+}
+
+#quarterStatus {
+  position: relative;
+  z-index: 1;
+  left: 0;
+  margin-top: 0px;
+  top: 0;
+
+  float: left;
+
+  width: 0;
+  height: 98%;
+  background: #ffffff;
+  border-top: solid 2px #003da1;
+  border-bottom: solid 2px #003da1;
+  border-left: double 1px #003da1;
+  border-right: solid 4px #aa272f;
+}
+
+/* Analog Clock */
+
+#clock-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  overflow: hidden;
+  background: url("../img/clockDarshan5. 1-min.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+#face {
+  stroke-width: 1px;
+  stroke: transparent;
+  fill: transparent;
+}
+
+.centerCore {
+  font-size: 3.5px;
+}
+#centerCoreG {
+  fill: #ff2e2d;
+  font-size: 3.5px;
+}
+#centerCoreD {
+  font-size: 8px;
+  fill: #ffffff;
+}
+
+.circle {
+  display: none;
+}
+
+.selectedCD i {
+  font-size: 1.1em;
+}
+
+small {
+  font-size: 0.65em;
+}
+
+small.smallfocus {
+  font-size: 0.6em;
+  font-weight: 600;
+}
+
+i.cdicon {
+  font-size: 1.1em;
+  font-weight: bolder;
+}
+
+#centerCoreM,
+#centerCoreW,
+#centerCoreE {
+  font-size: 1.2em;
+}
