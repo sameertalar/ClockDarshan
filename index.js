@@ -3,8 +3,11 @@ $(document).ready(function () {
   var __ClockdarshanStatus = false;
   var __ApiCallStatus = false;
 
-  const _StatsSheetUrl =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vR4af-A_QOdSBICCNcznq2FtDh4dO-rY92L9wuq26XjHIYRWJ8ZCFyktgjtJqPB429xQMMOVcO23xVl/pubhtml?gid=1210536617&amp;single=true&amp;widget=true&amp;headers=false";
+  const _UpdaterApiUrl =
+    "https://script.google.com/macros/s/AKfycbx76d72NhLVCnZdIlDioIeqclF5430ZuSUNc9648mY/dev";
+  const _ResetApiUrl = "https://todo";
+
+  var _Tracks = [];
 
   const _gods = [
     "गणेश",
@@ -19,6 +22,114 @@ $(document).ready(function () {
     "नर्मदा",
     "बुद्ध",
     "कृष्ण",
+  ];
+
+  const _configs = [
+    {
+      type: "Mind",
+      item: "M5",
+      column: "C",
+      icon: "🕊️",
+      faClass: "fa fa-paper-plane text-success",
+    },
+    {
+      type: "Mind",
+      item: "M4",
+      column: "D",
+      icon: "🧘",
+      faClass: "fa fa-user-circle text-primary",
+    },
+    {
+      type: "Mind",
+      item: "M3",
+      column: "E",
+      icon: "👁️",
+      faClass: "fa fa-eye text-warning",
+    },
+    {
+      type: "Mind",
+      item: "M2",
+      column: "F",
+      icon: "🎳",
+      faClass: "fa fa-eye-slash tet-dark",
+    },
+    {
+      type: "Mind",
+      item: "M1",
+      column: "G",
+      icon: "🔥",
+      faClass: "fa fa-fire text-danger",
+    },
+    {
+      type: "Energy",
+      item: "E3",
+      column: "I",
+      icon: "🔋",
+      faClass: "fa fa-star text-success",
+    },
+    {
+      type: "Energy",
+      item: "E2",
+      column: "J",
+      icon: "🥥",
+      faClass: "fa fa-star-half-o text-warning",
+    },
+    {
+      type: "Energy",
+      item: "E1",
+      column: "K",
+      icon: "☆",
+      faClass: "fa fa fa-star-o text-danger",
+    },
+    {
+      type: "Work",
+      item: "W5",
+      column: "M",
+      icon: "🪔",
+      faClass: "fa fa-eercast text-info",
+    },
+    {
+      type: "Work",
+      item: "W4",
+      column: "N",
+      icon: "💎",
+      faClass: "fa fa-diamond text-primary",
+    },
+    {
+      type: "Work",
+      item: "W3",
+      column: "O",
+      icon: "🌿",
+      faClass: "fa fa-envira text-success",
+    },
+    {
+      type: "Work",
+      item: "W2",
+      column: "P",
+      icon: "👪",
+      faClass: "fa fa-life-ring fa-spin text-warning",
+    },
+    {
+      type: "Work",
+      item: "W1",
+      column: "Q",
+      icon: "🍂",
+      faClass: "fa fa-ban text-danger",
+    },
+    {
+      type: "Sleep",
+      item: "S",
+      column: "S",
+      icon: "😴",
+      faClass: "fa fa-bed text-secondary",
+    },
+    {
+      type: "Missed",
+      item: "X",
+      column: "",
+      icon: "❌",
+      faClass: "fa fa-exclamation-triangle text-danger",
+    },
   ];
 
   const __Configuration = {
@@ -116,70 +227,9 @@ $(document).ready(function () {
     ],
   };
 
-  function eyeOpenClose() {
-    $("#apramadCtrl").html("&#xf0eb");
-
-    setTimeout(function () {
-      $("#apramadCtrl").html("&#xf06e");
-    }, 1000);
-  }
-
-  eyeOpenClose();
-  setInterval(eyeOpenClose, 2000);
-
-  function getFaClass(column, type) {
-    try {
-      let config = __Configuration[type].find((x) => x.column === column);
-      if (config) {
-        //console.log("getFaClass", column, type, config.fa, config);
-        return config.fa;
-      } else return "text-danger";
-    } catch (error) {
-      console.log("getFaClass", column, type);
-      console.log("Unhandled Error", error);
-      $("#errorMessage").html("Unhandled Error: " + error);
-    }
-  }
-
-  page_Load();
-
-  __AppEnabledStatus = setInterval(processBeHereNow, 1000);
-
-  // Clock hands position
-  __ClockdarshanStatus = setInterval(function () {
-    function r(el, deg) {
-      el.setAttribute("transform", "rotate(" + deg + " 50 50)");
-    }
-    var d = new Date();
-    let hours = d.getHours();
-    let hourDeg = 30 * (hours % 12) + d.getMinutes() / 2;
-    let minDeg = 6 * d.getMinutes();
-
-    r(hourHand, hourDeg);
-    r(minHand, 6 * d.getMinutes());
-    let deg = getOnePointerDegree(hourDeg, minDeg);
-    r(onepointerBase, deg);
-
-    if ($(".checkEdit:checked").val() != "T") {
-      r(onepointerCircle, deg);
-      //console.log(hourDeg,minDeg);
-    } else {
-      let selectedPeriod = parseInt(
-        $("#selectTrackerTime option:selected").val()
-      );
-      let hour2 = Math.floor((selectedPeriod - 4) / 4) % 12 || 12;
-      let quarter2 = (selectedPeriod - 4) % 4;
-      let hourDeg2 = 30 * (hour2 % 12);
-      let minDeg2 = quarter2 * 90;
-
-      let deg2 = getOnePointerDegree(hourDeg2, minDeg2);
-      r(onepointerCircle, deg2);
-    }
-
-    //
-  }, 1000);
-
   function postToGoogle(update) {
+    return;
+
     // $("#progress-loading").show();
     $("#progressTextgod").html(
       $("#selectTrackerTime option:selected").data("god")
@@ -307,151 +357,59 @@ $(document).ready(function () {
     });
   }
 
-  function getOnePointerDegree(hourDeg, minDeg) {
-    let hdeg = 15;
-    let hrem = hourDeg % 90;
+  populateTracker();
+  populateSelectTrackerTime();
 
-    let mrem = minDeg % 90;
-
-    if (hrem >= 30) hdeg = 45;
-    if (hrem >= 60) hdeg = 75;
-
-    return minDeg - mrem + hdeg;
-  }
-
-  function page_Load() {
-    $("#selectTrackerTime").focus();
-    $("#success-alert").hide();
-    $("#radioWorkD").click();
-    $("#radioEnergyM").click();
-    $("#radioMindA").click();
-
-    $("#btnPlayVideo").on("click", playVideo);
-    $("#btnResetSheet").on("click", oneClickResetSheet);
-    $("#btnPopup").on("click", btnPopupClick);
-    $("#plusQuarter").on("click", plusQuarter);
-    $("#minusQuarter").on("click", minusQuarter);
-
-    $("#clock-container").on("click", oneClickTracker);
-    $("#ClockInnerCircle").on("click", oneClickTracker);
-    $("#centerCoreD").on("click", oneClickTracker);
-
-    $("#btnChunkPush4").on("click", function (event) {
-      setTracketSelect($("#" + this.id).data("row"));
-    });
-    $("#btnChunkPush3").on("click", function (event) {
-      setTracketSelect($("#" + this.id).data("row"));
-    });
-    $("#btnChunkPush2").on("click", function (event) {
-      setTracketSelect($("#" + this.id).data("row"));
-    });
-    $("#btnChunkPush1").on("click", function (event) {
-      setTracketSelect($("#" + this.id).data("row"));
-    });
-
-    populateSelectTrackerTime();
-
-    postToGoogle(false);
-  }
-
-  function setTracketSelect(id) {
-    //console.log("Selected", $("#hiddenTime"+id).val());
-
-    console.log(id);
-    $("#selectTrackerTime").val(id);
-    $("#checkEdit").prop("checked", true);
-
-    if (Number($("#hiddenCurentRow").val()) === id) {
-      $("#radioMindA").click();
-    } else {
-      $("#radioMindP").click();
-    }
-  }
-
-  function btnTestClick() {
-    postToGoogle(true);
-  }
-
-  function oneClickTracker() {
-    postToGoogle(true);
-  }
-
-  function populateSelectTrackerTime() {
+  function populateTracker() {
     g = 0;
 
     for (let h = 0; h < 24; ++h) {
       for (let q = 1; q <= 4; ++q) {
-        $("#selectTrackerTime").append(
-          $("<option class='text-primary bg-white'></option>")
-            .attr("value", getTrackerRow(h, q))
-            .text((h % 12 || 12).toString().padStart(2, "0") + "-" + q + "")
-            .attr("data-row", getTrackerRow(h, q))
-            .attr("data-god", _gods[g])
-        );
+        _Tracks.push({
+          row: getTrackerRow(h, q),
+          quarter: (h % 12 || 12).toString().padStart(2, "0") + "-" + q + "",
+          god: _gods[g],
+        });
 
         if (g === 11) g = 0;
         else g++;
       }
     }
 
-    setTrackerTime();
+    //console.log(_Tracks);
   }
-
-  //
 
   function getTrackerRow(h, q) {
     return h * 4 + q + 3;
   }
 
-  function processBeHereNow() {
-    try {
-      let now = new Date();
-      let hours = now.getHours();
-      let min = now.getMinutes();
-      let sec = now.getSeconds();
-      let ms = now.getMilliseconds() / 1000;
-
-      // show Current Time
-      showCurrentTimeLeft(hours, min, sec);
-      showCurrentSelection();
-
-      showTimeElaspeProgress(min, sec);
-
-      $("#hiddenCurentRow").val(getCurrentTrackerTimeRow());
-
-      if ($(".checkEdit:checked").val() != "T") {
-        setTrackerTime();
-
-        if (
-          Number($("#hiddenLoggedRow").val()) <
-          Number($("#selectTrackerTime option:selected").val())
-        ) {
-          $("body").addClass("bag");
-        } else {
-          $("body").removeClass("bag");
-        }
-      } else {
-        $("body").removeClass("bag");
-      }
-
-      if (min % 15 === 0 && sec === 1) {
-        console.log("15 mins Quarter Switch Called");
-        postToGoogle(false);
-      }
-
-      if (
-        !__ApiCallStatus &&
-        Number($("#hiddenCurentRow").val()) > 30 &&
-        Number($("#hiddenCurentRow").val()) !==
-          Number($("#hiddenLastCallRow").val())
-      ) {
-        postToGoogle(false);
-        console.log("1 mins Lag  Switch Called");
-      }
-    } catch (error) {
-      console.log("Unhandled Error", error);
-      $("#errorMessage").html("Unhandled Error: " + error);
+  function populateSelectTrackerTime() {
+    for (let i = 0; i < _Tracks.length; i++) {
+      $("#selectTrackerTime").append(
+        $("<option class='text-primary bg-white'></option>")
+          .attr("value", _Tracks[i].row)
+          .text(_Tracks[i].quarter)
+          .attr("data-row", _Tracks[i].row)
+          .attr("data-god", _Tracks[i].god)
+      );
     }
+
+    setTrackerTime();
+  }
+
+  function eyeOpenClose() {
+    $("#apramadCtrl").html("&#xf0eb");
+
+    setTimeout(function () {
+      $("#apramadCtrl").html("&#xf06e");
+    }, 1000);
+  }
+
+  eyeOpenClose();
+  setInterval(eyeOpenClose, 2000);
+
+  function setTrackerTime() {
+    $("#selectTrackerTime").val(getCurrentTrackerTimeRow());
   }
 
   function showCurrentSelection() {
@@ -469,141 +427,6 @@ $(document).ready(function () {
           _gods.length
       ]
     );
-  }
-
-  function oneClickResetSheet() {
-    $("#progress-modal").modal("show");
-    __ApiCallStatus = true;
-
-    let googleapireseturl =
-      "https://script.google.com/macros/s/AKfycbzhx9voh2A2FOd-E2hR4-CFinQKV-R0X3CKvheKTBYa/dev?callback=?";
-
-    $.ajax({
-      crossOrigin: true,
-      url: googleapireseturl,
-
-      dataType: "jsonp",
-      success: function (data, textStatus, xhr) {
-        console.log("oneClickResetSheet response data", data);
-        //alert('SUCCESS - ' + data)
-        showAlert("<h2> Done : " + data + "</h2>");
-        $("#progress-modal").modal("hide");
-        __ApiCallStatus = false;
-
-        postToGoogle(true);
-      },
-      error: function (xhr, error_text, statusText) {
-        //alert('Sheet Reset Done with - ' + error_text)
-        console.log("error_text", error_text);
-        showAlert("<h2> Reset :" + error_text + "</h2>");
-        $("#progress-modal").modal("hide");
-        __ApiCallStatus = false;
-      },
-    });
-  }
-
-  function btnPopupClick() {
-    var myWindow = window.open(
-      window.location.href,
-      "",
-      "width=455,height=625"
-    );
-  }
-
-  $(".radioWork").on("change", function (event) {
-    Work_Change();
-  });
-  $(".radioEnergy").on("change", function (event) {
-    Energy_Change();
-  });
-  $(".radioMind").on("change", function (event) {
-    Mind_Change();
-  });
-
-  function Mind_Change() {
-    $("#selectedM").removeClass();
-    $("#selectedM1").removeClass();
-    let selfa = __Configuration["mind"].find(
-      (x) => x.column === $(".radioMind:checked").val()
-    ).fa;
-
-    $("#selectedM1").addClass(selfa);
-    $("#selectedM").addClass(selfa);
-  }
-  function Work_Change() {
-    $("#selectedW").removeClass();
-    $("#selectedW1").removeClass();
-    let selfa = __Configuration["work"].find(
-      (x) => x.column === $(".radioWork:checked").val()
-    ).fa;
-
-    $("#selectedW1").addClass(selfa);
-    $("#selectedW").addClass(selfa);
-  }
-  function Energy_Change() {
-    $("#selectedE").removeClass();
-    $("#selectedE1").removeClass();
-    let selfa = __Configuration["energy"].find(
-      (x) => x.column === $(".radioEnergy:checked").val()
-    ).fa;
-
-    $("#selectedE1").addClass(selfa);
-    $("#selectedE").addClass(selfa);
-  }
-
-  function plusQuarter() {
-    updownArrow(false);
-
-    if ($(".checkEdit:checked").val() == "T") {
-      if (Number($("#hiddenLoggedRow").val()) === getCurrentTrackerTimeRow()) {
-        $("#checkEdit").prop("checked", false);
-        $("#radioMindA").click();
-      }
-    }
-  }
-
-  function minusQuarter() {
-    updownArrow(true);
-    $("#radioMindP").click();
-  }
-
-  function updownArrow(down) {
-    $("#checkEdit").prop("checked", true);
-    let selectedPeriod = parseInt(
-      $("#selectTrackerTime option:selected").val()
-    );
-
-    if (down) {
-      newVal = selectedPeriod - 1;
-    } else {
-      newVal = selectedPeriod + 1;
-    }
-
-    $("#selectTrackerTime").val(newVal);
-  }
-
-  function showAlert(text) {
-    $("#alertMessage").html(text);
-    $("#success-alert")
-      .fadeTo(2000, 1500)
-      .slideUp(15000, function () {
-        $("#success-alert").slideUp(15000);
-      });
-  }
-  //
-  function eyeOpenClose() {
-    $("#apramadCtrl").html("&#xf0eb");
-
-    setTimeout(function () {
-      $("#apramadCtrl").html("&#xf06e");
-    }, 2000);
-  }
-
-  eyeOpenClose();
-  setInterval(eyeOpenClose, 4000);
-
-  function setTrackerTime() {
-    $("#selectTrackerTime").val(getCurrentTrackerTimeRow());
   }
 
   function getCurrentTrackerTimeRow() {
@@ -668,21 +491,6 @@ $(document).ready(function () {
     $("#timeLeft").text(timeNow);
   }
 
-  function setTrackerTime() {
-    $("#selectTrackerTime").val(getCurrentTrackerTimeRow());
-  }
-
-  // ******* TIME Functions *******
-
-  function pad(number, length) {
-    var str = "" + number;
-    while (str.length < length) {
-      str = "0" + str;
-    }
-
-    return str;
-  }
-
   // Media
 
   function playVideo() {
@@ -705,6 +513,276 @@ $(document).ready(function () {
     $("#videoDummy")[0].pause();
     $("#videoDummy").hide();
   }
+
+  function btnPopupClick() {
+    var myWindow = window.open(
+      window.location.href,
+      "",
+      "width=455,height=625"
+    );
+  }
+
+  // ******* TIME Functions *******
+
+  function pad(number, length) {
+    var str = "" + number;
+    while (str.length < length) {
+      str = "0" + str;
+    }
+
+    return str;
+  }
+
+  //-----------------------Old Code---------------------------------------
+
+  function getFaClass(column, type) {
+    try {
+      let config = __Configuration[type].find((x) => x.column === column);
+      if (config) {
+        //console.log("getFaClass", column, type, config.fa, config);
+        return config.fa;
+      } else return "text-danger";
+    } catch (error) {
+      console.log("getFaClass", column, type);
+      console.log("Unhandled Error", error);
+      $("#errorMessage").html("Unhandled Error: " + error);
+    }
+  }
+
+  page_Load();
+
+  __AppEnabledStatus = setInterval(processBeHereNow, 1000);
+
+  // Clock hands position
+  __ClockdarshanStatus = setInterval(function () {
+    function r(el, deg) {
+      el.setAttribute("transform", "rotate(" + deg + " 50 50)");
+    }
+    var d = new Date();
+    let hours = d.getHours();
+    let hourDeg = 30 * (hours % 12) + d.getMinutes() / 2;
+    let minDeg = 6 * d.getMinutes();
+
+    r(hourHand, hourDeg);
+    r(minHand, 6 * d.getMinutes());
+    let deg = getOnePointerDegree(hourDeg, minDeg);
+    r(onepointerBase, deg);
+
+    if ($(".checkEdit:checked").val() != "T") {
+      r(onepointerCircle, deg);
+      //console.log(hourDeg,minDeg);
+    } else {
+      let selectedPeriod = parseInt(
+        $("#selectTrackerTime option:selected").val()
+      );
+      let hour2 = Math.floor((selectedPeriod - 4) / 4) % 12 || 12;
+      let quarter2 = (selectedPeriod - 4) % 4;
+      let hourDeg2 = 30 * (hour2 % 12);
+      let minDeg2 = quarter2 * 90;
+
+      let deg2 = getOnePointerDegree(hourDeg2, minDeg2);
+      r(onepointerCircle, deg2);
+    }
+
+    //
+  }, 1000);
+
+  function getOnePointerDegree(hourDeg, minDeg) {
+    let hdeg = 15;
+    let hrem = hourDeg % 90;
+
+    let mrem = minDeg % 90;
+
+    if (hrem >= 30) hdeg = 45;
+    if (hrem >= 60) hdeg = 75;
+
+    return minDeg - mrem + hdeg;
+  }
+
+  function page_Load() {
+    $("#selectTrackerTime").focus();
+    $("#success-alert").hide();
+    $("#radioWorkD").click();
+    $("#radioEnergyM").click();
+    $("#radioMindA").click();
+
+    $("#btnPlayVideo").on("click", playVideo);
+    $("#btnResetSheet").on("click", oneClickResetSheet);
+    $("#btnPopup").on("click", btnPopupClick);
+
+    $("#clock-container").on("click", oneClickTracker);
+    $("#ClockInnerCircle").on("click", oneClickTracker);
+    $("#centerCoreD").on("click", oneClickTracker);
+
+    $("#btnChunkPush4").on("click", function (event) {
+      setTracketSelect($("#" + this.id).data("row"));
+    });
+    $("#btnChunkPush3").on("click", function (event) {
+      setTracketSelect($("#" + this.id).data("row"));
+    });
+    $("#btnChunkPush2").on("click", function (event) {
+      setTracketSelect($("#" + this.id).data("row"));
+    });
+    $("#btnChunkPush1").on("click", function (event) {
+      setTracketSelect($("#" + this.id).data("row"));
+    });
+
+    postToGoogle(false);
+  }
+
+  function setTracketSelect(id) {
+    //console.log("Selected", $("#hiddenTime"+id).val());
+
+    console.log(id);
+    $("#selectTrackerTime").val(id);
+    $("#checkEdit").prop("checked", true);
+
+    if (Number($("#hiddenCurentRow").val()) === id) {
+      $("#radioMindA").click();
+    } else {
+      $("#radioMindP").click();
+    }
+  }
+
+  function btnTestClick() {
+    postToGoogle(true);
+  }
+
+  function oneClickTracker() {
+    postToGoogle(true);
+  }
+
+  //
+
+  function processBeHereNow() {
+    try {
+      let now = new Date();
+      let hours = now.getHours();
+      let min = now.getMinutes();
+      let sec = now.getSeconds();
+      let ms = now.getMilliseconds() / 1000;
+
+      // show Current Time
+      showCurrentTimeLeft(hours, min, sec);
+      showCurrentSelection();
+
+      showTimeElaspeProgress(min, sec);
+
+      $("#hiddenCurentRow").val(getCurrentTrackerTimeRow());
+
+      if ($(".checkEdit:checked").val() != "T") {
+        setTrackerTime();
+
+        if (
+          Number($("#hiddenLoggedRow").val()) <
+          Number($("#selectTrackerTime option:selected").val())
+        ) {
+          $("body").addClass("bag");
+        } else {
+          $("body").removeClass("bag");
+        }
+      } else {
+        $("body").removeClass("bag");
+      }
+
+      if (min % 15 === 0 && sec === 1) {
+        console.log("15 mins Quarter Switch Called");
+        postToGoogle(false);
+      }
+
+      if (
+        !__ApiCallStatus &&
+        Number($("#hiddenCurentRow").val()) > 30 &&
+        Number($("#hiddenCurentRow").val()) !==
+          Number($("#hiddenLastCallRow").val())
+      ) {
+        postToGoogle(false);
+        console.log("1 mins Lag  Switch Called");
+      }
+    } catch (error) {
+      console.log("Unhandled Error", error);
+      $("#errorMessage").html("Unhandled Error: " + error);
+    }
+  }
+
+  function oneClickResetSheet() {
+    $("#progress-modal").modal("show");
+    __ApiCallStatus = true;
+
+    $.ajax({
+      crossOrigin: true,
+      url: _ResetApiUrl,
+
+      dataType: "jsonp",
+      success: function (data, textStatus, xhr) {
+        console.log("oneClickResetSheet response data", data);
+        //alert('SUCCESS - ' + data)
+        showAlert("<h2> Done : " + data + "</h2>");
+        $("#progress-modal").modal("hide");
+        __ApiCallStatus = false;
+
+        postToGoogle(true);
+      },
+      error: function (xhr, error_text, statusText) {
+        //alert('Sheet Reset Done with - ' + error_text)
+        console.log("error_text", error_text);
+        showAlert("<h2> Reset :" + error_text + "</h2>");
+        $("#progress-modal").modal("hide");
+        __ApiCallStatus = false;
+      },
+    });
+  }
+
+  $(".radioWork").on("change", function (event) {
+    Work_Change();
+  });
+  $(".radioEnergy").on("change", function (event) {
+    Energy_Change();
+  });
+  $(".radioMind").on("change", function (event) {
+    Mind_Change();
+  });
+
+  function Mind_Change() {
+    $("#selectedM").removeClass();
+    $("#selectedM1").removeClass();
+    let selfa = __Configuration["mind"].find(
+      (x) => x.column === $(".radioMind:checked").val()
+    ).fa;
+
+    $("#selectedM1").addClass(selfa);
+    $("#selectedM").addClass(selfa);
+  }
+  function Work_Change() {
+    $("#selectedW").removeClass();
+    $("#selectedW1").removeClass();
+    let selfa = __Configuration["work"].find(
+      (x) => x.column === $(".radioWork:checked").val()
+    ).fa;
+
+    $("#selectedW1").addClass(selfa);
+    $("#selectedW").addClass(selfa);
+  }
+  function Energy_Change() {
+    $("#selectedE").removeClass();
+    $("#selectedE1").removeClass();
+    let selfa = __Configuration["energy"].find(
+      (x) => x.column === $(".radioEnergy:checked").val()
+    ).fa;
+
+    $("#selectedE1").addClass(selfa);
+    $("#selectedE").addClass(selfa);
+  }
+
+  function showAlert(text) {
+    $("#alertMessage").html(text);
+    $("#success-alert")
+      .fadeTo(2000, 1500)
+      .slideUp(15000, function () {
+        $("#success-alert").slideUp(15000);
+      });
+  }
+  //
 
   // End of Code
 });
