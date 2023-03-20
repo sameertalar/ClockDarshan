@@ -132,104 +132,7 @@ $(document).ready(function () {
     },
   ];
 
-  const __Configuration = {
-    mind: [
-      {
-        title: "Peace",
-        column: "N",
-        icon: "🕊️",
-        fa: "fa fa-paper-plane text-success",
-      },
-      {
-        title: "ध्यान",
-        column: "O",
-        icon: "🧘",
-        fa: "fa fa-user-circle  text-primary",
-      },
-      {
-        title: "अप्रमाद",
-        column: "P",
-        icon: "🧿",
-        fa: "fa fa-eye  text-warning",
-      },
-      {
-        title: "Pramad",
-        column: "Q",
-        icon: "🎳",
-        fa: "fa fa-eye-slash tet-dark",
-      },
-      {
-        title: "Buzzing",
-        column: "R",
-        icon: "🔥",
-        fa: "fa fa-fire   text-danger",
-      },
-      {
-        icon: "❌",
-        fa: "fa fa-exclamation-triangle  text-danger",
-        column: "❌",
-      },
-      { icon: "💤", fa: "fa fa-bed  text-secondary", column: "S" },
-    ],
-    energy: [
-      { title: "High", column: "I", icon: "🔋", fa: "fa fa-star text-success" },
-      {
-        title: "Medium",
-        column: "J",
-        icon: "🥥",
-        fa: "fa fa-star-half-o  text-warning",
-      },
-      {
-        title: "Low",
-        column: "K",
-        icon: "⚪",
-        fa: "fa fa fa-star-o text-danger",
-      },
-      {
-        icon: "❌",
-        fa: "fa fa-exclamation-triangle  text-danger",
-        column: "❌",
-      },
-      { icon: "💤", fa: "fa fa-bed  text-secondary", column: "S" },
-    ],
-    work: [
-      {
-        title: "Spiritual",
-        column: "C",
-        icon: "🪔",
-        fa: "fa fa-eercast text-info",
-      },
-      {
-        title: "Value Add",
-        column: "D",
-        icon: "💎",
-        fa: "fa fa-diamond  text-primary",
-      },
-      {
-        title: "Health",
-        column: "E",
-        icon: "🌿",
-        fa: "fa fa-envira  text-success",
-      },
-      {
-        title: "Duty ",
-        column: "F",
-        icon: "👪",
-        fa: "fa fa-life-ring  text-warning",
-      },
-      { title: "None", column: "G", icon: "🍂", fa: "fa fa-ban   text-danger" },
-      {
-        icon: "❌",
-        fa: "fa fa-exclamation-triangle text-danger",
-        column: "❌",
-      },
-      { icon: "💤", fa: "fa fa-bed  text-secondary", column: "S" },
-    ],
-  };
-
   function postToGoogle(update) {
-    return;
-
     // $("#progress-loading").show();
     $("#progressTextgod").html(
       $("#selectTrackerTime option:selected").data("god")
@@ -240,24 +143,16 @@ $(document).ready(function () {
 
     $("#success-alert").hide();
 
-    let apiurl =
-      "https://script.google.com/macros/s/AKfycbz47icyo61ZY66s_Dt2PXTH0mT6QA3myJ73cw7CF-cH/dev";
-    // Use Dev link no need to publish
-    // "https://script.google.com/macros/s/AKfycbyOlFS1KprVp0UFfsfsjs8ibP-LbX4bnmDgKfy4s1qMUbaL6iLr/exec";
-
-    let paramMind = $(".radioMind:checked").val(); // $("#selectMind option:selected").val();
+    let paramMind = $(".radioMind:checked").val();
     let paramEnergy = $(".radioEnergy:checked").val();
     let paramWork = $(".radioWork:checked").val();
-    //let selectedPeriod = $("#selectTrackerTime option:selected")  .val()      .split("-");
-    let selectedPeriod = $("#selectTrackerTime option:selected").val();
 
-    let paramSleep = $(".checkSleep:checked").val();
+    let selectedPeriod = $("#selectTrackerTime option:selected").val();
 
     let queryString = "?row=" + selectedPeriod;
 
     if (update) {
       queryString =
-        // "?hour=" +        selectedPeriod[0] +        "&quarter=" +        selectedPeriod[1]
         queryString +
         "&work=" +
         paramWork +
@@ -265,14 +160,12 @@ $(document).ready(function () {
         paramEnergy +
         "&mind=" +
         paramMind +
-        "&sleep=" +
-        paramSleep +
         "&callback=?";
     }
 
     console.log("Api QueryString Request:", queryString);
 
-    let googleurl = apiurl + queryString;
+    let googleurl = _UpdaterApiUrl + queryString;
 
     $.ajax({
       crossOrigin: true,
