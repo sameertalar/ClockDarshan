@@ -533,20 +533,45 @@ $(document).ready(function () {
     return str;
   }
 
-  //-----------------------Old Code---------------------------------------
+  $(".radioWork").on("change", function (event) {
+    Work_Change();
+  });
+  $(".radioEnergy").on("change", function (event) {
+    Energy_Change();
+  });
+  $(".radioMind").on("change", function (event) {
+    Mind_Change();
+  });
 
-  function getFaClass(column, type) {
-    try {
-      let config = __Configuration[type].find((x) => x.column === column);
-      if (config) {
-        //console.log("getFaClass", column, type, config.fa, config);
-        return config.fa;
-      } else return "text-danger";
-    } catch (error) {
-      console.log("getFaClass", column, type);
-      console.log("Unhandled Error", error);
-      $("#errorMessage").html("Unhandled Error: " + error);
-    }
+  function Mind_Change() {
+    $("#selectedM").removeClass();
+    $("#selectedMp").removeClass();
+    let selfa = _configs.find(
+      (x) => x.item === $(".radioMind:checked").val()
+    ).faClass;
+
+    $("#selectedMp").addClass(selfa);
+    $("#selectedM").addClass(selfa);
+  }
+  function Work_Change() {
+    $("#selectedW").removeClass();
+    $("#selectedWp").removeClass();
+    let selfa = _configs.find(
+      (x) => x.item === $(".radioWork:checked").val()
+    ).faClass;
+
+    $("#selectedWp").addClass(selfa);
+    $("#selectedW").addClass(selfa);
+  }
+  function Energy_Change() {
+    $("#selectedE").removeClass();
+    $("#selectedEp").removeClass();
+    let selfa = _configs.find(
+      (x) => x.item === $(".radioEnergy:checked").val()
+    ).faClass;
+
+    $("#selectedEp").addClass(selfa);
+    $("#selectedE").addClass(selfa);
   }
 
   page_Load();
@@ -602,9 +627,9 @@ $(document).ready(function () {
   function page_Load() {
     $("#selectTrackerTime").focus();
     $("#success-alert").hide();
-    $("#radioWorkD").click();
-    $("#radioEnergyM").click();
-    $("#radioMindA").click();
+    $("#radioWorkW2").click();
+    $("#radioEnergyE2").click();
+    $("#radioMindM3").click();
 
     $("#btnPlayVideo").on("click", playVideo);
     $("#btnResetSheet").on("click", oneClickResetSheet);
@@ -630,29 +655,9 @@ $(document).ready(function () {
     postToGoogle(false);
   }
 
-  function setTracketSelect(id) {
-    //console.log("Selected", $("#hiddenTime"+id).val());
-
-    console.log(id);
-    $("#selectTrackerTime").val(id);
-    $("#checkEdit").prop("checked", true);
-
-    if (Number($("#hiddenCurentRow").val()) === id) {
-      $("#radioMindA").click();
-    } else {
-      $("#radioMindP").click();
-    }
-  }
-
-  function btnTestClick() {
-    postToGoogle(true);
-  }
-
   function oneClickTracker() {
     postToGoogle(true);
   }
-
-  //
 
   function processBeHereNow() {
     try {
@@ -705,6 +710,38 @@ $(document).ready(function () {
     }
   }
 
+  //-----------------------Old Code---------------------------------------
+
+  function getFaClass(column, type) {
+    try {
+      let config = __Configuration[type].find((x) => x.column === column);
+      if (config) {
+        //console.log("getFaClass", column, type, config.fa, config);
+        return config.fa;
+      } else return "text-danger";
+    } catch (error) {
+      console.log("getFaClass", column, type);
+      console.log("Unhandled Error", error);
+      $("#errorMessage").html("Unhandled Error: " + error);
+    }
+  }
+
+  function setTracketSelect(id) {
+    //console.log("Selected", $("#hiddenTime"+id).val());
+
+    console.log(id);
+    $("#selectTrackerTime").val(id);
+    $("#checkEdit").prop("checked", true);
+
+    if (Number($("#hiddenCurentRow").val()) === id) {
+      $("#radioMindA").click();
+    } else {
+      $("#radioMindP").click();
+    }
+  }
+
+  //
+
   function oneClickResetSheet() {
     $("#progress-modal").modal("show");
     __ApiCallStatus = true;
@@ -731,47 +768,6 @@ $(document).ready(function () {
         __ApiCallStatus = false;
       },
     });
-  }
-
-  $(".radioWork").on("change", function (event) {
-    Work_Change();
-  });
-  $(".radioEnergy").on("change", function (event) {
-    Energy_Change();
-  });
-  $(".radioMind").on("change", function (event) {
-    Mind_Change();
-  });
-
-  function Mind_Change() {
-    $("#selectedM").removeClass();
-    $("#selectedM1").removeClass();
-    let selfa = __Configuration["mind"].find(
-      (x) => x.column === $(".radioMind:checked").val()
-    ).fa;
-
-    $("#selectedM1").addClass(selfa);
-    $("#selectedM").addClass(selfa);
-  }
-  function Work_Change() {
-    $("#selectedW").removeClass();
-    $("#selectedW1").removeClass();
-    let selfa = __Configuration["work"].find(
-      (x) => x.column === $(".radioWork:checked").val()
-    ).fa;
-
-    $("#selectedW1").addClass(selfa);
-    $("#selectedW").addClass(selfa);
-  }
-  function Energy_Change() {
-    $("#selectedE").removeClass();
-    $("#selectedE1").removeClass();
-    let selfa = __Configuration["energy"].find(
-      (x) => x.column === $(".radioEnergy:checked").val()
-    ).fa;
-
-    $("#selectedE1").addClass(selfa);
-    $("#selectedE").addClass(selfa);
   }
 
   function showAlert(text) {
