@@ -5,7 +5,8 @@ $(document).ready(function () {
 
   const _UpdaterApiUrl =
     "https://script.google.com/macros/s/AKfycbx76d72NhLVCnZdIlDioIeqclF5430ZuSUNc9648mY/dev";
-  const _ResetApiUrl = "https://todo";
+  const _ResetApiUrl =
+    "https://script.google.com/macros/s/AKfycbxMDdF3Z8lJyZ2aA5BiBVzZWlvNIxglS9L4zqJ8cpzB/dev";
 
   var _Tracks = [];
 
@@ -130,6 +131,13 @@ $(document).ready(function () {
       icon: "❌",
       faClass: "fa fa-exclamation-triangle text-danger",
     },
+    {
+      type: "Missed",
+      item: "",
+      column: "",
+      icon: "",
+      faClass: "fa fa-exclamation-triangle text-danger",
+    },
   ];
 
   function postToGoogle(update) {
@@ -142,10 +150,12 @@ $(document).ready(function () {
     __ApiCallStatus = true;
 
     $("#success-alert").hide();
+    $("#errorMessage").html("");
 
     let paramMind = $(".radioMind:checked").val();
     let paramEnergy = $(".radioEnergy:checked").val();
     let paramWork = $(".radioWork:checked").val();
+    let paramPastFix = $(".checkPastFix:checked").val();
 
     let selectedPeriod = $("#selectTrackerTime option:selected").val();
 
@@ -154,18 +164,19 @@ $(document).ready(function () {
     if (update) {
       queryString =
         queryString +
-        "&work=" +
-        paramWork +
-        "&energy=" +
-        paramEnergy +
         "&mind=" +
         paramMind +
-        "&callback=?";
+        "&energy=" +
+        paramEnergy +
+        "&work=" +
+        paramWork;
+
+      if (paramPastFix === "T") queryString = queryString + "&past=" + true;
     }
 
     console.log("Api QueryString Request:", queryString);
 
-    let googleurl = _UpdaterApiUrl + queryString;
+    let googleurl = _UpdaterApiUrl + queryString + "&callback=?";
 
     $.ajax({
       crossOrigin: true,
@@ -175,64 +186,72 @@ $(document).ready(function () {
       success: function (data, textStatus, xhr) {
         console.log("Api Response Data:", data);
 
-        for (let i = 0; i < data.chunks.length; i++) {
-          $("#lblChunkQuarter" + data.chunks[i].id).html(
-            data.chunks[i].h2 + "-" + data.chunks[i].q
-          );
-          $("#btnChunkPush" + data.chunks[i].id).attr(
-            "data-row",
-            data.chunks[i].row
-          );
+        try {
+          if (data && data.chunks) {
+            for (let i = 0; i < data.chunks.length; i++) {
+              $("#lblChunkQuarter" + data.chunks[i].id).html(
+                _Tracks.find((x) => x.row === data.chunks[i].row).quarter
+              );
+              $("#btnChunkPush" + data.chunks[i].id).attr(
+                "data-row",
+                data.chunks[i].row
+              );
 
-          // $("#lblChunkE" + data.chunks[i].id).html(data.chunks[i].e);
-          // $("#lblChunkW" + data.chunks[i].id).html(data.chunks[i].w);
-          // $("#lblChunkM" + data.chunks[i].id).html(data.chunks[i].m);
-          $("#lblChunkM" + data.chunks[i].id).removeClass();
-          $("#lblChunkW" + data.chunks[i].id).removeClass();
-          $("#lblChunkE" + data.chunks[i].id).removeClass();
+              // $("#lblChunkE" + data.chunks[i].id).html(data.chunks[i].e);
+              // $("#lblChunkW" + data.chunks[i].id).html(data.chunks[i].w);
+              // $("#lblChunkM" + data.chunks[i].id).html(data.chunks[i].m);
+              $("#lblChunkM" + data.chunks[i].id).removeClass();
+              $("#lblChunkW" + data.chunks[i].id).removeClass();
+              $("#lblChunkE" + data.chunks[i].id).removeClass();
 
-          $("#lblChunkM" + data.chunks[i].id).addClass(
-            getFaClass(data.chunks[i].m, "mind")
-          );
-          $("#lblChunkW" + data.chunks[i].id).addClass(
-            getFaClass(data.chunks[i].w, "work")
-          );
-          $("#lblChunkE" + data.chunks[i].id).addClass(
-            getFaClass(data.chunks[i].e, "energy")
-          );
+              $("#lblChunkM" + data.chunks[i].id).addClass(
+                getFaClass(data.chunks[i].m)
+              );
+              $("#lblChunkW" + data.chunks[i].id).addClass(
+                getFaClass(data.chunks[i].w)
+              );
+              $("#lblChunkE" + data.chunks[i].id).addClass(
+                getFaClass(data.chunks[i].e)
+              );
 
-          $("#lblChunkGod" + data.chunks[i].id).html(data.chunks[i].g);
-          $("#lblChunkTime" + data.chunks[i].id).html(data.chunks[i].t);
+              $("#lblChunkGod" + data.chunks[i].id).html(
+                _Tracks.find((x) => x.row === data.chunks[i].row).god
+              );
+            }
+            // showAlert("Deep Breath");
+            //showAlert("<p>" + data + "</p>");
+            // $("#errorMessage").html(data.lq);
+            $("#hiddenLoggedRow").val(data.lr);
+            $("#hiddenLastCallRow").val(data.chunks[0].row);
 
-          $("#hiddenTime" + data.chunks[i].id).val(data.chunks[i].row);
-        }
-        // showAlert("Deep Breath");
-        //showAlert("<p>" + data + "</p>");
-        // $("#errorMessage").html(data.lq);
-        $("#hiddenLoggedRow").val(data.lr);
-        $("#hiddenLastCallRow").val(data.chunks[0].row);
+            $("#lblMC").html(data.count.mind.c);
+            $("#lblMM").html(data.count.mind.m);
+            $("#lblMA").html(data.count.mind.a);
+            $("#lblMP").html(data.count.mind.p);
+            $("#lblMB").html(data.count.mind.b);
 
-        $("#lblMC").html(data.count.mind.c);
-        $("#lblMM").html(data.count.mind.m);
-        $("#lblMA").html(data.count.mind.a);
-        $("#lblMP").html(data.count.mind.p);
-        $("#lblMB").html(data.count.mind.b);
+            $("#lblEH").html(data.count.energy.h);
+            $("#lblEM").html(data.count.energy.m);
+            $("#lblEL").html(data.count.energy.l);
 
-        $("#lblEH").html(data.count.energy.h);
-        $("#lblEM").html(data.count.energy.m);
-        $("#lblEL").html(data.count.energy.l);
+            $("#lblWC").html(data.count.work.s);
+            $("#lblWV").html(data.count.work.v);
+            $("#lblWD").html(data.count.work.d);
+            $("#lblWH").html(data.count.work.h);
+            $("#lblWN").html(data.count.work.n);
 
-        $("#lblWC").html(data.count.work.s);
-        $("#lblWV").html(data.count.work.v);
-        $("#lblWD").html(data.count.work.d);
-        $("#lblWH").html(data.count.work.h);
-        $("#lblWN").html(data.count.work.n);
-
-        if (update && $(".checkEdit:checked").val() == "T") {
-          if (data.lr === getCurrentTrackerTimeRow()) {
-            $("#checkEdit").prop("checked", false);
-            $("#radioMindA").click();
+            if (update && $(".checkEdit:checked").val() == "T") {
+              if (data.lr === getCurrentTrackerTimeRow()) {
+                $("#checkEdit").prop("checked", false);
+                $("#radioMindA").click();
+              }
+            }
+          } else {
+            $("#errorMessage").html(" Data Not Returned by Api. ");
           }
+        } catch (err) {
+          console.log("Unhandled Error getFpostToGoogleaClass", err);
+          $("#errorMessage").html("Unhandled Error postToGoogle: " + err);
         }
 
         // reloadStatusSheet();
@@ -269,7 +288,7 @@ $(document).ready(function () {
       }
     }
 
-    //console.log(_Tracks);
+    // console.log(_Tracks);
   }
 
   function getTrackerRow(h, q) {
@@ -436,22 +455,27 @@ $(document).ready(function () {
     Mind_Change();
   });
 
+  function getFaClass(value) {
+    try {
+      return _configs.find((x) => x.item === value).faClass;
+    } catch (error) {
+      console.log("Unhandled Error getFaClass", value, error);
+      $("#errorMessage").html("Unhandled Error getFaClass: " + error);
+    }
+  }
+
   function Mind_Change() {
     $("#selectedM").removeClass();
     $("#selectedMp").removeClass();
-    let selfa = _configs.find(
-      (x) => x.item === $(".radioMind:checked").val()
-    ).faClass;
 
+    let selfa = getFaClass($(".radioMind:checked").val());
     $("#selectedMp").addClass(selfa);
     $("#selectedM").addClass(selfa);
   }
   function Work_Change() {
     $("#selectedW").removeClass();
     $("#selectedWp").removeClass();
-    let selfa = _configs.find(
-      (x) => x.item === $(".radioWork:checked").val()
-    ).faClass;
+    let selfa = getFaClass($(".radioWork:checked").val());
 
     $("#selectedWp").addClass(selfa);
     $("#selectedW").addClass(selfa);
@@ -459,9 +483,7 @@ $(document).ready(function () {
   function Energy_Change() {
     $("#selectedE").removeClass();
     $("#selectedEp").removeClass();
-    let selfa = _configs.find(
-      (x) => x.item === $(".radioEnergy:checked").val()
-    ).faClass;
+    let selfa = getFaClass($(".radioEnergy:checked").val());
 
     $("#selectedEp").addClass(selfa);
     $("#selectedE").addClass(selfa);
@@ -584,7 +606,7 @@ $(document).ready(function () {
       }
 
       if (min % 15 === 0 && sec === 1) {
-        console.log("15 mins Quarter Switch Called");
+        console.log("15 mins Quarter Shift Called");
         postToGoogle(false);
       }
 
@@ -595,7 +617,7 @@ $(document).ready(function () {
           Number($("#hiddenLastCallRow").val())
       ) {
         postToGoogle(false);
-        console.log("1 mins Lag  Switch Called");
+        console.log("1 mins data Lag Api Called");
       }
     } catch (error) {
       console.log("Unhandled Error", error);
@@ -605,37 +627,30 @@ $(document).ready(function () {
 
   //-----------------------Old Code---------------------------------------
 
-  function getFaClass(column, type) {
-    try {
-      let config = __Configuration[type].find((x) => x.column === column);
-      if (config) {
-        //console.log("getFaClass", column, type, config.fa, config);
-        return config.fa;
-      } else return "text-danger";
-    } catch (error) {
-      console.log("getFaClass", column, type);
-      console.log("Unhandled Error", error);
-      $("#errorMessage").html("Unhandled Error: " + error);
-    }
-  }
-
   function setTracketSelect(id) {
     //console.log("Selected", $("#hiddenTime"+id).val());
 
-    console.log(id);
     $("#selectTrackerTime").val(id);
-    $("#checkEdit").prop("checked", true);
 
     if (Number($("#hiddenCurentRow").val()) === id) {
       $("#radioMindA").click();
+      $("#checkEdit").prop("checked", false);
     } else {
       $("#radioMindP").click();
+      $("#checkEdit").prop("checked", true);
     }
   }
 
   //
 
   function oneClickResetSheet() {
+    if (confirm("Are you sure want to reset?")) {
+      resetSheet();
+    }
+    return false;
+  }
+
+  function resetSheet() {
     $("#progress-modal").modal("show");
     __ApiCallStatus = true;
 
@@ -647,7 +662,8 @@ $(document).ready(function () {
       success: function (data, textStatus, xhr) {
         console.log("oneClickResetSheet response data", data);
         //alert('SUCCESS - ' + data)
-        showAlert("<h2> Done : " + data + "</h2>");
+        $("#errorMessage").html(data);
+
         $("#progress-modal").modal("hide");
         __ApiCallStatus = false;
 
@@ -656,21 +672,14 @@ $(document).ready(function () {
       error: function (xhr, error_text, statusText) {
         //alert('Sheet Reset Done with - ' + error_text)
         console.log("error_text", error_text);
-        showAlert("<h2> Reset :" + error_text + "</h2>");
+        $("#errorMessage").html("Reset action Error: " + error_text);
+
         $("#progress-modal").modal("hide");
         __ApiCallStatus = false;
       },
     });
   }
 
-  function showAlert(text) {
-    $("#alertMessage").html(text);
-    $("#success-alert")
-      .fadeTo(2000, 1500)
-      .slideUp(15000, function () {
-        $("#success-alert").slideUp(15000);
-      });
-  }
   //
 
   // End of Code
