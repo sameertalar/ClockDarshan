@@ -224,21 +224,21 @@ $(document).ready(function () {
             $("#hiddenLoggedRow").val(data.lr);
             $("#hiddenLastCallRow").val(data.chunks[0].row);
 
-            $("#lblMC").html(data.count.mind.c);
-            $("#lblMM").html(data.count.mind.m);
-            $("#lblMA").html(data.count.mind.a);
-            $("#lblMP").html(data.count.mind.p);
-            $("#lblMB").html(data.count.mind.b);
+            $("#lblM5").html(data.count.mind.m5);
+            $("#lblM4").html(data.count.mind.m4);
+            $("#lblM3").html(data.count.mind.m3);
+            $("#lblM2").html(data.count.mind.m2);
+            $("#lblM1").html(data.count.mind.m1);
 
-            $("#lblEH").html(data.count.energy.h);
-            $("#lblEM").html(data.count.energy.m);
-            $("#lblEL").html(data.count.energy.l);
+            $("#lblE3").html(data.count.energy.e3);
+            $("#lblE2").html(data.count.energy.e2);
+            $("#lblE1").html(data.count.energy.e1);
 
-            $("#lblWC").html(data.count.work.s);
-            $("#lblWV").html(data.count.work.v);
-            $("#lblWD").html(data.count.work.d);
-            $("#lblWH").html(data.count.work.h);
-            $("#lblWN").html(data.count.work.n);
+            $("#lblW5").html(data.count.work.w5);
+            $("#lblW4").html(data.count.work.w4);
+            $("#lblW3").html(data.count.work.w3);
+            $("#lblW2").html(data.count.work.w2);
+            $("#lblW1").html(data.count.work.w1);
 
             if (update && $(".checkEdit:checked").val() == "T") {
               if (data.lr === getCurrentTrackerTimeRow()) {
