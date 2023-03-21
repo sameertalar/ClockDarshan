@@ -15,7 +15,7 @@
          crossorigin="anonymous"
          />
       <!-- <link rel="stylesheet" href="../libraries/bootstrap.min.css" />-->
-      <link rel="stylesheet" href="index.css?v=00.02" />
+      <link rel="stylesheet" href="index.css?v=00.03" />
       <link
          rel="stylesheet"
          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -441,16 +441,45 @@
                            </div>
                         </div>
                         <div class="col-5 ">
-                           <div class="selectedCD bg-light border border-light  rounded">
+                           <div class="selectedCD   border border-light  rounded text-center" style="background-color: rgb(170, 255, 0);">
                               <i id="selectedM" class="fa fa-eye  text-warning " aria-hidden="true"></i>
                               <i id="selectedW" class="fa fa-life-ring fa-spin text-warning " aria-hidden="true"></i>
                               <i id="selectedE" class="fa fa-star-half-o  text-warning " aria-hidden="true"></i>
                            </div>
                            <select
-                              class="text-primary bg-white border rounded rounded-pill  text-left px-2"
+                              class="text-primary bg-white border rounded rounded-pill  text-center px-2"
                               style="font-size: 1em"
                               id="selectTrackerTime"
                               ></select>
+                              <div style="position: absolute;  right: 10px; z-index: 999">
+                                <div class="btn-group-vertical mt-2">
+                                  <a
+                                     class="btn btn-outline-info border"
+                                     target="_blank"
+                                     href="https://script.google.com/macros/s/AKfycbwwo0nCjjbZ2OVJHhPpTMZdNfYC0hx1U2jDbim6OvEE/dev"
+                                     role="button"
+                                     >
+                                  <i class="fa fa-podcast fa-2x"></i>
+                                  </a>
+                                  <button id="btnPopup" type="button" class="btn btn-outline-info border">
+                                  <i class="fa fa-window-restore"></i>
+                                  </button>
+                                  <button
+                                     type="button"
+                                     class="btn btn-sm btn-outline-info border"
+                                     id="btnPlayVideo"
+                                     >
+                                  <i class="fa fa-video-camera "></i>
+                                  </button>
+                                  <button
+                                     id="btnResetSheet"
+                                     type="button"
+                                     class="btn btn-outline-info btn-lg border"
+                                     >
+                                  <i class="fa fa-random"></i>
+                                  </button>
+                               </div>
+                               </div>
                         </div>
                      </div>
                      <div class="row">
@@ -532,33 +561,7 @@
                <!-- Row 3 BottomButtonsRow-Start-->
                <div class="row mt-3">
                   <div class="col text-center">
-                     <div class="btn-group">
-                        <a
-                           class="btn btn-info border"
-                           target="_blank"
-                           href="https://script.google.com/macros/s/AKfycbwwo0nCjjbZ2OVJHhPpTMZdNfYC0hx1U2jDbim6OvEE/dev"
-                           role="button"
-                           >
-                        <i class="fa fa-podcast fa-2x"></i>
-                        </a>
-                        <button id="btnPopup" type="button" class="btn btn-info border">
-                        <i class="fa fa-window-restore"></i>
-                        </button>
-                        <button
-                           type="button"
-                           class="btn btn-sm btn-info border"
-                           id="btnPlayVideo"
-                           >
-                        <i class="fa fa-video-camera fa-2x"></i>
-                        </button>
-                        <button
-                           id="btnResetSheet"
-                           type="button"
-                           class="btn btn-info btn-lg border"
-                           >
-                        <i class="fa fa-random"></i>
-                        </button>
-                     </div>
+                  
                   </div>
                </div>
                <!--  BottomButtonsRow-End -->
@@ -609,12 +612,12 @@
                      </div>
                      <div style="position: fixed; top: 290px; right: 10px; z-index: 999">
                      </div>
-                     <div style="position: fixed; top: 310px; left: 30px; z-index: 999">
-                     </div>
+                   
                      <div style="position: fixed; top: 30px; left: 10px; z-index: 999">
                         <span class="text-center text-primary" id="lableSelectedGod"></span><br>
                         <span class="text-center text-warning" id="lableNextGod"></span>
                      </div>
+               
                   </div>
                </div>
                <!--  SpinnerRow-Start -->
@@ -652,7 +655,7 @@
                   <i id="selectedWp" class="fa fa-life-ring text-warning" aria-hidden="true"></i>
                   <i id="selectedEp" class="fa fa-star-half-o  text-warning" aria-hidden="true"></i>
                </div>
-             
+              
             </div>
          </div>
       </div>
