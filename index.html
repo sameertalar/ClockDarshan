@@ -509,7 +509,7 @@
                   <!--  HistoryRow-Start -->
                   <!--  HistoryRow 4 -->
                   <div class="row mt-3">
-                    <div class="col pl-0 text-left">
+                    <div id="divChunk4" class="col pl-0 text-left">
                       <button
                         class="btn badge badge-pill badge-success"
                         type="button"
@@ -540,7 +540,7 @@
                   </div>
                   <!--  HistoryRow 3 -->
                   <div class="row">
-                    <div class="col pl-0 text-left">
+                    <div id="divChunk3" class="col pl-0 text-left">
                       <button
                         class="btn badge badge-pill badge-primary"
                         type="button"
@@ -571,7 +571,7 @@
                   </div>
                   <!--  HistoryRow 2 -->
                   <div class="row">
-                    <div class="col pl-0 text-left">
+                    <div id="divChunk2" class="col pl-0 text-left">
                       <button
                         class="btn badge badge-pill badge-primary"
                         type="button"
@@ -602,7 +602,7 @@
                   </div>
                   <!--  HistoryRow 1 -->
                   <div class="row">
-                    <div class="col pl-0 text-left">
+                    <div id="divChunk1" class="col pl-0 text-left">
                       <button
                         class="btn badge badge-pill badge-primary"
                         type="button"
@@ -732,7 +732,7 @@
     </div>
     <!-- modal-Start -->
     <div
-      class="modal fade bd-progress-modal-lg bg-dark"
+      class="modal fade bd-progress-modal-lg"
       tabindex="-1"
       role="dialog"
       id="progress-modal"
@@ -740,13 +740,13 @@
       aria-hidden="true"
     >
       <div class="modal-dialog modal-lg">
-        <div class="modal-content bg-secondary pl-2" style="margin-top: 150px">
+        <div class="modal-content pl-2">
           <div
-            class="alert alert-warning text-center mt-3 mb-3 row"
-            style="background-color: #ffffff"
+            class="text-center row"
+            style="background-color: transparent"
             id="progress-loading"
           >
-            <div class="col-md-6 mt-3 text-center">
+            <div class="col-md-6 text-center">
               <img
                 decoding="async"
                 src="img/breathe.svg"
@@ -756,7 +756,7 @@
                 height="150"
               />
             </div>
-            <div id="progressText" class="col-md-6 text-center mt-3 mb-3">
+            <div id="progressText" class="col-md-6 text-center">
               <span id="progressTextgod" class="text-dark">god</span><br />
               <i
                 id="selectedMp"
