@@ -265,7 +265,7 @@ $(document).ready(function () {
         __ApiCallStatus = false;
       },
       error: function (xhr, error_text, statusText) {
-        showAlert(error_text + "<br> Error while Processing");
+        $("#errorMessage").html(error_text);
         console.log("error_text", error_text);
         //$("#progress-loading").hide();
         $("#progress-modal").modal("hide");
