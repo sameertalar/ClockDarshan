@@ -212,7 +212,7 @@
           </div>
           <!--  row 2 start -->
           <div class="row">
-            <div class="col-5 text-left">
+            <div class="col-6 pl-0 pr-0 border text-center align-bottom">
               <div
                 class="btn-group-vertical btn-group-toggle"
                 data-toggle="buttons"
@@ -301,6 +301,57 @@
                 class="btn-group-vertical btn-group-toggle"
                 data-toggle="buttons"
               >
+                <label class="btn btn-outline-success btn-md">
+                  <input
+                    type="radio"
+                    class="radioEnergy"
+                    id="radioEnergyE3"
+                    name="radioEnergy"
+                    value="E3"
+                  />
+                  <i class="fa fa-star cdicon" aria-hidden="true"></i>
+                  <small
+                    id="lblE3"
+                    style="position: absolute; left: 2px; top: 22px"
+                    class="smallfocus"
+                  ></small>
+                </label>
+                <label class="btn btn-outline-warning btn-md my-2">
+                  <input
+                    type="radio"
+                    class="radioEnergy"
+                    id="radioEnergyE2"
+                    name="radioEnergy"
+                    value="E2"
+                    checked
+                  />
+                  <i class="fa fa-star-half-o cdicon" aria-hidden="true"></i>
+                  <small
+                    id="lblE2"
+                    style="position: absolute; left: 2px; top: 22px"
+                    class="smallfocus"
+                  ></small>
+                </label>
+                <label class="btn btn-outline-danger btn-md">
+                  <input
+                    type="radio"
+                    class="radioEnergy"
+                    id="radioEnergyE1"
+                    name="radioEnergy"
+                    value="E1"
+                  />
+                  <i class="fa fa-star-o cdicon" aria-hidden="true"></i>
+                  <small
+                    id="lblE1"
+                    style="position: absolute; left: 2px; top: 22px"
+                    class="smallfocus"
+                  ></small>
+                </label>
+              </div>
+              <div
+                class="btn-group-vertical btn-group-toggle"
+                data-toggle="buttons"
+              >
                 <label class="btn btn-outline-info btn-md">
                   <input
                     type="radio"
@@ -382,69 +433,11 @@
                 </label>
               </div>
             </div>
-            <div class="col-7">
+            <div class="col-6">
               <div class="row">
-                <div class="col-7 text-left pl-0">
-                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label
-                      class="btn btn-outline-success btn-md text-left justify-content-left"
-                    >
-                      <input
-                        type="radio"
-                        class="radioEnergy"
-                        id="radioEnergyE3"
-                        name="radioEnergy"
-                        value="E3"
-                      />
-                      <i class="fa fa-star py-2 cdicon" aria-hidden="true"></i>
-                      <small
-                        id="lblE3"
-                        style="position: absolute; top: 30px; right: 30px"
-                        class="smallfocus"
-                      ></small>
-                    </label>
-                    <label class="btn btn-outline-warning btn-md">
-                      <input
-                        type="radio"
-                        class="radioEnergy"
-                        id="radioEnergyE2"
-                        name="radioEnergy"
-                        value="E2"
-                        checked
-                      />
-                      <i
-                        class="fa fa-star-half-o py-2 cdicon"
-                        aria-hidden="true"
-                      ></i>
-                      <small
-                        id="lblE2"
-                        style="position: absolute; top: 30px; right: 26px"
-                        class="smallfocus"
-                      ></small>
-                    </label>
-                    <label class="btn btn-outline-danger btn-md">
-                      <input
-                        type="radio"
-                        class="radioEnergy"
-                        id="radioEnergyE1"
-                        name="radioEnergy"
-                        value="E1"
-                      />
-                      <i
-                        class="fa fa-star-o py-2 cdicon"
-                        aria-hidden="true"
-                      ></i>
-                      <small
-                        id="lblE1"
-                        style="position: absolute; top: 30px; right: 30px"
-                        class="smallfocus"
-                      ></small>
-                    </label>
-                  </div>
-                </div>
-                <div class="col-5">
+                <div class="col-6 text-left pl-0 pr-0">
                   <div
-                    class="selectedCD border border-light rounded text-center py-1"
+                    class="selectedCD border border-light rounded-circle text-center py-1"
                     style="background-color: rgb(170, 255, 0)"
                   >
                     <i
@@ -463,45 +456,13 @@
                       aria-hidden="true"
                     ></i>
                   </div>
+                </div>
+                <div class="col-6 rounded-circle bg-warning">
                   <select
-                    class="text-primary bg-white border rounded rounded-pill text-center px-2"
-                    style="font-size: 1em"
+                    class="text-primary bg-warning border-0 rounded rounded-pill text-center px-2 mt-1"
+                    style="font-size: 1em; font-weight: bold"
                     id="selectTrackerTime"
                   ></select>
-                  <div style="position: absolute; right: 0px; z-index: 999">
-                    <div class="btn-group-vertical mt-1">
-                      <button
-                        id="btnPopup"
-                        type="button"
-                        class="btn btn-outline-info border-0"
-                      >
-                        <i class="fa fa-window-restore"></i>
-                      </button>
-
-                      <button
-                        id="btnResetSheet"
-                        type="button"
-                        class="btn btn-outline-info btn-lg border-0"
-                      >
-                        <i class="fa fa-random"></i>
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-info border-0"
-                        id="btnPlayVideo"
-                      >
-                        <i class="fa fa-video-camera"></i>
-                      </button>
-                      <a
-                        class="btn btn-outline-info border-0"
-                        target="_blank"
-                        href="https://script.google.com/macros/s/AKfycbwwo0nCjjbZ2OVJHhPpTMZdNfYC0hx1U2jDbim6OvEE/dev"
-                        role="button"
-                      >
-                        <i class="fa fa-podcast fa-2x"></i>
-                      </a>
-                    </div>
-                  </div>
                 </div>
               </div>
               <div class="row">
@@ -509,15 +470,10 @@
                   <!--  HistoryRow-Start -->
                   <!--  HistoryRow 4 -->
                   <div class="row mt-1">
-                    <div id="divChunk4" class="col pl-0 text-left">
-                      <button
-                        class="btn badge badge-pill badge-success"
-                        type="button"
-                        id="btnChunkPush4"
-                        type="button"
-                      >
-                        <label id="lblChunkQuarter4">⌛</label>
-                      </button>
+                    <div id="divChunk4" class="col pl-0 text-right">
+                      <label id="lblChunkGod4" class="mr-2"
+                        ><i class="fa fa-spinner fa-spin" aria-hidden="true"></i
+                      ></label>
                       <i
                         id="lblChunkM4"
                         class="fa fa-spinner"
@@ -533,22 +489,23 @@
                         class="fa fa-spinner"
                         aria-hidden="true"
                       ></i>
-                      <label id="lblChunkGod4" class="ml-1"
-                        ><i class="fa fa-spinner fa-spin" aria-hidden="true"></i
-                      ></label>
+
+                      <button
+                        class="btn badge badge-pill badge-success ml-3"
+                        type="button"
+                        id="btnChunkPush4"
+                        type="button"
+                      >
+                        <label id="lblChunkQuarter4">⌛</label>
+                      </button>
                     </div>
                   </div>
                   <!--  HistoryRow 3 -->
                   <div class="row">
-                    <div id="divChunk3" class="col pl-0 text-left">
-                      <button
-                        class="btn badge badge-pill badge-primary"
-                        type="button"
-                        id="btnChunkPush3"
-                        type="button"
-                      >
-                        <label id="lblChunkQuarter3">⌛</label>
-                      </button>
+                    <div id="divChunk3" class="col pl-0 text-right">
+                      <label id="lblChunkGod3" class="mr-2">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i
+                      ></label>
                       <i
                         id="lblChunkM3"
                         class="fa fa-spinner"
@@ -564,22 +521,23 @@
                         class="fa fa-spinner"
                         aria-hidden="true"
                       ></i>
-                      <label id="lblChunkGod3" class="ml-1">
-                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i
-                      ></label>
+
+                      <button
+                        class="btn badge badge-pill badge-primary ml-3"
+                        type="button"
+                        id="btnChunkPush3"
+                        type="button"
+                      >
+                        <label id="lblChunkQuarter3">⌛</label>
+                      </button>
                     </div>
                   </div>
                   <!--  HistoryRow 2 -->
                   <div class="row">
-                    <div id="divChunk2" class="col pl-0 text-left">
-                      <button
-                        class="btn badge badge-pill badge-primary"
-                        type="button"
-                        id="btnChunkPush2"
-                        type="button"
-                      >
-                        <label id="lblChunkQuarter2">⌛</label>
-                      </button>
+                    <div id="divChunk2" class="col pl-0 text-right">
+                      <label id="lblChunkGod2" class="mr-2"
+                        ><i class="fa fa-spinner fa-spin" aria-hidden="true"></i
+                      ></label>
                       <i
                         id="lblChunkM2"
                         class="fa fa-spinner"
@@ -595,22 +553,23 @@
                         class="fa fa-spinner"
                         aria-hidden="true"
                       ></i>
-                      <label id="lblChunkGod2" class="ml-1"
-                        ><i class="fa fa-spinner fa-spin" aria-hidden="true"></i
-                      ></label>
+
+                      <button
+                        class="btn badge badge-pill badge-primary ml-3"
+                        type="button"
+                        id="btnChunkPush2"
+                        type="button"
+                      >
+                        <label id="lblChunkQuarter2">⌛</label>
+                      </button>
                     </div>
                   </div>
                   <!--  HistoryRow 1 -->
                   <div class="row">
-                    <div id="divChunk1" class="col pl-0 text-left">
-                      <button
-                        class="btn badge badge-pill badge-primary"
-                        type="button"
-                        id="btnChunkPush1"
-                        type="button"
-                      >
-                        <label id="lblChunkQuarter1">⌛</label>
-                      </button>
+                    <div id="divChunk1" class="col pl-0 text-right">
+                      <label id="lblChunkGod1" class="mr-2"
+                        ><i class="fa fa-spinner fa-spin" aria-hidden="true"></i
+                      ></label>
                       <i
                         id="lblChunkM1"
                         class="fa fa-spinner"
@@ -626,9 +585,15 @@
                         class="fa fa-spinner"
                         aria-hidden="true"
                       ></i>
-                      <label id="lblChunkGod1" class="ml-1"
-                        ><i class="fa fa-spinner fa-spin" aria-hidden="true"></i
-                      ></label>
+
+                      <button
+                        class="btn badge badge-pill badge-primary ml-3"
+                        type="button"
+                        id="btnChunkPush1"
+                        type="button"
+                      >
+                        <label id="lblChunkQuarter1">⌛</label>
+                      </button>
                     </div>
                   </div>
                   <!--  HistoryRow-End -->
@@ -706,6 +671,43 @@
                     value="T"
                   />
                 </label>
+              </div>
+
+              <div
+                style="position: fixed; top: 120px; right: 2px; z-index: 999"
+              >
+                <div class="btn-group-vertical mt-1">
+                  <a
+                    class="btn btn-outline-info border-0"
+                    target="_blank"
+                    href="https://script.google.com/macros/s/AKfycbwwo0nCjjbZ2OVJHhPpTMZdNfYC0hx1U2jDbim6OvEE/dev"
+                    role="button"
+                  >
+                    <i class="fa fa-podcast fa-2x"></i>
+                  </a>
+
+                  <button
+                    id="btnResetSheet"
+                    type="button"
+                    class="btn btn-outline-info btn-lg border-0"
+                  >
+                    <i class="fa fa-random"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-info border-0"
+                    id="btnPlayVideo"
+                  >
+                    <i class="fa fa-video-camera"></i>
+                  </button>
+                  <button
+                    id="btnPopup"
+                    type="button"
+                    class="btn btn-outline-info border-0"
+                  >
+                    <i class="fa fa-window-restore"></i>
+                  </button>
+                </div>
               </div>
               <div
                 style="position: fixed; top: 290px; right: 10px; z-index: 999"
