@@ -129,14 +129,14 @@ $(document).ready(function () {
       item: "X",
       column: "",
       icon: "❌",
-      faClass: "fa fa-exclamation-triangle text-danger",
+      faClass: "fa fa-exclamation-triangle text-light",
     },
     {
       type: "Missed",
       item: "",
       column: "",
       icon: "",
-      faClass: "fa fa-exclamation-triangle text-danger",
+      faClass: "fa fa-exclamation-triangle text-light",
     },
   ];
 
@@ -203,6 +203,10 @@ $(document).ready(function () {
               $("#lblChunkM" + data.chunks[i].id).removeClass();
               $("#lblChunkW" + data.chunks[i].id).removeClass();
               $("#lblChunkE" + data.chunks[i].id).removeClass();
+              $("#divChunk" + data.chunks[i].id).removeClass("bg-danger");
+
+              if (data.chunks[i].m === "X" || data.chunks[i].m === "")
+                $("#divChunk" + data.chunks[i].id).addClass("bg-danger");
 
               $("#lblChunkM" + data.chunks[i].id).addClass(
                 getFaClass(data.chunks[i].m)
