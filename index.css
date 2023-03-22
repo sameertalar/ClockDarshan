@@ -58,9 +58,9 @@ input[type="checkbox"] {
   background-color: #fef9e7;
   background: linear-gradient(
     to right,
-    #e5e8e8 33%,
-    #8d9797 33% 66%,
-    #ff8c19 66%
+    #fef9e7 33%,
+    #edf5f5 33% 66%,
+    #ffffff 66%
   );
 }
 
