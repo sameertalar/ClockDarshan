@@ -373,6 +373,9 @@ $(document).ready(function () {
         "% )"
     );
 
+    $("#bodyCD").css("background-size", elaspePercentQ + "%");
+
+    /*
     if (Number($("#centerCoreD").html()) > 1) {
       $("#bodyCD").css(
         "background-image",
@@ -392,6 +395,7 @@ $(document).ready(function () {
       );
       $("#bodyCD").css("background-size", elaspePercentQ + "%");
     }
+*/
   }
 
   function showCurrentTimeLeft(hours, min, sec) {

@@ -18,7 +18,16 @@ background-image: linear-gradient(#ffdfb6 ,white,white,white,#ffdfb6  );
   background-repeat: no-repeat;
   background-size: 90%;
   background-position: left;
-  background-image: linear-gradient(white, #babec4);
+  background-image: linear-gradient(
+    #babec4,
+    white,
+    white,
+    white,
+    white,
+    white,
+    white,
+    #babec4
+  );
 
   background-color: white;
 }
@@ -42,8 +51,8 @@ input[type="checkbox"] {
 
 #quarterProgress {
   position: relative;
-  left: 35px;
-  width: 90%;
+  left: 0px;
+  width: 100%;
   height: 20px;
   border: 2px solid #0d2931;
   background-color: #fef9e7;
