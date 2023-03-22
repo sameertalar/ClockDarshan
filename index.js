@@ -473,28 +473,22 @@ $(document).ready(function () {
   }
 
   function Mind_Change() {
-    $("#selectedM").removeClass();
     $("#selectedMp").removeClass();
 
     let selfa = getFaClass($(".radioMind:checked").val());
     $("#selectedMp").addClass(selfa);
-    $("#selectedM").addClass(selfa);
   }
   function Work_Change() {
-    $("#selectedW").removeClass();
     $("#selectedWp").removeClass();
     let selfa = getFaClass($(".radioWork:checked").val());
 
     $("#selectedWp").addClass(selfa);
-    $("#selectedW").addClass(selfa);
   }
   function Energy_Change() {
-    $("#selectedE").removeClass();
     $("#selectedEp").removeClass();
     let selfa = getFaClass($(".radioEnergy:checked").val());
 
     $("#selectedEp").addClass(selfa);
-    $("#selectedE").addClass(selfa);
   }
 
   page_Load();

@@ -27,11 +27,11 @@
       }
     </style>
   </head>
-  <body class="border">
+  <body>
     <!--- **************    BODY-Start   **************    -->
     <div class="container-fluid">
       <div class="row">
-        <div id="bodyCD" class="col-lg-4 border-secondary border-right">
+        <div id="bodyCD" class="col-lg-4">
           <!----------------- Content-Start  -------------- -->
           <div class="row">
             <div class="col pl-0 pr-0">
@@ -437,42 +437,11 @@
             <div class="col-6">
               <div class="row">
                 <div class="col-6 text-left pl-0 pr-0">
-                  <div
-                    class="selectedCD border border-light rounded-circle text-center py-1"
-                    style="background-color: rgb(170, 255, 0)"
-                  >
-                    <i
-                      id="selectedM"
-                      class="fa fa-eye text-warning"
-                      aria-hidden="true"
-                    ></i>
-                    <i
-                      id="selectedW"
-                      class="fa fa-life-ring fa-spin text-warning"
-                      aria-hidden="true"
-                    ></i>
-                    <i
-                      id="selectedE"
-                      class="fa fa-star-half-o text-warning"
-                      aria-hidden="true"
-                    ></i>
-                  </div>
-                </div>
-                <div class="col-6 rounded-circle bg-warning">
-                  <select
-                    class="text-primary bg-warning border-0 rounded rounded-pill text-center px-2 mt-1"
-                    style="font-size: 1em; font-weight: bold"
-                    id="selectTrackerTime"
-                  ></select>
-                </div>
-              </div>
-              <div class="row mt-2">
-                <div class="col text-right">
                   <label for="checkPastFix">
                     <i class="fa fa-recycle"></i>
                     <input
                       type="checkbox"
-                      class="btn-check checkPastFix mr-2"
+                      class="btn-check checkPastFix mr-1"
                       id="checkPastFix"
                       autocomplete="off"
                       name="checkPastFix"
@@ -491,7 +460,15 @@
                     />
                   </label>
                 </div>
+                <div class="col-6 rounded-circle bg-warning">
+                  <select
+                    class="text-primary bg-warning border-0 rounded rounded-pill text-center px-2 mt-1"
+                    style="font-size: 1em; font-weight: bold"
+                    id="selectTrackerTime"
+                  ></select>
+                </div>
               </div>
+
               <div class="row">
                 <div class="col pl-0 pr-0">
                   <!--  HistoryRow-Start -->
@@ -809,7 +786,7 @@
       integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js?ver=0.01"></script>
+    <script src="index.js?ver=0.02"></script>
     <script>
       function testFunction(min) {
         var out = "";
