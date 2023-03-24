@@ -635,10 +635,10 @@ $(document).ready(function () {
     $("#selectTrackerTime").val(id);
 
     if (Number($("#hiddenCurentRow").val()) === id) {
-      $("#radioMindA").click();
+      $("#radioMindM3").click();
       $("#checkEdit").prop("checked", false);
     } else {
-      $("#radioMindP").click();
+      $("#radioMindM2").click();
       $("#checkEdit").prop("checked", true);
     }
   }
