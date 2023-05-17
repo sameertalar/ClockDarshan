@@ -90,7 +90,7 @@ input[type="checkbox"] {
   height: 100%;
   vertical-align: middle;
   overflow: hidden;
-  background: url("img/clockDarshan5.2-min.png");
+  background: url("../../img/clockDarshan5.2-min.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   cursor: pointer;
@@ -132,12 +132,7 @@ small.smallfocus {
 }
 
 i.cdicon {
-  font-size: 2.1em;
-  font-weight: bolder;
-}
-
-i.cdicon2 {
-  font-size: 1.4em;
+  font-size: 1.1em;
   font-weight: bolder;
 }
 

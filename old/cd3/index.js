@@ -4,7 +4,7 @@ $(document).ready(function () {
   var __ApiCallStatus = false;
 
   const _UpdaterApiUrl =
-    "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
+    "https://script.google.com/macros/s/AKfycbx76d72NhLVCnZdIlDioIeqclF5430ZuSUNc9648mY/dev";
   const _ResetApiUrl =
     "https://script.google.com/macros/s/AKfycbxMDdF3Z8lJyZ2aA5BiBVzZWlvNIxglS9L4zqJ8cpzB/dev";
 
@@ -29,39 +29,94 @@ $(document).ready(function () {
     {
       type: "Mind",
       item: "M5",
-      column: "D",
+      column: "C",
       icon: "🕊️",
       faClass: "fa fa-paper-plane text-success",
     },
     {
       type: "Mind",
       item: "M4",
-      column: "E",
+      column: "D",
       icon: "🧘",
       faClass: "fa fa-user-circle text-primary",
     },
     {
       type: "Mind",
       item: "M3",
-      column: "F",
+      column: "E",
       icon: "👁️",
       faClass: "fa fa-eye text-warning",
     },
     {
       type: "Mind",
       item: "M2",
-      column: "G",
+      column: "F",
       icon: "🎳",
       faClass: "fa fa-eye-slash tet-dark",
     },
     {
       type: "Mind",
       item: "M1",
-      column: "H",
+      column: "G",
       icon: "🔥",
       faClass: "fa fa-fire text-danger",
     },
-
+    {
+      type: "Energy",
+      item: "E3",
+      column: "I",
+      icon: "🔋",
+      faClass: "fa fa-star text-success",
+    },
+    {
+      type: "Energy",
+      item: "E2",
+      column: "J",
+      icon: "🥥",
+      faClass: "fa fa-star-half-o text-warning",
+    },
+    {
+      type: "Energy",
+      item: "E1",
+      column: "K",
+      icon: "☆",
+      faClass: "fa fa fa-star-o text-danger",
+    },
+    {
+      type: "Work",
+      item: "W5",
+      column: "M",
+      icon: "🪔",
+      faClass: "fa fa-eercast text-info",
+    },
+    {
+      type: "Work",
+      item: "W4",
+      column: "N",
+      icon: "💎",
+      faClass: "fa fa-diamond text-primary",
+    },
+    {
+      type: "Work",
+      item: "W3",
+      column: "O",
+      icon: "🌿",
+      faClass: "fa fa-envira text-success",
+    },
+    {
+      type: "Work",
+      item: "W2",
+      column: "P",
+      icon: "👪",
+      faClass: "fa fa-life-ring fa-spin text-warning",
+    },
+    {
+      type: "Work",
+      item: "W1",
+      column: "Q",
+      icon: "🍂",
+      faClass: "fa fa-ban text-danger",
+    },
     {
       type: "Sleep",
       item: "S",
@@ -85,66 +140,6 @@ $(document).ready(function () {
     },
   ];
 
-  function getDivBole(id, txt) {
-    let div = document.createElement("div");
-    if (id) div.id = id;
-    div.className = "row ";
-    div.innerText = txt;
-
-    return div;
-  }
-
-  function createChunkDiv(data) {
-    let divRow = document.createElement("div");
-    if (data.row) divRow.id = "row" + data.row;
-    divRow.className = "row border-bottom";
-
-    if (data.chunk.includes("-1"))
-      divRow.className = "row border-bottom border-dark ";
-
-    // col1
-
-    let divC2 = document.createElement("div");
-    divC2.className = "col-3 ";
-
-    let radio1 = document.createElement("input");
-    radio1.setAttribute("type", "radio");
-    radio1.setAttribute("name", "radioChunk");
-    radio1.setAttribute("value", data.row);
-    radio1.setAttribute("id", "radioChunk" + data.row);
-    radio1.setAttribute("class", "btn-check radioChunk");
-    radio1.setAttribute("autocomplete", "off");
-    divC2.appendChild(radio1);
-
-    let lbl1 = document.createElement("label");
-    lbl1.innerHTML = data.chunk;
-    lbl1.setAttribute("class", "btn btn-outline-secondary");
-    lbl1.setAttribute("for", "radioChunk" + data.row);
-    divC2.appendChild(lbl1);
-
-    divRow.appendChild(divC2);
-    //col2
-    let divC1 = document.createElement("div");
-    divC1.className = "col-2 ";
-    //divC1.innerText = data.value;
-
-    let i1 = document.createElement("i");
-    i1.className = "cdicon2 " + getFaClass(data.value);
-    i1.setAttribute("aria-hidden", "true");
-    divC1.appendChild(i1);
-
-    divRow.appendChild(divC1);
-
-    //col3
-
-    let divC3 = document.createElement("div");
-    divC3.className = "col-6 ";
-    divC3.innerText = data.god;
-    divRow.appendChild(divC3);
-
-    return divRow;
-  }
-
   function postToGoogle(update) {
     // $("#progress-loading").show();
     $("#progressTextgod").html(
@@ -157,21 +152,31 @@ $(document).ready(function () {
     $("#success-alert").hide();
     $("#errorMessage").html("");
 
-    let paramMind = "";
+    let paramMind = $(".radioMind:checked").val();
+    let paramEnergy = $(".radioEnergy:checked").val();
+    let paramWork = $(".radioWork:checked").val();
+    let paramPastFix = $(".checkPastFix:checked").val();
+
     let selectedPeriod = $("#selectTrackerTime option:selected").val();
 
+    let queryString = "?row=" + selectedPeriod;
+
     if (update) {
-      paramMind = $(".radioMind:checked").val();
+      queryString =
+        queryString +
+        "&mind=" +
+        paramMind +
+        "&energy=" +
+        paramEnergy +
+        "&work=" +
+        paramWork;
+
+      if (paramPastFix === "T") queryString = queryString + "&past=" + true;
     }
 
-    let googleurl =
-      _UpdaterApiUrl +
-      "?row=" +
-      selectedPeriod +
-      "&mind=" +
-      $(".radioMind:checked").val() +
-      "&callback=?";
-    console.log("Api QueryString Request:", googleurl);
+    console.log("Api QueryString Request:", queryString);
+
+    let googleurl = _UpdaterApiUrl + queryString + "&callback=?";
 
     $.ajax({
       crossOrigin: true,
@@ -181,43 +186,6 @@ $(document).ready(function () {
       success: function (data, textStatus, xhr) {
         console.log("Api Response Data:", data);
 
-        // $("#containerPath").html("Sameer" + data);
-
-        // document.getElementById("containerPath").appendChild(boleElement);
-
-        try {
-          if (data && data.chunks) {
-            $("#lblM5").html(data.counts.calm);
-            $("#lblM4").html(data.counts.med);
-            $("#lblM3").html(data.counts.apramad);
-            $("#lblM2").html(data.counts.pramad);
-            $("#lblM1").html(data.counts.buzz);
-
-            for (let i = data.chunks.length - 1; i >= 0; i--) {
-              var divRow = createChunkDiv(data.chunks[i]);
-              document.getElementById("containerPath").appendChild(divRow);
-
-              console.log(
-                data.chunks[i].chunk +
-                  " - " +
-                  data.chunks[i].value +
-                  " - " +
-                  data.chunks[i].row +
-                  " - " +
-                  data.chunks[i].god
-              );
-            }
-          }
-        } catch (err) {
-          console.log(
-            "Unhandled Error while processing postToGoogle response",
-            err
-          );
-          $("#containerPath").html(err);
-          $("#errorMessage").html("Unhandled Error postToGoogle: " + err);
-        }
-
-        /*
         try {
           if (data && data.chunks) {
             for (let i = 0; i < data.chunks.length; i++) {
@@ -286,11 +254,10 @@ $(document).ready(function () {
             $("#errorMessage").html(" Data Not Returned by Api. ");
           }
         } catch (err) {
-          console.log("Unhandled Error postToGoogle", err);
-          $("#containerPath").html(err);
+          console.log("Unhandled Error getFpostToGoogleaClass", err);
           $("#errorMessage").html("Unhandled Error postToGoogle: " + err);
         }
-*/
+
         // reloadStatusSheet();
 
         // $("#progress-loading").hide();
@@ -300,7 +267,6 @@ $(document).ready(function () {
       error: function (xhr, error_text, statusText) {
         $("#errorMessage").html(error_text);
         console.log("error_text", error_text);
-        $("#containerPath").html(error_text);
         //$("#progress-loading").hide();
         $("#progress-modal").modal("hide");
       },
@@ -499,9 +465,7 @@ $(document).ready(function () {
 
   function getFaClass(value) {
     try {
-      if (value && value !== "undefined")
-        return _configs.find((x) => x.column === value).faClass;
-      else return "";
+      return _configs.find((x) => x.item === value).faClass;
     } catch (error) {
       console.log("Unhandled Error getFaClass", value, error);
       $("#errorMessage").html("Unhandled Error getFaClass: " + error);
@@ -654,8 +618,8 @@ $(document).ready(function () {
         Number($("#hiddenCurentRow").val()) !==
           Number($("#hiddenLastCallRow").val())
       ) {
-        //  postToGoogle(false);
-        // console.log("1 mins data Lag Api Called");
+        postToGoogle(false);
+        console.log("1 mins data Lag Api Called");
       }
     } catch (error) {
       console.log("Unhandled Error", error);
