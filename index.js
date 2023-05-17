@@ -105,7 +105,7 @@ $(document).ready(function () {
     // col1
 
     let divC2 = document.createElement("div");
-    divC2.className = "col-3 ";
+    divC2.className = "col-4 ";
 
     let radio1 = document.createElement("input");
     radio1.setAttribute("type", "radio");
