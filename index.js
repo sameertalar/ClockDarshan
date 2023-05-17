@@ -163,12 +163,12 @@ $(document).ready(function () {
     //col3
 
     let divC3 = document.createElement("div");
-    divC3.className = "col-5  text-start ";
+    divC3.className = "col-5  text-start ms-2  ";
 
     divC3.innerText = data.god;
 
     if (currentRow === data.row)
-      divC3.className = divC3.className + " bg-primary text-white py-1 ms-2   ";
+      divC3.className = divC3.className + " bg-primary text-white py-1   ";
     else if (currentRow === data.row - 1)
       divC3.className = divC3.className + "   text-warning ";
     else if (currentRow > data.row)
