@@ -109,16 +109,14 @@ $(document).ready(function () {
 
     // col1
     let divC1 = document.createElement("div");
-    divC1.className = "col-2 text-start";
+    divC1.className = "col-2 px-0   text-center";
     //divC1.innerText = data.value;
 
     let i1 = document.createElement("i");
 
-    if (currentRow === data.row && data.value === "")
+    if (currentRow >= data.row && data.value === "")
       i1.className = "fa fa-exclamation-triangle fa-2x text-danger";
     else i1.className = "cdicon2 " + getFaClass(data.value);
-
-    //_UpdaterApiUrl
 
     i1.setAttribute("aria-hidden", "true");
     divC1.appendChild(i1);
@@ -401,17 +399,6 @@ $(document).ready(function () {
   function showCurrentSelection() {
     $("#centerCoreD").html(
       Number($("#hiddenCurentRow").val()) - Number($("#hiddenLoggedRow").val())
-    );
-    $("#lableSelectedGod").html(
-      $("#selectTrackerTime option:selected").data("god")
-    );
-
-    $("#lableNextGod").html(
-      _gods[
-        ($.inArray($("#selectTrackerTime option:selected").data("god"), _gods) +
-          1) %
-          _gods.length
-      ]
     );
   }
 
