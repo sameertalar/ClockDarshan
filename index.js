@@ -157,7 +157,7 @@ $(document).ready(function () {
     //col3
 
     let divC3 = document.createElement("div");
-    divC3.className = "col-5  text-center ";
+    divC3.className = "col-5  text-start ";
 
     divC3.innerText = data.god;
 
@@ -176,9 +176,6 @@ $(document).ready(function () {
 
   function postToGoogle(update) {
     // $("#progress-loading").show();
-    $("#progressTextgod").html(
-      $("#selectTrackerTime option:selected").data("god")
-    );
 
     $("#progress-modal").modal("show");
     __ApiCallStatus = true;
