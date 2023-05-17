@@ -94,13 +94,13 @@ $(document).ready(function () {
     return div;
   }
 
-  function createChunkDiv(data, currentRow) {
+  function createChunkDiv(data, currentRow, praharStartRow) {
     let divRow = document.createElement("div");
     if (data.row) divRow.id = "row" + data.row;
-    divRow.className = "row border-top ";
+    divRow.className = "row ";
 
-    if (data.chunk.includes("-4"))
-      divRow.className = divRow.className + " border-4 ";
+    if (data.chunk.includes("-4") && praharStartRow + 11 !== data.row)
+      divRow.className = divRow.className + "border-top rounded-top  border-2";
 
     if (currentRow === data.row)
       divRow.className = divRow.className + " bg-highlight";
@@ -108,9 +108,26 @@ $(document).ready(function () {
       divRow.className = divRow.className + " bg-highlight2";
 
     // col1
+    let divC1 = document.createElement("div");
+    divC1.className = "col-2 text-start";
+    //divC1.innerText = data.value;
 
+    let i1 = document.createElement("i");
+
+    if (currentRow === data.row && data.value === "")
+      i1.className = "fa fa-exclamation-triangle fa-2x text-danger";
+    else i1.className = "cdicon2 " + getFaClass(data.value);
+
+    //_UpdaterApiUrl
+
+    i1.setAttribute("aria-hidden", "true");
+    divC1.appendChild(i1);
+
+    divRow.appendChild(divC1);
+
+    //col2
     let divC2 = document.createElement("div");
-    divC2.className = "col-4 px-0  text-start";
+    divC2.className = "col-4 px-0  text-end";
 
     let radio1 = document.createElement("input");
     radio1.setAttribute("type", "radio");
@@ -136,22 +153,12 @@ $(document).ready(function () {
     divC2.appendChild(lbl1);
 
     divRow.appendChild(divC2);
-    //col2
-    let divC1 = document.createElement("div");
-    divC1.className = "col-1 ";
-    //divC1.innerText = data.value;
-
-    let i1 = document.createElement("i");
-    i1.className = "cdicon2 " + getFaClass(data.value);
-    i1.setAttribute("aria-hidden", "true");
-    divC1.appendChild(i1);
-
-    divRow.appendChild(divC1);
 
     //col3
 
     let divC3 = document.createElement("div");
     divC3.className = "col-5  text-center ";
+
     divC3.innerText = data.god;
 
     if (currentRow === data.row)
@@ -180,7 +187,6 @@ $(document).ready(function () {
     $("#errorMessage").html("");
 
     let paramMind = "";
-    let selectedPeriod = $("#selectTrackerTime option:selected").val();
 
     if (update) {
       paramMind = $(".radioMind:checked").val();
@@ -220,7 +226,11 @@ $(document).ready(function () {
             $("#containerPath").html("");
 
             for (let i = data.chunks.length - 1; i >= 0; i--) {
-              var divRow = createChunkDiv(data.chunks[i], data.currentRow);
+              var divRow = createChunkDiv(
+                data.chunks[i],
+                data.currentRow,
+                data.praharStartRow
+              );
               document.getElementById("containerPath").appendChild(divRow);
 
               console.log(

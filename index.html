@@ -254,7 +254,7 @@
     <div class="row">
       <div class="col-lg-4">
         <div class="row">
-          <div class="col-4 border text-center">
+          <div class="col-4 text-center">
             <div
               class="btn-group-vertical"
               role="group"
@@ -316,7 +316,7 @@
                 <i id="apramadCtrl" class="fa cdicon" aria-hidden="true"></i>
                 <span
                   id="lblM3"
-                  class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-secondary"
+                  class="position-absolute top-50 start-100 translate-middle badge rounded-circle bg-secondary"
                 >
                   <span class="visually-hidden">Apramad</span>
                 </span>
@@ -336,7 +336,7 @@
                 <i class="fa fa-eye-slash cdicon" aria-hidden="true"></i>
                 <span
                   id="lblM2"
-                  class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-secondary"
+                  class="position-absolute top-50 start-100 translate-middle badge border rounded-circle bg-secondary opacity-25"
                 >
                   <span class="visually-hidden">Pramad</span>
                 </span>
@@ -364,7 +364,7 @@
             </div>
           </div>
 
-          <div id="containerPath" class="col-7 border">
+          <div id="containerPath" class="col-7">
             <div class="text-center mt-5">
               <div class="spinner-border text-primary" role="status">
                 <span class="visually-hidden">Loading...</span>
@@ -377,142 +377,53 @@
       </div>
     </div>
 
-    <!--- ** ROW:   ***    -->
+    <!--- ** ROW:4 template  ***    -->
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-4">Row 4</div>
+        <div class="col-lg-4"></div>
       </div>
     </div>
-    <!--- ** ROW:   ***    -->
+    <!--- ** ROW:5 template ***    -->
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-4">Row 5</div>
+        <div class="col-lg-4"></div>
       </div>
     </div>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div id="bodyCD" class="col-lg-4">
-          <!----------------- Content-Start  -------------- -->
-          <div class="row">
-            <div class="col pl-0 pr-0"></div>
-          </div>
+    <!----------------- Floaters-Start  -------------- -->
+    <div style="position: fixed; bottom: 15px; left: 15px; z-index: 999">
+      <video
+        id="videoDummy"
+        controls
+        loop
+        muted
+        class="mb-1"
+        style="width: 36px; height: 50px; display: none"
+      >
+        <source src="media/video_dummy.mp4" type="video/mp4" />
+      </video>
+    </div>
 
-          <!-- Row 1-->
-
-          <!--  row 2 start -->
-          <div class="row">
-            <div class="col-6 pl-0 pr-0 text-center align-bottom"></div>
-            <div class="col-6">
-              <div class="row">
-                <div class="col-6 rounded-circle bg-warning">
-                  <select
-                    class="text-primary bg-warning border-0 rounded rounded-pill text-center px-2 mt-1"
-                    style="font-size: 1em; font-weight: bold"
-                    id="selectTrackerTime"
-                  ></select>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col pl-0 pr-0"></div>
-              </div>
-            </div>
-          </div>
-          <!-- Row 3 BottomButtonsRow-Start-->
-          <div class="row mt-3">
-            <div class="col text-center"></div>
-          </div>
-          <!--  BottomButtonsRow-End -->
-          <!-- Row 4 Floters-->
-          <div class="row">
-            <div class="col pl-0">
-              <div
-                style="position: fixed; bottom: 15px; left: 15px; z-index: 999"
-              >
-                <video
-                  id="videoDummy"
-                  controls
-                  loop
-                  muted
-                  class="mb-1"
-                  style="width: 36px; height: 50px; display: none"
-                >
-                  <source src="media/video_dummy.mp4" type="video/mp4" />
-                </video>
-              </div>
-
-              <div
-                style="
-                  position: fixed;
-                  top: 20px;
-                  right: 15px;
-                  z-index: 999;
-                  width: 50px;
-                "
-              ></div>
-
-              <div
-                style="position: fixed; top: 60px; right: 15px; z-index: 999"
-              ></div>
-              <div
-                style="position: fixed; top: 83px; right: 15px; z-index: 999"
-              ></div>
-
-              <div
-                style="position: fixed; top: 100px; left: 15px; z-index: 999"
-              >
-                <div class="btn-group-vertical">
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline-info border-0"
-                    id="btnPlayVideo"
-                  >
-                    <i class="fa fa-video-camera"></i>
-                  </button>
-                  <button
-                    id="btnPopup"
-                    type="button"
-                    class="btn btn-outline-info border-0"
-                  >
-                    <i class="fa fa-window-restore"></i>
-                  </button>
-                </div>
-              </div>
-              <div
-                style="
-                  position: fixed;
-                  bottom: 10px;
-                  right: 100px;
-                  z-index: 999;
-                "
-              >
-                <a target="_blank" href="old/cd3/index.html">Hello </a>
-              </div>
-
-              <div
-                style="
-                  position: fixed;
-                  top: 30px;
-                  left: 5px;
-                  z-index: 999;
-                  display: none;
-                "
-              >
-                <h5 class="text-left text-primary" id="lableSelectedGod"></h5>
-                <h5 class="text-left text-warning" id="lableNextGod"></h5>
-              </div>
-            </div>
-          </div>
-          <!--  SpinnerRow-Start -->
-          <div class="row no-gutters">
-            <div class="col no-gutters"></div>
-          </div>
-          <!--  SpinnerRow-End -->
-          <!----------------- Content-End  -------------- -->
-        </div>
+    <div style="position: fixed; top: 100px; left: 15px; z-index: 999">
+      <div class="btn-group-vertical">
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-info border-0"
+          id="btnPlayVideo"
+        >
+          <i class="fa fa-video-camera"></i>
+        </button>
+        <button
+          id="btnPopup"
+          type="button"
+          class="btn btn-outline-info border-0"
+        >
+          <i class="fa fa-window-restore"></i>
+        </button>
       </div>
     </div>
+    <!----------------- Floaters-End  -------------- -->
+
     <!-- modal-Start -->
     <div
       class="modal fade bd-progress-modal-lg"
@@ -589,7 +500,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="index.js?ver=0.14"></script>
+    <script src="index.js?ver=0.15"></script>
     <script>
       function testFunction(min) {
         var out = "";
