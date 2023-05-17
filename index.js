@@ -118,7 +118,7 @@ $(document).ready(function () {
 
     let lbl1 = document.createElement("label");
     lbl1.innerHTML = data.chunk;
-    lbl1.setAttribute("class", "btn btn-outline-secondary");
+    lbl1.setAttribute("class", "btn  btn-outline-secondary py-0");
     lbl1.setAttribute("for", "radioChunk" + data.row);
     divC2.appendChild(lbl1);
 
