@@ -146,3 +146,11 @@ i.cdicon2 {
 #centerCoreE {
   font-size: 1.2em;
 }
+
+.bg-highlight {
+  background-color: #aaff00;
+}
+
+.bg-highlight2 {
+  background-color: #fef9e7;
+}

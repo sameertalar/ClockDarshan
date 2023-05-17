@@ -94,18 +94,23 @@ $(document).ready(function () {
     return div;
   }
 
-  function createChunkDiv(data) {
+  function createChunkDiv(data, currentRow) {
     let divRow = document.createElement("div");
     if (data.row) divRow.id = "row" + data.row;
     divRow.className = "row border-bottom";
 
     if (data.chunk.includes("-1"))
-      divRow.className = "row border-bottom border-dark ";
+      divRow.className = divRow.className + " border-4 ";
+
+    if (currentRow === data.row)
+      divRow.className = divRow.className + " bg-highlight";
+    else if (currentRow === data.row - 1)
+      divRow.className = divRow.className + " bg-highlight2";
 
     // col1
 
     let divC2 = document.createElement("div");
-    divC2.className = "col-4 px-0 border text-end";
+    divC2.className = "col-4 px-0  text-end";
 
     let radio1 = document.createElement("input");
     radio1.setAttribute("type", "radio");
@@ -114,18 +119,26 @@ $(document).ready(function () {
     radio1.setAttribute("id", "radioChunk" + data.row);
     radio1.setAttribute("class", "btn-check radioChunk");
     radio1.setAttribute("autocomplete", "off");
+    if (currentRow === data.row) radio1.checked = true;
+
     divC2.appendChild(radio1);
 
     let lbl1 = document.createElement("label");
     lbl1.innerHTML = data.chunk;
-    lbl1.setAttribute("class", "btn  btn-outline-secondary py-0");
     lbl1.setAttribute("for", "radioChunk" + data.row);
+
+    if (currentRow === data.row)
+      lbl1.setAttribute("class", "btn  btn-outline-success py-0");
+    else if (currentRow > data.row)
+      lbl1.setAttribute("class", "btn  btn-outline-dark py-0");
+    else lbl1.setAttribute("class", "btn  btn-outline-secondary py-0");
+
     divC2.appendChild(lbl1);
 
     divRow.appendChild(divC2);
     //col2
     let divC1 = document.createElement("div");
-    divC1.className = "col-1 border";
+    divC1.className = "col-1 ";
     //divC1.innerText = data.value;
 
     let i1 = document.createElement("i");
@@ -138,7 +151,7 @@ $(document).ready(function () {
     //col3
 
     let divC3 = document.createElement("div");
-    divC3.className = "col-6 border text-center ";
+    divC3.className = "col-6  text-center ";
     divC3.innerText = data.god;
     divRow.appendChild(divC3);
 
@@ -194,7 +207,7 @@ $(document).ready(function () {
             $("#lblM1").html(data.counts.buzz);
 
             for (let i = data.chunks.length - 1; i >= 0; i--) {
-              var divRow = createChunkDiv(data.chunks[i]);
+              var divRow = createChunkDiv(data.chunks[i], data.currentRow);
               document.getElementById("containerPath").appendChild(divRow);
 
               console.log(
