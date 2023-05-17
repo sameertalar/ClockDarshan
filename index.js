@@ -127,7 +127,7 @@ $(document).ready(function () {
 
     //col2
     let divC2 = document.createElement("div");
-    divC2.className = "col-4  text-end";
+    divC2.className = "col-4 px-0  text-end";
 
     let radio1 = document.createElement("input");
     radio1.setAttribute("type", "radio");
@@ -139,6 +139,9 @@ $(document).ready(function () {
 
     if (currentRow === data.row) {
       radio1.checked = true;
+      divC2.className = "col-4 px-0  text-end";
+    } else {
+      divC2.className = "col-4 px-0  text-end";
     }
 
     divC2.appendChild(radio1);
@@ -148,7 +151,7 @@ $(document).ready(function () {
     lbl1.setAttribute("for", "radioChunk" + data.row);
 
     if (currentRow === data.row)
-      lbl1.setAttribute("class", "btn  btn-outline-success");
+      lbl1.setAttribute("class", "btn  btn-outline-success ");
     else if (currentRow > data.row)
       lbl1.setAttribute("class", "btn  btn-outline-dark py-0");
     else lbl1.setAttribute("class", "btn  btn-outline-secondary py-0");
@@ -165,8 +168,7 @@ $(document).ready(function () {
     divC3.innerText = data.god;
 
     if (currentRow === data.row)
-      divC3.className =
-        divC3.className + "bg-success text-light  border  py-1 ";
+      divC3.className = divC3.className + " bg-success text-white    ";
     else if (currentRow === data.row - 1)
       divC3.className = divC3.className + "   text-warning ";
     else if (currentRow > data.row)
