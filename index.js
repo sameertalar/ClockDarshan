@@ -33,7 +33,7 @@ $(document).ready(function () {
       item: "M2",
       column: "G",
       icon: "🎳",
-      faClass: "fa fa-eye-slash tet-dark",
+      faClass: "fa fa-eye-slash text-dark", // fa-low-vision
     },
     {
       type: "Mind",
@@ -315,6 +315,13 @@ $(document).ready(function () {
     );
   }
 
+  function btnExcelOpenClick() {
+    window.open(
+      "https://docs.google.com/spreadsheets/d/1nOrZM3sExoxmFgyzhiwi6BrPvQT-9Omlt2x5kno8H5w/edit#gid=1698318143",
+      "_blank"
+    );
+  }
+
   // ******* TIME Functions *******
 
   function pad(number, length) {
@@ -390,6 +397,7 @@ $(document).ready(function () {
     $("#btnPlayVideo").on("click", playVideo);
     $("#btnResetSheet").on("click", oneClickResetSheet);
     $("#btnPopup").on("click", btnPopupClick);
+    $("#btnExcel").on("click", btnExcelOpenClick);
 
     $("#clock-container").on("click", oneClickTracker);
     $("#ClockInnerCircle").on("click", oneClickTracker);
