@@ -105,7 +105,7 @@ $(document).ready(function () {
     // col1
 
     let divC2 = document.createElement("div");
-    divC2.className = "col-4 border text-end";
+    divC2.className = "col-4 px-0 border text-end";
 
     let radio1 = document.createElement("input");
     radio1.setAttribute("type", "radio");
