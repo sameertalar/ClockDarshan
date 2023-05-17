@@ -127,7 +127,7 @@ $(document).ready(function () {
 
     //col2
     let divC2 = document.createElement("div");
-    divC2.className = "col-4 px-0  text-end";
+    divC2.className = "col-4  text-end";
 
     let radio1 = document.createElement("input");
     radio1.setAttribute("type", "radio");
@@ -136,7 +136,10 @@ $(document).ready(function () {
     radio1.setAttribute("id", "radioChunk" + data.row);
     radio1.setAttribute("class", "btn-check radioChunk");
     radio1.setAttribute("autocomplete", "off");
-    if (currentRow === data.row) radio1.checked = true;
+
+    if (currentRow === data.row) {
+      radio1.checked = true;
+    }
 
     divC2.appendChild(radio1);
 
@@ -145,7 +148,7 @@ $(document).ready(function () {
     lbl1.setAttribute("for", "radioChunk" + data.row);
 
     if (currentRow === data.row)
-      lbl1.setAttribute("class", "btn  btn-outline-success py-0");
+      lbl1.setAttribute("class", "btn  btn-outline-success");
     else if (currentRow > data.row)
       lbl1.setAttribute("class", "btn  btn-outline-dark py-0");
     else lbl1.setAttribute("class", "btn  btn-outline-secondary py-0");
@@ -162,9 +165,10 @@ $(document).ready(function () {
     divC3.innerText = data.god;
 
     if (currentRow === data.row)
-      divC3.className = divC3.className + " text-primary ";
+      divC3.className =
+        divC3.className + "bg-success text-light  border  py-1 ";
     else if (currentRow === data.row - 1)
-      divC3.className = divC3.className + " text-warning ";
+      divC3.className = divC3.className + "   text-warning ";
     else if (currentRow > data.row)
       divC3.className = divC3.className + " text-dark ";
     else divC3.className = divC3.className + " text-secondary ";
