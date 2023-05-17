@@ -110,7 +110,7 @@ $(document).ready(function () {
     // col1
 
     let divC2 = document.createElement("div");
-    divC2.className = "col-3 px-0  text-start";
+    divC2.className = "col-4 px-0  text-start";
 
     let radio1 = document.createElement("input");
     radio1.setAttribute("type", "radio");
@@ -151,7 +151,7 @@ $(document).ready(function () {
     //col3
 
     let divC3 = document.createElement("div");
-    divC3.className = "col-6  text-center ";
+    divC3.className = "col-5  text-center ";
     divC3.innerText = data.god;
 
     if (currentRow === data.row)
@@ -208,6 +208,9 @@ $(document).ready(function () {
 
         try {
           if (data && data.chunks) {
+            $("#hiddenLoggedRow").val(data.loggedRow);
+            $("#hiddenLastCallRow").val(data.currentRow);
+
             $("#lblM5").html(data.counts.calm);
             $("#lblM4").html(data.counts.med);
             $("#lblM3").html(data.counts.apramad);
@@ -603,9 +606,7 @@ $(document).ready(function () {
   function page_Load() {
     $("#selectTrackerTime").focus();
     $("#success-alert").hide();
-    $("#radioWorkW2").click();
-    $("#radioEnergyE2").click();
-    $("#radioMindM3").click();
+    $("#radio-mind-3").click();
 
     $("#btnPlayVideo").on("click", playVideo);
     $("#btnResetSheet").on("click", oneClickResetSheet);

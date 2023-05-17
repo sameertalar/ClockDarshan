@@ -47,30 +47,13 @@
         <div class="col-lg-4">
           <div class="row mt-1">
             <div class="col-4">
-              <div class="text-left pl-0 pr-0 mt-2">
-                <label for="checkPastFix">
-                  <i class="fa fa-recycle"></i>
-                  <input
-                    type="checkbox"
-                    class="btn-check checkPastFix mr-1"
-                    id="checkPastFix"
-                    autocomplete="off"
-                    name="checkPastFix"
-                    value="T"
-                  />
-                </label>
-                <label for="checkEdit">
-                  <i class="fa fa-edit"></i>
-                  <input
-                    type="checkbox"
-                    class="btn-check checkEdit"
-                    id="checkEdit"
-                    autocomplete="off"
-                    name="checkEdit"
-                    value="T"
-                  />
-                </label>
-              </div>
+              <button
+                id="btnResetSheet"
+                type="button"
+                class="btn btn-outline-danger btn-lg border-0"
+              >
+                <i class="fa fa-random"></i>
+              </button>
             </div>
             <div class="col-4"></div>
             <div class="col-4 text-end">
@@ -292,7 +275,7 @@
                 <i class="fa fa-paper-plane cdicon" aria-hidden="true"></i>
                 <span
                   id="lblM5"
-                  class="position-absolute top-50 start-0 translate-middle badge rounded-pill bg-info"
+                  class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-info"
                 >
                   <span class="visually-hidden">New alerts</span>
                 </span>
@@ -312,7 +295,7 @@
                 <i class="fa fa-diamond cdicon" aria-hidden="true"></i>
                 <span
                   id="lblM4"
-                  class="position-absolute top-50 start-0 translate-middle badge rounded-pill bg-primary"
+                  class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-primary"
                 >
                   <span class="visually-hidden">New alerts</span>
                 </span>
@@ -330,10 +313,10 @@
                 class="btn btn-outline-warning rounded-pill"
                 for="radio-mind-3"
               >
-                <i class="fa fa-eye-slash cdicon" aria-hidden="true"></i>
+                <i id="apramadCtrl" class="fa cdicon" aria-hidden="true"></i>
                 <span
                   id="lblM3"
-                  class="position-absolute top-50 start-0 translate-middle badge rounded-pill bg-secondary"
+                  class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-secondary"
                 >
                   <span class="visually-hidden">Apramad</span>
                 </span>
@@ -353,7 +336,7 @@
                 <i class="fa fa-eye-slash cdicon" aria-hidden="true"></i>
                 <span
                   id="lblM2"
-                  class="position-absolute top-50 start-0 translate-middle badge rounded-pill bg-secondary"
+                  class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-secondary"
                 >
                   <span class="visually-hidden">Pramad</span>
                 </span>
@@ -476,24 +459,10 @@
                 style="position: fixed; top: 83px; right: 15px; z-index: 999"
               ></div>
 
-              <div style="position: fixed; top: 100px; left: 0px; z-index: 999">
+              <div
+                style="position: fixed; top: 100px; left: 15px; z-index: 999"
+              >
                 <div class="btn-group-vertical">
-                  <a
-                    class="btn btn-outline-info border-0"
-                    target="_blank"
-                    href="https://script.google.com/macros/s/AKfycbwwo0nCjjbZ2OVJHhPpTMZdNfYC0hx1U2jDbim6OvEE/dev"
-                    role="button"
-                  >
-                    <i class="fa fa-podcast fa-2x"></i>
-                  </a>
-
-                  <button
-                    id="btnResetSheet"
-                    type="button"
-                    class="btn btn-outline-info btn-lg border-0"
-                  >
-                    <i class="fa fa-random"></i>
-                  </button>
                   <button
                     type="button"
                     class="btn btn-sm btn-outline-info border-0"
@@ -620,7 +589,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="index.js?ver=0.13"></script>
+    <script src="index.js?ver=0.14"></script>
     <script>
       function testFunction(min) {
         var out = "";
