@@ -6,7 +6,7 @@ $(document).ready(function () {
   const _UpdaterApiUrl =
     "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
   const _ResetApiUrl =
-    "https://script.google.com/macros/s/AKfycbxMDdF3Z8lJyZ2aA5BiBVzZWlvNIxglS9L4zqJ8cpzB/dev";
+    "https://script.google.com/macros/s/AKfycbw8xlLx02pJJWyaJIFMNdsT_h-C04drUlpFZeCVb4v1/dev";
 
   var _Tracks = [];
 
@@ -191,8 +191,7 @@ $(document).ready(function () {
       "?row=" +
       $(".radioChunk:checked").val() +
       "&mind=" +
-      paramMind +
-      "&callback=?";
+      paramMind;
     console.log("Api QueryString Request:", googleurl);
 
     $.ajax({
@@ -695,10 +694,10 @@ $(document).ready(function () {
     $("#selectTrackerTime").val(id);
 
     if (Number($("#hiddenCurentRow").val()) === id) {
-      $("#radioMindM3").click();
+      $("#radio-mind-3").click();
       $("#checkEdit").prop("checked", false);
     } else {
-      $("#radioMindM2").click();
+      $("#radio-mind-3").click();
       $("#checkEdit").prop("checked", true);
     }
   }
