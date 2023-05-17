@@ -97,7 +97,7 @@ $(document).ready(function () {
   function createChunkDiv(data, currentRow) {
     let divRow = document.createElement("div");
     if (data.row) divRow.id = "row" + data.row;
-    divRow.className = "row border-bottom";
+    divRow.className = "row border-bottom ";
 
     if (data.chunk.includes("-1"))
       divRow.className = divRow.className + " border-4 ";
@@ -110,7 +110,7 @@ $(document).ready(function () {
     // col1
 
     let divC2 = document.createElement("div");
-    divC2.className = "col-4 px-0  text-end";
+    divC2.className = "col-3 px-0  text-start";
 
     let radio1 = document.createElement("input");
     radio1.setAttribute("type", "radio");
