@@ -189,9 +189,9 @@ $(document).ready(function () {
     let googleurl =
       _UpdaterApiUrl +
       "?row=" +
-      selectedPeriod +
+      $(".radioChunk:checked").val() +
       "&mind=" +
-      $(".radioMind:checked").val() +
+      paramMind +
       "&callback=?";
     console.log("Api QueryString Request:", googleurl);
 
