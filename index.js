@@ -137,12 +137,9 @@ $(document).ready(function () {
     radio1.setAttribute("class", "btn-check radioChunk");
     radio1.setAttribute("autocomplete", "off");
 
-    if (currentRow === data.row) {
-      radio1.checked = true;
-      divC2.className = "col-4 px-0  text-end";
-    } else {
-      divC2.className = "col-4 px-0  text-end";
-    }
+    if (currentRow === data.row) radio1.checked = true;
+
+    if (currentRow < data.row) radio1.disabled = true;
 
     divC2.appendChild(radio1);
 
