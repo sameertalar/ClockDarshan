@@ -97,9 +97,9 @@ $(document).ready(function () {
   function createChunkDiv(data, currentRow) {
     let divRow = document.createElement("div");
     if (data.row) divRow.id = "row" + data.row;
-    divRow.className = "row border-bottom ";
+    divRow.className = "row border-top ";
 
-    if (data.chunk.includes("-1"))
+    if (data.chunk.includes("-4"))
       divRow.className = divRow.className + " border-4 ";
 
     if (currentRow === data.row)
@@ -153,6 +153,15 @@ $(document).ready(function () {
     let divC3 = document.createElement("div");
     divC3.className = "col-6  text-center ";
     divC3.innerText = data.god;
+
+    if (currentRow === data.row)
+      divC3.className = divC3.className + " text-primary ";
+    else if (currentRow === data.row - 1)
+      divC3.className = divC3.className + " text-warning ";
+    else if (currentRow > data.row)
+      divC3.className = divC3.className + " text-dark ";
+    else divC3.className = divC3.className + " text-secondary ";
+
     divRow.appendChild(divC3);
 
     return divRow;
