@@ -99,8 +99,10 @@ $(document).ready(function () {
     if (data.row) divRow.id = "row" + data.row;
     divRow.className = "row ";
 
+    /*
     if (data.chunk.includes("-4") && praharStartRow + 11 !== data.row)
       divRow.className = divRow.className + "border-top rounded-top  border-2";
+*/
 
     if (currentRow === data.row)
       divRow.className = divRow.className + " bg-highlight";
