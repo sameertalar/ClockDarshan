@@ -226,10 +226,12 @@ $(document).ready(function () {
   }
 
   function eyeOpenClose() {
-    $("#apramadCtrl").html("&#xf0eb");
+    $("#apramadCtrl").html("&#xf070");
+    $("#pramadCtrl").html("&#xf2a8");
 
     setTimeout(function () {
       $("#apramadCtrl").html("&#xf06e");
+      $("#pramadCtrl").html("&#xf2a8");
     }, 1000);
   }
 
