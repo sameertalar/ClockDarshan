@@ -215,6 +215,8 @@ $(document).ready(function () {
             $("#lblM2").html(data.counts.pramad);
             $("#lblM1").html(data.counts.buzz);
 
+            $("#containerPath").html("");
+
             for (let i = data.chunks.length - 1; i >= 0; i--) {
               var divRow = createChunkDiv(data.chunks[i], data.currentRow);
               document.getElementById("containerPath").appendChild(divRow);
