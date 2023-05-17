@@ -105,7 +105,7 @@ $(document).ready(function () {
     // col1
 
     let divC2 = document.createElement("div");
-    divC2.className = "col-4 ";
+    divC2.className = "col-4 border";
 
     let radio1 = document.createElement("input");
     radio1.setAttribute("type", "radio");
@@ -125,7 +125,7 @@ $(document).ready(function () {
     divRow.appendChild(divC2);
     //col2
     let divC1 = document.createElement("div");
-    divC1.className = "col-2 ";
+    divC1.className = "col-2 border";
     //divC1.innerText = data.value;
 
     let i1 = document.createElement("i");
@@ -138,7 +138,7 @@ $(document).ready(function () {
     //col3
 
     let divC3 = document.createElement("div");
-    divC3.className = "col-6 ";
+    divC3.className = "col-6 border ";
     divC3.innerText = data.god;
     divRow.appendChild(divC3);
 
