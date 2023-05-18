@@ -50,7 +50,7 @@ $(document).ready(function () {
 
     //------- col 2
     let divC1 = document.createElement("div");
-    divC1.className = "col-2 px-0   text-center";
+    divC1.className = "col-2 px-0 ms-2  text-center";
 
     let i1 = document.createElement("i");
 
