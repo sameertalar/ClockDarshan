@@ -55,8 +55,11 @@ $(document).ready(function () {
     let i1 = document.createElement("i");
 
     if (currentRow >= data.row && data.value === "")
-      i1.className = "fa fa-exclamation-triangle fa-2x text-danger";
-    else i1.className = "cdicon2 " + getFaClass(data.value);
+      i1.className = " fa fa-exclamation-triangle text-danger ";
+    else i1.className = getFaClass(data.value);
+
+    if (currentRow == data.row) i1.className = i1.className + " fa-2x ";
+    else i1.className = i1.className + " cdicon2 ";
 
     i1.setAttribute("aria-hidden", "true");
     divC1.appendChild(i1);
