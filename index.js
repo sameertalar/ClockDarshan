@@ -6,66 +6,6 @@ $(document).ready(function () {
   const _ResetApiUrl =
     "https://script.google.com/macros/s/AKfycbw8xlLx02pJJWyaJIFMNdsT_h-C04drUlpFZeCVb4v1/dev";
 
-  const _configs = [
-    {
-      type: "Mind",
-      item: "M5",
-      column: "D",
-      icon: "🕊️",
-      faClass: "fa fa-paper-plane text-success",
-    },
-    {
-      type: "Mind",
-      item: "M4",
-      column: "E",
-      icon: "🧘",
-      faClass: "fa fa-user-circle text-primary",
-    },
-    {
-      type: "Mind",
-      item: "M3",
-      column: "F",
-      icon: "👁️",
-      faClass: "fa fa-eye text-warning",
-    },
-    {
-      type: "Mind",
-      item: "M2",
-      column: "G",
-      icon: "🎳",
-      faClass: "fa fa-eye-slash text-dark", // fa-low-vision
-    },
-    {
-      type: "Mind",
-      item: "M1",
-      column: "H",
-      icon: "🔥",
-      faClass: "fa fa-fire text-danger",
-    },
-
-    {
-      type: "Sleep",
-      item: "S",
-      column: "S",
-      icon: "😴",
-      faClass: "fa fa-bed text-secondary",
-    },
-    {
-      type: "Missed",
-      item: "X",
-      column: "",
-      icon: "❌",
-      faClass: "fa fa-exclamation-triangle text-light",
-    },
-    {
-      type: "Missed",
-      item: "",
-      column: "",
-      icon: "",
-      faClass: "fa fa-exclamation-triangle text-light",
-    },
-  ];
-
   function createChunkDiv(data, currentRow) {
     let divRow = document.createElement("div");
     if (data.row) divRow.id = "row" + data.row;
@@ -76,22 +16,7 @@ $(document).ready(function () {
     else if (currentRow === data.row - 1)
       divRow.className = divRow.className + " bg-highlight2";
 
-    // col1
-    let divC1 = document.createElement("div");
-    divC1.className = "col-2 px-0   text-center";
-
-    let i1 = document.createElement("i");
-
-    if (currentRow >= data.row && data.value === "")
-      i1.className = "fa fa-exclamation-triangle fa-2x text-danger";
-    else i1.className = "cdicon2 " + getFaClass(data.value);
-
-    i1.setAttribute("aria-hidden", "true");
-    divC1.appendChild(i1);
-
-    divRow.appendChild(divC1);
-
-    //col2
+    //------- col 1
     let divC2 = document.createElement("div");
     divC2.className = "col-4 px-0  text-end";
 
@@ -123,7 +48,22 @@ $(document).ready(function () {
 
     divRow.appendChild(divC2);
 
-    //col3
+    //------- col 2
+    let divC1 = document.createElement("div");
+    divC1.className = "col-2 px-0   text-center";
+
+    let i1 = document.createElement("i");
+
+    if (currentRow >= data.row && data.value === "")
+      i1.className = "fa fa-exclamation-triangle fa-2x text-danger";
+    else i1.className = "cdicon2 " + getFaClass(data.value);
+
+    i1.setAttribute("aria-hidden", "true");
+    divC1.appendChild(i1);
+
+    divRow.appendChild(divC1);
+
+    //------- Col 3
 
     let divC3 = document.createElement("div");
     divC3.className = "col-5  text-start ms-2  ";
@@ -491,6 +431,65 @@ $(document).ready(function () {
     });
   }
 
+  const _configs = [
+    {
+      type: "Mind",
+      item: "M5",
+      column: "D",
+      icon: "🕊️",
+      faClass: "fa fa-paper-plane text-success",
+    },
+    {
+      type: "Mind",
+      item: "M4",
+      column: "E",
+      icon: "🧘",
+      faClass: "fa fa-user-circle text-primary",
+    },
+    {
+      type: "Mind",
+      item: "M3",
+      column: "F",
+      icon: "👁️",
+      faClass: "fa fa-eye text-warning",
+    },
+    {
+      type: "Mind",
+      item: "M2",
+      column: "G",
+      icon: "🎳",
+      faClass: "fa fa-eye-slash text-dark", // fa-low-vision
+    },
+    {
+      type: "Mind",
+      item: "M1",
+      column: "H",
+      icon: "🔥",
+      faClass: "fa fa-fire text-danger",
+    },
+
+    {
+      type: "Sleep",
+      item: "S",
+      column: "S",
+      icon: "😴",
+      faClass: "fa fa-bed text-secondary",
+    },
+    {
+      type: "Missed",
+      item: "X",
+      column: "",
+      icon: "❌",
+      faClass: "fa fa-exclamation-triangle text-light",
+    },
+    {
+      type: "Missed",
+      item: "",
+      column: "",
+      icon: "",
+      faClass: "fa fa-exclamation-triangle text-light",
+    },
+  ];
   //
 
   // End of Code
