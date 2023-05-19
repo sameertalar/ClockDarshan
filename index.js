@@ -440,14 +440,14 @@ $(document).ready(function () {
       item: "M5",
       column: "D",
       icon: "🕊️",
-      faClass: "fa fa-paper-plane text-success",
+      faClass: "fa fa-eercast text-primary",
     },
     {
       type: "Mind",
       item: "M4",
       column: "E",
       icon: "🧘",
-      faClass: "fa fa-user-circle text-primary",
+      faClass: "fa fa-user-circle text-warning",
     },
     {
       type: "Mind",
