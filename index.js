@@ -39,7 +39,7 @@ $(document).ready(function () {
     lbl1.setAttribute("for", "radioChunk" + data.row);
 
     if (currentRow === data.row)
-      lbl1.setAttribute("class", "btn  btn-outline-success ");
+      lbl1.setAttribute("class", "btn  btn-outline-primary ");
     else if (currentRow > data.row)
       lbl1.setAttribute("class", "btn  btn-outline-dark py-0");
     else lbl1.setAttribute("class", "btn  btn-outline-secondary py-0");
@@ -454,7 +454,7 @@ $(document).ready(function () {
       item: "M3",
       column: "F",
       icon: "👁️",
-      faClass: "fa fa-eye text-warning",
+      faClass: "fa fa-eye text-success",
     },
     {
       type: "Mind",
