@@ -144,9 +144,9 @@ $(document).ready(function () {
       $("#lblCurrentRow").html(__CurrentRow);
 
       if (__CurrentRow !== __LoggedRow && __LoggedRow !== 0) {
-        $("#clock-row").addClass("bag");
+        $("#clock-row").addClass("bag rounded-circle");
       } else {
-        $("#clock-row").removeClass("bag");
+        $("#clock-row").removeClass("bag rounded-circle");
       }
 
       if (min % 15 === 0 && sec === 1) {
