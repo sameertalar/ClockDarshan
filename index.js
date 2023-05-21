@@ -9,24 +9,23 @@ $(document).ready(function () {
     "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
   const _ResetApiUrl =
     "https://script.google.com/macros/s/AKfycbw8xlLx02pJJWyaJIFMNdsT_h-C04drUlpFZeCVb4v1/dev";
-    const _HeadRows = 4;
+  const _HeadRows = 4;
 
-    const _gods = [
-      "गणेश",
-      "महाराज",
-      "दुर्गा",
-      "शंकर",
-      "महालक्ष्मी",
-      "अन्नपूर्णा",
-      "हनुमान",
-      "रमण म.",
-      "सरस्वती",
-      "नर्मदा",
-      "बुद्ध",
-      "कृष्ण",
-    ];  
+  const _gods = [
+    "गणेश",
+    "महाराज",
+    "दुर्गा",
+    "शंकर",
+    "महालक्ष्मी",
+    "अन्नपूर्णा",
+    "हनुमान",
+    "रमण म.",
+    "सरस्वती",
+    "नर्मदा",
+    "बुद्ध",
+    "कृष्ण",
+  ];
 
-    
   const _configs = [
     {
       type: "Mind",
@@ -87,12 +86,10 @@ $(document).ready(function () {
     },
   ];
 
-
   page_Load();
 
   function page_Load() {
-
-    console.log("🅒🅛🅞🅒🅚  🅓🅐🅡🅢🅗🅐🅝 Page Loading....",);
+    console.log("🅒🅛🅞🅒🅚  🅓🅐🅡🅢🅗🅐🅝 Page Loading....");
 
     $("#success-alert").hide();
     $("#radio-mind-3").click();
@@ -107,11 +104,10 @@ $(document).ready(function () {
     $("#centerCoreD").on("click", oneClickTracker);
 
     buildPlatform();
-     
+
     postToGoogle(false);
   }
 
- 
   var __AppEnabledStatus = setInterval(processBeHereNow, 1000);
 
   // Clock hands position
@@ -122,31 +118,29 @@ $(document).ready(function () {
     var d = new Date();
     let hours = d.getHours();
     let hourDeg = 30 * (hours % 12) + d.getMinutes() / 2;
-    let minDeg = 6 * d.getMinutes();  
+    let minDeg = 6 * d.getMinutes();
     let deg = getOnePointerDegree(hourDeg, minDeg);
 
     r(onepointerBase, deg);
     r(onepointerCircle, deg);
     r(hourHand, hourDeg);
     r(minHand, 6 * d.getMinutes());
-
-    
   }, 1000);
 
   function processBeHereNow() {
     try {
-      let now = new Date();     
+      let now = new Date();
       let min = now.getMinutes();
-      let sec = now.getSeconds();      
+      let sec = now.getSeconds();
 
       // show Current Time
-      showCurrentTimeLeft( min, sec);
+      showCurrentTimeLeft(min, sec);
       showCurrentSelection();
 
       showTimeElaspeProgress(min, sec);
 
-      __CurrentRow =getCurrentTrackerTimeRow();
-      
+      __CurrentRow = getCurrentTrackerTimeRow();
+
       $("#lblCurrentRow").html(__CurrentRow);
 
       if (min % 15 === 0 && sec === 1) {
@@ -154,13 +148,21 @@ $(document).ready(function () {
         postToGoogle(false);
       }
 
-      if (!__ApiCallStatus &&  __CurrentRow > 30 && 
-        __CurrentRow !==  __LastCurrentRow)
-       {
-
-        //postToGoogle(false);
+      if (
+        !__ApiCallStatus &&
+        __CurrentRow > 30 &&
+        __CurrentRow !== __LastCurrentRow
+      ) {
         console.log("🌿 1 mins data Lag Api Called");
-        console.log("__ApiCallStatus",__ApiCallStatus,"__CurrentRow",__CurrentRow,"__LastCurrentRow",__LastCurrentRow);
+        console.log(
+          "__ApiCallStatus",
+          __ApiCallStatus,
+          "__CurrentRow",
+          __CurrentRow,
+          "__LastCurrentRow",
+          __LastCurrentRow
+        );
+        postToGoogle(false);
       }
     } catch (error) {
       console.log("Unhandled Error", error);
@@ -169,9 +171,8 @@ $(document).ready(function () {
   }
 
   function postToGoogle(update) {
+    $("#processing-div").removeClass("d-none");
 
-    $("#processing-div").removeClass('d-none');
-      
     //$("#progress-modal").modal("show");
     __ApiCallStatus = true;
 
@@ -183,14 +184,19 @@ $(document).ready(function () {
 
     if (update) {
       paramMind = $(".radioMind:checked").val();
-      isPost =1;
+      isPost = 1;
     }
 
-    let queryString = "?row=" + $(".radioChunk:checked").val() 
-    +"&mind=" + paramMind +"&post=" + isPost;
+    let queryString =
+      "?row=" +
+      $(".radioChunk:checked").val() +
+      "&mind=" +
+      paramMind +
+      "&post=" +
+      isPost;
 
-    let googleurl = _UpdaterApiUrl + queryString
-      
+    let googleurl = _UpdaterApiUrl + queryString;
+
     console.log("Api QueryString Request:", queryString);
 
     $.ajax({
@@ -203,15 +209,14 @@ $(document).ready(function () {
 
         try {
           if (data && data.chunks) {
- 
             __LastCurrentRow = data.currentRow;
-            __LoggedRow= data.loggedRow;
+            __LoggedRow = data.loggedRow;
 
             $("#lblLastCurrentRow").html(__LastCurrentRow);
             $("#lblLoggedRow").html(__LoggedRow);
 
-            console.log("__LastCurrentRow",__LastCurrentRow);
-            console.log("__LoggedRow",__LoggedRow);
+            console.log("__LastCurrentRow", __LastCurrentRow);
+            console.log("__LoggedRow", __LoggedRow);
 
             $("#lblM5").html(data.counts.calm);
             $("#lblM4").html(data.counts.med);
@@ -224,8 +229,6 @@ $(document).ready(function () {
             for (let i = data.chunks.length - 1; i >= 0; i--) {
               var divRow = createChunkDiv(data.chunks[i], data.currentRow);
               document.getElementById("containerPath").appendChild(divRow);
-
-             
             }
             //$("#processing-div").addClass('d-none');
             __ApiCallStatus = false;
@@ -240,7 +243,7 @@ $(document).ready(function () {
         }
 
         //$("#progress-modal").modal("hide");
-        $("#processing-div").addClass('d-none');
+        $("#processing-div").addClass("d-none");
         __ApiCallStatus = false;
       },
       error: function (xhr, error_text, statusText) {
@@ -249,14 +252,12 @@ $(document).ready(function () {
         console.log("error_text", error_text);
         $("#containerPath").html(error_text);
         //$("#progress-modal").modal("hide");
-        $("#processing-div").addClass('d-none');
+        $("#processing-div").addClass("d-none");
       },
     });
   }
 
-
   function createChunkDiv(data, currentRow) {
-
     //console.log("createChunkDiv",currentRow,data);
 
     let divRow = document.createElement("div");
@@ -282,7 +283,7 @@ $(document).ready(function () {
 
     if (currentRow === data.row) radio1.checked = true;
 
-    if (currentRow+1 < data.row) radio1.disabled = true;
+    if (currentRow + 1 < data.row) radio1.disabled = true;
 
     divC2.appendChild(radio1);
 
@@ -338,40 +339,36 @@ $(document).ready(function () {
     return divRow;
   }
 
-
   function buildPlatform() {
-    __CurrentRow =getCurrentTrackerTimeRow();
+    __CurrentRow = getCurrentTrackerTimeRow();
     $("#lblCurrentRow").html(__CurrentRow);
-    
+
     let chunks = getChunks();
 
     $("#containerPath").html("");
 
-    for (let i =0 ; i <= chunks.length - 1; i++) {
+    for (let i = 0; i <= chunks.length - 1; i++) {
       var divRow = createChunkDiv(chunks[i], __CurrentRow);
       document.getElementById("containerPath").appendChild(divRow);
-
     }
   }
 
-
   function getChunks() {
-    
     var chunks = [];
-    
+
     let praharStartRow = __CurrentRow - ((__CurrentRow - _HeadRows) % 12);
 
     for (let i = 0; i < 12; i++) {
       chunks.push({
-        row: praharStartRow+ (11-i),
-        chunk: getTrackerChunk(praharStartRow+ (11-i)),
-        value:"X",
-       // quarter: (h % 12 || 12).toString().padStart(2, "0") + "-" + q + "",
-        god: _gods[(11-i)],
+        row: praharStartRow + (11 - i),
+        chunk: getTrackerChunk(praharStartRow + (11 - i)),
+        value: "X",
+        // quarter: (h % 12 || 12).toString().padStart(2, "0") + "-" + q + "",
+        god: _gods[11 - i],
       });
     }
 
-/*
+    /*
     for (let h = 0; h < 24; ++h) {
       for (let q = 1; q <= 4; ++q) {
         _Tracks.push({
@@ -385,12 +382,11 @@ $(document).ready(function () {
       }
     }
 */
-console.log(" __CurrentRow: ", __CurrentRow);
-//console.log(" Prahar Start Row: ", praharStartRow);
-console.log("Page Load Chunks:",chunks);
+    console.log(" __CurrentRow: ", __CurrentRow);
+    //console.log(" Prahar Start Row: ", praharStartRow);
+    console.log("Page Load Chunks:", chunks);
 
-return chunks;
-
+    return chunks;
   }
 
   function getTrackerRow(h, q) {
@@ -398,13 +394,12 @@ return chunks;
   }
 
   function getTrackerChunk(row) {
-    row =row-4;
-    hour = Math. floor(row /4) ;
+    row = row - 4;
+    hour = Math.floor(row / 4);
 
-    if(hour > 12)
-    hour =hour -12;
+    if (hour > 12) hour = hour - 12;
 
-    return hour.toString().padStart(2, "0") + "-" + (row%4 +1);
+    return hour.toString().padStart(2, "0") + "-" + ((row % 4) + 1);
   }
 
   function eyeOpenClose() {
@@ -419,8 +414,6 @@ return chunks;
 
   eyeOpenClose();
   setInterval(eyeOpenClose, 2000);
-
-
 
   function getCurrentTrackerTimeRow() {
     let now = new Date();
@@ -456,7 +449,7 @@ return chunks;
   }
 
   function showCurrentSelection() {
-    $("#centerCoreD").html(__CurrentRow - __LoggedRow );
+    $("#centerCoreD").html(__CurrentRow - __LoggedRow);
   }
 
   function showCurrentTimeLeft(min, sec) {
@@ -513,8 +506,6 @@ return chunks;
     return str;
   }
 
-  
-
   function getFaClass(value) {
     try {
       if (value && value !== "undefined")
@@ -525,8 +516,6 @@ return chunks;
       $("#errorMessage").html("Unhandled Error getFaClass: " + error);
     }
   }
-
-  
 
   function oneClickResetSheet() {
     if (confirm("Are you sure want to reset?")) {
