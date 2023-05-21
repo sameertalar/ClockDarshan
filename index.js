@@ -2,6 +2,8 @@ $(document).ready(function () {
   var __ApiCallStatus = false;
 
   var __CurrentRow = 0;
+  var __LastCurrentRow = 0;
+  var __LoggedRow = 0;
 
   const _UpdaterApiUrl =
     "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
@@ -84,6 +86,167 @@ $(document).ready(function () {
       faClass: "fa fa-exclamation-triangle text-light",
     },
   ];
+
+
+  page_Load();
+
+  function page_Load() {
+
+    console.log("🅒🅛🅞🅒🅚  🅓🅐🅡🅢🅗🅐🅝 Page Loading....",);
+
+    $("#success-alert").hide();
+    $("#radio-mind-3").click();
+
+    $("#btnPlayVideo").on("click", playVideo);
+    $("#btnResetSheet").on("click", oneClickResetSheet);
+    $("#btnPopup").on("click", btnPopupClick);
+    $("#btnExcel").on("click", btnExcelOpenClick);
+
+    $("#clock-container").on("click", oneClickTracker);
+    $("#ClockInnerCircle").on("click", oneClickTracker);
+    $("#centerCoreD").on("click", oneClickTracker);
+
+    buildPlatform();
+     
+    postToGoogle(false);
+  }
+
+ 
+  var __AppEnabledStatus = setInterval(processBeHereNow, 1000);
+
+  // Clock hands position
+  var __ClockdarshanStatus = setInterval(function () {
+    function r(el, deg) {
+      el.setAttribute("transform", "rotate(" + deg + " 50 50)");
+    }
+    var d = new Date();
+    let hours = d.getHours();
+    let hourDeg = 30 * (hours % 12) + d.getMinutes() / 2;
+    let minDeg = 6 * d.getMinutes();  
+    let deg = getOnePointerDegree(hourDeg, minDeg);
+
+    r(onepointerBase, deg);
+    r(onepointerCircle, deg);
+    r(hourHand, hourDeg);
+    r(minHand, 6 * d.getMinutes());
+
+    
+  }, 1000);
+
+  function processBeHereNow() {
+    try {
+      let now = new Date();     
+      let min = now.getMinutes();
+      let sec = now.getSeconds();      
+
+      // show Current Time
+      showCurrentTimeLeft( min, sec);
+      showCurrentSelection();
+
+      showTimeElaspeProgress(min, sec);
+
+      __CurrentRow =getCurrentTrackerTimeRow();      
+
+      if (min % 15 === 0 && sec === 1) {
+        console.log("🕞 15 mins Quarter Shift Called");
+        postToGoogle(false);
+      }
+
+      if (!__ApiCallStatus &&  __CurrentRow > 30 && 
+        __CurrentRow !==  __LastCurrentRow)
+       {
+
+        //postToGoogle(false);
+        console.log("🌿 1 mins data Lag Api Called");
+        console.log("__ApiCallStatus",__ApiCallStatus,"__CurrentRow",__CurrentRow,"__LastCurrentRow",__LastCurrentRow);
+      }
+    } catch (error) {
+      console.log("Unhandled Error", error);
+      $("#errorMessage").html("Unhandled Error: " + error);
+    }
+  }
+
+  function postToGoogle(update) {
+
+    $("#processing-div").removeClass('d-none');
+      
+    //$("#progress-modal").modal("show");
+    __ApiCallStatus = true;
+
+    $("#success-alert").hide();
+    $("#errorMessage").html("");
+
+    let paramMind = "";
+
+    if (update) {
+      paramMind = $(".radioMind:checked").val();
+    }
+
+    let queryString = "?row=" +     $(".radioChunk:checked").val() +
+    "&mind=" +     paramMind;
+
+    let googleurl = _UpdaterApiUrl + queryString
+      
+    console.log("Api QueryString Request:", queryString);
+
+    $.ajax({
+      crossOrigin: true,
+      url: googleurl,
+
+      dataType: "jsonp",
+      success: function (data, textStatus, xhr) {
+        console.log("Api Response Data:", data);
+
+        try {
+          if (data && data.chunks) {
+ 
+            __LastCurrentRow = data.currentRow;
+            __LoggedRow= data.loggedRow;
+
+            console.log("__LastCurrentRow",__LastCurrentRow);
+            console.log("__LoggedRow",__LoggedRow);
+
+            $("#lblM5").html(data.counts.calm);
+            $("#lblM4").html(data.counts.med);
+            $("#lblM3").html(data.counts.apramad);
+            $("#lblM2").html(data.counts.pramad);
+            $("#lblM1").html(data.counts.buzz);
+
+            $("#containerPath").html("");
+
+            for (let i = data.chunks.length - 1; i >= 0; i--) {
+              var divRow = createChunkDiv(data.chunks[i], data.currentRow);
+              document.getElementById("containerPath").appendChild(divRow);
+
+             
+            }
+            //$("#processing-div").addClass('d-none');
+            __ApiCallStatus = false;
+          }
+        } catch (err) {
+          console.log(
+            "Unhandled Error while processing postToGoogle response",
+            err
+          );
+          $("#containerPath").html(err);
+          $("#errorMessage").html("Unhandled Error postToGoogle: " + err);
+        }
+
+        //$("#progress-modal").modal("hide");
+        $("#processing-div").addClass('d-none');
+        __ApiCallStatus = false;
+      },
+      error: function (xhr, error_text, statusText) {
+        __ApiCallStatus = false;
+        $("#errorMessage").html(error_text);
+        console.log("error_text", error_text);
+        $("#containerPath").html(error_text);
+        //$("#progress-modal").modal("hide");
+        $("#processing-div").addClass('d-none');
+      },
+    });
+  }
+
 
   function createChunkDiv(data, currentRow) {
 
@@ -168,6 +331,7 @@ $(document).ready(function () {
     return divRow;
   }
 
+
   function buildPlatform() {
     __CurrentRow =getCurrentTrackerTimeRow();
     
@@ -182,89 +346,6 @@ $(document).ready(function () {
     }
   }
 
-  function postToGoogle(update) {
-
-    $("#processing-div").removeClass('d-none');
-      
-    //$("#progress-modal").modal("show");
-    __ApiCallStatus = true;
-
-    $("#success-alert").hide();
-    $("#errorMessage").html("");
-
-    let paramMind = "";
-
-    if (update) {
-      paramMind = $(".radioMind:checked").val();
-    }
-
-    let googleurl =
-      _UpdaterApiUrl +
-      "?row=" +
-      $(".radioChunk:checked").val() +
-      "&mind=" +
-      paramMind;
-    console.log("Api QueryString Request:", googleurl);
-
-    $.ajax({
-      crossOrigin: true,
-      url: googleurl,
-
-      dataType: "jsonp",
-      success: function (data, textStatus, xhr) {
-        console.log("Api Response Data:", data);
-
-        try {
-          if (data && data.chunks) {
-            $("#hiddenLoggedRow").val(data.loggedRow);
-            $("#hiddenLastCallRow").val(data.currentRow);
-
-            $("#lblM5").html(data.counts.calm);
-            $("#lblM4").html(data.counts.med);
-            $("#lblM3").html(data.counts.apramad);
-            $("#lblM2").html(data.counts.pramad);
-            $("#lblM1").html(data.counts.buzz);
-
-            $("#containerPath").html("");
-
-            for (let i = data.chunks.length - 1; i >= 0; i--) {
-              var divRow = createChunkDiv(data.chunks[i], data.currentRow);
-              document.getElementById("containerPath").appendChild(divRow);
-
-              console.log(
-                data.chunks[i].chunk +
-                  " - " +
-                  data.chunks[i].value +
-                  " - " +
-                  data.chunks[i].row +
-                  " - " +
-                  data.chunks[i].god
-              );
-            }
-            //$("#processing-div").addClass('d-none');
-          }
-        } catch (err) {
-          console.log(
-            "Unhandled Error while processing postToGoogle response",
-            err
-          );
-          $("#containerPath").html(err);
-          $("#errorMessage").html("Unhandled Error postToGoogle: " + err);
-        }
-
-        //$("#progress-modal").modal("hide");
-        $("#processing-div").addClass('d-none');
-        __ApiCallStatus = false;
-      },
-      error: function (xhr, error_text, statusText) {
-        $("#errorMessage").html(error_text);
-        console.log("error_text", error_text);
-        $("#containerPath").html(error_text);
-        //$("#progress-modal").modal("hide");
-        $("#processing-div").addClass('d-none');
-      },
-    });
-  }
 
   function getChunks() {
     
@@ -296,9 +377,9 @@ $(document).ready(function () {
       }
     }
 */
-console.log(" Current Row: ", __CurrentRow);
-console.log(" praharStart Row: ", praharStartRow);
-console.log("_Tracks",chunks);
+console.log(" __CurrentRow: ", __CurrentRow);
+//console.log(" Prahar Start Row: ", praharStartRow);
+console.log("Page Load Chunks:",chunks);
 
 return chunks;
 
@@ -331,11 +412,7 @@ return chunks;
   eyeOpenClose();
   setInterval(eyeOpenClose, 2000);
 
-  function showCurrentSelection() {
-    $("#centerCoreD").html(
-      Number($("#hiddenCurentRow").val()) - Number($("#hiddenLoggedRow").val())
-    );
-  }
+
 
   function getCurrentTrackerTimeRow() {
     let now = new Date();
@@ -370,12 +447,12 @@ return chunks;
     );
   }
 
-  function showCurrentTimeLeft(hours, min, sec) {
-    //var timeNow =  (hrs === 0 ? "12" : pad(hrs, 2)) +   ":" +      pad(min, 2) + ":" + pad(sec, 2)  +            " "     +            (hours > 12 ? "PM" : "AM");
+  function showCurrentSelection() {
+    $("#centerCoreD").html(__CurrentRow - __LoggedRow );
+  }
 
+  function showCurrentTimeLeft(min, sec) {
     var timeNow = pad(14 - (min % 15), 2) + ":" + pad(60 - sec, 2);
-    //var timeNow = pad(min % 15, 2) + ":" + pad(sec, 2);
-
     $("#timeLeft").text(timeNow);
   }
 
@@ -449,107 +526,7 @@ return chunks;
     }
   }
 
-  page_Load();
-
-  __AppEnabledStatus = setInterval(processBeHereNow, 1000);
-
-  // Clock hands position
-  __ClockdarshanStatus = setInterval(function () {
-    function r(el, deg) {
-      el.setAttribute("transform", "rotate(" + deg + " 50 50)");
-    }
-    var d = new Date();
-    let hours = d.getHours();
-    let hourDeg = 30 * (hours % 12) + d.getMinutes() / 2;
-    let minDeg = 6 * d.getMinutes();
-
-    r(hourHand, hourDeg);
-    r(minHand, 6 * d.getMinutes());
-    let deg = getOnePointerDegree(hourDeg, minDeg);
-    r(onepointerBase, deg);
-
-    r(onepointerCircle, deg);
-
-    //
-  }, 1000);
-
-  function getOnePointerDegree(hourDeg, minDeg) {
-    let hdeg = 15;
-    let hrem = hourDeg % 90;
-
-    let mrem = minDeg % 90;
-
-    if (hrem >= 30) hdeg = 45;
-    if (hrem >= 60) hdeg = 75;
-
-    return minDeg - mrem + hdeg;
-  }
-
-  function page_Load() {
-    $("#success-alert").hide();
-    $("#radio-mind-3").click();
-
-    $("#btnPlayVideo").on("click", playVideo);
-    $("#btnResetSheet").on("click", oneClickResetSheet);
-    $("#btnPopup").on("click", btnPopupClick);
-    $("#btnExcel").on("click", btnExcelOpenClick);
-
-    $("#clock-container").on("click", oneClickTracker);
-    $("#ClockInnerCircle").on("click", oneClickTracker);
-    $("#centerCoreD").on("click", oneClickTracker);
-
-    buildPlatform();
-     
-   // postToGoogle(false);
-  }
-
-  function oneClickTracker() {
-    postToGoogle(true);
-  }
-
-  function processBeHereNow() {
-    try {
-      let now = new Date();
-      let hours = now.getHours();
-      let min = now.getMinutes();
-      let sec = now.getSeconds();
-      let ms = now.getMilliseconds() / 1000;
-
-      // show Current Time
-      showCurrentTimeLeft(hours, min, sec);
-      showCurrentSelection();
-
-      showTimeElaspeProgress(min, sec);
-
-      __CurrentRow =getCurrentTrackerTimeRow();
-
-      $("#hiddenCurentRow").val(__CurrentRow);
-
-      if (Number($("#hiddenLoggedRow").val()) < getCurrentTrackerTimeRow()) {
-        $("body").addClass("bag");
-      } else {
-        $("body").removeClass("bag");
-      }
-
-      if (min % 15 === 0 && sec === 1) {
-        console.log("15 mins Quarter Shift Called");
-        postToGoogle(false);
-      }
-
-      if (
-        !__ApiCallStatus &&
-        Number($("#hiddenCurentRow").val()) > 30 &&
-        Number($("#hiddenCurentRow").val()) !==
-          Number($("#hiddenLastCallRow").val())
-      ) {
-        postToGoogle(false);
-        // console.log("1 mins data Lag Api Called");
-      }
-    } catch (error) {
-      console.log("Unhandled Error", error);
-      $("#errorMessage").html("Unhandled Error: " + error);
-    }
-  }
+  
 
   function oneClickResetSheet() {
     if (confirm("Are you sure want to reset?")) {
@@ -589,8 +566,20 @@ return chunks;
   }
 
   //
+  function getOnePointerDegree(hourDeg, minDeg) {
+    let hdeg = 15;
+    let hrem = hourDeg % 90;
 
+    let mrem = minDeg % 90;
 
+    if (hrem >= 30) hdeg = 45;
+    if (hrem >= 60) hdeg = 75;
 
+    return minDeg - mrem + hdeg;
+  }
+
+  function oneClickTracker() {
+    postToGoogle(true);
+  }
   // End of Code
 });
