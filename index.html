@@ -144,43 +144,7 @@
                       <g class="centerCore"></g>
                     </g>
                     <g transform="translate(50, 50)">
-                      <!--
-                                    <circle
-                                      id="ClockInnerCircle"
-                                      cx="0"
-                                      cy="0"
-                                      r="20"
-                                      fill-opacity="0"
-                                      style="
-                                        fill: #ebeef1;
-                                        stroke: #06d3e2;
-                                        stroke-width: 6.5px;
-                                      "
-                                    ></circle>
-                                    <circle
-                                      id="ClockInnerCircle"
-                                      cx="0"
-                                      cy="0"
-                                      r="20"
-                                      fill-opacity="0"
-                                      style="
-                                        fill: #ebeef1;
-                                        stroke: #ebeef1;
-                                        stroke-width: 6px;
-                                        stroke-dasharray: 120;
-                                      "
-                                    >
-                                      <animateTransform
-                                        attributeType="xml"
-                                        attributeName="transform"
-                                        type="rotate"
-                                        from="0"
-                                        to="360"
-                                        begin="0"
-                                        dur="15s"
-                                        repeatCount="indefinite"
-                                      />
-                                    </circle>-->
+                     
                     </g>
                     <g id="hands">
                       <rect
@@ -216,13 +180,7 @@
                         style="cursor: pointer"
                       >
                         ⏳
-                      </text>
-                      <!--
-                                    <text id="centerCoreM" x="-13" y="9">🧿</text>
-                                    <text id="centerCoreE" x="-3" y="9">🥥</text>
-                                    <text id="centerCoreW" x="4" y="9">👪</text>
-                                    <text class="centerCoreB" x="14" y="12">✎</text>
-                                    <text class="centerCoreB" x="-2.5" y="-19">👃</text>-->
+                      </text>                      
                     </g>
                     <!-- https://medium.com/allenhwkim/html-analog-clock-in-few-minutes-13e5983e6543-->
                   </svg>
@@ -252,16 +210,7 @@
       <div class="col-lg-4">
         <div class="row">
           <div class="col-4 text-center">
-            <div id="processing-div" class="text-center">
-              <img
-                decoding="async"
-                src="img/breathe.svg"
-                alt=""
-                class="wp-image-171721"
-                width="70"
-                height="70"
-              />
-            </div>
+           
             <div
               class="btn-group-vertical"
               role="group"
@@ -279,7 +228,7 @@
                 class="btn btn-outline-primary px-4 rounded-pill"
                 for="radio-mind-5"
               >
-                <i class="fa fa-eercast cdicon" aria-hidden="true"></i>
+                <i class="fa fa-eercast fa-spin cdicon" aria-hidden="true"></i>
                 <span
                   id="lblM5"
                   class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-success"
@@ -439,6 +388,16 @@
           <i class="fa fa-map"></i>
         </button>
       </div>
+      <div id="processing-div" class="text-center mt-3">
+        <img
+          decoding="async"
+          src="img/breathe.svg"
+          alt=""
+          class="wp-image-171721"
+          width="70"
+          height="70"
+        />
+      </div>
     </div>
     <!----------------- Floaters-End  -------------- -->
 
@@ -455,7 +414,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="index.js?ver=0.26"></script>
+    <script src="index.js?ver=0.27"></script>
    
   </body>
 </html>

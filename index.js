@@ -33,7 +33,7 @@ $(document).ready(function () {
       item: "M5",
       column: "D",
       icon: "🕊️",
-      faClass: "fa fa-eercast text-primary",
+      faClass: "fa fa-eercast fa-spin text-primary",
     },
     {
       type: "Mind",
@@ -76,7 +76,7 @@ $(document).ready(function () {
       item: "X",
       column: "X",
       icon: "❌",
-      faClass: "fa fa-hand-paper-o text-warning",
+      faClass: "fa fa-spinner fa-spin text-secondary",
     },
     {
       type: "Missed",
