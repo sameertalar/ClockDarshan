@@ -179,13 +179,15 @@ $(document).ready(function () {
     $("#errorMessage").html("");
 
     let paramMind = "";
+    let isPost = 0;
 
     if (update) {
       paramMind = $(".radioMind:checked").val();
+      isPost =1;
     }
 
-    let queryString = "?row=" +     $(".radioChunk:checked").val() +
-    "&mind=" +     paramMind;
+    let queryString = "?row=" + $(".radioChunk:checked").val() 
+    +"&mind=" + paramMind +"&post=" + isPost;
 
     let googleurl = _UpdaterApiUrl + queryString
       
@@ -280,7 +282,7 @@ $(document).ready(function () {
 
     if (currentRow === data.row) radio1.checked = true;
 
-    if (currentRow < data.row) radio1.disabled = true;
+    if (currentRow+1 < data.row) radio1.disabled = true;
 
     divC2.appendChild(radio1);
 
@@ -511,15 +513,7 @@ return chunks;
     return str;
   }
 
-  $(".radioWork").on("change", function (event) {
-    Work_Change();
-  });
-  $(".radioEnergy").on("change", function (event) {
-    Energy_Change();
-  });
-  $(".radioMind").on("change", function (event) {
-    Mind_Change();
-  });
+  
 
   function getFaClass(value) {
     try {
