@@ -145,7 +145,9 @@ $(document).ready(function () {
 
       showTimeElaspeProgress(min, sec);
 
-      __CurrentRow =getCurrentTrackerTimeRow();      
+      __CurrentRow =getCurrentTrackerTimeRow();
+      
+      $("#lblCurrentRow").html(__CurrentRow);
 
       if (min % 15 === 0 && sec === 1) {
         console.log("🕞 15 mins Quarter Shift Called");
@@ -202,6 +204,9 @@ $(document).ready(function () {
  
             __LastCurrentRow = data.currentRow;
             __LoggedRow= data.loggedRow;
+
+            $("#lblLastCurrentRow").html(__LastCurrentRow);
+            $("#lblLoggedRow").html(__LoggedRow);
 
             console.log("__LastCurrentRow",__LastCurrentRow);
             console.log("__LoggedRow",__LoggedRow);
@@ -334,6 +339,7 @@ $(document).ready(function () {
 
   function buildPlatform() {
     __CurrentRow =getCurrentTrackerTimeRow();
+    $("#lblCurrentRow").html(__CurrentRow);
     
     let chunks = getChunks();
 
