@@ -214,6 +214,7 @@ $(document).ready(function () {
 
             $("#lblLastCurrentRow").html(__LastCurrentRow);
             $("#lblLoggedRow").html(__LoggedRow);
+            $("#lblUpdateTime").html(new Date().toLocaleTimeString());
 
             console.log("__LastCurrentRow", __LastCurrentRow);
             console.log("__LoggedRow", __LoggedRow);
