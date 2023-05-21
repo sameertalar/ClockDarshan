@@ -179,6 +179,7 @@ $(document).ready(function () {
 
   function sendNotification() {
     console.log("Notification Sent.");
+
     Notification.requestPermission().then((perm) => {
       if (perm === "granted") {
         new Notification("Hello Clock Darshan");
