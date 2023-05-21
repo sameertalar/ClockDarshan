@@ -180,12 +180,12 @@ $(document).ready(function () {
     }
   }
 
-  function sendNotification(god) {
+  function sendNotification(title) {
     console.log("Notification Sent.");
 
     Notification.requestPermission().then((perm) => {
       if (perm === "granted") {
-        const greeting = new Notification(god, {
+        const greeting = new Notification(title, {
           body: "Clock Darshan... Take a Deep Breath.",
         });
       }
@@ -254,7 +254,9 @@ $(document).ready(function () {
               document.getElementById("containerPath").appendChild(divRow);
 
               if (data.chunks[i].row === __CurrentRow) {
-                sendNotification(data.chunks[i].god);
+                sendNotification(
+                  data.chunks[i].chunk + " " + data.chunks[i].god
+                );
               }
             }
             //$("#processing-div").addClass('d-none');
