@@ -102,6 +102,7 @@ $(document).ready(function () {
     $("#clock-container").on("click", oneClickTracker);
     $("#ClockInnerCircle").on("click", oneClickTracker);
     $("#centerCoreD").on("click", oneClickTracker);
+    $("#btnTest").on("click", sendNotification);
 
     buildPlatform();
 
@@ -174,6 +175,15 @@ $(document).ready(function () {
       console.log("Unhandled Error", error);
       $("#errorMessage").html("Unhandled Error: " + error);
     }
+  }
+
+  function sendNotification() {
+    console.log("Notification Sent.");
+    Notification.requestPermission().then((perm) => {
+      if (perm === "granted") {
+        new Notification("Hello Clock Darshan");
+      }
+    });
   }
 
   function postToGoogle(update) {
@@ -375,20 +385,6 @@ $(document).ready(function () {
       });
     }
 
-    /*
-    for (let h = 0; h < 24; ++h) {
-      for (let q = 1; q <= 4; ++q) {
-        _Tracks.push({
-          row: getTrackerRow(h, q),
-          quarter: (h % 12 || 12).toString().padStart(2, "0") + "-" + q + "",
-          god: _gods[g],
-        });
-
-        if (g === 11) g = 0;
-        else g++;
-      }
-    }
-*/
     console.log(" __CurrentRow: ", __CurrentRow);
     //console.log(" Prahar Start Row: ", praharStartRow);
     console.log("Page Load Chunks:", chunks);
