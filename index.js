@@ -102,7 +102,10 @@ $(document).ready(function () {
     $("#clock-container").on("click", oneClickTracker);
     $("#ClockInnerCircle").on("click", oneClickTracker);
     $("#centerCoreD").on("click", oneClickTracker);
-    $("#btnTest").on("click", sendNotification);
+
+    $("#btnTest").on("click", function (event) {
+      sendNotification("Be Here Now.");
+    });
 
     buildPlatform();
 
@@ -177,12 +180,14 @@ $(document).ready(function () {
     }
   }
 
-  function sendNotification() {
+  function sendNotification(god) {
     console.log("Notification Sent.");
 
     Notification.requestPermission().then((perm) => {
       if (perm === "granted") {
-        new Notification("Hello Clock Darshan");
+        const greeting = new Notification(god, {
+          body: "Clock Darshan... Take a Deep Breath.",
+        });
       }
     });
   }
@@ -247,6 +252,10 @@ $(document).ready(function () {
             for (let i = data.chunks.length - 1; i >= 0; i--) {
               var divRow = createChunkDiv(data.chunks[i], data.currentRow);
               document.getElementById("containerPath").appendChild(divRow);
+
+              if (data.chunks[i].row === __CurrentRow) {
+                sendNotification(data.chunks[i].god);
+              }
             }
             //$("#processing-div").addClass('d-none');
             __ApiCallStatus = false;
