@@ -1,12 +1,94 @@
 $(document).ready(function () {
   var __ApiCallStatus = false;
 
+  var __CurrentRow = 0;
+
   const _UpdaterApiUrl =
     "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
   const _ResetApiUrl =
     "https://script.google.com/macros/s/AKfycbw8xlLx02pJJWyaJIFMNdsT_h-C04drUlpFZeCVb4v1/dev";
+    const _HeadRows = 4;
+
+    const _gods = [
+      "गणेश",
+      "महाराज",
+      "दुर्गा",
+      "शंकर",
+      "महालक्ष्मी",
+      "अन्नपूर्णा",
+      "हनुमान",
+      "रमण म.",
+      "सरस्वती",
+      "नर्मदा",
+      "बुद्ध",
+      "कृष्ण",
+    ];  
+
+    
+  const _configs = [
+    {
+      type: "Mind",
+      item: "M5",
+      column: "D",
+      icon: "🕊️",
+      faClass: "fa fa-eercast text-primary",
+    },
+    {
+      type: "Mind",
+      item: "M4",
+      column: "E",
+      icon: "🧘",
+      faClass: "fa fa-user-circle text-warning",
+    },
+    {
+      type: "Mind",
+      item: "M3",
+      column: "F",
+      icon: "👁️",
+      faClass: "fa fa-eye text-success",
+    },
+    {
+      type: "Mind",
+      item: "M2",
+      column: "G",
+      icon: "🎳",
+      faClass: "fa fa-eye-slash text-dark", // fa-low-vision
+    },
+    {
+      type: "Mind",
+      item: "M1",
+      column: "H",
+      icon: "🔥",
+      faClass: "fa fa-fire text-danger",
+    },
+
+    {
+      type: "Sleep",
+      item: "S",
+      column: "S",
+      icon: "😴",
+      faClass: "fa fa-bed text-secondary",
+    },
+    {
+      type: "Missed",
+      item: "X",
+      column: "X",
+      icon: "❌",
+      faClass: "fa fa-hand-paper-o text-warning",
+    },
+    {
+      type: "Missed",
+      item: "",
+      column: "",
+      icon: "",
+      faClass: "fa fa-exclamation-triangle text-light",
+    },
+  ];
 
   function createChunkDiv(data, currentRow) {
+
+    //console.log("createChunkDiv",currentRow,data);
+
     let divRow = document.createElement("div");
     if (data.row) divRow.id = "row" + data.row;
     divRow.className = "row ";
@@ -86,8 +168,25 @@ $(document).ready(function () {
     return divRow;
   }
 
+  function buildPlatform() {
+    __CurrentRow =getCurrentTrackerTimeRow();
+    
+    let chunks = getChunks();
+
+    $("#containerPath").html("");
+
+    for (let i =0 ; i <= chunks.length - 1; i++) {
+      var divRow = createChunkDiv(chunks[i], __CurrentRow);
+      document.getElementById("containerPath").appendChild(divRow);
+
+    }
+  }
+
   function postToGoogle(update) {
-    $("#progress-modal").modal("show");
+
+    $("#processing-div").removeClass('d-none');
+      
+    //$("#progress-modal").modal("show");
     __ApiCallStatus = true;
 
     $("#success-alert").hide();
@@ -142,6 +241,7 @@ $(document).ready(function () {
                   data.chunks[i].god
               );
             }
+            //$("#processing-div").addClass('d-none');
           }
         } catch (err) {
           console.log(
@@ -152,20 +252,70 @@ $(document).ready(function () {
           $("#errorMessage").html("Unhandled Error postToGoogle: " + err);
         }
 
-        $("#progress-modal").modal("hide");
+        //$("#progress-modal").modal("hide");
+        $("#processing-div").addClass('d-none');
         __ApiCallStatus = false;
       },
       error: function (xhr, error_text, statusText) {
         $("#errorMessage").html(error_text);
         console.log("error_text", error_text);
         $("#containerPath").html(error_text);
-        $("#progress-modal").modal("hide");
+        //$("#progress-modal").modal("hide");
+        $("#processing-div").addClass('d-none');
       },
     });
   }
 
+  function getChunks() {
+    
+    var chunks = [];
+    
+    let praharStartRow = __CurrentRow - ((__CurrentRow - _HeadRows) % 12);
+
+    for (let i = 0; i < 12; i++) {
+      chunks.push({
+        row: praharStartRow+ (11-i),
+        chunk: getTrackerChunk(praharStartRow+ (11-i)),
+        value:"X",
+       // quarter: (h % 12 || 12).toString().padStart(2, "0") + "-" + q + "",
+        god: _gods[(11-i)],
+      });
+    }
+
+/*
+    for (let h = 0; h < 24; ++h) {
+      for (let q = 1; q <= 4; ++q) {
+        _Tracks.push({
+          row: getTrackerRow(h, q),
+          quarter: (h % 12 || 12).toString().padStart(2, "0") + "-" + q + "",
+          god: _gods[g],
+        });
+
+        if (g === 11) g = 0;
+        else g++;
+      }
+    }
+*/
+console.log(" Current Row: ", __CurrentRow);
+console.log(" praharStart Row: ", praharStartRow);
+console.log("_Tracks",chunks);
+
+return chunks;
+
+  }
+
   function getTrackerRow(h, q) {
     return h * 4 + q + 3;
+  }
+
+  function getTrackerChunk(row) {
+    row =row-4;
+    hour = Math. floor(row /4) ;
+
+    if(hour > 12)
+    hour =hour -12;
+
+    return hour.toString().padStart(2, "0") + "-" + (row%4 +1);
   }
 
   function eyeOpenClose() {
@@ -348,7 +498,9 @@ $(document).ready(function () {
     $("#ClockInnerCircle").on("click", oneClickTracker);
     $("#centerCoreD").on("click", oneClickTracker);
 
-    postToGoogle(false);
+    buildPlatform();
+     
+   // postToGoogle(false);
   }
 
   function oneClickTracker() {
@@ -369,7 +521,9 @@ $(document).ready(function () {
 
       showTimeElaspeProgress(min, sec);
 
-      $("#hiddenCurentRow").val(getCurrentTrackerTimeRow());
+      __CurrentRow =getCurrentTrackerTimeRow();
+
+      $("#hiddenCurentRow").val(__CurrentRow);
 
       if (Number($("#hiddenLoggedRow").val()) < getCurrentTrackerTimeRow()) {
         $("body").addClass("bag");
@@ -434,66 +588,9 @@ $(document).ready(function () {
     });
   }
 
-  const _configs = [
-    {
-      type: "Mind",
-      item: "M5",
-      column: "D",
-      icon: "🕊️",
-      faClass: "fa fa-eercast text-primary",
-    },
-    {
-      type: "Mind",
-      item: "M4",
-      column: "E",
-      icon: "🧘",
-      faClass: "fa fa-user-circle text-warning",
-    },
-    {
-      type: "Mind",
-      item: "M3",
-      column: "F",
-      icon: "👁️",
-      faClass: "fa fa-eye text-success",
-    },
-    {
-      type: "Mind",
-      item: "M2",
-      column: "G",
-      icon: "🎳",
-      faClass: "fa fa-eye-slash text-dark", // fa-low-vision
-    },
-    {
-      type: "Mind",
-      item: "M1",
-      column: "H",
-      icon: "🔥",
-      faClass: "fa fa-fire text-danger",
-    },
-
-    {
-      type: "Sleep",
-      item: "S",
-      column: "S",
-      icon: "😴",
-      faClass: "fa fa-bed text-secondary",
-    },
-    {
-      type: "Missed",
-      item: "X",
-      column: "",
-      icon: "❌",
-      faClass: "fa fa-exclamation-triangle text-light",
-    },
-    {
-      type: "Missed",
-      item: "",
-      column: "",
-      icon: "",
-      faClass: "fa fa-exclamation-triangle text-light",
-    },
-  ];
   //
+
+
 
   // End of Code
 });
