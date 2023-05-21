@@ -143,6 +143,12 @@ $(document).ready(function () {
 
       $("#lblCurrentRow").html(__CurrentRow);
 
+      if (__CurrentRow !== __LoggedRow && __LoggedRow !== 0) {
+        $("#clock-row").addClass("bag");
+      } else {
+        $("#clock-row").removeClass("bag");
+      }
+
       if (min % 15 === 0 && sec === 1) {
         console.log("🕞 15 mins Quarter Shift Called");
         postToGoogle(false);
