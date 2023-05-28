@@ -156,6 +156,7 @@ $(document).ready(function () {
       if (min % 15 === 0 && sec === 1) {
         console.log("🕞 15 mins Quarter Shift Called");
         postToGoogle(false);
+        sendNotification("Take a deep Breath");
       }
 
       if (
@@ -253,11 +254,13 @@ $(document).ready(function () {
               var divRow = createChunkDiv(data.chunks[i], data.currentRow);
               document.getElementById("containerPath").appendChild(divRow);
 
+              /*
               if (data.chunks[i].row === __CurrentRow) {
                 sendNotification(
                   data.chunks[i].chunk + " " + data.chunks[i].god
                 );
               }
+              */
             }
             //$("#processing-div").addClass('d-none');
             __ApiCallStatus = false;
@@ -269,6 +272,7 @@ $(document).ready(function () {
           );
           $("#containerPath").html(err);
           $("#errorMessage").html("Unhandled Error postToGoogle: " + err);
+          buildPlatform();
         }
 
         //$("#progress-modal").modal("hide");
@@ -278,6 +282,7 @@ $(document).ready(function () {
       error: function (xhr, error_text, statusText) {
         __ApiCallStatus = false;
         $("#errorMessage").html(error_text);
+        buildPlatform();
         console.log("error_text", error_text);
         $("#containerPath").html(error_text);
         //$("#progress-modal").modal("hide");
