@@ -182,7 +182,6 @@ $(document).ready(function () {
   }
 
   function sendNotification(title) {
-    return;
     console.log("Notification Sent.");
 
     Notification.requestPermission().then((perm) => {
