@@ -119,7 +119,7 @@ $(document).ready(function () {
     function r(el, deg) {
       el.setAttribute("transform", "rotate(" + deg + " 50 50)");
     }
-    var d = new Date();
+    var d = getCurrentEasternTime();
     let hours = d.getHours();
     let hourDeg = 30 * (hours % 12) + d.getMinutes() / 2;
     let minDeg = 6 * d.getMinutes();
@@ -133,7 +133,7 @@ $(document).ready(function () {
 
   function processBeHereNow() {
     try {
-      let now = new Date();
+      let now = getCurrentEasternTime();
       let min = now.getMinutes();
       let sec = now.getSeconds();
 
@@ -163,7 +163,7 @@ $(document).ready(function () {
         __CurrentRow > 30 &&
         __CurrentRow !== __LastCurrentRow
       ) {
-        console.log("🌿 1 mins data Lag Api Called");
+        console.log("🌿 1 mins data Lag Api Called", getCurrentEasternTime());
         console.log(
           "__ApiCallStatus",
           __ApiCallStatus,
@@ -181,6 +181,7 @@ $(document).ready(function () {
   }
 
   function sendNotification(title) {
+    return;
     console.log("Notification Sent.");
 
     Notification.requestPermission().then((perm) => {
@@ -236,7 +237,9 @@ $(document).ready(function () {
 
             $("#lblLastCurrentRow").html(__LastCurrentRow);
             $("#lblLoggedRow").html(__LoggedRow);
-            $("#lblUpdateTime").html(new Date().toLocaleTimeString());
+            $("#lblUpdateTime").html(
+              getCurrentEasternTime().toLocaleTimeString()
+            );
 
             console.log("__LastCurrentRow", __LastCurrentRow);
             console.log("__LoggedRow", __LoggedRow);
@@ -431,7 +434,7 @@ $(document).ready(function () {
   setInterval(eyeOpenClose, 2000);
 
   function getCurrentTrackerTimeRow() {
-    let now = new Date();
+    let now = getCurrentEasternTime();
     let h = now.getHours();
     let minutes = now.getMinutes();
     let quarter = 4;
@@ -537,6 +540,21 @@ $(document).ready(function () {
       resetSheet();
     }
     return false;
+  }
+
+  function getCurrentEasternTime() {
+    var d1 = new Date();
+    var d2 = new Date(
+      d1.getUTCFullYear(),
+      d1.getUTCMonth(),
+      d1.getUTCDate(),
+      d1.getUTCHours(),
+      d1.getUTCMinutes(),
+      d1.getUTCSeconds()
+    );
+    d2.setHours(d2.getHours() - 4);
+
+    return d2;
   }
 
   function resetSheet() {
