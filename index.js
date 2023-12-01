@@ -39,14 +39,14 @@ $(document).ready(function () {
       item: "M4",
       column: "E",
       icon: "🧘",
-      faClass: "fa fa-user-circle text-warning",
+      faClass: "fa fa-user-circle text-success",
     },
     {
       type: "Mind",
       item: "M3",
       column: "F",
       icon: "👁️",
-      faClass: "fa fa-eye text-success",
+      faClass: "fa fa-eye text-warning",
     },
     {
       type: "Mind",
