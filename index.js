@@ -556,7 +556,7 @@ $(document).ready(function () {
       d1.getUTCMinutes(),
       d1.getUTCSeconds()
     );
-    d2.setHours(d2.getHours() - 4);
+    d2.setHours(d2.getHours() - 5);
 
     return d2;
   }
