@@ -108,7 +108,7 @@ $(document).ready(function () {
       sendNotification("Be Here Now.");
     });
 
-    $.getJSON("data/bhav.json?ver=1.0", function (data) {
+    $.getJSON("data/bhav.json?ver=1.1", function (data) {
       __dataBhav = data;
     });
 
