@@ -163,11 +163,24 @@ $(document).ready(function () {
       let bhav = getBhav(__CurrentRow);     
       $("#divBhav").html(bhav);
 
-      if (min % 15 === 0 && sec === 1) {
-        console.log("🕞 15 mins Quarter Shift Called");
-        postToGoogle(false);
-        sendNotification("Take a deep Breath");
+
+      if(sec === 1)
+      {
+        if (min % 15 === 0 ) {
+          console.log("🕞 15 mins Quarter Shift Called");
+          postToGoogle(false);
+          sendNotification("Take a deep Breath");
+        }
+        else
+        {
+          postToGoogle(false);
+          console.log("Refreshed every min at " + min);
+        }
+
       }
+
+   
+   
 
       if (
         !__ApiCallStatus &&
