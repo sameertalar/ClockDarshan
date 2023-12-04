@@ -4,6 +4,7 @@ $(document).ready(function () {
   var __CurrentRow = 0;
   var __LastCurrentRow = 0;
   var __LoggedRow = 0;
+  var __dataBhav;
 
   const _UpdaterApiUrl =
     "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
@@ -107,6 +108,10 @@ $(document).ready(function () {
       sendNotification("Be Here Now.");
     });
 
+    $.getJSON("data/bhav.json?ver=1.0", function (data) {
+      __dataBhav = data;
+    });
+
     buildPlatform();
 
     postToGoogle(false);
@@ -152,6 +157,9 @@ $(document).ready(function () {
       } else {
         $("#clock-row").removeClass("bag rounded-circle");
       }
+
+      let bhav = getBhav(__CurrentRow);     
+      $("#divBhav").html(bhav);
 
       if (min % 15 === 0 && sec === 1) {
         console.log("🕞 15 mins Quarter Shift Called");
@@ -536,6 +544,23 @@ $(document).ready(function () {
     } catch (error) {
       console.log("Unhandled Error getFaClass", value, error);
       $("#errorMessage").html("Unhandled Error getFaClass: " + error);
+    }
+  }
+
+  function getBhav(row) {
+    try {
+
+      if (row && __dataBhav && row !== "undefined") {
+        itemB = __dataBhav.find((x) => x.row === row);
+        if (itemB) {
+          return itemB.desc;
+        }
+      }
+
+      return "";
+    } catch (error) {
+      console.log("Unhandled Error getBhav", row, error);
+      $("#errorMessage").html("Unhandled Error getBhav: " + error);
     }
   }
 
