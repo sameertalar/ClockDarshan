@@ -5,12 +5,14 @@ $(document).ready(function () {
   var __LastCurrentRow = 0;
   var __LoggedRow = 0;
   var __dataBhav;
-
-  const _UpdaterApiUrl =
-    "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
-  const _ResetApiUrl =
-    "https://script.google.com/macros/s/AKfycbw8xlLx02pJJWyaJIFMNdsT_h-C04drUlpFZeCVb4v1/dev";
   const _HeadRows = 4;
+
+  //(dev)  const _UpdaterApiUrl =     "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
+  //(dev)  const _ResetApiUrl =     "https://script.google.com/macros/s/AKfycbw8xlLx02pJJWyaJIFMNdsT_h-C04drUlpFZeCVb4v1/dev";
+
+  const _UpdaterApiUrl = "https://script.google.com/macros/s/AKfycbw5TRTD6t7I8fM2invWd3MTpA9JDO7E9_SREDN96HpZIeyp50TWJJRQcAm71VUBQWdLig/exec"
+  const _ResetApiUrl =     "https://script.google.com/macros/s/AKfycbyyLvjGHvWP5ZT9OIpaZvabVF5AOdjewSXdYH2A4a9o93joA5gySqEdRlaJWhu2JaJX7w/exec";
+
 
   const _gods = [
     "गणेश",
