@@ -65,9 +65,10 @@
         </div>
       </div>
     </div>
-    <!--- ** ROW: Clock***    -->
+    <!--- ** ROW: Clock, Buttons and Bhav***    -->
     <div class="container-fluid">
       <div class="row mt-3">
+         <!--- ** Column Clock ***    -->
         <div class="col-lg-4">
           <div class="row">
             <div class="col-2"></div>
@@ -190,6 +191,151 @@
           </div>
         
         </div>
+           <!--- ** Column Buttons ***    -->
+        <div class="col-lg-4">
+          <div class="row">
+            <div class="col-4 text-center">
+              <div
+                class="btn-group-vertical"
+                role="group"
+                aria-label="Vertical radio toggle button group "
+              >
+                <input
+                  type="radio"
+                  class="btn-check radioMind"
+                  name="radioMind"
+                  id="radio-mind-5"
+                  autocomplete="off"
+                  value="D"
+                />
+                <label
+                  class="btn btn-outline-primary px-4 rounded-pill"
+                  for="radio-mind-5"
+                >
+                  <i class="fa fa-eercast fa-spin cdicon" aria-hidden="true"></i>
+                  <span
+                    id="lblM5"
+                    class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-success"
+                  >
+                    <span class="visually-hidden">Calm</span>
+                  </span>
+                </label>
+                <input
+                  type="radio"
+                  class="btn-check radioMind"
+                  name="radioMind"
+                  id="radio-mind-4"
+                  value="E"
+                  autocomplete="off"
+                />
+                <label
+                  class="btn btn-outline-success rounded-pill my-2"
+                  for="radio-mind-4"
+                >
+                  <i class="fa fa-user-circle cdicon" aria-hidden="true"></i>
+                  <span
+                    id="lblM4"
+                    class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-primary"
+                  >
+                    <span class="visually-hidden">Maditation</span>
+                  </span>
+                </label>
+                <input
+                  type="radio"
+                  class="btn-check radioMind"
+                  name="radioMind"
+                  id="radio-mind-3"
+                  value="F"
+                  autocomplete="off"
+                  checked
+                />
+                <label
+                  class="btn btn-outline-warning rounded-pill"
+                  for="radio-mind-3"
+                >
+                  <i id="apramadCtrl" class="fa cdicon" aria-hidden="true"></i>
+                  <span
+                    id="lblM3"
+                    class="position-absolute top-50 start-100 translate-middle badge rounded-circle bg-secondary"
+                  >
+                    <span class="visually-hidden">Apramad</span>
+                  </span>
+                </label>
+                <input
+                  type="radio"
+                  class="btn-check radioMind"
+                  name="radioMind"
+                  id="radio-mind-2"
+                  value="G"
+                  autocomplete="off"
+                />
+                <label
+                  class="btn btn-outline-dark rounded-pill my-2"
+                  for="radio-mind-2"
+                >
+                  <i
+                    id="pramadCtrl"
+                    class="fa fa-low-vision cdicon"
+                    aria-hidden="true"
+                  ></i>
+                  <span
+                    id="lblM2"
+                    class="position-absolute top-50 start-100 translate-middle badge border rounded-circle bg-dark opacity-25"
+                  >
+                    <span class="visually-hidden">Pramad</span>
+                  </span>
+                </label>
+                <input
+                  type="radio"
+                  class="btn-check radioMind"
+                  name="radioMind"
+                  id="radio-mind-1"
+                  value="H"
+                  autocomplete="off"
+                />
+                <label
+                  class="btn btn-outline-danger rounded-pill"
+                  for="radio-mind-1"
+                >
+                  <i class="fa fa-fire cdicon" aria-hidden="true"></i>
+                  <span
+                    id="lblM1"
+                    class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-danger"
+                  >
+                    <span class="visually-hidden">Buzzing</span>
+                  </span>
+                </label>
+  
+                <input
+                  type="radio"
+                  class="btn-check radioMind"
+                  name="radioMind"
+                  id="radio-mind-0"
+                  value="I"
+                  autocomplete="off"
+                />
+                <label
+                  class="btn btn-link text-secondary btn-sm px-0 rounded-pill"
+                  for="radio-mind-0"
+                >
+                  <i class="fa fa-bed cdicon" aria-hidden="true"></i>
+                </label>
+              </div>
+            </div>
+  
+            <div id="containerPath" class="col-7">
+              <div class="text-center mt-5">
+                <div class="spinner-border text-primary" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+  
+                <h3 class="text-success">Take a Deep Breath!</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!--- ** Column Bhav ***    -->
+        <div class="col-lg-4" ><span id="divBhav"  class="text-muted" >🌸</span>  </div>
       </div>
     </div>
     <!--- ** ROW: Error    ***    -->
@@ -207,153 +353,12 @@
     <!--- ** ROW: Path to Infinity  ***    -->
     <div class="container-fluid"">
     <div class="row">
-      <div class="col-lg-4">
-        <div class="row">
-          <div class="col-4 text-center">
-            <div
-              class="btn-group-vertical"
-              role="group"
-              aria-label="Vertical radio toggle button group "
-            >
-              <input
-                type="radio"
-                class="btn-check radioMind"
-                name="radioMind"
-                id="radio-mind-5"
-                autocomplete="off"
-                value="D"
-              />
-              <label
-                class="btn btn-outline-primary px-4 rounded-pill"
-                for="radio-mind-5"
-              >
-                <i class="fa fa-eercast fa-spin cdicon" aria-hidden="true"></i>
-                <span
-                  id="lblM5"
-                  class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-success"
-                >
-                  <span class="visually-hidden">Calm</span>
-                </span>
-              </label>
-              <input
-                type="radio"
-                class="btn-check radioMind"
-                name="radioMind"
-                id="radio-mind-4"
-                value="E"
-                autocomplete="off"
-              />
-              <label
-                class="btn btn-outline-success rounded-pill my-2"
-                for="radio-mind-4"
-              >
-                <i class="fa fa-user-circle cdicon" aria-hidden="true"></i>
-                <span
-                  id="lblM4"
-                  class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-primary"
-                >
-                  <span class="visually-hidden">Maditation</span>
-                </span>
-              </label>
-              <input
-                type="radio"
-                class="btn-check radioMind"
-                name="radioMind"
-                id="radio-mind-3"
-                value="F"
-                autocomplete="off"
-                checked
-              />
-              <label
-                class="btn btn-outline-warning rounded-pill"
-                for="radio-mind-3"
-              >
-                <i id="apramadCtrl" class="fa cdicon" aria-hidden="true"></i>
-                <span
-                  id="lblM3"
-                  class="position-absolute top-50 start-100 translate-middle badge rounded-circle bg-secondary"
-                >
-                  <span class="visually-hidden">Apramad</span>
-                </span>
-              </label>
-              <input
-                type="radio"
-                class="btn-check radioMind"
-                name="radioMind"
-                id="radio-mind-2"
-                value="G"
-                autocomplete="off"
-              />
-              <label
-                class="btn btn-outline-dark rounded-pill my-2"
-                for="radio-mind-2"
-              >
-                <i
-                  id="pramadCtrl"
-                  class="fa fa-low-vision cdicon"
-                  aria-hidden="true"
-                ></i>
-                <span
-                  id="lblM2"
-                  class="position-absolute top-50 start-100 translate-middle badge border rounded-circle bg-dark opacity-25"
-                >
-                  <span class="visually-hidden">Pramad</span>
-                </span>
-              </label>
-              <input
-                type="radio"
-                class="btn-check radioMind"
-                name="radioMind"
-                id="radio-mind-1"
-                value="H"
-                autocomplete="off"
-              />
-              <label
-                class="btn btn-outline-danger rounded-pill"
-                for="radio-mind-1"
-              >
-                <i class="fa fa-fire cdicon" aria-hidden="true"></i>
-                <span
-                  id="lblM1"
-                  class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-danger"
-                >
-                  <span class="visually-hidden">Buzzing</span>
-                </span>
-              </label>
-
-              <input
-                type="radio"
-                class="btn-check radioMind"
-                name="radioMind"
-                id="radio-mind-0"
-                value="I"
-                autocomplete="off"
-              />
-              <label
-                class="btn btn-link text-secondary btn-sm px-0 rounded-pill"
-                for="radio-mind-0"
-              >
-                <i class="fa fa-bed cdicon" aria-hidden="true"></i>
-              </label>
-            </div>
-          </div>
-
-          <div id="containerPath" class="col-7">
-            <div class="text-center mt-5">
-              <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-
-              <h3 class="text-success">Take a Deep Breath!</h3>
-            </div>
-          </div>
-        </div>
-      </div>
+    
     </div>
     <!--- ** ROW:4 Bhav ***    -->
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-4" ><span id="divBhav"  class="text-muted" >🌸</span>  </div>
+       
       </div>
     </div>
     <!-- ** ROW:6 template ***    -->
@@ -365,18 +370,19 @@
     <!--- ** ROW:5 template  ***    -->
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-4 text-end">
-          <small id="lbCurrentRow" class="text-secondary">
+        <div class="col-lg-4 text-center mt-3">
+          <small id="lbCurrentRow" class="text-muted">
+        
+            🕒
+            <label id="lblUpdateTime"
+              ><i class="fa fa-spinner fa-spin cdicon" aria-hidden="true"></i
+            ></label>
             cr:
             <label id="lblCurrentRow">0</label>
             lcr:
             <label id="lblLastCurrentRow">0</label>
             lr:
             <label id="lblLoggedRow">0</label>
-            🕒
-            <label id="lblUpdateTime"
-              ><i class="fa fa-spinner fa-spin cdicon" aria-hidden="true"></i
-            ></label>
           </small>
         </div>
       </div>
@@ -460,6 +466,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="index.js?ver=0.34"></script>
+    <script src="index.js?ver=0.35"></script>
   </body>
 </html>
