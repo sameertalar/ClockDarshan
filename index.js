@@ -106,6 +106,8 @@ $(document).ready(function () {
     $("#ClockInnerCircle").on("click", oneClickTracker);
     $("#centerCoreD").on("click", oneClickTracker);
 
+    $("#btnDocument").on("click", btnDocumentClick);
+
     $("#btnTest").on("click", function (event) {
       sendNotification("Be Here Now.");
     });
@@ -537,8 +539,18 @@ $(document).ready(function () {
     window.open(
       "https://docs.google.com/spreadsheets/d/1nOrZM3sExoxmFgyzhiwi6BrPvQT-9Omlt2x5kno8H5w/edit#gid=1698318143",
       "_blank"
-    );
+    ); 
   }
+
+  function btnDocumentClick() {
+    window.open(
+      "https://docs.google.com/document/d/e/2PACX-1vT4pM35KYG2IRyYIAFq7sI5WVQGYxVA0hBrBUCy16HQ547PzHoVfmA3MwdI6W2ttY7FSOlvxuBY70Un/pub",
+      "_blank"
+    );}
+
+  
+
+
 
   // ******* TIME Functions *******
 
