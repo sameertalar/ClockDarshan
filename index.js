@@ -119,6 +119,8 @@ $(document).ready(function () {
     buildPlatform();
 
     postToGoogle(false);
+
+    $("#imgBhav").attr("src","img/bhav/"+ getCurrentTrackerTimeRow()+".jpg");
   }
 
   var __AppEnabledStatus = setInterval(processBeHereNow, 1000);
@@ -172,6 +174,8 @@ $(document).ready(function () {
           console.log("🕞 15 mins Quarter Shift Called");
           postToGoogle(false);
           sendNotification("Take a deep Breath");
+
+          $("#imgBhav").attr("src", "img/bhav/"+ __CurrentRow+".jpg");
         }
         else
         {
