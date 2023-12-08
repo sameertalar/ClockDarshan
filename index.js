@@ -10,9 +10,10 @@ $(document).ready(function () {
   //(dev)  const _UpdaterApiUrl =     "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
   //(dev)  const _ResetApiUrl =     "https://script.google.com/macros/s/AKfycbw8xlLx02pJJWyaJIFMNdsT_h-C04drUlpFZeCVb4v1/dev";
 
-  const _UpdaterApiUrl = "https://script.google.com/macros/s/AKfycbw5TRTD6t7I8fM2invWd3MTpA9JDO7E9_SREDN96HpZIeyp50TWJJRQcAm71VUBQWdLig/exec"
-  const _ResetApiUrl =     "https://script.google.com/macros/s/AKfycbyyLvjGHvWP5ZT9OIpaZvabVF5AOdjewSXdYH2A4a9o93joA5gySqEdRlaJWhu2JaJX7w/exec";
-
+  const _UpdaterApiUrl =
+    "https://script.google.com/macros/s/AKfycbw5TRTD6t7I8fM2invWd3MTpA9JDO7E9_SREDN96HpZIeyp50TWJJRQcAm71VUBQWdLig/exec";
+  const _ResetApiUrl =
+    "https://script.google.com/macros/s/AKfycbyyLvjGHvWP5ZT9OIpaZvabVF5AOdjewSXdYH2A4a9o93joA5gySqEdRlaJWhu2JaJX7w/exec";
 
   const _gods = [
     "गणेश",
@@ -118,9 +119,7 @@ $(document).ready(function () {
 
     buildPlatform();
 
-    postToGoogle(false);    
-
-   
+    postToGoogle(false);
   }
 
   var __AppEnabledStatus = setInterval(processBeHereNow, 1000);
@@ -166,29 +165,19 @@ $(document).ready(function () {
         $("#clock-row").removeClass("bag rounded-circle");
       }
 
-      let bhav = getBhav(__CurrentRow);     
+      let bhav = getBhav(__CurrentRow);
       $("#divBhav").html(bhav);
 
-
-      if(sec === 1)
-      {
-        if (min % 15 === 0 ) {
+      if (sec === 1) {
+        if (min % 15 === 0) {
           console.log("🕞 15 mins Quarter Shift Called");
           postToGoogle(false);
           sendNotification("Take a deep Breath");
-          
-         
-        }
-        else
-        {
+        } else {
           postToGoogle(false);
           console.log("Refreshed every min at " + min);
         }
-
       }
-
-   
-   
 
       if (
         !__ApiCallStatus &&
@@ -224,24 +213,15 @@ $(document).ready(function () {
     });
   }
 
- 
-
   function setBhavImage(imageRow) {
+    if ($("#imgBhav").attr("src").includes(imageRow)) return;
 
-    if($("#imgBhav").attr('src').includes(imageRow))
-    return;
-
-
-    if (imageRow < 28 && !($("#imgBhav").attr('src').includes("svg")) ) 
-    {
-      $("#imgBhav").attr("src","img/line.svg");
-    }else{
-      $("#imgBhav").attr("src","img/bhav/"+ imageRow+".jpg");
+    if (imageRow < 28 && !$("#imgBhav").attr("src").includes("svg")) {
+      $("#imgBhav").attr("src", "img/line.svg");
+    } else {
+      $("#imgBhav").attr("src", "img/bhav/" + imageRow + ".jpg");
     }
-
-   
   }
-
 
   function postToGoogle(update) {
     $("#processing-div").removeClass("d-none");
@@ -350,10 +330,13 @@ $(document).ready(function () {
     if (data.row) divRow.id = "row" + data.row;
     divRow.className = "row ";
 
-    if (currentRow === data.row)
-      divRow.className = divRow.className + " bg-highlight";
-    else if (currentRow === data.row - 1)
-      divRow.className = divRow.className + " bg-highlight2";
+    if (currentRow === data.row) {
+      if (currentRow !== __LoggedRow && __LoggedRow !== 0) {
+        divRow.className = divRow.className + " bag";
+      } else {
+        divRow.className = divRow.className + " bg-highlight";
+      }
+    } else if (currentRow === data.row - 1) divRow.className = divRow.className + " bg-highlight2";
 
     //------- col 1
     let divC2 = document.createElement("div");
@@ -564,18 +547,15 @@ $(document).ready(function () {
     window.open(
       "https://docs.google.com/spreadsheets/d/1nOrZM3sExoxmFgyzhiwi6BrPvQT-9Omlt2x5kno8H5w/edit#gid=1698318143",
       "_blank"
-    ); 
+    );
   }
 
   function btnDocumentClick() {
     window.open(
       "https://docs.google.com/document/d/e/2PACX-1vT4pM35KYG2IRyYIAFq7sI5WVQGYxVA0hBrBUCy16HQ547PzHoVfmA3MwdI6W2ttY7FSOlvxuBY70Un/pub",
       "_blank"
-    );}
-
-  
-
-
+    );
+  }
 
   // ******* TIME Functions *******
 
@@ -601,7 +581,6 @@ $(document).ready(function () {
 
   function getBhav(row) {
     try {
-
       if (row && __dataBhav && row !== "undefined") {
         itemB = __dataBhav.find((x) => x.row === row);
         if (itemB) {
