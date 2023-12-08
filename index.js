@@ -345,7 +345,7 @@ $(document).ready(function () {
     radio1.setAttribute("name", "radioChunk");
     radio1.setAttribute("value", data.row);
     radio1.setAttribute("id", "radioChunk" + data.row);
-    radio1.setAttribute("class", "btn-check radioChunk");
+    radio1.setAttribute("class", "btn-check  radioChunk");
     radio1.setAttribute("autocomplete", "off");
 
     if (currentRow === data.row) radio1.checked = true;
@@ -361,8 +361,8 @@ $(document).ready(function () {
     if (currentRow === data.row)
       lbl1.setAttribute("class", "btn  btn-outline-primary ");
     else if (currentRow > data.row)
-      lbl1.setAttribute("class", "btn  btn-outline-dark py-0");
-    else lbl1.setAttribute("class", "btn  btn-outline-secondary py-0");
+      lbl1.setAttribute("class", "btn btn-sm   btn-outline-dark py-0");
+    else lbl1.setAttribute("class", "btn btn-sm  btn-outline-secondary py-0");
 
     divC2.appendChild(lbl1);
 
