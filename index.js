@@ -225,7 +225,15 @@ $(document).ready(function () {
   }
 
   function changeBhavImage(imageRow) {
-    $("#imgBhav").attr("src","img/bhav/"+ imageRow+".jpg");
+
+    if (imageRow < 28) 
+    {
+      $("#imgBhav").attr("src","img/line.svg");
+    }else{
+      $("#imgBhav").attr("src","img/bhav/"+ imageRow+".jpg");
+    }
+
+   
   }
 
 
