@@ -161,8 +161,10 @@ $(document).ready(function () {
 
       if (__CurrentRow !== __LoggedRow && __LoggedRow !== 0) {
         $("#clock-row").addClass("bag rounded-circle");
+        $("#containerButtons").addClass("bag");
       } else {
         $("#clock-row").removeClass("bag rounded-circle");
+        $("#containerButtons").removeClass("bag");
       }
 
       let bhav = getBhav(__CurrentRow);
@@ -331,11 +333,7 @@ $(document).ready(function () {
     divRow.className = "row ";
 
     if (currentRow === data.row) {
-      if (currentRow !== __LoggedRow && __LoggedRow !== 0) {
-        divRow.className = divRow.className + " bag";
-      } else {
-        divRow.className = divRow.className + " bg-highlight";
-      }
+      divRow.className = divRow.className + " bg-highlight";
     } else if (currentRow === data.row - 1) divRow.className = divRow.className + " bg-highlight2";
 
     //------- col 1
