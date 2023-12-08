@@ -32,6 +32,12 @@ background-image: linear-gradient(#ffdfb6 ,white,white,white,#ffdfb6  );
   background-color: white;
 }
 
+img{
+  width:100%;
+  max-width:600px;
+}
+
+
 input[type="radio"]:checked {
   background-color: #f4b400;
   color: #28a745;
