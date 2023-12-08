@@ -120,7 +120,9 @@ $(document).ready(function () {
 
     postToGoogle(false);
 
-    $("#imgBhav").attr("src","img/bhav/"+ getCurrentTrackerTimeRow()+".jpg");
+    changeBhavImage(getCurrentTrackerTimeRow());
+
+   
   }
 
   var __AppEnabledStatus = setInterval(processBeHereNow, 1000);
@@ -174,8 +176,8 @@ $(document).ready(function () {
           console.log("🕞 15 mins Quarter Shift Called");
           postToGoogle(false);
           sendNotification("Take a deep Breath");
-
-          $("#imgBhav").attr("src", "img/bhav/"+ __CurrentRow+".jpg");
+          changeBhavImage(__CurrentRow);
+         
         }
         else
         {
@@ -221,6 +223,11 @@ $(document).ready(function () {
       }
     });
   }
+
+  function changeBhavImage(imageRow) {
+    $("#imgBhav").attr("src","img/bhav/"+ imageRow+".jpg");
+  }
+
 
   function postToGoogle(update) {
     $("#processing-div").removeClass("d-none");
