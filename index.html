@@ -46,15 +46,7 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="row mt-1">
-            <div class="col-4">
-              <button
-                id="btnResetSheet"
-                type="button"
-                class="btn btn-outline-danger btn-lg border-0"
-              >
-                <i class="fa fa-random"></i></button
-              ><br />
-            </div>
+            <div class="col-4"></div>
             <div class="col-4"></div>
             <div class="col-4 text-end">
               <span id="timeLeft" class="h6 text-danger text-end px-1 py-1">
@@ -68,10 +60,48 @@
     <!--- ** ROW: Clock, Buttons and Bhav***    -->
     <div class="container-fluid">
       <div class="row mt-3">
-         <!--- ** Column Clock ***    -->
+        <!--- ** Column Clock ***    -->
         <div class="col-lg-4">
           <div class="row">
-            <div class="col-2"></div>
+            <div class="col-2">
+              <button
+                id="btnResetSheet"
+                type="button"
+                class="btn btn-outline-danger btn-lg border-0"
+              >
+                <i class="fa fa-random"></i></button
+              ><br />
+              <div class="btn-group-vertical mt-3">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-secondary border-0"
+                  id="btnPlayVideo"
+                >
+                  <i class="fa fa-video-camera"></i>
+                </button>
+                <button
+                  id="btnPopup"
+                  type="button"
+                  class="btn btn-outline-secondary border-0"
+                >
+                  <i class="fa fa-window-restore"></i>
+                </button>
+                <button
+                  id="btnExcel"
+                  type="button"
+                  class="btn btn-outline-secondary border-0"
+                >
+                  <i class="fa fa-map"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary border-0"
+                  id="btnDocument"
+                >
+                  <i class="fa fa-id-card"></i>
+                </button>
+              </div>
+            </div>
             <div class="col-9" id="clock-row">
               <!--  Clock-Start -->
               <div id="clockContainer" class="mt-2">
@@ -189,9 +219,8 @@
             </div>
             <div class="col-1"></div>
           </div>
-        
         </div>
-           <!--- ** Column Buttons ***    -->
+        <!--- ** Column Buttons ***    -->
         <div class="col-lg-4">
           <div class="row">
             <div class="col-4 text-center">
@@ -212,7 +241,10 @@
                   class="btn btn-outline-primary px-4 rounded-pill"
                   for="radio-mind-5"
                 >
-                  <i class="fa fa-eercast fa-spin cdicon" aria-hidden="true"></i>
+                  <i
+                    class="fa fa-eercast fa-spin cdicon"
+                    aria-hidden="true"
+                  ></i>
                   <span
                     id="lblM5"
                     class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-success"
@@ -305,7 +337,7 @@
                     <span class="visually-hidden">Buzzing</span>
                   </span>
                 </label>
-  
+
                 <input
                   type="radio"
                   class="btn-check radioMind"
@@ -322,21 +354,28 @@
                 </label>
               </div>
             </div>
-  
+
             <div id="containerPath" class="col-7">
               <div class="text-center mt-5">
                 <div class="spinner-border text-primary" role="status">
                   <span class="visually-hidden">Loading...</span>
                 </div>
-  
+
                 <h3 class="text-success">Take a Deep Breath!</h3>
               </div>
             </div>
           </div>
         </div>
-          <!--- ** Column Bhav ***    -->
-        <div class="col-lg-4 text-center" ><span id="divBhav"  class="text-primary" >🌸</span> <br>
-          <img id="imgBhav" class="center-block" src="img/line.svg" alt="Be Here now" onerror="this.src='img/line.svg'"   > 
+        <!--- ** Column Bhav ***    -->
+        <div class="col-lg-4 text-center">
+          <span id="divBhav" class="text-primary">🌸</span> <br />
+          <img
+            id="imgBhav"
+            class="center-block"
+            src="img/line.svg"
+            alt="Be Here now"
+            onerror="this.src='img/line.svg'"
+          />
         </div>
       </div>
     </div>
@@ -354,14 +393,10 @@
     </div>
     <!--- ** ROW: Path to Infinity  ***    -->
     <div class="container-fluid"">
-    <div class="row">
-    
-    </div>
+    <div class="row"></div>
     <!--- ** ROW:4 Bhav ***    -->
     <div class="container-fluid">
-      <div class="row">
-       
-      </div>
+      <div class="row"></div>
     </div>
     <!-- ** ROW:6 template ***    -->
     <div class="container-fluid">
@@ -374,7 +409,6 @@
       <div class="row">
         <div class="col-lg-4 text-center mt-3">
           <small id="lbCurrentRow" class="text-muted">
-        
             🕒
             <label id="lblUpdateTime"
               ><i class="fa fa-spinner fa-spin cdicon" aria-hidden="true"></i
@@ -404,39 +438,7 @@
       </video>
     </div>
 
-    <div style="position: fixed; top: 125px; left: 15px; z-index: 999">
-      <div class="btn-group-vertical">
-        <button
-          type="button"
-          class="btn btn-sm btn-outline-secondary border-0"
-          id="btnPlayVideo"
-        >
-          <i class="fa fa-video-camera"></i>
-        </button>
-        <button
-          id="btnPopup"
-          type="button"
-          class="btn btn-outline-secondary border-0"
-        >
-          <i class="fa fa-window-restore"></i>
-        </button>
-        <button
-          id="btnExcel"
-          type="button"
-          class="btn btn-outline-secondary border-0"
-        >
-          <i class="fa fa-map"></i>
-        </button>
-        <button
-          type="button"
-          class="btn btn-outline-secondary border-0"
-          id="btnDocument"
-        >
-          <i class="fa fa-id-card"></i>
-        </button>
-      </div>
-
-    </div>
+    <div style="position: fixed; top: 125px; left: 15px; z-index: 999"></div>
     <div style="position: fixed; top: 170px; left: 15px; z-index: 999">
       <div id="processing-div" class="text-center mt-3">
         <div
@@ -446,12 +448,12 @@
         >
           <span class="sr-only">Loading...</span>
           <div
-          class="spinner-border text-success"
-          style="width: 0.5rem; height: 0.5rem"
-          role="status"
-        >
-          <span class="sr-only">..</span>
-        </div>
+            class="spinner-border text-success"
+            style="width: 0.5rem; height: 0.5rem"
+            role="status"
+          >
+            <span class="sr-only">..</span>
+          </div>
         </div>
       </div>
     </div>
@@ -468,6 +470,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="index.js?ver=0.39"></script>
+    <script src="index.js?ver=1.1"></script>
   </body>
 </html>
