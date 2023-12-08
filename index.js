@@ -118,9 +118,7 @@ $(document).ready(function () {
 
     buildPlatform();
 
-    postToGoogle(false);
-
-    changeBhavImage(getCurrentTrackerTimeRow());
+    postToGoogle(false);    
 
    
   }
@@ -158,6 +156,8 @@ $(document).ready(function () {
 
       __CurrentRow = getCurrentTrackerTimeRow();
 
+      setBhavImage(__CurrentRow);
+
       $("#lblCurrentRow").html(__CurrentRow);
 
       if (__CurrentRow !== __LoggedRow && __LoggedRow !== 0) {
@@ -176,7 +176,7 @@ $(document).ready(function () {
           console.log("🕞 15 mins Quarter Shift Called");
           postToGoogle(false);
           sendNotification("Take a deep Breath");
-          changeBhavImage(__CurrentRow);
+          
          
         }
         else
@@ -224,9 +224,15 @@ $(document).ready(function () {
     });
   }
 
-  function changeBhavImage(imageRow) {
+ 
 
-    if (imageRow < 28) 
+  function setBhavImage(imageRow) {
+
+    if($("#imgBhav").attr('src').includes(imageRow))
+    return;
+
+
+    if (imageRow < 28 && !($("#imgBhav").attr('src').includes("svg")) ) 
     {
       $("#imgBhav").attr("src","img/line.svg");
     }else{
