@@ -107,6 +107,7 @@ $(document).ready(function () {
     $("#clock-container").on("click", oneClickTracker);
     $("#ClockInnerCircle").on("click", oneClickTracker);
     $("#centerCoreD").on("click", oneClickTracker);
+    $("#imgBhav").on("click", oneClickTracker);
 
     $("#btnDocument").on("click", btnDocumentClick);
 
