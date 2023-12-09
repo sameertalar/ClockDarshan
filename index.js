@@ -156,6 +156,7 @@ $(document).ready(function () {
       __CurrentRow = getCurrentTrackerTimeRow();
 
       setBhavImage(__CurrentRow);
+      setBhavTexts(__CurrentRow);
 
       $("#lblCurrentRow").html(__CurrentRow);
 
@@ -167,8 +168,9 @@ $(document).ready(function () {
         $("#containerButtons").removeClass("bag");
       }
 
-      let bhav = getBhav(__CurrentRow);
-      $("#divBhav").html(bhav);
+
+  
+   
 
       if (sec === 1) {
         if (min % 15 === 0) {
@@ -577,12 +579,15 @@ $(document).ready(function () {
     }
   }
 
-  function getBhav(row) {
+  function setBhavTexts(row) {
     try {
       if (row && __dataBhav && row !== "undefined") {
         itemB = __dataBhav.find((x) => x.row === row);
         if (itemB) {
-          return itemB.desc;
+   
+          $("#bhavPicText").html(itemB.action + "," + itemB.place);
+          $("#bhavVerse").html(itemB.verse);
+
         }
       }
 
