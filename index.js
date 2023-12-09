@@ -585,7 +585,7 @@ $(document).ready(function () {
         itemB = __dataBhav.find((x) => x.row === row);
         if (itemB) {
    
-          $("#bhavPicText").html(itemB.action + "," + itemB.place);
+          $("#bhavPicText").html(itemB.action + ", " + itemB.place);
           $("#bhavVerse").html(itemB.verse);
 
         }
