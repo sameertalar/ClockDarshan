@@ -165,9 +165,13 @@ $(document).ready(function () {
       if (__CurrentRow !== __LoggedRow && __LoggedRow !== 0) {
         $("#clock-row").addClass("bag rounded-circle");
         $("#containerButtons").addClass("bag");
+        $("#divBhav").addClass("bag");
+        
+
       } else {
         $("#clock-row").removeClass("bag rounded-circle");
         $("#containerButtons").removeClass("bag");
+        $("#divBhav").removeClass("bag");
       }
 
 
