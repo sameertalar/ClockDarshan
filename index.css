@@ -3,6 +3,12 @@ background-image: linear-gradient(#ffdfb6 ,white,white,white,#ffdfb6  );
 
 */
 
+/* Bootstrap Custom */
+.btn-check:checked+.btn-outline-secondary
+{
+  background-color: #aaff00;
+}
+
 .text-warning,
 .btn-outline-warning {
   color: #ff8c19 !important;
