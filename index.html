@@ -37,22 +37,9 @@
       style="position: fixed; top: 0; left: 0; z-index: 999"
     >
       <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-4" style="position: fixed; top: 0px; z-index: 999">
           <div id="quarterProgress" class="progressOuter">
             <div id="quarterStatus"></div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="row mt-1">
-            <div class="col-4"></div>
-            <div class="col-4"></div>
-            <div class="col-4 text-end">
-              <span id="timeLeft" class="h6 text-danger text-end px-1 py-1">
-                10:10
-              </span>
-            </div>
           </div>
         </div>
       </div>
@@ -63,7 +50,7 @@
         <!--- ** Column Clock ***    -->
         <div class="col-lg-4">
           <div class="row">
-            <div class="col-2" >
+            <div class="col-2">
               <button
                 id="btnResetSheet"
                 type="button"
@@ -223,7 +210,7 @@
         <!--- ** Column Buttons ***    -->
         <div class="col-lg-4">
           <div class="row">
-            <div class="col-4 text-center" >
+            <div class="col-4 text-center">
               <div
                 class="btn-group-vertical"
                 role="group"
@@ -282,13 +269,13 @@
                   checked
                 />
                 <label
-                  class="btn btn-outline-warning rounded-pill"
+                  class="btn btn-outline-secondary rounded-pill "
                   for="radio-mind-3"
                 >
-                  <i id="apramadCtrl" class="fa cdicon" aria-hidden="true"></i>
+                  <i id="apramadCtrl" class="fa cdicon text-warning" aria-hidden="true"></i>
                   <span
                     id="lblM3"
-                    class="position-absolute top-50 start-100 translate-middle badge rounded-circle bg-secondary"
+                    class="position-absolute top-50 start-100 translate-middle badge rounded-circle bg-warning"
                   >
                     <span class="visually-hidden">Apramad</span>
                   </span>
@@ -367,24 +354,29 @@
           </div>
         </div>
         <!--- ** Column Bhav ***    -->
-        <div id="divBhav" class="col-lg-4 text-center ">
-         
+        <div id="divBhav" class="col-lg-4 text-center">
           <img
             id="imgBhav"
             class="center-block"
             src="img/line.svg"
             alt="Be Here now"
             onerror="this.src='img/line.svg'"
-          /> <br>
-          <div >
-            <div class=" text-danger"> <i class="fa fa-file-image-o text-danger" aria-hidden="true"></i> <span id="bhavPicText" ></span></div>            
-            <div id="bhavVerse" class="text-success"></div>           
-            <div class="text-warning"><i class="fa fa-life-ring text-warning" aria-hidden="true"></i> <abbr title="attribute"  id="bhavActionText"></abbr ></div>             
-              <em> <div id="bhavquote" class="text-italic text-primary"></div> </em> 
+          />
+          <br />
+          <div>
+            <div class="text-danger">
+              <i class="fa fa-file-image-o text-danger" aria-hidden="true"></i>
+              <span id="bhavPicText"></span>
+            </div>
+            <div id="bhavVerse" class="text-success"></div>
+            <div class="text-warning">
+              <i class="fa fa-life-ring text-warning" aria-hidden="true"></i>
+              <abbr title="attribute" id="bhavActionText"></abbr>
+            </div>
+            <em>
+              <div id="bhavquote" class="text-italic text-primary"></div>
+            </em>
           </div>
-          
-          
-          
         </div>
       </div>
     </div>
@@ -417,9 +409,12 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-4 text-center mt-3">
-          <i class="fa fa-clock-o " style="color: #d8d5d5c1;"  aria-hidden="true"></i>
-          <small id="lbCurrentRow" style="color: #d8d5d5c1;" >
-           
+          <i
+            class="fa fa-clock-o"
+            style="color: #d8d5d5c1"
+            aria-hidden="true"
+          ></i>
+          <small id="lbCurrentRow" style="color: #d8d5d5c1">
             <label id="lblUpdateTime"
               ><i class="fa fa-spinner fa-spin cdicon" aria-hidden="true"></i
             ></label>
@@ -448,7 +443,9 @@
       </video>
     </div>
 
-    <div style="position: fixed; top: 125px; left: 15px; z-index: 999"></div>
+    <div style="position: fixed; top: 25px; right: 10px; z-index: 999">
+      <span id="timeLeft" class="h6 text-danger text-end px-1 py-1"></span>
+    </div>
     <div style="position: fixed; top: 170px; left: 15px; z-index: 999">
       <div id="processing-div" class="text-center mt-3">
         <div
