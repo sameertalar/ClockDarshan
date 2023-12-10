@@ -5,7 +5,7 @@ $(document).ready(function () {
   var __LastCurrentRow = 0;
   var __LoggedRow = 0;
   var __dataBhav;
-  var __bhavJsonUrl ="data/bhav.json?ver=1.5";
+  var __bhavJsonUrl = "data/bhav.json?ver=1.5";
   const _HeadRows = 4;
 
   //(dev)  const _UpdaterApiUrl =     "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
@@ -115,7 +115,7 @@ $(document).ready(function () {
       sendNotification("Be Here Now.");
     });
 
-    $.getJSON(__bhavJsonUrl , function (data) {
+    $.getJSON(__bhavJsonUrl, function (data) {
       __dataBhav = data;
     });
 
@@ -163,20 +163,12 @@ $(document).ready(function () {
       $("#lblCurrentRow").html(__CurrentRow);
 
       if (__CurrentRow !== __LoggedRow && __LoggedRow !== 0) {
-        $("#clock-row").addClass("bag rounded-circle");
-        $("#containerButtons").addClass("bag");
-        $("#divBhav").addClass("bag");
-        
-
+        // $("#clock-row").addClass("bag rounded-circle");
+        $("body").addClass("bag");
       } else {
-        $("#clock-row").removeClass("bag rounded-circle");
-        $("#containerButtons").removeClass("bag");
-        $("#divBhav").removeClass("bag");
+        //$("#clock-row").removeClass("bag rounded-circle");
+        $("body").removeClass("bag");
       }
-
-
-  
-   
 
       if (sec === 1) {
         if (min % 15 === 0) {
@@ -590,12 +582,10 @@ $(document).ready(function () {
       if (row && __dataBhav && row !== "undefined") {
         itemB = __dataBhav.find((x) => x.row === row);
         if (itemB) {
-   
           $("#bhavPicText").html(itemB.bhav + ", " + itemB.place);
           $("#bhavVerse").html(itemB.verse);
           $("#bhavActionText").html(itemB.action);
           $("#bhavquote").html(itemB.quote);
-
         }
       }
 
