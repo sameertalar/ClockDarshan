@@ -298,6 +298,7 @@ $(document).ready(function () {
             }
             //$("#processing-div").addClass('d-none');
             __ApiCallStatus = false;
+            $("#radio-mind-3").click();
           }
         } catch (err) {
           console.log(
