@@ -174,6 +174,7 @@ $(document).ready(function () {
         if (min % 15 === 0) {
           console.log("🕞 15 mins Quarter Shift Called");
           postToGoogle(false);
+          $("#radio-mind-3").click();
           sendNotification("Take a deep Breath");
         } else {
           postToGoogle(false);
@@ -298,7 +299,7 @@ $(document).ready(function () {
             }
             //$("#processing-div").addClass('d-none');
             __ApiCallStatus = false;
-            $("#radio-mind-3").click();
+          
           }
         } catch (err) {
           console.log(
