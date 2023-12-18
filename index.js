@@ -1,3 +1,6 @@
+  //https://fontawesome.com/v4/icons/
+
+
 $(document).ready(function () {
   var __ApiCallStatus = false;
 
@@ -319,7 +322,7 @@ $(document).ready(function () {
         __ApiCallStatus = false;
         $("#errorMessage").html(error_text);
         buildPlatform();
-        console.log("error_text", error_text);
+        console.log("error_text", "Api Error Response -" + error_text);
         $("#containerPath").html(error_text);
         //$("#progress-modal").modal("hide");
         $("#processing-div").addClass("d-none");

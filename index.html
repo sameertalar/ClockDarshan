@@ -51,31 +51,34 @@
         <div class="col-lg-4">
           <div class="row">
             <div class="col-2">
-              <button
-                id="btnResetSheet"
-                type="button"
-                class="btn btn-outline-danger btn-lg border-0 p-3"
-              >
-                <i class="fa fa-random"></i></button
-              ><br />
+          
               <div class="btn-group-vertical py-4" id="containerButtons">
-                <button
-                  type="button"
-                  class="btn btn-sm border-0"
-                  id="btnPlayVideo"
-                >
-                  <i class="fa fa-video-camera text-secondary"></i>
-                </button>
                 <button id="btnPopup" type="button" class="btn border-0">
                   <i class="fa fa-window-restore text-secondary"></i>
                 </button>
+       
+              
                 <button id="btnExcel" type="button" class="btn border-0">
-                  <i class="fa fa-map text-secondary"></i>
+                  <i class="fa fa-table text-secondary"></i>
                 </button>
                 <button type="button" class="btn border-0" id="btnDocument">
-                  <i class="fa fa-id-card text-secondary"></i>
+                  <i class="fa fa-file-text-o text-secondary"></i>
                 </button>
+                <button
+                type="button"
+                class="btn btn-sm border-0"
+                id="btnPlayVideo"
+              >
+                <i class="fa fa-video-camera text-secondary"></i>
+              </button>
               </div>
+              <button
+              id="btnResetSheet"
+              type="button"
+              class="btn btn-outline-danger btn-lg border-0 p-3"
+            >
+              <i class="fa fa-random"></i></button
+            > 
             </div>
             <div class="col-9" id="clock-row" >
               <!--  Clock-Start -->
@@ -462,7 +465,7 @@
     <div style="position: fixed; top: 25px; right: 10px; z-index: 999">
       <span id="timeLeft" class="h6 text-danger text-end px-1 py-1"></span>
     </div>
-    <div style="position: fixed; top: 300px; left: 60px; z-index: 999">
+    <div style="position: fixed; top: 300px; left: 130px; z-index: 999">
       <div id="processing-div" class="text-center mt-3">
         <div
           class="spinner-border text-info"
