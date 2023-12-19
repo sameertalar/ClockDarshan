@@ -157,6 +157,7 @@ $(document).ready(function () {
       showCurrentSelection();
 
       showTimeElaspeProgress(min, sec);
+      playAlertAudio(min, sec);
 
       __CurrentRow = getCurrentTrackerTimeRow();
 
@@ -181,7 +182,7 @@ $(document).ready(function () {
           sendNotification("Take a deep Breath");
         } else {
           postToGoogle(false);
-          console.log("Refreshed every min at " + min);
+          //console.log("Refreshed every min at " + min);
         }
       }
 
@@ -206,6 +207,56 @@ $(document).ready(function () {
       $("#errorMessage").html("Unhandled Error: " + error);
     }
   }
+
+  function playAlertAudio(min, sec) {
+
+    let qMins = min % 15;
+    let src = "";
+
+    if (sec === 1) {
+
+      switch (qMins) {
+        case 0:
+          src = "alert_china_sameer.mp3";
+          break;
+        case 5:
+          src = "alert_Pebbles.mp3";
+          break;
+        case 10:
+          src = "ticking_water_two_drops.mp3";
+          break;
+      }
+
+     
+    }
+
+    if (sec === 31) {
+
+      switch (qMins) {
+        case 2:
+          src = "coins-falling-on-floor.mp3";
+          break;
+        case 7:
+          src = "alert_Indian_Flute_Chunk.mp3";
+          break;
+        case 12:
+          src = "coins-falling-on-floor.mp3";
+          break;
+      }      
+ 
+    }
+
+    if(src !== "")
+    {
+      console.log("🎵 Audio Play", min, qMins+"-"+sec, src);
+      let audioAlert = $("#audioCD");
+      audioAlert.attr("src",  "media/dhyan/" + src);
+      audioAlert[0].play();
+    }   
+    return;
+  }
+
+
 
   function sendNotification(title) {
     console.log("Notification Sent.");
@@ -256,7 +307,7 @@ $(document).ready(function () {
 
     let googleurl = _UpdaterApiUrl + queryString;
 
-    console.log("Api QueryString Request:", queryString);
+   // console.log("Api QueryString Request:", queryString);
 
     $.ajax({
       crossOrigin: true,
@@ -264,7 +315,7 @@ $(document).ready(function () {
 
       dataType: "jsonp",
       success: function (data, textStatus, xhr) {
-        console.log("Api Response Data:", data);
+       // console.log("Api Response Data:", data);
 
         try {
           if (data && data.chunks) {
@@ -277,8 +328,8 @@ $(document).ready(function () {
               getCurrentEasternTime().toLocaleTimeString()
             );
 
-            console.log("__LastCurrentRow", __LastCurrentRow);
-            console.log("__LoggedRow", __LoggedRow);
+           // console.log("__LastCurrentRow", __LastCurrentRow);
+           // console.log("__LoggedRow", __LoggedRow);
 
             $("#lblM5").html(data.counts.calm);
             $("#lblM4").html(data.counts.med);
