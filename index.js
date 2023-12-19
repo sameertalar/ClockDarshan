@@ -219,19 +219,19 @@ $(document).ready(function () {
 
     if (musicMode == "C") {
       if (sec === 1 && qMins == 0) {
-        src = "alert_Zeta.mp3";
+        src = "0.alert_Zeta.mp3";
       }
     } else if (musicMode == "M") {
       if (sec === 1) {
         switch (qMins) {
           case 0:
-            src = "alert_china_sameer.mp3";
+            src = "0.alert_china_sameer.mp3";
             break;
           case 5:
-            src = "alert_Pebbles.mp3";
+            src = "5.alert_Attension_Seeker.wav";
             break;
           case 10:
-            src = "ticking_water_two_drops.mp3";
+            src = "10.alert_Pebbles.mp3";
             break;
         }
       }
@@ -239,13 +239,13 @@ $(document).ready(function () {
       if (sec === 31) {
         switch (qMins) {
           case 2:
-            src = "alert_Tuk_Tuk.mp3"; //alert_Apple_Message_tone.mp3
+            src = "2.5.alert_Tuk_Tuk.mp3"; //alert_Apple_Message_tone.mp3
             break;
           case 7:
-            src = "alert_Indian_Flute_Chunk.mp3";
+            src = "7.5.alert_Indian_Flute_Chunk.mp3";
             break;
           case 12:
-            src = "coins-falling-on-floor.mp3";
+            src = "12.5.coins-falling-on-floor.mp3";
             break;
         }
       }
