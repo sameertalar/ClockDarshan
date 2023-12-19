@@ -253,9 +253,18 @@ $(document).ready(function () {
 
     if (src !== "") {
       console.log("🎵 Audio Play", min, qMins + "-" + sec, src);
-      let audioAlert = $("#audioCD");
-      audioAlert.attr("src", "media/dhyan/" + src);
-      audioAlert[0].play();
+
+      try
+      {
+        let audioAlert = $("#audioCD");
+        audioAlert.attr("src", "media/dhyan/" + src);
+        audioAlert[0].play();
+      } catch (error) {
+        console.log("playAlertAudio Error", error);
+        $("#errorMessage").html("playAlertAudio Error: " + error);
+      }
+
+  
     }
   }
 
