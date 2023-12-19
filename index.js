@@ -234,7 +234,7 @@ $(document).ready(function () {
 
       switch (qMins) {
         case 2:
-          src = "coins-falling-on-floor.mp3";
+          src = "alert_Apple_Message_tone.mp3";
           break;
         case 7:
           src = "alert_Indian_Flute_Chunk.mp3";
