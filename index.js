@@ -1,5 +1,4 @@
-  //https://fontawesome.com/v4/icons/
-
+//https://fontawesome.com/v4/icons/
 
 $(document).ready(function () {
   var __ApiCallStatus = false;
@@ -209,54 +208,56 @@ $(document).ready(function () {
   }
 
   function playAlertAudio(min, sec) {
+    let musicMode = $(".radioMusic:checked").val();
 
-    let qMins = min % 15;
+   // console.log("Music Mode:", musicMode);
+
+    if (musicMode != "C" && musicMode != "M") return;
+
     let src = "";
+    let qMins = min % 15;
 
-    if (sec === 1) {
-
-      switch (qMins) {
-        case 0:
-          src = "alert_china_sameer.mp3";
-          break;
-        case 5:
-          src = "alert_Pebbles.mp3";
-          break;
-        case 10:
-          src = "ticking_water_two_drops.mp3";
-          break;
+    if (musicMode == "C") {
+      if (sec === 1 && qMins == 0) {
+        src = "alert_Zeta.mp3";
+      }
+    } else if (musicMode == "M") {
+      if (sec === 1) {
+        switch (qMins) {
+          case 0:
+            src = "alert_china_sameer.mp3";
+            break;
+          case 5:
+            src = "alert_Pebbles.mp3";
+            break;
+          case 10:
+            src = "ticking_water_two_drops.mp3";
+            break;
+        }
       }
 
-     
+      if (sec === 31) {
+        switch (qMins) {
+          case 2:
+            src = "alert_Tuk_Tuk.mp3"; //alert_Apple_Message_tone.mp3
+            break;
+          case 7:
+            src = "alert_Indian_Flute_Chunk.mp3";
+            break;
+          case 12:
+            src = "coins-falling-on-floor.mp3";
+            break;
+        }
+      }
     }
 
-    if (sec === 31) {
-
-      switch (qMins) {
-        case 2:
-          src = "alert_Apple_Message_tone.mp3";
-          break;
-        case 7:
-          src = "alert_Indian_Flute_Chunk.mp3";
-          break;
-        case 12:
-          src = "coins-falling-on-floor.mp3";
-          break;
-      }      
- 
-    }
-
-    if(src !== "")
-    {
-      console.log("🎵 Audio Play", min, qMins+"-"+sec, src);
+    if (src !== "") {
+      console.log("🎵 Audio Play", min, qMins + "-" + sec, src);
       let audioAlert = $("#audioCD");
-      audioAlert.attr("src",  "media/dhyan/" + src);
+      audioAlert.attr("src", "media/dhyan/" + src);
       audioAlert[0].play();
-    }   
-    return;
+    }
   }
-
-
 
   function sendNotification(title) {
     console.log("Notification Sent.");
@@ -307,7 +308,7 @@ $(document).ready(function () {
 
     let googleurl = _UpdaterApiUrl + queryString;
 
-   // console.log("Api QueryString Request:", queryString);
+    // console.log("Api QueryString Request:", queryString);
 
     $.ajax({
       crossOrigin: true,
@@ -315,7 +316,7 @@ $(document).ready(function () {
 
       dataType: "jsonp",
       success: function (data, textStatus, xhr) {
-       // console.log("Api Response Data:", data);
+        // console.log("Api Response Data:", data);
 
         try {
           if (data && data.chunks) {
@@ -328,8 +329,8 @@ $(document).ready(function () {
               getCurrentEasternTime().toLocaleTimeString()
             );
 
-           // console.log("__LastCurrentRow", __LastCurrentRow);
-           // console.log("__LoggedRow", __LoggedRow);
+            // console.log("__LastCurrentRow", __LastCurrentRow);
+            // console.log("__LoggedRow", __LoggedRow);
 
             $("#lblM5").html(data.counts.calm);
             $("#lblM4").html(data.counts.med);
@@ -353,7 +354,6 @@ $(document).ready(function () {
             }
             //$("#processing-div").addClass('d-none');
             __ApiCallStatus = false;
-          
           }
         } catch (err) {
           console.log(
@@ -563,7 +563,7 @@ $(document).ready(function () {
 
   function showCurrentTimeLeft(min, sec) {
     //var timeNow = pad(14 - (min % 15), 2) + ":" + pad(60 - sec, 2); //Tile left
-    var timeNow = pad((min % 15), 2) + ":" + pad( sec, 2);
+    var timeNow = pad(min % 15, 2) + ":" + pad(sec, 2);
     $("#timeLeft").text(timeNow);
   }
 
@@ -640,7 +640,7 @@ $(document).ready(function () {
         itemB = __dataBhav.find((x) => x.row === row);
         if (itemB) {
           $("#bhavPicText").html(itemB.bhav + ", " + itemB.place);
-          $("#bhavVerse").html(itemB.verse.replace("\n","<br/>"));
+          $("#bhavVerse").html(itemB.verse.replace("\n", "<br/>"));
           $("#bhavActionText").html(itemB.action);
           $("#bhavquote").html(itemB.quote);
         }

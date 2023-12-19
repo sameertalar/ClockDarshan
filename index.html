@@ -48,10 +48,13 @@
     <div class="container-fluid">
       <div class="row mt-3">
         <!--- ** Column 1 Clock ***    -->
-        <div class="col-lg-4 border border-primary">
+        <div class="col-lg-4">
           <div class="row">
-            <div class="col-2 border">
-              <button
+            <div class="col-2">
+          
+
+              <div class="btn-group-vertical" id="containerButtons">
+                <button
                 id="btnSettings"
                 type="button"
                 class="py-3 btn btn-lg btn-outline-dark border-0"
@@ -61,31 +64,15 @@
                 aria-expanded="false"
                 aria-controls="collapseExample"
               >
-                <i class="fa fa-wrench"></i>
+                <i class="fa fa-cog"></i>
               </button>
 
-              <div class="btn-group-vertical" id="containerButtons">
-                <button
-                  id="btnMusic"
-                  type="button"
-                  class="btn btn-outline-secondary border-0"
-                >
-                  <i class="fa fa-music"></i>
-                </button>
-                <button
-                  id="btnMeditate"
-                  type="button"
-                  class="btn btn-outline-secondary border-0"
-                >
-                  <i class="fa fa-user-circle-o"></i>
-                </button>
-
-                <button id="btnPopup" type="button" class="btn border-0">
+                <button id="btnPopup" type="button" class="btn btn-sm border-0">
                   <i class="fa fa-window-restore text-secondary"></i>
                 </button>
               </div>
             </div>
-            <div class="col-9 border" id="clock-row ">
+            <div class="col-9" id="clock-row ">
               <!--  Clock-Start -->
               <div id="clockContainer" class="mt-2 bg-white rounded-circle">
                 <div id="clock-container">
@@ -204,62 +191,148 @@
           </div>
         </div>
         <!--- ** Column 2 Error, Settings Buttons, Bhav ***    -->
-        <div class="col-lg-4 border border-success">
+        <div class="col-lg-4">
           <!-- Row : Error -->
           <div class="row">
-            <div class="col"> <span id="errorMessage" class="bg-danger text-white"></span></div>
+            <div class="col">
+              <span id="errorMessage" class="bg-danger text-white"></span>
+            </div>
           </div>
-           <!-- Row : Settings -->
+          <!-- Row : Settings -->
           <div class="row">
             <div class="col">
               <div class="collapse" id="collapseExample">
                 <div class="card card-body">
                   <div class="container-fluid">
+                    <!-- Row - setting buttons-->
                     <div class="row">
-                      <div class="col">
+                      <div class="col text-center">
                         <button
                           id="btnExcel"
                           type="button"
-                          class="btn border-0"
+                          class="btn btn-lg border-0"
                         >
-                          <i class="fa fa-table text-secondary"></i>
+                          <i class="fa fa-table text-success"></i>
                         </button>
                         <button
                           type="button"
                           class="btn border-0"
                           id="btnDocument"
                         >
-                          <i class="fa fa-file-text-o text-secondary"></i>
+                          <i class="fa fa-file-text-o text-success"></i>
                         </button>
-
+                        <button
+                          type="button"
+                          class="btn  btn-lg   border-0"
+                          id="btnPlayVideo"
+                        >
+                          <i class="fa fa-video-camera text-info"></i>
+                        </button>
                         <button
                           id="btnResetSheet"
                           type="button"
                           class="btn btn-lg border-0 p-3"
                         >
-                          <i class="fa fa-random text-secondary"></i>
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-sm border-0"
-                          id="btnPlayVideo"
-                        >
-                          <i class="fa fa-video-camera text-secondary"></i>
+                          <i class="fa fa-random text-danger"></i>
                         </button>
                       </div>
-
-                      <div class="row"><div class="col"></div></div>
-
-                      Some placeholder content for the collapse component. This
-                      panel is hidden by default but revealed when the user
-                      activates the relevant trigger.
+                    </div>
+                    <!-- Row - Music Mode buttons-->
+                    <div class="row">
+                      <div class="col text-center">
+                        <div
+                          class="btn-group bg-white rounded-pill"
+                          role="group"
+                          aria-label="Basic radio toggle button group"
+                        >
+                          <input
+                            type="radio"
+                            class="btn-check radioMusic"
+                            name="radioMusicMode"
+                            id="radio-Music-Off"
+                            value="O"
+                            autocomplete="off"
+                          />
+                          <label
+                            class="btn btn-outline-dark"
+                            for="radio-Music-Off"
+                            ><i class="fa fa-power-off"></i
+                          ></label>
+                          <input
+                            type="radio"
+                            class="btn-check radioMusic"
+                            name="radioMusicMode"
+                            id="radio-Music-off"
+                            autocomplete="off"
+                            value="C"
+                            checked
+                          />
+                          <label
+                            class="btn btn-outline-dark"
+                            for="radio-Music-off"
+                            ><i class="fa fa-music"></i
+                          ></label>
+                          <input
+                            type="radio"
+                            class="btn-check radioMusic"
+                            name="radioMusicMode"
+                            id="radio-Music-Meditation"
+                            value="M"
+                            autocomplete="off"
+                          />
+                          <label
+                            class="btn btn-outline-dark"
+                            for="radio-Music-Meditation"
+                            ><i class="fa fa-user-circle-o"></i
+                          ></label>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Row - Audio Meditation -->
+                    <div class="row">
+                      <div class="col">
+                        <audio
+                          id="audioCD"
+                          class="form-control"
+                          controls
+                          style="width: 100%"
+                        >
+                          <source
+                            src="media/SaReGaMa18Sec.mp3"
+                            type="audio/mp3"
+                          />
+                        </audio>
+                      </div>
+                    </div>
+                    <!-- Row - Audio Be here now -->
+                    <div class="row">
+                      <div class="col">
+                        <small> Be Here Now</small>
+                        <audio
+                          id="audioMed"
+                          class="form-control"
+                          controls
+                          loop
+                          style="width: 100%"
+                        >
+                          <source
+                            src="media/SaReGaMa18Sec.mp3"
+                            type="audio/mp3"
+                          />
+                        </audio>
+                      </div>
+                    </div>
+                    <!-- Row - Template -->
+                    <div class="row">
+                      <div class="col"></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-           <!-- Row : Buttons -->
+
+          <!-- Row : Buttons -->
           <div class="row">
             <div class="col text-center">
               <div
@@ -396,7 +469,7 @@
               </div>
             </div>
           </div>
-           <!-- Row : Bhav -->
+          <!-- Row : Bhav -->
           <div class="row">
             <div class="col">
               <div id="divBhav" class="text-center">
@@ -435,9 +508,7 @@
 
         <!--- ** Column 3  History ***    -->
 
-        <div class="col-lg-4 border border-danger">
-        
-
+        <div class="col-lg-4">
           <div class="row">
             <div class="col">
               <div class="col-2"></div>
@@ -460,20 +531,14 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="row">
-            <div class="col text-center">
-             
-            </div>
+            <div class="col text-center"></div>
           </div>
         </div>
       </div>
     </div>
     <!--- ** ROW: Music ***    -->
     <div class="container-fluid">
-      <div class="row">
-        <audio id="audioCD" class="form-control" controls style="width: 100%">
-          <source src="media/SaReGaMa18Sec.mp3" type="audio/mp3" />
-        </audio>
-      </div>
+      <div class="row"></div>
       <!--- ** ROW:4 Bhav ***    -->
       <div class="container-fluid">
         <div class="row">row pml</div>
@@ -563,6 +628,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="index.js?ver=3.6"></script>
+    <script src="index.js?ver=3.7"></script>
   </body>
 </html>
