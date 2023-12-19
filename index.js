@@ -562,7 +562,8 @@ $(document).ready(function () {
   }
 
   function showCurrentTimeLeft(min, sec) {
-    var timeNow = pad(14 - (min % 15), 2) + ":" + pad(60 - sec, 2);
+    //var timeNow = pad(14 - (min % 15), 2) + ":" + pad(60 - sec, 2); //Tile left
+    var timeNow = pad((min % 15), 2) + ":" + pad( sec, 2);
     $("#timeLeft").text(timeNow);
   }
 
