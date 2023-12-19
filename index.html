@@ -47,45 +47,45 @@
     <!--- ** ROW: Clock, Buttons and Bhav***    -->
     <div class="container-fluid">
       <div class="row mt-3">
-        <!--- ** Column Clock ***    -->
-        <div class="col-lg-4">
+        <!--- ** Column 1 Clock ***    -->
+        <div class="col-lg-4 border border-primary">
           <div class="row">
-            <div class="col-2">
-              <div class="btn-group-vertical py-3" id="containerButtons">
-               
-                <button id="btnMusic" type="button" class="btn btn-outline-secondary  border-0">
+            <div class="col-2 border">
+              <button
+                id="btnSettings"
+                type="button"
+                class="py-3 btn btn-lg btn-outline-dark border-0"
+                data-bs-toggle="collapse"
+                href="#collapseExample"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              >
+                <i class="fa fa-wrench"></i>
+              </button>
+
+              <div class="btn-group-vertical" id="containerButtons">
+                <button
+                  id="btnMusic"
+                  type="button"
+                  class="btn btn-outline-secondary border-0"
+                >
                   <i class="fa fa-music"></i>
                 </button>
-                <button id="btnMeditate" type="button" class="btn btn-outline-secondary border-0">
+                <button
+                  id="btnMeditate"
+                  type="button"
+                  class="btn btn-outline-secondary border-0"
+                >
                   <i class="fa fa-user-circle-o"></i>
                 </button>
-                <button
-                type="button"
-                class="btn btn-sm border-0"
-                id="btnPlayVideo"
-              >
-                <i class="fa fa-video-camera text-secondary"></i>
-              </button>
-              <button id="btnPopup" type="button" class="btn border-0">
-                <i class="fa fa-window-restore text-secondary"></i>
-              </button>
-                <button id="btnExcel" type="button" class="btn border-0">
-                  <i class="fa fa-table text-secondary"></i>
-                </button>
-                <button type="button" class="btn border-0" id="btnDocument">
-                  <i class="fa fa-file-text-o text-secondary"></i>
-                </button>
-          
-                <button
-                  id="btnResetSheet"
-                  type="button"
-                  class="btn btn-lg border-0 p-3"
-                >
-                  <i class="fa fa-random text-secondary"></i>
+
+                <button id="btnPopup" type="button" class="btn border-0">
+                  <i class="fa fa-window-restore text-secondary"></i>
                 </button>
               </div>
             </div>
-            <div class="col-9" id="clock-row">
+            <div class="col-9 border" id="clock-row ">
               <!--  Clock-Start -->
               <div id="clockContainer" class="mt-2 bg-white rounded-circle">
                 <div id="clock-container">
@@ -203,10 +203,65 @@
             <div class="col-1"></div>
           </div>
         </div>
-        <!--- ** Column Buttons ***    -->
-        <div class="col-lg-4">
+        <!--- ** Column 2 Error, Settings Buttons, Bhav ***    -->
+        <div class="col-lg-4 border border-success">
+          <!-- Row : Error -->
           <div class="row">
-            <div class="col-lg-4 text-center">
+            <div class="col"> <span id="errorMessage" class="bg-danger text-white"></span></div>
+          </div>
+           <!-- Row : Settings -->
+          <div class="row">
+            <div class="col">
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col">
+                        <button
+                          id="btnExcel"
+                          type="button"
+                          class="btn border-0"
+                        >
+                          <i class="fa fa-table text-secondary"></i>
+                        </button>
+                        <button
+                          type="button"
+                          class="btn border-0"
+                          id="btnDocument"
+                        >
+                          <i class="fa fa-file-text-o text-secondary"></i>
+                        </button>
+
+                        <button
+                          id="btnResetSheet"
+                          type="button"
+                          class="btn btn-lg border-0 p-3"
+                        >
+                          <i class="fa fa-random text-secondary"></i>
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-sm border-0"
+                          id="btnPlayVideo"
+                        >
+                          <i class="fa fa-video-camera text-secondary"></i>
+                        </button>
+                      </div>
+
+                      <div class="row"><div class="col"></div></div>
+
+                      Some placeholder content for the collapse component. This
+                      panel is hidden by default but revealed when the user
+                      activates the relevant trigger.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           <!-- Row : Buttons -->
+          <div class="row">
+            <div class="col text-center">
               <div
                 class="btn-group bg-white rounded-pill"
                 role="group"
@@ -341,86 +396,93 @@
               </div>
             </div>
           </div>
+           <!-- Row : Bhav -->
           <div class="row">
-            <div id="divBhav" class="text-center">
-              <img
-                id="imgBhav"
-                class="center-block rounded-pill"
-                src="img/line.svg"
-                alt="Be Here now"
-                onerror="this.src='img/line.svg'"
-              />
-              <br />
-              <div>
-                <div class="text-danger">
-                  <i
-                    class="fa fa-picture-o text-danger"
-                    aria-hidden="true"
-                  ></i>
-                  <span id="bhavPicText"></span>
+            <div class="col">
+              <div id="divBhav" class="text-center">
+                <img
+                  id="imgBhav"
+                  class="center-block rounded-pill"
+                  src="img/line.svg"
+                  alt="Be Here now"
+                  onerror="this.src='img/line.svg'"
+                />
+                <br />
+                <div>
+                  <div class="text-danger">
+                    <i
+                      class="fa fa-picture-o text-danger"
+                      aria-hidden="true"
+                    ></i>
+                    <span id="bhavPicText"></span>
+                  </div>
+                  <div id="bhavVerse" class="text-success"></div>
+                  <div class="text-warning">
+                    <i
+                      class="fa fa-life-ring text-warning"
+                      aria-hidden="true"
+                    ></i>
+                    <abbr title="attribute" id="bhavActionText"></abbr>
+                  </div>
+                  <em>
+                    <div id="bhavquote" class="text-italic text-primary"></div>
+                  </em>
                 </div>
-                <div id="bhavVerse" class="text-success"></div>
-                <div class="text-warning">
-                  <i
-                    class="fa fa-life-ring text-warning"
-                    aria-hidden="true"
-                  ></i>
-                  <abbr title="attribute" id="bhavActionText"></abbr>
-                </div>
-                <em>
-                  <div id="bhavquote" class="text-italic text-primary"></div>
-                </em>
               </div>
             </div>
           </div>
         </div>
-        <!--- **  ***    -->
 
+        <!--- ** Column 3  History ***    -->
+
+        <div class="col-lg-4 border border-danger">
+        
+
+          <div class="row">
+            <div class="col">
+              <div class="col-2"></div>
+              <div id="containerPath" class="col-9">
+                <div class="text-center mt-5">
+                  <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+
+                  <h3 class="text-success">Take a Deep Breath!</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--- ** ROW: Error    ***    -->
+    <div class="container-fluid">
+      <div class="row">
         <div class="col-lg-4">
           <div class="row">
-            <div class="col-2"></div>
-            <div id="containerPath" class="col-9">
-              <div class="text-center mt-5">
-                <div class="spinner-border text-primary" role="status">
-                  <span class="visually-hidden">Loading...</span>
-                </div>
-
-                <h3 class="text-success">Take a Deep Breath!</h3>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-      <!--- ** ROW: Error    ***    -->
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="row">
-              <div class="col text-center">
-                <span id="errorMessage" class="bg-danger text-white"></span>
-              </div>
+            <div class="col text-center">
+             
             </div>
           </div>
         </div>
       </div>
-      <!--- ** ROW: Path to Infinity  ***    -->
-      <div class="container-fluid" >
+    </div>
+    <!--- ** ROW: Music ***    -->
+    <div class="container-fluid">
       <div class="row">
-        <audio id="audioCD" class="form-control"   style="width: 100%">
+        <audio id="audioCD" class="form-control" controls style="width: 100%">
           <source src="media/SaReGaMa18Sec.mp3" type="audio/mp3" />
         </audio>
-
       </div>
       <!--- ** ROW:4 Bhav ***    -->
       <div class="container-fluid">
-        <div class="row"></div>
+        <div class="row">row pml</div>
       </div>
 
       <!-- ** ROW:X TempControls ***    -->
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-4"></div>
+          <div class="col-lg-4">row Pluto</div>
         </div>
       </div>
 
@@ -429,7 +491,7 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="row">
-              <div class="col-4 text-center"></div>
+              <div class="col-4 text-center">row Sapcex</div>
             </div>
           </div>
         </div>
