@@ -301,7 +301,7 @@ $(document).ready(function () {
 
   function postToGoogle(update) {
     if (__retry > 2) {
-      $("#errorMessage").html("Max Retry Reached");
+      $("#errorMessage").html("📛 Max Retry Reached.");
       return;
     }
 
@@ -331,9 +331,9 @@ $(document).ready(function () {
     // console.log("Api QueryString Request:", queryString);
 
     $.ajax({
-      crossOrigin: true,
+     
       url: googleurl,
-
+      cache: false,
       dataType: "jsonp",
       success: function (data, textStatus, xhr) {
         // console.log("Api Response Data:", data);
