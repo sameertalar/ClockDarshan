@@ -70,12 +70,12 @@ input[type="checkbox"] {
   background-color: #fef9e7;
   background: linear-gradient(
     to right,
-    #b5ead7 16.66%,
-    #ffdac1 16.66% 33.33%,
-    #fcf6bd 33.33% 50%,
-    #b5ead7 50% 66.66%,
+    #ffdac1 16.66%,
+    #ffffff 16.66% 33.33%,
+    #ffdac1 33.33% 50%,
+    #ffffff 50% 66.66%,
     #ffdac1 66.66% 83.33%,
-    #fdf7d6 83.33%
+    #ffffff 83.33%
   );
 }
 
@@ -90,10 +90,11 @@ input[type="checkbox"] {
 
   width: 0;
   height: 98%;
-  background:#aa272f ;
+ 
+  background:rgba(27, 255, 212  ,0.2) ;
 
   border-left: double 1px #aa272f;
-  border-right: solid 1px #aa272f;
+  border-right: solid 8px #aa272f;
 }
 
 /* Analog Clock */
