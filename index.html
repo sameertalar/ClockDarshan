@@ -53,23 +53,23 @@
             <div class="col-2">
           
 
-              <div class="btn-group-vertical" id="containerButtons">
+              <div class="btn-group-vertical mt-2" id="containerButtons">         
+
+                <button id="btnPopup" type="button" class="btn btn-sm border-0 mb-5">
+                  <i class="fa fa-window-restore text-secondary"></i>
+                </button>
                 <button
                 id="btnSettings"
                 type="button"
-                class="py-3 btn btn-lg  border-0"
+                class="py-3 mt-5 pt-5 btn btn-lg  border-0"
                 data-bs-toggle="collapse"
                 href="#collapseExample"
                 role="button"
                 aria-expanded="false"
                 aria-controls="collapseExample"
               >
-                <i class="fa fa-cog text-dark"></i>
+                <i class="fa fa-cog text-dark fs-2"></i>
               </button>
-
-                <button id="btnPopup" type="button" class="btn btn-sm border-0">
-                  <i class="fa fa-window-restore text-secondary"></i>
-                </button>
               </div>
             </div>
             <div class="col-9" id="clock-row ">
@@ -201,7 +201,7 @@
            <!-- Row - Progress -->
            <div class="row ">
             <div class="col-2"></div>
-            <div class="col-8 bg-warning rounded">
+            <div class="col-8 ">
 
               <div id="processing-div" class="text-center mt-3">
                 <div
@@ -546,7 +546,7 @@
         </div>
       </div>
     </div>
-    <!--- ** ROW: Error    ***    -->
+    <!--- ** ROW: template    ***    -->
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-4">
@@ -556,55 +556,8 @@
         </div>
       </div>
     </div>
-    <!--- ** ROW: Music ***    -->
-    <div class="container-fluid">
-      <div class="row"></div>
-      <!--- ** ROW:4 Bhav ***    -->
-      <div class="container-fluid">
-        <div class="row">row pml</div>
-      </div>
-
-      <!-- ** ROW:X TempControls ***    -->
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-4">row Pluto</div>
-        </div>
-      </div>
-
-      <!-- ** ROW:6 template ***    -->
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="row">
-              <div class="col-4 text-center">row Sapcex</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--- ** ROW:5 template  ***    -->
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-4 text-center mt-3">
-          <i
-            class="fa fa-clock-o"
-            style="color: #d8d5d5c1"
-            aria-hidden="true"
-          ></i>
-          <small id="lbCurrentRow" style="color: #d8d5d5c1">
-            <label id="lblUpdateTime"
-              ><i class="fa fa-spinner fa-spin cdicon" aria-hidden="true"></i
-            ></label>
-            cr:
-            <label id="lblCurrentRow">0</label>
-            lcr:
-            <label id="lblLastCurrentRow">0</label>
-            lr:
-            <label id="lblLoggedRow">0</label>
-          </small>
-        </div>
-      </div>
-    </div>
+   
+ 
 
     <!----------------- Floaters-Start  -------------- -->
     <div style="position: fixed; bottom: 15px; left: 15px; z-index: 999">
@@ -614,7 +567,7 @@
         loop
         muted
         class="mb-1"
-        style="width: 36px; height: 50px; display: none"
+        style="width: 136px; height: 50px; display: none"
       >
         <source src="media/video_dummy.mp4" type="video/mp4" />
       </video>
