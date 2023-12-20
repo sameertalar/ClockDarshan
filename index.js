@@ -308,11 +308,9 @@ $(document).ready(function () {
 
     $("#processing-div").removeClass("d-none");
 
-    //$("#progress-modal").modal("show");
+ 
     __ApiCallStatus = true;
-
-    $("#success-alert").hide();
-    $("#errorMessage").html("");
+       $("#errorMessage").html("");
 
     let paramMind = "";
     let isPost = 0;
@@ -376,7 +374,7 @@ $(document).ready(function () {
               }
               */
             }
-            //$("#processing-div").addClass('d-none');
+        
             __ApiCallStatus = false;
           }
         } catch (err) {
@@ -388,8 +386,7 @@ $(document).ready(function () {
           $("#errorMessage").html("Unhandled Error postToGoogle: " + err);
           buildPlatform();
         }
-
-        //$("#progress-modal").modal("hide");
+    
         $("#processing-div").addClass("d-none");
         __ApiCallStatus = false;
       },
@@ -400,8 +397,7 @@ $(document).ready(function () {
         __retry=__retry+1;
         buildPlatform();
         console.log("error_text", "Api Error Response -" + error_text);
-        $("#containerPath").html(error_text);
-        //$("#progress-modal").modal("hide");
+        $("#containerPath").html(error_text);      
         $("#processing-div").addClass("d-none");
       },
     });
@@ -717,9 +713,7 @@ $(document).ready(function () {
       success: function (data, textStatus, xhr) {
         console.log("oneClickResetSheet response data", data);
         //alert('SUCCESS - ' + data)
-        $("#errorMessage").html(data);
-       
-        __ApiCallStatus = false;
+        $("#errorMessage").html(data);   
         postToGoogle(true);
       },
       error: function (xhr, error_text, statusText) {
