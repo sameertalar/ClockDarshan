@@ -113,6 +113,12 @@ $(document).ready(function () {
 
     $("#btnDocument").on("click", btnDocumentClick);
 
+    $("#btnPlayVideo").on("click", toggleCollapse);
+    $("#radio-Music-Chunk").on("click", toggleCollapse);
+    $("#radio-Music-Meditation").on("click", toggleCollapse);
+
+
+
     $("#btnTest").on("click", function (event) {
       sendNotification("Be Here Now.");
     });
@@ -206,6 +212,12 @@ $(document).ready(function () {
       $("#errorMessage").html("Unhandled Error: " + error);
     }
   }
+
+  function toggleCollapse() {
+
+    $('#collapseSettings').collapse('toggle')
+  }
+
 
   function playAlertAudio(min, sec) {
     let musicMode = $(".radioMusic:checked").val();
@@ -666,6 +678,8 @@ $(document).ready(function () {
   }
 
   function oneClickResetSheet() {
+    toggleCollapse();
+
     if (confirm("Are you sure want to reset?")) {
       resetSheet();
     }
