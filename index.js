@@ -7,6 +7,7 @@ $(document).ready(function () {
   var __LastCurrentRow = 0;
   var __LoggedRow = 0;
   var __dataBhav;
+  var __retry = 0;
   var __bhavJsonUrl = "data/bhav.json?ver=1.7";
   const _HeadRows = 4;
 
@@ -17,6 +18,9 @@ $(document).ready(function () {
     "https://script.google.com/macros/s/AKfycbw5TRTD6t7I8fM2invWd3MTpA9JDO7E9_SREDN96HpZIeyp50TWJJRQcAm71VUBQWdLig/exec";
   const _ResetApiUrl =
     "https://script.google.com/macros/s/AKfycbyyLvjGHvWP5ZT9OIpaZvabVF5AOdjewSXdYH2A4a9o93joA5gySqEdRlaJWhu2JaJX7w/exec";
+
+  const _UpdaterApiUrl2 =
+    "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
 
   const _gods = [
     "गणेश",
@@ -117,8 +121,6 @@ $(document).ready(function () {
     $("#radio-Music-Chunk").on("click", toggleCollapse);
     $("#radio-Music-Meditation").on("click", toggleCollapse);
 
-
-
     $("#btnTest").on("click", function (event) {
       sendNotification("Be Here Now.");
     });
@@ -214,15 +216,13 @@ $(document).ready(function () {
   }
 
   function toggleCollapse() {
-
-    $('#collapseSettings').collapse('toggle')
+    $("#collapseSettings").collapse("toggle");
   }
-
 
   function playAlertAudio(min, sec) {
     let musicMode = $(".radioMusic:checked").val();
 
-   // console.log("Music Mode:", musicMode);
+    // console.log("Music Mode:", musicMode);
 
     if (musicMode != "C" && musicMode != "M") return;
 
@@ -266,8 +266,7 @@ $(document).ready(function () {
     if (src !== "") {
       console.log("🎵 Audio Play", min, qMins + "-" + sec, src);
 
-      try
-      {
+      try {
         let audioAlert = $("#audioCD");
         audioAlert.attr("src", "media/dhyan/" + src);
         audioAlert[0].play();
@@ -275,8 +274,6 @@ $(document).ready(function () {
         console.log("playAlertAudio Error", error);
         $("#errorMessage").html("playAlertAudio Error: " + error);
       }
-
-  
     }
   }
 
@@ -303,6 +300,12 @@ $(document).ready(function () {
   }
 
   function postToGoogle(update) {
+    if (__retry > 2)
+    {
+      $("#errorMessage").html("Max Retry Reached");
+      return;
+    } 
+
     $("#processing-div").removeClass("d-none");
 
     //$("#progress-modal").modal("show");
@@ -392,7 +395,9 @@ $(document).ready(function () {
       },
       error: function (xhr, error_text, statusText) {
         __ApiCallStatus = false;
-        $("#errorMessage").html(error_text);
+        $("#errorMessage").html("Api Error Response -" + error_text);
+        _UpdaterApiUrl = _UpdaterApiUrl2;
+        __retry=__retry+1;
         buildPlatform();
         console.log("error_text", "Api Error Response -" + error_text);
         $("#containerPath").html(error_text);
@@ -587,8 +592,7 @@ $(document).ready(function () {
     var timeNow = pad(min % 15, 2) + ":" + pad(sec, 2);
     $("#timeLeft").text(timeNow);
 
-    $("#timeRefresh").text(60-sec);
-
+    $("#timeRefresh").text(60 - sec);
   }
 
   // Media
@@ -702,7 +706,7 @@ $(document).ready(function () {
   }
 
   function resetSheet() {
-    $("#progress-modal").modal("show");
+    $("#processing-div").removeClass("d-none");
     __ApiCallStatus = true;
 
     $.ajax({
@@ -714,18 +718,15 @@ $(document).ready(function () {
         console.log("oneClickResetSheet response data", data);
         //alert('SUCCESS - ' + data)
         $("#errorMessage").html(data);
-
-        $("#progress-modal").modal("hide");
+       
         __ApiCallStatus = false;
-
         postToGoogle(true);
       },
       error: function (xhr, error_text, statusText) {
         //alert('Sheet Reset Done with - ' + error_text)
         console.log("error_text", error_text);
         $("#errorMessage").html("Reset action Error: " + error_text);
-
-        $("#progress-modal").modal("hide");
+       
         __ApiCallStatus = false;
       },
     });
