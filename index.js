@@ -14,7 +14,7 @@ $(document).ready(function () {
   //(dev)  const _UpdaterApiUrl =     "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
   //(dev)  const _ResetApiUrl =     "https://script.google.com/macros/s/AKfycbw8xlLx02pJJWyaJIFMNdsT_h-C04drUlpFZeCVb4v1/dev";
 
-  const _UpdaterApiUrl =
+  var _UpdaterApiUrl =
     "https://script.google.com/macros/s/AKfycbw5TRTD6t7I8fM2invWd3MTpA9JDO7E9_SREDN96HpZIeyp50TWJJRQcAm71VUBQWdLig/exec";
   const _ResetApiUrl =
     "https://script.google.com/macros/s/AKfycbyyLvjGHvWP5ZT9OIpaZvabVF5AOdjewSXdYH2A4a9o93joA5gySqEdRlaJWhu2JaJX7w/exec";
@@ -300,17 +300,15 @@ $(document).ready(function () {
   }
 
   function postToGoogle(update) {
-    if (__retry > 2)
-    {
+    if (__retry > 2) {
       $("#errorMessage").html("Max Retry Reached");
       return;
-    } 
+    }
 
     $("#processing-div").removeClass("d-none");
 
- 
     __ApiCallStatus = true;
-       $("#errorMessage").html("");
+    $("#errorMessage").html("");
 
     let paramMind = "";
     let isPost = 0;
@@ -374,7 +372,7 @@ $(document).ready(function () {
               }
               */
             }
-        
+
             __ApiCallStatus = false;
           }
         } catch (err) {
@@ -386,18 +384,18 @@ $(document).ready(function () {
           $("#errorMessage").html("Unhandled Error postToGoogle: " + err);
           buildPlatform();
         }
-    
+
         $("#processing-div").addClass("d-none");
         __ApiCallStatus = false;
       },
       error: function (xhr, error_text, statusText) {
         __ApiCallStatus = false;
-        $("#errorMessage").html("Api Error Response -" + error_text);
+        $("#errorMessage").html( "("+__retry+") Api Error Response -" + error_text);
         _UpdaterApiUrl = _UpdaterApiUrl2;
-        __retry=__retry+1;
+        __retry = __retry + 1;
         buildPlatform();
         console.log("error_text", "Api Error Response -" + error_text);
-        $("#containerPath").html(error_text);      
+        $("#containerPath").html(error_text);
         $("#processing-div").addClass("d-none");
       },
     });
@@ -713,14 +711,14 @@ $(document).ready(function () {
       success: function (data, textStatus, xhr) {
         console.log("oneClickResetSheet response data", data);
         //alert('SUCCESS - ' + data)
-        $("#errorMessage").html(data);   
+        $("#errorMessage").html(data);
         postToGoogle(true);
       },
       error: function (xhr, error_text, statusText) {
         //alert('Sheet Reset Done with - ' + error_text)
         console.log("error_text", error_text);
         $("#errorMessage").html("Reset action Error: " + error_text);
-       
+
         __ApiCallStatus = false;
       },
     });
