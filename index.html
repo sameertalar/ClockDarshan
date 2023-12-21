@@ -277,12 +277,12 @@
                             id="radio-Music-Off"
                             value="O"
                             autocomplete="off"
-                            checked
+                            
                           />
                           <label
                             class="btn btn-outline-dark"
                             for="radio-Music-Off"
-                            ><i class="fa fa-power-off"></i
+                            ><i class="fa fa-volume-off"></i
                           ></label>
                           <input
                             type="radio"
@@ -295,7 +295,7 @@
                           <label
                             class="btn btn-outline-dark"
                             for="radio-Music-Chunk"
-                            ><i class="fa fa-music"></i
+                            ><i class="fa fa-volume-up"></i
                           ></label>
                           <input
                             type="radio"
@@ -304,11 +304,12 @@
                             id="radio-Music-Meditation"
                             value="M"
                             autocomplete="off"
+                            checked
                           />
                           <label
                             class="btn btn-outline-dark"
                             for="radio-Music-Meditation"
-                            ><i class="fa fa-user-circle-o"></i
+                            ><i class="fa fa-music"></i
                           ></label>
                         </div>
                       </div>
@@ -455,7 +456,7 @@
                   value="G"
                   autocomplete="off"
                 />
-                <label
+                <audio
                   class="btn btn-outline-dark rounded-pill p-2"
                   for="radio-mind-2"
                 >
@@ -575,9 +576,12 @@
     </div>
 
     <div style="position: fixed; top: 25px; right: 10px; z-index: 999">
-      <span id="timeLeft" class="h6 text-primary text-end px-1 py-1"></span>
+      <span id="timeLeft" class="h6 text-primary text-end px-1 py-1"></span
+      ><br />
     </div>
-    <div style="position: fixed; top: 300px; left: 130px; z-index: 999"></div>
+    <div style="position: fixed; top: 50px; right: 10px; z-index: 999">
+      <i id="audioModeDisplay" class="fa fa-music px-1 py-1"></i>
+    </div>
     <!----------------- Floaters-End  -------------- -->
 
     <!--- **************   Content-End   **************    -->

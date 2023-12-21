@@ -1,4 +1,4 @@
-//https://fontawesome.com/v4/icons/
+//  https://fontawesome.com/v4/icons/
 
 $(document).ready(function () {
   var __ApiCallStatus = false;
@@ -118,8 +118,9 @@ $(document).ready(function () {
     $("#btnDocument").on("click", btnDocumentClick);
 
     $("#btnPlayVideo").on("click", toggleCollapse);
-    $("#radio-Music-Chunk").on("click", toggleCollapse);
     $("#radio-Music-Meditation").on("click", toggleCollapse);
+    $("#radio-Music-Chunk").on("click", toggleCollapse);
+    $("#radio-Music-Off").on("click", toggleCollapse);
 
     $("#btnTest").on("click", function (event) {
       sendNotification("Be Here Now.");
@@ -217,6 +218,25 @@ $(document).ready(function () {
 
   function toggleCollapse() {
     $("#collapseSettings").collapse("toggle");
+
+    // Display selected misic mode
+    $("#audioModeDisplay").removeClass("fa-volume-off");
+    $("#audioModeDisplay").removeClass("fa-volume-up");
+    $("#audioModeDisplay").removeClass("fa-music");
+
+    let musicMode = $(".radioMusic:checked").val();
+
+    switch (musicMode) {
+      case "C":
+        $("#audioModeDisplay").addClass("fa-volume-up");
+        break;
+      case "M":
+        $("#audioModeDisplay").addClass("fa-music");
+        break;
+      default:
+        $("#audioModeDisplay").addClass("fa-volume-off");
+        break;
+    }
   }
 
   function playAlertAudio(min, sec) {
@@ -331,7 +351,6 @@ $(document).ready(function () {
     // console.log("Api QueryString Request:", queryString);
 
     $.ajax({
-     
       url: googleurl,
       cache: false,
       dataType: "jsonp",
@@ -390,7 +409,9 @@ $(document).ready(function () {
       },
       error: function (xhr, error_text, statusText) {
         __ApiCallStatus = false;
-        $("#errorMessage").html( "("+__retry+") Api Error Response -" + error_text);
+        $("#errorMessage").html(
+          "(" + __retry + ") Api Error Response -" + error_text
+        );
         _UpdaterApiUrl = _UpdaterApiUrl2;
         __retry = __retry + 1;
         buildPlatform();
