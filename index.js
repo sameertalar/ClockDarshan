@@ -338,9 +338,16 @@ $(document).ready(function () {
       isPost = 1;
     }
 
+    let selectedRow =$(".radioChunk:checked").val() ;
+    if(selectedRow < 0) // To handle error case
+    {
+      selectedRow=getCurrentTrackerTimeRow();
+    }
+
+
     let queryString =
       "?row=" +
-      $(".radioChunk:checked").val() +
+      selectedRow +
       "&mind=" +
       paramMind +
       "&post=" +

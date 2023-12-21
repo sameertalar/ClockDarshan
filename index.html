@@ -59,13 +59,7 @@
                 >
                   <i class="fa fa-window-restore text-secondary"></i>
                 </button>
-                <button
-                  id="timeRefresh"
-                  type="button"
-                  class="btn btn-sm border-0 fs-6 mt-3 text-secondary"
-                >
-                  10
-                </button>
+                <i id="audioModeDisplay" class="btn btn-sm fa fa-music "></i>
                 <button
                   id="btnSettings"
                   type="button"
@@ -580,7 +574,14 @@
       ><br />
     </div>
     <div style="position: fixed; top: 50px; right: 10px; z-index: 999">
-      <i id="audioModeDisplay" class="fa fa-music px-1 py-1"></i>
+      <button
+      id="timeRefresh"
+      type="button"
+      class="btn btn-sm border-0 fs-6  text-secondary"
+    >
+      10
+    </button>
+      
     </div>
     <!----------------- Floaters-End  -------------- -->
 
@@ -595,6 +596,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="index.js?ver=3.15"></script>
+    <script src="index.js?ver=3.16"></script>
   </body>
 </html>
