@@ -91,10 +91,10 @@ input[type="checkbox"] {
   width: 0;
   height: 98%;
  
-  background:rgba(228, 208, 10 ,0.5) ;
+  background:rgba(228, 208, 10 ,0.3) ;
 
   border-left: double 1px #aa272f;
-  border-right: solid 8px #aa272f;
+  border-right: double 8px #aa272f;
 }
 
 /* Analog Clock */
