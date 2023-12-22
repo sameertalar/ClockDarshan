@@ -325,6 +325,8 @@ $(document).ready(function () {
       return;
     }
 
+    if (__ApiCallStatus == true) return;
+
     $("#processing-div").removeClass("d-none");
 
     __ApiCallStatus = true;
@@ -419,7 +421,7 @@ $(document).ready(function () {
         $("#errorMessage").html(
           "(" + __retry + ") Api Error Response -" + error_text
         );
-        _UpdaterApiUrl = _UpdaterApiUrl2;
+        //_UpdaterApiUrl = _UpdaterApiUrl2;
         __retry = __retry + 1;
         buildPlatform();
         console.log("error_text", "Api Error Response -" + error_text);
