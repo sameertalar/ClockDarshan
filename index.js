@@ -742,6 +742,7 @@ $(document).ready(function () {
         console.log("oneClickResetSheet response data", data);
         //alert('SUCCESS - ' + data)
         $("#errorMessage").html(data);
+        __ApiCallStatus = false;
         postToGoogle(true);
       },
       error: function (xhr, error_text, statusText) {
