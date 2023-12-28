@@ -118,12 +118,22 @@ $(document).ready(function () {
     $("#btnDocument").on("click", btnDocumentClick);
 
     $("#btnPlayVideo").on("click", toggleCollapse);
-    $("#radio-Music-Meditation").on("click", toggleCollapse);
-    $("#radio-Music-Chunk").on("click", toggleCollapse);
-    $("#radio-Music-Off").on("click", toggleCollapse);
+    $("#radio-Music-Meditation").on("click", setAudioMode);
+    $("#radio-Music-Chunk").on("click", setAudioMode);
+    $("#radio-Music-Off").on("click", setAudioMode);
 
     $("#btnTest").on("click", function (event) {
       sendNotification("Be Here Now.");
+    });
+
+    $("#btnDarkBag").on("click", function (event) {
+      $("body").addClass("blackBag");
+      $("#clockContainer").removeClass("bg-white");
+      $("#radio-div").removeClass("bg-white");
+    });
+
+    $("#btnAudioModeDisplay").on("click", function (event) {
+      $("#radio-Music-Off").click();     
     });
 
     $.getJSON(__bhavJsonUrl, function (data) {
@@ -185,7 +195,7 @@ $(document).ready(function () {
       if (sec === 1) {
         if (min % 15 === 0) {
           console.log("🕞 15 mins Quarter Shift Called");
-          postToGoogle(false,  false);
+          postToGoogle(false, false);
           $("#radio-mind-3").click();
           sendNotification("Take a deep Breath");
         } else {
@@ -193,8 +203,6 @@ $(document).ready(function () {
           console.log("Refreshed every min at " + min);
         }
       }
-
- 
     } catch (error) {
       console.log("Unhandled Error", error);
       $("#errorMessage").html("Unhandled Error: " + error);
@@ -203,7 +211,9 @@ $(document).ready(function () {
 
   function toggleCollapse() {
     $("#collapseSettings").collapse("toggle");
+  }
 
+  function setAudioMode() {
     // Display selected misic mode
     $("#audioModeDisplay").removeClass("fa-volume-off");
     $("#audioModeDisplay").removeClass("fa-volume-up");
@@ -222,6 +232,7 @@ $(document).ready(function () {
         $("#audioModeDisplay").addClass("fa-volume-off");
         break;
     }
+    toggleCollapse();
   }
 
   function playAlertAudio(min, sec) {
@@ -305,7 +316,6 @@ $(document).ready(function () {
   }
 
   function postToGoogle(update, minLoad) {
-
     if (!update) {
       if (__retry > 2) {
         $("#errorMessage").html("📛 Max Retry Reached.");
@@ -315,16 +325,11 @@ $(document).ready(function () {
       if (__ApiCallStatus == true) return;
     }
 
-    if(minLoad)
-    {
+    if (minLoad) {
       $("#minLoad-div").removeClass("d-none");
-    }
-    else{
-     
+    } else {
       $("#processing-div").removeClass("d-none");
     }
-
-  
 
     __ApiCallStatus = true;
     $("#errorMessage").html("");
@@ -624,6 +629,7 @@ $(document).ready(function () {
         $("#videoDummy")[0].play();
         console.log("Video Playing Started....");
       }
+      toggleCollapse();
     } catch (err) {
       $("#errorMessage").html("Video playing failed! " + err);
       console.log("Video playing failed! ", err);

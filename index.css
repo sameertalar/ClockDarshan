@@ -20,10 +20,8 @@ background-image: linear-gradient(#ffdfb6 ,white,white,white,#ffdfb6  );
   color: #ffffff !important;
 }
 
-#bodyCD {
-
-
-  background-color: white;
+.blackBag {
+  background-color: black;
 }
 
 img{

@@ -27,7 +27,7 @@
       }
     </style>
   </head>
-  <body id="bodyCD">
+  <body >
     <!--- **************    BODY-Start   **************    -->
 
     <!--- ** ROW: Quoter Progress ***    -->
@@ -51,19 +51,33 @@
         <div class="col-lg-4">
           <div class="row">
             <div class="col-2">
-              <div class="btn-group-vertical mt-5" id="containerButtons">
+              <div class="btn-group-vertical mt-3" id="containerButtons">
+                <button
+                  id="btnAudioModeDisplay"
+                  type="button"
+                  class="btn btn-sm border-0 mb-3"
+                >
+                  <i id="audioModeDisplay" class="btn btn-sm fa fa-music text-primary"></i>
+                </button>
+                <button
+                id="btnDarkBag"
+                type="button"
+                class="btn btn-sm border-0 mb-2"
+              >
+                <i  class="btn btn-sm fa fa-adjust  text-secondary"></i>
+              </button>
                 <button
                   id="btnPopup"
                   type="button"
-                  class="btn btn-sm border-0 mt-5 mb-2"
+                  class="btn btn-sm border-0 mb-2"
                 >
                   <i class="fa fa-window-restore text-secondary"></i>
                 </button>
-                <i id="audioModeDisplay" class="btn btn-sm fa fa-music "></i>
+
                 <button
                   id="btnSettings"
                   type="button"
-                  class="py-3 mt-3 pt-4 btn btn-lg border-0"
+                  class="py-3 mt-2 pt-4 btn btn-lg border-0"
                   data-bs-toggle="collapse"
                   href="#collapseSettings"
                   role="button"
@@ -271,7 +285,6 @@
                             id="radio-Music-Off"
                             value="O"
                             autocomplete="off"
-                            
                           />
                           <label
                             class="btn btn-outline-dark"
@@ -355,7 +368,7 @@
           <!-- Row : Buttons -->
           <div class="row">
             <div class="col text-center">
-              <div
+              <div id="radio-div" 
                 class="btn-group bg-white rounded-pill"
                 role="group"
                 aria-label="Basic radio toggle button group"
@@ -570,21 +583,23 @@
     </div>
 
     <div style="position: fixed; top: 25px; right: 10px; z-index: 999">
-      <span id="timeLeft" class="h6 text-primary text-end px-1 py-1"></span
-      >
-     
+      <span id="timeLeft" class="h6 text-primary text-end px-1 py-1"></span>
     </div>
     <div style="position: fixed; top: 50px; right: 10px; z-index: 999">
       <button
-      id="timeRefresh"
-      type="button"
-      class="btn btn-sm border-0 fs-6  text-secondary"
-    >
-      10
-    </button><br />
-    <div id="minLoad-div" class="spinner-border text-danger mt-3" role="status">
-      <span class="visually-hidden">Loading...</span>
-    </div>
+        id="timeRefresh"
+        type="button"
+        class="btn btn-sm border-0 fs-6 text-secondary"
+      >
+        10</button
+      ><br />
+      <div
+        id="minLoad-div"
+        class="spinner-border text-danger mt-3"
+        role="status"
+      >
+        <span class="visually-hidden">Loading...</span>
+      </div>
     </div>
     <!----------------- Floaters-End  -------------- -->
 
@@ -599,6 +614,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="index.js?ver=3.19"></script>
+    <script src="index.js?ver=3.20"></script>
   </body>
 </html>
