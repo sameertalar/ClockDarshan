@@ -21,19 +21,7 @@ background-image: linear-gradient(#ffdfb6 ,white,white,white,#ffdfb6  );
 }
 
 #bodyCD {
-  background-repeat: no-repeat;
-  background-size: 90%;
-  background-position: left;
-  background-image: linear-gradient(
-    #babec4,
-    white,
-    white,
-    white,
-    white,
-    white,
-    white,
-    #babec4
-  );
+
 
   background-color: white;
 }
@@ -91,7 +79,7 @@ input[type="checkbox"] {
   width: 0;
   height: 98%;
  
-  background:rgba(228, 208, 10 ,0.3) ;
+  background:rgba(46, 42, 6, 0.7) ;
 
   border-left: double 1px #aa272f;
   border-right: double 8px #aa272f;

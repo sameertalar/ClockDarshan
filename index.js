@@ -132,7 +132,7 @@ $(document).ready(function () {
 
     buildPlatform();
 
-    postToGoogle(false);
+    postToGoogle(false, false);
   }
 
   var __AppEnabledStatus = setInterval(processBeHereNow, 1000);
@@ -185,31 +185,16 @@ $(document).ready(function () {
       if (sec === 1) {
         if (min % 15 === 0) {
           console.log("🕞 15 mins Quarter Shift Called");
-          postToGoogle(false);
+          postToGoogle(false,  false);
           $("#radio-mind-3").click();
           sendNotification("Take a deep Breath");
         } else {
-          postToGoogle(false);
-          //console.log("Refreshed every min at " + min);
+          postToGoogle(false, true);
+          console.log("Refreshed every min at " + min);
         }
       }
 
-      if (
-        !__ApiCallStatus &&
-        __CurrentRow > 30 &&
-        __CurrentRow !== __LastCurrentRow
-      ) {
-        console.log("🌿 1 mins data Lag Api Called", getCurrentEasternTime());
-        console.log(
-          "__ApiCallStatus",
-          __ApiCallStatus,
-          "__CurrentRow",
-          __CurrentRow,
-          "__LastCurrentRow",
-          __LastCurrentRow
-        );
-        postToGoogle(false);
-      }
+ 
     } catch (error) {
       console.log("Unhandled Error", error);
       $("#errorMessage").html("Unhandled Error: " + error);
@@ -319,15 +304,27 @@ $(document).ready(function () {
     }
   }
 
-  function postToGoogle(update) {
-    if (__retry > 2) {
-      $("#errorMessage").html("📛 Max Retry Reached.");
-      return;
+  function postToGoogle(update, minLoad) {
+
+    if (!update) {
+      if (__retry > 2) {
+        $("#errorMessage").html("📛 Max Retry Reached.");
+        return;
+      }
+
+      if (__ApiCallStatus == true) return;
     }
 
-    if (__ApiCallStatus == true) return;
+    if(minLoad)
+    {
+      $("#minLoad-div").removeClass("d-none");
+    }
+    else{
+     
+      $("#processing-div").removeClass("d-none");
+    }
 
-    $("#processing-div").removeClass("d-none");
+  
 
     __ApiCallStatus = true;
     $("#errorMessage").html("");
@@ -340,20 +337,14 @@ $(document).ready(function () {
       isPost = 1;
     }
 
-    let selectedRow =$(".radioChunk:checked").val() ;
-    if(selectedRow < 0) // To handle error case
-    {
-      selectedRow=getCurrentTrackerTimeRow();
+    let selectedRow = $(".radioChunk:checked").val();
+    if (selectedRow < 0) {
+      // To handle error case
+      selectedRow = getCurrentTrackerTimeRow();
     }
 
-
     let queryString =
-      "?row=" +
-      selectedRow +
-      "&mind=" +
-      paramMind +
-      "&post=" +
-      isPost;
+      "?row=" + selectedRow + "&mind=" + paramMind + "&post=" + isPost;
 
     let googleurl = _UpdaterApiUrl + queryString;
 
@@ -414,6 +405,7 @@ $(document).ready(function () {
         }
 
         $("#processing-div").addClass("d-none");
+        $("#minLoad-div").addClass("d-none");
         __ApiCallStatus = false;
       },
       error: function (xhr, error_text, statusText) {
@@ -427,6 +419,7 @@ $(document).ready(function () {
         console.log("error_text", "Api Error Response -" + error_text);
         $("#containerPath").html(error_text);
         $("#processing-div").addClass("d-none");
+        $("#minLoad-div").addClass("d-none");
       },
     });
   }

@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     />
     <!-- <link rel="stylesheet" href="../libraries/bootstrap.min.css" />-->
-    <link rel="stylesheet" href="index.css?v=1.4" />
+    <link rel="stylesheet" href="index.css?v=1.5" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -27,7 +27,7 @@
       }
     </style>
   </head>
-  <body>
+  <body id="bodyCD">
     <!--- **************    BODY-Start   **************    -->
 
     <!--- ** ROW: Quoter Progress ***    -->
@@ -571,7 +571,8 @@
 
     <div style="position: fixed; top: 25px; right: 10px; z-index: 999">
       <span id="timeLeft" class="h6 text-primary text-end px-1 py-1"></span
-      ><br />
+      >
+     
     </div>
     <div style="position: fixed; top: 50px; right: 10px; z-index: 999">
       <button
@@ -580,8 +581,10 @@
       class="btn btn-sm border-0 fs-6  text-secondary"
     >
       10
-    </button>
-      
+    </button><br />
+    <div id="minLoad-div" class="spinner-border text-danger mt-3" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
     </div>
     <!----------------- Floaters-End  -------------- -->
 
