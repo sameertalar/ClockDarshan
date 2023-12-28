@@ -438,7 +438,8 @@ $(document).ready(function () {
 
     if (currentRow === data.row) {
       divRow.className = divRow.className + " bg-highlight";
-    } else if (currentRow === data.row - 1) divRow.className = divRow.className + " bg-highlight2";
+    } 
+    //else if (currentRow === data.row - 1) divRow.className = divRow.className + " bg-highlight2";
 
     //------- col 1
     let divC2 = document.createElement("div");
