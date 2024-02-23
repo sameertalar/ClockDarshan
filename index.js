@@ -121,6 +121,7 @@ $(document).ready(function () {
     $("#radio-Music-Meditation").on("click", setAudioMode);
     $("#radio-Music-Chunk").on("click", setAudioMode);
     $("#radio-Music-Off").on("click", setAudioMode);
+    $("#btnTestChunkAudio").on("click", testChunkAudio);
 
     $("#btnTest").on("click", function (event) {
       sendNotification("Be Here Now.");
@@ -133,7 +134,7 @@ $(document).ready(function () {
     });
 
     $("#btnAudioModeDisplay").on("click", function (event) {
-      //$("#radio-Music-Off").click();     
+      //$("#radio-Music-Off").click();
       playMeditation();
     });
 
@@ -170,13 +171,15 @@ $(document).ready(function () {
       let now = getCurrentEasternTime();
       let min = now.getMinutes();
       let sec = now.getSeconds();
+      let hour = now.getHours();
 
       // show Current Time
       showCurrentTimeLeft(min, sec);
       showCurrentSelection();
 
       showTimeElaspeProgress(min, sec);
-      playAlertAudio(min, sec);
+
+      if (sec === 1 || sec === 31) playAlertAudio(hour, min, sec);
 
       __CurrentRow = getCurrentTrackerTimeRow();
 
@@ -236,10 +239,10 @@ $(document).ready(function () {
     toggleCollapse();
   }
 
-  function playAlertAudio(min, sec) {
+  function playAlertAudio(hour, min, sec) {
     let musicMode = $(".radioMusic:checked").val();
 
-    // console.log("Music Mode:", musicMode);
+    //  console.log("Music Mode:", musicMode);
 
     if (musicMode != "C" && musicMode != "M") return;
 
@@ -248,19 +251,20 @@ $(document).ready(function () {
 
     if (musicMode == "C") {
       if (sec === 1 && qMins == 0) {
-        src = "0.alert_Zeta.mp3";
+        src = "dhyan/0.alert_Zeta.mp3";
       }
     } else if (musicMode == "M") {
       if (sec === 1) {
+        //  console.log("Inside look:", qMins);
         switch (qMins) {
           case 0:
-            src = "0.alert_china_sameer.mp3";
+            src = getChunkMedia(hour, min);
             break;
           case 5:
-            src = "5.alert_Attension_Seeker.wav";
+            src = "dhyan/5.alert_Attension_Seeker.wav";
             break;
           case 10:
-            src = "10.alert_Pebbles.mp3";
+            src = "dhyan/10.alert_Pebbles.mp3";
             break;
         }
       }
@@ -268,13 +272,13 @@ $(document).ready(function () {
       if (sec === 31) {
         switch (qMins) {
           case 2:
-            src = "2.5.alert_Tuk_Tuk.mp3"; //alert_Apple_Message_tone.mp3
+            src = "dhyan/2.5.alert_Tuk_Tuk.mp3"; //alert_Apple_Message_tone.mp3
             break;
           case 7:
-            src = "7.5.alert_Indian_Flute_Chunk.mp3";
+            src = "dhyan/7.5.alert_Indian_Flute_Chunk.mp3";
             break;
           case 12:
-            src = "12.5.coins-falling-on-floor.mp3";
+            src = "dhyan/12.5.coins-falling-on-floor.mp3";
             break;
         }
       }
@@ -285,12 +289,81 @@ $(document).ready(function () {
 
       try {
         let audioAlert = $("#audioCD");
-        audioAlert.attr("src", "media/dhyan/" + src);
+        audioAlert.attr("src", "media/" + src);
         audioAlert[0].play();
       } catch (error) {
         console.log("playAlertAudio Error", error);
         $("#errorMessage").html("playAlertAudio Error: " + error);
       }
+    }
+  }
+
+  function getChunkMedia(hour, min) {
+    if (min == 0) {
+      if (hour % 3 == 0) return "chunk/1_Gan_Ganapataye_Namaha.mp3";
+      if (hour % 3 == 1) return "chunk/2_Mahalakshmi_NamoNamaha.mp3";
+      if (hour % 3 == 2) return "chunk/3_Saraswathi_Namasthubyam.mp3";
+    }
+    if (min == 15) {
+      if (hour % 3 == 0) return "chunk/4_Om_Chaitanya_Gagangiri.mp3";
+      if (hour % 3 == 1) return "chunk/5_Annapoorne_Sada_Poorne.mp3";
+      if (hour % 3 == 2) return "chunk/6__Har_Har_Narmade_Har.mp3";
+    }
+    if (min == 30) {
+      if (hour % 3 == 0) return "chunk/7_Durge_Durghat_Bhari.mp3";
+      if (hour % 3 == 1) return "chunk/8_Aarti_Hanuman_ki_Anup.mp3";
+      if (hour % 3 == 2) return "chunk/9_Buddham_Saranam_Gacchami.mp3";
+    }
+    if (min == 45) {
+      if (hour % 3 == 0) return "chunk/10_Om_Namah_Shivay_Kalpataru.mp3";
+      if (hour % 3 == 1) return "chunk/11_Arunachala_Siva_Track.mp3";
+      if (hour % 3 == 2) return "chunk/12_Hare_Krishna_Badahari.mp3";
+    }
+
+    return "dhyan/0.alert_china_sameer.mp3";
+  }
+
+  function testChunkAudio() {
+    let selvalue = $("#selectTestChunkAudio").val();
+    console.log("testChunkAudio called ", selvalue);
+
+    switch (selvalue) {
+      case "1":
+        playAlertAudio(6, 0, 1);
+        break;
+      case "2":
+        playAlertAudio(7, 0, 1);
+        break;
+      case "3":
+        playAlertAudio(8, 0, 1);
+        break;
+      case "4":
+        playAlertAudio(6, 15, 1);
+        break;
+      case "5":
+        playAlertAudio(7, 15, 1);
+        break;
+      case "6":
+        playAlertAudio(8, 15, 1);
+        break;
+      case "7":
+        playAlertAudio(6, 30, 1);
+        break;
+      case "8":
+        playAlertAudio(7, 30, 1);
+        break;
+      case "9":
+        playAlertAudio(8, 30, 1);
+        break;
+      case "10":
+        playAlertAudio(6, 45, 1);
+        break;
+      case "11":
+        playAlertAudio(7, 45, 1);
+        break;
+      case "12":
+        playAlertAudio(8, 45, 1);
+        break;
     }
   }
 
@@ -443,7 +516,7 @@ $(document).ready(function () {
 
     if (currentRow === data.row) {
       divRow.className = divRow.className + " bg-highlight";
-    } 
+    }
     //else if (currentRow === data.row - 1) divRow.className = divRow.className + " bg-highlight2";
 
     //------- col 1

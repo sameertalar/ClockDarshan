@@ -27,7 +27,7 @@
       }
     </style>
   </head>
-  <body >
+  <body>
     <!--- **************    BODY-Start   **************    -->
 
     <!--- ** ROW: Quoter Progress ***    -->
@@ -57,15 +57,18 @@
                   type="button"
                   class="btn btn-sm border-0 mb-3"
                 >
-                  <i id="audioModeDisplay" class="btn btn-sm fa fa-music text-primary"></i>
+                  <i
+                    id="audioModeDisplay"
+                    class="btn btn-sm fa fa-music text-primary"
+                  ></i>
                 </button>
                 <button
-                id="btnDarkBag"
-                type="button"
-                class="btn btn-sm border-0 mb-2"
-              >
-                <i  class="btn btn-sm fa fa-adjust  text-secondary"></i>
-              </button>
+                  id="btnDarkBag"
+                  type="button"
+                  class="btn btn-sm border-0 mb-2"
+                >
+                  <i class="btn btn-sm fa fa-adjust text-secondary"></i>
+                </button>
                 <button
                   id="btnPopup"
                   type="button"
@@ -355,6 +358,42 @@
                         </audio>
                       </div>
                     </div>
+                    <!-- Test -->
+                    <div class="row mt-3">
+                      <div class="col">
+                        <div class="form-group row">
+                          <div class="col-4 text-right">
+                            <button
+                              id="btnTestChunkAudio"
+                              type="button"
+                              class="btn btn-sm btn-secondary"
+                            >
+                              Test
+                            </button>
+                          </div>
+
+                          <div class="col-8">
+                            <select
+                              id="selectTestChunkAudio"
+                              class="form-control"
+                            >
+                              <option value="1">Ganesh</option>
+                              <option value="2">Mahalaxmi</option>
+                              <option value="3">Saraswati</option>
+                              <option value="4">Maharaj</option>
+                              <option value="5">Annapoorna</option>
+                              <option value="6">Narmada</option>
+                              <option value="7">Durga</option>
+                              <option value="8">Hanuman</option>
+                              <option value="9">Buddha</option>
+                              <option value="10">Shiva</option>
+                              <option value="11">Raman Maharshi</option>
+                              <option value="12">Krishana</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <!-- Row - Template -->
                     <div class="row">
                       <div class="col"></div>
@@ -368,7 +407,8 @@
           <!-- Row : Buttons -->
           <div class="row">
             <div class="col text-center">
-              <div id="radio-div" 
+              <div
+                id="radio-div"
                 class="btn-group bg-white rounded-pill"
                 role="group"
                 aria-label="Basic radio toggle button group"
@@ -479,7 +519,6 @@
                     <span class="visually-hidden">Pramad</span>
                   </span>
                 </label>
-           
               </div>
             </div>
           </div>
@@ -595,6 +634,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="index.js?ver=3.21"></script>
+    <script src="index.js?ver=3.22"></script>
   </body>
 </html>
