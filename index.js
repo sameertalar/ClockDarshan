@@ -133,7 +133,8 @@ $(document).ready(function () {
     });
 
     $("#btnAudioModeDisplay").on("click", function (event) {
-      $("#radio-Music-Off").click();     
+      //$("#radio-Music-Off").click();     
+      playMeditation();
     });
 
     $.getJSON(__bhavJsonUrl, function (data) {
@@ -291,6 +292,10 @@ $(document).ready(function () {
         $("#errorMessage").html("playAlertAudio Error: " + error);
       }
     }
+  }
+
+  function playMeditation() {
+    $("#audioMed")[0].play();
   }
 
   function sendNotification(title) {
