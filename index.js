@@ -8,7 +8,7 @@ $(document).ready(function () {
   var __LoggedRow = 0;
   var __dataBhav;
   var __retry = 0;
-  var __bhavJsonUrl = "data/bhav.json?ver=1.7";
+  var __bhavJsonUrl = "data/bhav.json?ver=1.8";
   const _HeadRows = 4;
 
   //(dev)  const _UpdaterApiUrl =     "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
