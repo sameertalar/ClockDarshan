@@ -793,6 +793,9 @@ $(document).ready(function () {
   }
 
   function getCurrentEasternTime() {
+    return new Date();
+
+    //ToDo: Refactor if needed
     var d1 = new Date();
     var d2 = new Date(
       d1.getUTCFullYear(),
