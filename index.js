@@ -275,7 +275,7 @@ $(document).ready(function () {
             src = "dhyan/2.5.alert_Tuk_Tuk.mp3"; //alert_Apple_Message_tone.mp3
             break;
           case 7:
-            src = "dhyan/7.5.alert_Indian_Flute_Chunk.mp3";
+            src = "dhyan/7.5_sword-clash.mp3";
             break;
           case 12:
             src = "dhyan/12.5.coins-falling-on-floor.mp3";
