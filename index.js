@@ -426,8 +426,11 @@ $(document).ready(function () {
       selectedRow = getCurrentTrackerTimeRow();
     }
 
+let paramChant =  $("#txtChant").val(); 
+     
+
     let queryString =
-      "?row=" + selectedRow + "&mind=" + paramMind + "&post=" + isPost;
+      "?row=" + selectedRow + "&mind=" + paramMind + "&chant=" + paramChant + "&post=" + isPost ;
 
     let googleurl = _UpdaterApiUrl + queryString;
 
