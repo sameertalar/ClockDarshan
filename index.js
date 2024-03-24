@@ -15,7 +15,7 @@ $(document).ready(function () {
   //(dev)  const _ResetApiUrl =     "https://script.google.com/macros/s/AKfycbw8xlLx02pJJWyaJIFMNdsT_h-C04drUlpFZeCVb4v1/dev";
 
   var _UpdaterApiUrl =
-    "https://script.google.com/macros/s/AKfycbw5TRTD6t7I8fM2invWd3MTpA9JDO7E9_SREDN96HpZIeyp50TWJJRQcAm71VUBQWdLig/exec";
+    "https://script.google.com/macros/s/AKfycbwCen8J7a2JOlcGTZXFfrQEvgIFK14dU7Eu82x_rAEQjy07zNeghvwpevpYmVMKkkpqrw/exec";
   const _ResetApiUrl =
     "https://script.google.com/macros/s/AKfycbyyLvjGHvWP5ZT9OIpaZvabVF5AOdjewSXdYH2A4a9o93joA5gySqEdRlaJWhu2JaJX7w/exec";
 
