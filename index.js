@@ -426,7 +426,7 @@ $(document).ready(function () {
       selectedRow = getCurrentTrackerTimeRow();
     }
 
-let paramChant =  $("#txtChant").val(); 
+    let paramChant =  $("#txtChant").val(); 
      
 
     let queryString =
@@ -456,6 +456,7 @@ let paramChant =  $("#txtChant").val();
 
             // console.log("__LastCurrentRow", __LastCurrentRow);
             // console.log("__LoggedRow", __LoggedRow);
+            $("#txtChant").val(""); 
 
             $("#lblM5").html(data.counts.calm);
             $("#lblM4").html(data.counts.med);
