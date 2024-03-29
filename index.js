@@ -458,6 +458,7 @@ $(document).ready(function () {
             // console.log("__LastCurrentRow", __LastCurrentRow);
             // console.log("__LoggedRow", __LoggedRow);
             $("#txtChant").val(""); 
+            $('#iframeChantChart').attr("src", $('#iframeChantChart').attr("src"));
 
             $("#lblM5").html(data.counts.calm);
             $("#lblM4").html(data.counts.med);
