@@ -407,6 +407,7 @@ $(document).ready(function () {
       $("#minLoad-div").removeClass("d-none");
     } else {
       $("#processing-div").removeClass("d-none");
+      $("#processing-div2").removeClass("d-none");
     }
 
     __ApiCallStatus = true;
@@ -492,6 +493,7 @@ $(document).ready(function () {
         }
 
         $("#processing-div").addClass("d-none");
+        $("#processing-div2").addClass("d-none");
         $("#minLoad-div").addClass("d-none");
         __ApiCallStatus = false;
       },
