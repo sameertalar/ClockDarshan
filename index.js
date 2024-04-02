@@ -1,6 +1,8 @@
 //  https://fontawesome.com/v4/icons/
 
 $(document).ready(function () {
+
+  $("#scriptVersion").html("v3.33");
   var __ApiCallStatus = false;
 
   var __CurrentRow = 0;
