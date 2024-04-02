@@ -458,7 +458,9 @@ $(document).ready(function () {
 
             // console.log("__LastCurrentRow", __LastCurrentRow);
             // console.log("__LoggedRow", __LoggedRow);
-            $("#txtChant").val(""); 
+            if (update) 
+              $("#txtChant").val(""); 
+
             $('#iframeChantChart').attr("src", $('#iframeChantChart').attr("src"));
 
             $("#lblM5").html(data.counts.calm);
