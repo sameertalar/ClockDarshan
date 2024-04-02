@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-  $("#scriptVersion").html("v3.33");
+  $("#scriptVersion").html("v3.4");
   var __ApiCallStatus = false;
 
   var __CurrentRow = 0;
@@ -18,7 +18,7 @@ $(document).ready(function () {
   //(dev)  const _ResetApiUrl =     "https://script.google.com/macros/s/AKfycbw8xlLx02pJJWyaJIFMNdsT_h-C04drUlpFZeCVb4v1/dev";
 
   var _UpdaterApiUrl =
-  "https://script.google.com/macros/s/AKfycbyeOyh4N7vYEcGn3keOba3he4Je6NBRA058F_hDLONbEDTn-F6ycohUV1k2Z0PcXs0pww/exec";
+  "https://script.google.com/macros/s/AKfycbwQItlm8vijsJq10Emj11o_olEL5bZDI_bnqRd5A62sdpb1NM8mvBEXhQMzuunXCSxX4w/exec";
   const _ResetApiUrl =
     "https://script.google.com/macros/s/AKfycbyyLvjGHvWP5ZT9OIpaZvabVF5AOdjewSXdYH2A4a9o93joA5gySqEdRlaJWhu2JaJX7w/exec";
 
@@ -470,6 +470,10 @@ $(document).ready(function () {
             $("#lblM3").html(data.counts.apramad);
             $("#lblM2").html(data.counts.pramad);
             $("#lblM1").html(data.counts.buzz);
+
+            $("#chant-current").html(data.chant.current);
+            $("#chant-p100").html(data.chant.p100);
+            $("#chant-p70").html(data.chant.p70);
 
             $("#containerPath").html("");
 
