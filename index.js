@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-  $("#scriptVersion").html("v3.6");
+  $("#scriptVersion").html("v3.7");
   var __ApiCallStatus = false;
 
   var __CurrentRow = 0;
@@ -18,9 +18,9 @@ $(document).ready(function () {
   //(dev)  const _ResetApiUrl =     "https://script.google.com/macros/s/AKfycbw8xlLx02pJJWyaJIFMNdsT_h-C04drUlpFZeCVb4v1/dev";
 
   var _UpdaterApiUrl =
-  "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
+  "https://script.google.com/macros/s/AKfycbyoQTiknmd_11KXcO8Bi94SNNNZM9axLCs9xSMxqrcNGWUU62aCJykXDWHvHutx6Djcsw/exec";
   const _ResetApiUrl =
-    "https://script.google.com/macros/s/AKfycbw8xlLx02pJJWyaJIFMNdsT_h-C04drUlpFZeCVb4v1/dev";
+    "https://script.google.com/macros/s/AKfycbxcenhrNpgmAuRFB40o_H25EAAeoDmotbbY6xSXRxVvrl28Q9RoTq6YCmBaJ4WU2y8aVA/exec";
 
   const _UpdaterApiUrl2 =
     "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
