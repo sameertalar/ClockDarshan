@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-  $("#scriptVersion").html("v4.0");
+  $("#scriptVersion").html("v4.1");
   var __ApiCallStatus = false;
 
   var __CurrentRow = 0;
@@ -13,20 +13,13 @@ $(document).ready(function () {
   var __bhavJsonUrl = "data/bhav.json?ver=1.8";
   const _HeadRows = 4;
 
- // const _UpdaterApiUrl =     "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
- const _UpdaterApiUrl =  "https://script.google.com/macros/s/AKfycbw_ZtFRFbU9pF6XsEKGM39PePiRLxYBc3A1BLoPzjBoMgzAbjO_NilerFSpclH2bKt5Mw/exec";
+ //const _UpdaterApiUrl =     "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
+ const _UpdaterApiUrl =  "https://script.google.com/macros/s/AKfycbwzpkgzkXjosAgUXxcv3L2LefBTsqDw6N-6t1X8D8EZ2eX7yTr5Hfm8egwZRYX_pEYZYw/exec";
   
-
 
   //(dev)  const _ResetApiUrl =     "https://script.google.com/macros/s/AKfycbw8xlLx02pJJWyaJIFMNdsT_h-C04drUlpFZeCVb4v1/dev";
-
- 
-  
   const _ResetApiUrl =
     "https://script.google.com/macros/s/AKfycbxcenhrNpgmAuRFB40o_H25EAAeoDmotbbY6xSXRxVvrl28Q9RoTq6YCmBaJ4WU2y8aVA/exec";
-
-  const _UpdaterApiUrl2 =
-    "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
 
   const _gods = [
     "गणेश",
@@ -147,22 +140,18 @@ $(document).ready(function () {
 
     $.getJSON(__bhavJsonUrl, function (data) {
       __dataBhav = data;
-    });
-
-    buildPlatform();
-
-    console.log("Before Focus");
+    }); 
 
     $(window).focus(function() {
-      console.log('welcome (back)');
-      postToGoogle(false, false);
-      console.log('Focus Done');
+      console.log('Welcome (back)');
+      postToGoogle(false, false);      
    });
-
-   postToGoogle(false, false);
-    console.log("After Focus");
+ 
+   postToGoogle(false, false);    
     
   }
+
+
 
   var __AppEnabledStatus = setInterval(processBeHereNow, 1000);
 
@@ -500,7 +489,7 @@ $(document).ready(function () {
             for (let i = data.chunks.length - 1; i >= 0; i--) {
              // var divRow = createChunkDiv(data.chunks[i], data.currentRow);
              // document.getElementById("containerPath").appendChild(divRow);
-              createChunkRadio(data.chunks[i], data.currentRow);
+              createChunkRadios(data.chunks[i], data.currentRow);
             // document.getElementById("containerPath").appendChild(radio);
          
               
@@ -515,7 +504,7 @@ $(document).ready(function () {
           );
           $("#containerPath").html(err);
           $("#errorMessage").html("Unhandled Error postToGoogle: " + err);
-          buildPlatform();
+          //buildPlatform();
         }
 
         $("#processing-div").addClass("d-none");
@@ -539,7 +528,7 @@ $(document).ready(function () {
     });
   }
 
-  function createChunkRadio(data, currentRow) {
+  function createChunkRadios(data, currentRow) {
 
     let radio1 = document.createElement("input");
     radio1.setAttribute("type", "radio");
@@ -552,6 +541,7 @@ $(document).ready(function () {
     if (currentRow === data.row) 
     {
       radio1.checked = true;
+      
       $("#chunk-selected").html(data.chunk);
     }
 
@@ -559,34 +549,38 @@ $(document).ready(function () {
 
     document.getElementById("containerPath").appendChild(radio1);
 
+    // lable
     let chant = "";
 
     if(data.chant )
-      chant =" (" + data.chant + ")";
+      chant ="【" + data.chant + "】";
    
     let lbl1 = document.createElement("label");
     lbl1.innerHTML = data.chunk + chant;
     lbl1.setAttribute("for", "radioChunk" + data.row);
 
-    if (currentRow === data.row)
-      lbl1.setAttribute("class", "btn  btn-outline-primary ");
+    if (currentRow === data.row)    
+      lbl1.setAttribute("class", "btn btn-md btn-outline-primary  px-4 mr-5");
     else if (currentRow > data.row)
       lbl1.setAttribute("class", "btn btn-sm   btn-outline-dark py-0");
     else lbl1.setAttribute("class", "btn btn-sm  btn-outline-secondary py-0");
 
     document.getElementById("containerPath").appendChild(lbl1);
     
+    // Icon
     let i1 = document.createElement("i");
-
     if (currentRow >= data.row && data.value === "")
-      i1.className = " fa fa-exclamation-triangle text-danger ";
-    else i1.className = getFaClass(data.value);
-
-    if (currentRow == data.row) i1.className = i1.className + " fa-2x ";
-    else i1.className = i1.className + " cdicon2 ";
-
+      i1.className = " fa fa-exclamation-triangle text-danger  ";
+    else i1.className = getFaClass(data.value);  
     i1.setAttribute("aria-hidden", "true");
-    document.getElementById("containerPath").appendChild(i1);
+    lbl1.appendChild(i1);
+
+    if (currentRow === data.row)
+    {
+      var br = document.createElement("br");
+      document.getElementById("containerPath").appendChild(br);
+    }
+    
 
   }
 
@@ -677,25 +671,7 @@ $(document).ready(function () {
     return divRow;
   }
 
-  function buildPlatform() {
-    __CurrentRow = getCurrentTrackerTimeRow();
-    $("#lblCurrentRow").html(__CurrentRow);
 
-    
-/*
-let chunks = getChunks();
-    $("#containerPath").html("");
-
-    for (let i = 0; i <= chunks.length - 1; i++) {
-      //var divRow = createChunkDiv(chunks[i], __CurrentRow);
-      //document.getElementById("containerPath").appendChild(divRow);
-
-      let radio = createChunkRadio(chunks[i], __CurrentRow);
-      document.getElementById("containerPath").appendChild(radio);
-    }
-
-    */
-  }
 
   function getChunks() {
     var chunks = [];
