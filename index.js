@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-  $("#scriptVersion").html("v3.8");
+  $("#scriptVersion").html("v3.9");
   var __ApiCallStatus = false;
 
   var __CurrentRow = 0;
@@ -148,11 +148,16 @@ $(document).ready(function () {
 
     buildPlatform();
 
+    console.log("Before Focus");
+
     $(window).focus(function() {
       console.log('welcome (back)');
       postToGoogle(false, false);
+      console.log('Focus Done');
    });
 
+   postToGoogle(false, false);
+    console.log("After Focus");
     
   }
 
@@ -420,6 +425,8 @@ $(document).ready(function () {
       $("#processing-div").removeClass("d-none");
       $("#processing-div2").removeClass("d-none");
     }
+
+    console.log("Posting to Google api");
 
     __ApiCallStatus = true;
     $("#errorMessage").html("");
