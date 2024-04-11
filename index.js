@@ -535,7 +535,7 @@ $(document).ready(function () {
     radio1.setAttribute("name", "radioChunk");
     radio1.setAttribute("value", data.row);
     radio1.setAttribute("id", "radioChunk" + data.row);
-    radio1.setAttribute("class", "btn-check  radioChunk ml-2");
+    radio1.setAttribute("class", "btn-check  radioChunk ");
     radio1.setAttribute("autocomplete", "off");
 
     if (currentRow === data.row) 
@@ -560,7 +560,7 @@ $(document).ready(function () {
     lbl1.setAttribute("for", "radioChunk" + data.row);
 
     if (currentRow === data.row)    
-      lbl1.setAttribute("class", "btn btn-md btn-outline-primary  px-4 mr-5");
+      lbl1.setAttribute("class", "btn btn-md btn-outline-primary  px-4 ");
     else if (currentRow > data.row)
       lbl1.setAttribute("class", "btn btn-sm   btn-outline-dark py-0");
     else lbl1.setAttribute("class", "btn btn-sm  btn-outline-secondary py-0");
@@ -577,8 +577,8 @@ $(document).ready(function () {
 
     if (currentRow === data.row)
     {
-      var br = document.createElement("br");
-      document.getElementById("containerPath").appendChild(br);
+     // var br = document.createElement("br");
+     // document.getElementById("containerPath").appendChild(br);
     }
     
 
