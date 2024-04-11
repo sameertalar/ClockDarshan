@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-  $("#scriptVersion").html("v3.7");
+  $("#scriptVersion").html("v3.8");
   var __ApiCallStatus = false;
 
   var __CurrentRow = 0;
@@ -141,13 +141,19 @@ $(document).ready(function () {
       playMeditation();
     });
 
+
     $.getJSON(__bhavJsonUrl, function (data) {
       __dataBhav = data;
     });
 
     buildPlatform();
 
-    postToGoogle(false, false);
+    $(window).focus(function() {
+      console.log('welcome (back)');
+      postToGoogle(false, false);
+   });
+
+    
   }
 
   var __AppEnabledStatus = setInterval(processBeHereNow, 1000);
@@ -386,7 +392,8 @@ $(document).ready(function () {
     });
   }
 
-  function setBhavImage(imageRow) {
+  function setBhavImage(imageRow) {    
+
     if ($("#imgBhav").attr("src").includes(imageRow)) return;
 
     if (imageRow < 28 && !$("#imgBhav").attr("src").includes("svg")) {
@@ -394,6 +401,7 @@ $(document).ready(function () {
     } else {
       $("#imgBhav").attr("src", "img/bhav/" + imageRow + ".jpg");
     }
+   
   }
 
   function postToGoogle(update, minLoad) {
@@ -547,7 +555,11 @@ $(document).ready(function () {
     radio1.setAttribute("class", "btn-check  radioChunk");
     radio1.setAttribute("autocomplete", "off");
 
-    if (currentRow === data.row) radio1.checked = true;
+    if (currentRow === data.row) 
+    {
+      radio1.checked = true;
+      $("#chunk-selected").html(data.chunk);
+    }
 
     if (currentRow + 1 < data.row) radio1.disabled = true;
 
