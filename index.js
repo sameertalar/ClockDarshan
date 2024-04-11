@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-  $("#scriptVersion").html("v3.9");
+  $("#scriptVersion").html("v4.0");
   var __ApiCallStatus = false;
 
   var __CurrentRow = 0;
@@ -13,12 +13,15 @@ $(document).ready(function () {
   var __bhavJsonUrl = "data/bhav.json?ver=1.8";
   const _HeadRows = 4;
 
-  //(dev)  const _UpdaterApiUrl =     "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
- 
+ // const _UpdaterApiUrl =     "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
+ const _UpdaterApiUrl =  "https://script.google.com/macros/s/AKfycbw_ZtFRFbU9pF6XsEKGM39PePiRLxYBc3A1BLoPzjBoMgzAbjO_NilerFSpclH2bKt5Mw/exec";
+  
+
+
   //(dev)  const _ResetApiUrl =     "https://script.google.com/macros/s/AKfycbw8xlLx02pJJWyaJIFMNdsT_h-C04drUlpFZeCVb4v1/dev";
 
-  var _UpdaterApiUrl =
-  "https://script.google.com/macros/s/AKfycbyoQTiknmd_11KXcO8Bi94SNNNZM9axLCs9xSMxqrcNGWUU62aCJykXDWHvHutx6Djcsw/exec";
+ 
+  
   const _ResetApiUrl =
     "https://script.google.com/macros/s/AKfycbxcenhrNpgmAuRFB40o_H25EAAeoDmotbbY6xSXRxVvrl28Q9RoTq6YCmBaJ4WU2y8aVA/exec";
 
@@ -433,11 +436,13 @@ $(document).ready(function () {
 
     let paramMind = "";
     let isPost = 0;
-
+ 
     if (update) {
       paramMind = $(".radioMind:checked").val();
       isPost = 1;
     }
+
+   
 
     let selectedRow = $(".radioChunk:checked").val();
     if (selectedRow < 0) {
@@ -493,16 +498,12 @@ $(document).ready(function () {
             $("#containerPath").html("");
 
             for (let i = data.chunks.length - 1; i >= 0; i--) {
-              var divRow = createChunkDiv(data.chunks[i], data.currentRow);
-              document.getElementById("containerPath").appendChild(divRow);
-
-              /*
-              if (data.chunks[i].row === __CurrentRow) {
-                sendNotification(
-                  data.chunks[i].chunk + " " + data.chunks[i].god
-                );
-              }
-              */
+             // var divRow = createChunkDiv(data.chunks[i], data.currentRow);
+             // document.getElementById("containerPath").appendChild(divRow);
+              createChunkRadio(data.chunks[i], data.currentRow);
+            // document.getElementById("containerPath").appendChild(radio);
+         
+              
             }
 
             __ApiCallStatus = false;
@@ -537,6 +538,58 @@ $(document).ready(function () {
       },
     });
   }
+
+  function createChunkRadio(data, currentRow) {
+
+    let radio1 = document.createElement("input");
+    radio1.setAttribute("type", "radio");
+    radio1.setAttribute("name", "radioChunk");
+    radio1.setAttribute("value", data.row);
+    radio1.setAttribute("id", "radioChunk" + data.row);
+    radio1.setAttribute("class", "btn-check  radioChunk ml-2");
+    radio1.setAttribute("autocomplete", "off");
+
+    if (currentRow === data.row) 
+    {
+      radio1.checked = true;
+      $("#chunk-selected").html(data.chunk);
+    }
+
+    if (currentRow + 1 < data.row) radio1.disabled = true;
+
+    document.getElementById("containerPath").appendChild(radio1);
+
+    let chant = "";
+
+    if(data.chant )
+      chant =" (" + data.chant + ")";
+   
+    let lbl1 = document.createElement("label");
+    lbl1.innerHTML = data.chunk + chant;
+    lbl1.setAttribute("for", "radioChunk" + data.row);
+
+    if (currentRow === data.row)
+      lbl1.setAttribute("class", "btn  btn-outline-primary ");
+    else if (currentRow > data.row)
+      lbl1.setAttribute("class", "btn btn-sm   btn-outline-dark py-0");
+    else lbl1.setAttribute("class", "btn btn-sm  btn-outline-secondary py-0");
+
+    document.getElementById("containerPath").appendChild(lbl1);
+    
+    let i1 = document.createElement("i");
+
+    if (currentRow >= data.row && data.value === "")
+      i1.className = " fa fa-exclamation-triangle text-danger ";
+    else i1.className = getFaClass(data.value);
+
+    if (currentRow == data.row) i1.className = i1.className + " fa-2x ";
+    else i1.className = i1.className + " cdicon2 ";
+
+    i1.setAttribute("aria-hidden", "true");
+    document.getElementById("containerPath").appendChild(i1);
+
+  }
+
 
   function createChunkDiv(data, currentRow) {
     //console.log("createChunkDiv",currentRow,data);
@@ -628,14 +681,20 @@ $(document).ready(function () {
     __CurrentRow = getCurrentTrackerTimeRow();
     $("#lblCurrentRow").html(__CurrentRow);
 
-    let chunks = getChunks();
-
+    
+/*
+let chunks = getChunks();
     $("#containerPath").html("");
 
     for (let i = 0; i <= chunks.length - 1; i++) {
-      var divRow = createChunkDiv(chunks[i], __CurrentRow);
-      document.getElementById("containerPath").appendChild(divRow);
+      //var divRow = createChunkDiv(chunks[i], __CurrentRow);
+      //document.getElementById("containerPath").appendChild(divRow);
+
+      let radio = createChunkRadio(chunks[i], __CurrentRow);
+      document.getElementById("containerPath").appendChild(radio);
     }
+
+    */
   }
 
   function getChunks() {
