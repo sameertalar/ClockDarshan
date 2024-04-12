@@ -463,6 +463,7 @@ $(document).ready(function () {
         // console.log("Api Response Data:", data);
 
         try {
+/*
           if (data && data.chunks) {
             __LastCurrentRow = data.currentRow;
             __LoggedRow = data.loggedRow;
@@ -503,6 +504,9 @@ $(document).ready(function () {
 
             __ApiCallStatus = false;
           }
+          */
+          __ApiCallStatus = false;
+
         } catch (err) {
           console.log(
             "Unhandled Error while processing postToGoogle response",
