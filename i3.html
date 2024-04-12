@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Be Here Now</title>
+    <link rel="icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" href="img/clockDarshan5.2-min.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="../libraries/bootstrap.min.css" />-->
+    <link rel="stylesheet" href="index.css?v=1.5" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      .chunkLable {
+        fill: #ffffff;
+        font-size: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--- **************    BODY-Start   **************    -->
+
+    <!--- ** ROW: Quoter Progress ***    -->
+
+    <div
+      class="container-fluid"
+      style="position: fixed; top: 0; left: 0; z-index: 999"
+    >
+      <div class="row">
+        <div class="col-lg-4" style="position: fixed; top: 0px; z-index: 999">
+          <div id="quarterProgress" class="progressOuter">
+            <div id="quarterStatus"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--- ** ROW: Clock, Buttons and Bhav***    -->
+    <div class="container-fluid">
+      <div class="row mt-3">
+        <!--- ** Column 1 Clock ***    -->
+        <div class="col-lg-4">
+          <div class="row">
+            <div class="col-2">
+              <div class="btn-group-vertical mt-3">
+                <span id="timeLeft" class="h6 text-primary text-end px-2 py-1"></span>
+                <span
+                id="timeRefresh"               
+                class="px-2 rounded-pill bg-light fs-6 text-secondary "
+              > 10</span>
+               <div
+              id="minLoad-div"
+              class="spinner-border text-danger mt-3"
+              role="status"
+            >
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <span id="chant-current" class="text-success px-2">00</span>
+            <span id="chant-p100"  class="text-warning  px-2">00</span>
+            <span id="chant-p70"  class="text-secondary  px-2">00</span>
+            <span id="chunk-selected"  class="h6 text-danger">0-00</span>
+              </div>
+            </div>
+            <div class="col-9" id="clock-row ">
+              <!--  Clock-Start -->
+              <div id="clockContainer" class="mt-2 bg-white rounded-circle">
+                <div id="clock-container">
+                  <svg id="clock" viewBox="0 0 100 100">
+                    <!---->
+                    <!-- <text id="currentTimeH" x="48" y="44">4</text>    <text id="currentTime" x="48" y="51.5">10</text>-->
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="21"
+                      fill="#06d3e2"
+                      style="animation: b 12s infinite"
+                    />
+                    <style>
+                      @keyframes b {
+                        0%,
+                        to {
+                          transform-origin: center;
+                          transform: scale(0.5);
+                        }
+                        50% {
+                          transform: scale(1);
+                        }
+                      }
+                    </style>
+                    <g id="onepointerBase">
+                      <rect
+                        id="tailforCurrent"
+                        x="47"
+                        y="28"
+                        width="6"
+                        height="4"
+                        rx="2"
+                        ry="2"
+                        fill="#AAFF00"
+                        stroke="#000000"
+                        stroke-width="0.1"
+                      />
+                      <circle
+                        id="onepointer1"
+                        cx="49.7"
+                        cy="13.7"
+                        r="12"
+                        stroke="#AAFF00"
+                        stroke-width="7%"
+                        fill="none"
+                      />
+                    </g>
+                    <!-- Inner Ring In-Out-->
+                    <g id="onepointerCircle">
+                      <circle
+                        id="onepointer2"
+                        cx="49.7"
+                        cy="13.7"
+                        r="11"
+                        stroke="#436EE0"
+                        stroke-width="1.7%"
+                        fill="none"
+                      />
+                      <!-- Inner Ring-->
+                      <circle
+                        id="onepointer3"
+                        cx="49.7"
+                        cy="13.7"
+                        r="11"
+                        stroke="#F757CA"
+                        stroke-width="0.6%"
+                        fill="none"
+                      />
+                      <g class="centerCore"></g>
+                    </g>
+                    <g transform="translate(50, 50)"></g>
+                    <g id="hands">
+                      <rect
+                        id="minHand"
+                        x="48.5"
+                        y="0"
+                        width="3"
+                        height="10"
+                        rx="4"
+                        ry="4"
+                        fill="#AAFF00"
+                        stroke="#000000"
+                        stroke-width="0.5%"
+                      />
+                      <rect
+                        id="hourHand"
+                        x="48.5"
+                        y="1"
+                        width="5"
+                        height="5"
+                        rx="4.5"
+                        ry="4.5"
+                        fill="#AAFF00"
+                        stroke="#000000"
+                        stroke-width="0.5%"
+                      />
+                    </g>
+                    <g transform="translate(50,50)">
+                      <text
+                        id="centerCoreD"
+                        x="-2"
+                        y="3"
+                        style="cursor: pointer"
+                      >
+                        ⚪
+                      </text>
+                    </g>
+                    <!-- https://medium.com/allenhwkim/html-analog-clock-in-few-minutes-13e5983e6543-->
+                  </svg>
+                </div>
+              </div>
+              <!--  Clock-End -->
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
+        <!--- ** Column 2 Error, Settings Buttons, Bhav ***    -->
+        <div class="col-lg-4">
+          <!-- Row : Error -->
+          <div class="row">
+            <div class="col">
+              <span id="errorMessage" class="bg-danger text-white"></span>
+            </div>
+          </div>
+          <!-- Row - Progress -->
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <div id="processing-div" class="text-center mt-3">
+                <div
+                  class="spinner-border text-info"
+                  style="width: 7rem; height: 7rem"
+                  role="status"
+                >
+                  <span class="sr-only">Loading...</span>
+                  <img src="img/breathe.svg" alt="Be Here now" />
+                </div>
+              </div>
+            </div>
+            <div class="col-2"></div>
+          </div>
+          <!-- Row : Settings -->
+          <div class="row">
+            <div class="col">
+              <div class="collapse" id="collapseSettings">
+                <div class="card card-body">
+                  <div class="container-fluid">
+                    <!-- Row - setting buttons-->
+                    <div class="row">
+                      <div class="col text-center">
+                        <button
+                          id="btnExcel"
+                          type="button"
+                          class="btn btn-lg border-0"
+                        >
+                          <i class="fa fa-table text-success"></i>
+                        </button>
+                        <button
+                          type="button"
+                          class="btn border-0"
+                          id="btnDocument"
+                        >
+                          <i class="fa fa-file-text-o text-success"></i>
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-lg border-0"
+                          id="btnPlayVideo"
+                        >
+                          <i class="fa fa-video-camera text-info"></i>
+                        </button>
+                        <button
+                          id="btnResetSheet"
+                          type="button"
+                          class="btn btn-lg border-0 p-3"
+                        >
+                          <i class="fa fa-random text-danger"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <!-- Row - Music Mode buttons-->
+                    <div class="row">
+                      <div class="col text-center">
+                        <div
+                          class="btn-group bg-white rounded-pill"
+                          role="group"
+                          aria-label="Basic radio toggle button group"
+                        >
+                          <input
+                            type="radio"
+                            class="btn-check radioMusic"
+                            name="radioMusicMode"
+                            id="radio-Music-Off"
+                            value="O"
+                            autocomplete="off"
+                          />
+                          <label
+                            class="btn btn-outline-dark btn-lg"
+                            for="radio-Music-Off"
+                            ><i class="fa fa-volume-off"></i
+                          ></label>
+                          <input
+                            type="radio"
+                            class="btn-check radioMusic"
+                            name="radioMusicMode"
+                            id="radio-Music-Chunk"
+                            autocomplete="off"
+                            value="C"
+                            checked
+                          />
+                          <label
+                            class="btn btn-outline-dark  btn-lg"
+                            for="radio-Music-Chunk"
+                            ><i class="fa fa-volume-up"></i
+                          ></label>
+                          <input
+                            type="radio"
+                            class="btn-check radioMusic"
+                            name="radioMusicMode"
+                            id="radio-Music-Meditation"
+                            value="M"
+                            autocomplete="off"
+                            
+                          />
+                          <label
+                            class="btn btn-outline-dark  btn-lg"
+                            for="radio-Music-Meditation"
+                            ><i class="fa fa-music"></i
+                          ></label>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Row - Audio Meditation -->
+                    <div class="row">
+                      <div class="col">
+                        <audio
+                          id="audioCD"
+                          class="form-control"
+                          controls
+                          style="width: 100%"
+                        >
+                          <source
+                            src="media/dhyan/0.alert_Zeta.mp3"
+                            type="audio/mp3"
+                          />
+                        </audio>
+                      </div>
+                    </div>
+                    <!-- Row - Audio Be here now -->
+                    <div class="row">
+                      <div class="col">
+                        <small> Be Here Now</small>
+                        <audio
+                          id="audioMed"
+                          class="form-control"
+                          controls
+                          loop
+                          style="width: 100%"
+                        >
+                          <source
+                            src="media/SaReGaMa18Sec.mp3"
+                            type="audio/mp3"
+                          />
+                        </audio>
+                      </div>
+                    </div>
+                    <!-- Test -->
+                    <div class="row mt-3">
+                      <div class="col">
+                        <div class="form-group row">
+                          <div class="col-4 text-right">
+                            <button
+                              id="btnTestChunkAudio"
+                              type="button"
+                              class="btn btn-sm btn-secondary"
+                            >
+                              Test
+                            </button>
+                          </div>
+
+                          <div class="col-8">
+                            <select
+                              id="selectTestChunkAudio"
+                              class="form-control"
+                            >
+                              <option value="1">Ganesh</option>
+                              <option value="2">Mahalaxmi</option>
+                              <option value="3">Saraswati</option>
+                              <option value="4">Maharaj</option>
+                              <option value="5">Annapoorna</option>
+                              <option value="6">Narmada</option>
+                              <option value="7">Durga</option>
+                              <option value="8">Hanuman</option>
+                              <option value="9">Buddha</option>
+                              <option value="10">Shiva</option>
+                              <option value="11">Raman Maharshi</option>
+                              <option value="12">Krishana</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Row - Template -->
+                    <div class="row">
+                      <div class="col"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row : Buttons -->
+          <div class="row">
+<div class="col-sm-4">
+
+  <select class="form-control form-control-lg">
+    <option>05-04 【65】45</option>
+    <option>05-03 《55》43</option>
+    <option>05-02 〘50〙41</option>
+    <option>05-01 〚42〛40</option>
+  </select>
+</div>
+
+            <div class="col-sm-2 text-center">          
+              <input type="text" class="form-control border border-warning form-control-lg text-danger fw-bold" type="number"  id="txtChant" autocomplete="off" style="width:70px" maxlength="3" name="txtChant">
+            </div>
+            <div class="col-sm-2 text-center">          
+              
+              <div class="btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-lg btn-outline-primary ">
+                  <input type="checkbox" checked autocomplete="off"> 
+                  <i class="fa fa-user-circle" aria-hidden="true"></i>
+                </label>
+              </div>
+            </div>
+
+          </div>
+          <!-- Row : Bhav -->
+          <div class="row">
+            <div class="col">
+              <div id="divBhav" class="text-center">
+                <img
+                  id="imgBhav"
+                  class="center-block rounded-pill"
+                  src="img/line.svg"
+                  alt="Be Here now"
+                  onerror="this.src='img/line.svg'"
+                />
+                <br />
+                <div class="d-none">
+                  <div class="text-danger">
+                    <i
+                      class="fa fa-picture-o text-danger"
+                      aria-hidden="true"
+                    ></i>
+                    <span id="bhavPicText"></span>
+                  </div>
+                  <div id="bhavVerse" class="text-success"></div>
+                  <div class="text-warning">
+                    <i
+                      class="fa fa-life-ring text-warning"
+                      aria-hidden="true"
+                    ></i>
+                    <abbr title="attribute" id="bhavActionText"></abbr>
+                  </div>
+                  <em>
+                    <div id="bhavquote" class="text-italic text-primary"></div>
+                  </em>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--- ** Column 3  History ***    -->
+
+        <div class="col-lg-4">
+          <div class="row">
+            <div class="col text-center">
+              <iframe id="iframeChantChart" width="344" height="202" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTssIITAG7_GIP76MaZKmiWUVtzLVv46mV783SsJ4ud3leFdHbxTSDyaet5t3LkOAPgi9zs1SNX_b8G/pubchart?oid=1880850615&amp;format=image"></iframe>
+            </div>
+             
+          </div>
+          <div class="row">
+            <div class="col text-center">
+            <div id="processing-div2" class="text-center mt-3">
+              <div
+                class="spinner-border text-info"
+                style="width: 7rem; height: 7rem"
+                role="status"
+              >
+                <span class="sr-only">Loading...</span>
+                <img src="img/breathe.svg" alt="Be Here now" />
+              </div>
+            </div>
+          </div>
+         </div>
+          <div class="row">
+            <div class="col-2"></div>
+            <div id="containerPath" class="col">
+              <div class="text-center mt-5">
+                <div class="spinner-border text-primary" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+
+                <h3 class="text-success">Take a Deep Breath!</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col  text-center">
+            <small id="scriptVersion" class="fw-lighter fs-6 text-muted ">o.oo</small>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+    <!--- ** ROW: template    ***    -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="row">
+            <div class="col text-center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!----------------- Floaters-Start  -------------- -->
+    <div style="position: fixed; top: 525px; left: -5px; z-index: 999">
+      <video
+        id="videoDummy"
+        controls
+        loop
+        muted
+        class="mb-1 rounded-circle"
+        style="width: 110px; height: 50px; display: none"
+      >
+        <source src="media/video_dummy.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div style="position: fixed; top: 25px; right: 2px; z-index: 999">
+      <div class="btn-group-vertical mt-3" id="containerButtons">
+        <button
+          id="btnAudioModeDisplay"
+          type="button"
+          class="btn btn-sm border-0 mb-3"
+        >
+          <i
+            id="audioModeDisplay"
+            class="btn btn-sm fa fa-music text-primary"
+          ></i>
+        </button>
+        <button
+          id="btnDarkBag"
+          type="button"
+          class="btn btn-sm border-0 mb-2"
+        >
+          <i class="btn btn-sm fa fa-adjust text-secondary"></i>
+        </button>
+        <button
+          id="btnPopup"
+          type="button"
+          class="btn btn-sm border-0 mb-2"
+        >
+          <i class="fa fa-window-restore text-secondary"></i>
+        </button>
+
+        <button
+          id="btnSettings"
+          type="button"
+          class="py-3 mt-2 pt-5 btn btn-lg border-0"
+          data-bs-toggle="collapse"
+          href="#collapseSettings"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseSettings"
+        >
+          <i class="fa fa-cog text-secondary fs-1"></i>
+        </button>
+      </div>
+      
+     
+
+    </div>
+    <div style="position: fixed; top: 90px; right: 10px; z-index: 999">
+     <br />
+     
+    </div>
+    <!----------------- Floaters-End  -------------- -->
+
+    <!--- **************   Content-End   **************    -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="index3.js?ver=4.1.2"></script>
+  </body>
+</html>
