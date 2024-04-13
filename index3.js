@@ -113,8 +113,8 @@ $(document).ready(function () {
     $("#btnExcel").on("click", btnExcelOpenClick);
 
     $("#clock-container").on("click", oneClickTracker);
-    $("#ClockInnerCircle").on("click", oneClickTracker);
-    $("#centerCoreD").on("click", oneClickTracker);
+    //$("#ClockInnerCircle").on("click", oneClickTracker);
+    //$("#centerCoreD").on("click", oneClickTracker);
      
 
     $("#btnDocument").on("click", btnDocumentClick);
