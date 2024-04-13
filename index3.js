@@ -8,7 +8,7 @@ $(document).ready(function () {
   var __CurrentRow = 0;
   var __LastCurrentRow = 0;
   var __LoggedRow = 0;
-  var __dataBhav;
+ 
   var __retry = 0;
   var __bhavJsonUrl = "data/bhav.json?ver=1.8";
   const _HeadRows = 4;
@@ -141,9 +141,7 @@ $(document).ready(function () {
     });
 
 
-    $.getJSON(__bhavJsonUrl, function (data) {
-      __dataBhav = data;
-    }); 
+   
 
     $(window).focus(function() {
       console.log('Welcome (back)');
@@ -193,7 +191,7 @@ $(document).ready(function () {
       __CurrentRow = getCurrentTrackerTimeRow();
 
       setBhavImage(__CurrentRow);
-      setBhavTexts(__CurrentRow);
+      //setBhavTexts(__CurrentRow);
 
       $("#lblCurrentRow").html(__CurrentRow);
 
@@ -844,24 +842,7 @@ $(document).ready(function () {
     }
   }
 
-  function setBhavTexts(row) {
-    try {
-      if (row && __dataBhav && row !== "undefined") {
-        itemB = __dataBhav.find((x) => x.row === row);
-        if (itemB) {
-          $("#bhavPicText").html(itemB.bhav + ", " + itemB.place);
-          $("#bhavVerse").html(itemB.verse.replace("\n", "<br/>"));
-          $("#bhavActionText").html(itemB.action);
-          $("#bhavquote").html(itemB.quote);
-        }
-      }
 
-      return "";
-    } catch (error) {
-      console.log("Unhandled Error getBhav", row, error);
-      $("#errorMessage").html("Unhandled Error getBhav: " + error);
-    }
-  }
 
   function oneClickResetSheet() {
     toggleCollapse();
