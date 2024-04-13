@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-  $("#scriptVersion").html("v1.1");
+  $("#scriptVersion").html("v1.2");
   var __ApiCallStatus = false;
 
   var __CurrentRow = 0;
@@ -68,10 +68,10 @@ $(document).ready(function () {
 
     $(window).focus(function() {
       console.log('Welcome (back)');
-      postToGoogle(false, false);      
+      postToGoogle(false, false, true, false);      
    });
  
-   postToGoogle(false, false);    
+   postToGoogle(false, false, true, false);  
     
   }
 
@@ -117,6 +117,8 @@ $(document).ready(function () {
 
       $("#lblCurrentRow").html(__CurrentRow);
 
+      console.log($("#selectChunks").val());
+
       if (__CurrentRow !== __LoggedRow && __LoggedRow !== 0) {
         // $("#clock-row").addClass("bag rounded-circle");
         $("body").addClass("bag");
@@ -130,13 +132,13 @@ $(document).ready(function () {
       if (sec === 1) {
         if (min % 15 === 0) {
           console.log("🕞 15 mins Quarter Shift Called");
-          postToGoogle(false, false);
+          postToGoogle(false, false,false,false);
           $("#radio-mind-3").click();
           sendNotification("Take a deep Breath");
         } else {
            if($("#selectChunks")[0].selectedIndex == 0)
            {
-            postToGoogle(false, true);
+            postToGoogle(false, true, false,false);
             console.log("Refreshed every min at " + hour + ":"+ min);
            }
 
@@ -331,7 +333,8 @@ $(document).ready(function () {
    
   }
 
-  function postToGoogle(update, minLoad) {
+ // function postToGoogle(update, minLoad) {
+  function postToGoogle(update,minLoad,init,reset) {  
     if (!update) {
       if (__retry > 2) {
         $("#errorMessage").html("📛 Max Retry Reached.");
@@ -343,40 +346,30 @@ $(document).ready(function () {
 
     if (minLoad) {
       $("#minLoad-div").removeClass("d-none");
-    } else {
-      $("#processing-div").removeClass("d-none");
-      
+    } else { //init
+      $("#processing-div").removeClass("d-none");      
     }
 
-    console.log("Posting to Google api");
+    console.log("Posting to Google api...");
 
     __ApiCallStatus = true;
     $("#errorMessage").html("");
 
-    let paramMind = "";
-    let isPost = 0;
- 
-    if (update) {
-      paramMind = $(".radioMind:checked").val();
-      isPost = 1;
-    }
-
-   
-
-    let selectedRow = $(".radioChunk:checked").val();
-    if (selectedRow < 0) {
-      // To handle error case
-      selectedRow = getCurrentTrackerTimeRow();
-    }
-
     let paramChant =  $("#txtChant").val(); 
+    let paramRowCurrent = getCurrentTrackerTimeRow();
+    let paramRowUpdate = paramRowCurrent;
+    let paramPostType = 0; //init and minLoad
 
-    let rowCurrent = getCurrentTrackerTimeRow();
-    let paramPostType = 0;
+    if (update) {
+      paramRowUpdate = $("#selectChunks").val();
+      paramPostType = 1;
+    } 
+
+    if(reset)
+    paramPostType = 2;
      
 
-    ///    let queryString =  "?row=" + selectedRow + "&mind=" + paramMind + "&chant=" + paramChant + "&post=" + isPost ;
-    let queryString =  "?rowcurrent=" + rowCurrent + "&rowupdate=" + 0 + "&chant=" + paramChant + "&posttype=" + paramPostType ;
+    let queryString =  "?rowcurrent=" + paramRowCurrent + "&rowupdate=" + paramRowUpdate + "&chant=" + paramChant + "&posttype=" + paramPostType ;
 
     let googleurl = _GoogleApiUrl + queryString;
 
@@ -397,10 +390,13 @@ $(document).ready(function () {
           $.each(data.chunks, function() {
             let chant = this.chant;
             if(chant == "")
-              chant = "⚠️"
+              chant = "🌑"
             let text =this.chunk + "【" + chant + "】" + this.k10;
             $("#selectChunks").append($("<option />").val(this.row).text(text));
         });
+
+        if (update) 
+        $("#txtChant").val(""); 
 
       }
 /*
@@ -657,7 +653,7 @@ $(document).ready(function () {
         //alert('SUCCESS - ' + data)
         $("#errorMessage").html(data);
         __ApiCallStatus = false;
-        postToGoogle(true);
+        postToGoogle(true,false,false,true);
       },
       error: function (xhr, error_text, statusText) {
         //alert('Sheet Reset Done with - ' + error_text)
@@ -683,7 +679,7 @@ $(document).ready(function () {
   }
 
   function oneClickTracker() {
-    postToGoogle(true);
+    postToGoogle(true,false,false,false);
   }
   // End of Code
 });
