@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-  $("#scriptVersion").html("v4.1");
+  $("#scriptVersion").html("v1.1");
   var __ApiCallStatus = false;
 
   var __CurrentRow = 0;
@@ -416,7 +416,7 @@ $(document).ready(function () {
       $("#minLoad-div").removeClass("d-none");
     } else {
       $("#processing-div").removeClass("d-none");
-      $("#processing-div2").removeClass("d-none");
+      
     }
 
     console.log("Posting to Google api");
@@ -461,6 +461,19 @@ $(document).ready(function () {
         // console.log("Api Response Data:", data);
 
         try {
+
+          if (data && data.chunks) {
+
+            $('#selectChunks').find('option').remove();
+          $.each(data.chunks, function() {
+            let chant = this.chant;
+            if(chant == "")
+              chant = "⚠️"
+            let text =this.chunk + "【" + chant + "】" + this.k10;
+            $("#selectChunks").append($("<option />").val(this.row).text(text));
+        });
+
+      }
 /*
           if (data && data.chunks) {
             __LastCurrentRow = data.currentRow;
@@ -516,7 +529,7 @@ $(document).ready(function () {
         }
 
         $("#processing-div").addClass("d-none");
-        $("#processing-div2").addClass("d-none");
+       
         $("#minLoad-div").addClass("d-none");
         __ApiCallStatus = false;
       },
