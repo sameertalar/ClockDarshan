@@ -53,21 +53,19 @@
             <div class="col-2">
               <div class="btn-group-vertical mt-3">
                 <span id="timeLeft" class="h6 text-primary text-end px-2 py-1"></span>
-                <span
-                id="timeRefresh"               
-                class="px-2 rounded-pill bg-light fs-6 text-secondary "
-              > 10</span>
-               <div
-              id="minLoad-div"
-              class="spinner-border text-danger mt-3"
-              role="status"
-            >
-              <span class="visually-hidden">Loading...</span>
-            </div>
-            <span id="chant-current" class="text-success px-2">00</span>
-            <span id="chant-p100"  class="text-warning  px-2">00</span>
-            <span id="chant-p70"  class="text-secondary  px-2">00</span>
-            <span id="chunk-selected"  class="h6 text-danger">0-00</span>
+                <button
+                id="btnSettings"
+                type="button"
+                class="py-3 mt-2 pt-5 btn btn-lg border-0"
+                data-bs-toggle="collapse"
+                href="#collapseSettings"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseSettings"
+              >
+                <i class="fa fa-cog text-secondary fs-1"></i>
+              </button>
+        
               </div>
             </div>
             <div class="col-9" id="clock-row ">
@@ -189,7 +187,29 @@
           </div>
         </div>
         <!--- ** Column 2 Error, Settings Buttons, Bhav ***    -->
-        <div class="col-lg-4">
+        <div class="col-lg-4 ">
+             <!-- Row : Error -->
+             <div class="row border">
+              <div class="col-6">
+                <select class="form-control form-control-lg ">
+                  <option>05-04 【65】45</option>
+                  <option>05-03 《55》43</option>
+                  <option>05-02 〘50〙41</option>
+                  <option>05-01 〚42〛40</option>
+                </select>
+              </div>
+              <div class="col-3">
+                <input type="text" class="  border border-warning form-control-lg text-danger fw-bold" type="number"  id="txtChant" autocomplete="off" style="width:70px" maxlength="3" name="txtChant">
+              </div>
+              <div class="col-3">
+                <div class="btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-lg btn-outline-primary ">
+                    <input type="checkbox" checked autocomplete="off"> 
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                  </label>
+                </div>
+              </div>
+            </div>
           <!-- Row : Error -->
           <div class="row">
             <div class="col">
@@ -214,7 +234,7 @@
             <div class="col-2"></div>
           </div>
           <!-- Row : Settings -->
-          <div class="row">
+          <div class="row border">
             <div class="col">
               <div class="collapse" id="collapseSettings">
                 <div class="card card-body">
@@ -385,31 +405,9 @@
           </div>
 
           <!-- Row : Buttons -->
-          <div class="row">
-<div class="col-sm-4">
-
-  <select class="form-control form-control-lg">
-    <option>05-04 【65】45</option>
-    <option>05-03 《55》43</option>
-    <option>05-02 〘50〙41</option>
-    <option>05-01 〚42〛40</option>
-  </select>
-</div>
-
-            <div class="col-sm-2 text-center">          
-              <input type="text" class="form-control border border-warning form-control-lg text-danger fw-bold" type="number"  id="txtChant" autocomplete="off" style="width:70px" maxlength="3" name="txtChant">
-            </div>
-            <div class="col-sm-2 text-center">          
-              
-              <div class="btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-lg btn-outline-primary ">
-                  <input type="checkbox" checked autocomplete="off"> 
-                  <i class="fa fa-user-circle" aria-hidden="true"></i>
-                </label>
-              </div>
-            </div>
-
-          </div>
+        
+     
+     
           <!-- Row : Bhav -->
           <div class="row">
             <div class="col">
@@ -518,10 +516,21 @@
 
     <div style="position: fixed; top: 25px; right: 2px; z-index: 999">
       <div class="btn-group-vertical mt-3" id="containerButtons">
+        <span
+        id="timeRefresh"               
+        class=" badge rounded-pill bg-info text-light fs-6 "
+      > 10</span>
+       <div
+      id="minLoad-div"
+      class="spinner-border text-danger mt-3"
+      role="status"
+    >
+      <span class="visually-hidden">Loading...</span>
+    </div>
         <button
           id="btnAudioModeDisplay"
           type="button"
-          class="btn btn-sm border-0 mb-3"
+          class="btn btn-sm border-0 mb-3 mt-3"
         >
           <i
             id="audioModeDisplay"
@@ -543,18 +552,7 @@
           <i class="fa fa-window-restore text-secondary"></i>
         </button>
 
-        <button
-          id="btnSettings"
-          type="button"
-          class="py-3 mt-2 pt-5 btn btn-lg border-0"
-          data-bs-toggle="collapse"
-          href="#collapseSettings"
-          role="button"
-          aria-expanded="false"
-          aria-controls="collapseSettings"
-        >
-          <i class="fa fa-cog text-secondary fs-1"></i>
-        </button>
+     
       </div>
       
      
