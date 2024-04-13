@@ -125,6 +125,8 @@ $(document).ready(function () {
         $("body").removeClass("bag");
       }
 
+
+
       if (sec === 1) {
         if (min % 15 === 0) {
           console.log("🕞 15 mins Quarter Shift Called");
@@ -132,8 +134,13 @@ $(document).ready(function () {
           $("#radio-mind-3").click();
           sendNotification("Take a deep Breath");
         } else {
-          postToGoogle(false, true);
-          console.log("Refreshed every min at " + min);
+           if($("#selectChunks")[0].selectedIndex == 0)
+           {
+            postToGoogle(false, true);
+            console.log("Refreshed every min at " + hour + ":"+ min);
+           }
+
+         
         }
       }
     } catch (error) {
