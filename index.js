@@ -2,107 +2,36 @@
 
 $(document).ready(function () {
 
-  $("#scriptVersion").html("v4.1");
+  $("#scriptVersion").html("v1.2");
   var __ApiCallStatus = false;
 
   var __CurrentRow = 0;
   var __LastCurrentRow = 0;
   var __LoggedRow = 0;
-  var __dataBhav;
+ 
   var __retry = 0;
   var __bhavJsonUrl = "data/bhav.json?ver=1.8";
   const _HeadRows = 4;
 
- //const _UpdaterApiUrl =     "https://script.google.com/macros/s/AKfycbyI_7nngMEAJIF0K-i7XAi9u1wyjHupw0uNK9uk7qec/dev";
- const _UpdaterApiUrl =  "https://script.google.com/macros/s/AKfycbwzpkgzkXjosAgUXxcv3L2LefBTsqDw6N-6t1X8D8EZ2eX7yTr5Hfm8egwZRYX_pEYZYw/exec";
+  const _GoogleApiUrl =     "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
   
+
+  const _UpdaterApiUrl =     "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
+  //const _UpdaterApiUrl =  "https://script.google.com/macros/s/AKfycbwzpkgzkXjosAgUXxcv3L2LefBTsqDw6N-6t1X8D8EZ2eX7yTr5Hfm8egwZRYX_pEYZYw/exec";
+   
 
   //(dev)  const _ResetApiUrl =     "https://script.google.com/macros/s/AKfycbw8xlLx02pJJWyaJIFMNdsT_h-C04drUlpFZeCVb4v1/dev";
   const _ResetApiUrl =
     "https://script.google.com/macros/s/AKfycbxcenhrNpgmAuRFB40o_H25EAAeoDmotbbY6xSXRxVvrl28Q9RoTq6YCmBaJ4WU2y8aVA/exec";
 
-  const _gods = [
-    "गणेश",
-    "महाराज",
-    "दुर्गा",
-    "शंकर",
-    "महालक्ष्मी",
-    "अन्नपूर्णा",
-    "हनुमान",
-    "रमण म.",
-    "सरस्वती",
-    "नर्मदा",
-    "बुद्ध",
-    "कृष्ण",
-  ];
-
-  const _configs = [
-    {
-      type: "Mind",
-      item: "M5",
-      column: "D",
-      icon: "🕊️",
-      faClass: "fa fa-eercast fa-spin text-primary",
-    },
-    {
-      type: "Mind",
-      item: "M4",
-      column: "E",
-      icon: "🧘",
-      faClass: "fa fa-user-circle text-success",
-    },
-    {
-      type: "Mind",
-      item: "M3",
-      column: "F",
-      icon: "👁️",
-      faClass: "fa fa-eye text-warning",
-    },
-    {
-      type: "Mind",
-      item: "M2",
-      column: "G",
-      icon: "🎳",
-      faClass: "fa fa-eye-slash text-dark", // fa-low-vision
-    },
-    {
-      type: "Mind",
-      item: "M1",
-      column: "H",
-      icon: "🔥",
-      faClass: "fa fa-fire text-danger",
-    },
-
-    {
-      type: "Sleep",
-      item: "S",
-      column: "S",
-      icon: "😴",
-      faClass: "fa fa-bed text-secondary",
-    },
-    {
-      type: "Missed",
-      item: "X",
-      column: "X",
-      icon: "❌",
-      faClass: "fa fa-spinner fa-spin text-secondary",
-    },
-    {
-      type: "Missed",
-      item: "",
-      column: "",
-      icon: "",
-      faClass: "fa fa-exclamation-triangle text-light",
-    },
-  ];
-
+  
   page_Load();
 
   function page_Load() {
     console.log("🅒🅛🅞🅒🅚  🅓🅐🅡🅢🅗🅐🅝 Page Loading....");
 
     $("#success-alert").hide();
-    $("#radio-mind-3").click();
+
 
     $("#btnPlayVideo").on("click", playVideo);
     $("#btnResetSheet").on("click", oneClickResetSheet);
@@ -110,9 +39,9 @@ $(document).ready(function () {
     $("#btnExcel").on("click", btnExcelOpenClick);
 
     $("#clock-container").on("click", oneClickTracker);
-    $("#ClockInnerCircle").on("click", oneClickTracker);
-    $("#centerCoreD").on("click", oneClickTracker);
-    $("#imgBhav").on("click", oneClickTracker);
+    //$("#ClockInnerCircle").on("click", oneClickTracker);
+    //$("#centerCoreD").on("click", oneClickTracker);
+     
 
     $("#btnDocument").on("click", btnDocumentClick);
 
@@ -135,19 +64,14 @@ $(document).ready(function () {
     $("#btnAudioModeDisplay").on("click", function (event) {
       //$("#radio-Music-Off").click();
       playMeditation();
-    });
-
-
-    $.getJSON(__bhavJsonUrl, function (data) {
-      __dataBhav = data;
-    }); 
+    });   
 
     $(window).focus(function() {
       console.log('Welcome (back)');
-      postToGoogle(false, false);      
+      postToGoogle(false, false, true, false);      
    });
  
-   postToGoogle(false, false);    
+   postToGoogle(false, false, true, false);  
     
   }
 
@@ -160,7 +84,7 @@ $(document).ready(function () {
     function r(el, deg) {
       el.setAttribute("transform", "rotate(" + deg + " 50 50)");
     }
-    var d = getCurrentEasternTime();
+    var d = getCurentTime();
     let hours = d.getHours();
     let hourDeg = 30 * (hours % 12) + d.getMinutes() / 2;
     let minDeg = 6 * d.getMinutes();
@@ -174,14 +98,14 @@ $(document).ready(function () {
 
   function processBeHereNow() {
     try {
-      let now = getCurrentEasternTime();
+      let now = getCurentTime();
       let min = now.getMinutes();
       let sec = now.getSeconds();
       let hour = now.getHours();
 
       // show Current Time
       showCurrentTimeLeft(min, sec);
-      showCurrentSelection();
+ 
 
       showTimeElaspeProgress(min, sec);
 
@@ -189,10 +113,11 @@ $(document).ready(function () {
 
       __CurrentRow = getCurrentTrackerTimeRow();
 
-      setBhavImage(__CurrentRow);
-      setBhavTexts(__CurrentRow);
+      setBhavImage(__CurrentRow);     
 
       $("#lblCurrentRow").html(__CurrentRow);
+
+      console.log($("#selectChunks").val());
 
       if (__CurrentRow !== __LoggedRow && __LoggedRow !== 0) {
         // $("#clock-row").addClass("bag rounded-circle");
@@ -202,15 +127,22 @@ $(document).ready(function () {
         $("body").removeClass("bag");
       }
 
+
+
       if (sec === 1) {
         if (min % 15 === 0) {
           console.log("🕞 15 mins Quarter Shift Called");
-          postToGoogle(false, false);
+          postToGoogle(false, false,false,false);
           $("#radio-mind-3").click();
           sendNotification("Take a deep Breath");
         } else {
-          postToGoogle(false, true);
-          console.log("Refreshed every min at " + min);
+           if($("#selectChunks")[0].selectedIndex == 0)
+           {
+            postToGoogle(false, true, false,false);
+            console.log("Refreshed every min at " + hour + ":"+ min);
+           }
+
+         
         }
       }
     } catch (error) {
@@ -401,7 +333,8 @@ $(document).ready(function () {
    
   }
 
-  function postToGoogle(update, minLoad) {
+ // function postToGoogle(update, minLoad) {
+  function postToGoogle(update,minLoad,init,reset) {  
     if (!update) {
       if (__retry > 2) {
         $("#errorMessage").html("📛 Max Retry Reached.");
@@ -413,39 +346,32 @@ $(document).ready(function () {
 
     if (minLoad) {
       $("#minLoad-div").removeClass("d-none");
-    } else {
-      $("#processing-div").removeClass("d-none");
-      $("#processing-div2").removeClass("d-none");
+    } else { //init
+      $("#processing-div").removeClass("d-none");      
     }
 
-    console.log("Posting to Google api");
+    console.log("Posting to Google api...");
 
     __ApiCallStatus = true;
     $("#errorMessage").html("");
 
-    let paramMind = "";
-    let isPost = 0;
- 
-    if (update) {
-      paramMind = $(".radioMind:checked").val();
-      isPost = 1;
-    }
-
-   
-
-    let selectedRow = $(".radioChunk:checked").val();
-    if (selectedRow < 0) {
-      // To handle error case
-      selectedRow = getCurrentTrackerTimeRow();
-    }
-
     let paramChant =  $("#txtChant").val(); 
+    let paramRowCurrent = getCurrentTrackerTimeRow();
+    let paramRowUpdate = paramRowCurrent;
+    let paramPostType = 0; //init and minLoad
+
+    if (update) {
+      paramRowUpdate = $("#selectChunks").val();
+      paramPostType = 1;
+    } 
+
+    if(reset)
+    paramPostType = 2;
      
 
-    let queryString =
-      "?row=" + selectedRow + "&mind=" + paramMind + "&chant=" + paramChant + "&post=" + isPost ;
+    let queryString =  "?rowcurrent=" + paramRowCurrent + "&rowupdate=" + paramRowUpdate + "&chant=" + paramChant + "&posttype=" + paramPostType ;
 
-    let googleurl = _UpdaterApiUrl + queryString;
+    let googleurl = _GoogleApiUrl + queryString;
 
     // console.log("Api QueryString Request:", queryString);
 
@@ -457,6 +383,23 @@ $(document).ready(function () {
         // console.log("Api Response Data:", data);
 
         try {
+
+          if (data && data.chunks) {
+
+            $('#selectChunks').find('option').remove();
+          $.each(data.chunks, function() {
+            let chant = this.chant;
+            if(chant == "")
+              chant = "🌑"
+            let text =this.chunk + "【" + chant + "】" + this.k10;
+            $("#selectChunks").append($("<option />").val(this.row).text(text));
+        });
+
+        if (update) 
+        $("#txtChant").val(""); 
+
+      }
+/*
           if (data && data.chunks) {
             __LastCurrentRow = data.currentRow;
             __LoggedRow = data.loggedRow;
@@ -464,7 +407,7 @@ $(document).ready(function () {
             $("#lblLastCurrentRow").html(__LastCurrentRow);
             $("#lblLoggedRow").html(__LoggedRow);
             $("#lblUpdateTime").html(
-              getCurrentEasternTime().toLocaleTimeString()
+              getCurentTime().toLocaleTimeString()
             );
 
             // console.log("__LastCurrentRow", __LastCurrentRow);
@@ -497,6 +440,9 @@ $(document).ready(function () {
 
             __ApiCallStatus = false;
           }
+          */
+          __ApiCallStatus = false;
+
         } catch (err) {
           console.log(
             "Unhandled Error while processing postToGoogle response",
@@ -508,7 +454,7 @@ $(document).ready(function () {
         }
 
         $("#processing-div").addClass("d-none");
-        $("#processing-div2").addClass("d-none");
+       
         $("#minLoad-div").addClass("d-none");
         __ApiCallStatus = false;
       },
@@ -528,172 +474,11 @@ $(document).ready(function () {
     });
   }
 
-  function createChunkRadios(data, currentRow) {
+ 
 
-    let radio1 = document.createElement("input");
-    radio1.setAttribute("type", "radio");
-    radio1.setAttribute("name", "radioChunk");
-    radio1.setAttribute("value", data.row);
-    radio1.setAttribute("id", "radioChunk" + data.row);
-    radio1.setAttribute("class", "btn-check  radioChunk ");
-    radio1.setAttribute("autocomplete", "off");
+  
 
-    if (currentRow === data.row) 
-    {
-      radio1.checked = true;
-      
-      $("#chunk-selected").html(data.chunk);
-    }
-
-    if (currentRow + 1 < data.row) radio1.disabled = true;
-
-    document.getElementById("containerPath").appendChild(radio1);
-
-    // lable
-    let chant = "";
-
-    if(data.chant )
-      chant ="【" + data.chant + "】";
-   
-    let lbl1 = document.createElement("label");
-    lbl1.innerHTML = data.chunk + chant;
-    lbl1.setAttribute("for", "radioChunk" + data.row);
-
-    if (currentRow === data.row)    
-      lbl1.setAttribute("class", "btn btn-md btn-outline-primary  px-4 ");
-    else if (currentRow > data.row)
-      lbl1.setAttribute("class", "btn btn-sm   btn-outline-dark py-0");
-    else lbl1.setAttribute("class", "btn btn-sm  btn-outline-secondary py-0");
-
-    document.getElementById("containerPath").appendChild(lbl1);
-    
-    // Icon
-    let i1 = document.createElement("i");
-    if (currentRow >= data.row && data.value === "")
-      i1.className = " fa fa-exclamation-triangle text-danger  ";
-    else i1.className = getFaClass(data.value);  
-    i1.setAttribute("aria-hidden", "true");
-    lbl1.appendChild(i1);
-
-    if (currentRow === data.row)
-    {
-     // var br = document.createElement("br");
-     // document.getElementById("containerPath").appendChild(br);
-    }
-    
-
-  }
-
-
-  function createChunkDiv(data, currentRow) {
-    //console.log("createChunkDiv",currentRow,data);
-
-    let divRow = document.createElement("div");
-    if (data.row) divRow.id = "row" + data.row;
-    divRow.className = "row ";
-
-    if (currentRow === data.row) {
-      divRow.className = divRow.className + " bg-highlight";
-    }
-    //else if (currentRow === data.row - 1) divRow.className = divRow.className + " bg-highlight2";
-
-    //------- col 1
-    let divC2 = document.createElement("div");
-    divC2.className = "col-4 px-0  text-end";
-
-    let radio1 = document.createElement("input");
-    radio1.setAttribute("type", "radio");
-    radio1.setAttribute("name", "radioChunk");
-    radio1.setAttribute("value", data.row);
-    radio1.setAttribute("id", "radioChunk" + data.row);
-    radio1.setAttribute("class", "btn-check  radioChunk");
-    radio1.setAttribute("autocomplete", "off");
-
-    if (currentRow === data.row) 
-    {
-      radio1.checked = true;
-      $("#chunk-selected").html(data.chunk);
-    }
-
-    if (currentRow + 1 < data.row) radio1.disabled = true;
-
-    divC2.appendChild(radio1);
-
-    let lbl1 = document.createElement("label");
-    lbl1.innerHTML = data.chunk;
-    lbl1.setAttribute("for", "radioChunk" + data.row);
-
-    if (currentRow === data.row)
-      lbl1.setAttribute("class", "btn  btn-outline-primary ");
-    else if (currentRow > data.row)
-      lbl1.setAttribute("class", "btn btn-sm   btn-outline-dark py-0");
-    else lbl1.setAttribute("class", "btn btn-sm  btn-outline-secondary py-0");
-
-    divC2.appendChild(lbl1);
-
-    divRow.appendChild(divC2);
-
-    //------- col 2
-    let divC1 = document.createElement("div");
-    divC1.className = "col-2 px-0 ms-2  text-center";
-
-    let i1 = document.createElement("i");
-
-    if (currentRow >= data.row && data.value === "")
-      i1.className = " fa fa-exclamation-triangle text-danger ";
-    else i1.className = getFaClass(data.value);
-
-    if (currentRow == data.row) i1.className = i1.className + " fa-2x ";
-    else i1.className = i1.className + " cdicon2 ";
-
-    i1.setAttribute("aria-hidden", "true");
-    divC1.appendChild(i1);
-
-    divRow.appendChild(divC1);
-
-    //------- Col 3
-
-    let divC3 = document.createElement("div");
-    divC3.className = "col-5  text-start ms-2  ";
-
-    divC3.innerText = data.god;
-
-    if (currentRow === data.row)
-      divC3.className = divC3.className + " bg-primary text-white py-1   ";
-    else if (currentRow === data.row - 1)
-      divC3.className = divC3.className + "   text-warning ";
-    else if (currentRow > data.row)
-      divC3.className = divC3.className + " text-dark ";
-    else divC3.className = divC3.className + " text-secondary ";
-
-    divRow.appendChild(divC3);
-
-    return divRow;
-  }
-
-
-
-  function getChunks() {
-    var chunks = [];
-
-    let praharStartRow = __CurrentRow - ((__CurrentRow - _HeadRows) % 12);
-
-    for (let i = 0; i < 12; i++) {
-      chunks.push({
-        row: praharStartRow + (11 - i),
-        chunk: getTrackerChunk(praharStartRow + (11 - i)),
-        value: "X",
-        // quarter: (h % 12 || 12).toString().padStart(2, "0") + "-" + q + "",
-        god: _gods[11 - i],
-      });
-    }
-
-    console.log(" __CurrentRow: ", __CurrentRow);
-    //console.log(" Prahar Start Row: ", praharStartRow);
-    console.log("Page Load Chunks:", chunks);
-
-    return chunks;
-  }
+ 
 
   function getTrackerRow(h, q) {
     return h * 4 + q + 3;
@@ -722,7 +507,7 @@ $(document).ready(function () {
   setInterval(eyeOpenClose, 2000);
 
   function getCurrentTrackerTimeRow() {
-    let now = getCurrentEasternTime();
+    let now = getCurentTime();
     let h = now.getHours();
     let minutes = now.getMinutes();
     let quarter = 4;
@@ -754,9 +539,7 @@ $(document).ready(function () {
     );
   }
 
-  function showCurrentSelection() {
-    $("#centerCoreD").html(__CurrentRow - __LoggedRow);
-  }
+
 
   function showCurrentTimeLeft(min, sec) {
     //var timeNow = pad(14 - (min % 15), 2) + ":" + pad(60 - sec, 2); //Tile left
@@ -823,35 +606,9 @@ $(document).ready(function () {
     return str;
   }
 
-  function getFaClass(value) {
-    try {
-      if (value && value !== "undefined")
-        return _configs.find((x) => x.column === value).faClass;
-      else return "";
-    } catch (error) {
-      console.log("Unhandled Error getFaClass", value, error);
-      $("#errorMessage").html("Unhandled Error getFaClass: " + error);
-    }
-  }
+ 
 
-  function setBhavTexts(row) {
-    try {
-      if (row && __dataBhav && row !== "undefined") {
-        itemB = __dataBhav.find((x) => x.row === row);
-        if (itemB) {
-          $("#bhavPicText").html(itemB.bhav + ", " + itemB.place);
-          $("#bhavVerse").html(itemB.verse.replace("\n", "<br/>"));
-          $("#bhavActionText").html(itemB.action);
-          $("#bhavquote").html(itemB.quote);
-        }
-      }
 
-      return "";
-    } catch (error) {
-      console.log("Unhandled Error getBhav", row, error);
-      $("#errorMessage").html("Unhandled Error getBhav: " + error);
-    }
-  }
 
   function oneClickResetSheet() {
     toggleCollapse();
@@ -862,7 +619,7 @@ $(document).ready(function () {
     return false;
   }
 
-  function getCurrentEasternTime() {
+  function getCurentTime() {
     return new Date();
 
     //ToDo: Refactor if needed
@@ -894,7 +651,7 @@ $(document).ready(function () {
         //alert('SUCCESS - ' + data)
         $("#errorMessage").html(data);
         __ApiCallStatus = false;
-        postToGoogle(true);
+        postToGoogle(true,false,false,true);
       },
       error: function (xhr, error_text, statusText) {
         //alert('Sheet Reset Done with - ' + error_text)
@@ -920,7 +677,7 @@ $(document).ready(function () {
   }
 
   function oneClickTracker() {
-    postToGoogle(true);
+    postToGoogle(true,false,false,false);
   }
   // End of Code
 });

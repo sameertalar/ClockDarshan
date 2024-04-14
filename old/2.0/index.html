@@ -53,20 +53,25 @@
             <div class="col-2">
               <div class="btn-group-vertical mt-3">
                 <span id="timeLeft" class="h6 text-primary text-end px-2 py-1"></span>
-                <button
-                id="btnSettings"
-                type="button"
-                class="py-3 mt-2 pt-5 btn btn-lg border-0"
-                data-bs-toggle="collapse"
-                href="#collapseSettings"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseSettings"
-              >
-                <i class="fa fa-cog text-secondary fs-1"></i>
-              </button>
-        
-              </div>
+                <span
+                id="timeRefresh"               
+                class="px-2 rounded-pill bg-light fs-6 text-secondary "
+              > 10</span>
+                <input type="text" class="form-control text-danger fw-bold" type="number"  id="txtChant" autocomplete="off" style="width:50px" maxlength="3" name="txtChant">
+              <div
+              id="minLoad-div"
+              class="spinner-border text-danger mt-3"
+              role="status"
+            >
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <span id="chant-current" class="text-success px-2">00</span>
+            <span id="chant-p100"  class="text-warning  px-2">00</span>
+            <span id="chant-p70"  class="text-secondary  px-2">00</span>
+            <span id="chunk-selected"  class="h6 text-danger">0-00</span>
+             <a href="i3.html">New Page</a>
+          
+          </div>
             </div>
             <div class="col-9" id="clock-row ">
               <!--  Clock-Start -->
@@ -187,26 +192,7 @@
           </div>
         </div>
         <!--- ** Column 2 Error, Settings Buttons, Bhav ***    -->
-        <div class="col-lg-4 ">
-             <!-- Row : Error -->
-             <div class="row mt-2">
-              <div class="col-7">
-                <select id="selectChunks" class="form-control form-control-lg  border border-warning  text-primary">
-                  <option  >Loading...</option>
-                 
-                </select>
-              </div>
-              <div class="col-3">
-                <input type="text" class="  border border-warning form-control-lg text-primary fw-bold" type="number"  id="txtChant" autocomplete="off" style="width:70px" maxlength="3" name="txtChant">
-              </div>
-              <div class="col-2">
-                <div class="btn-group-toggle" data-toggle="buttons">
-                  <label class="btn btn-lg btn-outline-warning ">
-                    <input type="checkbox"  autocomplete="off" >                   
-                  </label>
-                </div>
-              </div>
-            </div>
+        <div class="col-lg-4">
           <!-- Row : Error -->
           <div class="row">
             <div class="col">
@@ -231,7 +217,7 @@
             <div class="col-2"></div>
           </div>
           <!-- Row : Settings -->
-          <div class="row ">
+          <div class="row">
             <div class="col">
               <div class="collapse" id="collapseSettings">
                 <div class="card card-body">
@@ -402,23 +388,125 @@
           </div>
 
           <!-- Row : Buttons -->
-        
-     
-     
-          
           <div class="row">
             <div class="col text-center">
-              <iframe id="iframeChantChart" width="344" height="202" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTssIITAG7_GIP76MaZKmiWUVtzLVv46mV783SsJ4ud3leFdHbxTSDyaet5t3LkOAPgi9zs1SNX_b8G/pubchart?oid=1880850615&amp;format=image"></iframe>
+              <div
+                id="radio-div"
+                class="btn-group bg-white rounded-pill"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check radioMind"
+                  name="radioMind"
+                  id="radio-mind-0"
+                  value="I"
+                  autocomplete="off"
+                />
+                <label
+                  class="btn btn-link text-secondary btn-sm rounded-pill p-2"
+                  for="radio-mind-0"
+                >
+                  <i class="fa fa-bed cdicon" aria-hidden="true"></i>
+                </label>
+                <input
+                  type="radio"
+                  class="btn-check radioMind"
+                  name="radioMind"
+                  id="radio-mind-5"
+                  autocomplete="off"
+                  value="D"
+                />
+                <label
+                  class="btn btn-outline-primary p-2 rounded-pill"
+                  for="radio-mind-5"
+                >
+                  <i
+                    class="fa fa-eercast fa-spin cdicon"
+                    aria-hidden="true"
+                  ></i>
+                  <span
+                    id="lblM5"
+                    class="position-absolute top-100 start-50 translate-middle badge rounded-pill bg-primary"
+                  >
+                    <span class="visually-hidden">Calm</span>
+                  </span>
+                </label>
+                <input
+                  type="radio"
+                  class="btn-check radioMind"
+                  name="radioMind"
+                  id="radio-mind-4"
+                  value="E"
+                  autocomplete="off"
+                />
+                <label
+                  class="btn btn-outline-success rounded-pill p-2 px-4"
+                  for="radio-mind-4"
+                >
+                  <i class="fa fa-user-circle cdicon" aria-hidden="true"></i>
+                  <span
+                    id="lblM4"
+                    class="position-absolute top-100 start-50 translate-middle badge rounded-pill bg-success"
+                  >
+                    <span class="visually-hidden">Maditation</span>
+                  </span>
+                </label>
+                <input
+                  type="radio"
+                  class="btn-check radioMind"
+                  name="radioMind"
+                  id="radio-mind-3"
+                  value="F"
+                  autocomplete="off"
+                  checked
+                />
+                <label
+                  class="btn btn-outline-secondary rounded-pill p-2 px-4"
+                  for="radio-mind-3"
+                >
+                  <i
+                    id="apramadCtrl"
+                    class="fa cdicon text-warning"
+                    aria-hidden="true"
+                  ></i>
+                  <span
+                    id="lblM3"
+                    class="position-absolute top-100 start-50 translate-middle badge bg-warning rounded-circle text-white"
+                  >
+                    <span class="visually-hidden">Apramad</span>
+                  </span>
+                </label>
+                <input
+                  type="radio"
+                  class="btn-check radioMind"
+                  name="radioMind"
+                  id="radio-mind-2"
+                  value="G"
+                  autocomplete="off"
+                />
+                <label
+                  class="btn btn-outline-dark rounded-pill p-2"
+                  for="radio-mind-2"
+                >
+                  <i
+                    id="pramadCtrl"
+                    class="fa fa-low-vision text-secondary cdicon"
+                    aria-hidden="true"
+                  ></i>
+                  <span
+                    id="lblM2"
+                    class="position-absolute top-100 start-50 translate-middle badge border rounded-circle bg-secondary opacity-25"
+                  >
+                    <span class="visually-hidden">Pramad</span>
+                  </span>
+                </label>
+              </div>
             </div>
           </div>
-        </div>
-
-        <!--- ** Column 3  History ***    -->
-
-        <div class="col-lg-4">
           <!-- Row : Bhav -->
           <div class="row">
-          
             <div class="col">
               <div id="divBhav" class="text-center">
                 <img
@@ -428,12 +516,67 @@
                   alt="Be Here now"
                   onerror="this.src='img/line.svg'"
                 />
-               
+                <br />
+                <div class="d-none">
+                  <div class="text-danger">
+                    <i
+                      class="fa fa-picture-o text-danger"
+                      aria-hidden="true"
+                    ></i>
+                    <span id="bhavPicText"></span>
+                  </div>
+                  <div id="bhavVerse" class="text-success"></div>
+                  <div class="text-warning">
+                    <i
+                      class="fa fa-life-ring text-warning"
+                      aria-hidden="true"
+                    ></i>
+                    <abbr title="attribute" id="bhavActionText"></abbr>
+                  </div>
+                  <em>
+                    <div id="bhavquote" class="text-italic text-primary"></div>
+                  </em>
+                </div>
               </div>
-            </div>  
+            </div>
           </div>
-       
-         
+        </div>
+
+        <!--- ** Column 3  History ***    -->
+
+        <div class="col-lg-4">
+          <div class="row">
+            <div class="col text-center">
+              <iframe id="iframeChantChart" width="344" height="202" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTssIITAG7_GIP76MaZKmiWUVtzLVv46mV783SsJ4ud3leFdHbxTSDyaet5t3LkOAPgi9zs1SNX_b8G/pubchart?oid=1880850615&amp;format=image"></iframe>
+            </div>
+             
+          </div>
+          <div class="row">
+            <div class="col text-center">
+            <div id="processing-div2" class="text-center mt-3">
+              <div
+                class="spinner-border text-info"
+                style="width: 7rem; height: 7rem"
+                role="status"
+              >
+                <span class="sr-only">Loading...</span>
+                <img src="img/breathe.svg" alt="Be Here now" />
+              </div>
+            </div>
+          </div>
+         </div>
+          <div class="row">
+            <div class="col-2"></div>
+            <div id="containerPath" class="col">
+              <div class="text-center mt-5">
+                <div class="spinner-border text-primary" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+
+                <h3 class="text-success">Take a Deep Breath!</h3>
+              </div>
+            </div>
+          </div>
           <div class="row">
             <div class="col  text-center">
             <small id="scriptVersion" class="fw-lighter fs-6 text-muted ">o.oo</small>
@@ -470,21 +613,10 @@
 
     <div style="position: fixed; top: 25px; right: 2px; z-index: 999">
       <div class="btn-group-vertical mt-3" id="containerButtons">
-        <span
-        id="timeRefresh"               
-        class=" badge rounded-pill bg-info text-light fs-6 "
-      > 10</span>
-       <div
-      id="minLoad-div"
-      class="spinner-border text-danger mt-3"
-      role="status"
-    >
-      <span class="visually-hidden">Loading...</span>
-    </div>
         <button
           id="btnAudioModeDisplay"
           type="button"
-          class="btn btn-sm border-0 mb-3 mt-3"
+          class="btn btn-sm border-0 mb-3"
         >
           <i
             id="audioModeDisplay"
@@ -506,7 +638,18 @@
           <i class="fa fa-window-restore text-secondary"></i>
         </button>
 
-     
+        <button
+          id="btnSettings"
+          type="button"
+          class="py-3 mt-2 pt-5 btn btn-lg border-0"
+          data-bs-toggle="collapse"
+          href="#collapseSettings"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseSettings"
+        >
+          <i class="fa fa-cog text-secondary fs-1"></i>
+        </button>
       </div>
       
      
@@ -529,6 +672,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="index3.js?ver=1.2"></script>
+    <script src="index.js?ver=4.1.2"></script>
   </body>
 </html>
