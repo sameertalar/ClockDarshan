@@ -2,28 +2,13 @@
 
 $(document).ready(function () {
 
-  $("#scriptVersion").html("v1.3");
-  var __ApiCallStatus = false;
-
-  var __CurrentRow = 0;
-  var __LastCurrentRow = 0;
-  var __LoggedRow = 0;
- 
-  var __retry = 0;
-  var __bhavJsonUrl = "data/bhav.json?ver=1.8";
-  const _HeadRows = 4;
-
+  $("#scriptVersion").html("v1.4");
   const _GoogleApiUrl =     "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
-  
 
-  const _UpdaterApiUrl =     "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
-  //const _UpdaterApiUrl =  "https://script.google.com/macros/s/AKfycbwzpkgzkXjosAgUXxcv3L2LefBTsqDw6N-6t1X8D8EZ2eX7yTr5Hfm8egwZRYX_pEYZYw/exec";
-   
-
-  //(dev)  const _ResetApiUrl =     "https://script.google.com/macros/s/AKfycbw8xlLx02pJJWyaJIFMNdsT_h-C04drUlpFZeCVb4v1/dev";
-  const _ResetApiUrl =
-    "https://script.google.com/macros/s/AKfycbxcenhrNpgmAuRFB40o_H25EAAeoDmotbbY6xSXRxVvrl28Q9RoTq6YCmBaJ4WU2y8aVA/exec";
-
+  var __ApiCallStatus = false;
+  var __CurrentRow = 0;
+  var __LoggedRow = 0; 
+  var __retry = 0;  
   
   page_Load();
 
@@ -66,10 +51,12 @@ $(document).ready(function () {
       playMeditation();
     });   
 
+    /*
     $(window).focus(function() {
       console.log('Welcome (back)');
       postToGoogle(false, false, true, false);      
    });
+   */
  
    postToGoogle(false, false, true, false);  
     
@@ -333,7 +320,7 @@ $(document).ready(function () {
    
   }
 
- // function postToGoogle(update, minLoad) {
+ 
   function postToGoogle(update,minLoad,init,reset) {  
     if (!update) {
       if (__retry > 2) {
@@ -359,10 +346,10 @@ $(document).ready(function () {
     let paramRowCurrent = getCurrentTrackerTimeRow();
     let paramRowUpdate = paramRowCurrent;
     let paramPostType = 0; //init and minLoad
-    let paramRowCount = $("#selectChunks").val(); 
+    let paramRowCount = $("#selectRowsCount").val(); 
 
     if (update) {
-      paramRowUpdate = $("#selectRowsCount").val();
+      paramRowUpdate = $("#selectChunks").val();
       paramPostType = 1;
     } 
 
@@ -370,7 +357,7 @@ $(document).ready(function () {
     paramPostType = 2;
      
 
-    let queryString =  "?rowcurrent=" + paramRowCurrent + "&rowupdate=" + paramRowUpdate +"&owCount=" +paramRowCount+ "&chant=" + paramChant + "&posttype=" + paramPostType ;
+    let queryString =  "?rowcurrent=" + paramRowCurrent + "&rowupdate=" + paramRowUpdate +"&rowCount=" +paramRowCount+ "&chant=" + paramChant + "&posttype=" + paramPostType ;
 
     let googleurl = _GoogleApiUrl + queryString;
 
@@ -400,48 +387,7 @@ $(document).ready(function () {
         $("#txtChant").val(""); 
 
       }
-/*
-          if (data && data.chunks) {
-            __LastCurrentRow = data.currentRow;
-            __LoggedRow = data.loggedRow;
 
-            $("#lblLastCurrentRow").html(__LastCurrentRow);
-            $("#lblLoggedRow").html(__LoggedRow);
-            $("#lblUpdateTime").html(
-              getCurentTime().toLocaleTimeString()
-            );
-
-            // console.log("__LastCurrentRow", __LastCurrentRow);
-            // console.log("__LoggedRow", __LoggedRow);
-            if (update) 
-              $("#txtChant").val(""); 
-
-            $('#iframeChantChart').attr("src", $('#iframeChantChart').attr("src"));
-
-            $("#lblM5").html(data.counts.calm);
-            $("#lblM4").html(data.counts.med);
-            $("#lblM3").html(data.counts.apramad);
-            $("#lblM2").html(data.counts.pramad);
-            $("#lblM1").html(data.counts.buzz);
-
-            $("#chant-current").html(data.chant.current);
-            $("#chant-p100").html(data.chant.p100);
-            $("#chant-p70").html(data.chant.p70);
-
-            $("#containerPath").html("");
-
-            for (let i = data.chunks.length - 1; i >= 0; i--) {
-             // var divRow = createChunkDiv(data.chunks[i], data.currentRow);
-             // document.getElementById("containerPath").appendChild(divRow);
-              createChunkRadios(data.chunks[i], data.currentRow);
-            // document.getElementById("containerPath").appendChild(radio);
-         
-              
-            }
-
-            __ApiCallStatus = false;
-          }
-          */
           __ApiCallStatus = false;
 
         } catch (err) {
@@ -475,37 +421,12 @@ $(document).ready(function () {
     });
   }
 
- 
-
-  
-
- 
 
   function getTrackerRow(h, q) {
     return h * 4 + q + 3;
   }
 
-  function getTrackerChunk(row) {
-    row = row - 4;
-    hour = Math.floor(row / 4);
 
-    if (hour > 12) hour = hour - 12;
-
-    return hour.toString().padStart(2, "0") + "-" + ((row % 4) + 1);
-  }
-
-  function eyeOpenClose() {
-    $("#apramadCtrl").html("&#xf070");
-    //$("#pramadCtrl").html("&#xf2a8");
-
-    setTimeout(function () {
-      $("#apramadCtrl").html("&#xf06e");
-      // $("#pramadCtrl").html("&#xf2a8");
-    }, 1000);
-  }
-
-  eyeOpenClose();
-  setInterval(eyeOpenClose, 2000);
 
   function getCurrentTrackerTimeRow() {
     let now = getCurentTime();
@@ -607,15 +528,12 @@ $(document).ready(function () {
     return str;
   }
 
- 
-
-
 
   function oneClickResetSheet() {
     toggleCollapse();
 
     if (confirm("Are you sure want to reset?")) {
-      resetSheet();
+      postToGoogle(true,false,false,true);
     }
     return false;
   }
@@ -638,31 +556,6 @@ $(document).ready(function () {
     return d2;
   }
 
-  function resetSheet() {
-    $("#processing-div").removeClass("d-none");
-    __ApiCallStatus = true;
-
-    $.ajax({
-      crossOrigin: true,
-      url: _ResetApiUrl,
-
-      dataType: "jsonp",
-      success: function (data, textStatus, xhr) {
-        console.log("oneClickResetSheet response data", data);
-        //alert('SUCCESS - ' + data)
-        $("#errorMessage").html(data);
-        __ApiCallStatus = false;
-        postToGoogle(true,false,false,true);
-      },
-      error: function (xhr, error_text, statusText) {
-        //alert('Sheet Reset Done with - ' + error_text)
-        console.log("error_text", error_text);
-        $("#errorMessage").html("Reset action Error: " + error_text);
-
-        __ApiCallStatus = false;
-      },
-    });
-  }
 
   //
   function getOnePointerDegree(hourDeg, minDeg) {
