@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-  $("#scriptVersion").html("v1.2");
+  $("#scriptVersion").html("v1.3");
   var __ApiCallStatus = false;
 
   var __CurrentRow = 0;
@@ -359,9 +359,10 @@ $(document).ready(function () {
     let paramRowCurrent = getCurrentTrackerTimeRow();
     let paramRowUpdate = paramRowCurrent;
     let paramPostType = 0; //init and minLoad
+    let paramRowCount = $("#selectChunks").val(); 
 
     if (update) {
-      paramRowUpdate = $("#selectChunks").val();
+      paramRowUpdate = $("#selectRowsCount").val();
       paramPostType = 1;
     } 
 
@@ -369,7 +370,7 @@ $(document).ready(function () {
     paramPostType = 2;
      
 
-    let queryString =  "?rowcurrent=" + paramRowCurrent + "&rowupdate=" + paramRowUpdate + "&chant=" + paramChant + "&posttype=" + paramPostType ;
+    let queryString =  "?rowcurrent=" + paramRowCurrent + "&rowupdate=" + paramRowUpdate +"&owCount=" +paramRowCount+ "&chant=" + paramChant + "&posttype=" + paramPostType ;
 
     let googleurl = _GoogleApiUrl + queryString;
 
