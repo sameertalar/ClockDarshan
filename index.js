@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-  $("#scriptVersion").html("v1.4");
+  $("#scriptVersion").html("v1.5");
   const _GoogleApiUrl =     "https://script.google.com/macros/s/AKfycbxsCxVLCmUynlvUFmCiRBiN-0Xg0RpUbKrcOcPfGLmnI50isgtw3fi9nenIRajtOBld/exec";
 
   var __ApiCallStatus = false;
@@ -123,11 +123,9 @@ $(document).ready(function () {
           $("#radio-mind-3").click();
           sendNotification("Take a deep Breath");
         } else {
-           if($("#selectChunks")[0].selectedIndex == 0)
-           {
-            postToGoogle(false, true, false,false);
-            console.log("Refreshed every min at " + hour + ":"+ min);
-           }
+
+          // Every min Refresh
+          miniLoad();
 
          
         }
@@ -136,6 +134,25 @@ $(document).ready(function () {
       console.log("Unhandled Error", error);
       $("#errorMessage").html("Unhandled Error: " + error);
     }
+  }
+
+  function miniLoad() {
+
+    if($("#selectChunks")[0].selectedIndex == 0)
+    {
+        return;
+    }
+
+    if($("#txtChant").val().length < 1)
+    {
+        return;
+    }
+
+    console.log("Refreshed mini Load at " + getCurentTime()); 
+    postToGoogle(false, true, false,false);
+
+     
+    
   }
 
   function toggleCollapse() {
