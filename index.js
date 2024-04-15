@@ -340,7 +340,7 @@ $(document).ready(function () {
 
   function buildPlatform()
   {
-    let currentChunk = getCurrentTrackerTimeRow() ;  
+    let currentChunk = getCurrentTrackerChunk() ;  
     $("#selectChunks").append($("<option />").val(currentChunk.row).text(currentChunk.chunk));
 
   }
@@ -401,7 +401,7 @@ $(document).ready(function () {
 
           if (data && data.chunks) {
 
-            $('#selectChunks').find('option').remove();
+          $('#selectChunks').find('option').remove();
           $.each(data.chunks, function() {
             let chant = this.chant;
             if(chant == "")
@@ -409,6 +409,9 @@ $(document).ready(function () {
             let text =this.chunk + "【" + chant + "】" + this.k10;
             $("#selectChunks").append($("<option />").val(this.row).text(text));
         });
+
+        $("#countPramad").html(data.pramad); 
+        $("#countApramad").html(data.apramad); 
 
         if (update) 
         $("#txtChant").val(""); 

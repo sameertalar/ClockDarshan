@@ -51,18 +51,23 @@
                   <div class="col-2">
                      <div class="btn-group-vertical mt-3">
                         <span id="timeLeft" class="h6 text-primary text-end px-2 py-1"></span>
+                       
+                        <span id="countApramad" class="h6 text-danger border rounded-circle mx-2  px-2 "></span>
+                        <span id="countPramad"  class="text-secondary fw-lighter  rounded-circle px-2  mx-2 "></span>
+
                         <button
-                           id="btnSettings"
-                           type="button"
-                           class="py-3 mt-2 pt-5 btn btn-lg border-0"
-                           data-bs-toggle="collapse"
-                           href="#collapseSettings"
-                           role="button"
-                           aria-expanded="false"
-                           aria-controls="collapseSettings"
-                           >
-                        <i class="fa fa-cog text-secondary fs-1"></i>
-                        </button>
+                        id="btnSettings"
+                        type="button"
+                        class="py-3 mt-2 mx-0  btn  border-0"
+                        data-bs-toggle="collapse"
+                        href="#collapseSettings"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="collapseSettings"
+                        >
+                     <i class="fa fa-cog text-secondary fs-1"></i>
+                     </button>
+
                      </div>
                   </div>
                   <div class="col-9" id="clock-row ">
@@ -229,39 +234,7 @@
                      <div class="collapse" id="collapseSettings">
                         <div class="card card-body">
                            <div class="container-fluid">
-                              <!-- Row - setting buttons-->
-                              <div class="row">
-                                 <div class="col text-center">
-                                    <button
-                                       id="btnExcel"
-                                       type="button"
-                                       class="btn btn-lg border-0"
-                                       >
-                                    <i class="fa fa-table text-success"></i>
-                                    </button>
-                                    <button
-                                       type="button"
-                                       class="btn border-0"
-                                       id="btnDocument"
-                                       >
-                                    <i class="fa fa-file-text-o text-success"></i>
-                                    </button>
-                                    <button
-                                       type="button"
-                                       class="btn btn-lg border-0"
-                                       id="btnPlayVideo"
-                                       >
-                                    <i class="fa fa-video-camera text-info"></i>
-                                    </button>
-                                    <button
-                                       id="btnResetSheet"
-                                       type="button"
-                                       class="btn btn-lg border-0 p-3"
-                                       >
-                                    <i class="fa fa-random text-danger"></i>
-                                    </button>
-                                 </div>
-                              </div>
+                             
                               <!-- Row - Music Mode buttons-->
                               <div class="row">
                                  <div class="col text-center">
@@ -347,8 +320,41 @@
                                     </audio>
                                  </div>
                               </div>
+                               <!-- Row - setting buttons-->
+                               <div class="row">
+                                <div class="col text-center">
+                                   <button
+                                      id="btnExcel"
+                                      type="button"
+                                      class="btn btn-lg border-0"
+                                      >
+                                   <i class="fa fa-table text-success"></i>
+                                   </button>
+                                   <button
+                                      type="button"
+                                      class="btn border-0"
+                                      id="btnDocument"
+                                      >
+                                   <i class="fa fa-file-text-o text-success"></i>
+                                   </button>
+                                   <button
+                                      type="button"
+                                      class="btn btn-lg border-0"
+                                      id="btnPlayVideo"
+                                      >
+                                   <i class="fa fa-video-camera text-info"></i>
+                                   </button>
+                                   <button
+                                      id="btnResetSheet"
+                                      type="button"
+                                      class="btn btn-lg border-0 p-3"
+                                      >
+                                   <i class="fa fa-random text-danger"></i>
+                                   </button>
+                                </div>
+                             </div>
                               <!-- Test -->
-                              <div class="row mt-3">
+                              <div class="row mt-3 d-none">
                                  <div class="col">
                                     <div class="form-group row">
                                        <div class="col-4 text-right">
@@ -498,6 +504,6 @@
          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
          crossorigin="anonymous"
          ></script>
-      <script src="index.js?ver=1.5.2"></script>
+      <script src="index.js?ver=1.5.3"></script>
    </body>
 </html>
