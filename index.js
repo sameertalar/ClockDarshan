@@ -342,6 +342,8 @@ $(document).ready(function () {
     __ApiCallStatus = true;
     $("#errorMessage").html("");
 
+
+
     let paramChant =  $("#txtChant").val(); 
     let paramRowCurrent = getCurrentTrackerTimeRow();
     let paramRowUpdate = paramRowCurrent;
