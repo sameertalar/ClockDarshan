@@ -505,7 +505,7 @@ $(document).ready(function () {
 
   function btnExcelOpenClick() {
     window.open(
-      "https://docs.google.com/spreadsheets/d/1nOrZM3sExoxmFgyzhiwi6BrPvQT-9Omlt2x5kno8H5w/edit#gid=1698318143",
+      "https://docs.google.com/spreadsheets/d/1Ie_9tgkKbtoF6RxHkgSyFp6aG_3t1k_5iB9XqayIlaw/edit#gid=2109360371",
       "_blank"
     );
   }
