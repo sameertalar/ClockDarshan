@@ -457,7 +457,7 @@ $(document).ready(function () {
 
 
 
-  function getCurrentTrackerTimeRow() {
+  function getCurrentTrackerChunk () {
     let now = getCurentTime();
     let h = now.getHours();
     let minutes = now.getMinutes();
@@ -480,7 +480,7 @@ $(document).ready(function () {
    return { row:currentRow, chunk: hours +"-"+quarter};
   }
 
-  function getCurrentTrackerChunk() {
+  function getCurrentTrackerTimeRow() {
     let now = getCurentTime();
     let h = now.getHours();
     let minutes = now.getMinutes();
