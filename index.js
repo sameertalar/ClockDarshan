@@ -3,7 +3,10 @@
 $(document).ready(function () {
 
   $("#scriptVersion").html("v1.5");
-  const _GoogleApiUrl =     "https://script.google.com/macros/s/AKfycbxsCxVLCmUynlvUFmCiRBiN-0Xg0RpUbKrcOcPfGLmnI50isgtw3fi9nenIRajtOBld/exec";
+  var _GoogleApiUrl =     "https://script.google.com/macros/s/AKfycbx8vPVFdo-5OlA-XNJ08n5qW148WM1QKyzuptItLUHV3uZclD5hzHNV2afJZFU1Ofck/exec";
+  const GoogleDev_Url = "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
+
+ // _GoogleApiUrl =GoogleDev_Url; // Dev Mode
 
   var __ApiCallStatus = false;
   var __CurrentRow = 0;
@@ -51,14 +54,12 @@ $(document).ready(function () {
       playMeditation();
     });   
 
-    /*
-    $(window).focus(function() {
-      console.log('Welcome (back)');
-      postToGoogle(false, false, true, false);      
-   });
-   */
  
-   postToGoogle(false, false, true, false);  
+   buildPlatform();
+ 
+
+ $("#processing-div").addClass("d-none");       
+ $("#minLoad-div").addClass("d-none");
     
   }
 
@@ -119,7 +120,7 @@ $(document).ready(function () {
       if (sec === 1) {
         if (min % 15 === 0) {
           console.log("🕞 15 mins Quarter Shift Called");
-          postToGoogle(false, false,false,false);
+          postToGoogle(false, false,false);
           $("#radio-mind-3").click();
           sendNotification("Take a deep Breath");
         } else {
@@ -149,7 +150,7 @@ $(document).ready(function () {
     }
 
     console.log("Refreshed mini Load at " + getCurentTime()); 
-    postToGoogle(false, true, false,false);
+    postToGoogle(false, true, false);
 
      
     
@@ -337,8 +338,15 @@ $(document).ready(function () {
    
   }
 
+  function buildPlatform()
+  {
+    let currentChunk = getCurrentTrackerTimeRow() ;  
+    $("#selectChunks").append($("<option />").val(currentChunk.row).text(currentChunk.chunk));
+
+  }
+
  
-  function postToGoogle(update,minLoad,init,reset) {  
+  function postToGoogle(update,minLoad,reset) {  
     if (!update) {
       if (__retry > 2) {
         $("#errorMessage").html("📛 Max Retry Reached.");
@@ -389,7 +397,7 @@ $(document).ready(function () {
       success: function (data, textStatus, xhr) {
         // console.log("Api Response Data:", data);
 
-        try {
+        try {        
 
           if (data && data.chunks) {
 
@@ -410,6 +418,7 @@ $(document).ready(function () {
           __ApiCallStatus = false;
 
         } catch (err) {
+         
           console.log(
             "Unhandled Error while processing postToGoogle response",
             err
@@ -419,21 +428,22 @@ $(document).ready(function () {
           //buildPlatform();
         }
 
-        $("#processing-div").addClass("d-none");
-       
+        $("#processing-div").addClass("d-none");       
         $("#minLoad-div").addClass("d-none");
         __ApiCallStatus = false;
       },
       error: function (xhr, error_text, statusText) {
+        
+
         __ApiCallStatus = false;
         $("#errorMessage").html(
-          "(" + __retry + ") Api Error Response -" + error_text
+          "Error while Calling Google Api (" + __retry + ")"  
         );
         //_UpdaterApiUrl = _UpdaterApiUrl2;
         __retry = __retry + 1;
-        buildPlatform();
+        //buildPlatform();
         console.log("error_text", "Api Error Response -" + error_text);
-        $("#containerPath").html(error_text);
+    
         $("#processing-div").addClass("d-none");
         $("#minLoad-div").addClass("d-none");
       },
@@ -461,10 +471,35 @@ $(document).ready(function () {
           quarter = 1;
         }
       }
-    }
+    }  
+    
+   let currentRow =getTrackerRow(h, quarter);
+
+   let hours = pad(h% 12 || 12,2);
+
+   return { row:currentRow, chunk: hours +"-"+quarter};
+  }
+
+  function getCurrentTrackerChunk() {
+    let now = getCurentTime();
+    let h = now.getHours();
+    let minutes = now.getMinutes();
+    let quarter = 4;
+
+    if (minutes < 45) {
+      quarter = 3;
+      if (minutes < 30) {
+        quarter = 2;
+        if (minutes < 15) {
+          quarter = 1;
+        }
+      }
+    }   
 
     return getTrackerRow(h, quarter);
   }
+
+
 
   function showTimeElaspeProgress(min, sec) {
     let elaspePercentQ = ((min % 15) * 60 + sec) / 9;
@@ -552,7 +587,7 @@ $(document).ready(function () {
     toggleCollapse();
 
     if (confirm("Are you sure want to reset?")) {
-      postToGoogle(true,false,false,true);
+      postToGoogle(true,false,true);
     }
     return false;
   }
@@ -590,7 +625,7 @@ $(document).ready(function () {
   }
 
   function oneClickTracker() {
-    postToGoogle(true,false,false,false);
+    postToGoogle(true,false,false);
   }
   // End of Code
 });
