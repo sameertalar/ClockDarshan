@@ -104,7 +104,7 @@ $(document).ready(function () {
 
       $("#lblCurrentRow").html(__CurrentRow);
 
-      console.log($("#selectChunks").val());
+      //console.log($("#selectChunks").val());
 
       if (__CurrentRow !== __LoggedRow && __LoggedRow !== 0) {
         // $("#clock-row").addClass("bag rounded-circle");
