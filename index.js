@@ -3,7 +3,7 @@
 $(document).ready(function () {
 
   $("#scriptVersion").html("v1.4");
-  const _GoogleApiUrl =     "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
+  const _GoogleApiUrl =     "https://script.google.com/macros/s/AKfycbxsCxVLCmUynlvUFmCiRBiN-0Xg0RpUbKrcOcPfGLmnI50isgtw3fi9nenIRajtOBld/exec";
 
   var __ApiCallStatus = false;
   var __CurrentRow = 0;
