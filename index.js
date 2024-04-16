@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-  $("#scriptVersion").html("v1.5");
+  $("#scriptVersion").html("v1.6");
   var _GoogleApiUrl =     "https://script.google.com/macros/s/AKfycbx8vPVFdo-5OlA-XNJ08n5qW148WM1QKyzuptItLUHV3uZclD5hzHNV2afJZFU1Ofck/exec";
   const GoogleDev_Url = "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
 
@@ -34,9 +34,7 @@ $(document).ready(function () {
     $("#btnDocument").on("click", btnDocumentClick);
 
     $("#btnPlayVideo").on("click", toggleCollapse);
-    $("#radio-Music-Meditation").on("click", setAudioMode);
-    $("#radio-Music-Chunk").on("click", setAudioMode);
-    $("#radio-Music-Off").on("click", setAudioMode);
+    
     $("#btnTestChunkAudio").on("click", testChunkAudio);
 
     $("#btnTest").on("click", function (event) {
@@ -49,9 +47,9 @@ $(document).ready(function () {
       $("#radio-div").removeClass("bg-white");
     });
 
-    $("#btnAudioModeDisplay").on("click", function (event) {
+    $("#btnAudioBreathMeditation").on("click", function (event) {
       //$("#radio-Music-Off").click();
-      playMeditation();
+      playMeditation($(this));
     });   
 
  
@@ -115,8 +113,7 @@ $(document).ready(function () {
         $("body").removeClass("bag");
       }
 
-//console.log("Chunk", $("#selectChunks")[0].selectedIndex);
-//console.log("Chant", $("#txtChant").val().length );
+
 
       if (sec === 1) {
         if (min % 15 === 0) {
@@ -125,6 +122,7 @@ $(document).ready(function () {
           $("#radio-mind-3").click();
           sendNotification("Take a deep Breath");
         } else {
+
 
           // Every min Refresh
           miniLoad();
@@ -141,11 +139,13 @@ $(document).ready(function () {
 
     if($("#selectChunks")[0].selectedIndex != 0)
     {
+      console.log("Skipped min load for ddl ", $("#selectChunks")[0].selectedIndex);
         return;
     }
 
     if($("#txtChant").val().length > 0)
     {
+        console.log("Skipped min load for chant count", $("#txtChant").val().length);
         return;
     }
 
@@ -160,27 +160,7 @@ $(document).ready(function () {
     $("#collapseSettings").collapse("toggle");
   }
 
-  function setAudioMode() {
-    // Display selected misic mode
-    $("#audioModeDisplay").removeClass("fa-volume-off");
-    $("#audioModeDisplay").removeClass("fa-volume-up");
-    $("#audioModeDisplay").removeClass("fa-music");
-
-    let musicMode = $(".radioMusic:checked").val();
-
-    switch (musicMode) {
-      case "C":
-        $("#audioModeDisplay").addClass("fa-volume-up");
-        break;
-      case "M":
-        $("#audioModeDisplay").addClass("fa-music");
-        break;
-      default:
-        $("#audioModeDisplay").addClass("fa-volume-off");
-        break;
-    }
-    toggleCollapse();
-  }
+ 
 
   function playAlertAudio(hour, min, sec) {
     let musicMode = $(".radioMusic:checked").val();
@@ -310,8 +290,21 @@ $(document).ready(function () {
     }
   }
 
-  function playMeditation() {
-    $("#audioMed")[0].play();
+  function playMeditation($this) {
+    $("#btnAudioBreathMeditation").toggleClass('active');
+
+    if($("#btnAudioBreathMeditation").hasClass('active')){
+      $("#audioMed")[0].play();
+      $("#audioModeDisplay").addClass("fa-pause");
+      $("#audioModeDisplay").removeClass("fa-play");
+    
+      
+  } else {       
+      $("#audioMed")[0].pause();
+      $("#audioModeDisplay").removeClass("fa-pause");
+      $("#audioModeDisplay").addClass("fa-play");     
+  }
+    
   }
 
   function sendNotification(title) {
