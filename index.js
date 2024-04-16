@@ -115,7 +115,8 @@ $(document).ready(function () {
         $("body").removeClass("bag");
       }
 
-
+//console.log("Chunk", $("#selectChunks")[0].selectedIndex);
+//console.log("Chant", $("#txtChant").val().length );
 
       if (sec === 1) {
         if (min % 15 === 0) {
@@ -143,7 +144,7 @@ $(document).ready(function () {
         return;
     }
 
-    if($("#txtChant").val().length < 1)
+    if($("#txtChant").val().length > 0)
     {
         return;
     }
