@@ -127,7 +127,6 @@ $(document).ready(function () {
 
           // Every min Refresh
           miniLoad();
-
          
         }
       }
@@ -139,7 +138,7 @@ $(document).ready(function () {
 
   function miniLoad() {
 
-    if($("#selectChunks")[0].selectedIndex == 0)
+    if($("#selectChunks")[0].selectedIndex != 0)
     {
         return;
     }
@@ -412,6 +411,7 @@ $(document).ready(function () {
 
         $("#countPramad").html(data.pramad); 
         $("#countApramad").html(data.apramad); 
+        $('#iframeChantChart').attr("src", $('#iframeChantChart').attr("src"));
 
         if (update) 
         $("#txtChant").val(""); 
