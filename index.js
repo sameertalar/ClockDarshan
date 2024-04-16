@@ -550,7 +550,7 @@ $(document).ready(function () {
     var myWindow = window.open(
       window.location.href,
       "",
-      "width=455,height=625"
+      "width=1030,height=275,location=no"
     );
   }
 
