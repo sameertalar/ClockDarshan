@@ -2,8 +2,8 @@
 
 $(document).ready(function () {
 
-  $("#scriptVersion").html("v1.6");
-  var _GoogleApiUrl =     "https://script.google.com/macros/s/AKfycbx8vPVFdo-5OlA-XNJ08n5qW148WM1QKyzuptItLUHV3uZclD5hzHNV2afJZFU1Ofck/exec";
+  $("#scriptVersion").html("v1.8");
+  var _GoogleApiUrl =     "https://script.google.com/macros/s/AKfycbxXoh5l61FUTwJCySICOUozueZ_OdfsuT71KbAqYlWLkEY7S_jJvlnUUiY5IHA-6s_0/exec";
   const GoogleDev_Url = "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
 
  // _GoogleApiUrl =GoogleDev_Url; // Dev Mode
@@ -14,6 +14,7 @@ $(document).ready(function () {
   var __retry = 0;  
   
   page_Load();
+
 
   function page_Load() {
     console.log("🅒🅛🅞🅒🅚  🅓🅐🅡🅢🅗🅐🅝 Page Loading....");
@@ -60,7 +61,6 @@ $(document).ready(function () {
  $("#minLoad-div").addClass("d-none");
     
   }
-
 
 
   var __AppEnabledStatus = setInterval(processBeHereNow, 1000);
@@ -369,8 +369,14 @@ $(document).ready(function () {
     let paramRowCount = $("#selectRowsCount").val(); 
 
     if (update) {
-      paramRowUpdate = $("#selectChunks").val();
+
       paramPostType = 1;
+
+      if($("#selectChunks")[0].selectedIndex != 0)
+      {
+        paramRowUpdate = $("#selectChunks").val();
+      }    
+
     } 
 
     if(reset)
@@ -408,7 +414,10 @@ $(document).ready(function () {
         $('#iframeChantChart').attr("src", $('#iframeChantChart').attr("src"));
 
         if (update) 
-        $("#txtChant").val(""); 
+        {
+          $("#txtChant").val(""); 
+          $("#selectRowsCount").val(1);
+        }    
 
       }
 
