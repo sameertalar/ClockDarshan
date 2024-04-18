@@ -1,26 +1,26 @@
 //  https://fontawesome.com/v4/icons/
+// Prettier shortcut : Alt + Shift + F
 
 $(document).ready(function () {
-
   $("#scriptVersion").html("v1.8");
-  var _GoogleApiUrl =     "https://script.google.com/macros/s/AKfycbxXoh5l61FUTwJCySICOUozueZ_OdfsuT71KbAqYlWLkEY7S_jJvlnUUiY5IHA-6s_0/exec";
-  const GoogleDev_Url = "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
+  var _GoogleApiUrl =
+    "https://script.google.com/macros/s/AKfycbxXoh5l61FUTwJCySICOUozueZ_OdfsuT71KbAqYlWLkEY7S_jJvlnUUiY5IHA-6s_0/exec";
+  const GoogleDev_Url =
+    "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
 
- // _GoogleApiUrl =GoogleDev_Url; // Dev Mode
+  // _GoogleApiUrl =GoogleDev_Url; // Dev Mode
 
   var __ApiCallStatus = false;
   var __CurrentRow = 0;
-  var __LoggedRow = 0; 
-  var __retry = 0;  
-  
-  page_Load();
+  var __LoggedRow = 0;
+  var __retry = 0;
 
+  page_Load();
 
   function page_Load() {
     console.log("🅒🅛🅞🅒🅚  🅓🅐🅡🅢🅗🅐🅝 Page Loading....");
 
     $("#success-alert").hide();
-
 
     $("#btnPlayVideo").on("click", playVideo);
     $("#btnResetSheet").on("click", oneClickResetSheet);
@@ -30,12 +30,11 @@ $(document).ready(function () {
     $("#clock-container").on("click", oneClickTracker);
     //$("#ClockInnerCircle").on("click", oneClickTracker);
     //$("#centerCoreD").on("click", oneClickTracker);
-     
 
     $("#btnDocument").on("click", btnDocumentClick);
 
     $("#btnPlayVideo").on("click", toggleCollapse);
-    
+
     $("#btnTestChunkAudio").on("click", testChunkAudio);
 
     $("#btnTest").on("click", function (event) {
@@ -51,17 +50,13 @@ $(document).ready(function () {
     $("#btnAudioBreathMeditation").on("click", function (event) {
       //$("#radio-Music-Off").click();
       playMeditation($(this));
-    });   
+    });
 
- 
-   buildPlatform();
- 
+    buildPlatform();
 
- $("#processing-div").addClass("d-none");       
- $("#minLoad-div").addClass("d-none");
-    
+    $("#processing-div").addClass("d-none");
+    $("#minLoad-div").addClass("d-none");
   }
-
 
   var __AppEnabledStatus = setInterval(processBeHereNow, 1000);
 
@@ -91,7 +86,6 @@ $(document).ready(function () {
 
       // show Current Time
       showCurrentTimeLeft(min, sec);
- 
 
       showTimeElaspeProgress(min, sec);
 
@@ -99,7 +93,7 @@ $(document).ready(function () {
 
       __CurrentRow = getCurrentTrackerTimeRow();
 
-      setBhavImage(__CurrentRow);     
+      setBhavImage(__CurrentRow);
 
       $("#lblCurrentRow").html(__CurrentRow);
 
@@ -113,20 +107,15 @@ $(document).ready(function () {
         $("body").removeClass("bag");
       }
 
-
-
       if (sec === 1) {
         if (min % 15 === 0) {
           console.log("🕞 15 mins Quarter Shift Called");
-          postToGoogle(false, false,false);
+          postToGoogle(false, false, false);
           $("#radio-mind-3").click();
           sendNotification("Take a deep Breath");
         } else {
-
-
           // Every min Refresh
           miniLoad();
-         
         }
       }
     } catch (error) {
@@ -136,31 +125,29 @@ $(document).ready(function () {
   }
 
   function miniLoad() {
-
-    if($("#selectChunks")[0].selectedIndex != 0)
-    {
-      console.log("Skipped min load for ddl ", $("#selectChunks")[0].selectedIndex);
-        return;
+    if ($("#selectChunks")[0].selectedIndex != 0) {
+      console.log(
+        "Skipped min load for ddl ",
+        $("#selectChunks")[0].selectedIndex
+      );
+      return;
     }
 
-    if($("#txtChant").val().length > 0)
-    {
-        console.log("Skipped min load for chant count", $("#txtChant").val().length);
-        return;
+    if ($("#txtChant").val().length > 0) {
+      console.log(
+        "Skipped min load for chant count",
+        $("#txtChant").val().length
+      );
+      return;
     }
 
-    console.log("Refreshed mini Load at " + getCurentTime()); 
+    console.log("Refreshed mini Load at " + getCurentTime());
     postToGoogle(false, true, false);
-
-     
-    
   }
 
   function toggleCollapse() {
     $("#collapseSettings").collapse("toggle");
   }
-
- 
 
   function playAlertAudio(hour, min, sec) {
     let musicMode = $(".radioMusic:checked").val();
@@ -291,20 +278,17 @@ $(document).ready(function () {
   }
 
   function playMeditation($this) {
-    $("#btnAudioBreathMeditation").toggleClass('active');
+    $("#btnAudioBreathMeditation").toggleClass("active");
 
-    if($("#btnAudioBreathMeditation").hasClass('active')){
+    if ($("#btnAudioBreathMeditation").hasClass("active")) {
       $("#audioMed")[0].play();
       $("#audioModeDisplay").addClass("fa-pause");
       $("#audioModeDisplay").removeClass("fa-play");
-    
-      
-  } else {       
+    } else {
       $("#audioMed")[0].pause();
       $("#audioModeDisplay").removeClass("fa-pause");
-      $("#audioModeDisplay").addClass("fa-play");     
-  }
-    
+      $("#audioModeDisplay").addClass("fa-play");
+    }
   }
 
   function sendNotification(title) {
@@ -319,8 +303,7 @@ $(document).ready(function () {
     });
   }
 
-  function setBhavImage(imageRow) {    
-
+  function setBhavImage(imageRow) {
     if ($("#imgBhav").attr("src").includes(imageRow)) return;
 
     if (imageRow < 28 && !$("#imgBhav").attr("src").includes("svg")) {
@@ -328,18 +311,16 @@ $(document).ready(function () {
     } else {
       $("#imgBhav").attr("src", "img/bhav/" + imageRow + ".jpg");
     }
-   
   }
 
-  function buildPlatform()
-  {
-    let currentChunk = getCurrentTrackerChunk() ;  
-    $("#selectChunks").append($("<option />").val(currentChunk.row).text(currentChunk.chunk));
-
+  function buildPlatform() {
+    let currentChunk = getCurrentTrackerChunk();
+    $("#selectChunks").append(
+      $("<option />").val(currentChunk.row).text(currentChunk.chunk)
+    );
   }
 
- 
-  function postToGoogle(update,minLoad,reset) {  
+  function postToGoogle(update, minLoad, reset) {
     if (!update) {
       if (__retry > 2) {
         $("#errorMessage").html("📛 Max Retry Reached.");
@@ -351,8 +332,9 @@ $(document).ready(function () {
 
     if (minLoad) {
       $("#minLoad-div").removeClass("d-none");
-    } else { //init
-      $("#processing-div").removeClass("d-none");      
+    } else {
+      //init
+      $("#processing-div").removeClass("d-none");
     }
 
     console.log("Posting to Google api...");
@@ -360,30 +342,33 @@ $(document).ready(function () {
     __ApiCallStatus = true;
     $("#errorMessage").html("");
 
-
-
-    let paramChant =  $("#txtChant").val(); 
+    let paramChant = $("#txtChant").val();
     let paramRowCurrent = getCurrentTrackerTimeRow();
     let paramRowUpdate = paramRowCurrent;
     let paramPostType = 0; //init and minLoad
-    let paramRowCount = $("#selectRowsCount").val(); 
+    let paramRowCount = $("#selectRowsCount").val();
 
     if (update) {
-
       paramPostType = 1;
 
-      if($("#selectChunks")[0].selectedIndex != 0)
-      {
+      if ($("#selectChunks")[0].selectedIndex != 0) {
         paramRowUpdate = $("#selectChunks").val();
-      }    
+      }
+    }
 
-    } 
+    if (reset) paramPostType = 2;
 
-    if(reset)
-    paramPostType = 2;
-     
-
-    let queryString =  "?rowcurrent=" + paramRowCurrent + "&rowupdate=" + paramRowUpdate +"&rowCount=" +paramRowCount+ "&chant=" + paramChant + "&posttype=" + paramPostType ;
+    let queryString =
+      "?rowcurrent=" +
+      paramRowCurrent +
+      "&rowupdate=" +
+      paramRowUpdate +
+      "&rowCount=" +
+      paramRowCount +
+      "&chant=" +
+      paramChant +
+      "&posttype=" +
+      paramPostType;
 
     let googleurl = _GoogleApiUrl + queryString;
 
@@ -396,35 +381,33 @@ $(document).ready(function () {
       success: function (data, textStatus, xhr) {
         // console.log("Api Response Data:", data);
 
-        try {        
-
+        try {
           if (data && data.chunks) {
+            $("#selectChunks").find("option").remove();
+            $.each(data.chunks, function () {
+              let chant = this.chant;
+              if (chant == "") chant = "🌑";
+              let text = this.chunk + "【" + chant + "】" + this.k10;
+              $("#selectChunks").append(
+                $("<option />").val(this.row).text(text)
+              );
+            });
 
-          $('#selectChunks').find('option').remove();
-          $.each(data.chunks, function() {
-            let chant = this.chant;
-            if(chant == "")
-              chant = "🌑"
-            let text =this.chunk + "【" + chant + "】" + this.k10;
-            $("#selectChunks").append($("<option />").val(this.row).text(text));
-        });
+            $("#countPramad").html(data.pramad);
+            $("#countApramad").html(data.apramad);
+            $("#iframeChantChart").attr(
+              "src",
+              $("#iframeChantChart").attr("src")
+            );
 
-        $("#countPramad").html(data.pramad); 
-        $("#countApramad").html(data.apramad); 
-        $('#iframeChantChart').attr("src", $('#iframeChantChart').attr("src"));
-
-        if (update) 
-        {
-          $("#txtChant").val(""); 
-          $("#selectRowsCount").val(1);
-        }    
-
-      }
+            if (update) {
+              $("#txtChant").val("");
+              $("#selectRowsCount").val(1);
+            }
+          }
 
           __ApiCallStatus = false;
-
         } catch (err) {
-         
           console.log(
             "Unhandled Error while processing postToGoogle response",
             err
@@ -434,36 +417,31 @@ $(document).ready(function () {
           //buildPlatform();
         }
 
-        $("#processing-div").addClass("d-none");       
+        $("#processing-div").addClass("d-none");
         $("#minLoad-div").addClass("d-none");
         __ApiCallStatus = false;
       },
       error: function (xhr, error_text, statusText) {
-        
-
         __ApiCallStatus = false;
         $("#errorMessage").html(
-          "Error while Calling Google Api (" + __retry + ")"  
+          "Error while Calling Google Api (" + __retry + ")"
         );
         //_UpdaterApiUrl = _UpdaterApiUrl2;
         __retry = __retry + 1;
         //buildPlatform();
         console.log("error_text", "Api Error Response -" + error_text);
-    
+
         $("#processing-div").addClass("d-none");
         $("#minLoad-div").addClass("d-none");
       },
     });
   }
 
-
   function getTrackerRow(h, q) {
     return h * 4 + q + 3;
   }
 
-
-
-  function getCurrentTrackerChunk () {
+  function getCurrentTrackerChunk() {
     let now = getCurentTime();
     let h = now.getHours();
     let minutes = now.getMinutes();
@@ -477,13 +455,13 @@ $(document).ready(function () {
           quarter = 1;
         }
       }
-    }  
-    
-   let currentRow =getTrackerRow(h, quarter);
+    }
 
-   let hours = pad(h% 12 || 12,2);
+    let currentRow = getTrackerRow(h, quarter);
 
-   return { row:currentRow, chunk: hours +"-"+quarter};
+    let hours = pad(h % 12 || 12, 2);
+
+    return { row: currentRow, chunk: hours + "-" + quarter };
   }
 
   function getCurrentTrackerTimeRow() {
@@ -500,12 +478,10 @@ $(document).ready(function () {
           quarter = 1;
         }
       }
-    }   
+    }
 
     return getTrackerRow(h, quarter);
   }
-
-
 
   function showTimeElaspeProgress(min, sec) {
     let elaspePercentQ = ((min % 15) * 60 + sec) / 9;
@@ -520,8 +496,6 @@ $(document).ready(function () {
         "% )"
     );
   }
-
-
 
   function showCurrentTimeLeft(min, sec) {
     //var timeNow = pad(14 - (min % 15), 2) + ":" + pad(60 - sec, 2); //Tile left
@@ -588,12 +562,11 @@ $(document).ready(function () {
     return str;
   }
 
-
   function oneClickResetSheet() {
     toggleCollapse();
 
     if (confirm("Are you sure want to reset?")) {
-      postToGoogle(true,false,true);
+      postToGoogle(true, false, true);
     }
     return false;
   }
@@ -616,7 +589,6 @@ $(document).ready(function () {
     return d2;
   }
 
-
   //
   function getOnePointerDegree(hourDeg, minDeg) {
     let hdeg = 15;
@@ -631,7 +603,7 @@ $(document).ready(function () {
   }
 
   function oneClickTracker() {
-    postToGoogle(true,false,false);
+    postToGoogle(true, false, false);
   }
   // End of Code
 });
