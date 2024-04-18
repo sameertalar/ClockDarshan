@@ -2,7 +2,7 @@
 // Prettier shortcut : Alt + Shift + F
 
 $(document).ready(function () {
-  $("#scriptVersion").html("v1.8");
+  $("#scriptVersion").html("v1.9");
   var _GoogleApiUrl =
     "https://script.google.com/macros/s/AKfycbxXoh5l61FUTwJCySICOUozueZ_OdfsuT71KbAqYlWLkEY7S_jJvlnUUiY5IHA-6s_0/exec";
   const GoogleDev_Url =
@@ -133,11 +133,11 @@ $(document).ready(function () {
       return;
     }
 
-    if ($("#txtChant").val().length > 0) {
-      console.log(
-        "Skipped min load for chant count",
-        $("#txtChant").val().length
-      );
+    if (
+      $("#selectChant3")[0].selectedIndex != 0 ||
+      $("#selectChant2")[0].selectedIndex != 0
+    ) {
+      console.log("Skipped min load for chant.");
       return;
     }
 
@@ -342,7 +342,7 @@ $(document).ready(function () {
     __ApiCallStatus = true;
     $("#errorMessage").html("");
 
-    let paramChant = $("#txtChant").val();
+    let paramChant = "";
     let paramRowCurrent = getCurrentTrackerTimeRow();
     let paramRowUpdate = paramRowCurrent;
     let paramPostType = 0; //init and minLoad
@@ -354,6 +354,13 @@ $(document).ready(function () {
       if ($("#selectChunks")[0].selectedIndex != 0) {
         paramRowUpdate = $("#selectChunks").val();
       }
+
+      paramChant =
+        $("#selectChant1").val() +
+        "" +
+        $("#selectChant2").val() +
+        "" +
+        $("#selectChant3").val();
     }
 
     if (reset) paramPostType = 2;
@@ -401,8 +408,10 @@ $(document).ready(function () {
             );
 
             if (update) {
-              $("#txtChant").val("");
               $("#selectRowsCount").val(1);
+              $("#selectChant1").val("0");
+              $("#selectChant2").val("0");
+              $("#selectChant3").val("0");
             }
           }
 
