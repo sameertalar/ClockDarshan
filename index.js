@@ -2,9 +2,9 @@
 // Prettier shortcut : Alt + Shift + F
 
 $(document).ready(function () {
-  $("#scriptVersion").html("v2.1");
+  $("#scriptVersion").html("v2.2");
   var _GoogleApiUrl =
-    "https://script.google.com/macros/s/AKfycby0B4KK0TBJDP2-XDhr3oyvOWHN4Ke9-acKUeogrq0j4YohEiVGQl1GTFOcVZzv5cZr/exec";
+    "https://script.google.com/macros/s/AKfycbyICgBxfpOPat8voUNHExOUb-0MixZeMbrTtT9FGTinv3Q1-TbDXkNCzsia-bj69pXd/exec";
   const GoogleDev_Url =
     "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
 
@@ -347,6 +347,7 @@ $(document).ready(function () {
     let paramRowUpdate = paramRowCurrent;
     let paramPostType = 0; //init and minLoad
     let paramRowCount = $("#selectRowsCount").val();
+    let paramChantLag ="";
 
     if (update) {
       paramPostType = 1;
@@ -358,6 +359,9 @@ $(document).ready(function () {
       paramChant = Number(
         $("#selectChant1").val() +
         "" + $("#selectChant2").val() );
+
+
+        paramChantLag =$("#chantLagInput").val()  ;
     }
 
     if (reset) paramPostType = 2;
@@ -372,7 +376,9 @@ $(document).ready(function () {
       "&chant=" +
       paramChant +
       "&posttype=" +
-      paramPostType;
+      paramPostType+
+      "&chantlag="+
+      paramChantLag  ;
 
     let googleurl = _GoogleApiUrl + queryString;
 
@@ -397,8 +403,12 @@ $(document).ready(function () {
               );
             });
 
-            $("#countPramad").html(data.pramad);
+             
             $("#countApramad").html(data.apramad);
+            $("#countChantLag").html("("+data.countChantLag+ ")");
+            $("#chantLagInput").val("");
+
+            
             $("#iframeChantChart").attr(
               "src",
               $("#iframeChantChart").attr("src")

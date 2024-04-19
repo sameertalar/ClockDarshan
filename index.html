@@ -59,10 +59,6 @@
                   id="countApramad"
                   class="h6 text-danger border rounded-circle px-2"
                 ></span>
-                <span
-                  id="countPramad"
-                  class="text-secondary fw-lighter px-2 rounded-circle"
-                ></span>
 
                 <div
                   class="btn-group-vertical mt-3 bg-white rounded-pill"
@@ -229,7 +225,7 @@
               <div class="btn-group">
                 <select
                   id="selectChant1"
-                  class="form-control form-control-lg px-3 fw-bold border-0 border-bottom border-end bg-light text-primary"
+                  class="form-control form-control-lg px-3 fw-bold border bg-light text-primary"
                 >
                   <option value="0" selected></option>
                   <option>0</option>
@@ -245,7 +241,7 @@
                 </select>
                 <select
                   id="selectChant2"
-                  class="form-control form-control-lg px-3 fw-bold border-0 border-bottom bg-light text-primary"
+                  class="form-control form-control-lg px-3 fw-bold border bg-light text-primary"
                 >
                   <option value="0" selected></option>
                   <option>0</option>
@@ -383,6 +379,12 @@
                         </audio>
                       </div>
                     </div>
+                    <!-- Row - Chant Lag -->
+                    <div class="row mt-3">
+                      <div class="col-5">Chant Lag &nbsp;<span id="countChantLag" class="text-primary"></span></div>
+                      <div class="col-4"><input type="number" id="chantLagInput" class="form-control form-control-lg text-danger fw-bold" style="width:120px"> </div>
+                      
+                    </div>
 
                     <!-- Test -->
                     <div class="row mt-3 d-none">
@@ -446,8 +448,8 @@
         <!--- ** Column 3  History ***    -->
         <div class="col-lg-4">
           <!-- Row : Bhav -->
-          <div class="row">
-            <div class="col">
+          <div class="row px-5">
+            <div class="col px-5 mx-5">
               <div id="divBhav" class="text-center">
                 <img
                   id="imgBhav"
@@ -551,6 +553,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js?ver=2.1"></script>
+    <script src="index.js?ver=2.2"></script>
   </body>
 </html>
