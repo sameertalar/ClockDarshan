@@ -2,7 +2,7 @@
 // Prettier shortcut : Alt + Shift + F
 
 $(document).ready(function () {
-  $("#scriptVersion").html("v2.3");
+  $("#scriptVersion").html("v2.4");
   var _GoogleApiUrl =
     "https://script.google.com/macros/s/AKfycbyICgBxfpOPat8voUNHExOUb-0MixZeMbrTtT9FGTinv3Q1-TbDXkNCzsia-bj69pXd/exec";
   const GoogleDev_Url =
@@ -95,9 +95,9 @@ $(document).ready(function () {
 
       setBhavImage(__CurrentRow);
 
-      $("#lblCurrentRow").html(__CurrentRow);
+      //$("#lblCurrentRow").html(__CurrentRow);
 
-      //console.log($("#selectChunks").val());
+      //console.log("Chant", getChantSelected());
 
       if (__CurrentRow !== __LoggedRow && __LoggedRow !== 0) {
         // $("#clock-row").addClass("bag rounded-circle");
@@ -112,7 +112,7 @@ $(document).ready(function () {
           console.log("🕞 15 mins Quarter Shift Called");
           postToGoogle(false, false, false);
 
-          sendNotification("Take a deep Breath");
+         // sendNotification("Take a deep Breath");
         } else {
           // Every min Refresh
           miniLoad();
@@ -133,15 +133,12 @@ $(document).ready(function () {
       return;
     }
 
-    if (
-      $(".radiochant1:checked").val() != 0 ||
-      $(".radiochant2:checked").val() != 0
-    ) {
+    if (getChantSelected() > 0) {
       console.log("Skipped min load for chant.");
       return;
     }
 
-    console.log("Refreshed mini Load at " + getCurentTime());
+    console.log("Refreshed Mini Load at " + getCurentTime());
     postToGoogle(false, true, false);
   }
 
@@ -320,6 +317,24 @@ $(document).ready(function () {
     );
   }
 
+  function getChantSelected() {
+   let chant = "";
+
+   let chant1 =$(".radiochant1:checked").val();
+   let chant2 =$(".radiochant2:checked").val();
+
+   chant  = chant2;
+
+   //console.log(chant2);
+
+   if(chant1 != 0)
+    chant =chant1+chant2;
+
+   return Number(chant);
+
+     return $(".radiochant1:checked").val() + "" + $(".radiochant2:checked").val();
+  }
+
   function postToGoogle(update, minLoad, reset) {
     if (!update) {
       if (__retry > 2) {
@@ -356,11 +371,9 @@ $(document).ready(function () {
         paramRowUpdate = $("#selectChunks").val();
       }
 
-      paramChant = Number(
-        $(".radiochant1:checked").val() + "" + $(".radiochant2:checked").val()
-      );
+      paramChant =  getChantSelected();
 
-      if(isNaN(paramChant))
+      if(isNaN(paramChant) || paramChant ==0)
       {
         paramChant =0;
         update =false;
