@@ -2,7 +2,7 @@
 // Prettier shortcut : Alt + Shift + F
 
 $(document).ready(function () {
-  $("#scriptVersion").html("v2.2");
+  $("#scriptVersion").html("v2.3");
   var _GoogleApiUrl =
     "https://script.google.com/macros/s/AKfycbyICgBxfpOPat8voUNHExOUb-0MixZeMbrTtT9FGTinv3Q1-TbDXkNCzsia-bj69pXd/exec";
   const GoogleDev_Url =
@@ -111,7 +111,7 @@ $(document).ready(function () {
         if (min % 15 === 0) {
           console.log("🕞 15 mins Quarter Shift Called");
           postToGoogle(false, false, false);
-          $("#radio-mind-3").click();
+
           sendNotification("Take a deep Breath");
         } else {
           // Every min Refresh
@@ -134,8 +134,8 @@ $(document).ready(function () {
     }
 
     if (
-      $("#selectChant1")[0].selectedIndex != 0 ||
-      $("#selectChant2")[0].selectedIndex != 0
+      $(".radiochant1:checked").val() != 0 ||
+      $(".radiochant2:checked").val() != 0
     ) {
       console.log("Skipped min load for chant.");
       return;
@@ -347,21 +347,28 @@ $(document).ready(function () {
     let paramRowUpdate = paramRowCurrent;
     let paramPostType = 0; //init and minLoad
     let paramRowCount = $("#selectRowsCount").val();
-    let paramChantLag ="";
+    let paramChantLag = "";
 
     if (update) {
+     
       paramPostType = 1;
-
       if ($("#selectChunks")[0].selectedIndex != 0) {
         paramRowUpdate = $("#selectChunks").val();
       }
 
       paramChant = Number(
-        $("#selectChant1").val() +
-        "" + $("#selectChant2").val() );
+        $(".radiochant1:checked").val() + "" + $(".radiochant2:checked").val()
+      );
 
+      if(isNaN(paramChant))
+      {
+        paramChant =0;
+        update =false;
+      }
+     
+        
 
-        paramChantLag =$("#chantLagInput").val()  ;
+      paramChantLag = $("#chantLagInput").val();
     }
 
     if (reset) paramPostType = 2;
@@ -376,9 +383,9 @@ $(document).ready(function () {
       "&chant=" +
       paramChant +
       "&posttype=" +
-      paramPostType+
-      "&chantlag="+
-      paramChantLag  ;
+      paramPostType +
+      "&chantlag=" +
+      paramChantLag;
 
     let googleurl = _GoogleApiUrl + queryString;
 
@@ -403,12 +410,10 @@ $(document).ready(function () {
               );
             });
 
-             
             $("#countApramad").html(data.apramad);
-            $("#countChantLag").html("("+data.countChantLag+ ")");
+            $("#countChantLag").html("(" + data.countChantLag + ")");
             $("#chantLagInput").val("");
 
-            
             $("#iframeChantChart").attr(
               "src",
               $("#iframeChantChart").attr("src")
@@ -416,9 +421,11 @@ $(document).ready(function () {
 
             if (update) {
               $("#selectRowsCount").val(1);
-              $("#selectChant1").val("0");
-              $("#selectChant2").val("0");
-              
+
+              $("#radiochant20").click();
+              $("#radiochant10").click();
+
+              $("#collapseChant").collapse("hide");
             }
           }
 
