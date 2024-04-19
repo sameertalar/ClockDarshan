@@ -2,7 +2,7 @@
 // Prettier shortcut : Alt + Shift + F
 
 $(document).ready(function () {
-  $("#scriptVersion").html("v2.0");
+  $("#scriptVersion").html("v2.1");
   var _GoogleApiUrl =
     "https://script.google.com/macros/s/AKfycby0B4KK0TBJDP2-XDhr3oyvOWHN4Ke9-acKUeogrq0j4YohEiVGQl1GTFOcVZzv5cZr/exec";
   const GoogleDev_Url =
@@ -134,7 +134,7 @@ $(document).ready(function () {
     }
 
     if (
-      $("#selectChant3")[0].selectedIndex != 0 ||
+      $("#selectChant1")[0].selectedIndex != 0 ||
       $("#selectChant2")[0].selectedIndex != 0
     ) {
       console.log("Skipped min load for chant.");
@@ -357,10 +357,7 @@ $(document).ready(function () {
 
       paramChant = Number(
         $("#selectChant1").val() +
-        "" +
-        $("#selectChant2").val() +
-        "" +
-        $("#selectChant3").val());
+        "" + $("#selectChant2").val() );
     }
 
     if (reset) paramPostType = 2;
@@ -411,7 +408,7 @@ $(document).ready(function () {
               $("#selectRowsCount").val(1);
               $("#selectChant1").val("0");
               $("#selectChant2").val("0");
-              $("#selectChant3").val("0");
+              
             }
           }
 
