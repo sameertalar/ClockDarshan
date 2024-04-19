@@ -2,9 +2,9 @@
 // Prettier shortcut : Alt + Shift + F
 
 $(document).ready(function () {
-  $("#scriptVersion").html("v1.9");
+  $("#scriptVersion").html("v2.0");
   var _GoogleApiUrl =
-    "https://script.google.com/macros/s/AKfycbxXoh5l61FUTwJCySICOUozueZ_OdfsuT71KbAqYlWLkEY7S_jJvlnUUiY5IHA-6s_0/exec";
+    "https://script.google.com/macros/s/AKfycby0B4KK0TBJDP2-XDhr3oyvOWHN4Ke9-acKUeogrq0j4YohEiVGQl1GTFOcVZzv5cZr/exec";
   const GoogleDev_Url =
     "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
 
@@ -355,12 +355,12 @@ $(document).ready(function () {
         paramRowUpdate = $("#selectChunks").val();
       }
 
-      paramChant =
+      paramChant = Number(
         $("#selectChant1").val() +
         "" +
         $("#selectChant2").val() +
         "" +
-        $("#selectChant3").val();
+        $("#selectChant3").val());
     }
 
     if (reset) paramPostType = 2;
