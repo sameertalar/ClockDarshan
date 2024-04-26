@@ -2,7 +2,7 @@
 // Prettier shortcut : Alt + Shift + F
 
 $(document).ready(function () {
-  $("#scriptVersion").html("v2.4");
+  $("#scriptVersion").html("v2.5");
   var _GoogleApiUrl =
     "https://script.google.com/macros/s/AKfycbyICgBxfpOPat8voUNHExOUb-0MixZeMbrTtT9FGTinv3Q1-TbDXkNCzsia-bj69pXd/exec";
   const GoogleDev_Url =
@@ -56,6 +56,7 @@ $(document).ready(function () {
 
     $("#processing-div").addClass("d-none");
     $("#minLoad-div").addClass("d-none");
+  
   }
 
   var __AppEnabledStatus = setInterval(processBeHereNow, 1000);
@@ -432,6 +433,8 @@ $(document).ready(function () {
               $("#iframeChantChart").attr("src")
             );
 
+
+
             if (update) {
               $("#selectRowsCount").val(1);
 
@@ -441,6 +444,15 @@ $(document).ready(function () {
               $("#collapseChant").collapse("hide");
               $("#collapseSettings").collapse("hide");
             }
+
+            if(data.chunks[0].chant == "")
+            {
+              $("#collapseChant").collapse("show");
+             // console.log("Auto Opened Chant pad");
+
+            }
+
+
           }
 
           __ApiCallStatus = false;
