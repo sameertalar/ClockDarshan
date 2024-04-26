@@ -425,7 +425,7 @@ $(document).ready(function () {
 
             $("#countApramad").html(data.apramad);
             $("#countChantLag").html( data.countChantLag  );
-            $("#chantLagInput").val("");
+            
 
             $("#iframeChantChart").attr(
               "src",
@@ -437,8 +437,9 @@ $(document).ready(function () {
 
               $("#radiochant20").click();
               $("#radiochant10").click();
-
+              $("#chantLagInput").val("");
               $("#collapseChant").collapse("hide");
+              $("#collapseSettings").collapse("hide");
             }
           }
 
