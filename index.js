@@ -424,7 +424,7 @@ $(document).ready(function () {
             });
 
             $("#countApramad").html(data.apramad);
-            $("#countChantLag").html("(" + data.countChantLag + ")");
+            $("#countChantLag").html( data.countChantLag  );
             $("#chantLagInput").val("");
 
             $("#iframeChantChart").attr(
