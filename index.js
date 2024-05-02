@@ -2,9 +2,9 @@
 // Prettier shortcut : Alt + Shift + F
 
 $(document).ready(function () {
-  $("#scriptVersion").html("v2.6");
+  $("#scriptVersion").html("v2.7");
   var _GoogleApiUrl =
-    "https://script.google.com/macros/s/AKfycbyICgBxfpOPat8voUNHExOUb-0MixZeMbrTtT9FGTinv3Q1-TbDXkNCzsia-bj69pXd/exec";
+    "https://script.google.com/macros/s/AKfycbwxuqvcRYrFyCmBKeWQQUllpEmwtNmrlZzfinSN750Dok4zev8ZoiqXYXdyJcKEeVEd/exec";
   const GoogleDev_Url =
     "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
 
@@ -365,26 +365,25 @@ $(document).ready(function () {
     let paramRowUpdate = paramRowCurrent;
     let paramPostType = 0; //init and minLoad
     let paramRowCount = $("#selectRowsCount").val();
-    let paramChantLag = "";
+    let paramChantLag = 0;
 
     if (update) {
      
       paramPostType = 1;
+      paramChantLag = Number($("#chantLagInput").val());
       if ($("#selectChunks")[0].selectedIndex != 0) {
         paramRowUpdate = $("#selectChunks").val();
       }
 
       paramChant =  getChantSelected();
 
-      if(isNaN(paramChant) || paramChant ==0)
+      if( paramChant < 1 && paramChantLag < 1)
       {
         paramChant =0;
         update =false;
-      }
-     
-        
+      }          
 
-      paramChantLag = $("#chantLagInput").val();
+      
     }
 
     if (reset) paramPostType = 2;
@@ -435,23 +434,23 @@ $(document).ready(function () {
               $("#iframeChantChart").attr("src")
             );
 
-
-
             if (update) {
               $("#selectRowsCount").val(1);
 
               $("#radiochant20").click();
               $("#radiochant10").click();
-              $("#chantLagInput").val("");
-              $("#collapseChant").collapse("hide");
-              $("#collapseSettings").collapse("hide");
+              $("#chantLagInput").val("");           
+            
             }
 
             if(data.chunks[0].chant == "")
             {
               $("#collapseChant").collapse("show");
              // console.log("Auto Opened Chant pad");
-
+            }
+            else{
+              $("#collapseChant").collapse("hide");
+              $("#collapseSettings").collapse("hide");
             }
 
 
