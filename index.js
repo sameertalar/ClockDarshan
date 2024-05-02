@@ -2,7 +2,7 @@
 // Prettier shortcut : Alt + Shift + F
 
 $(document).ready(function () {
-  $("#scriptVersion").html("v2.5");
+  $("#scriptVersion").html("v2.6");
   var _GoogleApiUrl =
     "https://script.google.com/macros/s/AKfycbyICgBxfpOPat8voUNHExOUb-0MixZeMbrTtT9FGTinv3Q1-TbDXkNCzsia-bj69pXd/exec";
   const GoogleDev_Url =
@@ -316,6 +316,8 @@ $(document).ready(function () {
     $("#selectChunks").append(
       $("<option />").val(currentChunk.row).text(currentChunk.chunk)
     );
+    $("#collapseChant").collapse("show");
+    setTimeout(miniLoad, 2000);
   }
 
   function getChantSelected() {
