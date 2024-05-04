@@ -2,7 +2,7 @@
 // Prettier shortcut : Alt + Shift + F
 
 $(document).ready(function () {
-  $("#scriptVersion").html("v2.7");
+  $("#scriptVersion").html("v2.8");
   var _GoogleApiUrl =
     "https://script.google.com/macros/s/AKfycbwxuqvcRYrFyCmBKeWQQUllpEmwtNmrlZzfinSN750Dok4zev8ZoiqXYXdyJcKEeVEd/exec";
   const GoogleDev_Url =
@@ -56,7 +56,6 @@ $(document).ready(function () {
 
     $("#processing-div").addClass("d-none");
     $("#minLoad-div").addClass("d-none");
-  
   }
 
   var __AppEnabledStatus = setInterval(processBeHereNow, 1000);
@@ -113,7 +112,7 @@ $(document).ready(function () {
           console.log("🕞 15 mins Quarter Shift Called");
           postToGoogle(false, false, false);
 
-         // sendNotification("Take a deep Breath");
+          // sendNotification("Take a deep Breath");
         } else {
           // Every min Refresh
           miniLoad();
@@ -321,21 +320,22 @@ $(document).ready(function () {
   }
 
   function getChantSelected() {
-   let chant = "";
+    let chant = "";
 
-   let chant1 =$(".radiochant1:checked").val();
-   let chant2 =$(".radiochant2:checked").val();
+    let chant1 = $(".radiochant1:checked").val();
+    let chant2 = $(".radiochant2:checked").val();
 
-   chant  = chant2;
+    chant = chant2;
 
-   //console.log(chant2);
+    //console.log(chant2);
 
-   if(chant1 != 0)
-    chant =chant1+chant2;
+    if (chant1 != 0) chant = chant1 + chant2;
 
-   return Number(chant);
+    return Number(chant);
 
-     return $(".radiochant1:checked").val() + "" + $(".radiochant2:checked").val();
+    return (
+      $(".radiochant1:checked").val() + "" + $(".radiochant2:checked").val()
+    );
   }
 
   function postToGoogle(update, minLoad, reset) {
@@ -368,22 +368,18 @@ $(document).ready(function () {
     let paramChantLag = 0;
 
     if (update) {
-     
       paramPostType = 1;
       paramChantLag = Number($("#chantLagInput").val());
       if ($("#selectChunks")[0].selectedIndex != 0) {
         paramRowUpdate = $("#selectChunks").val();
       }
 
-      paramChant =  getChantSelected();
+      paramChant = getChantSelected();
 
-      if( paramChant < 1 && paramChantLag < 1)
-      {
-        paramChant =0;
-        update =false;
-      }          
-
-      
+      if (paramChant < 1 && paramChantLag < 1) {
+        paramChant = 0;
+        update = false;
+      }
     }
 
     if (reset) paramPostType = 2;
@@ -426,7 +422,8 @@ $(document).ready(function () {
             });
 
             $("#countApramad").html(data.apramad);
-            $("#countChantLag").html( data.countChantLag  );
+            $("#countChantLag").html(data.countChantLag);
+            $("#countChantMax").html(data.countChantMax);
             
 
             $("#iframeChantChart").attr(
@@ -439,21 +436,16 @@ $(document).ready(function () {
 
               $("#radiochant20").click();
               $("#radiochant10").click();
-              $("#chantLagInput").val("");           
-            
+              $("#chantLagInput").val("");
             }
 
-            if(data.chunks[0].chant == "")
-            {
+            if (data.chunks[0].chant == "") {
               $("#collapseChant").collapse("show");
-             // console.log("Auto Opened Chant pad");
-            }
-            else{
+              // console.log("Auto Opened Chant pad");
+            } else {
               $("#collapseChant").collapse("hide");
-              $("#collapseSettings").collapse("hide");
+              //$("#collapseSettings").collapse("hide");
             }
-
-
           }
 
           __ApiCallStatus = false;
