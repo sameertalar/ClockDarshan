@@ -60,8 +60,8 @@
                   class="h6 text-danger border rounded-circle px-2"
                 ></span>
 
-                <div
-                  class="btn-group-vertical mt-1 bg-white rounded-pill"
+                <div id="musicSelectionContainer"
+                  class="btn-group-vertical mt-1 "
                   role="group"
                   aria-label="Basic radio toggle button group"
                 >
@@ -106,7 +106,7 @@
                     ><i class="fa fa-music"></i
                   ></label>
                 </div>
-                <span id="countChantLag" class="text-primary px-2"></span>
+                <span id="countChantLag" class="text-primary px-2 "></span>
                 <button
                   id="btnPopup"
                   type="button"
@@ -232,7 +232,7 @@
             <div class="col-1 px-0">
               <select
                 id="selectRowsCount"
-                class="form-control pt-3 pb-2 form-control badge border-0 text-secondary"
+                class="form-control  pt-3 pb-2  badge border-0 text-primary"
               >
                 <option selected>1</option>
                 <option>2</option>
@@ -285,7 +285,7 @@
           <!-- Row - new radio -->
           <div class="row">
             <div class="col text-center">
-              <div class="collapse border" id="collapseChant">
+              <div class="collapse " id="collapseChant">
                 <div class="container-fluid px-0">
                   <div class="row">
                     <div class="col-2">
@@ -596,8 +596,8 @@
                       <h6>
                         <span
                           id="countChantMax"
-                          class="badge bg-secondary"
-                        ></span>
+                          class="badge text-danger  rounded-pill"
+                        >22</span>
                       </h6>
                     </div>
                     <div class="col-2">
@@ -878,6 +878,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js?ver=2.8"></script>
+    <script src="index.js?ver=2.9.1"></script>
   </body>
 </html>
