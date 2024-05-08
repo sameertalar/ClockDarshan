@@ -60,8 +60,9 @@
                   class="h6 text-danger border rounded-circle px-2"
                 ></span>
 
-                <div id="musicSelectionContainer"
-                  class="btn-group-vertical mt-1 "
+                <div
+                  id="musicSelectionContainer"
+                  class="btn-group-vertical mt-1"
                   role="group"
                   aria-label="Basic radio toggle button group"
                 >
@@ -106,14 +107,20 @@
                     ><i class="fa fa-music"></i
                   ></label>
                 </div>
-                <span id="countChantMax" class="text-primary px-2 mt-2 "></span>
+                <span id="countChantMax" class="text-primary px-2 mt-2"></span>
                 <button
-                  id="btnPopup"
-                  type="button"
-                  class="btn btn-sm border-0 mb-2 mt-2"
-                >
-                  <i class="fa fa-window-restore text-secondary"></i>
-                </button>
+                id="btnAudioBreathMeditation"
+                type="button"
+                class="btn btn-sm border-0 mt-3"
+              >
+                <i
+                  id="audioModeDisplay"
+                  class="btn btn-sm fa fa-play text-secondary"
+                ></i>
+              </button>
+               
+               
+         
               </div>
             </div>
             <div class="col-9" id="clock-row ">
@@ -229,22 +236,6 @@
           <!-- Row : Inputs -->
 
           <div class="row">
-            <div class="col-1 px-0">
-              <select
-                id="selectRowsCount"
-                class="form-control  pt-3 pb-2  badge border-0 text-primary"
-              >
-                <option selected>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-              </select>
-            </div>
             <div class="col-2 float-start">
               <button
                 id="btnSettings"
@@ -259,6 +250,23 @@
                 <i class="fa fa-cog text-success fs-1"></i>
               </button>
             </div>
+            <div class="col-1 px-0">
+              <select
+                id="selectRowsCount"
+                class="form-control pt-3 pb-2 badge border-0 text-primary"
+              >
+                <option selected>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+              </select>
+            </div>
+         
 
             <div class="col-7 text-center">
               <select
@@ -285,8 +293,8 @@
           <!-- Row - new radio -->
           <div class="row">
             <div class="col text-center">
-              <div class="collapse " id="collapseChant">
-                <div class="container-fluid px-0 ">
+              <div class="collapse" id="collapseChant">
+                <div class="container-fluid px-0">
                   <div class="row">
                     <div class="col-2">
                       <input
@@ -306,7 +314,7 @@
                     <div class="col-2">
                       <input
                         type="radio"
-                        class="btn-check radiochant1 "
+                        class="btn-check radiochant1"
                         name="radiochant1"
                         id="radiochant18"
                         value="8"
@@ -471,12 +479,12 @@
                       </label>
                     </div>
                   </div>
-             <!-- Row 3 -->
+                  <!-- Row 3 -->
                   <div class="row mt-2">
                     <div class="col-2">
                       <input
                         type="radio"
-                        class="btn-check radiochant1 "
+                        class="btn-check radiochant1"
                         name="radiochant1"
                         id="radiochant11"
                         value="1"
@@ -566,7 +574,6 @@
                   </div>
 
                   <div class="row mt-2">
-                   
                     <div class="col-2">
                       <input
                         type="radio"
@@ -595,12 +602,10 @@
                     </div>
 
                     <div class="col-2">
-                      
-                        <span
-                          id="countChantLag"
-                          class=" text-danger fw-bold  rounded-pill"
-                        ></span>
-                      
+                      <span
+                        id="countChantLag"
+                        class="text-danger fw-bold rounded-pill"
+                      ></span>
                     </div>
                     <div class="col-2">
                       <input
@@ -618,9 +623,7 @@
                         >0</label
                       >
                     </div>
-                  </div>           
-
-                 
+                  </div>
                 </div>
               </div>
             </div>
@@ -658,6 +661,9 @@
                   <div class="container-fluid">
                     <!-- Row - setting buttons-->
                     <div class="row">
+                      <div class="col text-center"></div>
+                    </div>
+                    <div class="row">
                       <div class="col text-center">
                         <button
                           id="btnExcel"
@@ -665,6 +671,16 @@
                           class="btn btn-lg border-0"
                         >
                           <i class="fa fa-table text-success"></i>
+                        </button>
+                        <button
+                        id="btnPopup"
+                        type="button"
+                        class="btn btn-sm border-0 "
+                      >
+                        <i class="fa fa-window-restore text-secondary"></i>
+                      </button>
+                        <button id="btnDarkBag" type="button" class="btn btn-sm border-0 ">
+                          <i class="btn btn-lg fa fa-adjust text-secondary"></i>
                         </button>
                         <button
                           type="button"
@@ -849,18 +865,14 @@
           <span class="visually-hidden">Loading...</span>
         </div>
         <button
-          id="btnAudioBreathMeditation"
-          type="button"
-          class="btn btn-sm border-0 mb-2 mt-3"
-        >
-          <i
-            id="audioModeDisplay"
-            class="btn btn-sm fa fa-play text-secondary"
-          ></i>
-        </button>
-        <button id="btnDarkBag" type="button" class="btn btn-sm border-0 mb-2">
-          <i class="btn btn-sm fa fa-adjust text-secondary"></i>
-        </button>
+        id="btnAudioStop"
+        type="button"
+        class="btn btn-sm border-0   mt-3"
+      >
+        <i   class="btn btn-sm fa fa-ban text-secondary"
+        ></i>
+      </button>
+    
       </div>
     </div>
     <div style="position: fixed; top: 90px; right: 10px; z-index: 999">
@@ -877,6 +889,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js?ver=2.9.1"></script>
+    <script src="index.js?ver=3.0"></script>
   </body>
 </html>
