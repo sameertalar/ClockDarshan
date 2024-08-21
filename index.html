@@ -52,12 +52,12 @@
               <div class="btn-group-vertical mt-3">
                 <span
                   id="timeLeft"
-                  class="h6 text-primary text-end py-1"
+                  class="h6 text-success text-end py-1"
                 ></span>
 
                 <span
-                  id="countApramad"
-                  class="h6 text-danger border rounded-circle px-2"
+                  id="countChantMax"
+                  class="h6 text-primary border rounded-circle px-2"
                 >⏳</span>
 
                 <div
@@ -118,7 +118,7 @@
                   </button>
                 </div>
 
-                <span id="countChantMax" class="text-primary px-2 mt-2">⏳</span>
+                <span id="countApramad" class="text-danger px-2 mt-2">⏳</span>
               </div>
             </div>
             <div class="col-9" id="clock-row ">
@@ -611,7 +611,7 @@
                       <span
                         id="countChantLag"
                         class="text-danger h4"
-                      >12</span>
+                      >⏳</span>
                     </div>
                     <div class="col-2">
                       <input
@@ -792,23 +792,6 @@
           <!-- Row : Buttons -->
           <div class="row">
             <div class="col text-center">
-              <iframe
-                id="iframeChantChart"
-                width="344"
-                height="140"
-                seamless
-                frameborder="0"
-                scrolling="no"
-                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS3yR_1-D06TVjOU3ZM4Id-eCdeKUltdAVYzplwWSr60lI5YhYTKVLj1jL3fUwVsvWnnR2pDKhHR05o/pubchart?oid=602751653&format=interactive"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-        <!--- ** Column 3  History ***    -->
-        <div class="col-lg-4">
-          <!-- Row : Bhav -->
-          <div class="row px-3">
-            <div class="col mx-5">
               <div id="divBhav" class="text-center">
                 <img
                   id="imgBhav"
@@ -818,6 +801,24 @@
                   onerror="this.src='img/line.svg'"
                 />
               </div>
+              
+            </div>
+          </div>
+        </div>
+        <!--- ** Column 3  History ***    -->
+        <div class="col-lg-4">
+          <!-- Row : Bhav -->
+          <div class="row ">
+            <div class="col">
+              <iframe
+                id="iframeChantChart"
+                width="344"
+                height="140"
+                seamless
+                frameborder="0"
+                scrolling="no"
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS3yR_1-D06TVjOU3ZM4Id-eCdeKUltdAVYzplwWSr60lI5YhYTKVLj1jL3fUwVsvWnnR2pDKhHR05o/pubchart?oid=602751653&format=interactive"
+              ></iframe>
             </div>
           </div>
           <div class="row">
