@@ -4,7 +4,7 @@
 $(document).ready(function () {
   $("#scriptVersion").html("v3.0");
   var _GoogleApiUrl =
-    "https://script.google.com/macros/s/AKfycbwxuqvcRYrFyCmBKeWQQUllpEmwtNmrlZzfinSN750Dok4zev8ZoiqXYXdyJcKEeVEd/exec";
+    "https://script.google.com/macros/s/AKfycbzPGY_aUF5oHUAKC56wn0sNe-Chg6NLyI9nTE9By7LL4PWvfwFad7fm9Q0WGRdSwyBL/exec";
   const GoogleDev_Url =
     "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
 
