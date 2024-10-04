@@ -2,11 +2,9 @@
 // Prettier shortcut : Alt + Shift + F
 
 $(document).ready(function () {
-  $("#scriptVersion").html("v3.0");
-  var _GoogleApiUrl =
-    "https://script.google.com/macros/s/AKfycbzPGY_aUF5oHUAKC56wn0sNe-Chg6NLyI9nTE9By7LL4PWvfwFad7fm9Q0WGRdSwyBL/exec";
-  const GoogleDev_Url =
-    "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
+  $("#scriptVersion").html("v3.2");
+  var _GoogleApiUrl = "https://script.google.com/macros/s/AKfycbx4OlClf7_aQKP8GcDY8Y1GDDd4HbXDRVpImdihEW5tf7XCjFQtf3Ql74xqTnj5td4/exec";
+ // const _GoogleApiUrl = "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
 
   // _GoogleApiUrl =GoogleDev_Url; // Dev Mode
 
@@ -382,6 +380,9 @@ $(document).ready(function () {
     let paramPostType = 0; //init and minLoad
     let paramRowCount = $("#selectRowsCount").val();
     let paramChantLag = 0;
+    let paramMeditation = 0; 
+
+  
 
     if (update) {
       paramPostType = 1;
@@ -392,10 +393,17 @@ $(document).ready(function () {
 
       paramChant = getChantSelected();
 
-      if (paramChant < 1 && paramChantLag < 1) {
+      if ($('#checkMeditation').is(":checked"))
+        {
+          paramMeditation = 1;
+        }
+
+      if (paramChant < 1 && paramChantLag < 1 && paramMeditation==0 ) {
         paramChant = 0;
         update = false;
       }
+
+    
     }
 
     if (reset) paramPostType = 2;
@@ -411,6 +419,8 @@ $(document).ready(function () {
       paramChant +
       "&posttype=" +
       paramPostType +
+      "&meditation=" +
+      paramMeditation +
       "&chantlag=" +
       paramChantLag;
 
