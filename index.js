@@ -2,7 +2,7 @@
 // Prettier shortcut : Alt + Shift + F
 
 $(document).ready(function () {
-  $("#scriptVersion").html("v3.2");
+  $("#scriptVersion").html("v3.3");
   var _GoogleApiUrl =
     "https://script.google.com/macros/s/AKfycbx4OlClf7_aQKP8GcDY8Y1GDDd4HbXDRVpImdihEW5tf7XCjFQtf3Ql74xqTnj5td4/exec";
   // const _GoogleApiUrl = "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
@@ -442,6 +442,23 @@ $(document).ready(function () {
             $("#countApramad").html(data.apramad);
             $("#countChantLag").html(data.countChantLag);
             $("#countChantMax").html(data.countChantMax);
+
+            if (data.countChantMax && data.countChantMax > 0) {
+             // alert(data.countChantMax);
+            let chtDisplay = String(data.countChantMax - data.countChantLag);
+
+            if(chtDisplay.length > 1)
+            {
+console.log(chtDisplay,"#radiochant1"+ chtDisplay.substring(0,1),"#radiochant2"+ chtDisplay.substring(1,2));
+
+              $("#radiochant1"+ chtDisplay.substring(0,1)).prop('checked', true);
+              $("#radiochant2"+ chtDisplay.substring(1,2)).prop('checked', true);
+            }
+            else{
+              $("#radiochant2"+ chtDisplay).prop('checked', true);
+            }
+              
+            }
 
             $("#iframeChantChart").attr(
               "src",
