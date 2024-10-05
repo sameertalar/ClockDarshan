@@ -55,8 +55,6 @@
                   class="h6 text-success text-end py-1"
                 ></span>
 
-             
-
                 <div
                   id="musicSelectionContainer"
                   class="btn-group-vertical mt-1"
@@ -113,15 +111,22 @@
                       class="btn btn-sm fa fa-play text-secondary px-0"
                     ></i>
                   </button>
-                </div>
+                  <button
+                    id="btnAudioStop"
+                    type="button"
+                    class="btn btn-sm border-0 "
+                  >
+                    <i class="btn btn-sm fa fa-ban text-secondary"></i>
+                  </button>
 
-                <span id="countApramad" class="text-danger px-2 mt-2">⏳</span>
-                <span
-                  id="countChantMax"
-                  class="h3 text-primary border rounded-circle mt-2 px-2"
-                >⏳</span>
-               
-             
+                  <button
+                    id="btnExcel"
+                    type="button"
+                    class="btn btn-lg border-0 mt-3"
+                  >
+                    <i class="fa fa-table text-success"></i>
+                  </button>
+                </div>
               </div>
             </div>
             <div class="col-9" id="clock-row ">
@@ -592,13 +597,12 @@
                     </div>
                     <div class="col-2">
                       <button
-                      id="btnResetSheet"
-                      type="button"
-                      class="btn  border-0 p-3"
-                    >
-                      <i class="fa fa-random text-warning"></i>
-                    </button>
-
+                        id="btnResetSheet"
+                        type="button"
+                        class="btn border-0 p-3"
+                      >
+                        <i class="fa fa-random text-warning"></i>
+                      </button>
                     </div>
                     <div class="col-4 text-center">
                       <input
@@ -611,10 +615,7 @@
                     </div>
 
                     <div class="col-2">
-                      <span
-                        id="countChantLag"
-                        class="text-danger h4"
-                      >⏳</span>
+                      <span id="countChantLag" class="text-danger h4">⏳</span>
                     </div>
                     <div class="col-2">
                       <input
@@ -674,7 +675,6 @@
                     </div>
                     <div class="row">
                       <div class="col text-center">
-                      
                         <button
                           id="btnPopup"
                           type="button"
@@ -703,7 +703,6 @@
                         >
                           <i class="fa fa-video-camera text-info"></i>
                         </button>
-                    
                       </div>
                     </div>
                     <!-- Row - Audio Meditation -->
@@ -798,14 +797,13 @@
                   onerror="this.src='img/line.svg'"
                 />
               </div>
-              
             </div>
           </div>
         </div>
         <!--- ** Column 3  History ***    -->
         <div class="col-lg-4">
           <!-- Row : Bhav -->
-          <div class="row ">
+          <div class="row">
             <div class="col">
               <iframe
                 id="iframeChantChart"
@@ -854,15 +852,20 @@
     <div style="position: fixed; top: 25px; right: 2px; z-index: 999">
       <div class="btn-group-vertical mt-1" id="containerButtons">
         <div class="form-check form-switch mt-1 mb-3">
-          <input class="form-check-input " type="checkbox" id="checkMeditation">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="checkMeditation"
+          />
           <label class="form-check-label" for="checkMeditation"></label>
         </div>
         <span
           id="timeRefresh"
           class="badge rounded-pill bg-info text-light fs-6"
         >
-        ⏳</span>
-      
+          ⏳</span
+        >
+
         <div
           id="minLoad-div"
           class="spinner-border text-danger mt-3"
@@ -870,20 +873,13 @@
         >
           <span class="visually-hidden">Loading...</span>
         </div>
-        <button
-          id="btnAudioStop"
-          type="button"
-          class="btn btn-sm border-0 mt-3"
+
+        <span id="countApramad" class="text-danger px-2 mt-2">⏳</span>
+        <span
+          id="countChantMax"
+          class="h3 text-primary border rounded-circle mt-2 px-2"
+          >⏳</span
         >
-          <i class="btn btn-sm fa fa-ban text-secondary"></i>
-        </button>
-        <button
-        id="btnExcel"
-        type="button"
-        class="btn btn-lg border-0"
-      >
-        <i class="fa fa-table text-success"></i>
-      </button>
       </div>
     </div>
     <div style="position: fixed; top: 90px; right: 10px; z-index: 999">

@@ -3,8 +3,9 @@
 
 $(document).ready(function () {
   $("#scriptVersion").html("v3.2");
-  var _GoogleApiUrl = "https://script.google.com/macros/s/AKfycbx4OlClf7_aQKP8GcDY8Y1GDDd4HbXDRVpImdihEW5tf7XCjFQtf3Ql74xqTnj5td4/exec";
- // const _GoogleApiUrl = "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
+  var _GoogleApiUrl =
+    "https://script.google.com/macros/s/AKfycbx4OlClf7_aQKP8GcDY8Y1GDDd4HbXDRVpImdihEW5tf7XCjFQtf3Ql74xqTnj5td4/exec";
+  // const _GoogleApiUrl = "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
 
   // _GoogleApiUrl =GoogleDev_Url; // Dev Mode
 
@@ -47,8 +48,6 @@ $(document).ready(function () {
       $("#selectChunks").addClass("bg-dark");
       $("#musicSelectionContainer").addClass("bg-dark");
       $("#chantLagInput").addClass("bg-dark");
-      
-
     });
 
     $("#btnAudioBreathMeditation").on("click", function (event) {
@@ -59,8 +58,6 @@ $(document).ready(function () {
       pauseMeditation();
       $("#audioCD")[0].pause();
     });
-
-    
 
     buildPlatform();
 
@@ -298,8 +295,8 @@ $(document).ready(function () {
 
   function pauseMeditation() {
     $("#audioMed")[0].pause();
-      $("#audioModeDisplay").removeClass("fa-pause");
-      $("#audioModeDisplay").addClass("fa-play");
+    $("#audioModeDisplay").removeClass("fa-pause");
+    $("#audioModeDisplay").addClass("fa-play");
   }
 
   function sendNotification(title) {
@@ -380,9 +377,7 @@ $(document).ready(function () {
     let paramPostType = 0; //init and minLoad
     let paramRowCount = $("#selectRowsCount").val();
     let paramChantLag = 0;
-    let paramMeditation = 0; 
-
-  
+    let paramMeditation = 0;
 
     if (update) {
       paramPostType = 1;
@@ -393,17 +388,14 @@ $(document).ready(function () {
 
       paramChant = getChantSelected();
 
-      if ($('#checkMeditation').is(":checked"))
-        {
-          paramMeditation = 1;
-        }
+      if ($("#checkMeditation").is(":checked")) {
+        paramMeditation = 1;
+      }
 
-      if (paramChant < 1 && paramChantLag < 1 && paramMeditation==0 ) {
+      if (paramChant < 1 && paramChantLag < 1 && paramMeditation == 0) {
         paramChant = 0;
         update = false;
       }
-
-    
     }
 
     if (reset) paramPostType = 2;
@@ -450,7 +442,6 @@ $(document).ready(function () {
             $("#countApramad").html(data.apramad);
             $("#countChantLag").html(data.countChantLag);
             $("#countChantMax").html(data.countChantMax);
-            
 
             $("#iframeChantChart").attr(
               "src",
