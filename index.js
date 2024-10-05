@@ -631,7 +631,7 @@ $(document).ready(function () {
   }
 
   function oneClickResetSheet() {
-    toggleCollapse();
+    //toggleCollapse();
 
     if (confirm("Are you sure want to reset?")) {
       postToGoogle(true, false, true);
