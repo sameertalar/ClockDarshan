@@ -2,9 +2,9 @@
 // Prettier shortcut : Alt + Shift + F
 
 $(document).ready(function () {
-  $("#scriptVersion").html("v3.3");
+  $("#scriptVersion").html("v3.4");
   var _GoogleApiUrl =
-    "https://script.google.com/macros/s/AKfycbx4OlClf7_aQKP8GcDY8Y1GDDd4HbXDRVpImdihEW5tf7XCjFQtf3Ql74xqTnj5td4/exec";
+    "https://script.google.com/macros/s/AKfycbzEvKtqc1C3srsiev_u5oHkEUzqNiWnFS5fBRSFOqNwsgLhJ1AuKe-uFbrAIOx-1l1r/exec";
   // const _GoogleApiUrl = "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
 
   // _GoogleApiUrl =GoogleDev_Url; // Dev Mode
@@ -444,20 +444,28 @@ $(document).ready(function () {
             $("#countChantMax").html(data.countChantMax);
 
             if (data.countChantMax && data.countChantMax > 0) {
-             // alert(data.countChantMax);
-            let chtDisplay = String(data.countChantMax - data.countChantLag);
+              // alert(data.countChantMax);
 
-            if(chtDisplay.length > 1)
-            {
-console.log(chtDisplay,"#radiochant1"+ chtDisplay.substring(0,1),"#radiochant2"+ chtDisplay.substring(1,2));
+              if (getChantSelected() == 0) {
+                let chtDisplay = String(
+                  data.countChantMax - data.countChantLag
+                );
 
-              $("#radiochant1"+ chtDisplay.substring(0,1)).prop('checked', true);
-              $("#radiochant2"+ chtDisplay.substring(1,2)).prop('checked', true);
-            }
-            else{
-              $("#radiochant2"+ chtDisplay).prop('checked', true);
-            }
-              
+                if (chtDisplay.length > 1) {
+                  //console.log(chtDisplay,"#radiochant1"+ chtDisplay.substring(0,1),"#radiochant2"+ chtDisplay.substring(1,2));
+
+                  $("#radiochant1" + chtDisplay.substring(0, 1)).prop(
+                    "checked",
+                    true
+                  );
+                  $("#radiochant2" + chtDisplay.substring(1, 2)).prop(
+                    "checked",
+                    true
+                  );
+                } else {
+                  $("#radiochant2" + chtDisplay).prop("checked", true);
+                }
+              }
             }
 
             $("#iframeChantChart").attr(
