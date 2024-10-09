@@ -2,7 +2,7 @@
 // Prettier shortcut : Alt + Shift + F
 
 $(document).ready(function () {
-  $("#scriptVersion").html("v3.5");
+  $("#scriptVersion").html("v3.6");
   var _GoogleApiUrl =
     "https://script.google.com/macros/s/AKfycbygE5CU_82lGRIP27WkkCzNpI8vfUahL9aNm1mMOBLQW5EjsovVKw8UT_PnZ5REdqpd/exec";
   // const _GoogleApiUrl = "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
@@ -39,6 +39,11 @@ $(document).ready(function () {
     $("#btnTest").on("click", function (event) {
       sendNotification("Be Here Now.");
     });
+    $("#divBhav").on("click", function (event) {
+      $('#checkMeditation').prop('checked', true); 
+    });
+
+    
 
     $("#btnDarkBag").on("click", function (event) {
       $("body").addClass("blackBag");
@@ -118,6 +123,7 @@ $(document).ready(function () {
         if (min % 15 === 0) {
           console.log("🕞 15 mins Quarter Shift Called");
           postToGoogle(false, false, false);
+          $('#checkMeditation').prop('checked', false); 
 
           // sendNotification("Take a deep Breath");
         } else {
@@ -389,7 +395,7 @@ $(document).ready(function () {
       paramChant = getChantSelected();
 
       if ($("#checkMeditation").is(":checked")) {
-        paramMeditation = 1;
+        paramMeditation = 1;       
       }
 
       if (paramChant < 1 && paramChantLag < 1 && paramMeditation == 0) {
@@ -398,7 +404,14 @@ $(document).ready(function () {
       }
     }
 
-    if (reset) paramPostType = 2;
+    if (reset) 
+      {
+        paramPostType = 2;
+        $("#radiochant20").click();
+        $("#radiochant10").click();
+        paramChant =0;
+      }
+      
 
     let queryString =
       "?rowcurrent=" +
@@ -446,6 +459,7 @@ $(document).ready(function () {
             if (data.countChantMax && data.countChantMax > 0) {
               // alert(data.countChantMax);
 
+             
               if (getChantSelected() == 0) {
                 let chtDisplay = String(
                   data.countChantMax - data.countChantLag
@@ -476,8 +490,7 @@ $(document).ready(function () {
             if (update) {
               $("#selectRowsCount").val(1);
 
-              $("#radiochant20").click();
-              $("#radiochant10").click();
+        
               $("#chantLagInput").val("");
             }
 
