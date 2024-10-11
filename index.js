@@ -2,7 +2,7 @@
 // Prettier shortcut : Alt + Shift + F
 
 $(document).ready(function () {
-  $("#scriptVersion").html("v3.6");
+  $("#scriptVersion").html("v3.7");
   var _GoogleApiUrl =
     "https://script.google.com/macros/s/AKfycbygE5CU_82lGRIP27WkkCzNpI8vfUahL9aNm1mMOBLQW5EjsovVKw8UT_PnZ5REdqpd/exec";
   // const _GoogleApiUrl = "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
@@ -453,6 +453,7 @@ $(document).ready(function () {
             });
 
             $("#countMeditation").html(data.meditation);
+            $("#countPramad").html(data.pramad);
             $("#countChantLag").html(data.countChantLag);
             $("#countChantMax").html(data.countChantMax);
 
