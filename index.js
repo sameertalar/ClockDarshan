@@ -2,7 +2,7 @@
 // Prettier shortcut : Alt + Shift + F
 
 $(document).ready(function () {
-  $("#scriptVersion").html("v3.7");
+  $("#scriptVersion").html("v3.8");
   var _GoogleApiUrl =
     "https://script.google.com/macros/s/AKfycbygE5CU_82lGRIP27WkkCzNpI8vfUahL9aNm1mMOBLQW5EjsovVKw8UT_PnZ5REdqpd/exec";
   // const _GoogleApiUrl = "https://script.google.com/macros/s/AKfycbwmRGX2IpmYkiVH1-SiRUc5qtVMZad98G-Y_SFea0Y/dev";
@@ -637,7 +637,7 @@ $(document).ready(function () {
 
   function btnExcelOpenClick() {
     window.open(
-      "https://docs.google.com/spreadsheets/d/1Ie_9tgkKbtoF6RxHkgSyFp6aG_3t1k_5iB9XqayIlaw/edit#gid=2109360371",
+      "https://sheet.zoho.com/sheet/open/iea9rf620a01188da4ff1b98be5c1f91a1823?sheetid=4&range=A265",
       "_blank"
     );
   }
